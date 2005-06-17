@@ -1,0 +1,19 @@
+body 
+{
+  font-family: "New Century Schoolbook" sans-serif;
+}
+
+.banner
+{
+  width: 100%;
+  border-style: outset;
+}
+
+.right { text-align: right;}
+.footer 
+{ 
+  font-size:10pt;
+  text-decoration: italic; 
+} 
+
+
