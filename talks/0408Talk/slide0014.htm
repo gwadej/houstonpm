@@ -1,0 +1,101 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE>Creating an HTML Header</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0015.htm">Ending an HTML Document</a>
+    &nbsp;&nbsp;Previous: <a href="slide0013.htm">Creating the Header for a Redirection Request</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name="Creating an HTML Header">
+<center>
+<H1>Creating an HTML Header
+</H1></center>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+   named parameter style
+   print $query-&gt;start_html(-title=&gt;'Secrets of the Pyramids',
+                            -author=&gt;'fred@capricorn.org',
+                            -base=&gt;'true',
+			    -meta=&gt;{'keywords'=&gt;'pharoah secret mummy',
+                                    'copyright'=&gt;'copyright 1996 King Tut'},
+			    -style=&gt;{'src'=&gt;'/styles/style1.css'},
+                            -dtd=&gt;1,
+                            -BGCOLOR=&gt;'blue');</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+old style print $query-&gt;start_html('Secrets of the Pyramids', 'fred@capricorn.org','true');
+</P>
+
+
+<P>
+This will return a canned HTML header and the opening &lt;BODY&gt; tag. All parameters are optional:
+</P>
+
+<UL>
+<TABLE><TR><TD valign="TOP"><IMG SRC="./sqr_orange1.png"></TD><TD>
+The title (-title)
+</TD></TR></TABLE>
+<TABLE><TR><TD valign="TOP"><IMG SRC="./sqr_orange1.png"></TD><TD>
+The author's e-mail address (will create a &lt;LINK REV=&quot;MADE&quot;&gt; tag if present (-author)
+</TD></TR></TABLE>
+<TABLE><TR><TD valign="TOP"><IMG SRC="./sqr_orange1.png"></TD><TD>
+A true flag if you want to include a &lt;BASE&gt; tag in the header (-base). This helps resolve relative addresses to absolute ones when the document is moved, but makes the document hierarchy non-portable. Use with care!
+</TD></TR></TABLE>
+<TABLE><TR><TD valign="TOP"><IMG SRC="./sqr_orange1.png"></TD><TD>
+A -meta parameter to define one or more &lt;META&gt; tags. Pass this parameter a reference to an associative array containing key/value pairs. Each pair becomes a &lt;META&gt; tag in a format similar to this one.
+</TD></TR></TABLE>
+</UL>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+      &lt;META NAME=&quot;keywords&quot; CONTENT=&quot;pharoah secret mummy&quot;&gt;
+      &lt;META NAME=&quot;description&quot; CONTENT=&quot;copyright 1996 King Tut&quot;&gt;</FONT></B></PRE></TD></TR></TABLE></UL>
+
+<UL>
+<TABLE><TR><TD valign="TOP"><IMG SRC="./sqr_orange1.png"></TD><TD>
+A -style parameter to define a cascading stylesheet.
+</TD></TR></TABLE>
+<TABLE><TR><TD valign="TOP"><IMG SRC="./sqr_orange1.png"></TD><TD>
+A -dtd parameter to make start_html() generate an SGML document type definition for the document. This is used by SGML editors and high-end Web publishing systems to determine the type of the document. However, it breaks some browsers, in particular AOL's. The value of this parameter can be one of:
+</TD></TR></TABLE>
+</UL>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+
+1. A valid DTD - Example:
+
+   -dtd=&gt;'-//W3C//DTD HTML 3.2//EN'
+
+
+2. A true value that does not begin with &quot;-//&quot;, in which case you
+   will get the standard default DTD (valid for HTML 2.0).
+
+</FONT></B></PRE></TD></TR></TABLE></UL>
+</BODY>
+</HTML>

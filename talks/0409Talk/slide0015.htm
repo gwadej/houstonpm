@@ -1,0 +1,137 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE> The Code</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0016.htm"> Initial Setup</a>
+    &nbsp;&nbsp;Previous: <a href="slide0014.htm"> After Some Interaction</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name=" The Code">
+<center>
+<H1>7.2  The Code
+</H1></center>
+
+
+<P>
+As you would expect, the code for this one is a little more advanced.
+</P>
+
+
+<P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+#!/usr/bin/perl
+
+use Tk;
+use strict;
+use warnings;
+
+my $mw = new MainWindow;
+$mw-&gt;title( 'Regex Tester' );
+
+my $regex  = '';
+my $match  = '       ';
+my @option = ( '', '', '' );
+my $textWidget;
+my $listWidget;
+
+build_window( $mw );
+
+MainLoop;
+
+# Place widgets in the main window supplied as a parameter.
+sub  build_window
+ {
+  my $mw = shift;
+  my $f = $mw-&gt;Frame();
+
+  # Regular Expression Entry
+  my $f1 = $f-&gt;Frame();
+  $f1-&gt;Label( -text =&gt; 'Regular Expression:' )-&gt;pack( -anchor =&gt; 'nw' );
+  $f1-&gt;Entry( -textvariable =&gt; \$regex, -width =&gt; 50 )
+             -&gt;pack( -side =&gt; 'left', -anchor =&gt; 'n' );
+  $f1-&gt;pack( -side =&gt; 'left', -anchor =&gt; 'n' );
+
+  # And checkbuttons for options
+  my $f2 = $f-&gt;Frame( -label =&gt; 'Options' );
+
+  my @optlist = qw[i s m];  
+  for(my $i = 0; $i &lt; @optlist; ++$i)
+   {
+    $f2-&gt;Checkbutton( -text =&gt; $optlist[$i],
+                      -variable =&gt; \$option[$i],
+                      -onvalue=&gt;$optlist[$i],
+                      -offvalue=&gt;'' )-&gt;pack( -side =&gt; 'left' );
+   }
+  $f2-&gt;pack( -side =&gt; 'right', -anchor =&gt; 'n' );
+
+  $f-&gt;pack( -anchor =&gt; 'w' );
+
+  # Text block to match
+  $f = $mw-&gt;Frame();
+  $f-&gt;Label( -text =&gt; 'Text: ' )-&gt;pack( -side =&gt; 'left', -anchor=&gt;'w' );
+  $f-&gt;Label( -textvariable =&gt; \$match )-&gt;pack( -side =&gt; 'left' );
+  $f-&gt;pack( -anchor =&gt; 'w' );
+
+  $f = $mw-&gt;Frame();
+  $textWidget = $f-&gt;Text( -wrap =&gt; 'none', -width =&gt; 50, -height=&gt; 13 )
+		            -&gt;pack( -side =&gt; 'left', -anchor =&gt; 'n' );
+  $listWidget = $f-&gt;Listbox( -height =&gt; 10, -width =&gt; 20 )
+                    -&gt;pack( -side =&gt; 'right', -anchor =&gt; 'n' );
+  $f-&gt;pack( -anchor =&gt; 'w' );
+  
+  $mw-&gt;Button( -text =&gt; 'Test', -command =&gt; \&amp;test_regexp )-&gt;pack;
+ }
+
+# Perform the regular expression test and update the display.
+sub test_regexp
+ {
+  my $text = $textWidget-&gt;get( '1.0', 'end' );
+  my $opts = join( '', @option );
+  my $re = $opts ? &quot;(?$opts)$regex&quot; : $regex;
+
+  $listWidget-&gt;delete( 0, 'end' );
+  eval
+   {
+    if($text =~ /$re/)
+     {
+      $match = 'matched &quot;' . substr( $text, $-[0], $+[0]-$-[0] ) . '&quot;';
+      for(my $i=1; $i &lt; @-; ++$i)
+       {
+	$listWidget-&gt;insert( 'end', substr( $text, $-[$i], $+[$i]-$-[$i] ) );
+       }
+     }
+    else
+     {
+      $match = 'not matched';
+     }
+   };
+  $match = $@ if $@;
+ }
+</FONT></B></PRE></TD></TR></TABLE></UL>
+
+</P>
+</BODY>
+</HTML>

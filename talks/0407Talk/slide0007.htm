@@ -1,0 +1,49 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE> ttree standard process</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0008.htm"> Pre and Post Process</a>
+    &nbsp;&nbsp;Previous: <a href="slide0006.htm"> Example</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name=" ttree standard process">
+<center>
+<H1> ttree standard process
+</H1></center>
+
+
+<P>
+The standard configuration script is $HOME/.ttreerc.  You can also create many different configuration files and store them in the directory specified in the 'cfg' option. You then add the '-f filename' option to ttree to have it read that file.
+</P>
+
+
+<P>
+When you run the script, it compares all the files in the 'src' directory (including those in sub-directories if the 'recurse' option is set), with those in the 'dest' directory. If the destination file doesn't exist or has an earlier modification time than the corresponding source file, then the source will be processed with the output written to the destination file. The '-a' option forces all files to be processed, regardless of modification times.
+</P>
+
+
+<P>
+The script doesn't process any of the files in the 'lib' directory, but it does add it to the INCLUDE_PATH for the template processor so that it can locate these files via an INCLUDE or PROCESS directive. Thus, the 'lib' directory is an excellent place to keep template elements such as header, footers, etc., that aren't complete documents in their own right.
+</P>
+</BODY>
+</HTML>

@@ -1,0 +1,72 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE> What If We move to a different RDBMS?</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0012.htm"> Any Other Changes Needed?</a>
+    &nbsp;&nbsp;Previous: <a href="slide0010.htm"> How Does It Work?</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name=" What If We move to a different RDBMS?">
+<center>
+<H1>11  What If We move to a different RDBMS?
+</H1></center>
+
+
+<P>
+For this simple an example, we only need to change one line if the databases are set up identically.
+</P>
+
+
+<P>
+For MySQL, replace
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+	my $dbh = DBI-&gt;connect( &quot;dbi:CSV:f_dir=db&quot;, &quot;fred&quot;, &quot;secret&quot; )
+	    or die &quot;Cannot connect to database: $DBI::errstrn&quot;;</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+with
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+	my $dbh = DBI-&gt;connect( &quot;DBI:mysql:db&quot;, &quot;fred&quot;, &quot;secret&quot; )
+	    or die &quot;Cannot connect to database: $DBI::errstrn&quot;;</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+For Oracle, use
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+	my $dbh = DBI-&gt;connect( &quot;dbi:Oracle:dbtnsname&quot;, &quot;fred&quot;, &quot;secret&quot; )
+	    or die &quot;Cannot connect to database: $DBI::errstrn&quot;;</FONT></B></PRE></TD></TR></TABLE></UL>
+</BODY>
+</HTML>

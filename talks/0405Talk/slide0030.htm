@@ -1,0 +1,62 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE>constant</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0031.htm">diagnostics</a>
+    &nbsp;&nbsp;Previous: <a href="slide0029.htm">Text::Wrap</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name="constant">
+<center>
+<H1>constant
+</H1></center>
+
+
+<P>
+This will declare a symbol to be a constant with the given value.
+</P>
+
+
+<P>
+When you declare a constant such as &quot;PI&quot; using the method shown below, each machine your script runs upon can have as many digits of accuracy as it can use. Also, your program will be easier to read, more likely to be maintained (and maintained correctly), and far less likely to send a space probe to the wrong planet because nobody noticed the one equation in which you wrote 3.14195.
+</P>
+
+
+<P>
+When a constant is used in an expression, perl replaces it with its value at compile time, and may then optimize the expression further. In particular, any code in an &quot;if (CONSTANT)&quot; block will be optimized away if the constant is false.
+</P>
+
+
+<P>
+Examples
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+    use constant PI    =&gt; 4 * atan2(1, 1);
+    use constant DEBUG =&gt; 0;
+
+    print &quot;Pi equals &quot;, PI, &quot;...\n&quot; if DEBUG;</FONT></B></PRE></TD></TR></TABLE></UL>
+</BODY>
+</HTML>

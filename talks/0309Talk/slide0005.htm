@@ -1,0 +1,59 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE>Adding and Removing Elements from an Array</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0006.htm">The splice function</a>
+    &nbsp;&nbsp;Previous: <a href="slide0004.htm"> Filtering a List</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name="Adding and Removing Elements from an Array">
+<center>
+<H1>Adding and Removing Elements from an Array
+</H1></center>
+
+
+<P>
+Perl arrays are dynamic, meaning they will grow or shrink as necessary in your program (at least until you run of memory).
+</P>
+
+
+<P>
+The push() and pop() functions insert and remove elements from the end of the array, and the shift() and unshift() functions do the same for the beginning of the array:
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+    my @array = (1, 2, 3);
+    push @array, 42;      # @array now contains: (1, 2, 3, 42)
+    push @array, (4, 5);  # @array now contains: (1, 2, 3, 42, 4, 5)
+
+    my $last  = pop(@array);   # removes last element from @array
+    my $first = shift(@array); # removes first element from @array
+
+    unshift @array, $last;   # shoves $last onto front of @array
+    unshift @array, (13,14); # shoves list onto front of @array
+
+    print &quot;@array\n&quot;; # prints: 13 14 5 2 3 42 4</FONT></B></PRE></TD></TR></TABLE></UL>
+</BODY>
+</HTML>

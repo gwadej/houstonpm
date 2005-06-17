@@ -1,0 +1,57 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE> Building the Display</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0020.htm"> Add Checkbuttons</a>
+    &nbsp;&nbsp;Previous: <a href="slide0018.htm"> Displaying the Window</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name=" Building the Display">
+<center>
+<H1>7.6  Building the Display
+</H1></center>
+
+
+<P>
+Building the display is pretty complicated so we'll look at <CODE>build_window</CODE> in pieces. In addition to new widgets, this code shows an important technique, the use of <CODE>Frame</CODE>s.
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+  my $mw = shift;
+  my $f = $mw-&gt;Frame();
+
+  # Regular Expression Entry
+  my $f1 = $f-&gt;Frame();
+  $f1-&gt;Label( -text =&gt; 'Regular Expression:' )-&gt;pack( -anchor =&gt; 'nw' );
+  $f1-&gt;Entry( -textvariable =&gt; $regex, -width =&gt; 50 )
+             -&gt;pack( -side =&gt; 'left', -anchor =&gt; 'n' );
+  $f1-&gt;pack( -side =&gt; 'left', -anchor =&gt; 'n' );</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+Here we've added an <CODE>Entry</CODE> widget for the regular expression.
+</P>
+</BODY>
+</HTML>

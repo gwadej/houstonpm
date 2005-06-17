@@ -1,0 +1,51 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE>CGI.pm - A Perl5 CGI library</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0002.htm">Fill-out form that remembers its state</a>
+    &nbsp;&nbsp;Previous: <a href="slide0000.htm" target="Data">Index</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name="CGI.pm - A Perl5 CGI library">
+<center>
+<H1>CGI.pm - A Perl5 CGI library
+</H1></center>
+
+
+<P>
+This perl 5 library uses objects to create Web fill-out forms on the fly and to parse their contents. It provides a simple interface for parsing and interpreting query strings passed to CGI scripts. However, it also offers a rich set of functions for creating fill-out forms. Instead of remembering the syntax for HTML form elements, you just make a series of perl function calls. An important fringe benefit of this is that the value of the previous query is used to initialize the form, so that the state of the form is preserved from invocation to invocation.
+</P>
+
+
+<P>
+Everything is done through a ``CGI'' object. When you create one of these objects it examines the environment for a query string, parses it, and stores the results. You can then ask the CGI object to return or modify the query values. CGI objects handle POST and GET methods correctly, and correctly distinguish between scripts called from &lt;ISINDEX&gt; documents and form-based documents. In fact you can debug your script from the command line without worrying about setting up environment variables.
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+The material for this talk comes from the verable Lincoln Stein who
+wrote CGI.pm and generously contributed it to the Perl community.
+</FONT></B></PRE></TD></TR></TABLE></UL>
+</BODY>
+</HTML>

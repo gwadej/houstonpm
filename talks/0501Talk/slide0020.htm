@@ -1,0 +1,49 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE> The Destructor</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0021.htm"> Using the Class</a>
+    &nbsp;&nbsp;Previous: <a href="slide0019.htm"> More Methods</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name=" The Destructor">
+<center>
+<H1>7.6  The Destructor
+</H1></center>
+
+
+<P>
+This method is called automatically when the object reference goes out of scope. It serves to <I>clean up</I> anything that the object is responsible for before it dies.
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+sub DESTROY
+{
+    my $self = shift;
+    --$objCount;
+}
+</FONT></B></PRE></TD></TR></TABLE></UL>
+</BODY>
+</HTML>

@@ -1,0 +1,101 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE>Create table programatically</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0018.htm">Creating Forms</a>
+    &nbsp;&nbsp;Previous: <a href="slide0016.htm">Distributive HTML Tags and Tables</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name="Create table programatically">
+<center>
+<H1>Create table programatically
+</H1></center>
+
+
+<P>
+If you want to produce tables programatically, you can do it this way:
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+use CGI qw/:standard :html3/;
+@values = (1..5);
+
+@headings = ('N','N'.sup('2'),'N'.sup('3'));
+@rows = th(\@headings);
+foreach $n (@values) {
+   push(@rows,td([$n,$n**2,$n**3]));
+}
+print table({-border=&gt;undef,-width=&gt;'25%'},
+            caption(b('Wow.  I can multiply!')),
+            Tr(\@rows)
+);
+</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+
+<table border width="25%">
+<caption><b>Wow. I can multiply!</b></caption>
+
+<tr>
+<th>N</th>
+<th>N<sup>2</sup></th>
+<th>N<sup>3</sup></th>
+</tr>
+
+<tr>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>4</td>
+<td>8</td>
+</tr>
+
+<tr>
+<td>3</td>
+<td>9</td>
+<td>27</td>
+</tr>
+
+<tr>
+<td>4</td>
+<td>16</td>
+<td>64</td>
+</tr>
+
+<tr>
+<td>5</td>
+<td>25</td>
+<td>125</td>
+</tr>
+</table>
+
+</P>
+</BODY>
+</HTML>

@@ -1,0 +1,59 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE> Changed Request Processing</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0017.htm"> Handling Static Pages</a>
+    &nbsp;&nbsp;Previous: <a href="slide0015.htm"> What's Different?</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name=" Changed Request Processing">
+<center>
+<H1>8.2  Changed Request Processing
+</H1></center>
+
+
+<P>
+I've added statistics gathering code in various places to make <CODE>server_stats</CODE> work. The code that serves static pages has been factored into a new routine.
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+	    $Stats{requests}++;
+
+            my $path = $r-&gt;url-&gt;path();
+	    if(exists $DynaPage{$path})
+	    {
+	    	$DynaPage{$path}-&gt;( $conn, $r, $path );
+	    }
+	    else
+	    {
+	    	handle_static_page( $conn, $r, $path );
+            }</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+The <CODE>exists</CODE> test checks to see if we've defined this path as a dynamic one. If it is, we execute the routine associated with the path.
+</P>
+</BODY>
+</HTML>

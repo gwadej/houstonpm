@@ -1,0 +1,67 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE>Regex Modifiers /gsimexoc</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0006.htm">Clearifying some confusion</a>
+    &nbsp;&nbsp;Previous: <a href="slide0004.htm">Summary</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name="Regex Modifiers /gsimexoc">
+<center>
+<H1>Regex Modifiers /gsimexoc
+</H1></center>
+
+
+<P>
+The behaviour or interpretation of regular expressions can be modified through the use of several single-character modifiers that can be placed after the final delimiter of a match or substitution operator. Here is a brief description of these modifiers:
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+    /i  pattern matches are case insensitive
+
+    /m  multi-line mode: ^ and $ can match at the start or end of any
+        line within the string (as opposed to the default behavior of
+        matching only the start or end of the string).
+
+    /s  allows the dot, &quot;.&quot;, to match anything including a newline (the
+        default is to not match newlines).
+
+    /x  extended mode: allows a pattern to be written across multiple
+        lines -- whitespace and comments are ignored.
+
+    /o  the pattern is compiled only once -- this only makes sense if
+        you use a variable in your pattern and that variable won't
+        change.
+
+    /g  global match: this will find all occurrences of the pattern
+        in the target string.
+
+    /c  do not reset search position when a /g match fails.
+
+    /e  treat the replacement side of a substitution operation as
+        Perl code to be evaluated (as opposed to treating it as a
+        double quoted string).</FONT></B></PRE></TD></TR></TABLE></UL>
+</BODY>
+</HTML>

@@ -1,0 +1,61 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE>CGI::Push</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0009.htm">CPAN</a>
+    &nbsp;&nbsp;Previous: <a href="slide0007.htm">CGI::Fast</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name="CGI::Push">
+<center>
+<H1>CGI::Push
+</H1></center>
+
+
+<P>
+This is another example how perl make programming websites easy.
+</P>
+
+
+<P>
+CGI::Push adds one new method to the standard CGI suite, do_push(). When you call this method, you pass it a reference to a subroutine that's responsible for drawing each new page, an interval delay, and an optional subroutine for drawing the last page.  Other optional parameters include most of those recognized by the CGI header() method.
+</P>
+
+
+<P>
+You may call do_push() in the object oriented manner or not, as you prefer:
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+    use CGI::Push;
+    $q = new CGI::Push;
+    $q-&gt;do_push(-next_page=&gt;\&amp;draw_a_page);
+
+        -or-
+
+    use CGI::Push qw(:standard);
+    do_push(-next_page=&gt;\&amp;draw_a_page);</FONT></B></PRE></TD></TR></TABLE></UL>
+</BODY>
+</HTML>

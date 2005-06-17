@@ -1,0 +1,61 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE>Using the tr operator to count characters.</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a name="xx"></a>
+    &nbsp;&nbsp;Previous: <a href="slide0008.htm">Finding the Number of Characters in a String.</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name="Using the tr operator to count characters.">
+<center>
+<H1>Using the tr operator to count characters.
+</H1></center>
+
+
+<P>
+Sometimes you want to count particular characters in a string. The tr/// operator replaces characters in a given list with corresponding characters in a second list.
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+    tr/list/replacementlist/.</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+If no replacement list is given, this operator automatically copies the first list to use as the replacement list (meaning every listed character gets replaced by itself). The tr/// operator returns the number of replaced characters so you can use it to count particular characters:
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+    $string = 'The quick brown fox jumped over the lazy dog';
+    $vowel_count = $string =~ tr/aeiou//;
+    print $vowel_count; # prints: 12</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+<FONT COLOR=blue>The length() function is documented in the perlfunc pod-page see:</FONT> <FONT COLOR=blue>perldoc -f length. For more on the tr/// operator see the perlop pod-page.</FONT>
+</P>
+</BODY>
+</HTML>

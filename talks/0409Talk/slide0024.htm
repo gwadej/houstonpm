@@ -1,0 +1,64 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE> Extracting the Data</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0025.htm"> Build the Regex</a>
+    &nbsp;&nbsp;Previous: <a href="slide0023.htm"> Testing the Regexp</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name=" Extracting the Data">
+<center>
+<H1>7.7.1  Extracting the Data
+</H1></center>
+
+
+<P>
+Extracting the regular expression and options is easy, we told the GUI which variables to fill with the input. So we just need to use those variables.
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+  $f1-&gt;Entry( -textvariable =&gt; $regex, -width =&gt; 50 )</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+In this case the regular expression is a string in the variable <CODE>$regex</CODE>.
+</P>
+
+
+<P>
+The <CODE>Text</CODE> block is a little harder.
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+  my $text = $textWidget-&gt;get( '1.0', 'end' );</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+The <CODE>get</CODE> method uses <I>index</I>es which are in the form <I>line.char</I>. There are also special indexes like <I>end</I> that points to the end of the text.
+</P>
+</BODY>
+</HTML>

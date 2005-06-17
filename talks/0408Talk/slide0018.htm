@@ -1,0 +1,69 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE>Creating Forms</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0019.htm">More General Notes</a>
+    &nbsp;&nbsp;Previous: <a href="slide0017.htm">Create table programatically</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name="Creating Forms">
+<center>
+<H1>Creating Forms
+</H1></center>
+
+
+<P>
+General note 1. The various form-creating methods all return strings to the caller. These strings will contain the HTML code that will create the requested form element. You are responsible for actually printing out these strings. It's set up this way so that you can place formatting tags around the form elements.
+</P>
+
+
+<P>
+General note 2. The default values that you specify for the forms are only used the <B>first</B> time the script is invoked. If there are already values present in the query string, they are used, even if blank.
+</P>
+
+
+<P>
+If you want to change the value of a field from its previous value, you have two choices:
+</P>
+
+<OL>
+<LI VALUE=1>call the param() method to set it. # use the -override (alias -force) parameter. This forces the default value to be used, regardless of the previous value of the field:</LI>
+</OL>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+       print $query-&gt;textfield(-name=&gt;'favorite_color',
+                               -default=&gt;'red',
+			       -override=&gt;1);</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+If you want to reset all fields to their defaults, you can:
+</P>
+
+<OL>
+<LI VALUE=1>Create a special defaults button using the defaults() method. # Create a hypertext link that calls your script without any parameters.</LI>
+</OL>
+</BODY>
+</HTML>

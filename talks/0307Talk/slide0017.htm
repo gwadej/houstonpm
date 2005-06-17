@@ -1,0 +1,128 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE>Symbol Explanations:</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0018.htm">Compile a regular expression once</a>
+    &nbsp;&nbsp;Previous: <a href="slide0016.htm">Greedy and Ungreedy Matching</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name="Symbol Explanations:">
+<center>
+<H1>Symbol Explanations:
+</H1></center>
+
+
+<P>
+<B>=~</B>
+</P>
+
+
+<P>
+This operator appears between the string variable you are comparing, and the regular expression you're looking for (note that in selection or substitution a regular expression operates on the string variable rather than comparing). Here's a simple example:
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+ $string =~ m/Al Bundy/;    #return true if $string contains the name of big Al.
+
+ $string =~ tr/Al Bundy/Al Gore/;  #replace the first element with the second</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+<B>!~</B>
+</P>
+
+
+<P>
+Just like <B>=~</B>, except negated. With matching, returns true if it DOESN'T match. I can't imagine what it would do in translates, etc.  / This is the usual delimiter for the text part of a regular expression. If the sought-after text contains slashes, it's sometimes easier to use pipe symbols (|) for delimiters, but this is rare. Here are simple examples:
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+ $string =~ m/Al Bundy/;               #return true if var $string contains the name of swinging Al
+ $string =~ tr/Al Bundy/Al Gore/;  #replace one Al with another</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+<B>m</B>
+</P>
+
+
+<P>
+The match operator. Coming before the opening delimiter, this is the &quot;match&quot; operator. It means read the string expression on the left of the <I>=~</I>, and see if any part of it matches the expression within the delimiters following the m. Note that if the delimiters are slashes (which is the normal state of affairs), the <I>m</I> is optional and often not included. Whether it's there or not, it's still a match operation. Here are some examples:
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+ $string =~ m/Al Bundy/;            #return true if var $string contains the name.
+ $string =~ /Al Bundy/;               #same result as previous statement</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+<B>^</B>
+</P>
+
+
+<P>
+This is the <I>&quot;beginning of line&quot;</I> symbol. When used immediately after the starting delimiter, it signifies &quot;at the beginning of the line&quot;. For instance:
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+ $string =~ m/^Al Bundy/;            #true only when &quot;Al Bundy&quot; is the first text in the string</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+<B>$</B>
+</P>
+
+
+<P>
+This is the <I>&quot;end of line&quot;</I> symbol. When used immediately before the ending delimiter, it signifies &quot;at the end of the line&quot;. For instance:
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+ $string =~ m/Al Bundy$/;            #true only when &quot;Al Bundy&quot; is the last text in the string</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+<B>i</B>
+</P>
+
+
+<P>
+This is the <I>&quot;case insensitivity&quot;</I> operator when used immediately after the closing delimiter. For instance:
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+ $string =~ m/Al Bundy/i;        #true when $string contains &quot;Al Bundy&quot; or aL bUNdy&quot;</FONT></B></PRE></TD></TR></TABLE></UL>
+</BODY>
+</HTML>

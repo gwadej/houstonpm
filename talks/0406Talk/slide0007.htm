@@ -1,0 +1,56 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE>The /x modifier to make it more readable</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0008.htm">Perl code in a regex</a>
+    &nbsp;&nbsp;Previous: <a href="slide0006.htm">Clearifying some confusion</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name="The /x modifier to make it more readable">
+<center>
+<H1>The /x modifier to make it more readable
+</H1></center>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+    sub commify {
+        my $input = shift;
+        $input = reverse $input;
+        $input =~ s{
+                     (\d\d\d)    # match 3 digits into $1
+                     (?=\d)      # if the are followed by a digit
+                     (?!         # and they are not followed by:
+                        \d*      # zero-or-more digits
+                        \.       # followed by a decimal point
+                     )
+                   }{$1,}gx;
+        return scalar reverse $input;
+    }</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+All of the whitespace in the above regex is ignored as is anything following the comment symbol #. The above regex can be written on one line as: s{(\d\d\d)(?=\d)(?!\d*\.)}{$1,}g.
+</P>
+</BODY>
+</HTML>

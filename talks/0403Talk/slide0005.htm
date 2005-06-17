@@ -1,0 +1,68 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE>Parameters With Options</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0006.htm">Summary of Manual Options</a>
+    &nbsp;&nbsp;Previous: <a href="slide0004.htm">Using &amp;&amp; and do{} Blocks</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name="Parameters With Options">
+<center>
+<H1>Parameters With Options
+</H1></center>
+
+
+<P>
+We might also want to process options that take parameters. For example, if we wrote a script that prints out the first N lines of a file (with a default of 10), we need to be able to accept a -n option that takes a parameter specifying how many lines to print out. For example, if we name this program 'head' we would invoke it as:
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+    head somefile         &lt;-- prints out first 10 lines of somefile
+    head -n12 somefile    &lt;-- prints out first 12 lines of somefile
+    head -n5 somefile     &lt;-- prints out first 12 lines of somefile</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+We could use the same basic technique as above to process the option:
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+    my $n;
+    while ( $ARGV[0] =~ /^-/ ) {
+        $_ = $ARGV[0];
+        /^-n(\d+)$/ &amp;&amp; do{$n = $1 if $1;shift @ARGV;next};
+        /^-n(.*)/   &amp;&amp; die &quot;argument for -n must be integer not: '$1'&quot;;
+        die &quot;illegal option: $_&quot;;
+    }
+    $n ||= 10;</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+Here we've only shown what to do with one option. If the option starts with -n and is followed by only digits we set the option variable. If the -n was followed by anything else we die() with a message about the argument. After the loop we use ||= to test $n and set it to the default of 10 if it hasn't already been set.
+</P>
+</BODY>
+</HTML>

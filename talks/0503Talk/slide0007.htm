@@ -1,0 +1,120 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE> Calculator Example</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0008.htm"> The Commands Hash</a>
+    &nbsp;&nbsp;Previous: <a href="slide0006.htm"> Complex Data Structures</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name=" Calculator Example">
+<center>
+<H1>4  Calculator Example
+</H1></center>
+
+<UL>
+<TABLE><TR><TD valign="TOP"><IMG SRC="./sqr_orange1.png"></TD><TD>
+Perl coderefs make associating behavior with a string very easy.
+</TD></TR></TABLE>
+<TABLE><TR><TD valign="TOP"><IMG SRC="./sqr_orange1.png"></TD><TD>
+I have often used this to implement a quick command interpreter.
+</TD></TR></TABLE>
+</UL>
+
+
+<P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+#!/usr/bin/perl
+
+use warnings;
+use strict;
+
+$| = 1;  # Unbuffer stdout
+
+# Data stack
+my @Stack = ();
+
+# Command definitions
+my %Commands =
+(
+    &quot;+&quot; =&gt; sub { push @Stack, pop( @Stack ) + pop( @Stack ) },
+    &quot;-&quot; =&gt; sub { push @Stack, -pop( @Stack ) + pop( @Stack ) },
+    &quot;*&quot; =&gt; sub { push @Stack, pop( @Stack ) * pop( @Stack ) },
+    &quot;/&quot; =&gt; sub { my $d = pop @Stack; push @Stack, pop( @Stack ) / $d; },
+    &quot;dup&quot; =&gt; sub { push @Stack, $Stack[-1] if @Stack; },
+    &quot;drop&quot; =&gt; sub { pop @Stack; },
+    &quot;.&quot; =&gt; sub { my $top = pop @Stack; print &quot;$top\n&quot;; },
+    &quot;quit&quot; =&gt; sub { exit; },
+    &quot;help&quot; =&gt; \&amp;help,
+);
+
+# Interpreter loop
+print &quot;=&gt; &quot;;
+while(&lt;&gt;)
+{
+    chomp;
+    foreach my $word (split)
+    {
+        if(exists $Commands{$word})
+	{
+	    $Commands{$word}-&gt;();
+	}
+	elsif($word =~ /^\d*(\.\d*)?$/)
+	{
+	    push @Stack, $word;
+	}
+	else
+	{
+	    print &quot;Unrecognized token: '$word'.\n&quot;;
+	}
+    }
+    print &quot;=&gt; &quot;;
+}
+
+
+# Print a help message on the screen
+sub help
+{
+    print &lt;&lt;&quot;EOH&quot;;
+The calculator supports the following commands:
+  +     adds the top two numbers on the stack
+  -     subtracts the top two numbers on the stack
+  *     multiplies the top two numbers on the stack
+  /     divides the top two numbers on the stack
+  dup   duplicate the top number on the stack
+  drop  discard the top number on the stack
+  .     remove the top number from the stack and print it
+  quit  exit the program
+  help  this screen
+
+Any number is pushed on the stack.
+Anything else is treated as an error.
+EOH
+}
+</FONT></B></PRE></TD></TR></TABLE></UL>
+
+</P>
+</BODY>
+</HTML>

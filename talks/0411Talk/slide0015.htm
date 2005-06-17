@@ -1,0 +1,63 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE> What's Different?</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0016.htm"> Changed Request Processing</a>
+    &nbsp;&nbsp;Previous: <a href="slide0014.htm"> Dynamic Webserver</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name=" What's Different?">
+<center>
+<H1>8.1  What's Different?
+</H1></center>
+
+
+<P>
+This hash maps the URL paths to subroutines. This will be needed for any dynamic webserver we build this way.
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+    my %DynaPage =
+       (
+           &quot;/stats&quot; =&gt; &amp;server_stats,
+           &quot;/hello&quot; =&gt; &amp;dynamic_hello,
+       );</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+This hash stores information that needed by the <CODE>server_stats</CODE> subroutine. It is specific to this particular application.
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+    my %Stats = ( start     =&gt; time(),
+                  requests  =&gt; 0,
+	          static    =&gt; 0,
+	          notfound  =&gt; 0,
+	          forbidden =&gt; 0,
+                );</FONT></B></PRE></TD></TR></TABLE></UL>
+</BODY>
+</HTML>

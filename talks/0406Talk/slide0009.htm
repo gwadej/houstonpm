@@ -1,0 +1,63 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE>Fully format the number</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0010.htm">Clean up the code</a>
+    &nbsp;&nbsp;Previous: <a href="slide0008.htm">Perl code in a regex</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name="Fully format the number">
+<center>
+<H1>Fully format the number
+</H1></center>
+
+
+<P>
+Now, let's take the case of wanting to round the numbers as above, but also add a leading dollar sign and add commas to the numbers if necessary:
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+    my $string = 'foo = 12.4321 and bar = 14003.1890';
+    $string =~ s{
+                  (\d+          # one-or-more digits into $1
+                   (?:\.\d+)    # with optional decimal portion
+                  )
+                }{
+                  # round and reverse the number:
+                  my $num = reverse sprintf(&quot;\$%.2f&quot;,$1);
+                  # add commas and reverse again:
+                  $num =~ s|
+                            (\d\d\d)   # match 3 digits into $1
+                            (?=\d)     # if the are followed by a digit
+                            (?!        # and they are not followed by:
+                              \d*      # zero-or-more digits
+                              \.       # followed by a decimal point
+                            )
+                            |$1,|xg;
+                  reverse $num;
+                }xeg;
+    print &quot;$string\n&quot;;</FONT></B></PRE></TD></TR></TABLE></UL>
+</BODY>
+</HTML>

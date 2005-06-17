@@ -1,0 +1,71 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE>File::Compare</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0015.htm">File::Copy</a>
+    &nbsp;&nbsp;Previous: <a href="slide0013.htm">File::CheckTree</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name="File::Compare">
+<center>
+<H1>File::Compare
+</H1></center>
+
+
+<P>
+File::Compare offers a number of ways to use it.
+</P>
+
+<UL>
+<TABLE><TR><TD valign="TOP"><IMG SRC="./sqr_orange1.png"></TD><TD>
+The File::Compare::compare function compares the contents of two sources, each of which can be a file or a file handle.  It's exported from File::Compare by default.
+</TD></TR></TABLE>
+<TABLE><TR><TD valign="TOP"><IMG SRC="./sqr_orange1.png"></TD><TD>
+File::Compare::cmp is a synonym for File::Compare::compare.  It's exported from File::Compare only by request.
+</TD></TR></TABLE>
+<TABLE><TR><TD valign="TOP"><IMG SRC="./sqr_orange1.png"></TD><TD>
+File::Compare::compare_text does a line by line comparison of the two files. It stops as soon as a difference is detected. compare_text() accepts an optional third argument: This must be a CODE reference to a line comparison function, which returns 0 when both lines are considered equal. For example:
+</TD></TR></TABLE>
+</UL>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+    compare_text($file1, $file2)</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+is basically equivalent to
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+    compare_text($file1, $file2, sub {$_[0] ne $_[1]} )</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+File::Compare::compare and its sibling functions return 0 if the files are equal, 1 if the files are unequal, or -1 if an error was encountered.
+</P>
+</BODY>
+</HTML>

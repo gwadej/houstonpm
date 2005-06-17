@@ -1,0 +1,69 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE>Inventory Print Script</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0026.htm">Problem Analysis.</a>
+    &nbsp;&nbsp;Previous: <a href="slide0024.htm">Requirements</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name="Inventory Print Script">
+<center>
+<H1>Inventory Print Script
+</H1></center>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+    #!/usr/bin/perl -w
+    use strict;
+    while(&lt;DATA&gt;){
+        next unless /\*/;
+        /^(\d+):/;
+        print &quot;part number $1: &quot;;
+        /:\*(\w+)$/;
+        print &quot;$1 manufacturer\n&quot;;
+    }
+    __DATA__
+    123:17.00:widgets:ACME
+    214:15.50:gadgets:*ACE
+    313:2.95:thingamabobs:TMG
+    222:4.95:widgets:*A-DS
+    524:0.15:gadgets:ACE</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+Running this, we get:
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+    part number 214: ACE manufacturer
+    part number 222: 222 manufacturer</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+Because the second regex didn't match a supplier name (because we use \w which won't match a '-' character) the $1 variable still contained its previous value.  Had our test data not contained a supplier name that didn't match our pattern, we wouldn't even know about the mistake. Perhaps the data file is thousands of lines long, and there are hundreds of such parts.  We run the script; it appears to work; the report looks fine.  We send it off to whoever wanted it and we don't know about our glitch until they come back to point it out.
+</P>
+</BODY>
+</HTML>

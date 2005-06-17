@@ -1,0 +1,82 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE>Creating A Scrolling List</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0025.htm">More</a>
+    &nbsp;&nbsp;Previous: <a href="slide0023.htm">Creating A Popup Menu</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name="Creating A Scrolling List">
+<center>
+<H1>Creating A Scrolling List
+</H1></center>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+   print $query-&gt;scrolling_list(-name=&gt;'list_name',
+                                -values=&gt;['eenie','meenie','minie','moe'],
+                                -default=&gt;['eenie','moe'],
+	                        -size=&gt;5,
+	                        -multiple=&gt;'true',
+                                -labels=&gt;%labels);</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+scrolling_list() creates a scrolling list.
+</P>
+
+<UL>
+<TABLE><TR><TD valign="TOP"><IMG SRC="./sqr_orange1.png"></TD><TD>
+The first and second arguments (-name, -values)are the list name and values, respectively. As in the popup menu, the second argument should be an array reference or hash reference. In the latter case, the values of the hash are used as the human-readable labels in the list.
+</TD></TR></TABLE>
+<TABLE><TR><TD valign="TOP"><IMG SRC="./sqr_orange1.png"></TD><TD>
+The optional third argument (-default)can be either a reference to a list containing the values to be selected by default, or can be a single value to select. If this argument is missing or undefined, then nothing is selected when the list first appears.
+</TD></TR></TABLE>
+<TABLE><TR><TD valign="TOP"><IMG SRC="./sqr_orange1.png"></TD><TD>
+The optional fourth argument (-size) is the display size of the list.
+</TD></TR></TABLE>
+<TABLE><TR><TD valign="TOP"><IMG SRC="./sqr_orange1.png"></TD><TD>
+The optional fifth argument (-multiple) can be set to true to allow multiple simultaneous selections.
+</TD></TR></TABLE>
+<TABLE><TR><TD valign="TOP"><IMG SRC="./sqr_orange1.png"></TD><TD>
+The option sixth argument (-labels) can be used to assign user-visible labels to the list items different from the ones used for the values as above. This is equivalent to passing a hash reference to -values. In this example we assume that an associative array %labels has already been created.
+</TD></TR></TABLE>
+</UL>
+
+
+<P>
+When this form is processed, all selected list items will be returned as a list under the parameter name 'list_name'. The values of the selected items can be retrieved with:
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+     @selected = $query-&gt;param('list_name');</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+JavaScripting: You can provide -onChange, -onFocus, -onMouseOver, -onMouseOut and -onBlur parameters to register JavaScript event handlers.
+</P>
+</BODY>
+</HTML>

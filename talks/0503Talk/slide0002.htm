@@ -1,0 +1,98 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE> What are References?</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0003.htm"> References to Anonymous Somethings</a>
+    &nbsp;&nbsp;Previous: <a href="slide0001.htm"> Perl Core Language: References and Quoting</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name=" What are References?">
+<center>
+<H1>2  What are References?
+</H1></center>
+
+<UL>
+<TABLE><TR><TD valign="TOP"><IMG SRC="./sqr_orange1.png"></TD><TD>
+A <I>reference</I> is a scalar that <I>refer</I>s or <I>point</I>s to something.
+</TD></TR></TABLE>
+<TABLE><TR><TD valign="TOP"><IMG SRC="./sqr_orange1.png"></TD><TD>
+That something is retrieved through <I>dereferencing</I>.
+</TD></TR></TABLE>
+<TABLE><TR><TD valign="TOP"><IMG SRC="./sqr_orange1.png"></TD><TD>
+One way to generate a reference is with the <I>backslash</I> operator.
+</TD></TR></TABLE>
+</UL>
+
+
+<P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+# Reference to scalar
+
+my $var = 1;
+
+my $sref = \$var;
+${$sref} = 5;
+
+print &quot;\$var = $var, \$\$sref = ${$sref}\n&quot;; # prints $var = 5, $$sref = 5
+
+# Reference to array
+
+my @array = (1 .. 5);
+
+my $aref = \@array;
+
+${$aref}[1] = 10;
+$aref-&gt;[3] = 30;
+
+print &quot;\@array = (@array), \@\$aref = (@{$aref})\n&quot;;
+  # prints @array = (1 10 3 30 5), @$sref = (1 10 3 30 5)
+
+# Reference to hash
+
+my %hash = ( fred =&gt; &quot;flintstone&quot;, barney =&gt; &quot;rubble&quot; );
+
+my $href = \%hash;
+
+${$href}{'larry'} = &quot;wall&quot;;
+foreach my $key (sort keys %{$href})
+{
+    print &quot;$key = $href-&gt;{$key}\n&quot;;  # prints firstname = lastname for each key
+}
+
+# Reference to code
+
+sub hello  { print &quot;hello, world\n&quot;; }
+
+my $cref = \&amp;hello;
+
+&amp;$cref();  # prints hello, world
+
+$cref-&gt;(); # as does this.
+</FONT></B></PRE></TD></TR></TABLE></UL>
+
+</P>
+</BODY>
+</HTML>

@@ -1,0 +1,88 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE>DB_File</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0012.htm">File::Basename</a>
+    &nbsp;&nbsp;Previous: <a href="slide0010.htm">Cwd</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name="DB_File">
+<center>
+<H1>DB_File
+</H1></center>
+
+
+<P>
+DB_File is a module which allows Perl programs to make use of the facilities provided by Berkeley DB version 1.x (if you have a newer version of DB, see &quot;Using DB_File with Berkeley DB version 2 or greater&quot;).  it's assumed that you have a copy of the Berkeley DB manual pages at hand when reading this documentation. The interface defined here mirrors the Berkeley DB interface closely.
+</P>
+
+
+<P>
+Berkeley DB is a C library which provides a consistent interface to a number of database formats.  DB_File provides an interface to all three of the database types currently supported by Berkeley DB.
+</P>
+
+
+<P>
+The file types are:
+</P>
+
+
+<P>
+DB_HASH
+</P>
+
+<UL>
+<TABLE><TR><TD valign="TOP"><IMG SRC="./sqr_orange1.png"></TD><TD>
+This database type allows arbitrary key/value pairs to be stored in data files. This is equivalent to the functionality provided by other hashing packages like DBM, NDBM, ODBM, GDBM, and SDBM.  Remember though, the files created using DB_HASH are not compatible with any of the other packages mentioned.
+</TD></TR></TABLE>
+<TABLE><TR><TD valign="TOP"><IMG SRC="./sqr_orange1.png"></TD><TD>
+A default hashing algorithm, which will be adequate for most applications, is built into Berkeley DB. If you do need to use your own hashing algorithm it's possible to write your own in Perl and have DB_File use it instead.
+</TD></TR></TABLE>
+</UL>
+
+
+<P>
+DB_BTREE
+</P>
+
+<UL>
+<TABLE><TR><TD valign="TOP"><IMG SRC="./sqr_orange1.png"></TD><TD>
+The btree format allows arbitrary key/value pairs to be stored in a sorted, balanced binary tree.
+</TD></TR></TABLE>
+<TABLE><TR><TD valign="TOP"><IMG SRC="./sqr_orange1.png"></TD><TD>
+As with the DB_HASH format, it's possible to provide a user defined Perl routine to perform the comparison of keys. By default, though, the keys are stored in lexical order.
+</TD></TR></TABLE>
+</UL>
+
+
+<P>
+DB_RECNO
+</P>
+
+<UL>
+<TABLE><TR><TD valign="TOP"><IMG SRC="./sqr_orange1.png"></TD><TD>
+DB_RECNO allows both fixed-length and variable-length flat text files to be manipulated using the same key/value pair interface as in DB_HASH and DB_BTREE.  In this case the key will consist of a record (line) number.
+</TD></TR></TABLE>
+</UL>
+</BODY>
+</HTML>

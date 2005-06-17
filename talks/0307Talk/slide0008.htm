@@ -1,0 +1,87 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE>Using Groups ( ) in Matching</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0009.htm">Using Character Classes [ ]</a>
+    &nbsp;&nbsp;Previous: <a href="slide0007.htm">Using Simple &quot;Wildcards&quot; and &quot;Repetitions&quot;</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name="Using Groups ( ) in Matching">
+<center>
+<H1>Using Groups ( ) in Matching
+</H1></center>
+
+
+<P>
+Groups are regular expression characters surrounded by parentheses. They have two major uses:
+</P>
+
+<OL>
+<LI VALUE=1>To allow alternative phrases as in \I&lt;/(Clinton|Bush|Reagan)/i&gt;. Note that for single character alternatives, you can also use character classes.</LI>
+<LI>As a means of retrieving selected text in selection, translation and substitution, used with the $1, $2, etc scalers.</LI>
+</OL>
+
+
+<P>
+This section will discuss only the first use.
+</P>
+
+
+<P>
+Powerful regular expressions can be made with groups. At its simplest, you can match either all lowercase or name case like this:
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+ if($string =~ m/(G|g)eorge (B|b)Bush/)
+   {print &quot;It's Bush, all right!n&quot;}</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+Detect all strings containing uppercase or lowercase vowels
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+ if($string =~ m/(A|E|I|O|U|Y)/i)
+   {print &quot;String contains a vowel!n&quot;}</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+Detect if the line starts with any of the three presidents (ignoring case)
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+ if($string =~ m/^(Clinton|Bush|Reagan)/i)
+   {print &quot;$stringn&quot;};</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+Note that the parenthesized element will appear as $1 statements that follow the regular expression. That's OK. If you don't want to use $1, just ignore it. The use of $1, etc, will be explained in the section on Doing String Selections.
+</P>
+</BODY>
+</HTML>

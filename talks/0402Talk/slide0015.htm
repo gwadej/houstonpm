@@ -1,0 +1,60 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE>Subtle problems</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0016.htm">A logical use for <I>our</I> declaration</a>
+    &nbsp;&nbsp;Previous: <a href="slide0014.htm">Example using <I>our</I></a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name="Subtle problems">
+<center>
+<H1>Subtle problems
+</H1></center>
+
+
+<P>
+The main problem is that you're now using global variables which is generally a <B>Bad Thing</B>. Any code, anywhere, can change your global. Large systems with lots of globals typically suffer this problems and quickly become unmaintainable.
+</P>
+
+
+<P>
+This also leads to very subtle coding errors. Try the following code:
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+    use strict;
+    for ( 1 .. 3 ) { &amp;doit }
+
+    sub doit {
+        our $foo;
+        print ++$foo . &quot;\n&quot;;
+    }</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+That will print 1, 2, and 3 on successive lines. Change the <I>our</I> to a <I>my</I> and it prints 1, 1, and 1. Because the <I>my</I> variable goes out of scope at the end of the sub and the <I>our</I> variable doesn't (since it's global), you get wildly different results.
+</P>
+</BODY>
+</HTML>

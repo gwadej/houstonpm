@@ -1,0 +1,55 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE>Predefined Formats</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0029.htm">Summary Of Getopt::Declare</a>
+    &nbsp;&nbsp;Previous: <a href="slide0027.htm">Program Output</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name="Predefined Formats">
+<center>
+<H1>Predefined Formats
+</H1></center>
+
+
+<P>
+This module also allows you to specify a few predefined formats for option arguments to take:
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+    -x &lt;num:n&gt;    the :n means the argument must be a number
+    -x &lt;num:i&gt;    the :i means the argument must be an integer
+    -x &lt;num:+i&gt;   must be a positive integer
+    -x &lt;str:s&gt;    must be a string (default case)
+    -x &lt;file:if&gt;  input file (must be readable file or '-' for STDIN)
+    -x &lt;file:of&gt;  output file (must be writable or not exist or '-'
+                  for STDOUT)</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+There are a few other builtin specifier types, and you can define new ones using the full power of Perl's regular expressions.
+</P>
+</BODY>
+</HTML>

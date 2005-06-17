@@ -1,0 +1,102 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE> How Does It Work?</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0011.htm"> What If We move to a different RDBMS?</a>
+    &nbsp;&nbsp;Previous: <a href="slide0009.htm"> Our First Output</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name=" How Does It Work?">
+<center>
+<H1>10  How Does It Work?
+</H1></center>
+
+
+<P>
+First we have the normal beginning of the script.
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+	 #!/usr/bin/perl
+
+	 use DBI;
+
+	 use strict;
+	 use warnings;</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+Then, we connect to a database.
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+	my $dbh = DBI-&gt;connect( &quot;dbi:CSV:f_dir=db&quot;, &quot;fred&quot;, &quot;secret&quot; )
+	    or die &quot;Cannot connect to database: $DBI::errstrn&quot;;</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+Execute a SQL Select statement.
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+	my $sth = $dbh-&gt;prepare( &quot;SELECT * from People&quot; )
+	    or die &quot;Cannot prepare select statement: $DBI::errstrn&quot;;
+
+	$sth-&gt;execute
+	    or die &quot;Cannot execute select statement: $DBI::errstrn&quot;;</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+Output what we got.
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+	my @row;
+	while(@row = $sth-&gt;fetchrow_array())
+	{
+	    print &quot;Row: &quot;, join( &quot;, &quot;, @row ), &quot;n&quot;;
+	}
+
+	warn &quot;Data fetch terminated with error: $DBI::errstrn&quot;
+	    if $DBI::err;</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+Disconnect when finished
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+	$dbh-&gt;disconnect
+	    or warn &quot;Error disconnecting: $DBI::errstrn&quot;;</FONT></B></PRE></TD></TR></TABLE></UL>
+</BODY>
+</HTML>

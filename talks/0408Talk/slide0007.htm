@@ -1,0 +1,51 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE>Setting The Value(s) Of A Named Parameter</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0008.htm">Deleting a Named Parameter Entirely</a>
+    &nbsp;&nbsp;Previous: <a href="slide0006.htm">Fetching The Value(s) Of A Named Parameter</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name="Setting The Value(s) Of A Named Parameter">
+<center>
+<H1>Setting The Value(s) Of A Named Parameter
+</H1></center>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+   $query-&gt;param('foo','an','array','of','values');
+                   -or-
+   $query-&gt;param(-name=&gt;'foo',-values=&gt;['an','array','of','values']);</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+This sets the value for the named parameter 'foo' to one or more values. These values will be used to initialize form elements, if you so desire. Note that this is the one way to forcibly change the value of a form field after it has previously been set.
+</P>
+
+
+<P>
+The second example shows an alternative &quot;named parameter&quot; style of function call that is accepted by most of the CGI methods.
+</P>
+</BODY>
+</HTML>

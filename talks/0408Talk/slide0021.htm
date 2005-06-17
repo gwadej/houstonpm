@@ -1,0 +1,52 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE>Creating A Big Text Field</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0022.htm">Creating A Password Field</a>
+    &nbsp;&nbsp;Previous: <a href="slide0020.htm">Creating A Text Field</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name="Creating A Big Text Field">
+<center>
+<H1>Creating A Big Text Field
+</H1></center>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+   print $query-&gt;textarea(-name=&gt;'foo',
+	 		  -default=&gt;'starting value',
+	                  -rows=&gt;10,
+	                  -columns=&gt;50);</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+textarea() is just like textfield(), but it allows you to specify rows and columns for a multiline text entry box. You can provide a starting value for the field, which can be long and contain multiple lines.
+</P>
+
+
+<P>
+JavaScripting: Like textfield(), you can provide -onChange, -onFocus, -onBlur, -onMouseOver, -onMouseOut and -onSelect parameters to register JavaScript event handlers.
+</P>
+</BODY>
+</HTML>

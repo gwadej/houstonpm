@@ -1,0 +1,70 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE>Fill-out form that remembers its state</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0003.htm">Function-Oriented use</a>
+    &nbsp;&nbsp;Previous: <a href="slide0001.htm">CGI.pm - A Perl5 CGI library</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name="Fill-out form that remembers its state">
+<center>
+<H1>Fill-out form that remembers its state
+</H1></center>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+ use CGI qw(:standard);
+
+ print header;
+ print start_html('A Simple Example'),
+    h1('A Simple Example'),
+    start_form,
+    &quot;What's your name? &quot;,textfield('name'),
+    p,
+    &quot;What's the combination?&quot;,
+    p,
+    checkbox_group(-name=&gt;'words',
+		   -values=&gt;['eenie','meenie','minie','moe'],
+		   -defaults=&gt;['eenie','minie']),
+    p,
+    &quot;What's your favorite color? &quot;,
+    popup_menu(-name=&gt;'color',
+	       -values=&gt;['red','green','blue','chartreuse']),
+    p,
+    submit,
+    end_form,
+    hr;
+
+ if (param()) {
+    print
+	&quot;Your name is&quot;,em(param('name')),
+	p,
+	&quot;The keywords are: &quot;,em(join(&quot;, &quot;,param('words'))),
+	p,
+	&quot;Your favorite color is &quot;,em(param('color')),
+	hr;
+ }
+ print end_html;</FONT></B></PRE></TD></TR></TABLE></UL>
+</BODY>
+</HTML>

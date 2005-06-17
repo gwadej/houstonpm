@@ -1,0 +1,57 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE> Binding Columns (Output)</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0017.htm"> Simplifying non-SELECT Statements</a>
+    &nbsp;&nbsp;Previous: <a href="slide0015.htm"> Binding Parameters (Input)</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name=" Binding Columns (Output)">
+<center>
+<H1>16  Binding Columns (Output)
+</H1></center>
+
+
+<P>
+Although it's easy to fetch arrays of output as shown above, sometimes you know right where you want the data to be put. Binding columns helps with that.
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+  $sth-&gt;bind_col( 1, $id );
+  $sth-&gt;bind_col( 2, $surname );
+  $sth-&gt;bind_col( 3, $given );
+  $sth-&gt;bind_col( 4, $position );
+
+  while($sth-&gt;fetch)
+  {
+      # Do something with $id, $surname, $given, and $position
+  }</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+Note that column numbers start with 1.
+</P>
+</BODY>
+</HTML>

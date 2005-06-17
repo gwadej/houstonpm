@@ -1,0 +1,84 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE>Grabbing and Changing Substrings within a String</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0002.htm">Finding Strings withing Strings</a>
+    &nbsp;&nbsp;Previous: <a href="slide0000.htm" target="Data">Index</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name="Grabbing and Changing Substrings within a String">
+<center>
+<H1>Grabbing and Changing Substrings within a String
+</H1></center>
+
+
+<P>
+Perl's substr() function allows you to grab part of string (a substring). You provide an index into the string and the length of the substring you want:
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+    $string = 'foobarbaz';
+    $data   = substr($string,3,3);
+    print &quot;$string:$data\n&quot;; # prints: foobarbaz:bar</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+Note, this is non-destructive and $string remains unchanged.
+</P>
+
+
+<P>
+You can use the substr() function to grab portions of a string, but you can also use it to replace a given substring with another string by providing substr() with a 4th argument:
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+    $string = 'foobarbaz';
+    $data   = substr($string,3,3,'quux');
+    print &quot;$string:$data\n&quot;; # prints: fooquuxbaz:bar</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+Notice how replacement substring is longer than the specified substring -- this isn't a problem and the string will shrink or grow as needed.
+</P>
+
+
+<P>
+This can also be done with assignment -- the following two are equivelant:
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+    substr($string,3,3,'quux');
+    substr($string,3,3) = 'quux';</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+For more on the substr() function see: perldoc -f substr
+</P>
+</BODY>
+</HTML>

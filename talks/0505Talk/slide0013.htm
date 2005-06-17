@@ -1,0 +1,50 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE> Regexes and List Context</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0014.htm"> Changing Text</a>
+    &nbsp;&nbsp;Previous: <a href="slide0012.htm"> After the Regex</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name=" Regexes and List Context">
+<center>
+<H1>6.3  Regexes and List Context
+</H1></center>
+
+
+<P>
+Matched text returned in list context.
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+   my ($name, $value) = m/\s*(\w+)\s*=\s*(.*)/;
+</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+The value of <CODE>$1</CODE> is assigned to <CODE>$name</CODE> and the value of <CODE>$2</CODE> is assigned to <CODE>$value</CODE>. If there were a value for <CODE>$3</CODE>, it would have been discarded in this case.
+</P>
+</BODY>
+</HTML>

@@ -1,0 +1,128 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE> Minimal Webserver</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0006.htm"> What's it Doing?</a>
+    &nbsp;&nbsp;Previous: <a href="slide0004.htm"> Smaller Solution</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name=" Minimal Webserver">
+<center>
+<H1>5  Minimal Webserver
+</H1></center>
+
+
+<P>
+Serving static content from a single directory tree.
+</P>
+
+
+<P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+#!/usr/bin/perl
+
+use HTTP::Daemon;
+use HTTP::Status;
+use File::Spec;
+use Getopt::Std;
+
+use strict;
+use warnings;
+
+# Filename to use for directory indices.
+use constant INDEX_FILE =&gt; &quot;index.html&quot;;
+
+my %opts = ();
+getopts( &quot;p:d:&quot;, \%opts ) or die &quot;Invalid argument\n&quot;;
+
+my $port    = $opts{p} || 8080;
+my $docroot = $opts{d} || &quot;.&quot;;
+
+my $daemon = HTTP::Daemon-&gt;new( LocalPort =&gt; $port ) or die;
+print &quot;Please contact me at: &lt;URL:&quot;, $daemon-&gt;url(), &quot;&gt;\n&quot;,
+      &quot;Documents in '$docroot'\n&quot;;
+
+while (my $conn = $daemon-&gt;accept())
+{
+    eval
+    {
+	while (my $r = $conn-&gt;get_request())
+	{
+            my $path = resolve_path( $r-&gt;url-&gt;path() );
+
+            if ($r-&gt;method ne &quot;GET&quot; or !defined( $path ))
+	    {
+        	$conn-&gt;send_error( RC_FORBIDDEN );
+            }
+            elsif(-e $path)
+	    {
+		if(-d $path)
+		{
+	    	    $path = File::Spec-&gt;catfile( $path, INDEX_FILE );
+		}
+
+		if(-r $path)
+		{
+                    $conn-&gt;send_file_response( $path );
+		}
+		else
+		{
+                    $conn-&gt;send_error( RC_FORBIDDEN );
+		}
+            }
+            else
+	    {
+        	$conn-&gt;send_error( RC_NOT_FOUND );
+	    }
+	}
+    };
+    
+    print STDERR &quot;Caught exception: $@&quot; if $@;
+
+    $conn-&gt;close();
+    undef($conn);
+}
+
+
+sub  resolve_path
+{
+    my $path = shift;
+    
+    # Fail if illegal characters
+    return undef if $path =~ m![^-a-zA-Z0-9_\./]!;
+
+    $path = File::Spec-&gt;canonpath( File::Spec-&gt;catfile( $docroot, $path ) );
+
+    # Fail if try to walk out of docroot.
+    return undef if $docroot ne substr( $path, 0, length $docroot );
+    
+    $path;
+}
+</FONT></B></PRE></TD></TR></TABLE></UL>
+
+</P>
+</BODY>
+</HTML>

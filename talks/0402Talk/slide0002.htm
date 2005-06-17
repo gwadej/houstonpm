@@ -1,0 +1,65 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE>Use Times Function</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0003.htm">Results for each method (on a fairly slow machine)</a>
+    &nbsp;&nbsp;Previous: <a href="slide0001.htm">Benchmarking Perl Routines</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name="Use Times Function">
+<center>
+<H1>Use Times Function
+</H1></center>
+
+
+<P>
+One simple way to time variations of a construct is to use the built-in 'times' function.  This function returns the user and system times of the current process (in seconds), so you can capture the elapsed time before and after the routine (which should probably be run in a loop to create a measurable timing) and calculate the difference.  Let's use this method to compare two methods of stripping out vowel characters from a string.  On method uses the s/// operator and the other uses the tr/// operator:
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+    #!/usr/bin/perl -w
+    use strict;
+
+    my $count = 100000;
+
+    my $start = (times)[0];
+
+    for (my $i = 0; $i &lt; $count; $i++){
+        $_ = 'foobar';
+        s/[aeiou]//g;
+        #tr/aeiou//d;
+    }
+    print &quot;** $_ **\n&quot;;  # just to test result of operation
+
+    my $delta = (times)[0] - $start;
+    print &quot;Took $delta seconds on $count iterations\n&quot;;
+    __END__</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+Here we have just one loop and we comment out one of the methods. Note, just after the loop we print the $_ variable just to ensure we didn't make an error and we're stripping vowels.
+</P>
+</BODY>
+</HTML>

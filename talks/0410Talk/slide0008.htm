@@ -1,0 +1,72 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE> How to Use DBI</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0009.htm"> Our First Output</a>
+    &nbsp;&nbsp;Previous: <a href="slide0007.htm"> Quick Overview of SQL</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name=" How to Use DBI">
+<center>
+<H1>8  How to Use DBI
+</H1></center>
+
+
+<P>
+Here's a little DBI example
+</P>
+
+
+<P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+#!/usr/bin/perl
+
+use DBI;
+
+use strict;
+use warnings;
+
+my $dbh = DBI-&gt;connect( &quot;dbi:CSV:f_dir=db&quot;, &quot;fred&quot;, &quot;secret&quot; )
+    or die &quot;Cannot connect to database: $DBI::errstr\n&quot;;
+
+my $sth = $dbh-&gt;prepare( &quot;SELECT * from People&quot; )
+    or die &quot;Cannot prepare select statement: $DBI::errstr\n&quot;;
+
+$sth-&gt;execute()
+    or die &quot;Cannot execute select statement: $DBI::errstr\n&quot;;
+
+my @row;
+while(@row = $sth-&gt;fetchrow_array())
+{
+    print &quot;Row: &quot;, join( &quot;, &quot;, @row ), &quot;\n&quot;;
+}
+
+$dbh-&gt;disconnect;
+</FONT></B></PRE></TD></TR></TABLE></UL>
+
+</P>
+</BODY>
+</HTML>

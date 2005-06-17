@@ -1,0 +1,49 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE> The Input Text and Captures</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0023.htm"> Testing the Regexp</a>
+    &nbsp;&nbsp;Previous: <a href="slide0021.htm"> Header for the Text</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name=" The Input Text and Captures">
+<center>
+<H1>7.6.3  The Input Text and Captures
+</H1></center>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+  $f = $mw-&gt;Frame();
+  $textWidget = $f-&gt;Text( -wrap =&gt; 'none', -width =&gt; 50, -height=&gt; 13 )
+		            -&gt;pack( -side =&gt; 'left', -anchor =&gt; 'n' );
+  $listWidget = $f-&gt;Listbox( -height =&gt; 10, -width =&gt; 20 )
+                    -&gt;pack( -side =&gt; 'right', -anchor =&gt; 'n' );
+  $f-&gt;pack( -anchor =&gt; 'w' );</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+Define a <CODE>Text</CODE> widget for the input text and a list box where we put the captured text from the regex match.
+</P>
+</BODY>
+</HTML>

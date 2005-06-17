@@ -1,0 +1,63 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE>FileCache</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0022.htm">FindBin</a>
+    &nbsp;&nbsp;Previous: <a href="slide0020.htm">File::stat</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name="FileCache">
+<center>
+<H1>FileCache
+</H1></center>
+
+
+<P>
+FileCache supplies a &quot;cacheout&quot; function.  The &quot;cacheout&quot; function will make sure that there's a filehandle open for reading or writing available as the pathname you give it. It automatically closes and re-opens files if you exceed your system's maximum number of file descriptors, or the suggested maximum.
+</P>
+
+
+<P>
+cacheout EXPR
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+    The 1-argument form of cacheout will open a file for writing ('&gt;')
+    on it's first use, and appending ('&gt;&gt;') thereafter.</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+cacheout MODE, EXPR
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+    The 2-argument form of cacheout will use the supplied mode for the
+    initial and subsequent openings. Most valid modes for 3-argument
+    &quot;open&quot; are supported namely; '&gt;', '+&gt;', '&lt;', '&lt;+', '&gt;&gt;',  '|-'  and
+    '-|'</FONT></B></PRE></TD></TR></TABLE></UL>
+</BODY>
+</HTML>

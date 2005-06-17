@@ -1,0 +1,63 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE>Main Difference.</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0014.htm">Using a Hash.</a>
+    &nbsp;&nbsp;Previous: <a href="slide0012.htm">Parsing Command Line Options - Getopt::Long</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name="Main Difference.">
+<center>
+<H1>Main Difference.
+</H1></center>
+
+
+<P>
+One main difference is that you specify each option character (or name) as a separate argument (rather than a single string of option characters). To associate an option with a variable, you pass the option string followed by a reference to the variable.
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+    #!/usr/bin/perl -w
+    use strict;
+    use Getopt::Long;
+    my ($opt_a, $opt_help);
+    GetOptions('a', \$opt_a, 'help', \$opt_help);
+    print &quot;-a is $opt_a\n&quot; if defined $opt_a;
+    print &quot;--help is $opt_help\n&quot; if defined $opt_help;
+    __END__</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+We can now call this program (saved as testopt.pl) as follows:
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+    perl testopt.pl -a          &lt;-- a option is on
+    perl testopt.pl --help      &lt;-- help option is on
+    perl testopt.pl --help -a   &lt;-- both options are on</FONT></B></PRE></TD></TR></TABLE></UL>
+</BODY>
+</HTML>

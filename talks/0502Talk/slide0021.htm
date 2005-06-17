@@ -1,0 +1,76 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE> Test::Harness</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0022.htm"> But What About Scripts?</a>
+    &nbsp;&nbsp;Previous: <a href="slide0020.htm"> How Does This Help?</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name=" Test::Harness">
+<center>
+<H1>14  Test::Harness
+</H1></center>
+
+
+<P>
+Laziness is a Perl virtue.
+</P>
+
+
+<P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+t/max....ok
+t/min....ok
+t/sum....ok
+All tests successful.
+Files=3, Tests=17,  0 wallclock secs ( 0.13 cusr +  0.02 csys =  0.15 CPU)
+</FONT></B></PRE></TD></TR></TABLE></UL>
+
+</P>
+
+
+<P>
+The <CODE>Test::Harness</CODE> module can run multiple test scripts and summarize the output.
+</P>
+
+
+<P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+#!/usr/bin/perl
+
+use Test::Harness;
+use strict;
+use warnings;
+
+runtests( @ARGV );
+</FONT></B></PRE></TD></TR></TABLE></UL>
+
+</P>
+</BODY>
+</HTML>

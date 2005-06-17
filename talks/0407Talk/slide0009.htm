@@ -1,0 +1,53 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE> Pre Process example</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0010.htm"> Example ttree source file</a>
+    &nbsp;&nbsp;Previous: <a href="slide0008.htm"> Pre and Post Process</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name=" Pre Process example">
+<center>
+<H1> Pre Process example
+</H1></center>
+
+
+<P>
+$lib/config:
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+    [% root     = '~/abw'
+       home     = &quot;$root/index.html&quot;
+       images   = &quot;$root/images&quot;
+       email    = 'abw@wardley.org'
+       graphics = 1
+       webpages = [
+         { url =&gt; 'http://foo.org', title =&gt; 'The Foo Organization' }
+         { url =&gt; 'http://bar.org', title =&gt; 'The Bar Organization' }
+       ]
+    %]</FONT></B></PRE></TD></TR></TABLE></UL>
+</BODY>
+</HTML>

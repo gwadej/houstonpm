@@ -1,0 +1,82 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE> The Example As a Module</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0026.htm"> Automating Testing Advantages</a>
+    &nbsp;&nbsp;Previous: <a href="slide0024.htm"> An Example As a Script</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name=" The Example As a Module">
+<center>
+<H1>18  The Example As a Module
+</H1></center>
+
+
+<P>
+We change it to look like this:
+</P>
+
+
+<P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+
+__PACKAGE__-&gt;run() unless caller();
+
+
+sub run
+{
+    process_cmd_line()
+
+    while(&lt;&gt;)
+    {
+        process_line( $_ );
+    }
+
+    report_results();
+}
+
+sub process_cmd_line
+{
+}
+
+sub process_line
+{
+}
+
+sub report_results
+{
+}
+
+1;
+</FONT></B></PRE></TD></TR></TABLE></UL>
+
+</P>
+</BODY>
+</HTML>

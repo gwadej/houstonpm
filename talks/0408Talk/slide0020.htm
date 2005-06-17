@@ -1,0 +1,82 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE>Creating A Text Field</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0021.htm">Creating A Big Text Field</a>
+    &nbsp;&nbsp;Previous: <a href="slide0019.htm">More General Notes</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name="Creating A Text Field">
+<center>
+<H1>Creating A Text Field
+</H1></center>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+  print $query-&gt;textfield(-name=&gt;'field_name',
+	                    -default=&gt;'starting value',
+	                    -size=&gt;50,
+	                    -maxlength=&gt;80);</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+textfield() will return a text input field.
+</P>
+
+<UL>
+<TABLE><TR><TD valign="TOP"><IMG SRC="./sqr_orange1.png"></TD><TD>
+The first parameter (-name) is the required name for the field.
+</TD></TR></TABLE>
+<TABLE><TR><TD valign="TOP"><IMG SRC="./sqr_orange1.png"></TD><TD>
+The optional second parameter (-default) is the starting value for the field contents.
+</TD></TR></TABLE>
+<TABLE><TR><TD valign="TOP"><IMG SRC="./sqr_orange1.png"></TD><TD>
+The optional third parameter (-size) is the size of the field in characters.
+</TD></TR></TABLE>
+<TABLE><TR><TD valign="TOP"><IMG SRC="./sqr_orange1.png"></TD><TD>
+The optional fourth parameter (-maxlength) is the maximum number of characters the field will accomodate.
+</TD></TR></TABLE>
+</UL>
+
+
+<P>
+As with all these methods, the field will be initialized with its previous contents from earlier invocations of the script.
+</P>
+
+
+<P>
+When the form is processed, the value of the text field can be retrieved with:
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+      $value = $query-&gt;param('foo');</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+JavaScripting: You can also provide -onChange, -onFocus, -onBlur, -onMouseOver, -onMouseOut and -onSelect parameters to register JavaScript event handlers.
+</P>
+</BODY>
+</HTML>

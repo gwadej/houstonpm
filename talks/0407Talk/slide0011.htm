@@ -1,0 +1,64 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE> ttree output when running</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0012.htm"> ttree result file</a>
+    &nbsp;&nbsp;Previous: <a href="slide0010.htm"> Example ttree source file</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name=" ttree output when running">
+<center>
+<H1> ttree output when running
+</H1></center>
+
+
+<P>
+When you run ttree, you should see output similar to the following (assuming you have the verbose flag set).
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+  ttree 1.14 (Template Toolkit version 1.02a)
+        Source: /home/abw/websrc/src
+   Destination: /home/abw/public_html/test
+  Include Path: [ /home/abw/websrc/lib ]
+        Ignore: [ b(CVS|RCS)b, ^# ]
+          Copy: [  ]
+        Accept: [ * ]
+    + newpage.html
+
+ The '+' before 'newpage.html' shows that the file was processed, with
+the output being written to the destination directory. If you run the
+same command again, you'll see the following line displayed instead
+showing a '-' and giving a reason why the file wasn't processed.
+
+    - newpage.html                     (not modified)
+
+ It has detected a 'newpage.html' in the destination directory which
+is more recent than that in the source directory and so hasn't
+bothered to waste time re-processing it. To force all files to be
+processed, use the '-a' option. You can also specify one or more
+filenames as command line arguments to ttree:</FONT></B></PRE></TD></TR></TABLE></UL>
+</BODY>
+</HTML>

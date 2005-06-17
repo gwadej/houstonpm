@@ -1,0 +1,72 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE> The New Commands Hash</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0013.htm"> Using the New Commands Hash</a>
+    &nbsp;&nbsp;Previous: <a href="slide0011.htm"> Calculator Example, Take Two</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name=" The New Commands Hash">
+<center>
+<H1>5.1  The New Commands Hash
+</H1></center>
+
+<UL>
+<TABLE><TR><TD valign="TOP"><IMG SRC="./sqr_orange1.png"></TD><TD>
+We have extended the values in the <CODE>%Commands</CODE> hash to be references to hashes.
+</TD></TR></TABLE>
+<TABLE><TR><TD valign="TOP"><IMG SRC="./sqr_orange1.png"></TD><TD>
+These new extended structures store more information.
+</TD></TR></TABLE>
+</UL>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+    &quot;+&quot; =&gt;
+        {
+           code =&gt; sub { push @Stack, pop( @Stack ) + pop( @Stack ) },
+	   help =&gt; &quot;adds the top two numbers on the stack&quot;,
+	   count =&gt; 2,
+	},</FONT></B></PRE></TD></TR></TABLE></UL>
+
+<UL>
+<TABLE><TR><TD valign="TOP"><IMG SRC="./sqr_orange1.png"></TD><TD>
+Once again a command string is the key, but the value now holds
+</TD></TR></TABLE>
+</UL>
+<UL>
+
+<UL>
+<TABLE><TR><TD valign="TOP"><IMG SRC="./sqr_orange2.png"></TD><TD>
+a coderef,
+</TD></TR></TABLE>
+<TABLE><TR><TD valign="TOP"><IMG SRC="./sqr_orange2.png"></TD><TD>
+a help string,
+</TD></TR></TABLE>
+<TABLE><TR><TD valign="TOP"><IMG SRC="./sqr_orange2.png"></TD><TD>
+a required stack depth.
+</TD></TR></TABLE>
+</UL>
+</BODY>
+</HTML>

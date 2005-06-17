@@ -1,0 +1,63 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE>The splice function</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0007.htm">Addendum to September 2003 Talk</a>
+    &nbsp;&nbsp;Previous: <a href="slide0005.htm">Adding and Removing Elements from an Array</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name="The splice function">
+<center>
+<H1>The splice function
+</H1></center>
+
+
+<P>
+The splice() function can remove or add elements to any arbitrary location in an array. The full syntax is:
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+    splice ARRAY, OFFSET, LENGTH, LIST</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+The last two arguments are optional. This function removes LENGTH elements from the ARRAY starting at element OFFSET. If the LENGTH argument is not given, it removes everything from the OFFSET to the end of the array. If the LIST if given, then the removed elements are replaced by the given list.
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+    my @array = (1,2,3,4,5);
+    splice(@array, 1, 2);
+    print &quot;@array\n&quot;;    # prints: 1 4 5
+    splice(@array, 1, 0, 42, 43, 44);
+    print &quot;@array\n&quot;;    # prints: 1 42 43 44 4 5</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+Notice how using a zero LENGTH parameter allows you to insert elements into the array without removing any existing elements.
+</P>
+</BODY>
+</HTML>

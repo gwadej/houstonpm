@@ -1,0 +1,67 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE>Extracting unique items</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0021.htm">Avoiding Duplicates Summary</a>
+    &nbsp;&nbsp;Previous: <a href="slide0019.htm">Avoiding Duplicates with Hashes</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name="Extracting unique items">
+<center>
+<H1>Extracting unique items
+</H1></center>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+    my @list = qw/foo bar baz foo quux bar foo/;
+    print &quot;@list\n&quot;;
+    my %seen;
+    foreach my $item (@list) {
+        $seen{$item}++;
+    }</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+Now, we could print out a list of the unique elements along with their frequency in the original list:
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+    foreach my $key (keys %seen) {
+        print &quot;$key: $seen{$key}\n&quot;;
+    }</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+Or, perhaps we just want a new array of the unique elements:
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+    my @unique = keys %seen;
+    print &quot;@unique\n&quot;;</FONT></B></PRE></TD></TR></TABLE></UL>
+</BODY>
+</HTML>

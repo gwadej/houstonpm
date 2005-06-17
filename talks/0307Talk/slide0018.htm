@@ -1,0 +1,54 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE>Compile a regular expression once</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0019.htm">Lookahead assertions</a>
+    &nbsp;&nbsp;Previous: <a href="slide0017.htm">Symbol Explanations:</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name="Compile a regular expression once">
+<center>
+<H1>Compile a regular expression once
+</H1></center>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+  s/foo/$bar/o</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+Using a variable in a regular expression match forces a re-evaluation (and perhaps recompilation) each time the regular expression is encountered.  The <I>&quot;/o&quot;</I> modifier locks in the regex the first time it's used.  This always happens in a constant regular expression, and in fact, the pattern was compiled into the internal format at the same time your entire program was.
+</P>
+
+
+<P>
+Use of <I>&quot;/o&quot;</I> is irrelevant unless variable interpolation is used in the pattern, and if so, the regex engine will neither know nor care whether the variables change after the pattern is evaluated the very first time.
+</P>
+
+
+<P>
+<I>&quot;/o&quot;</I> is often used to gain an extra measure of efficiency by not performing subsequent evaluations when you know it won't matter (because you know the variables won't change), or more rarely, when you don't want the regex to notice if they do.
+</P>
+</BODY>
+</HTML>

@@ -1,0 +1,58 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE> Binding Parameters (Input)</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0016.htm"> Binding Columns (Output)</a>
+    &nbsp;&nbsp;Previous: <a href="slide0014.htm"> Error Handling</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name=" Binding Parameters (Input)">
+<center>
+<H1>15  Binding Parameters (Input)
+</H1></center>
+
+
+<P>
+DBI supports binding parameters which allows you to reuse statements with minor changes each time.
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+  my $sth = $dbh-&gt;prepare( &quot;SELECT * FROM People where id = ?&quot; );
+
+  $sth-&gt;execute( 1 );
+    .
+    .
+    .
+  $sth-&gt;execute( 2 );
+    .
+    .
+    .</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+Each time we call <CODE>execute</CODE>, we can pass it a new set of parameters to replace the <B>?</B>s in the SQL statement.
+</P>
+</BODY>
+</HTML>

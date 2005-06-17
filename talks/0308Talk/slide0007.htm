@@ -1,0 +1,67 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE>Creating a reference with Autovivification.</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0008.htm">Finding the Number of Characters in a String.</a>
+    &nbsp;&nbsp;Previous: <a href="slide0006.htm">Changing the Autosplit Delimiter on the Command Line</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name="Creating a reference with Autovivification.">
+<center>
+<H1>Creating a reference with Autovivification.
+</H1></center>
+
+
+<P>
+You can store a reference to another variable in a scalar using the backslash operator, or create an anonymous array or hash reference using either the [] or {} constructs:
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+    $a_ref = \@other;  # ref to @other
+    $a_ref = [1,2,3];  # ref to anon array
+    $h_ref = {key1 =&gt; 13, key2 =&gt; 42};  # ref to anon hash</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+But, you may also create a reference simply by using a scalar as if it already holds a reference of the proper type:
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+    my $scalar;
+    push @{$scalar}, (1,2,3);</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+When you pretend that a scalar already holds a reference to an array, perl will automatically create one and store a reference to it in the scalar. Line 2 in the above pretends that $scalar is a reference to an array (by explicitly dereferencing it to push a list onto the array). Perl notices that this variable does not already contain an array reference so it creates an anonymous array and stores the reference in $scalar and then pushes the given list onto that array. This is called autovivification and is useful when building datastructures on the fly.
+</P>
+
+
+<P>
+<FONT COLOR=blue>Autovivification is discussed in the perlref and perlreftut pod-pages.</FONT>
+</P>
+</BODY>
+</HTML>

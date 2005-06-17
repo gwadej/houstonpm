@@ -1,0 +1,70 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE>File::Copy</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0016.htm">File::DosGlob</a>
+    &nbsp;&nbsp;Previous: <a href="slide0014.htm">File::Compare</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name="File::Copy">
+<center>
+<H1>File::Copy
+</H1></center>
+
+
+<P>
+The File::Copy module provides two basic functions, &quot;copy&quot; and &quot;move&quot;, which are useful for getting the contents of a file from one place to another.
+</P>
+
+
+<P>
+COPY
+</P>
+
+<UL>
+<TABLE><TR><TD valign="TOP"><IMG SRC="./sqr_orange1.png"></TD><TD>
+The &quot;copy&quot; function takes two parameters: a file to copy from and a file to copy to.
+</TD></TR></TABLE>
+<TABLE><TR><TD valign="TOP"><IMG SRC="./sqr_orange1.png"></TD><TD>
+An optional third parameter can be used to specify the buffer size used for copying.
+</TD></TR></TABLE>
+<TABLE><TR><TD valign="TOP"><IMG SRC="./sqr_orange1.png"></TD><TD>
+You may use the syntax &quot;use File::Copy &quot;cp&quot;&quot; to get at the &quot;cp&quot; alias for this function. The syntax is exactly the same.
+</TD></TR></TABLE>
+</UL>
+
+
+<P>
+MOVE
+</P>
+
+<UL>
+<TABLE><TR><TD valign="TOP"><IMG SRC="./sqr_orange1.png"></TD><TD>
+The &quot;move&quot; function also takes two parameters: the current name and the intended name of the file to be moved.  If the destination already exists and is a directory, and the source isn't a directory, then the source file will be renamed into the directory specified by the destination.
+</TD></TR></TABLE>
+<TABLE><TR><TD valign="TOP"><IMG SRC="./sqr_orange1.png"></TD><TD>
+If possible, move() will simply rename the file.  Otherwise, it copies the file to the new location and deletes the original.
+</TD></TR></TABLE>
+</UL>
+</BODY>
+</HTML>

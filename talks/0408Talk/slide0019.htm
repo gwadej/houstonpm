@@ -1,0 +1,70 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE>More General Notes</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0020.htm">Creating A Text Field</a>
+    &nbsp;&nbsp;Previous: <a href="slide0018.htm">Creating Forms</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name="More General Notes">
+<center>
+<H1>More General Notes
+</H1></center>
+
+
+<P>
+General note 3. You can put multiple forms on the same page if you wish. However, be warned that it isn't always easy to preserve state information for more than one form at a time.
+</P>
+
+
+<P>
+General note 4. By popular demand, the text and labels that you provide for form elements are escaped according to HTML rules. This means that you can safely use &quot;&lt;CLICK ME&gt;&quot; as the label for a button. However, this behavior may interfere with your ability to incorporate special HTML character sequences, such as &amp;Aacute; (?) into your fields. If you wish to turn off automatic escaping, call the autoEscape() method with a false value immediately after creating the CGI object:
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+     $query = new CGI;
+     $query-&gt;autoEscape(0);</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+You can turn autoescaping back on at any time with $query-&gt;autoEscape(1)
+</P>
+
+
+<P>
+General note 5. Some of the form-element generating methods return multiple tags. In a scalar context, the tags will be concatenated together with spaces, or whatever is the current value of the $&quot; global. In a list context, the methods will return a list of elements, allowing you to modify them if you wish. Usually you will not notice this behavior, but beware of this:
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+    printf(&quot;%sn&quot;,$query-&gt;end_form())</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+end_form() produces several tags, and only the first of them will be printed because the format only expects one value.
+</P>
+</BODY>
+</HTML>

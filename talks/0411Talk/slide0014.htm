@@ -1,0 +1,260 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE> Dynamic Webserver</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0015.htm"> What's Different?</a>
+    &nbsp;&nbsp;Previous: <a href="slide0013.htm"> Dynamic Content</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name=" Dynamic Webserver">
+<center>
+<H1>8  Dynamic Webserver
+</H1></center>
+
+
+<P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+#!/usr/bin/perl
+
+use HTTP::Daemon;
+use HTTP::Status;
+use HTTP::Response;
+use File::Spec;
+use Getopt::Std;
+
+use strict;
+use warnings;
+
+# Filename to use for directory indices.
+use constant INDEX_FILE    =&gt; &quot;index.html&quot;;
+use constant SECS_PER_HOUR =&gt; 60*60;
+use constant SECS_PER_DAY  =&gt; 60*60*24;
+
+my %opts = ();
+getopts( &quot;p:d:&quot;, \%opts ) or die &quot;Invalid argument\n&quot;;
+
+my $port    = $opts{p} || 8080;
+my $docroot = $opts{d} || &quot;.&quot;;
+
+my %DynaPage =
+   (
+       &quot;/stats&quot; =&gt; \&amp;server_stats,
+       &quot;/hello&quot; =&gt; \&amp;dynamic_hello,
+   );
+
+my %Stats = ( start     =&gt; time(),
+              requests  =&gt; 0,
+	      static    =&gt; 0,
+	      notfound  =&gt; 0,
+	      forbidden =&gt; 0,
+            );
+
+my $daemon = HTTP::Daemon-&gt;new( LocalPort =&gt; $port ) or die;
+print &quot;Please contact me at: &lt;URL:&quot;, $daemon-&gt;url(), &quot;&gt;\n&quot;,
+      &quot;Documents in '$docroot'\n&quot;;
+
+while (my $conn = $daemon-&gt;accept())
+{
+    eval
+    {
+	while (my $r = $conn-&gt;get_request())
+	{
+	    $Stats{requests}++;
+
+            my $path = $r-&gt;url-&gt;path();
+	    if(exists $DynaPage{$path})
+	    {
+	    	$DynaPage{$path}-&gt;( $conn, $r, $path );
+	    }
+	    else
+	    {
+	    	handle_static_page( $conn, $r, $path );
+            }
+	}
+    };
+    
+    print STDERR &quot;Caught exception: $@&quot; if $@;
+
+    $conn-&gt;close();
+    undef($conn);
+}
+
+
+sub  resolve_path
+{
+    my $path = shift;
+    
+    # Fail if illegal characters
+    return undef if $path =~ m![^-a-zA-Z0-9_\./]!;
+
+    $path = File::Spec-&gt;canonpath( File::Spec-&gt;catfile( $docroot, $path ) );
+
+    # Fail if try to walk out of docroot.
+    return undef if $docroot ne substr( $path, 0, length $docroot );
+    
+    $path;
+}
+
+
+# Display a static page off disk.
+#
+sub  handle_static_page
+{
+    my $conn = shift;
+    my $r    = shift;
+    my $path = resolve_path( shift );
+
+    if ($r-&gt;method ne &quot;GET&quot; or !defined( $path ))
+    {
+       	$conn-&gt;send_error( RC_FORBIDDEN );
+        $Stats{forbidden}++;
+    }
+    elsif(-e $path)
+    {
+	if(-d $path)
+	{
+    	    $path = File::Spec-&gt;catfile( $path, INDEX_FILE );
+	}
+
+	if(-r $path)
+	{
+            $conn-&gt;send_file_response( $path );
+	    $Stats{static}++;
+	}
+	else
+	{
+            $conn-&gt;send_error( RC_FORBIDDEN );
+            $Stats{forbidden}++;
+	}
+    }
+    else
+    {
+       	$conn-&gt;send_error( RC_NOT_FOUND );
+        $Stats{notfound}++;
+    }
+}
+
+# ---------------------------
+#  Dynamic page methods.
+#
+sub  server_stats
+{
+    my $conn = shift;
+    my $r    = shift;
+
+    my $upsecs = time - $Stats{start};
+    my $uptime;
+    if($upsecs &gt; SECS_PER_DAY)
+    {
+        $uptime = sprintf &quot;%d days %2d:%02d&quot;,
+	                  $upsecs/SECS_PER_DAY,
+	                  ($upsecs % SECS_PER_DAY)/SECS_PER_HOUR,
+                          ($upsecs % SECS_PER_HOUR)/60;
+    }
+    else
+    {
+        $uptime = sprintf &quot;%d:%02d:%02d&quot;,
+	                  $upsecs/SECS_PER_HOUR,
+                          ($upsecs % SECS_PER_HOUR)/60,
+	                  $upsecs % 60;
+    }
+
+    my $resp = new HTTP::Response();
+    $resp-&gt;header( &quot;Content-Type&quot; =&gt; &quot;text/plain&quot; );
+    $resp-&gt;content( &lt;&lt;&quot;EOS&quot; );
+Server Statistics:
+
+UpTime: $uptime
+
+Total Requests:  $Stats{requests}
+Static Requests: $Stats{static}
+
+Failures:
+Not Found:       $Stats{notfound}
+Forbidden:       $Stats{forbidden}
+EOS
+
+    $conn-&gt;send_response( $resp );
+}
+
+
+sub dynamic_hello
+{
+    my $conn = shift;
+    my $r    = shift;
+
+    my $name = get_params( $r )-&gt;{name} || &quot;request #$Stats{requests}&quot;;
+
+    my $resp = new HTTP::Response();
+    $resp-&gt;header( &quot;Content-Type&quot; =&gt; &quot;text/html&quot; );
+    $resp-&gt;content( &lt;&lt;&quot;EOS&quot; );
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;Dynamic Hello World&lt;/title&gt;
+&lt;/head&gt;
+&lt;body bgcolor=&quot;white&quot;&gt;
+&lt;h1&gt;Hello, $name&lt;/h1&gt;
+  
+&lt;p&gt;This is dynamically generated text.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+EOS
+
+    $conn-&gt;send_response( $resp );
+}
+
+
+sub  get_params
+{
+    my $r = shift;
+    
+    my $qrystr = &quot;&quot;;
+
+    if($r-&gt;method eq &quot;POST&quot;)
+    {
+        $qrystr = $r-&gt;content;
+    }
+    else
+    {
+        ($qrystr) = $r-&gt;url() =~ /\?(.*)/;
+    }
+
+    return {} unless $qrystr;
+
+    my @parms = ($qrystr =~ m{ ([^&amp;=]+)  # name
+                               =         # =
+			       ([^&amp;=]*)  # value
+			       &amp;?        # separator (not on last)
+                             }gx);
+    
+    my %parms = (@parms % 1) ? (@parms, &quot;&quot;) : @parms;
+    \%parms;
+}
+</FONT></B></PRE></TD></TR></TABLE></UL>
+
+</P>
+</BODY>
+</HTML>

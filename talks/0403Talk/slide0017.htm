@@ -1,0 +1,68 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE>Bundling Options.</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0018.htm">Summary Of Getopt::Long.</a>
+    &nbsp;&nbsp;Previous: <a href="slide0016.htm">A Reasonably Complex Example.</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name="Bundling Options.">
+<center>
+<H1>Bundling Options.
+</H1></center>
+
+
+<P>
+This only applies to single character options and must be enabled by making a call to the Getopt::Long::Configure() function as follows:
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+    Getopt::Long::Configure('bundling');</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+Now, single character options may be bundled. Also, option values may be inserted into the bundle -- so if we did:
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+    Getopt::Long::Configure('bundling');
+    GetOptions(\%opts, 'h=i', 'w=i', 'a', 'b', 'c', 'help');</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+We could then call the program in any of the following ways:
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+    testopt.pl -a -b -c -h 12 -w 5 --help
+    testopt.pl -abc -h 12 -w 5 --help
+    testopt.pl -abc -h12w5 --help
+    testopt.pl -ah12w5bc --help</FONT></B></PRE></TD></TR></TABLE></UL>
+</BODY>
+</HTML>

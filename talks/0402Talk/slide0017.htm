@@ -1,0 +1,49 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE>Correcting the problem</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0018.htm">The Benefit</a>
+    &nbsp;&nbsp;Previous: <a href="slide0016.htm">A logical use for <I>our</I> declaration</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name="Correcting the problem">
+<center>
+<H1>Correcting the problem
+</H1></center>
+
+
+<P>
+The usual challenge is to clean up offending code as quickly as possible. Since the same variables <I>my</I> may be declared in another package you could put the following
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+    our ( $sql, $dbh );
+
+    #later
+
+    $sql = $order-&gt;lineItemSQL;
+    $dbh-&gt;prepare( $sql );</FONT></B></PRE></TD></TR></TABLE></UL>
+</BODY>
+</HTML>

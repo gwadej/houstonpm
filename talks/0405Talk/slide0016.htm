@@ -1,0 +1,44 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE>File::DosGlob</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0017.htm">File::Find</a>
+    &nbsp;&nbsp;Previous: <a href="slide0015.htm">File::Copy</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name="File::DosGlob">
+<center>
+<H1>File::DosGlob
+</H1></center>
+
+
+<P>
+A module that implements DOS-like globbing with a few enhancements. It's largely compatible with perlglob.exe (the M$ setargv.obj version) in all but one respect--it understands wildcards in directory components.
+</P>
+
+
+<P>
+For example, &quot;&lt;..\l*b\file/*glob.p?&quot;&gt; will work as expected (in that it will find something like '..\lib\File/DosGlob.pm' alright).  Note that all path components are case-insensitive, and that backslashes and forward slashes are both accepted, and preserved.  You may have to double the backslashes if you are putting them in literally, due to double-quotish parsing of the pattern by perl.
+</P>
+</BODY>
+</HTML>
