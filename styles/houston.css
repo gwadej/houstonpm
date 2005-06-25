@@ -24,22 +24,27 @@ body {
     background-color:white;
     color:black;
 }
-.heading {
+h1, .heading {
     margin:0px 0px 15px 0px;
     padding:0px;
     font-size:x-large;
     font-weight:900;
-    color:#330099;
     background-color:transparent;
 }
-.subhead {
+
+.heading {
+    color:#330099;
+}
+
+h2, .subhead {
     font-size: large;
     color: #000000;
     background-color:transparent;
     font-weight: normal;
     border-bottom:1px dashed black;
 }
-.subsub {
+
+h3, .subsub {
     font-size: medium;
     color: #000000;
     background-color:transparent;
@@ -74,3 +79,15 @@ body {
     font-size:smaller;
 }
 
+#mainmenu {
+    width: 15em;
+    background-color:#bfb;
+}
+
+#mainmenu a {
+    display: block;
+}
+
+.content {
+    margin-left: 5em;
+}
