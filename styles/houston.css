@@ -17,3 +17,60 @@ body
 } 
 
 
+body {
+    margin:0px;
+    padding:0px;
+    font-family:arial, helvetica, sans-serif;
+    background-color:white;
+    color:black;
+}
+.heading {
+    margin:0px 0px 15px 0px;
+    padding:0px;
+    font-size:x-large;
+    font-weight:900;
+    color:#330099;
+    background-color:transparent;
+}
+.subhead {
+    font-size: large;
+    color: #000000;
+    background-color:transparent;
+    font-weight: normal;
+    border-bottom:1px dashed black;
+}
+.subsub {
+    font-size: medium;
+    color: #000000;
+    background-color:transparent;
+    font-weight: bold;
+}
+
+
+/*  Support for sidebar text in-line. */
+#sidebar  {
+    float:right;
+    background-color:#eee;
+    color:black;
+    border-style:solid;
+    border-width:1px;
+    padding:0 0.5em 0.5em 0.5em;
+    margin-left:0.5em;
+    width:15em;
+    max-width:40%;
+}
+#sidebar .subhead, #sidebar .heading {
+    margin-top: 0.5em;
+    border-bottom:0;
+}
+#sidebar dd {
+    margin-left: 1em;
+    margin-bottom: 0.5em;
+}
+#sidebar dd li {
+    margin: 0;
+    padding: 0;
+    margin-left:-2em;
+    font-size:smaller;
+}
+

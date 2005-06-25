@@ -41,9 +41,9 @@ Change delimiters on <CODE>m//</CODE> and <CODE>s///</CODE> to simplify expressi
 <TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
 <B><FONT COLOR="#000000">
    # Which is better
-   $file =~ s/^.*\/([^\/]*)$/$1;
+   $file =~ s/^.*\/([^\/]*)$/$1/;
       #or
-   $file =~ s#^.*/([^/]*)#
+   $file =~ s#^.*/([^/]*)#$1#;
 </FONT></B></PRE></TD></TR></TABLE></UL>
 
 <UL>
