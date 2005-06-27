@@ -116,12 +116,18 @@ h3, .subsub {
     margin: 1em 0 2em 0;
 }
 
-.menu a, .menu a :visited {
+.menu a, .menu a:visited {
     display: block;
     color: #309;
+    background-color:#99f;
     text-decoration: none;
     margin-top: 0.2em;
     padding-left: 1em;
+}
+
+.menu a:hover {
+/*    background-color: #309; */
+    color: #ccc;
 }
 
 .menu li {
@@ -129,6 +135,19 @@ h3, .subsub {
     margin: 0;
     padding: 0;
 }
+
+/*
+.menu li.curr {
+    list-style: none;
+    margin: 0;
+    padding-left: 0.5em;
+    background-color: #333;
+}
+
+.menu li.curr a, .menu li.curr a:visited {
+    padding-left: 0.5em;
+}
+*/
 
 .menu .head {
     margin-left: 0.5em;
