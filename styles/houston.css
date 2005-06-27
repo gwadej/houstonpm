@@ -51,7 +51,7 @@ h1, .heading {
 }
 
 .banner h1 {
-    margin-top: 0.25em;
+    margin: 0.25em 0 0 6.5em;
     font-size:xx-large;
 }
 
@@ -106,23 +106,23 @@ h3, .subsub {
 
 #navigation {
     float:left;
-    width: 14em;
-    margin: 0;
-    padding: 0;
+    width: 13em;
+    margin: 1em 2em 2em 0.5em;
+    background-color:#99f;
+    border: 1px solid blue;
 }
 
 .menu {
-    margin: 1em 2em 2em 0.5em;
-    padding: 2em 0 2em 1em;
-    background-color:#99f;
-/*    background-color:#330099; */
-    border: 1px solid blue;
+    padding: 0;
+    margin: 1em 0 2em 0;
 }
 
 .menu a, .menu a :visited {
     display: block;
     color: #309;
     text-decoration: none;
+    margin-top: 0.2em;
+    padding-left: 1em;
 }
 
 .menu li {
@@ -132,8 +132,8 @@ h3, .subsub {
 }
 
 .menu .head {
-    margin-left: -0.5em;
-    color: blue;
+    margin-left: 0.1em;
+    color: #333;
 }
 
 #externlinks {
@@ -141,7 +141,7 @@ h3, .subsub {
 }
 
 .content {
-    margin: 0 3em 0 16em;
+    margin: 0 3em 0 15.5em;
     padding: 0;
 }
 
