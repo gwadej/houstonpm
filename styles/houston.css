@@ -8,7 +8,6 @@ body {
 
 .banner
 {
-  border: 1px solid blue;
   background-color:#330099;
   color: silver;
   margin: 0.5em 0.5em 0 0.5em;
@@ -106,8 +105,8 @@ h3, .subsub {
 
 #navigation {
     float:left;
-    width: 13em;
-    margin: 1em 2em 2em 0.5em;
+    width: 12em;
+    margin: 0 2em 2em 0.5em;
     background-color:#99f;
     border: 1px solid blue;
 }
@@ -132,7 +131,7 @@ h3, .subsub {
 }
 
 .menu .head {
-    margin-left: 0.1em;
+    margin-left: 0.5em;
     color: #333;
 }
 
@@ -141,7 +140,7 @@ h3, .subsub {
 }
 
 .content {
-    margin: 0 3em 0 15.5em;
+    margin: 0 3em 0 15em;
     padding: 0;
 }
 
@@ -165,4 +164,10 @@ h3, .subsub {
 
 .talk .abstract p {
    margin: 0 0 1em 0;
+}
+
+
+.copyright img {
+    float: left;
+    margin: 0.2em 1em 0 0;
 }
