@@ -27,10 +27,11 @@ body {
 
 #footer 
 {
-  margin: 1em 0 0 1em;
+  margin: 1em;
   font-size: smaller;
   font-style: italic;
   clear: both;
+  border-top: 1px solid #330099;
 } 
 
 #footer p {
@@ -177,7 +178,7 @@ h3, .subsub {
 }
 
 
-.talk .abstract {
+.talk .abstract, .talk .topic, .talk .presenter, .talk .example {
    margin-left: 1em;
 }
 
@@ -185,6 +186,13 @@ h3, .subsub {
    margin: 0 0 1em 0;
 }
 
+.talk .label {
+   font-weight: bold;
+}
+
+.talk .abstract, .talk .example {
+   margin-top: 0.5em;
+}
 
 .copyright img {
     float: left;
