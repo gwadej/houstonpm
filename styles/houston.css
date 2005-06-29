@@ -190,6 +190,10 @@ h3, .subsub {
    font-weight: bold;
 }
 
+.talk a {
+   text-decoration: none;
+}
+
 .talk .abstract, .talk .example {
    margin-top: 0.5em;
 }
