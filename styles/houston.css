@@ -175,15 +175,26 @@ h3, .subsub {
 }
 
 .talk .date {
+   font-weight: bold;
 }
 
 
-.talk .abstract, .talk .topic, .talk .presenter, .talk .example {
+.talk .abstract, .talk .topic, .talk .presenter, .talk .example, .talk .note {
    margin-left: 1em;
 }
 
 .talk .label {
    font-weight: bold;
+   color: #333;
+}
+
+.talk .note {
+   font-style: italic;
+   font-size: smaller;
+}
+
+.talk .topic {
+   margin-top: 0.5em;
 }
 
 .talk a {
@@ -197,4 +208,8 @@ h3, .subsub {
 .copyright img {
     float: left;
     margin: 0.2em 1em 0 0;
+}
+
+code {
+    font-size: larger;
 }
