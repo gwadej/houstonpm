@@ -17,8 +17,7 @@ body {
 
 .banner img {
     float: left;
-    border: 0;
-    padding: 2px;
+    border: 2px solid white;
     background-color: white;
     margin-right: 2em;
 }
