@@ -1,0 +1,70 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE> The Differences</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0009.htm"> Object Oriented Interface</a>
+    &nbsp;&nbsp;Previous: <a href="slide0007.htm"> The <CODE>Regexp::Common</CODE> Solution</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name=" The Differences">
+<center>
+<H1>2.6  The Differences
+</H1></center>
+
+
+<P>
+The main differences between these two approaches are listed below:
+</P>
+
+<UL>
+<TABLE><TR><TD valign="TOP"><IMG SRC="./sqr_orange1.png"></TD><TD>
+The Regexp::Common approach is easier to read.
+</TD></TR></TABLE>
+<TABLE><TR><TD valign="TOP"><IMG SRC="./sqr_orange1.png"></TD><TD>
+The raw regex also matches clusters of digits without commas.
+</TD></TR></TABLE>
+<TABLE><TR><TD valign="TOP"><IMG SRC="./sqr_orange1.png"></TD><TD>
+The raw regex also matches <I>numbers</I> like 1234567,890.
+</TD></TR></TABLE>
+<TABLE><TR><TD valign="TOP"><IMG SRC="./sqr_orange1.png"></TD><TD>
+Extracting the numbers requires a little more work with Regexp::Common.
+</TD></TR></TABLE>
+</UL>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+   @nums = ($str =~ /(-?<CODE>\</CODE>d+(?:,<CODE>\</CODE>d<CODE>\</CODE>d<CODE>\</CODE>d)*)/g);</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+or
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+   my $re = $RE{num}{int}{-sep =&gt; ','}{-group =&gt; 3}{-keep};
+   push @nums, $1 while $str =~ /$re/g;</FONT></B></PRE></TD></TR></TABLE></UL>
+</BODY>
+</HTML>
