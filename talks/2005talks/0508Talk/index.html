@@ -1,7 +1,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <html>
 <head>
-  <title>Houston Perl Mongers</title>
+  <title>Summary of August 2005 Presentation</title>
   <link rel="stylesheet" href="/styles/houston.css" type="text/css" />
 </head>
 <body>
@@ -13,45 +13,44 @@
 </div>
 <div id="outer">
   <div id="navigation">
+  
   <ul class="menu" id="mainmenu">
-     <li class="curr"><a href="/index.html">Home</a></li>
+     <li><a href="/index.html">Home</a></li>
      <li><a href="/about.html">About Us</a></li>
      <li><a href="/meetings.html">Meetings</a></li>
      <li><a href="/talks/mostrecent.html">Most Recent Talk</a></li>
      <li><a href="/talks/index.html">Talks Archive</a></li>
   </ul>
 
-  <ul class="menu" id="externlinks">
-     <li class="head">External Resources</li>
-     <li><a href="http://www.perl.com/lpt/2000/01/10perlMyths.html">Ten Perl
-            Myths</a></li>
-     <li><a href="http://www.perlmonks.org/">The Perl Monastary</a></li>
-     <li><a href="http://www.cpan.org/">CPAN</a></li>
-     <li><a href="http://www.perl.org/">The Perl Directory</a></li>
-     <li><a href="http://www.perl.com/">Perl.com</a></li>
-  </ul>
-  </div>
-
   <div class="content">
-    <h2 class="subhead">Houston Perl Mongers Group</h2>
 
-    <div id="sidebar">
-      <h1 class="heading">What's New</h1>
-      <p>Summary of August presentation is available.</p>
-      <h1 class="heading">Next Meeting</h1>
-      <dl>
-        <dt>September 13, 2005</dt>
-        <dd>Bill Dillon will present <em>Graphics in Perl</em>.</dd>
-      </dl>
-    </div>
+    <p>Paul Archer gave an interesting talk that covered the modules
+    <code>Image::IPTCInfo</code>, <code>Getopt::Long</code>, and
+    <code>Text::Query</code>. He described these modules in the context of
+    his program <code>iptckeyword</code>.</p>
+    
+    <p>Apparently, there are (at least) two standards for addig metadata to
+    images. The EXIF format is great for storing information about the event of
+    taking a picture (time and date, etc.) but not really good at containing
+    metadata about the subject. The IPTC format was created back in the '70s for
+    keeping up with the information that the news services needed to keep with
+    pictures.</p>
 
-    <p>This is the Houston branch of the <a href="http://www.pm.org/">Perl
-      Mongers</a>. Perl Mongers is a loose association of international Perl User
-      Groups.</p>
+    <p>The <code>iptckeyword</code> program supports manipulating the keyword
+    portion of the metadata stored with the images. The program also supports
+    searching groups of images based on these keywords.</p>
+    
+    <p>Paul showed how <code>Getopt::Long</code> was used to handle command line
+    parameters to control the program. He also showed the use of
+    <code>Test::Query</code> to allow the use of boolean expressions to search
+    the keywords in the images. The <code>Image::IPTCInfo</code> module is used
+    to actually manipulate the IPTC information in the images.</p>
+    
+    <p>The example code will be added to the site in a few days.</p>
 
-    <p>We meet the second Tuesday of each month at HAL PC from 7PM to 9PM.
-      Check the meetings link to the left for more details</p>
-
+    <p>As an added bonus, Paul talked about setting up a MythTV system and
+    <em>volunteered</em> to answer questions on the subject if you would like
+    to set one up for yourself.</p>
   </div>
 
 </div>
