@@ -220,3 +220,23 @@ dd ul {
     margin: 0;
     padding: 0;
 }
+
+ul.bare {
+    list-style: none;
+}
+
+.faq {
+    margin-top: 1em;
+}
+
+.faq .question {
+     padding: 0.5em 1em;
+     background-color: #ccf;
+     margin-bottom: 0.5em;
+}
+
+.faq .answer {
+    padding-left: 2em;
+}
+
+

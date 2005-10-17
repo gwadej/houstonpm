@@ -1,7 +1,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <html>
 <head>
-  <title>Summary of August 2005 Presentation</title>
+  <title>Archive of {{year}} talks given at HoustonPM</title>
   <link rel="stylesheet" href="/styles/houston.css" type="text/css" />
 </head>
 <body>
@@ -18,41 +18,24 @@
      <li><a href="/index.html">Home</a></li>
      <li><a href="/about.html">About Us</a></li>
      <li><a href="/meetings.html">Meetings</a></li>
+     <li><a href="/faqs.html">FAQ</a></li>
      <li><a href="/talks/mostrecent.html">Most Recent Talk</a></li>
      <li><a href="/talks/index.html">Talks Archive</a></li>
+  </ul>
+
+  <ul class="menu">
+     <li class="head">By Year</li>
+     <li class="curr"><a href="/talks/2005talks/index.html">2005</a></li>
+     <li><a href="/talks/2004talks/index.html">2004</a></li>
+     <li><a href="/talks/2003talks/index.html">2003</a></li>
   </ul>
 
   </div>
 
   <div class="content">
+    <h2 class="subhead">Presentations for {{year}}</h2>
 
-    <p>Paul Archer gave an interesting talk that covered the modules
-    <code>Image::IPTCInfo</code>, <code>Getopt::Long</code>, and
-    <code>Text::Query</code>. He described these modules in the context of
-    his program <code>iptckeyword</code>.</p>
-    
-    <p>Apparently, there are (at least) two standards for addig metadata to
-    images. The EXIF format is great for storing information about the event of
-    taking a picture (time and date, etc.) but not really good at containing
-    metadata about the subject. The IPTC format was created back in the '70s for
-    keeping up with the information that the news services needed to keep with
-    pictures (including subject, photographer, copyright, and keywords).</p>
-
-    <p>The <code>iptckeyword</code> program supports manipulating the keyword
-    portion of the metadata stored with the images. The program also supports
-    searching groups of images based on these keywords.</p>
-    
-    <p>Paul showed how <code>Getopt::Long</code> was used to handle command line
-    parameters to control the program. He also showed the use of
-    <code>Test::Query</code> to allow the use of boolean expressions to search
-    the keywords in the images. The <code>Image::IPTCInfo</code> module is used
-    to actually manipulate the IPTC information in the images.</p>
-    
-    <p>The example code will be added to the site in a few days.</p>
-
-    <p>As an added bonus, Paul talked about setting up a MythTV system and
-    <em>volunteered</em> to answer questions on the subject, if you would like
-    to set one up for yourself.</p>
+    {{content}}
   </div>
 
 </div>

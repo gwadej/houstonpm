@@ -1,0 +1,415 @@
+#!/usr/bin/perl
+
+#$Id: iptckeyword,v 1.5 2005/07/12 19:56:41 root Exp root $
+
+use warnings;
+use strict;
+use Getopt::Long;
+use Pod::Usage;
+use Image::IPTCInfo;
+use File::Finder;
+use Text::Query;
+use Text::Query::BuildAdvancedString;
+use Text::Query::SolveAdvancedString;
+use Text::Query::ParseAdvanced;
+
+
+#global vars
+our $count;
+our %seen_keywords;
+my $list_flag=1;
+my $synonym_file="$ENV{HOME}/.iptc_synonyms";
+
+# option vars
+	my $man='';
+	my $help='';
+	my $list='';
+	my $verbose;
+	my @add;
+	my @set;
+	my @remove;
+	my $copy='';
+	my $match;
+	my $synonyms='';
+	my $synfile='';
+	my $r='';
+
+# Parse options and print usage if there is a syntax error,
+## or if usage was explicitly requested.
+GetOptions(     'help|?'	=> \$help,
+		'man'		=> \$man,
+		'list'		=> \$list,
+		'verbose'	=> \$verbose,
+		'add=s'		=> \@add,
+		'set=s'		=> \@set,
+		'remove=s'	=> \@remove,
+		'copy=s'	=> \$copy,
+		'match=s'	=> \$match,
+		'synonyms'	=> \$synonyms,
+		'synfile=s'	=> \$synfile,
+		'r'		=> \$r,
+);
+
+pod2usage(-verbose => 0) if $help;
+pod2usage(-verbose => 0) if (@ARGV == 0);
+pod2usage(-verbose => 2) if $man;
+
+my @files = parse_ARGV();
+sub parse_ARGV {
+	my @files;
+	my @dirs;
+
+	my $flag=0;
+	foreach my $fd (@ARGV) {
+		if ( -d $fd) {
+			push @dirs, $fd;
+			$flag=1;
+		}
+		if ( -f _ ) {
+			push @files, $fd;
+			$flag=1;
+		}
+		warn "$fd is not a file or directory--discarded!\n" if $flag==0;
+		$flag=0;
+	}
+
+	# -r allows recursion; otherwise look at files only
+	if ( (scalar @dirs) &&  $r) {
+		my $all_files = File::Finder->type('f');
+		push @files, $all_files->in(@dirs);
+	}
+
+	unless (@files) {
+		die "no valid files given on the command line!\n" if ($copy || !$r);
+		die "no valid files or directories given on the command line!\n" unless @files;
+	}
+	return @files;
+}
+
+sub print_keywords{
+	my @files = @_;
+	foreach my $file (@files) {
+		my @keywords=get_keywords($file);
+	if ($verbose) {
+			foreach my $keyword (@keywords) {
+				print "$file: $keyword\n";
+			}
+			next unless scalar @keywords;
+		print  "\n" if scalar @keywords;
+		}
+		else {
+			print "$file: ";
+			print join ', ', @keywords;
+			print "\n";
+		}
+	}
+}
+
+sub get_keywords {
+	my $file = shift;
+	my $file_iptc = new Image::IPTCInfo($file);
+	return () unless defined($file_iptc);
+	# get keywords from file
+	my $file_keywordsRef = $file_iptc->Keywords();
+	return() unless $file_keywordsRef; #for files that have IPTC data, but no keywords
+	return @$file_keywordsRef;
+}
+sub set_keywords {
+	my $file = shift;
+	my @keywords=unique_keywords(@_);
+	my $file_iptc = create Image::IPTCInfo($file);
+	$file_iptc->ClearKeywords();
+	$file_iptc->AddKeyword(\@keywords);
+	$file_iptc->Save();
+}
+
+sub add_keywords {
+	my $file = shift;
+	my @keywords=@_;
+	my @existing_keywords= get_keywords($file);
+	unshift @keywords, @existing_keywords;
+	set_keywords($file, @keywords);
+}
+
+sub unique_keywords{
+	my %seen;
+	return grep { !$seen{$_}++ } @_;
+
+}
+
+sub list {
+	foreach (@files){
+	print_keywords($_,);
+	};
+}
+
+sub match{
+	my $query=new Text::Query($match,
+	-parse => 'Text::Query::ParseAdvanced',
+	-solve	=> 'Text::Query::SolveAdvancedString',
+	-build => 'Text::Query::BuildAdvancedString',
+	-litspace =>1,
+	-whole =>1,
+	);
+	die "bad query expression: '$match'\n" if not defined $query;
+
+
+	foreach my $file (@files) {
+		my @keywords=get_keywords($file);
+		next unless scalar @keywords;
+		my $keywords=join ',',@keywords;
+		my $matched_keywords = ($query->match($keywords));
+		if ($matched_keywords){
+			print_keywords($file);
+		}
+	}
+}
+
+
+sub synonyms{
+	my $syns = read_synfile();
+	expand_synonyms($syns);
+	my %syns =%$syns;
+	foreach my $file (@files) {
+		# applies synonyms to each keyword
+		foreach my $keyword (get_keywords($file)) {
+			if (exists $syns{$keyword}) {
+				my @expanded_keywords=@{$syns{$keyword}};
+				add_keywords($file, @expanded_keywords) if ($#expanded_keywords > 0 );
+			}
+		}
+	}
+}
+
+sub read_synfile {
+	$synfile ||=$synonym_file;
+	local *SYNONYMS;
+	open (SYNONYMS, $synfile) or die "Can't open synonym file $synfile: $!\n";
+	my %syns;
+	while (<SYNONYMS>) {
+		chomp;
+		s/#.*$//;		# remove comments from the ends of lines
+		next if /^\s*$/;	# skip blank lines and lines with only spaces
+
+		my ($key, @values) = split /[:,]/;
+		$syns{$key} = \@values;
+	}
+	close( SYNONYMS ) or die "Unable to close '$synfile': $!\n";
+
+	return \%syns;
+}
+
+sub expand_synonyms {
+	my %syns = %{$_[0]};
+	foreach (sort keys %syns) {
+		recurse_synonyms($_,\%syns);
+		undef %seen_keywords;
+	}
+}
+
+
+sub recurse_synonyms {
+	my $cur_keyword=shift;
+	my %syns=%{$_[0]};
+	foreach my $expansion_keyword (@{$syns{$cur_keyword}}) {
+		next if defined $seen_keywords{$expansion_keyword};
+		if (defined $syns{$expansion_keyword}) {
+			$seen_keywords{$expansion_keyword}++;
+			push @{$syns{$cur_keyword}}, recurse_synonyms($expansion_keyword, \%syns);
+			@{$syns{$cur_keyword}}=unique_keywords(@{$syns{$cur_keyword}});
+		}
+
+	}
+	return @{$syns{$cur_keyword}};
+}
+
+
+if ($#add+1) {
+	@add = split(',',join(',',@add));
+	foreach my $file (@files){
+		add_keywords($file,@add);
+	}
+	$list_flag=0;
+}
+
+if ($#set+1) {
+	@set = split(',',join(',',@set));
+	foreach my $file (@files){
+		set_keywords($file,@set);
+	}
+	$list_flag=0;
+}
+
+if ($#remove+1) {
+	@remove = split(',',join(',',@remove));
+	foreach my $file (@files){
+		my @orig_keywords = get_keywords($file);
+		my %remove_hash;
+		@remove_hash{@remove} = undef;
+		my @remaining = grep { not exists $remove_hash{$_} } @orig_keywords;
+
+		set_keywords($file,@remaining);
+	}
+	$list_flag=0;
+}
+
+if ($copy) {
+	my @source_keywords = get_keywords($copy);
+	foreach my $file (@files){
+		set_keywords($file,@source_keywords);
+	}
+	$list_flag=0;
+}
+
+if ($match ) {
+	match();
+	$list_flag=0;
+}
+
+if ($synonyms) {
+	synonyms();
+	$list_flag=0;
+}
+
+	if ($list or $list_flag) {
+	list();
+	exit 0;
+}
+
+
+
+__END__
+
+=head1 NAME
+
+iptckeyword - List and manipulate the IPTC keyword metadata stored in an image file.
+
+
+=head1 SYNOPSIS
+
+ iptckeyword [--list] args
+ iptckeyword --add | --set | --remove keyword[,keyword...] args
+ iptckeyword --match (keywords and booleans) args
+ iptckeyword --copy source_file args
+ iptckeyword --synonyms [--synfile file] args
+ iptckeyword --help | --man
+ (args can be files or directories)
+
+
+=head1 DESCRIPTION
+
+B<iptckeyword> uses the Image::IPTCInfo module to list and/or manipulate the 
+keyword information that can be stored in the IPTC headers of an image file.
+B<iptckeyword> can add, set or remove keywords, or match a list of keywords in 
+the list of files/directories given on the command line. It can also expand a
+list of keyword synonyms and assign those synonyms to files.
+
+
+=head1 OPTIONS
+
+=over 8
+
+=item B<--help>
+
+	Print a brief help message and exits.
+
+=item B<--man>
+
+	Prints the manual page and exits.
+
+=item B<--r>
+
+	Allows directory recursion in the argument list. Without the -r flag,
+	iptckeyword will ignore any directories in the arg list.
+	Warning: this can be dangerous, especially adding, setting, or removing
+	keywords. You have been warned.
+	
+
+=item B<--list>
+
+	Lists keywords. --list is assumed if no other options are given.
+	It can also be combined with other options, and will list the keywords after
+	any other operations (add, remove, etc) are performed.
+
+=item B<--add>
+
+	Adds given keywords to keywords already in the file(s).
+
+=item B<--set>
+
+	Sets keywords in file to exact list given on command line. Use --set '' to
+	clear the keywords in the file(s).
+	
+=item B<--remove>
+
+	Removes given keywords from file. iptckeyword will not complain if the keyword
+	doesn't exist.
+
+=item B<--copy>
+
+	Copies keywords from file given as argument to --copy to any other file(s) 
+	specified.
+
+=item B<--match>
+
+	Matches keywords given against file(s) given. Uses Text::Query::ParseAdvanced
+	to parse the matchwords. This allows matches like 'horse and rider and not saddle'
+	or '(cougar or puma or mountain lion) and arizona'. Words separated by spaces are
+	considered to be part of the same phrase. Will match whole words only--however, 
+	one word from a multi-word phrase will match ('mount' wouldn't match the phrase
+	'mountain lion', but 'mountain' would). If you wish to avoid this behavior, use
+	underscores instead of spaces ('mountain_lion' instead of 'mountain lion').
+
+=item B<--synonyms>
+
+	Reads keywords in file(s) given on the command line, and looks in a synonyms file
+	for a list of synonym keywords to expand out. By default, the synonyms file is the
+	file .iptc_synonyms in your home directory.
+	The format of the synonyms file is:
+	keyword: other, keywords, that, the, first_keyword, expands to
+	A keyword can expand to another keyword that also has expansions. iptckeywords parses
+	them recursively, but avoids getting caught in a loop. For example:
+	patas: monkey, zoo
+	monkey: primate
+	primate: animal
+	So a file with the keyword of 'patas' will end up with patas, zoo, monkey, primate, and animal.
+	This is a powerful way of adding multiple keywords that iptckeyword (or other programs) can then
+	use to search by.
+
+=item B<--synfile>
+
+	Takes the argument of an alternative synonyms file when using the --synonyms switch.
+
+=back
+
+=head1
+AUTHOR
+
+=over 8
+
+Paul Archer (paul at paularcher dot org)
+
+=head1
+DEPENDENCIES
+
+=over 8
+
+Image::IPTCInfo, Getopt::Long, Pod::Usage, File::Finder, Text::Query
+	
+=head1
+BUGS
+
+=over 8
+
+Probably.
+
+Text::Query::ParseAdvanced throws two warnings. You'll have to modify the subroutines that contain the offending lines by removing the prototyping info in order to get rid of the warnings.
+
+=head1
+LICENSE
+
+=over 8
+
+iptckeyword is released under the GNU Public License (GPL).
+
+=cut
