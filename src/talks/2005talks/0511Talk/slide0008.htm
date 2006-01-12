@@ -1,0 +1,82 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE> Inlining Code</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0009.htm"> Configuring Inline</a>
+    &nbsp;&nbsp;Previous: <a href="slide0007.htm"> Installation Issues</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name=" Inlining Code">
+<center>
+<H1>5  Inlining Code
+</H1></center>
+
+
+<P>
+There are three ways to pass code to the Inline modules:
+</P>
+
+<UL>
+<TABLE><TR><TD valign="TOP"><IMG SRC="./sqr_orange1.png"></TD><TD>
+Pass the code as a string
+</TD></TR></TABLE>
+</UL>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+    use Inline C =&gt; &quot;C code here&quot;;</FONT></B></PRE></TD></TR></TABLE></UL>
+
+<UL>
+<TABLE><TR><TD valign="TOP"><IMG SRC="./sqr_orange1.png"></TD><TD>
+Pass from the DATA file handle.
+</TD></TR></TABLE>
+</UL>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+    use Inline CPP =&gt; 'DATA';
+    ...
+
+    __DATA__
+    __CPP__
+    C++ code goes here</FONT></B></PRE></TD></TR></TABLE></UL>
+
+<UL>
+<TABLE><TR><TD valign="TOP"><IMG SRC="./sqr_orange1.png"></TD><TD>
+New approach with source filtering. (Alpha software, be careful).
+</TD></TR></TABLE>
+</UL>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+   use Inline::Files;
+   use Inline C =&gt; 'BELOW';
+   ...
+
+   __C__
+   C code here.</FONT></B></PRE></TD></TR></TABLE></UL>
+</BODY>
+</HTML>

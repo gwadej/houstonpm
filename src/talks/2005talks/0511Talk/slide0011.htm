@@ -1,0 +1,114 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE> Inline::CPP Example</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0012.htm"> Inline::CPP Example 2</a>
+    &nbsp;&nbsp;Previous: <a href="slide0010.htm"> Inline::C Example</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name=" Inline::CPP Example">
+<center>
+<H1>8  Inline::CPP Example
+</H1></center>
+
+
+<P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+#!/usr/bin/perl
+
+use Inline CPP =&gt; 'DATA';
+
+use strict;
+use warnings;
+
+my $pqueue = new PQueue();
+
+$pqueue-&gt;push( &quot;First string&quot; );
+$pqueue-&gt;push( &quot;Second string&quot; );
+$pqueue-&gt;push( &quot;Third string&quot; );
+$pqueue-&gt;push( &quot;Fourth string&quot; );
+$pqueue-&gt;push( &quot;Fifth string&quot; );
+$pqueue-&gt;push( &quot;Sixth string&quot; );
+$pqueue-&gt;push( &quot;Seventh string&quot; );
+$pqueue-&gt;push( &quot;Eighth string&quot; );
+$pqueue-&gt;push( &quot;Nineth string&quot; );
+$pqueue-&gt;push( &quot;Tenth string&quot; );
+
+print $pqueue-&gt;size(), &quot;\n&quot;;
+
+while(!$pqueue-&gt;empty())
+{
+    print $pqueue-&gt;top(), &quot;\n&quot;;
+    $pqueue-&gt;pop();
+}
+
+
+__DATA__
+
+__CPP__
+
+#include &lt;queue&gt;
+#include &lt;string&gt;
+
+class PQueue
+{
+  public:
+    PQueue() : q_() {}
+    ~PQueue() {}
+
+    void pop()
+    {
+        q_.pop();
+    }
+
+    const char *top()
+    {
+        return q_.top().c_str();
+    }
+
+    void push( char *val )
+    {
+        q_.push( val );
+    }
+
+    size_t size() const
+    {
+        return q_.size();
+    }
+
+    bool empty() const
+    {
+        return q_.empty();
+    }
+
+  private:
+    std::priority_queue&lt;std::string&gt;  q_;
+};
+</FONT></B></PRE></TD></TR></TABLE></UL>
+
+</P>
+</BODY>
+</HTML>

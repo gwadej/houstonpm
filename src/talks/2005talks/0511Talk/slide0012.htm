@@ -1,0 +1,90 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE> Inline::CPP Example 2</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0013.htm"> Inline::Java Example</a>
+    &nbsp;&nbsp;Previous: <a href="slide0011.htm"> Inline::CPP Example</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name=" Inline::CPP Example 2">
+<center>
+<H1>9  Inline::CPP Example 2
+</H1></center>
+
+
+<P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+
+use Inline CPP;
+
+my $farmer = new Farmer(&quot;Ingy&quot;, 42);
+my $slavedriver = 1;
+while($farmer-&gt;how_tired &lt; 420) {
+    $farmer-&gt;do_chores($slavedriver);
+    $slavedriver &lt;&lt;= 1;
+}
+
+print &quot;Wow! The farmer worked &quot;, $farmer-&gt;how_long, &quot; hours!\n&quot;;
+
+__END__
+__CPP__
+
+class Farmer {
+  public:
+    Farmer(char *name, int age);
+    ~Farmer();
+
+    int how_tired() { return tiredness; }
+    int how_long() { return howlong; }
+    void do_chores(int howlong);
+
+  private:
+    char *name;
+    int age;
+    int tiredness;
+    int howlong;
+};
+
+Farmer::Farmer(char *name, int age) {
+    this-&gt;name = strdup(name);
+    this-&gt;age = age;
+    tiredness = 0;
+    howlong = 0;
+}
+
+Farmer::~Farmer() {
+    free(name);
+}
+
+void Farmer::do_chores(int hl) {
+    howlong += hl;
+    tiredness += (age * hl);
+}
+</FONT></B></PRE></TD></TR></TABLE></UL>
+
+</P>
+</BODY>
+</HTML>

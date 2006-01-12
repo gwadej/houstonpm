@@ -352,4 +352,15 @@
     </topic>
   </talk>
 
+  <talk num="0511">
+    <date>November 2005</date>
+    <topic href="/talks/2005talks/0511Talk/index.html">
+      <title>Calling Other Languages from Perl</title>
+      <presenter>G. Wade Johnson</presenter>
+      <abstract>Sometimes you need to call code written in another language
+         from Perl. This month Wade covers both traditional and new ways of
+	 talking to code in other programming languages from your Perl code.</abstract>
+    </topic>
+  </talk>
+
 </talklist>
