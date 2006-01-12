@@ -89,7 +89,7 @@ h3, .subsub {
     border-bottom:0;
 }
 
-#sidebar dd, #sidebar dt {
+#sidebar dd, #sidebar dt, #sidebar p {
     font-size: smaller;
 }
 
