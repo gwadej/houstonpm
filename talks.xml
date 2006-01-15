@@ -363,4 +363,15 @@
     </topic>
   </talk>
 
+  <talk num="0601">
+    <date>January 2006</date>
+    <topic href="/talks/2006talks/0601Talk/index.html">
+      <title>Accessing a USB device from Perl</title>
+      <presenter>Paul Archer</presenter>
+      <abstract>Paul led a group programming session using Inline::C and libusb
+      to control a USB-based programmable light from Perl. The device was fun,
+      the code was interesting, and a good time was had by all.</abstract>
+    </topic>
+  </talk>
+
 </talklist>
