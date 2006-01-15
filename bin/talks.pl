@@ -7,10 +7,13 @@ use Getopt::Long;
 use strict;
 use warnings;
 
+use constant START_YEAR => 2003;
+use constant END_YEAR => ((localtime)[5]+1900);
+
 my $StyleSheet;
 my $TemplateFile;
 
-my %params = ( 'year2' => ((localtime)[5] % 100) );
+my %params = ( 'year2' => (END_YEAR % 100) );
 
 GetOptions( 'stylesheet=s' => \$StyleSheet,
             'template=s' => \$TemplateFile,
@@ -44,6 +47,8 @@ if($template)
 {
     $template =~ s/\{\{content\}\}/$results/ms;
     $template =~ s/\{\{year\}\}/$params{year}/gms;
+    $template =~ s/\{\{yearmenucurr\}\}/makeYearLinks( $params{year} )/gems;
+    $template =~ s/\{\{yearmenu\}\}/makeYearLinks( 0 )/gems;
 }
 else
 {
@@ -65,4 +70,27 @@ sub  loadTemplate
     close( $fh ) or die "Unable to close '$file': $!";
     
     $content;
+}
+
+
+
+sub makeYearLinks
+{
+    my $curryear = shift;
+    my $output = "";
+
+    foreach my $year (reverse START_YEAR .. END_YEAR)
+    {
+        # start with the indent.
+        $output .= "     ";
+
+	# open list item
+	$output .= $curryear == $year ? q{<li class="curr">} : q{<li>};
+
+        # finish the link
+	$output .= qq{<a href="/talks/$year}
+	          . qq{talks/index.html">$year</a></li>\n};
+    }
+
+    $output;
 }
