@@ -1,0 +1,131 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+  <title>Summary of February 2006 Presentation</title>
+  <link rel="stylesheet" href="/styles/houston.css" type="text/css" />
+</head>
+<body>
+
+<div class="banner">
+   <a href="http://www.pm.org/index.html"><img alt="Perl Mongers' Site"
+       src="http://www.pm.org/graphics/title.png" height="65" width="150" /></a>
+   <h1>Houston.pm</h1>
+</div>
+<div id="outer">
+  <div id="navigation">
+  
+  <ul class="menu" id="mainmenu">
+     <li><a href="/index.html">Home</a></li>
+     <li><a href="/about.html">About Us</a></li>
+     <li><a href="/meetings.html">Meetings</a></li>
+     <li><a href="/faqs.html">FAQ</a></li>
+     <li><a href="/talks/mostrecent.html">Most Recent Talk</a></li>
+     <li><a href="/talks/index.html">Talks Archive</a></li>
+  </ul>
+
+  </div>
+
+  <div class="content">
+
+    <div id="sidebar">
+      <h1 class="heading">Beginner Resources</h1>
+      <p>Before the meeting actually kicked off, we had a short discussion on resources
+      for beginning Perl programmers. The suggested resources included:</p>
+    
+      <ul>
+        <li><a href="http://www.perlmonks.org/">Perl Monks</a></li>
+        <li><a href="http://www.cpan.org/">CPAN</a></li>
+        <li>Yahoo Group: perl-beginner</li>
+      </ul>
+      
+      <h1 class="heading">Arrays and Hashes</h1>
+      <p>We also had a quick overview of some features of Perl hashes
+      and lists. We discussed Perl's features for converting one into
+      the other.</p>
+    </div>
+
+    <p>This month we continued Paul Archer's exploration of the <a
+    href="http://www.delcom-eng.com/">Delcom Engineering</a> <a
+    href="http://www.delcom-eng.com/products_USBLMP.asp">USB Visual Signal
+    Indicator</a>. Paul is using the <a href="http://libusb.sourceforge.net/">libusb</a>
+    library and <a href="http://search.cpan.org/~ingy/Inline-0.44/C/C.pod">Inline::C </a>
+    to interface with this hardware device.</p>
+
+    <p>Last time, we had managed to get the VSI device to turn on and off the
+    individual colors and combinations of colors. In the time since the last meeting,
+    Paul had worked out the code to manipulate the intensity of the LEDs. He was
+    having trouble configuring the switch to work. This was where we began.</p>
+
+    <p>Paul had the documentation for the VSI device that describes all of the
+    control messages that must be sent to make the device work. Unfortunately, he
+    was already aware that the document was not always correct. One of the parameters
+    was different in the sample code that we started with. Changing this value to the
+    one in the documentation would not control the device.</p>
+
+    <p>Paul had coded the two commands needed to configure the button support. The
+    button supports two programmable features. One feature generates a confirmation
+    tone each time the button is pushed. The other feature turns off the speak and
+    all LEDs when the button is pushed. These features can be set independently,
+    giving a total of four modes of operation.</p>
+
+    <p>Upon careful reading of the documentation, we discovered a discrepency between
+    in the paragraph describing the configuration parameters. Although the document
+    said you could turn both features on with the MSB=0x03, it refered to the bits
+    of interest as bit 6 for <em>Auto Clear</em> and bit 7 for <em>Auto Confirm</em>.
+    When we tried the high bits instead of the low bits, we were able to change modes.
+    During the experimentation, we learned that setting the bits in the most significant
+    byte (MSB) enabled the features. Reseting the bits in the MSB had no effect.
+    Rereading the documentation revealed that setting the bits in the least significant
+    byte disabled the feature.</p>
+
+    <p>We modified the subroutine to be much more Perl-friendly and were able to
+    change button modes, more or less at will.</p>
+
+    <p>Since the meeting, Paul has expanded the features available in the program to
+    support flashing a color, controlling the speed of flashing, and configuring the
+    buzzer. The prototype code appears to be working quite well. The current prototype
+    is listed below:</p>
+    
+    <ul>
+      <li><a href="led-usb.pl">led-usb.pl</a>: latest prototype</li>
+    </ul>
+
+    <p>Once again, Paul did a great job of leading the presentation. The device
+    is somewhat interesting and the audience participation was good.</p>
+
+  </div>
+
+</div>
+<div id="footer">
+<p class="copyright">
+<!-- Creative Commons License -->
+<a rel="license" href="http://creativecommons.org/licenses/by/2.5/"><img alt="Creative Commons License" border="0" src="http://creativecommons.org/images/public/somerights20.gif" /></a>
+Copyright &copy; 2006 Houston.pm.<br /> Except as otherwise noted, this site is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/2.5/">Creative Commons Attribution 2.5 License</a>.
+<!-- /Creative Commons License -->
+
+
+<!--
+
+<rdf:RDF xmlns="http://web.resource.org/cc/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<Work rdf:about="">
+   <license rdf:resource="http://creativecommons.org/licenses/by/2.5/" />
+</Work>
+
+<License rdf:about="http://creativecommons.org/licenses/by/2.5/">
+   <permits rdf:resource="http://web.resource.org/cc/Reproduction" />
+   <permits rdf:resource="http://web.resource.org/cc/Distribution" />
+   <requires rdf:resource="http://web.resource.org/cc/Notice" />
+   <requires rdf:resource="http://web.resource.org/cc/Attribution" />
+   <permits rdf:resource="http://web.resource.org/cc/DerivativeWorks" />
+</License>
+
+</rdf:RDF>
+-->
+</p>
+<p>The use of the camel image in association with the Perl
+language is a trademark of O'Reilly &amp; Associates, Inc. Used with permission.</p>
+</div>
+</body>
+</html>

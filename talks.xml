@@ -374,4 +374,17 @@
     </topic>
   </talk>
 
+  <talk num="0602">
+    <date>February 2006</date>
+    <topic href="/talks/2006talks/0602Talk/index.html">
+      <title>Accessing a USB device from Perl, part 2.</title>
+      <presenter>Paul Archer</presenter>
+      <abstract>Paul continued the group programming session using Inline::C
+      and libusb to control the USB Visual Indicator from Perl. In this
+      installment, we worked around discrepencies in the documents and
+      provided a Perl-friendly interface to a low-level function. Once
+      again, audience participation was half the fun.</abstract>
+    </topic>
+  </talk>
+
 </talklist>

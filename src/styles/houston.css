@@ -89,8 +89,16 @@ h3, .subsub {
     border-bottom:0;
 }
 
-#sidebar dd, #sidebar dt, #sidebar p {
+#sidebar dd, #sidebar dt, #sidebar p, #sidebar ul {
     font-size: smaller;
+}
+
+#sidebar ul {
+    margin-left: 0;
+}
+
+#sidebar li {
+    margin: 0 0.5em;
 }
 
 #sidebar dd {
@@ -122,7 +130,6 @@ h3, .subsub {
     list-style: none;
     padding: 0;
     margin: 0;
-/*    margin: 1em 0 1em 0; */
 }
 
 .menu li a, .menu ul li a:visited {
@@ -143,19 +150,6 @@ h3, .subsub {
     margin: 0;
     padding: 0;
 }
-
-/*
-.menu li.curr {
-    list-style: none;
-    margin: 0;
-    padding-left: 0.5em;
-    background-color: #333;
-}
-
-.menu li.curr a, .menu li.curr a:visited {
-    padding-left: 0.5em;
-}
-*/
 
 .menu .head {
     margin-left: 0.5em;
