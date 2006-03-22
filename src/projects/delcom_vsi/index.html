@@ -91,8 +91,9 @@
     <p>Also the <code>"DATA"</code> approach to declaring the C code inline works
       great in a script, but it does not work so well in a module. The names of
       functions declared in the inline portion will not be available in the module.
-      Moving the code to a <em>here</em> document when using the
-      <code>Inline::C</code> module solves the problem.</p>
+      This problem can be solved either by moving the code to a <em>here</em>
+      document or directly calling the <code>Inline->init()</code> method after
+      your <code>use Inline</code> call.</p>
 
     <h3 class="subsub">References</h3>
     <ul>
@@ -114,6 +115,8 @@
         module for accessing C code from Perl</li>
       <li><a href="http://search.cpan.org/~dconway/Parse-RecDescent-1.94/lib/Parse/RecDescent.pod">Parse::RecDescent</a>
         module parsing an input language for controlling the VSI</li>
+      <li><a href="http://www.nntp.perl.org/group/perl.inline">inline@perl.org</a>
+        mailing list archive</li>
     </ul>
 
   </div>

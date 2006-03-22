@@ -387,4 +387,17 @@
     </topic>
   </talk>
 
+  <talk num="0603">
+    <date>March 2006</date>
+    <topic href="/talks/2006talks/0603Talk/index.html">
+      <title>Accessing a USB device from Perl, part 3.</title>
+      <presenter>Paul Archer</presenter>
+      <abstract>Paul concluded this series of presentations on libusb for
+      control the USB Visual Indicator from Perl. We used the current
+      prototype to control two separate USB VSI devices on the same
+      laptop and solved some difficulties with Inlince::C and modules.
+      </abstract>
+    </topic>
+  </talk>
+
 </talklist>
