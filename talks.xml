@@ -395,7 +395,7 @@
       <abstract>Paul concluded this series of presentations on libusb for
       control the USB Visual Indicator from Perl. We used the current
       prototype to control two separate USB VSI devices on the same
-      laptop and solved some difficulties with Inlince::C and modules.
+      laptop and solved some difficulties with Inline::C and modules.
       </abstract>
     </topic>
   </talk>
