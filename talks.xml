@@ -400,4 +400,16 @@
     </topic>
   </talk>
 
+  <talk num="0604">
+    <date>April 2006</date>
+    <topic href="/talks/2006talks/0604Talk/index.html">
+      <title>What Every Perl Programmer Should Know: tips, tricks, and
+        common knowledge</title>
+      <presenter>G. Wade Johnson</presenter>
+      <abstract>Wade lead a discussion on common Perl features, tips, and tricks
+        that every Perl programmer should know.
+      </abstract>
+    </topic>
+  </talk>
+
 </talklist>
