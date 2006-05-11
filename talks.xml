@@ -412,4 +412,17 @@
     </topic>
   </talk>
 
+  <talk num="0605">
+    <date>May 2006</date>
+    <topic href="/talks/2006talks/0605Talk/index.html">
+      <title>What Every Perl Programmer Should Know: tips, tricks, and
+        common knowledge, part 2</title>
+      <presenter>G. Wade Johnson</presenter>
+      <abstract>We concluded our discussion on Perl <em>common</em> knowledge,
+         tip, and tricks. Plus, we discussed some <em>gotchas</em> relating
+	 to context and dubroutines.
+      </abstract>
+    </topic>
+  </talk>
+
 </talklist>
