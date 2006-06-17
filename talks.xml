@@ -425,4 +425,17 @@
     </topic>
   </talk>
 
+  <talk num="0606">
+    <date>June 2006</date>
+    <topic href="/talks/2006talks/0606Talk/index.html">
+      <title>An Overview of Subversion and Introduction to Caching</title>
+      <presenter>Paul Archer</presenter>
+      <abstract>Paul covered two separate topics this month. The first was a
+        quick overview of the Subversion version control system. Afterwards,
+        he explained the topics of caching and memoization as discussed in the
+        book <cite>Higher Order Perl</cite>. 
+      </abstract>
+    </topic>
+  </talk>
+
 </talklist>

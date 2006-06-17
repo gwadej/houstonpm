@@ -1,0 +1,146 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+  <title>Summary of June 2006 Presentation</title>
+  <link rel="stylesheet" href="/styles/houston.css" type="text/css" />
+</head>
+<body>
+
+<div class="banner">
+   <a href="http://www.pm.org/index.html"><img alt="Perl Mongers' Site"
+       src="http://www.pm.org/graphics/title.png" height="65" width="150" /></a>
+   <h1>Houston.pm</h1>
+</div>
+<div id="outer">
+  <div id="navigation">
+  
+  <ul class="menu" id="mainmenu">
+     <li><a href="/index.html">Home</a></li>
+     <li><a href="/about.html">About Us</a></li>
+     <li><a href="/meetings.html">Meetings</a></li>
+     <li><a href="/faqs.html">FAQ</a></li>
+     <li><a href="/talks/mostrecent.html">Most Recent Talk</a></li>
+     <li><a href="/talks/index.html">Talks Archive</a></li>
+     <li><a href="/projects/index.html">Group Projects</a></li>
+  </ul>
+
+  </div>
+
+  <div class="content">
+
+    <p>Paul Archer began the night with a solid introduction to the
+      <a href="http://subversion.tigris.org/">Subversion</a> version control
+      system. In addition to the main project site, he showed two other
+      references to information on Subversion:
+      </p>
+
+    <ul>
+      <li><a href="http://svnbook.red-bean.com/">Version Control with Subversion</a></li>
+      <li><a href="http://en.wikipedia.org/wiki/Subversion_(software)">Subversion (software) - Wikipedia, the free encyclopedia</a></li>
+    </ul>
+   
+    <p>As a starting point, he created a repository using the command:</p>
+
+    <pre><code>
+       svnadmin create /path/to/repos
+    </code></pre>
+
+    <p>This command creates a Subversion repository by setting up an
+      appropriate directory tree and repository storage. The repository
+      is accessed using the <code>svn</code> command using a URL. For local
+      access, you can use a <code>file:///path/to/repos</code> or after
+      setting up the appropriate server you can use <code>svn:</code>,
+      <code>svn+ssh:</code>, or <code>http:</code> URLs.</p>
+
+    <p>The main portion of the presentation followed the tutorial in
+      the book <cite>Version Control with Subversion</cite> referenced above.
+      In addition, Paul covered some of the benefits of version control for
+      an individual developer.</p>
+
+    <ul>
+      <li>the ability to back out changes that don't work<li>
+      <li>more confidence in making changes, because you can back out</li>
+      <li>ability to compare previous versions to explore how the code has
+        changed</li>
+    </ul>
+
+    <p>We also briefly discussed when to commit changes. There are several
+      models used by different groups. All of which work under different
+      circumstances. Which one you choose depends mostly on what makes you
+      (or your company) most comfortable. In order from informal to formal:</p>
+
+    <ul>
+      <li>After any complete change</li>
+      <li>Before large or potentially dangerous changes</li>
+      <li>Any time the code is compilable and runnable</li>
+      <li>Only after the code successfully completes a test suite</li>
+      <li>After code completes the test suite and full code review</li>
+    </ul>
+
+    <p>We also discussed the concepts of <em>tagging</em> and
+      <em>branching</em>. A tag is normally applied to mark a set of files
+      as a point in time we might want to recreate. For example, most groups
+      tag the code for a release, because we will want to be able to rebuild
+      that code at some time in the future. A branch, on the other hand, is
+      used to perform development separate from the main line of development
+      (the <em>trunk</em>). Unlike most other systems, Subversion implements
+      tags and branches in exactly the same way, using <em>cheap
+      copies</em>.</p>
+
+    <h2 class="subhead">Caching</h2>
+    <p>After covering the basics of Subversion, Paul turned his attention
+      to chapter 3 of the book <cite>Higher Order Perl</cite>. This chapter
+      covers the concept of <em>caching</em>, which is a standard technique
+      for speeding up <em>pure functions</em>. Pure functions are defined
+      as functions whose output depends only on their inputs. Caching can
+      also be used on functions that depend on something other than their
+      inputs (like a database) provided the function should always return
+      the same output for a given set of inputs.</p>
+
+    <p>Paul went on to talk about the <code>Memoize</code> module that
+      simplifies adding caching to a Perl function. He showed how to add
+      caching to a function with the addition of two lines of code.</p>
+
+    <pre><code>
+      use Memoize;
+      memoize 'func';
+    </code></pre>
+
+    <p>He finished by talking about how the ability to easily add caching
+      changes the way you think about optimizing code.</p>
+  </div>
+
+</div>
+<div id="footer">
+<p class="copyright">
+<!-- Creative Commons License -->
+<a rel="license" href="http://creativecommons.org/licenses/by/2.5/"><img alt="Creative Commons License" border="0" src="http://creativecommons.org/images/public/somerights20.gif" /></a>
+Copyright &copy; 2006 Houston.pm.<br /> Except as otherwise noted, this site is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/2.5/">Creative Commons Attribution 2.5 License</a>.
+<!-- /Creative Commons License -->
+
+
+<!--
+
+<rdf:RDF xmlns="http://web.resource.org/cc/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<Work rdf:about="">
+   <license rdf:resource="http://creativecommons.org/licenses/by/2.5/" />
+</Work>
+
+<License rdf:about="http://creativecommons.org/licenses/by/2.5/">
+   <permits rdf:resource="http://web.resource.org/cc/Reproduction" />
+   <permits rdf:resource="http://web.resource.org/cc/Distribution" />
+   <requires rdf:resource="http://web.resource.org/cc/Notice" />
+   <requires rdf:resource="http://web.resource.org/cc/Attribution" />
+   <permits rdf:resource="http://web.resource.org/cc/DerivativeWorks" />
+</License>
+
+</rdf:RDF>
+-->
+</p>
+<p>The use of the camel image in association with the Perl
+language is a trademark of O'Reilly &amp; Associates, Inc. Used with permission.</p>
+</div>
+</body>
+</html>
