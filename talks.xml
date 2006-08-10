@@ -439,7 +439,7 @@
   </talk>
 
   <talk num="0607">
-    <date>June 2007</date>
+    <date>July 2006</date>
     <topic href="/talks/2006talks/0607Talk/index.html">
       <title>A Report on YAPC::NA 2006</title>
       <presenter>Will Willis</presenter>
@@ -447,6 +447,16 @@
       <abstract>Will and Jeremy presented their experiences at YAPC::NA
         this year in Chicago. Jeremy also gave an update on the current
         state of our proposal for YAPC::NA 2007 in Houston.</abstract>
+    </topic>
+  </talk>
+
+  <talk num="0608">
+    <date>August 2006</date>
+    <topic href="/talks/2006talks/0608Talk/index.html">
+      <title>Perl 6: an Overview</title>
+      <presenter>Robert Boone</presenter>
+      <abstract>Robert lead a discussion on Perl 6. The meeting was part
+        presentation, part question and answer session.</abstract>
     </topic>
   </talk>
 
