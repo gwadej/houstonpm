@@ -1,7 +1,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <html>
 <head>
-  <title>Houston Perl Mongers - Meetings</title>
+  <title>Summary of September 2006 Presentation</title>
   <link rel="stylesheet" href="/styles/houston.css" type="text/css" />
 </head>
 <body>
@@ -13,11 +13,11 @@
 </div>
 <div id="outer">
   <div id="navigation">
-
+  
   <ul class="menu" id="mainmenu">
      <li><a href="/index.html">Home</a></li>
      <li><a href="/about.html">About Us</a></li>
-     <li class="curr"><a href="/meetings.html">Meetings</a></li>
+     <li><a href="/meetings.html">Meetings</a></li>
      <li><a href="/faqs.html">FAQ</a></li>
      <li><a href="/talks/mostrecent.html">Most Recent Talk</a></li>
      <li><a href="/talks/index.html">Talks Archive</a></li>
@@ -27,49 +27,38 @@
   </div>
 
   <div class="content">
-    <h2 class="subhead">Monthly Meetings</h2>
-    
-    <p>We meet the second Tuesday of each month at <a href="http://www.hal-pc.org/">HAL PC</a>
-      from 7PM to 9PM. Click <a href="http://www.hal-pc.org/map.html">here</a>
-      for directions. Of course, HAL PC encourages you to join.</p>
+    <p>Glenn Pringle provided an introduction to building PDF files in Perl.
+      He focused on the <code>PDF::API2</code> module. Although this module
+      is pretty low-level and does not supply a lot of <em>helper</em> methods
+      to simplify building a PDF, it did supply everything needed to solve
+      Glenn's problem on a project.</p>
 
-    <p>In the past, our meetings have consisted of a presentation, with plenty
-      of audience participation. Before and after the presentation, we discuss
-      various topics that are at least vaguely related to Perl. We have also
-      had presentations on projects that various members were working on.</p>
+    <p>Glenn demonstrated a CGI script that was used to request a car for
+      use by employees of a government agency. One of the important aspects
+      of the problem was a printable receipt generated for each request.
+      Using PDFs for the receipt provided an official looking printout that
+      solved the customer's requirements.</p>
 
-    <p>Earlier this year, we had a group programming project. The January,
-      2006 meeting began a group programming project to control a USB-based
-      visual indicator from Perl. When that project got past the experiment
-      and prototype phase, we stopped working on it in the meetings. Some of
-      the resulting code is now on CPAN, and more is in development.</p>
+    <p>Unfortunately, due to the low-level nature of the module, Glenn found
+      himself spending a fair amount of time on issues such as aligning text
+      and handling word-wrap manually. Despite the extra work, the module
+      did handle everything that he needed and he was able to complete the
+      project successfully.</p>
 
-    <p>Our most recent meetings have been more of a directed discussion style
-      rather than the presentations we had done in the past. There seems to be
-      some interest in continuing this approach for a while.</p>
-
-    <h2 class="subhead">Upcoming Meetings</h2>
-
-    <dl>
-       <dt>October 10, 2006</dt>
-       <dd>To be announced.</dd>
-
-       <dt>November 14, 2006</dt>
-       <dd>To be announced.</dd>
-
-       <dt>December 12, 2006</dt>
-       <dd>Taking the month off for the holidays.</dd>
-
-       <dt>January 9, 2007</dt>
-       <dd>Paul Archer presents the HTML::Mason web site building system.</dd>
-    </dl>
+    <p>Glenn, then, went on to show how he used <code>HTML::Template</code>
+      to make the CGI script easier to maintain by separating the HTML into
+      a template and keeping the code in the Perl script. Comments from the
+      audience provided further insight. Although it does not support all
+      of the bells and whistles of some of the bigger templating solutions.
+      <code>HTML::Template</code> apparently is simple to get working
+      quickly and can handle many tasks needed for a set of web pages.</p>
 
 </div>
 <div id="footer">
 <p class="copyright">
 <!-- Creative Commons License -->
 <a rel="license" href="http://creativecommons.org/licenses/by/2.5/"><img alt="Creative Commons License" border="0" src="http://creativecommons.org/images/public/somerights20.gif" /></a>
-Copyright &copy; 2005-2006 Houston.pm.<br /> Except as otherwise noted, this site is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/2.5/">Creative Commons Attribution 2.5 License</a>.
+Copyright &copy; 2006 Houston.pm.<br /> Except as otherwise noted, this site is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/2.5/">Creative Commons Attribution 2.5 License</a>.
 <!-- /Creative Commons License -->
 
 

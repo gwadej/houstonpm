@@ -460,4 +460,15 @@
     </topic>
   </talk>
 
+  <talk num="0609">
+    <date>September 2006</date>
+    <topic href="/talks/2006talks/0609Talk/index.html">
+      <title>Introduction to PDF::API2 and HTML::Template</title>
+      <presenter>Glenn Pringle</presenter>
+      <abstract>Glenn introduced the PDF::API2 module and showed how
+        it had been used to produce printable receipts online. He also
+        provided a brief introduction to HTML::Template.</abstract>
+    </topic>
+  </talk>
+
 </talklist>
