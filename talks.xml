@@ -471,4 +471,14 @@
     </topic>
   </talk>
 
+  <talk num="0610">
+    <date>October 2006</date>
+    <topic href="/talks/2006talks/0610Talk/index.html">
+      <title>Using Perl::Critic to Improve Code</title>
+      <presenter>G. Wade Johnson</presenter>
+      <abstract>Wade gave an overview of the Perl::Critic module. This lead
+        to some group discussion about best practices in Perl.</abstract>
+    </topic>
+  </talk>
+
 </talklist>

@@ -1,7 +1,7 @@
 # Makefile for the Houston.pm website
 
 OUTDIR=out
-INSTALLDIR=/srv/www/vhosts/houstonpm/htdocs/
+INSTALLDIR=/var/www-vhost/houstonpm/
 
 TALKSUMMARIES=${OUTDIR}/talks/mostrecent.html \
               ${OUTDIR}/talks/index.html \

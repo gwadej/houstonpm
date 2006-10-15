@@ -1,0 +1,117 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+  <title>Summary of October 2006 Presentation</title>
+  <link rel="stylesheet" href="/styles/houston.css" type="text/css" />
+</head>
+<body>
+
+<div class="banner">
+   <a href="http://www.pm.org/index.html"><img alt="Perl Mongers' Site"
+       src="http://www.pm.org/graphics/title.png" height="65" width="150" /></a>
+   <h1>Houston.pm</h1>
+</div>
+<div id="outer">
+  <div id="navigation">
+  
+  <ul class="menu" id="mainmenu">
+     <li><a href="/index.html">Home</a></li>
+     <li><a href="/about.html">About Us</a></li>
+     <li><a href="/meetings.html">Meetings</a></li>
+     <li><a href="/faqs.html">FAQ</a></li>
+     <li><a href="/talks/mostrecent.html">Most Recent Talk</a></li>
+     <li><a href="/talks/index.html">Talks Archive</a></li>
+     <li><a href="/projects/index.html">Group Projects</a></li>
+  </ul>
+
+  </div>
+
+  <div class="content">
+    <p>Wade introduced the modules <a href="http://search.cpan.org/~thaljef/Perl-Critic-0.2/">Perl::Critic</a>
+      and <a href="http://search.cpan.org/~petdance/Perl-Critic-Bangs-0.22/">Perl::Critic::Bangs</a>.
+      The <code>Perl::Critic</code> module analyzes Perl code with respect to
+      a set of policies looking for violations of defined policies. The default
+      policies are based on the book <cite>Perl Best Practices</cite> by
+      Damian Conway. The policies in the <code>Perl::Critic::Bangs</code>
+      module were collected by Andy Lester.</p>
+
+    <p>One of the best things about the code analysis used by
+      <code>Perl::Critic</code> is the ability to customize the individual
+      policies. The module supports a <code>.perlcriticrc</code> file which
+      allows you to customize both the severity of a policy violation (5 is
+      most severe and 1 is least) and, in some cases, modify the policy itself.
+      In addition, special comment markers can be used to disable a policy for
+      a particular section of code if necessary. This allows you define policies
+      for your environment, while still supporting special purpose overrides
+      for when ugly, power code is needed.</p>
+
+    <p>The <code>perlcritic</code> program is used from the command line to
+      test individual files or directories of files. Additionally, the module
+      <a href="http://search.cpan.org/~thaljef/Test-Perl-Critic-0.07/">Test::Perl::Critic</a>
+      supports adding this code critique to your module unit tests.</p>
+
+    <p>The obvious questions are</p>
+    <ul>
+      <li>How well does the module work?</li>
+      <li>Will the use of this module improve my code?</li>
+    </ul>
+
+    <p>First of all, before using the module, you will want to customize the
+      policies to match your coding standards. For example, Wade showed
+      his <a href="./gwj_perlcriticrc">.perlcriticrc</a>. This includes changes
+      in severity levels for some policies and disabling a few others. This
+      helps avoid <em>false positives</em> from policies that you don't agree
+      with.</p>
+      
+    <p>Next, run the <code>perlcritic</code> command on some of your code. You
+      may find that you have not followed the policies you thought you had.
+      Wade showed the results when <code>perlcritic</code> was run over two
+      of his projects at various levels of severity. The results were pretty
+      good for his most recent module <code>Device::USB</code>. This module
+      benefits from a recent reading of <cite>Perl Best Practices</cite> and
+      multiple runs of <code>perlcritic</code>. On the other hand, the module
+      <code>Games::Maze::SVG</code> got extremely bad reports, despite the
+      fact that the <em>same</em> policies had been followed during
+      development.</p>
+
+    <p>This shows how important automatic verification can be.</p>
+
+    <p>The meeting then moved into a discussion of various policies and best
+      practices. Wade floated the idea of a Houston.pm version of the
+      <code>.perlcriticrc</code> file. Although people expressed some interest,
+      we did not spend much time on it.</p>
+
+</div>
+<div id="footer">
+<p class="copyright">
+<!-- Creative Commons License -->
+<a rel="license" href="http://creativecommons.org/licenses/by/2.5/"><img alt="Creative Commons License" border="0" src="http://creativecommons.org/images/public/somerights20.gif" /></a>
+Copyright &copy; 2006 Houston.pm.<br /> Except as otherwise noted, this site is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/2.5/">Creative Commons Attribution 2.5 License</a>.
+<!-- /Creative Commons License -->
+
+
+<!--
+
+<rdf:RDF xmlns="http://web.resource.org/cc/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<Work rdf:about="">
+   <license rdf:resource="http://creativecommons.org/licenses/by/2.5/" />
+</Work>
+
+<License rdf:about="http://creativecommons.org/licenses/by/2.5/">
+   <permits rdf:resource="http://web.resource.org/cc/Reproduction" />
+   <permits rdf:resource="http://web.resource.org/cc/Distribution" />
+   <requires rdf:resource="http://web.resource.org/cc/Notice" />
+   <requires rdf:resource="http://web.resource.org/cc/Attribution" />
+   <permits rdf:resource="http://web.resource.org/cc/DerivativeWorks" />
+</License>
+
+</rdf:RDF>
+-->
+</p>
+<p>The use of the camel image in association with the Perl
+language is a trademark of O'Reilly &amp; Associates, Inc. Used with permission.</p>
+</div>
+</body>
+</html>
