@@ -1,0 +1,132 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+  <title>Summary of November 2006 Presentation</title>
+  <link rel="stylesheet" href="/styles/houston.css" type="text/css" />
+</head>
+<body>
+
+<div class="banner">
+   <a href="http://www.pm.org/index.html"><img alt="Perl Mongers' Site"
+       src="http://www.pm.org/graphics/title.png" height="65" width="150" /></a>
+   <h1>Houston.pm</h1>
+</div>
+<div id="outer">
+  <div id="navigation">
+  
+  <ul class="menu" id="mainmenu">
+     <li><a href="/index.html">Home</a></li>
+     <li><a href="/about.html">About Us</a></li>
+     <li><a href="/meetings.html">Meetings</a></li>
+     <li><a href="/faqs.html">FAQ</a></li>
+     <li><a href="/talks/mostrecent.html">Most Recent Talk</a></li>
+     <li><a href="/talks/index.html">Talks Archive</a></li>
+     <li><a href="/projects/index.html">Group Projects</a></li>
+  </ul>
+
+  </div>
+
+  <div class="content">
+    <p>Todd introduced the modules <code>Smart::Comments</code>,
+      <code>Getopt::Euclid</code>, and <code>Log::Log4perl</code>. The first
+      two modules were recommended by <cite>Perl Best Practices</cite> by
+      Damian Conway. (They were also written by Conway.) The final module
+      is a port of the <code>Log4j</code> package from Java to Perl.</p>
+
+    <p>Todd walked us through various uses of the <code>Smart::Comments</code>
+      module. Smart comments work by filtering the text of the Perl program
+      and converting specially formatted comments into print statements. The
+      most basic uses of <code>Smart::Comments</code> are debugging related.
+      Using a smart comment of the form:</p>
+
+    <pre><code>
+      ### var: $var
+    </code></pre>
+
+    <p>prints the value of the variable with a label. You can also print
+      just a marker by using a comment without any embedded variables.</p>
+
+    <pre><code>
+      ### Before print routine...
+    </code></pre>
+
+    <p>A much more interesting feature of <code>Smart::Comments</code> is the
+      automatic generation of progress indicators for loops. The general form
+      looks like:</p>
+
+    <pre><code>
+      for my $elem (@all_elements) { ### Working...            Done
+          # do work on each element
+      }
+    </code></pre>
+
+    <p>which animates the three dots after the work <em>Working</em> to
+      show current progress. Variations in the comment can provide an
+      indication of <em>percent done</em> and time remaining. See the
+      documentation for the module for the details.</p>
+
+    <p>The final feature of <code>Smart::Comments</code> is the ability to
+      provide assertions. These are statements of conditions at a particular
+      point in the code that must be true. If an assertion is violated, the
+      program terminates with an exception. If you have experience with
+      asserts in other languages, you may find these quite useful.</p>
+
+    <p>Todd went on to describe the <em>easy mode</em> of
+      <code>Log::Log4perl</code>. This provides an easy introduction to this
+      powerful logging framework. The main purpose of the module is to
+      provide flexible and powerful logging for your Perl programs without
+      building yet another framework. Todd showed how using the <em>easy
+      mode</em> allows you to replace random <code>print</code> statements in
+      your code with more explicit logging statements that can be written
+      to a logfile. Given a reasonable logging format, this generates messages
+      that are easier to search and filter when you are troubleshooting a
+      problem.</p>
+
+    <p>The <code>Getopt::Euclid</code> module serves the same purpose as most
+      of the other <code>Getopt::</code> modules on CPAN. The idea is to
+      provide a simple way of parsing command line options that makes passing
+      parameters to the program easy. Most modules provide some special
+      configuration information to define the parameters that the program
+      will accept.</p>
+
+    <p><code>Getopt::Euclid</code> takes the unusual approach of using the
+      POD documentation as the configuration. This has the advantage of
+      keeping your argument processing, POD documentation, and usage message
+      all in sync. The POD documentation is pretty standard with a few minor
+      changes needed if you want the module to check parameter arguments for
+      you.</p>
+
+</div>
+<div id="footer">
+<p class="copyright">
+<!-- Creative Commons License -->
+<a rel="license" href="http://creativecommons.org/licenses/by/2.5/"><img alt="Creative Commons License" border="0" src="http://creativecommons.org/images/public/somerights20.gif" /></a>
+Copyright &copy; 2006 Houston.pm.<br /> Except as otherwise noted, this site is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/2.5/">Creative Commons Attribution 2.5 License</a>.
+<!-- /Creative Commons License -->
+
+
+<!--
+
+<rdf:RDF xmlns="http://web.resource.org/cc/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<Work rdf:about="">
+   <license rdf:resource="http://creativecommons.org/licenses/by/2.5/" />
+</Work>
+
+<License rdf:about="http://creativecommons.org/licenses/by/2.5/">
+   <permits rdf:resource="http://web.resource.org/cc/Reproduction" />
+   <permits rdf:resource="http://web.resource.org/cc/Distribution" />
+   <requires rdf:resource="http://web.resource.org/cc/Notice" />
+   <requires rdf:resource="http://web.resource.org/cc/Attribution" />
+   <permits rdf:resource="http://web.resource.org/cc/DerivativeWorks" />
+</License>
+
+</rdf:RDF>
+-->
+</p>
+<p>The use of the camel image in association with the Perl
+language is a trademark of O'Reilly &amp; Associates, Inc. Used with permission.</p>
+</div>
+</body>
+</html>

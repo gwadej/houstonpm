@@ -481,4 +481,14 @@
     </topic>
   </talk>
 
+  <talk num="0611">
+    <date>November 2006</date>
+    <topic href="/talks/2006talks/0611Talk/index.html">
+      <title>An Overview of Getopt::Euclid, Smart::Comments, and Log4Perl</title>
+      <presenter>Todd Rinaldo</presenter>
+      <abstract>Todd presented his experiences with three modules that he has
+        been using recently.</abstract>
+    </topic>
+  </talk>
+
 </talklist>
