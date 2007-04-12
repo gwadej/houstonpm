@@ -491,4 +491,13 @@
     </topic>
   </talk>
 
+  <talk num="0701">
+    <date>January 2007</date>
+    <topic href="/talks/2007talks/0701Talk/index.html">
+      <title>Creating Perl Modules</title>
+      <presenter>G. Wade Johnson</presenter>
+      <abstract></abstract>
+    </topic>
+  </talk>
+
 </talklist>
