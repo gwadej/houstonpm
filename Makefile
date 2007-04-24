@@ -13,8 +13,8 @@ TALKSUMMARIES=${OUTDIR}/talks/mostrecent.html \
 site: base ${TALKSUMMARIES}
 
 dirs:
-	if [[ ! -d ${OUTDIR} ]]; then mkdir ${OUTDIR}; fi
-	if [[ ! -d ${OUTDIR}/talks ]]; then mkdir ${OUTDIR}/talks; fi
+	if [ ! -d ${OUTDIR} ]; then mkdir ${OUTDIR}; fi
+	if [ ! -d ${OUTDIR}/talks ]; then mkdir ${OUTDIR}/talks; fi
 
 base: dirs
 	cp -r src/* ${OUTDIR}
