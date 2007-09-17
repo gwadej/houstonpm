@@ -1,0 +1,37 @@
+Outline for the sub, code reference, closures talk for Houston.pm
+
+ 1. Code references
+    - Reference to a subroutine
+    - Can be stored and called at a later time
+    - Get reference to an existing subroutine
+    - perldoc perlref
+ 2. The sub keyword
+    - Creates a subroutine
+    - returns a reference to the subroutine
+ 3. Anonymous subroutines
+    - sub is an operator
+    - No name supplied
+    - Assign the coderef to a scalar
+ 4. Calling code references
+    - &{$coderef}( 'params' );
+    - $coderef->( 'params' );
+ 5. Why coderefs?
+    - make a decision only once
+    - Pass code to a subroutine
+ 6. Coderef rather than flags 
+    - Instead of passing a flag to tell what to do, pass what to do.
+ 7. map, sort, and grep
+    - If you've used these, you've probably already used coderefs
+ 8. Table-driven code
+ 9. Closures
+    - Capture lexical variables
+    - Only if not named, if named they only capture once.
+10. Usage of closures
+    - UI callbacks (need examples)
+    - Mini-objects (counter example)
+11. Currying
+    - new sub with some parameters already supplied
+    - Makes use of closures
+
+
+Do we want something on prototypes?

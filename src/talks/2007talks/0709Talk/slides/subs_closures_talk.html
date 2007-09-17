@@ -1,0 +1,687 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>Subroutines, Closures, Coderefs</title>
+<!-- metadata -->
+<meta name="generator" content="S5" />
+<meta name="version" content="S5 1.1" />
+<meta name="presdate" content="20070911" />
+<meta name="author" content="G. Wade Johnson" />
+<meta name="company" content="Houston.pm" />
+<!-- configuration parameters -->
+<meta name="defaultView" content="slideshow" />
+<meta name="controlVis" content="hidden" />
+<!-- style sheet links -->
+<link rel="stylesheet" href="ui/default/slides.css" type="text/css" media="projection" id="slideProj" />
+<link rel="stylesheet" href="ui/default/outline.css" type="text/css" media="screen" id="outlineStyle" />
+<link rel="stylesheet" href="ui/default/print.css" type="text/css" media="print" id="slidePrint" />
+<link rel="stylesheet" href="ui/default/opera.css" type="text/css" media="projection" id="operaFix" />
+<!-- embedded styles -->
+<style type="text/css" media="all">
+.imgcon {width: 525px; margin: 0 auto; padding: 0; text-align: center;}
+#anim {width: 270px; height: 320px; position: relative; margin-top: 0.5em;}
+#anim img {position: absolute; top: 42px; left: 24px;}
+img#me01 {top: 0; left: 0;}
+img#me02 {left: 23px;}
+img#me04 {top: 44px;}
+img#me05 {top: 43px;left: 36px;}
+</style>
+<!-- S5 JS -->
+<script src="ui/default/slides.js" type="text/javascript"></script>
+</head>
+<body>
+
+<div class="layout">
+<div id="controls"><!-- DO NOT EDIT --></div>
+<div id="currentSlide"><!-- DO NOT EDIT --></div>
+<div id="header"></div>
+<div id="footer">
+<h1>Subroutines, Closures, Coderefs</h1>
+<h2>Houston.pm &#8226; Sept. 11, 2007</h2>
+</div>
+
+</div>
+<div class="presentation">
+
+<div class="slide">
+<h1>Subroutines, Coderefs, and Closures</h1>
+<h3>G. Wade Johnson</h3>
+<h4><a href="http://houston.pm.org/">Houston.pm</a></h4>
+</div>
+
+
+<div class="slide">
+<h1>What is a Coderef?</h1>
+<ul>
+<li>It is a reference to a subroutine.</li>
+<li>It can be stored and passed around like other scalars.</li>
+<li>The code referred to by the coderef can be called at a later time.</li>
+</ul>
+<div class="handout">
+<p>Coderefs are like other references, they allow you to indirectly access the
+item they reference. They also allow you to treat code like it is data.</p>
+</div>
+</div>
+
+
+<div class="slide">
+<h1>A Short Diversion</h1>
+<ul>
+<li>Perl 5 added references as a way to indirectly access data.</li>
+<li>Perl supports references to: scalars, arrays, hashes, globs, filehandles, subroutines.</li>
+<li>References are scalars, so they can be stored anywhere a scalar can be.</li>
+<li>Opens the door to complex data structures.</li>
+</ul>
+<div class="handout">
+<p>A quick overview of references, read the documentation listed later to get
+a fuller understanding of references.</p>
+</div>
+</div>
+
+
+<div class="slide">
+<h1>References Refresher (cont.)</h1>
+<ul>
+<li>Use the <code>\</code> operator to create a reference.</li>
+<li>Special syntax for arrayrefs and hashrefs.
+<li>Dereference by using the normal sigils.</li>
+<li>References are scalars, so they can be stored anywhere a scalar can be.</li>
+<li>Opens the door to complex data structures.</li>
+</ul>
+</div>
+
+
+<div class="slide">
+<h1>Making References</h1>
+<code><pre>
+   my $sref = \$scalar;
+   my $aref = \@array;
+   my $href = \%hash;
+   my $cref = \&amp;func;
+   # anonymous array and hash
+   my $aref2 = [ 1, 2, 3 ];
+   my $href2 = { a =&gt; 1, b =&gt; 2 };
+</pre></code>
+<div class="handout">
+<p>Here are some examples of how to make references. Scalar references are not
+used nearly as often as array or hash references. Both named and anonymous references
+to arrays and hashes are quite useful.</p>
+<p>Code references are much more useful than most people seem to think.</p>
+<p>Note that you do not make a coderef with <code>&amp;func;</code>.
+This construct calls the subroutine <code>func</code> passing it the arguments of
+subroutine that called it. This calling convention was required in Perl 4, but
+not in Perl 5. It's effects are different than people expect, so the general
+recommendation is to not call subroutines this way.</p>
+<p>Assigning the output of this call to a variable captures the return value of
+the subroutine call, not a reference to the subroutine.</p>
+</div>
+</div>
+
+
+<div class="slide">
+<h1>Using References</h1>
+<code><pre>
+   print "${$sref}\n";
+   my $len = @{$aref}; # the whole array
+   $aref-&gt;[0] = 15; # an element
+   my $keyscnt = keys %{$href}; # the whole hash
+   $href-&gt;{'c'} = 3; # an element
+</pre></code>
+<div class="handout">
+<p>These are basic examples of using the different kinds of references.</p>
+<p>The curly braces are not the part of the syntax that causes the dereference.
+The sigil performs the dereference. The curly braces serve two purposes. They
+make the dereference somewhat easier to read and they specify what is being
+dereferenced. If the reference is stored in a more complicated structure than
+a single scalar, this becomes much more important.</p>
+</div>
+</div>
+
+
+<div class="slide">
+<h1>More on References</h1>
+<ul>
+<li>Perl References Tutorial (<code>perldoc perlreftut</code>)</li>
+<li>Perl References Doc. (<code>perldoc perlref</code>)</li>
+<li>Arrays of Arrays (<code>perldoc perllol</code>)</li>
+<li>Perl Data Structure Cookbook (<code>perldoc perldsc</code>)</li>
+</ul>
+<div class="handout">
+<p>The standard Perl documentation has a lot of good material on references. I
+would definitely recommend starting with <code>perlreftut</code>.</p>
+</div>
+</div>
+
+
+<div class="slide">
+<h1>Back to Subroutines</h1>
+<ul>
+<li>You create subroutines with the <code>sub</code> operator.</li>
+<li>The <code>sub</code> operator returns a coderef.</li>
+<li>Parameters passed in the <code>@_</code> array.</li>
+<li>Output returned as either last executed statement or <code>return</code>.</li>
+</ul>
+<div class="handout">
+<p>Now we're back to the main topic. There's really not much to say about
+creating subroutines.</p>
+<p>To be precise, the <code>sub</code> operator returns a coderef when it is
+called to create an anonymous subroutine. If it is called with a subroutine
+name, it does not.</p>
+</div>
+</div>
+
+
+<div class="slide">
+<h1>Subroutine/Coderef Example</h1>
+<code><pre>
+   sub sum
+   {
+       my $sum = shift;
+       $sum += $_ foreach @_;
+       return $sum;
+   }
+
+   my $sumref = \&amp;sum;
+   print $sumref-&gt;( 1..6 ), "\n";
+</pre></code>
+<div class="handout">
+<p>This is how you make a reference to a named subroutine. Then, we call it.</p>
+</div>
+</div>
+
+
+<div class="slide">
+<h1>Subroutine/Coderef Example 2</h1>
+<code><pre>
+   my $sumref = sub
+   {
+       my $sum = shift;
+       $sum += $_ foreach @_;
+       return $sum;
+   };
+
+   print $sumref-&gt;( 1..6 ), "\n";
+</pre></code>
+<div class="handout">
+<p>You can also use sub as an operator to create an anonymous subroutine.
+It's interesting to note that this one does not execute at compile-time like
+the named form. This form executes at run-time.</p>
+</div>
+</div>
+
+
+<div class="slide">
+<h1>Alternate Coderef Calling</h1>
+<p>You can also call through a coderef like this:</p>
+<code><pre>
+   &amp;{$cref}( 1..6 );
+</pre></code>
+<div class="handout">
+<p>I really don't like this style, but it's here for completeness.</p>
+</div>
+</div>
+
+
+<div class="slide">
+<h1>What's the point?</h1>
+<p>Why use coderefs?</p>
+<ul>
+<li>Passing code to another subroutine.</li>
+<li>Storing code in a data structure.</li>
+<li>Make a decision only once.</li>
+</ul>
+<div class="handout">
+<p>If you've never seen coderefs or function pointers before it is quite easy
+to underestimate how useful they are.</p>
+</div>
+</div>
+
+
+<div class="slide">
+<h1>Passing Code to a Subroutine</h1>
+<ul>
+<li><code>sort</code>, <code>map</code>, <code>grep</code></li>
+<li>UI callbacks</li>
+<li>Applying algorithms to complex containers.</li>
+</ul>
+<div class="handout">
+<p>People are often surprised to find they have already been using coderefs with
+the list operators. If you've used Perl/Tk, you'll probably already be familiar
+with the callback mechanism. (I'm sure most of the UI frameworks probably do something
+similar. The last use just extends the first idea, but few people stumble onto it
+themselves.</p>
+</div>
+</div>
+
+
+<div class="slide">
+<h1>List Operators</h1>
+<code><pre>
+   @list = sort { $b &lt;=&gt; $a } @list;
+
+   sub backwards { return $b cmp $a; }
+   @list = sort backwards @list;
+</pre></code>
+<div class="handout">
+<p>The code in the curlies is actually a coderef. Alternatively, you can use
+the name of a subroutine. This subroutine is special because it takes its
+parameters in <code>$a</code> and <code>$b</code> instead of <code>@_</code>.
+These are package variables, which can be a bit of a surprise under some
+circumstances.</p>
+</div>
+</div>
+
+
+<div class="slide">
+<h1>Callbacks</h1>
+<code><pre>
+    my $quit_btn = $window-&gt;Button(
+        -text =&gt; "Quit",
+        -command =&gt; sub { exit( 0 ); }
+    );
+</pre></code>
+<div class="handout">
+<p>Supplying a callback to be executed when the button is clicked.</p>
+</div>
+</div>
+
+
+<div class="slide">
+<h1>Containers</h1>
+<p>How do you do things generically with complex data structures?</p>
+<p>Let's do this with a concrete example: a hierarchical filesystem</p>
+<div class="handout">
+<p>One of the problems with complex data structures is access. The more
+complicated the data structure, the more work you need to do to get to the
+part of the data you want. Accessing all of the data in the structure may
+require a significant amount of code.</p>
+<p>The file system is not really very complicated, but it requires more work
+that a list or hash to access. If you've ever tried to write code to manipulate
+files and directories, you are probably aware of many places where things go
+wrong.</p>
+</div>
+</div>
+
+
+<div class="slide">
+<h1>Find Large Files</h1>
+<code><pre>
+    sub find_large_files
+    {
+        my ($dir, $size) = @_;
+        my @files = grep { -s $_ &gt; $size } $dir-&gt;files();
+        foreach my $d ($dir-&gt;dirs())
+        {
+            push @files, find_large_files( $d, $size );
+        }
+        return @files;
+    }
+</pre></code>
+<div class="handout">
+<p>In this case, I decided to process all of the files first, then the
+subdirectories. I could also have done the subdirectories first, or mixed
+the two.</p>
+<p>Since I moved the recursion to the bottom, we could have actually used
+an iterative solution fairly easily, but that would have been a little
+harder to grasp.</p>
+</div>
+</div>
+
+
+<div class="slide">
+<h1>Find Small Files</h1>
+<code><pre>
+    sub find_small_files
+    {
+        my ($dir, $size) = @_;
+        my @files = grep { -s $_ &lt; $size } $dir-&gt;files();
+        foreach my $d ($dir-&gt;dirs())
+        {
+            push @files, find_small_files( $d, $size );
+        }
+        return @files;
+    }
+</pre></code>
+<div class="handout">
+<p>Notice the two changes that would need to be made to each copy. How often do
+you think the second would be forgotten?</p>
+</div>
+</div>
+
+
+<div class="slide">
+<h1>What's Common</h1>
+<ul>
+<li>Potentially complex container</li>
+<li>Logic for walking container</li>
+<li>Input parameters</li>
+<li>Return values</li>
+</ul>
+<div class="handout">
+<p>Notice how much of the code is devoted to walking the container vs. the
+actual work we wanted to do.</p>
+</div>
+</div>
+
+
+<div class="slide">
+<h1>The Problems</h1>
+<ul>
+<li>Repeated code</li>
+<li>Copy and paste for each new version</li>
+<li>Any change to container, lots of changes</li>
+</ul>
+<div class="handout">
+<p>With most of the code devoted to walking the container, the code we would need
+to copy would mostly be boilerplate, requiring no real thought or creativity.</p>
+</div>
+</div>
+
+
+<div class="slide">
+<h1>A Coderef Version</h1>
+<code><pre>
+    sub grep_files
+    {
+        my ($pred, $dir) = @_;
+        my @files = grep { $pred-&gt;( $_ ) } $dir-&gt;files();
+        foreach my $d ($dir-&gt;dirs())
+        {
+            push @files, grep_files( $pred, $d );
+        }
+        return @files;
+    }
+</pre></code>
+<div class="handout">
+<p>Except for the coderef and the <code>grep</code> call, this is basically
+identical to the other solutions. The coderef is called a <em>predicate</em>
+because it tests one parameter and returns true or false.</p>
+</div>
+</div>
+
+
+<div class="slide">
+<h1>Using Coderef Version</h1>
+<code><pre>
+    my @large_files =
+        grep_files( sub { -s $_[0] &gt; $bigsize }, $dir );
+
+    my @small_files =
+        grep_files( sub { -s $_[0] &lt; $smallsize }, $dir );
+</pre></code>
+<div class="handout">
+<p>Calling the command with the appropriate predicates. With a little more
+magic we could avoid adding the <code>sub</code> keyword, but I'm not going
+to go there, now.</p>
+</div>
+</div>
+
+
+<div class="slide">
+<h1>Storing Code in a Data Structure</h1>
+<ul>
+<li>List of coderefs</li>
+<li>Hash mapping strings to coderefs</li>
+<li>Hashes containing data and coderefs</li>
+</ul>
+<div class="handout">
+<p>For some reason, people seem to have a harder time coming to grips with
+this idea.</p>
+</div>
+</div>
+
+
+<div class="slide">
+<h1>List of Coderefs</h1>
+<ul>
+<li>Apply a set of operations to the same data.</li>
+<li>Easily change the number of operations</li>
+</ul>
+<code><pre>
+    foreach my $cref (@code)
+    {
+        @data = $cref-&gt;( @data );
+    }
+</pre></code>
+<div class="handout">
+<p>Notice that we are looping over the code routines not over the data. This can
+be especially useful if the routines you are building up come from some sort of
+configuration or user input.</p>
+</div>
+</div>
+
+
+<div class="slide">
+<h1>Table-Driven Code</h1>
+<p>Part of a four-function calculator.</p>
+<code><pre>
+  my %operations = (
+      '+' =&gt; sub { return $_[0] + $_[1]; },
+      '-' =&gt; sub { return $_[0] - $_[1]; },
+      '*' =&gt; sub { return $_[0] * $_[1]; },
+      '/' =&gt; sub { return $_[0] / $_[1]; },
+      'q' =&gt; sub { exit( 0 ); },
+  );
+</pre></code>
+<div class="handout">
+<p>You could actually map any strings. Also good for language-based interfaces.</p>
+<p>This <em>anonymous sub</em> approach works best when the calls fit on a single
+line. I would not recommend doing this with long subroutines. If you need to do more
+work, write a real subroutine elsewhere and use the <code>\</code> to take it's
+reference here.</p>
+</div>
+</div>
+
+
+<div class="slide">
+<h1>Code and Data</h1>
+<code><pre>
+  my $obj = {
+      'name' =&gt; 'Fred',
+      'age' =&gt; 37,
+      'command' =&gt; sub { return $_[0] * 2; },
+  };
+</pre></code>
+<div class="handout">
+<p>It is hard to come up with a generic example of this. I have used it several
+times, so it's funny that I can't come up with a good example. A good use would
+be when the subroutine is needed to perform a minor transformation on some of
+the data before it can be used. This would be useful when this <em>structure</em>
+is being stored with a list of other similar structures. By providing this
+little sub we could, temporarily, massage the data into a form needed for
+processing, without losing its original nature.</p>
+</div>
+</div>
+
+
+<div class="slide">
+<h1>Unnecessary Conditional</h1>
+<code><pre>
+    foreach my $file (@files)
+    {
+        if($is_relative)
+        {
+            push @files, $file
+                if -s "$base_dir$file" &gt; $size;
+        }
+        else
+        {
+            push @files, $file
+                if -s $file &gt; $size;
+        }
+    }
+</pre></code>
+<div class="handout">
+<p>Notice that the condition will be tested for each item in the list. For a complex
+conditional, this could be expensive. Worse, if there are multiple conditions, the
+code quickly becomes really hard to understand.</p>
+</div>
+</div>
+
+
+<div class="slide">
+<h1>Remove Unnecessary Test</h1>
+<code><pre>
+    my $test;
+    if($is_relative)
+    {
+        $test = sub { -s "$base_dir$_[0]" &gt; $size ? ($_[0]) : () };
+    }
+    else
+    {
+        $test = sub { -s $_[0] &gt; $size ? ($_[0]) : () };
+    }
+
+    foreach my $file (@files)
+    {
+        push @files, $test-&gt;( $file );
+    }
+</pre></code>
+<div class="handout">
+<p>The code doesn't look much smaller. However, the conditions at the beginning
+are only executed once, not every time through the loop. We can also move this
+code elsewhere to make this code easier to maintain.</p>
+</div>
+</div>
+
+
+<div class="slide">
+<h1>Closures</h1>
+<ul>
+<li>Anonymous subroutine</li>
+<li>Access to any <em>lexical variable</em> in scope when created</li>
+<li>Allows in and out parameters</li>
+</ul>
+<div class="handout">
+<p><em>Lexical variable</em>s are effectively the same as <code>my</code> variables.</p>
+</div>
+</div>
+
+
+<div class="slide">
+<h1>Classic Closure Example</h1>
+<code><pre>
+    sub make_multiplier
+    {
+        my $factor = shift;
+        return sub { return shift * $factor; };
+    }
+
+    my $doubler = make_multiplier( 2 );
+    my $tripler = make_multiplier( 3 );
+</pre></code>
+<div class="handout">
+<p>This seems to be the way most people introduce closures. Not because it is
+particularly useful or realistic. I think it is just easy to understand.</p>
+</div>
+</div>
+
+
+<div class="slide">
+<h1>Uses for Closures</h1>
+<ul>
+<li>UI callbacks</li>
+<li>Container algorithms</li>
+<li>Not quite an object</li>
+</ul>
+</div>
+
+
+<div class="slide">
+<h1>Closures for UI Callbacks</h1>
+<P>Given: <code>$obj</code> holds an object we want to activate using its
+<code>apply</code> method.</p>
+<code><pre>
+    my $apply_btn = $window-&gt;Button(
+        -text =&gt; "Apply",
+        -command =&gt; sub { $obj-&gt;apply(); }
+    );
+</pre></code>
+<div class="handout">
+<p>One problem with the normal UI callback method is that it is hard to
+call methods on a separate object using a simple coderef. This problem is easy
+to solve by using a closure to capture a reference to the object and the
+method to call.</p>
+</div>
+</div>
+
+
+<div class="slide">
+<h1>Currying</h1>
+<ul>
+<li>Create a new subroutine with some parameters already supplied.</li>
+<li>Makes use of a closure to hold the parameter.</li>
+<li>Subroutines operating on other subroutines.</li>
+</ul>
+</div>
+
+
+<div class="slide">
+<h1>Curry Example</h1>
+<code><pre>
+    sub add      { return $_[0] + $_[1]; }
+    sub subtract { return $_[0] - $_[1]; }
+
+    sub bind_second
+    {
+        my $coderef = shift;
+        my $second = shift;
+        return sub { return $coderef-&gt;( $_[0], $second ); };
+    }
+
+    my $inc = bind_second( \&amp;add, 1 );
+    my $dec = bind_second( \&amp;subtract, 1 );
+</pre></code>
+<div class="handout">
+<p>Once again, not particularly useful, but it is easy to understand.</p>
+</div>
+</div>
+
+
+<div class="slide">
+<h1>The Power of Currying</h1>
+<ul>
+<li>Modify one general subroutine to do multiple specific things.</li>
+<li>Bind values to parameters to change the nature of a subroutine.</li>
+</ul>
+</div>
+
+
+<div class="slide">
+<h1>Another Currying Example</h1>
+<code><pre>
+    sub filesize_test
+    {
+        my $pred = shift;
+        return sub { $pred-&gt;( -s $_[0] ) };
+    } 
+
+    my @small_files =
+        grep_files( filesize_test( sub { $_[0] &lt; $max } ), $dir );
+
+    my @large_files =
+        grep_files( filesize_test( sub { $min &lt; $_[0] } ), $dir );
+</pre></code>
+</div>
+<div class="handout">
+<p>This is pretty complicated, but you can walk through it fairly easily. As you
+become used to this technique, reading these kinds of expressions gets easier.</p>
+</div>
+
+
+<div class="slide">
+<h1>Conclusion</h1>
+<ul>
+<li>Not useful for everything</li>
+<li>Powerful technique when you need it</li>
+<li>Good addition to your toolbox</li>
+</ul>
+</div>
+
+</div>
+
+</body>
+</html>

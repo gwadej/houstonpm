@@ -522,4 +522,16 @@
     </topic>
   </talk>
 
+  <talk num="0709">
+    <date>September 2007</date>
+    <topic href="/talks/2007talks/0709Talk/index.html">
+      <title>Subroutines, Closures, and Coderefs</title>
+      <presenter>G. Wade Johnson</presenter>
+      <abstract>Wade gave a presentation about code references in Perl 5. This
+        talk explains some of the things you can do with coderefs, including
+        the concept of <em>closures</em> and ending with an introduction to
+        <em>currying</em>.</abstract>
+    </topic>
+  </talk>
+
 </talklist>
