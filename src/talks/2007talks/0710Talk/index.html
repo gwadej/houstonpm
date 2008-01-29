@@ -1,7 +1,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <html>
 <head>
-  <title>Summary of September 2007 Presentation</title>
+  <title>Summary of October 2007 Presentation</title>
   <link rel="stylesheet" href="/styles/houston.css" type="text/css" />
 </head>
 <body>
@@ -28,15 +28,37 @@
 
   <div class="content">
 
-    <p>Wade gave a quick overview of references in Perl with a goal of covering
-      coderefs and some of the interesting things you can do with them.</p>
+    <p>Brandon presented some basics of Catalyst development and the
+    <code>DBIx::Class</code> (DBIC) module.</p>
 
-    <p>The full <a href="slides/subs_closures_talk.html">set of slides</a> is available
-      as an <a href="http://meyerweb.com/eric/tools/s5/">S5</a> presentation.
-      Clicking anywhere on the slide moves to the next slide. When printed, the
-      presentation also contains notes for the speaker. These notes are visible
-      in the browser by clicking on the "&#216;" in the control panel on the lower
-      right portion of the screen.</p>
+    <p><code>DBIx::Class</code> provides an OO abstraction over a SQL <acronym
+    title="Relational Database Management System">RDBMS</acronym>. All data is
+    accessed in a resultset abstraction. Transactions are supported. The library
+    even handles retries if the server ever goes down.</p>
+
+    <p>Catalyst is a webapp framework for Perl. It follows the <acronym
+    title="Model, View, Controller">MVC</acronym> pattern. The framework supports
+    plugins that extend what the framework does for you.</p>
+
+    <p>Brandon mentioned several resources that are worth checking out if you
+    are interested in developing with Catalyst:</p>
+
+    <ul>
+      <li>The <code>Catalyst-Manual</code> module contains extensive
+      documentation for Catalyst.</li>
+      <li>The <code>Task::Catalyst</code> module installs all of Catalyst (and
+      is newer that <code>Catalyst::Bundle</code>.</li>
+      <li>The <code>Catalyst::Devel</code> module contains some tools that
+      help with Catalyst development.</li>
+      <li>The <a href="http://www.catalystframework.org/">Catalyst website</a>
+      is the definitive source for the framework.</li>
+      <li><a href="http://planet.catalystframework.org/">Planet Catalyst</a> contains
+      a number of blogs on Catalyst and development using Catalyst.</li>
+    </ul>
+
+    <p>The talk itself is available as a XUL
+    <a href="http://dtmf.com/houston_pm/catdbic.xul">slideshow</a>
+    (Firefox only.)</p>
   </div>
 
 </div>
@@ -44,7 +66,7 @@
 <p class="copyright">
 <!-- Creative Commons License -->
 <a rel="license" href="http://creativecommons.org/licenses/by/2.5/"><img alt="Creative Commons License" border="0" src="http://creativecommons.org/images/public/somerights20.gif" /></a>
-Copyright &copy; 2007 Houston.pm.<br /> Except as otherwise noted, this site is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/2.5/">Creative Commons Attribution 2.5 License</a>.
+Copyright &copy; 2008 Houston.pm.<br /> Except as otherwise noted, this site is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/2.5/">Creative Commons Attribution 2.5 License</a>.
 <!-- /Creative Commons License -->
 
 
