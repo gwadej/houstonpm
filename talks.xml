@@ -554,4 +554,15 @@
     </topic>
   </talk>
 
+  <talk num="0801">
+    <date>January 2008</date>
+    <topic href="/talks/2008talks/0801Talk/index.html">
+      <title>The <code>Net::Jabber::Bot</code> Project</title>
+      <presenter>Todd Rinaldo</presenter>
+      <abstract>Todd introduced the <code>Net::Jabber::Bot</code> module he has
+        been developing. The group helped to improve the testing of the module
+        and began the process of turning it into a group project.</abstract>
+    </topic>
+  </talk>
+
 </talklist>
