@@ -1,0 +1,150 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+  <title>Houston Perl Mongers' Projects</title>
+  <link rel="stylesheet" href="/styles/houston.css" type="text/css" />
+</head>
+<body>
+
+<div class="banner">
+   <a href="http://www.pm.org/index.html"><img alt="Perl Mongers' Site"
+       src="http://www.pm.org/graphics/title.png" height="65" width="150" /></a>
+   <h1>Houston.pm</h1>
+</div>
+<div id="outer">
+  <div id="navigation">
+  <ul class="menu" id="mainmenu">
+     <li><a href="/index.html">Home</a></li>
+     <li><a href="/about.html">About Us</a></li>
+     <li><a href="/meetings.html">Meetings</a></li>
+     <li><a href="/faqs.html">FAQ</a></li>
+     <li><a href="/talks/mostrecent.html">Most Recent Talk</a></li>
+     <li><a href="/talks/index.html">Talks Archive</a></li>
+     <li class="curr"><a href="/projects/index.html">Group Projects</a></li>
+  </ul>
+  </div>
+
+  <div class="content">
+    <h2 class="subhead">Net::Jabber::Bot Project</h2>
+
+    <div id="sidebar">
+      <h1 class="heading">Project Lead</h1>
+      <p>Todd Rinaldo</p>
+      
+      <h1 class="heading">Developers</h1>
+      <ul>
+        <li>Todd Rinaldo</li>
+        <li>Robert Boone</li>
+	<li>?</li>
+      </ul>
+    </div>
+
+    <p>We discussed in the November 2007 meeting Todd doing a presentation of
+      <a href="http://search.cpan.org/dist/Net-Jabber-Bot/">Net::Jabber::Bot</a>.
+      We also considered the possibility of maintaining the module as a group.
+      The following is a summary of the project from Todd.</p>
+
+    <h3 class="subsub">Existing perl Jabber bots in the field</h3>
+
+    <p><a href="http://jpb.sphene.net/wiki/show/JPB">Jpb</a> seemed like a good
+    candidate to me originally so I wouldn't have to write my own. The problem
+    as I got into it was that the code badly mixed with the config so that I
+    would have to alter the modules any time I wanted to change something. I
+    decided to write my own.</p>
+
+    <h3 class="subsub"><code>Net::Jabber::Bot</code> Synopsis</h3>
+
+    <p>The module heavily leverages <code>Net::Jabber</code>, which is really
+    just a thin shell on top of <code>Net::XMPP</code>. I have developed this
+    module over the last few months to allow me to separate out the things one
+    wants to do with a bot from the things that can get you in a lot of trouble
+    with a bot. The assumption I started with is that most people simply want
+    to create a bot that can do something every once and while and that is able
+    to react when new messages it cares about are sent. This is what the module
+    aims to do.</p>
+
+
+    <p>Needed code enhancements to the module.</p>
+
+    <ol>
+      <li>Needs to be able to react to version requests. This requires being
+        able to generate customized messages. This trick is documented between
+        <code>Net::XMPP</code> and <code>Net::Jabber</code>, but I lack the
+        object-oriented experience to implement it.</li>
+      <li>Needs to be able to tell what messages are just history messages.
+        Currently the bot does this by ignoring everyone for a period on startup.
+        I consider this to be a hack at the moment that sometimes fails if the
+        server is slow.</li>
+      <li>Make test is a mess. Almost all of the tests require a jabber server
+        to be present. This is making the modules tests to look very red on the
+        automated CPAN testers site. Robert and Wade told me I should be
+        programming to the interface. This sounds like a grand plan but I have
+        no idea what it means :)</li>
+      <li>Some of my design decisions could use a closer look as to some of the
+        values being hard coded, etc. Originally I envisioned a
+        <code>Net::Jabber::Bot</code> being inherited from
+        <code>Net::Jabber::Bot::Safety</code>, but I decided to just merge the
+        2 ideas. I'd love to explore if the choice I made was a good one.</li>
+      <li>Currently the module is initialized and connections are made via a new
+        being fed a hash from hell. It feels like a kludgy approach to me at the
+        moment.</li>
+      <li>The re-connect algorithm seems to have issues</li>
+      <li>While it's perfectly safe to connect to a jabber server with the same
+        username, it's very dangerous to the server to connect with the same
+        user/resource. Unfortunately I haven't figured out a way to detect that
+        I'm doing this. As a result I've been "chastised" by server admins for
+        not noticing that I hadn't killed the old bot when I started the new
+        one up.</li>
+      <li>Ability to add/leave forums at times other than startup. Probably a
+        good candidate for removal from new. I don't know what to look for to
+        detect if the join succeeded. Right now I'm just assuming the room
+        joins succeed.</li>
+    </ol>
+
+    <h3 class="subsub">Documentation need</h3>
+    <ol>
+      <li>POD documentation is a little loose on the existing subs. I'm not
+        documenting the private ones at all except for a few comments in the
+        file. Not sure what the etiquette is on this. I really don't think
+        they should be showing up on CPAN and if I pod them, they will.</li>
+      <li>Need code examples on how to leverage the bot. This is pretty easy to
+        provide, but I haven't reverse engineered someone else's CPAN to figure
+        out how they do this to make it look right in CPAN.</li>
+    </ol>
+
+  </div>
+
+</div>
+<div id="footer">
+<p class="copyright">
+<!-- Creative Commons License -->
+<a rel="license" href="http://creativecommons.org/licenses/by/2.5/"><img alt="Creative Commons License" border="0" src="http://creativecommons.org/images/public/somerights20.gif" /></a>
+Copyright &copy; 2008 Houston.pm.<br /> Except as otherwise noted, this site is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/2.5/">Creative Commons Attribution 2.5 License</a>.
+<!-- /Creative Commons License -->
+
+
+<!--
+
+<rdf:RDF xmlns="http://web.resource.org/cc/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<Work rdf:about="">
+   <license rdf:resource="http://creativecommons.org/licenses/by/2.5/" />
+</Work>
+
+<License rdf:about="http://creativecommons.org/licenses/by/2.5/">
+   <permits rdf:resource="http://web.resource.org/cc/Reproduction" />
+   <permits rdf:resource="http://web.resource.org/cc/Distribution" />
+   <requires rdf:resource="http://web.resource.org/cc/Notice" />
+   <requires rdf:resource="http://web.resource.org/cc/Attribution" />
+   <permits rdf:resource="http://web.resource.org/cc/DerivativeWorks" />
+</License>
+
+</rdf:RDF>
+-->
+</p>
+<p>The use of the camel image in association with the Perl
+language is a trademark of O'Reilly &amp; Associates, Inc. Used with permission.</p>
+</div>
+</body>
+</html>
