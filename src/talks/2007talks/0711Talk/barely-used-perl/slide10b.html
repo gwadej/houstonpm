@@ -1,0 +1,307 @@
+<!-- BEGIN slide -->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Fraction example</title>
+<meta name="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Spork v0.20" />
+<link rel='icon' href='favicon.png' />
+  <link rel="stylesheet" type="text/css" href="" />
+<style type="text/css"><!--
+/* BEGIN index.css */
+hr {
+    color: #202040;
+    height: 0px;
+    border-top: 0px;
+    border-bottom: 3px #202040 ridge;
+    border-left: 0px;
+    border-right: 0px;
+}
+
+a:link {
+    color: #123422;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #123333;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+p {
+    font-size: 24pt;
+    margin: 6pt;
+}
+
+div p {
+    font-size: 18pt;
+    margin-top: 12pt;
+    margin-bottom: 12pt;
+    margin-left: 6pt;
+    margin-right: 6pt;
+}
+
+small {
+    font-size: 9pt;
+    font-style: italic;
+}
+
+#topbar {
+    background: gray;
+    color: blue;
+    position:absolute;
+    right: 5px;
+    left: 5px;
+    top: 5px;
+    height: 50px;
+}
+
+#bottombar {
+    background: gray;
+    color: blue;
+    position: fixed;
+    right: 5px;
+    left: 5px;
+    bottom: 5px;
+    height: 50px;
+    z-index: 0;
+}
+
+.top_spacer {
+    height: 0px;
+    margin: 0px 0px 0px 0px;
+    padding: 1px 0px 0px 0px;
+}
+
+.spacer {
+    bottom: 5px;
+    height: 50px;
+}
+
+#content {
+    background:#fff;
+    margin-left: 20px;
+    margin-right:20px;
+    margin-top: 80px;
+}
+
+
+#logo {
+    position: fixed;
+    right: 40px;
+    bottom: 51px;
+    width: 130px;
+    height: 150px;
+    z-index:3;
+    background-image: url(/logo.png);
+    background-repeat: no-repeat;
+}
+/* END index.css */
+
+--></style>
+<script type="text/javascript">
+// BEGIN controls.js
+function nextSlide() {
+    window.location = 'slide11.html';
+}
+
+function prevSlide() {
+    window.location = 'slide10a.html';
+}
+
+function indexSlide() {
+    window.location = 'index.html';
+}
+
+function startSlide() {
+    window.location = 'start.html';
+}
+
+function closeSlide() {
+    window.close();
+}
+
+function handleKey(e) {
+    var key;
+    if (e == null) {
+        // IE
+        key = event.keyCode
+    } 
+    else {
+        // Mozilla
+        if (e.altKey || e.ctrlKey) {
+            return true
+        }
+        key = e.which
+    }
+    switch(key) {
+        case 8: prevSlide(); break
+        case 13: nextSlide(); break
+        case 32: nextSlide(); break
+        case 81: closeSlide(); break
+        case 105: indexSlide(); break
+        case 110: nextSlide(); break
+        case 112: prevSlide(); break
+        case 115: startSlide(); break
+        default: //xxx(e.which)
+    }
+}
+
+document.onkeypress = handleKey
+document.onclick = nextSlide
+// END controls.js
+
+</script>
+</head>
+<body>
+<div id="topbar">
+<table width='100%'>
+<tr>
+<td width="13%">Barely Used Perl</td>
+<td align="center" width="73%">
+    <a accesskey="s" href="start.html">Untapped resources of the perl core libraries</a>
+</td>
+<td align="right" width="13%">
+    #10
+</td>
+</tr>
+</table>
+</div>
+<!-- END top -->
+
+<div id="content">
+<div class="top_spacer"></div>
+
+<h2>Fraction example</h2>
+<pre class="formatter_pre">{
+
+    package MooseX::Number::Fraction;
+
+    use Moose;
+
+    use overload
+      q&#40;&#34;&#34;&#41;    =&gt; &#39;to_string&#39;,
+      &#39;0+&#39;     =&gt; &#39;to_num&#39;,
+      &#39;+&#39;      =&gt; &#39;add&#39;,
+      fallback =&gt; 1;
+
+    has num =&gt; &#40; is =&gt; &#39;rw&#39;, isa =&gt; &#39;Int&#39; &#41;;
+    has den =&gt; &#40; is =&gt; &#39;rw&#39;, isa =&gt; &#39;Int&#39; &#41;;
+
+    sub BUILD {
+        my &#40;$self&#41; = @_;
+        $self-&gt;_normalise;
+    }
+
+    sub to_string {
+        my &#40;$self&#41; = @_;
+
+        if &#40; $self-&gt;den eq 1 &#41; {
+            return $self-&gt;num;
+        }
+        else {
+            return sprintf &#34;%s/%s&#34;, $self-&gt;num, $self-&gt;den;
+        }
+    }
+
+    sub _normalise {
+        my &#40;$self&#41; = @_;
+
+        my $hcf = _hcf&#40; $self-&gt;num, $self-&gt;den &#41;;
+
+        for &#40;qw/num den/&#41; {
+            $self-&gt;$_&#40; $self-&gt;$_ / $hcf &#41;;
+        }
+
+        if &#40; $self-&gt;{den} &lt; 0 &#41; {
+            for &#40;qw/num den/&#41; {
+                $self-&gt;$_&#40; $self-&gt;$_ * -1 &#41;;
+            }
+        }
+    }
+
+    sub to_num {
+        my &#40;$self&#41; = @_;
+        return $self-&gt;num / $self-&gt;den;
+    }
+
+    sub _hcf {
+        my &#40; $x, $y &#41; = @_;
+
+        &#40; $x, $y &#41; = &#40; $y, $x &#41; if $y &gt; $x;
+
+        return $x if $x == $y;
+
+        while &#40;$y&#41; {
+            &#40; $x, $y &#41; = &#40; $y, $x % $y &#41;;
+        }
+        return $x;
+    }
+
+    sub add {
+        my &#40; $l, $r, $rev &#41; = @_;
+
+        if &#40; &#40; ref $r &#41; eq &#39;MooseX::Number::Fraction&#39; &#41; {
+            return &#40; ref $l &#41;-&gt;new&#40; num =&gt; &#40; $l-&gt;num * $r-&gt;den + $r-&gt;num * $l-&gt;den &#41;, den =&gt; &#40; $r-&gt;den * $l-&gt;den &#41; &#41;;
+        }
+        else {
+            if &#40; $r =~ /^[-+]?\d+$/ &#41; {
+                return $l + &#40; ref $l &#41;-&gt;new&#40; num =&gt; $r, den =&gt; 1 &#41;;
+            }
+            else {
+                return $l-&gt;to_num + $r;
+            }
+        }
+    }
+
+    no Moose;
+}
+
+my $half         = MooseX::Number::Fraction-&gt;new&#40; num =&gt; 1, den =&gt; 2 &#41;;
+my $quarter      = MooseX::Number::Fraction-&gt;new&#40; num =&gt; 1, den =&gt; 4 &#41;;
+my $three_forths = MooseX::Number::Fraction-&gt;new&#40; num =&gt; 3, den =&gt; 4 &#41;;
+
+my $result = $half + $quarter + $three_forths;
+$result += 2;
+
+printf &#34;%s \n%f&#34;, $result, $result;
+</pre>
+<ul>
+<li>OUTPUT:</li>
+</ul>
+<pre class="formatter_pre">7/2 
+3.500000
+</pre>
+
+</div>
+<!-- BEGIN bottom -->
+<div id="bottombar">
+<table width="100%">
+<tr>
+<td align="left" valign="middle">
+    <div>
+    <a accesskey='p' href="slide10a.html">&lt; &lt; Previous</a> |
+    <a accesskey='i' href="index.html">Index</a> |
+    <a accesskey='n' href="slide11.html">Next &gt;&gt;</a>
+    </div>
+</td>
+<td align="right" valign="middle">
+    Copyright &copy; 2007 Robert Boone
+</td>
+</tr>
+</table>
+</div> 
+<div id="logo"></div>
+<div class="spacer">
+<a name="end"></a>
+</div>
+</body>
+</html>
+
+
+<!-- END slide -->
