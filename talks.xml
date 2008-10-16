@@ -565,4 +565,35 @@
     </topic>
   </talk>
 
+  <talk num="0802">
+    <date>February 2008</date>
+    <topic href="/talks/2008talks/0802Talk/index.html">
+      <title>The <code>Net::Jabber::Bot</code> Project, continued</title>
+      <presenter>Todd Rinaldo</presenter>
+      <abstract>The group continued working on the project from last month. We
+        extended testing and worked on the version request.</abstract>
+    </topic>
+  </talk>
+
+  <talk num="0804">
+    <date>April 2008</date>
+    <topic href="/talks/2008talks/0804Talk/index.html">
+      <title>Open Perl Help Session</title>
+      <abstract>This session was an open invitation for people to bring
+        questions or problems for the group to provide help on.</abstract>
+    </topic>
+  </talk>
+
+  <talk num="0810">
+    <date>October 2008</date>
+    <topic href="/talks/2008talks/0810Talk/index.html">
+      <title>Git - The stupid content tracker</title>
+      <presenter>Robert Boone</presenter>
+      <abstract>Robert presented the <code>git</code> distributed version
+        control system. In addition to covering the mechanics of using git,
+        he answered questions, and helped the audience to understand the
+        flow of using distributed version control.</abstract>
+    </topic>
+  </talk>
+
 </talklist>

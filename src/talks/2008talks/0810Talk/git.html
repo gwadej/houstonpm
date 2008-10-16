@@ -1,0 +1,435 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>Git - The stupid content tracker</title>
+<!-- metadata -->
+<meta name="generator" content="S5" />
+<meta name="version" content="S5 1.1" />
+<meta name="presdate" content="20081014" />
+<meta name="author" content="Robert Boone" />
+<meta name="company" content="Kabal Systems" />
+<!-- configuration parameters -->
+<meta name="defaultView" content="slideshow" />
+<meta name="controlVis" content="hidden" />
+<!-- style sheet links -->
+<link rel="stylesheet" href="ui/default/slides.css" type="text/css" media="projection" id="slideProj" />
+<link rel="stylesheet" href="ui/default/outline.css" type="text/css" media="screen" id="outlineStyle" />
+<link rel="stylesheet" href="ui/default/print.css" type="text/css" media="print" id="slidePrint" />
+<link rel="stylesheet" href="ui/default/opera.css" type="text/css" media="projection" id="operaFix" />
+<!-- S5 JS -->
+<script src="ui/default/slides.js" type="text/javascript"></script>
+</head>
+<body>
+
+<div class="layout">
+<div id="controls"><!-- DO NOT EDIT --></div>
+<div id="currentSlide"><!-- DO NOT EDIT --></div>
+<div id="header"></div>
+<div id="footer">
+<h1>Houston.pm/Oct 10, 2008</h1>
+<h2>Git - The stupid content tracker</h2>
+</div>
+
+</div>
+
+
+<div class="presentation">
+
+<div class="slide">
+<h1>Git - The stupid content tracker</h1>
+<h3>Robert Boone</h3>
+<h4>Houston.pm</h4>
+</div>
+
+<div class="slide">
+<h1>What we will cover</h1>
+<ul>
+<li>We will be talk mosly about git commands and what they do</li>
+<li>
+  <ul>
+    <li>Basic commands</li>
+    <li>Branching and merging</li>
+    <li>Remote repositories</li>
+    <li>Working with subversion</li>
+  </ul>
+</li>
+<li>If you have any questions about anything not covered just ask and I will try to answer</li>
+</ul>
+
+<div class="slide">
+<h1>Where did git come from</h1>
+<ul>
+<li>It was written by Linus Torvalds in April 2005</li>
+<li>Created mostly in response to the linux kernel losing the use of BitKeeper</li>
+<li>Linus look for another scm and found <a href="http://monotone.ca/">Monotone</a></li>
+<li>The problem was Monotone was too slow</li>
+<li>So Linus wrote git based on the way he used BitKeeper and the core ideas of Montone</li>
+<li><a href="http://git.or.cz/gitwiki/GitHistory?highlight=%28history%29#head-dff903de589f131cb2da532d6ef7c661597e58b0">Git History</a></li>
+</ul>
+</div>
+
+<div class="slide">
+<h1>Features of git</h1>
+<ul style="font-size:20pt">
+    <li><strong>Distributed development.</strong> Like most other modern version control systems, Git gives each developer a local copy of the entire development history, and changes are copied from one such repository to another. These changes are imported as additional development branches, and can be merged in the same way as a locally developed branch. Repositories can be easily accessed via the efficient Git protocol (optionally wrapped in ssh for authentication and security) or simply using HTTP - you can publish your repository anywhere without any special webserver configuration required.</li>
+    <li><strong>Strong support for non-linear development.</strong> Git supports rapid and convenient branching and merging, and includes powerful tools for visualizing and navigating a non-linear development history.</li>
+    <li><strong>Efficient handling of large projects.</strong> Git is very fast and scales well even when working with large projects and long histories. It is commonly an order of magnitude faster than most other version control systems, and several orders of magnitude faster on some operations. It also uses an extremely efficient packed format for long-term revision storage that currently tops any other open source version control system</li>
+    <li><strong>Cryptographic authentication of history.</strong> The Git history is stored in such a way that the name of a particular revision (a "commit" in Git terms) depends upon the complete development history leading up to that commit. Once it is published, it is not possible to change the old versions without it being noticed. Also, tags can be cryptographically signed.</li>
+    <li><strong>Toolkit design.</strong> Following the Unix tradition, Git is a collection of many small tools written in C, and a number of scripts that provide convenient wrappers. Git provides tools for both easy human usage and easy scripting to perform new clever operations.</li>
+    <li><a href="http://git.or.cz/#about">Source</a></li>
+</ul>
+</div>
+
+
+<div class="slide">
+<h1>Basic Git commands</h1>
+<h2>Creating a git repository:</h2>
+<pre style="font-size:20pt">
+mkdir repository
+cd repository
+git init
+ls -la
+drwxr-xr-x   6 robert  staff   204 Oct 11 12:02 .
+drwxr-xr-x  98 robert  staff  3332 Oct 11 11:06 ..
+drwxr-xr-x  16 robert  staff   544 Oct 11 11:52 .git
+
+ls .git
+branches config  description  HEAD  hooks  index  info  logs  objects  packed-refs refs
+</pre>
+</div>
+
+
+<div class="slide">
+<h1>Basic Git commands</h1>
+<h2>Introduce yourself to git:</h2>
+<pre>
+git config --global user.name "name"
+git config --global user.email "name@email.com"
+</pre>
+<ul style="font-size:30pt">
+    <li>--global writes information to ~/.gitconfig</li>
+    <li>Without --global information is written to .git/config</li>
+</ul>
+</div>
+
+<div class="slide">
+<h1>Basic Git commands</h1>
+<h2>Adding files to a git repository:</h2>
+<pre style="font-size:20pt">
+echo "Hello, World" > greeting.txt
+git add greeting.txt
+git commit -m "Initial checkin"
+
+Created initial commit 4fe4bab: Initial checkin
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 greeting.txt
+ 
+git show
+commit 4fe4bab619edfa70421ae686f1a3e81e3d390f4e
+Author: Robert Boone <robo4288@gmail.com>
+Date:   Sat Oct 11 12:05:47 2008 -0500
+
+    Initial checkin
+
+diff --git a/greeting.txt b/greeting.txt
+new file mode 100644
+index 0000000..3fa0d4b
+--- /dev/null
++++ b/greeting.txt
+@@ -0,0 +1 @@
++Hello, World
+</pre>
+</div>
+
+<div class="slide">
+<h1>Basic Git commands</h1>
+<h2>Making changes</h2>
+<pre style="font-size:20pt">
+$EDITOR greeting.txt # remove comma
+git status
+# On branch master
+# Changed but not updated:
+#   (use "git add <file>..." to update what will be committed)
+#
+#       modified:   greeting.txt
+#
+no changes added to commit (use "git add" and/or "git commit -a")
+
+git diff
+diff --git a/greeting.txt b/greeting.txt
+index 3fa0d4b..557db03 100644
+--- a/greeting.txt
++++ b/greeting.txt
+@@ -1 +1 @@
+-Hello, World
++Hello World
+
+git add greeting.txt
+git status
+# On branch master
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#       modified:   greeting.txt
+#
+</pre>
+All changes must be added to the git index before they can be committed
+</div>
+
+
+<div class="slide">
+<h1>Basic Git commands</h1>
+<h2>Making commits</h2>
+<pre style="font-size:20pt">
+git commit -m 'Log message'
+git commit -a -m 'Log message'
+git commit -s -m 'Log message'
+</pre>
+
+<ul style="font-size:30pt">
+    <li>Without -m you will be loaded into $EDITOR for the log message. Git will not commit without a log message</li>
+    <li>-a automatically adds any tracked files that have changed</li>
+    <li>-s "Signs" the commit by adding "Signed-off-by: name <name@email.com>" to the log message</li>
+</ul>
+</div>
+
+
+
+<div class="slide">
+<h1>Basic Git commands</h1>
+<h2>Logs</h2>
+<pre style="font-size:20pt">
+git log
+git log -p
+git log --pretty={email|full|fuller|medium|oneline|raw|short|format}
+</pre>
+
+<ul style="font-size:30pt">
+    <li>Shows basic commit logs</li>
+    <li>-p shows the commit log and the diff for that commit</li>
+    <li>--pretty determines the format of the log message</li>
+</ul>
+</div>
+
+<div class="slide">
+<h1>Basic Git commands</h1>
+<h2>Tags</h2>
+<pre style="font-style:15pt">
+git tag 1.0.0
+git tag 1.0.0 &lt;commit&gt;
+git tag -a 1.0.0
+git tag -s 1.0.0
+git tag -u 1.0.0
+git tag -d 1.0.0
+</pre>
+<ul style="font-size:30pt">
+  <li>Tag the current commit</li>
+  <li>Tag the given commit</li>
+  <li>-a Annotated tag (preferred method</li>
+  <li>-s Tag and sign commit</li>
+  <li>-u Tag and gpg sign commi</li>
+  <li>-d Delete the commit</li>
+</ul>
+</div>
+
+
+
+<div class="slide">
+<h1>Branching and Merging</h1>
+<h2>Branch commands</h2>
+<pre style="font-size:20pt">
+git branch
+git branch -r
+git branch -a
+git branch new_branch
+git branch -d branch
+git branch -D branch
+git branch new_branch other_branch
+git branch --track branch remote/branch
+</pre>
+<ul style="font-size:20pt">
+  <li>Show local branches</li>
+  <li>Show remote branches</li>
+  <li>Show local and remote branches</li>
+  <li>Create new branch base of the current branch</li>
+  <li>Delete local branch</li>
+  <li>Force delete if there are commits in branch that are not a strict subset of your current HEAD</li>
+  <li>Create new_branch based on other_branch</li>
+  <li>Create a branch to track a remote repo</li>
+</ul>
+
+</div>
+
+<div class="slide">
+<h1>Branching and Merging</h1>
+<h2>Checkout commands</h2>
+<pre style="font-size:25pt">
+git checkout branch
+git checkout -b new_branch
+git checkout -b new_branch branch
+git checkout --track branch remote/branch
+</pre>
+<ul style="font-size:30pt">
+  <li>Checkout the branch in the current working director</li>
+  <li>Create new_branch based on the current branch and switch to i</li>
+  <li>Create new_branch based on the given 'branch' and switch to i</li>
+  <li>Create a branch to track a remote repo and preform checkou</li>
+</ul>
+</div>
+
+<div class="slide">
+<h1>Branching and Merging</h1>
+<h2>Merging commands</h2>
+<pre style="font-size:20pt">
+git merge branch
+git rebase master
+</pre>
+<ul style="font-size:30pt">
+  <li>Merge branch into current branch</li>
+  <li>Bring current branch up to date with another branch without merging</li>
+</ul>
+</div>
+
+<div class="slide">
+<h1>Branching and Merging</h1>
+<h2>Rebase</h2>
+<pre style="font-size:20pt">
+What's the difference between merge and rebase
+
+                  o-o-o <- branch
+                 /
+            o-o-o-o-o <- master
+
+Merge
+                   Merge point
+                        |
+                  o-o-o-o <- branch
+                 /     /
+            o-o-o-o-o <- master
+
+Rebase
+
+                      o-o-o <- branch
+                     /
+            o-o-o-o-o <- master
+</pre>
+
+<p style="font-size:30pt">Rebase is used when you have a topic branch you want to keep up to date then merge back to the original branch on your local repository.  
+Merge can also be used for this locally but merge is the recommended to get new changes in to a long lived branch living on the remote repository.</p>
+</div>
+
+
+<div class="slide">
+<h1>Remote Repositories</h1>
+<h2>Cloning<h2>
+<pre style="font-size:20pt">
+git clone git://remote.site/repo/dir working_dir
+git clone remote.site:/repo/dir working_dir
+git clone http://remote.site/repo/dir working_dir
+git clone /tmp/repo/dir working_dir
+git clone --bare /tmp/repo/dir /var/www/dir.git
+</pre>
+<ul style="font-size:30pt">
+  <li>Clone via git protocol</li>
+  <li>Clone via ssh</li>
+  <li>Clone via http</li>
+  <li>Clone via filesystem</li>
+  <li>Make a bare repository that contains no working directory</li>
+</ul>
+</div>
+
+
+<div class="slide">
+<h1>Remote Repositories</h1>
+<h2>Pushing and pulling</h2>
+<pre style="font-size:20pt">
+git pull
+git push origin master
+git push origin master:mybranch
+git push origin --all
+git push remote.site/repo.git local_branch:remote_branch
+git push origin :branch
+git push origin --tags
+git fetch origin master
+git fetch origin remote_branch:local_branch
+git fetch remote.site/repo.git master:master
+</pre>
+<ul style="font-size:20pt">
+  <li>Fetch and merge into a tracking branch</li>
+  <li>Push master branch from origin to local master</li>
+  <li>Push master branch from origin to new remote mybranch</li>
+  <li>Push all branches to remote</li>
+  <li>Push master from the remote repo into master source:destination</li>
+  <li>Delete remote branch</li>
+  <li>Push any tags to origin</li>
+  <li>Fetch master branch from origin to local master</li>
+  <li>Fetch remote_branch from origin to local local_branch</li>
+  <li>Fetch master from the remote repo into master</li>
+</ul>
+</div>
+
+<div class="slide">
+<h1>Making a remote repository</h1>
+<h2>Creating a remote repository</h2>
+<pre style="font-style:10pt">
+cd repo
+git clone --bare . ../repo.git
+cd ..
+scp -r repo.git remote.site:/git
+rm -rf repo.git
+cd repo
+git remote add public remote.site:/git/repo.git
+git fetch public
+git chechout -b topic
+<edit files>
+git commit -a
+git push public topic:topic
+</pre>
+<ul style="font-size:20pt">
+    <li>A bare repository is just the .git without the working directory</li>
+    <li>"git remote add" creates a alias to the full repository name</li>
+</ul>
+
+</div>
+
+<div class="slide">
+<h1>Working with subversion</h1>
+<pre style="font-style:20pt">
+git svn clone <svn repo> -T trunk -t tags -b branches svn_url
+git svn clone -s <svn repo> svn_url
+git svn clone <svn repo>/branch svn_url
+git svn fetch
+git svn rebase
+git svn dcomit
+</pre>
+<ul style="font-size:20pt">
+   <li>Create new git repo from subversion repo</li>
+   <li>Create new git repo from subversion repo with standard layout</li>
+   <li>Bring over just one branch from svn</li>
+   <li>Grab any new commit from subversion repo </li>
+   <li>Bring master branch upto date after fetch</li>
+   <li>Commit back to subversion</li>
+</ul>
+
+</div>
+
+<div class="slide">
+<h1>Resources</h1>
+    <ul>
+        <li><a href="http://www.kernel.org/pub/software/scm/git/docs/">Git Documentation</a></li>
+        <li><a href="http://book.git-scm.com/">The Git Community Book</a></li>
+        <li><a href="http://github.com/guides/home">GitHub Guides</a></li>
+        <li><a href="http://www.nntp.perl.org/group/perl.perl5.porters/2008/03/msg134793.html">Perl moving to Git</a></li>
+        <li><a href="http://consttype.blogspot.com/search/label/git">Git articles by the perl pumpking (Rafael Garcia-Suarez)</a></li>
+    </ul>
+</div>
+
+
+
+
+</div>
+</body>
+</html>
