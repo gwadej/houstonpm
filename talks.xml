@@ -584,15 +584,22 @@
     </topic>
   </talk>
 
+  <talk num="0805">
+    <date>May 2008</date>
+    <topic href="/talks/2008talks/0805Talk/index.html">
+      <title>Open Perl Help Session</title>
+      <abstract>This session was another open invitation for people to bring
+        questions or problems for the group to provide help on.</abstract>
+    </topic>
+  </talk>
+
   <talk num="0810">
     <date>October 2008</date>
     <topic href="/talks/2008talks/0810Talk/index.html">
       <title>Git - The stupid content tracker</title>
       <presenter>Robert Boone</presenter>
       <abstract>Robert presented the <code>git</code> distributed version
-        control system. In addition to covering the mechanics of using git,
-        he answered questions, and helped the audience to understand the
-        flow of using distributed version control.</abstract>
+        control system.</abstract>
     </topic>
   </talk>
 
