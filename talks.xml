@@ -593,6 +593,18 @@
     </topic>
   </talk>
 
+  <talk num="0806">
+    <date>June 2008</date>
+    <topic href="/talks/2008talks/0806Talk/index.html">
+      <title>Emacs and Screen</title>
+      <presenter>Will Willis</presenter>
+      <abstract>The Emacs editor is popular with a large community of users.
+        This month, Will showed how Emacs can improve the life of a Perl
+        programmer. He went on to cover the screen program from the GNU
+        project.</abstract>
+    </topic>
+  </talk>
+
   <talk num="0810">
     <date>October 2008</date>
     <topic href="/talks/2008talks/0810Talk/index.html">
