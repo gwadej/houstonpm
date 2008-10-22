@@ -605,6 +605,36 @@
     </topic>
   </talk>
 
+  <talk num="0807">
+    <date>July 2008</date>
+    <topic href="/talks/2008talks/0807Talk/index.html">
+      <title>Testing Rakudo</title>
+      <presenter>Patrick Michaud</presenter>
+      <abstract>Todd Rinaldo got Patrick Michaud (Perl 6 Pumpking) on the
+        speaker phone for a presentation about improving the specifications
+        testing on Rakudo.</abstract>
+    </topic>
+  </talk>
+
+  <talk num="0808">
+    <date>August 2008</date>
+    <topic>
+      <title>Rakudo Testing Revisited and Open Help Session</title>
+      <abstract>We discussed how much each of us had accomplished in testing
+        Rakudo. We also discussed problems that were causing problems for
+        members of the group.</abstract>
+    </topic>
+  </talk>
+
+  <talk num="0809">
+    <date>September 2008</date>
+    <topic>
+      <title>Open Help Session</title>
+      <abstract>This session was another open invitation for people to bring
+        questions or problems for the group to provide help on.</abstract>
+    </topic>
+  </talk>
+
   <talk num="0810">
     <date>October 2008</date>
     <topic href="/talks/2008talks/0810Talk/index.html">
