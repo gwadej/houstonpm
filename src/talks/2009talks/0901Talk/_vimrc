@@ -1,0 +1,155 @@
+" Set default fonts
+"set guifontset=-*-fixed-r-*-*-16-*-*-*-c-*-*-*,-*-medium-r-*-*-16-*-*-*-c-*-*-*
+if v:lang =~ "^ko"
+   set fileencodings=euc-kr
+   set guifontset=-*-*-medium-r-normal--16-*-*-*-*-*-*-*
+elseif v:lang =~ "^ja_JP"
+   set fileencodings=euc-jp
+   set guifontset=-misc-fixed-medium-r-normal--14-*-*-*-*-*-*-*
+elseif v:lang =~ "^zh_TW"
+   set fileencodings=big5
+   set guifontset=-sony-fixed-medium-r-normal--16-150-75-75-c-80-iso8859-1,-taipei-fixed-medium-r-normal--16-150-75-75-c-160-big5-0
+elseif v:lang =~ "^zh_CN"
+   set fileencodings=gb2312
+   set guifontset=*-r-*
+endif
+if v:lang =~ "utf8$" || v:lang =~ "UTF-8$"
+   set fileencodings=utf-8,latin1
+endif
+
+set nocompatible	" Use Vim defaults (much better!)
+set bs=2		" allow backspacing over everything in insert mode
+"set ai			" always set autoindenting on
+"set backup		" keep a backup file
+set viminfo='20,\"50	" read/write a .viminfo file, don't store more
+			" than 50 lines of registers
+set history=50		" keep 50 lines of command line history
+set ruler		" show the cursor position all the time
+
+" Only do this part when compiled with support for autocommands
+if has("autocmd")
+  " In text files, always limit the width of text to 78 characters
+  autocmd BufRead *.txt set tw=78
+  " When editing a file, always jump to the last cursor position
+  autocmd BufReadPost *
+  \ if line("'\"") > 0 && line ("'\"") <= line("$") |
+  \   exe "normal g'\"" |
+  \ endif
+
+  " Add local customizations for given languages.
+  autocmd FileType perl source ~/vim/ftplugin/perl_local.vim
+  autocmd FileType html source ~/vim/ftplugin/html_local.vim
+endif
+
+" Don't use Ex mode, use Q for formatting
+map Q gq
+
+" Switch syntax highlighting on, when the terminal has colors
+" Also switch on highlighting the last used search pattern.
+if &t_Co > 2 || has("gui_running")
+    syntax on
+    set hlsearch
+endif
+
+if &term=="xterm"
+     set t_Co=8
+     set t_Sb=^[4%dm
+     set t_Sf=^[3%dm
+endif
+
+
+" Add my specific customizations.
+
+colorscheme morning
+
+set incsearch
+set nowrap
+set background=light
+set shiftwidth=4
+set shiftround
+set visualbell
+
+set smarttab
+set expandtab
+set cindent
+
+autocmd FileType make set nosmarttab|set noexpandtab
+
+" Set up source folding.
+set foldmethod=syntax
+set foldenable
+set foldcolumn=2
+"set foldlevel=5
+set foldlevel=20
+
+" Set up tags source file
+set tags=tags,/
+"set tags=tags,~/src/tags
+
+set csprg=/lhome/wjohnson/bin/cscope
+
+" ctags and taglist support.
+let Tlist_Ctags_Cmd = 'ctags'
+let Tlist_Auto_Open = 0
+
+nmap    ,t  :TlistToggle<CR>  " another method just in case...
+nmap    ,r  :TlistSync<CR>
+
+" maps for some regex searches I do too often
+nmap    ,fe   /\<[Ee]rror\><Enter>
+nmap    ,fc   /^\(<<<<<<\\|======\\|>>>>>>\)<Enter>
+
+" Simplify gvimdiff usage
+map <F9> :diffget<Enter>
+map <F8> :diffput<Enter>
+map <F2> :n<Enter>
+map <S-F2> :N<Enter>
+
+" Allow function searching commands to work without { in first column
+map [[ ?{<CR>w99[{
+map ][ /}<CR>b99]}
+map ]] j0[[%/{<CR>
+map [] k$][%?}<CR>
+
+" Update include path
+"set path=.,/usr/include,,include
+
+" From Perl Hacks, allow : in identifiers
+" Removed because it messes up \<\> in regexes
+"set iskeyword+=:
+
+set spellfile=~/var/vim/spell/gocad.latin1.add
+
+" For DirDiff
+let g:DirDiffExcludes = "CVS,glm,examples,bin,config,devtools,doc,pixmaps,wizards,CLI,XCLI,linux-*,app-defaults,*.swp,*.moc,*.sln,*.vcproj,*.vsprops,_defines.h,_undefs.h,Makefile*,*.log,setvars.*,*_base.h" 
+
+" Integrate ack
+set grepprg=ack\ -a
+
+" Easy edit/reload of vimrc
+nmap ,v :source ~/.vimrc<cr>
+nmap ,V :e ~/.vimrc<cr>
+
+" Turn on SVG syntax
+autocmd BufNewFile,BufRead *.svg setf svg
+
+
+" Attempt to force use of movement keys
+"imap <silent> <Up> <esc>:echo "Use k instead"<cr>
+"imap <silent> <Down> <esc>:echo "Use j instead"<cr>
+imap <silent> <Left> <esc>:echo "Use h or a movement command instead"<cr>
+imap <silent> <Right> <esc>:echo "Use l or a movement command instead"<cr>
+imap <silent> <PageUp> <esc>:echo "Use <lt>C-B> instead"<cr>
+imap <silent> <PageDown> <esc>:echo "Use <lt>C-F> instead"<cr>
+imap <silent> <Home> <esc>:echo "Use 0 or ^ instead"<cr>
+imap <silent> <End> <esc>:echo "Use $ instead"<cr>
+
+nmap <silent> <Up> :echo "Use k instead"<cr>
+nmap <silent> <Down> :echo "Use j instead"<cr>
+nmap <silent> <Left> :echo "Use h or a movement command instead"<cr>
+nmap <silent> <Right> :echo "Use l or a movement command instead"<cr>
+nmap <silent> <PageUp> :echo "Use <lt>C-B> instead"<cr>
+nmap <silent> <PageDown> :echo "Use <lt>C-F> instead"<cr>
+nmap <silent> <Home> :echo "Use 0 or ^ instead"<cr>
+nmap <silent> <End> :echo "Use $ instead"<cr>
+

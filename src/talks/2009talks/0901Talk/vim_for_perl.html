@@ -1,0 +1,523 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>Vim for Perl Development</title>
+<!-- metadata -->
+<meta name="generator" content="S5" />
+<meta name="version" content="S5 1.1" />
+<meta name="presdate" content="20090110" />
+<meta name="author" content="G. Wade Johnson" />
+<meta name="company" content="Houston.pm" />
+<!-- configuration parameters -->
+<meta name="defaultView" content="slideshow" />
+<meta name="controlVis" content="hidden" />
+<!-- style sheet links -->
+<link rel="stylesheet" href="ui/default/slides.css" type="text/css" media="projection" id="slideProj" />
+<link rel="stylesheet" href="ui/default/outline.css" type="text/css" media="screen" id="outlineStyle" />
+<link rel="stylesheet" href="ui/default/print.css" type="text/css" media="print" id="slidePrint" />
+<link rel="stylesheet" href="ui/default/opera.css" type="text/css" media="projection" id="operaFix" />
+<!-- embedded styles -->
+<style type="text/css" media="all">
+.imgcon {width: 525px; margin: 0 auto; padding: 0; text-align: center;}
+#anim {width: 270px; height: 320px; position: relative; margin-top: 0.5em;}
+#anim img {position: absolute; top: 42px; left: 24px;}
+img#me01 {top: 0; left: 0;}
+img#me02 {left: 23px;}
+img#me04 {top: 44px;}
+img#me05 {top: 43px;left: 36px;}
+</style>
+<!-- S5 JS -->
+<script src="ui/default/slides.js" type="text/javascript"></script>
+</head>
+<body>
+
+<div class="layout">
+<div id="controls"><!-- DO NOT EDIT --></div>
+<div id="currentSlide"><!-- DO NOT EDIT --></div>
+<div id="header"></div>
+<div id="footer">
+<h1>Vim for Perl</h1>
+</div>
+
+</div>
+<div class="presentation">
+
+<div class="slide">
+<h1>Vim for Perl Development</h1>
+<h3>G. Wade Johnson</h3>
+<h4><a href="http://houston.pm.org/">Houston Perl Mongers</a></h4>
+</div>
+
+
+<div class="slide">
+<h1>What Is Vim?</h1>
+<ul class="incremental">
+<li>Vi Improved</li>
+<li>That old, weird modal editor</li>
+<li>Ubiquitous</li>
+<li>Modern, powerful programming editor</li>
+<li>All of the above</li>
+</ul>
+</div>
+
+
+<div class="slide">
+<h1>Editor, not Writer</h1>
+<ul class="incremental">
+<li>Vim is not a text-entry system.</li>
+<li>Vim is an <em>editor</em>.</li>
+</ul>
+<div class="handout">
+<p>We normally think that most of our time in the editor is spent writing.
+In actually, we spend more time changing old text than writing new text.
+For Vim, adding text is a subset of the functionality of the editor. Vim has
+extensive capabilities for editing.</p>
+</div>
+</div>
+
+
+<div class="slide">
+<h1>Vim is Modal</h1>
+<ul>
+<li>Normal mode</li>
+<li>Insert/Replace mode</li>
+<li>Visual mode</li>
+<li>CmdLine mode</li>
+</ul>
+<div class="handout">
+<p>Only one of the four modes is directly related to entering text. The other
+thre are related to navigation and editing of text.</p>
+</div>
+</div>
+
+
+<div class="slide">
+<h1>Navigation Commands</h1>
+<ul>
+<li>Simple: h j k l 0 ^ $ - +</li>
+<li>More Complex: gg G C-f C-b L M H zt zz zb</li>
+<li>Text Object: w W b B e E ( ) { } [[ ]] %</li>
+<li>Search: t f T F , ; * # n N</li>
+</ul>
+<div class="handout">
+<p>One of the hardest things for people to learn with VI or Vim is that
+the navigation commands are done with normal keys rather than with special
+navigation keys. This turns out to be very efficient for touch typists. You
+can navigate without taking your hands far from the home keys.</p>
+<p>In addition, Vim's navigation commands are much richer than those in most
+editors. Instead of pounding on (or holding down) an arrow key, you can
+often move to almost exactly the right place with a few keystrokes.</p>
+</div>
+</div>
+
+
+<div class="slide">
+<h1>Repeated Movement</h1>
+<ul>
+<li>10j - move down ten lines</li>
+<li>3f) - move to the third <code>)</code> to the right</li>
+<li>5W - move 5 groups of non-whitespace characters to the right</li>
+<li>3C-b - move 3 pages up</li>
+<li>235gg - move to line 235</li>
+</ul>
+<div class="handout">
+<p>Most of movement commands can be preceeded by a count which applies the
+same command multiple times.</p>
+</div>
+</div>
+
+
+<div class="slide">
+<h1>Editing Commands</h1>
+<ul>
+<li>Edit commands: c d y p P &lt; &gt; g~ gu gU gq</li>
+<li>Must be followed by a motion command</li>
+<li>Single character edits: x r ~ s J</li>
+<li>Line edits: cc dd yy &lt;&lt; &gt;&gt;</li>
+<li>End of line edits: C D
+</ul>
+<div class="handout">
+<p>The first set of commands perform the following actions when followed by a
+motion command: change, delete, yank, paste after, paste before, outdent,
+indent, toggle case, lowercase, uppercase, and justify. The &lt;, &gt;, and
+gq commands need a line motion, the others expect a character motion.</p>
+
+<p>The single character edits do not require a motion command but can be
+preceeded by a count to affect that many characters: delete, replace,
+toggle case, change, and join next line with this one.</p>
+
+<p>Line edits affect the entire line. Adding a count, affects that many lines.
+The <em>end of line</em> variants edit from the current position to the end
+of the line.</p>
+</div>
+</div>
+
+
+<div class="slide">
+<h1>Registers</h1>
+<ul>
+<li>Unnamed register "</li>
+<li>Numbered registers 0-9</li>
+<li>Named registers a-z A-Z</li>
+<li>Clipboard: +</li>
+</ul>
+<div class="handout">
+<p>One really under-appreciated concept in Vim concerns the registers. When
+cutting, copying, and pasting, Vim does not just use one clipboard. Instead,
+the program supports a number of registers. Anytime a yank, delete, or change
+is executed, the data goes into the unnamed register (and register 0), unless
+you specify a particular named register. Each time one of those commands is
+executed, the previous value of the 0 register is moved to the 1 register.
+This is repeated for each numbered register, up to register 9.</p>
+
+<p>If you want to hold onto a piece of text for longer than one cut/paste,
+you can use one of the 26 named registers, by prefixing the command with
+<em>"</em> and the letter naming the register. So, <em>"byy</em> yanks the
+current line into register b. Using an uppercase letter, appends to that
+register rather than just replacing. If you use name a register before the
+p or P command, it pastes the data from that register instead.</p>
+
+<p>One other special register is <em>+</em>. This register is mapped to the
+system clipboard. This feature allows easily moving data to and from other
+programs.</p>
+</div>
+</div>
+
+
+<div class="slide">
+<h1>Insert Mode</h1>
+<ul>
+<li>Motion commands: c C s S R</li>
+<li>Insert: i I</li>
+<li>Append: a A</li>
+<li>New Line: o O</li>
+</ul>
+<div class="handout">
+<p>There are a number of ways to enter insert mode. Vim novices pick one,
+use it to get into insert mode and spend most of their time entering text.
+As you become more familiar with the different ways to enter insert mode,
+you find that using the correct command can save you typing. For example,
+<em>a</em> starts appending after the current character, but <em>A</em> appends
+to the end of the line. This saves you from cursoring to the end of the line
+(or <em>$</em>, if you are more Vim-savvy). Likewise, <em>I</em> inserts
+before the first non-whitespace character on the line. The commands <em>o</em>
+and <em>O</em> inserts a new line after/before the current line, moves there,
+and enters insert mode.</p>
+</div>
+</div>
+
+
+<div class="slide">
+<h1>Visual Mode</h1>
+<ul>
+<li>Character selection: v</li>
+<li>Line selection: V</li>
+<li>Block selection: C-v</li>
+</ul>
+<div class="handout">
+<p>Visual mode could also be called selection mode. Any motion commands after
+entering visual mode extends the selection. The way the selection extends is
+determined by how visual mode was entered. Using a command such as y, c, or
+d applies to the entire selection. This selection can also specify the range
+affected by one of the colon commands, like substitute.</p>
+</div>
+</div>
+
+
+<div class="slide">
+<h1>CmdLine Mode</h1>
+<ul>
+<li>File/Buffer commands: :w :e :r :n :N :q :find</li>
+<li>Edit commands: :s/// :co :m :d :c</li>
+<li>Search commands: / ?</li>
+<li>Filter commands: !
+</ul>
+<div class="handout">
+<p>The first group of commands has to do with writing a buffer, editing a
+new file, reading a file into the current buffer, moving to the next/previous
+file from the commands line, quitting the current buffer, and find a file
+from the path and edit it.</p>
+
+<p>The substitute command is your <em>search and replace</em> command. It
+supports regular expressions. The other commands of this group can often be
+done more easily with normal mode commands: copy, move, delete, and change.
+One place where these can be particularly useful is where the range can be
+determined by a search.</p>
+
+<p>The search commands use regular expressions to find text. The n and N
+commands are used to move to the next match.</p>
+
+<p>The filter command is possibly the most powerful. The selected text or
+the specified range is supplied as standard input to the specified command.
+The output from the command then replaces the selection. This allows any
+filter-type command on the system to be used to modify text in the editor,
+without leaving the editor.</p>
+</div>
+</div>
+
+
+<div class="slide">
+<h1>Text Objects</h1>
+<ul>
+<li>Inner or Outer: i or a</li>
+<li>Object: w W s p</li>
+<li>Matching: [ ] ( ) b { } B &lt; &gt; t</li>
+<li>Quoted strings: " ' `</li>
+</ul>
+<div class="handout">
+<p>In many cases, commands that take a motion can take a text object instead.
+This allows some pretty powerful edits to be accomplished with a few keystrokes.
+Unfortunately, constructing the text object requires a small amount of getting
+used to. The text object starts with wither <em>i</em> or <em>a</em>. This
+makes it either an <em>inner</em> text object (without the delimiters) or
+<em>all</em> (with the delimiters). In the case of the first set of object,
+the difference is the surrounding whitespace. For the other text objects,
+<em>i</em> means without the delimiters and <em>a</em> includes the delimiters.</p>
+
+<p>The first set of object characters specifies words, non-whitespace characters,
+sentences, and paragraphs. The matching sets define a text object delimited
+by the specified pairs of characters. You only need to specify one of them.
+The <em>b</em> character is a synonym for the parentheses. The <em>B</em>
+character is a synonym for the curly braces. The <em>t</em> character refers
+to XML or HTML tags. So <em>it</em> refers to the text object delimited by
+the nearest enclosing tags.</p>
+</div>
+</div>
+
+
+<div class="slide">
+<h1>Repeated Edits</h1>
+<ul>
+<li>Repeat last edit: .</li>
+<li>Recorded macros: q @</li>
+<li>vim script</li>
+<li><em>perldo</em></li>
+</ul>
+<div class="handout">
+<p>There's been a lot of talk so far about edits in Vim being different than
+just typing text. Now we can see why that is important. The <em>.</em> command
+repeats the last edit in the current cursor location. That could be as simple
+an edit as deleting a character (<em>x</em>) or word (<em>dw</em>). Or it could
+be more complicated like indent the enclosing code block (<em>&lt;iB</em>).</p>
+
+<p>The problem with the <em>.</em> command is that it is just one edit. Once
+you begin a motion, the edit is considered completed. A macro can include any
+form of change that you can perofm in Vim. Press <em>q</em> followed by a
+register name and then perform the edits and motions you need. Finish the
+macro with another <em>q</em>. You execute the macro by typing <em>@</em>
+followed by the macro name. When using recorded macros, the more advanced
+motion commands are more useful. Your edit can apply to different amounts of
+text as long as it follows the same structure.</p>
+
+<p>The next feature is vim script, which is a full programming language.
+Using vim script, you can add new functionality to the editor. We'll discuss
+this more later.</p>
+
+<p>For Perl programmers, one of the most powerful features is <em>perldo</em>
+which allows you to execute a perl command on selected portions of your text.
+This feature is only availabale if Perl support was compiled in to your
+installation of Vim.</p>
+</div>
+</div>
+
+
+<div class="slide">
+<h1>Word Completion</h1>
+<ul>
+<li>Complete words: C-n C-p C-xC-i</li>
+<li>Stop completion: C-xC-e</li>
+<li>Specific: C-xC-d C-xC-] C-xC-f</li>
+<li></li>
+</ul>
+<div class="handout">
+<p>Some languages are very verbose and require editor support to help
+remember the names of all of the methods and variables you might want to use.
+Vim provides a relatively simple version of this feature with word
+completion.</p>
+
+<p>The first two list all of the keywords from the current file that match the
+text typed so far. The <em>C-xC-i</em> also applies keywords from files that
+are included. If you've decided you'd rather finish typing rather than select
+from the list, use <em>C-xC-e</em>. There are also some special purpose
+completions for definitions or macros, entries in the <code>tags</code> file
+and filenames found on the path.</p>
+</div>
+</div>
+
+
+<div class="slide">
+<h1>Window Support</h1>
+<ul>
+<li>Window support: :sp (C-w s) :vs (C-w s)</li>
+<li>Close windows: :q :qall :on</li>
+<li>Navigating: C-w j C-w k C-w h C-w l</li>
+<li>Automation: :windo</li>
+</ul>
+<div class="handout">
+<p>Vim supports working with multiple windows at one time. You can have the
+Same file in multiple windows. This is more useful in the gui version of the
+vim.</p>
+
+<p>An unusual command is <em>:windo</em> which applies a command to the files
+in every open window.</p>
+</div>
+</div>
+
+
+<div class="slide">
+<h1>Tab Support</h1>
+<ul>
+<li>Create: :tabe[dit] :tabnew :tabf[ind] C-w gf</li>
+<li>Closing: :tabc[lose] :tabo[nly]</li>
+<li>Navigation: :tabn :tabN :tabr[ewind] :tabfir[st] :tabl[ast]</li>
+<li>Automation: :tabdo</li>
+</ul>
+<div class="handout">
+<p>Tabbed interfaces are pretty popular laterly. Of course, vim supports tabs
+as well. First you have to be able to open tabs, you can do that using the
+<code>-p</code> command line option when starting vim. But, it's more useful
+to create tabs as you need them. The first set of commands opens a file for
+editing in a new tab, creates an empty tab, finds a file on the path and opens
+it in a new tab, and opens the filename under the cursor in a new tab.</p>
+
+<p>You can close a tab with <em>:tabc</em>. You can close all but the current
+tab with <em>:tabo</em>. Navigation is performed with the next set of
+commands. These move to the next, previous, first (2 ways), and last open
+tab.</p>
+
+<p>Finally, tabs also support automation through the <em>:tabdo</em> command
+which applies a supplied command to all of the open tabs.</p>
+</div>
+</div>
+
+
+<div class="slide">
+<h1>Customizing Vim</h1>
+<ul>
+<li><a href="_vimrc">.vimrc</a></li>
+<li>.vim directory</li>
+<li>vim script</li>
+<li>syntax highlighting</li>
+</ul>
+<div class="handout">
+<p>The <code>~/.vimrc</code> file is loaded when vim starts. This file usually
+contains configuration commands that customize the editor.</p>
+
+<p>The <code>~/.vim</code> directory contains a number of directories and
+files that further customize vim. This is normally where script and doc
+files are added.</p>
+
+<p>Vim has its own scripting langauge. Much of the customization of vim is
+accomplished using this scripting language. The vim site contains a large
+number of scripts written by programmers to add more functionality to vim.</p>
+
+<p>In fact, even vim's syntax highlighting is implemented using this
+scripting language. The current syntax highlighting system supports around the
+dyntax for around 480 different languages.</p>
+</div>
+</div>
+
+
+<div class="slide">
+<h1>Useful Scripts</h1>
+<ul>
+<li>DirDiff.vim</li>
+<li>surround.vim</li>
+<li>vimballPlugin.vim</li>
+<li>snippetsEmu.vim</li>
+<li>NERD_commenter.vim</li>
+<li>taglist.vim</li>
+<li>vcscommand.vim</li>
+</ul>
+<div class="handout">
+<p>These are a few scripts that I found extremely useful. <code>DirDiff</code>
+allows comparison of two directory trees and the files in them.
+<code>surround</code> supports editing characters that surround other text.
+This includes quotes and matching pairs like parens, and braces. The
+<code>vimballPlugin</code> script supports a mechanism for packaging and
+installing other scripts. <code>scriptsEmu</code> provides a system for
+TextMate code snippets. The <code>NERD_commenter</code> script handles
+commenting and uncommenting large sections of code all at once. The
+<code>taglist</code> script give vim the ability to make a kind of menu
+from the file created by the tags program. <code>vcscommand</code> provides
+functionality to access several different types of version control systems,
+including SVN, CVS, and git.</p>
+</div>
+</div>
+
+
+<div class="slide">
+<h1>Perl-Specific Customizations</h1>
+<ul>
+<li><code>gf</code> with changes to include, includeexpr, isfname</li>
+<li><code>make</code> support</li>
+<li>Use <code>ack</code> instead of grep external files.</li>
+<li>Mapped commands for perltidy, perlcritic, perldoc, prove, etc.</li>
+<li>Special templates for new files.</li>
+</ul>
+<div class="handout">
+<p>The normal vim support for Perl includes some useful customizations.
+The <em>gf</em> command opens the file under the cursor. With a few
+customizations, vim recognizes Perl <code>use</code> statements and converts
+the module name into a filename to open.</p>
+
+<p>With a couple more customizations, we can repurpose vim's built-in make
+support to give a quick compile check for Perl code. Similarly, vim uses
+grep to search external files, but we can customize it to use <code>ack</code>
+instead.</p>
+
+<p>By mapping commands with special keystrokes, we can add functinality.
+Examples include the ability to run perltidy or perlcritic on code. Vim already
+supports a keyword-lookup help feature, with a few minor tweaks, it uses 
+perldoc.</p>
+
+<p>Many programming languages need a fair amount of boilerplate to get
+started. Perl doesn't require much, but we can benefit by starting our files
+the same way every time. Using the <code>autocmd</code> feature, we can
+cause vim to read a template any time a new file of a particular type is
+created.</p>
+</div>
+</div>
+
+
+<div class="slide">
+<h1>Perl Custom Commands</h1>
+<ul>
+<li>My customizations: <a href="perl_local.vim">perl_local.vim</a></li>
+<li><em>,pt</em> for perltidy</li>
+<li><em>,pc</em> for perlcritic</li>
+<li><em>,pD</em> to deparse code</li>
+</ul>
+<div class="handout">
+<p>In the customization file, I've added <code>maps</code> for the listed
+strings to commands I might want to run on code. The <em>,pt</em> for running
+<code>perltidy</code> and <em>,pc</em> for running <code>perlcritic</code>
+have pretty obvious utility. <em>,pD</em> is a bit different. It compiles the
+selected Perl code and then decompiles it to show Perl's interpretation of
+the code. This can be used to de-obfuscate code that came from someone else.</p>
+</div>
+</div>
+
+
+<!--
+<div class="slide">
+<h1></h1>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<div class="handout">
+</div>
+</div>
+
+
+-->
+</div>
+
+</body>
+</html>
