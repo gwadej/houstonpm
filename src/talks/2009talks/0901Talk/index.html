@@ -29,15 +29,70 @@
   <div class="content">
     <h2 class="subhead">Programming Editors for Perl</h2>
 
-    <p></p>
+    <h3 class="subsub">Emacs</h3>
 
-    <p></p>
+    <p>Robert Boone started the presentation with an <a
+       href="notes.html">exploration</a> of the
+      emacs editor, focusing on features of use to Perl programmers.</p>
 
-    <p></p>
+    <p>Phil King followed with a lightning talk showing how to use
+      <code>perldb</code> from emacs as a kind of built-in debugger.
+      (Launched with <code>M-x perldb</code>.)</p>
 
-    <p></p>
+    <h3 class="subsub">Eclipse/EPIC</h3>
 
-    <p></p>
+    <p>Todd Rinaldo was next, presenting a set of editors he uses for
+       different purposes.</p>
+
+    <ul>
+       <li><a href=http://www.notetab.com/"">NoteTab</a> for simple text entry and powerful search
+         and replace.</li>
+       <li>The <a href="http://www.crimsoneditor.com/">Crimson Editor</a> is
+         a fast, basic editor with syntax highlighting.</li>
+       <li>The <a href="http://www.epic-ide.org/">EPIC</a> IDE built on the
+         <a href="http://www.eclipse.org/">Eclipse</a> platform is his main
+         editor.</li>
+       <li>The comercial version of <a href="http://aspn.activestate.com/ASPN/Downloads/Komodo">Komodo</a>
+         supports a very good regular expression debugging tool.</li>
+    </ul>
+
+    <p>Todd mostly focused on the features of EPIC. Since it's built on the
+      Eclipse platform, it has a built-in update mechanism that makes adding
+      and updating features quite easy. It's Java-based, which means it should
+      run anywhere the JVM is available. The editor has Subversion integration
+      and the ability to edit remotely through FTP.</p>
+
+    <p>EPIC has full syntax highlighting for Perl as well as the ability
+      to syntax check the code on save. Support for both <code>Perl::Critic</code>
+      and <code>Perl::Tidy</code> is built in.</p>
+
+    <p>There are a few issues, however. Changing the colors in Eclipse can be
+      annoying, because those options are determined by multiple subsystems.
+      This can sometimes make it hard to find which option on which menu
+      affects which color. Todd says it can run a telnet session, but SSH
+      does not appear to work properly. The FTP-based access can sometimes
+      become confused, especially when network problems occur. Obviously, the
+      syntax check can fail when working remotely if the local environment
+      does not match.</p>
+
+    <h3 class="subsub">Vim</h3>
+
+    <p>G. Wade Johnson finished the session with an <a
+      href="vim_for_perl.html">overview</a> of vim. Most of the presentation
+      covered non-Perl-specific features of the editor. One point that he
+      repeated several times was that vim is optimized for <em>editing text</em>,
+      as opposed to <em>entering text</em>.</p>
+      
+    <p>He did show some Perl-specific customizations and functionality at
+      the end of the presentation.</p>
+
+    <h3 class="subsub">Conclusion</h3>
+
+    <p>Considering the <em>holy wars</em> that often result when programmers
+       talk editors, this meeting was surprisingly non-violent. No blood was
+       shed and no voices were raised in anger. Everyone seemed to learn a
+       bit from each presentation, whether on their editor of choice or not.</p>
+
   </div>
 
 </div>
