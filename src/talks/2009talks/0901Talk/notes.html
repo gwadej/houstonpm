@@ -1,0 +1,318 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+lang="en" xml:lang="en">
+<head>
+<title>Emacs Demo</title>
+<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2009-01-13 20:49:04 CST"/>
+<meta name="author" content="Robert Boone"/>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
+  .title  { text-align: center; }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color:lightblue; font-weight:normal }
+  .target { }
+  .timestamp { color: grey }
+  .timestamp-kwd { color: CadetBlue }
+  p.verse { margin-left: 3% }
+  pre {
+	border: 1pt solid #AEBDCC;
+	background-color: #F3F5F7;
+	padding: 5pt;
+	font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]>*/-->
+</style>
+<script language="javascript" type="text/javascript">
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*/-->
+</script>
+</head><body>
+<h1 class="title">Emacs Demo</h1>
+
+
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1 Notes </a>
+<ul>
+<li><a href="#sec-1.1">1.1 Emacs DEMO </a>
+<ul>
+<li><a href="#sec-1.1.1">1.1.1 TRAMP </a></li>
+<li><a href="#sec-1.1.2">1.1.2 cperl-mode </a></li>
+<li><a href="#sec-1.1.3">1.1.3 Devel::PerlySense </a></li>
+<li><a href="#sec-1.1.4">1.1.4 Server-Stylish </a></li>
+<li><a href="#sec-1.1.5">1.1.5 Emacs daemon </a></li>
+<li><a href="#sec-1.1.6">1.1.6 Emacs starter kit </a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1">1 Notes </h2>
+<div id="text-1">
+
+
+</div>
+
+<div id="outline-container-1.1" class="outline-3">
+<h3 id="sec-1.1">1.1 <span class="done">DONE</span> Emacs DEMO </h3>
+<div id="text-1.1">
+
+<p><span class="timestamp-kwd">SCHEDULED: </span> <span class="timestamp">2009-01-13 Tue</span> <br/>
+</p>
+</div>
+
+<div id="outline-container-1.1.1" class="outline-4">
+<h4 id="sec-1.1.1">1.1.1 TRAMP </h4>
+<div id="text-1.1.1">
+
+<ul>
+<li>
+SSH
+</li>
+<li>
+SCP
+</li>
+<li>
+su, sudo
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-1.1.2" class="outline-4">
+<h4 id="sec-1.1.2">1.1.2 cperl-mode </h4>
+<div id="text-1.1.2">
+
+<ul>
+<li>
+<a href="http://blog.jrock.us/articles/cperl-mode.el and Moose.pod">http://blog.jrock.us/articles/cperl-mode.el%20and%20Moose.pod</a>
+</li>
+<li>
+Add perl 5.10 and Moose support
+</li>
+<li>
+To see what keys are bound in the mode you are in
+<ul>
+<li>
+C-h m
+</li>
+</ul>
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-1.1.3" class="outline-4">
+<h4 id="sec-1.1.3">1.1.3 Devel::PerlySense </h4>
+<div id="text-1.1.3">
+
+<ul>
+<li id="sec-1.1.3.1">Commands [4/19] <br/>
+<ul>
+<li>
+<b>[X]</b> Overview &ndash; C-o C-o
+</li>
+<li>
+<b>[X]</b> Docs &ndash; C-o C-d &ndash; Show docs (POD/signature/etc) for the symbol (module/method/sub) at point.
+</li>
+<li>
+<b>[<span style="visibility:hidden;">X</span>]</b> Document Inheritance &ndash; C-o d i &ndash; Show the Inheritance hierarchy for the current Class in the echo area.
+</li>
+<li>
+<b>[<span style="visibility:hidden;">X</span>]</b> C-o d u &ndash; Document 'use Module' statements in the echo area.
+</li>
+<li>
+<b>[X]</b> Go To &ndash; C-o C-g &ndash; Open file at proper location for module, method/sub declaration for the symbol (module/method/sub) at point.
+</li>
+<li>
+<b>[<span style="visibility:hidden;">X</span>]</b> Go to Use &ndash; C-o g u &ndash; Go to the 'use Module' section of the current buffer.
+</li>
+<li>
+<b>[<span style="visibility:hidden;">X</span>]</b> Go To 'new' &ndash; C-o g n &ndash; Go to the 'new' method of the current class.
+</li>
+<li>
+<b>[<span style="visibility:hidden;">X</span>]</b> Go To Base Class &ndash; C-o g b &ndash; Open the file of the base class of the current class.
+</li>
+<li>
+<b>[X]</b> Go To Module &ndash; C-o g m &ndash; Open the source file of the module at point.
+</li>
+<li>
+<b>[<span style="visibility:hidden;">X</span>]</b> Go To Version Control &ndash; C-o g v &ndash; Go to the Project view of the current Version Control system.
+</li>
+<li>
+<b>[<span style="visibility:hidden;">X</span>]</b> Go To Tests - Other Files &ndash; C-o g t o &ndash; Go to any related test or source files given a Devel::CoverX::Covered covered db.
+</li>
+<li>
+<b>[<span style="visibility:hidden;">X</span>]</b> Go To Project's Other Files &ndash; C-o g p o &ndash; Go to corresponding files given a .corresponding<sub>file</sub> config file (see <a href="#File::Corresponding">File::Corresponding</a>).
+</li>
+<li>
+<b>[<span style="visibility:hidden;">X</span>]</b> Find with Ack &ndash; C-o f a &ndash; Search for the selected text, or word at point, or whatever, using Ack.
+</li>
+<li>
+<b>[<span style="visibility:hidden;">X</span>]</b> Find sub declarations &ndash; C-o f s &ndash; Search for sub declarations of the method name, or word at point.
+</li>
+<li>
+<b>[<span style="visibility:hidden;">X</span>]</b> Find method calls &ndash; C-o f c &ndash; Search for method calls of the method name, or word at point.
+</li>
+<li>
+<b>[<span style="visibility:hidden;">X</span>]</b> Run file &ndash; C-o C-r &ndash; Run the current file using the Compilation mode and the settings appropriate for the source type (Test, Module, etc.)
+</li>
+<li>
+<b>[<span style="visibility:hidden;">X</span>]</b> Edit - Move Use Statement &ndash; C-o e m u &ndash; Move the 'use Module' statement at point to the 'use Module' section at the top.
+</li>
+<li>
+<b>[<span style="visibility:hidden;">X</span>]</b> Edit Test Count &ndash; C-o e t c &ndash; Increase the test count (e.g. "tests =&gt; 43")
+</li>
+<li>
+<b>[<span style="visibility:hidden;">X</span>]</b> Assist With Test Count &ndash; C-o a t &ndash; Synchronize invalid test count in .t file with the <b>compilation</b> buffer.
+</li>
+</ul>
+</li>
+<li id="sec-1.1.3.2">Flymake <br/>
+<ul>
+<li>
+C-o s n &ndash; Go to the next Source error/warning.
+</li>
+<li>
+C-o s p &ndash; Go to the previous Source error/warning.
+</li>
+<li>
+C-o s s &ndash; Display the error/warning text of the current line.
+</li>
+</ul>
+</li>
+<li id="sec-1.1.3.3">Regex Toolkit <br/>
+<ul>
+<li>
+C-o a r &ndash; bring up the Regex Tool
+</li>
+<li>
+C-c C-c &ndash; to force an update
+</li>
+<li>
+C-c C-k &ndash; to quit all the regex-tool buffers and remove the frame
+</li>
+</ul>
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-1.1.4" class="outline-4">
+<h4 id="sec-1.1.4">1.1.4 Server-Stylish </h4>
+<div id="text-1.1.4">
+
+<ul>
+<li>
+Swank for Perl
+</li>
+<li>
+git://git.jrock.us/Server-Stylish.git
+</li>
+<li>
+<a href="http://blog.jrock.us/articles/Stylish REPL.pod">http://blog.jrock.us/articles/Stylish%20REPL.pod</a>
+</li>
+<li>
+Short video (if there is time)
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-1.1.5" class="outline-4">
+<h4 id="sec-1.1.5">1.1.5 Emacs daemon </h4>
+<div id="text-1.1.5">
+
+<ul>
+<li>
+emacs 23 only
+</li>
+<li>
+&ndash;daemon
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-1.1.6" class="outline-4">
+<h4 id="sec-1.1.6">1.1.6 Emacs starter kit </h4>
+<div id="text-1.1.6">
+
+<ul>
+<li>
+A good configuration for beginning emacs users
+</li>
+<li id="sec-1.1.6.1"><a href="http://github.com/technomancy/emacs-starter-kit/tree/master">http://github.com/technomancy/emacs-starter-kit/tree/master</a> <br/>
+<ul>
+<li>
+Basic perl support
+</li>
+</ul>
+</li>
+<li id="sec-1.1.6.2"><a href="http://github.com/rlb3/emacs-starter-kit/tree/rlb3">http://github.com/rlb3/emacs-starter-kit/tree/rlb3</a> <br/>
+<ul>
+<li>
+My current setup
+
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble"><p class="author"> Author: Robert Boone
+</p>
+<p class="date"> Date: 2009-01-13 20:49:04 CST</p>
+<p>HTML generated by org-mode 6.17trans in emacs 22</p>
+</div></body>
+</html>

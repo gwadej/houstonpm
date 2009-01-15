@@ -645,4 +645,21 @@
     </topic>
   </talk>
 
+  <talk num="0901">
+    <date>January 2009</date>
+    <topic href="/talks/2009talks/0901Talk/index.html">
+      <title>Programming Editors for Perl</title>
+      <presenter>Robert Boone</presenter>
+      <presenter>Phil King</presenter>
+      <presenter>Todd Rinaldo</presenter>
+      <presenter>G. Wade Johnson</presenter>
+      <abstract>The topic this month was programming editors and IDEs for use
+         with Perl. Given the time required to become really proficient with one
+         of these tools, it is almost impossible for one person to provide a fair
+         treatment of more than one. To handle this problem, four of our members
+         presented aspects of different editors. The focus was mainly on emacs,
+         Eclipse, and vim, with other editors mentioned along the way.</abstract>
+    </topic>
+  </talk>
+
 </talklist>
