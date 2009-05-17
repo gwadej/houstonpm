@@ -1,0 +1,572 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>RRDtool Tips and Traps</title>
+<!-- metadata -->
+<meta name="generator" content="S5" />
+<meta name="version" content="S5 1.1" />
+<meta name="presdate" content="20090210" />
+<meta name="author" content="G. Wade Johnson" />
+<meta name="company" content="Houston.pm" />
+<!-- configuration parameters -->
+<meta name="defaultView" content="slideshow" />
+<meta name="controlVis" content="hidden" />
+<!-- style sheet links -->
+<link rel="stylesheet" href="ui/default/slides.css" type="text/css" media="projection" id="slideProj" />
+<link rel="stylesheet" href="ui/default/outline.css" type="text/css" media="screen" id="outlineStyle" />
+<link rel="stylesheet" href="ui/default/print.css" type="text/css" media="print" id="slidePrint" />
+<link rel="stylesheet" href="ui/default/opera.css" type="text/css" media="projection" id="operaFix" />
+<!-- embedded styles -->
+<style type="text/css" media="all">
+.imgcon {width: 525px; margin: 0 auto; padding: 0; text-align: center;}
+#anim {width: 270px; height: 320px; position: relative; margin-top: 0.5em;}
+#anim img {position: absolute; top: 42px; left: 24px;}
+img#me01 {top: 0; left: 0;}
+img#me02 {left: 23px;}
+img#me04 {top: 44px;}
+img#me05 {top: 43px;left: 36px;}
+</style>
+<!-- S5 JS -->
+<script src="ui/default/slides.js" type="text/javascript"></script>
+</head>
+<body>
+
+<div class="layout">
+<div id="controls"><!-- DO NOT EDIT --></div>
+<div id="currentSlide"><!-- DO NOT EDIT --></div>
+<div id="header"></div>
+<div id="footer">
+<h1>RRDtool Tips and Traps</h1>
+</div>
+
+</div>
+<div class="presentation">
+
+<div class="slide">
+<h1>RRDtool Tips and Traps</h1>
+<h3>G. Wade Johnson</h3>
+<h4><a href="http://houston.pm.org/">Houston Perl Mongers</a></h4>
+</div>
+
+
+<div class="slide">
+<h1>What is RRDtool?</h1>
+<p>RRDtool manages one or more <em>round robin databases</em> of time
+series data.</p>
+<div class="handout">
+</div>
+</div>
+
+
+<div class="slide">
+<h1>What is a Round Robin Database?</h1>
+<img src="images/rrd.png" width="200" height="200" style="float:right;"/>
+
+<p>A fixed size ring of data positions makes up the database.</p>
+
+<div class="handout">
+
+<p>A round robin database is a systems for storing a fixed number of data points
+covering a sliding window of time. The database does not grow over time. All
+of the data positions are allocated initially. When we've used all the available
+positions, old data is overwritten rather than new space being allocated.</p>
+
+</div>
+</div>
+
+
+<div class="slide">
+<h1>What is Time Series Data?</h1>
+
+<p>Every piece of data is associated with a point in time.</p>
+
+<div class="handout">
+
+    <p>RRDtool does not store data like a relational database. Every number
+    in the database is associated with a particular point in time. The
+    data has no meaning except in relation to this time.</p>
+
+</div>
+</div>
+
+
+<div class="slide">
+<h1>Use Case: Tracking Router Data</h1>
+<div style="text-align: center;">
+<img src="images/mrtg_logo.gif" height="71" width="205" alt="MRTG logo"/>
+</div>
+
+<p style="text-align: center;">Began as <a href="http://oss.oetiker.ch/mrtg/">MRTG</a> (Multi Router
+Traffic Grapher) </p>
+
+<div class="handout">
+
+    <p>Tobias Oetiker and Dave Rand originally wrote MRTG to generate graphs
+    of traffic flowing through network routers. The database portion of this
+    project is now RRDtool.</p>
+
+</div>
+</div>
+
+
+<div class="slide">
+<h1>Use Case: Munin</h1>
+<div style="text-align: center;">
+<img src="images/munin.png" height="80" width="305" alt="Munin logo"/>
+</div>
+
+<p style="text-align: center;"><a href="http://munin.projects.linpro.no/">Munin</a> is a monitoring tool
+for computer performance</p>
+
+<div class="handout">
+
+    <p>Munin tracks and graphs performance of multiple computers. It can
+    track and graph:</p>
+
+    <ul>
+        <li>network performance</li>
+        <li>CPU load, memory usage</li>
+        <li>hard drive statistics</li>
+        <li>DNS</li>
+        <li>Jabber connections</li>
+        <li>Email stats</li>
+        <li>HTTP connections</li>
+        <li>LDAP activity</li>
+        <li>OpenVPN conections</li>
+        <li>database connections</li>
+        <li>and more</li>
+    </ul>
+</div>
+</div>
+
+
+<div class="slide">
+<h1>RRDtool Tips</h1>
+
+<p>Tips can be partitioned into three areas</p>
+
+<ul>
+<li>Time</li>
+<li>Data</li>
+<li>Graphs</li>
+</ul>
+<div class="handout">
+
+    <p>Although the concept seems pretty straight-forward, there are several things
+    that you need to think about the make the best use of RRDtool. These follow pretty
+    directly from the design, but may not be immediately obvious.</p>
+
+</div>
+</div>
+
+
+<div class="slide">
+<h1>Time Tip: Input at Regular Times</h1>
+
+<p>Input at regular times gives more consistent results.</p>
+
+<div class="handout">
+
+    <p>Because of the way that RRDtool stores data, the most consistent behavior
+    results from entering data at regular intervals on the time step. If you
+    are a little off time, the program interpolates the data from the time you
+    entered to the step time.</p>
+
+</div>
+</div>
+
+
+<div class="slide">
+<h1>Time Tip: Timescales and Resolutions</h1>
+
+<p>Choose your resolution based on the timescales you might want to display.</p>
+
+<div class="handout">
+
+    <p>The higher the resolution, the more space you will need to store the
+    data.  It is hard to use high-resolution, long-term data. For example, how
+    likely are you to want to graph data from two years ago to a resolution of
+    5 minutes?  High resolution is useful for recent data, lower resolutions
+    are good for longer term data.</p>
+
+    <p>RRDtool explicitly supports the ability to keep multiple timescales in
+    the same file. Choose the resolution for each timescale to be reasonable.
+    for that scale. RRDtool handles consolidating the data for the different
+    resolutions.</p>
+
+</div>
+</div>
+
+
+<div class="slide">
+<h1>Data Tip: Consolidation Functions</h1>
+
+<p>Consolidation functions determine how the data is converted to other
+timescales.</p>
+
+<ul>
+    <li>AVERAGE</li>
+    <li>MIN</li>
+    <li>MAX</li>
+    <li>LAST</li>
+</ul>
+<div class="handout">
+
+    <p>The consolidation function associated with each round robin archive in
+    the database determines what data is stored. Each consolidation function
+    summarizes the data in some way to reduce what is actually stored. This
+    involves a loss of information. Choosing the right consolidation function
+    can help preserve the features of the data that you are interested in.</p>
+
+</div>
+</div>
+
+
+<div class="slide">
+<h1>Data Tip: Data Source Types</h1>
+
+<p>The Data Source Type determines how RRDtool interprets incoming data.</p>
+<ul>
+<li>GAUGE</li>
+<li>COUNTER</li>
+<li>DERIVE</li>
+<li>ABSOLUTE</li>
+<li>COMPUTE</li>
+</ul>
+<div class="handout">
+
+    <p>GAUGE is as close as you can get to storing individual data points.
+    It's designed for tracking things like temperatures.</p>
+
+    <p>COUNTER is for continuously incrementing counters. The counter never
+    decreases, except for counter resets.</p>
+
+    <p>DERIVE stores the derivative of the data.</p>
+
+    <p>ABSOLUTE is for a counter that is reset on each read. Used for fast
+    counters that we want to have the largest potential change on each read.</p>
+
+    <p>COMPUTE is for storing the result of a formula applied to the other
+    data type.</p>
+
+</div>
+</div>
+
+
+<div class="slide">
+<h1>Data Tip: Multiple Pieces of Data</h1>
+
+<p>A single RRD can contain multiple pieces of data, provided they are all
+updated at the same time.</p>
+
+<div class="handout">
+    <p>There are often circumstances where you are tracking multiple pieces
+    of information at once. If you can collect them together and update the
+    RRDtool at the same. This simplifies comparing related data.</p>
+
+</div>
+</div>
+
+
+<div class="slide">
+<h1>Graph Tip: Transform Data as You Graph</h1>
+
+<p>Use <a href="http://oss.oetiker.ch/rrdtool/doc/rrdgraph_data.en.html#ICDEF">CDEF
+statements</a> and <a href="http://oss.oetiker.ch/rrdtool/doc/rrdgraph_rpn.en.html">RPN</a>
+to convert the data before graphing.</p>
+
+<div class="handout">
+
+    <p>When specifying a graph, you can use CDEF statements to convert data
+    before graphing. The CDEF statement uses an RPN-based transformation
+    language to do the conversions.</p>
+
+    <p>Using this mechanism, you can graph data with some default value in
+    place of any unknown, or scale the graph by some amount. You can combine
+    multiple data sets to get the graph you need or any of a number of other
+    effects.</p>
+
+</div>
+</div>
+
+
+<div class="slide">
+<h1>Graph Tip: Special Effects with CDEF</h1>
+
+<p>CDEF can be used to change the way data is
+<a href="http://oss.oetiker.ch/rrdtool/gallery/index.en.html">displayed</a>.</p>
+<div class="handout">
+
+    <p>CDEF statements can be used not only for recalculating data.
+    They can also be used to generate interesting graph effects. Some
+    of the graphs on the attache page a pretty straight-forward. Others
+    are generated by transforming and overlapping the datasets in various
+    ways.</p>
+
+    <p>Many of the effects are the results of shifting data up or down.
+    Multiplying by -1 generates a reflection of the data.</p>
+
+</div>
+</div>
+
+
+<div class="slide">
+<h1>RRDtool Traps</h1>
+<p>Traps can be partitioned into three areas</p>
+<ul>
+<li>Time</li>
+<li>Data</li>
+<li>Graphs</li>
+</ul>
+<div class="handout">
+
+    <p>One problem with RRDtool is that it does not actually act the way most
+    people tend to expect. It's functionality is completely reasonable within
+    the bounds of what it was designed to do: track time series rates in
+    multiple time scales.</p>
+
+    <p>Unfortunately, if you expect to be able to retrieve exactly the data
+    you put in, you will be surprised. Many of the problems that people
+    encounter are misunderstandings around this issue.</p>
+
+</div>
+</div>
+
+
+<div class="slide">
+<h1>Time Trap: Data not at Step Time</h1>
+
+<p>Data entered off the step time is transformed to fit the step.</p>
+
+<div class="handout">
+
+    <p>In order to track data in a finite space, all incoming data must be
+    transformed to fit the time steps that are expected to be stored. In
+    addition, the data is treated as a rate to track, so certain assumptions
+    can be made about how the data is transformed.</p>
+
+</div>
+</div>
+
+
+<div class="slide">
+<h1>Time Trap: Heartbeat vs. Step Size</h1>
+
+<p>The <em>heartbeat</em> determines how many undefined values are tolerated.</p>
+<p>The <em>step size</em> specifies how often data samples are saved.</p>
+
+<div class="handout">
+
+    <p>If you don't have a value for a particular time stamp, RRDtool can
+    deal with it three ways:</p>
+    <ol>
+        <li>Set the value to zero (RRDtool never does this)</li>
+        <li>Set the value to <code>UNDEFINED</code>. (RRDtool does this if
+          we are missing <code>heartbeat</code> number of entries.</li>
+        <li>Generate an average value based on the other entries in the
+          RRD. (RRDtool does this if we have few than <code>heartbeat</code>
+          missing entries.</li>
+    </ol>
+
+    <p>Only one data item is stored per <code>step</code> seconds. It doesn't
+    matter how many extra data points are entered.</p>
+
+</div>
+</div>
+
+
+<div class="slide">
+<h1>Time Trap: Step Size vs. Entry Time</h1>
+
+<p>The times at which the data are stored is determined by the step size.</p>
+
+<img src="images/day_test.png" width="581" height="279"/>
+
+<div class="handout">
+
+    <p>I know this seems obvious, but there is an implication that usually
+    trips people up when the start storing data at lower resolutions. The
+    entry time for each data point can be determined by epoch times that
+    are even multiples of the step size.</p>
+
+    <p>Most people are not to bothered by the fact that you can't take five
+    minute samples starting at 2 minutes after the hour. For resolutions up
+    through hourly, this definition works quite well.</p>
+
+    <p>However, at a step size of 1 day (86400 seconds), you might be
+    surprised to find that the day doesn't start where you thought it did.
+    As far as RRDtool is concerned the day starts at 00:00 hours UTC. If
+    you are in Houston, that means days are shifted 6 hours from where you
+    thought they were. This is really visible on a graph.</p>
+
+</div>
+</div>
+
+
+<div class="slide">
+<h1>Data Trap: It's Always a Rate</h1>
+
+<p>All data is treated as time-series rates.</p>
+
+<div class="handout">
+
+    <p>This is an artifact of the original use of RRDtool. Every data point
+    is associated with a point of time. All data is stored as a rate of
+    change of data. This has some interesting implications relating to
+    transforming the data you provided into the data RRDtool stores.</p>
+
+    <p>RRDtool only stores data at specific time steps, if you enter data
+    at a different time step. The program transforms the data into
+    <em>equivalent</em> data for the actual timestamp it stores. The
+    definition of equivalent is based on the fact that the data represents
+    a rate. As long as the rate is preserved, the transformed value is
+    considered equivalent.</p>
+</div>
+</div>
+
+
+<div class="slide">
+<h1>Data Trap: Cannot <em>Fill in</em> Old Data</h1>
+
+<p>RRDtool only allows data entries after the last data point entered.</p>
+
+<div class="handout">
+
+    <p>There is no way to go back and correct an old data point. There is
+    no way to go back and fill in a data point you missed at an earlier
+    time. This is not the same as a traditional relatioal database, each
+    time entry is done once.</p>
+
+    <p>This can really be a problem if you have multiple data points in the
+    database and one of those doesn't have data. There's no way to fill that
+    data point later.</p>
+
+</div>
+</div>
+
+
+<div class="slide">
+<h1>Data Trap: Unknown Values</h1>
+
+<p>Unknown data values may have effects you aren't expecting.</p>
+
+<ul>
+    <li><a href="images/hb_test.png">Heartbeat Example 1</a></li>
+    <li><a href="images/hb_test2.png">Heartbeat Example 2</a></li>
+</ul>
+<div class="handout">
+
+    <p>As described above, it's important to remember that missing data points
+    either show up as <code>UNDEFINED</code> or get averaged away depending
+    on the heartbeat value and the number of undefined values.</p>
+
+    <p>This is a feature of the system, not a bug.</p>
+
+    <p>Undefined values are not graphed. You can use a CDEF statement to
+    transform them into another value, but undefined values do not get graphed
+    otherwise. They are ot automatically converted to zero.</p>
+
+</div>
+</div>
+
+
+<div class="slide">
+<h1>Data Trap: Wrong Data Source Type</h1>
+
+<p>Different data types are appropriate for different data.</p>
+
+<ul>
+    <li><a href="images/dst_test.png">Data Source Example</a></li>
+    <li><a href="images/dst_test2.png">Data Source Example <F2></a></li>
+</div>
+
+<div class="handout">
+
+    <p>Choose the data source type wisely to get the best result. GAUGE is
+    the only data source type that approximates normal data. The others are
+    variations on the idea of a counter for streaming data. The reason for
+    this dates back to the original usage for tracking router data.</p>
+
+    <p>Choosing each of the other types depends on whether or not you are
+    sampling a counter, getting a new chunk of data, or tracking a value
+    that rises and falls, not just rises.</p>
+
+</div>
+</div>
+
+
+<div class="slide">
+<h1>Graph Trap: Changes in Resolution</h1>
+
+<p>The farther back in time you look, the less resolution is needed.</p>
+<div class="handout">
+
+    <p>One of the interesting features of RRDtool databases is the ability
+    to store the same data at different resolutions for different timescales.
+    RRDtool handles populating all of the timescales once you set it up
+    correctly.</p>
+
+    <p>For example, you might want to store recent data to a resolution of
+    five minutes so that you can query the data for today and yesterday at
+    high resolution. You may want to look at hourly data for each of the last
+    6 months. For the last 12 months, a daily resolution may be enough.</p>
+
+    <p>There is no need to store 5 minute samples from 3 years ago. Odds are
+    that no one is really going to care about the data transfer rate between
+    10:05 am and 10:10 am on February 7, 2005.</p>
+</div>
+</div>
+
+
+<div class="slide">
+<h1>Graph Trap: Pixel Size Determines Resolution</h1>
+
+<p>The amount of data in one pixel-width of time determines the resolution.</p>
+
+<div class="handout">
+
+    <p>If the resolution would result in a time-step smaller than a pixel, it
+    is not used. It is possible to override ths decision, but RRDtool defaults
+    to the smallest resolution that produces a time step at least one pixel
+    wide.</p>
+
+</div>
+</div>
+
+
+<div class="slide">
+<h1>References</h1>
+<ul>
+    <li><a href="http://oss.oetiker.ch/rrdtool/">RRDtool Website</a></li>
+    <li><a href="http://oss.oetiker.ch/rrdtool/doc/index.en.html">RRDtool
+    Documentation</a></li>
+    <li><a href="http://www.vandenbogaerdt.nl/rrdtool/">RRDtool Tutorials by
+    Alex van den Bogaerdt</a></li>
+</ul>
+<div class="handout">
+</div>
+</div>
+
+
+<!--
+<div class="slide">
+<h1></h1>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<div class="handout">
+</div>
+</div>
+
+
+-->
+</div>
+
+</body>
+</html>
