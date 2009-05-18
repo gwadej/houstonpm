@@ -662,4 +662,25 @@
     </topic>
   </talk>
 
+  <talk num="0902">
+    <date>February 2009</date>
+    <topic href="/talks/2009talks/0902Talk/index.html">
+      <title>RRDtool Tips and Traps</title>
+      <presenter>G. Wade Johnson</presenter>
+      <abstract>This month's topic was not directly related to Perl. G. Wade
+         Johnson described some of the tips and traps involved with using the
+         RRDtool software.</abstract>
+    </topic>
+  </talk>
+
+  <talk num="0905">
+    <date>May 2009</date>
+    <topic href="/talks/2009talks/0905Talk/index.html">
+      <title>SVG from Perl</title>
+      <presenter>G. Wade Johnson</presenter>
+      <abstract>In this month's presentation, G. Wade Johnson describes the
+         SVG graphics format and techniques for generating SVG from Perl.</abstract>
+    </topic>
+  </talk>
+
 </talklist>
