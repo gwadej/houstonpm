@@ -673,6 +673,18 @@
     </topic>
   </talk>
 
+  <talk num="0903">
+    <date>March 2009</date>
+    <topic>
+        <title>Discussion of Catalyst/MVC</title>
+      <presenter>Todd Rinaldo</presenter>
+      <abstract>Todd lead a discussion of the <acronym title="Model, View, Controller">MVC</acronym>
+          paradigm as related to the Catalyst web framework. The discussion ranged
+          from MVC to other topics in object oriented programming. The discussion
+          finished up with some thoughts on Moose Roles.</abstract>
+    </topic>
+  </talk>
+
   <talk num="0905">
     <date>May 2009</date>
     <topic href="/talks/2009talks/0905Talk/index.html">
