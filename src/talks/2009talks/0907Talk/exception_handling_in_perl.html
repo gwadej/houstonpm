@@ -1,0 +1,719 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>Exception Handling in Perl</title>
+<!-- metadata -->
+<meta name="generator" content="S5" />
+<meta name="version" content="S5 1.1" />
+<meta name="presdate" content="20090714" />
+<meta name="author" content="G. Wade Johnson" />
+<meta name="company" content="Houston.pm" />
+<!-- configuration parameters -->
+<meta name="defaultView" content="slideshow" />
+<meta name="controlVis" content="hidden" />
+<!-- style sheet links -->
+<link rel="stylesheet" href="ui/houstonpm/slides.css" type="text/css" media="projection" id="slideProj" />
+<link rel="stylesheet" href="ui/default/outline.css" type="text/css" media="screen" id="outlineStyle" />
+<link rel="stylesheet" href="ui/default/print.css" type="text/css" media="print" id="slidePrint" />
+<link rel="stylesheet" href="ui/default/opera.css" type="text/css" media="projection" id="operaFix" />
+<!-- embedded styles -->
+<style type="text/css">
+    .slide p { font-size: +1; margin-top: 3em; text-align: center; }
+    .slide p+p { margin-top: 1em; }
+    .handout p { font-size: normal; margin-top: 1em; text-align: left; }
+    .slide p.dos { text-align: left; margin-left: 3em; }
+    .slide p.head { margin-top: 1em; }
+    .slide h1 { text-transform: none; }
+    .slide ul.nobull { list-style:none; margin-left: 10%; }
+    .slide ol.nobull { list-style:none; margin-left: 10%; }
+    iframe { border: 0; margin-top: 1em; margin-left:20%; }
+    .rt iframe { border: 0; margin-top: 1em; margin-left:10%; float:right; }
+    p.rt { text-align: right; right:1em; }
+</style>
+<!-- S5 JS -->
+<script src="ui/default/slides.js" type="text/javascript"></script>
+</head>
+<body>
+
+<div class="layout">
+<div id="controls"><!-- DO NOT EDIT --></div>
+<div id="currentSlide"><!-- DO NOT EDIT --></div>
+<div id="header"></div>
+<div id="footer">
+<h1>Exception Handling in Perl</h1>
+<h2>&#8226; July 14, 2009</h2>
+</div>
+
+</div>
+<div class="presentation">
+
+<div class="slide">
+<h1>Exception Handling in Perl</h1>
+<h3>G. Wade Johnson</h3>
+<h4><a href="http://houston.pm.org/">Houston.pm</a></h4>
+</div>
+
+<div class="slide">
+<h1>Error Handling Strategies</h1>
+<p>How do we respond to errors in a program?</p>
+<div class="handout">
+    <p>One of the major differences between a quick hack and production code
+    is the manner in which the code handles errors. There are several
+    strategies for dealing with errors.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Ignoring Errors</h1>
+<p>Assume everything goes down the <em>happy path</em>.</p>
+<div class="handout">
+    <p>This approach is used by quick-and-dirty scripts and one-liners. You
+    probably shouldn't use this approach in any code that is used more than
+    once.</p>
+
+    <p>As we all know, the <em>happy path</em> is not guaranteed. It can be
+    interrupted by almost anything from a bad environment to malicious users
+    to bad programming.</p>
+
+    <p>We'll ignore this approach.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Error returns</h1>
+<p>Return special values to signal when code failed to act correctly.</p>
+<div class="handout">
+    <p>This is the approach most people are familiar with. If a function is
+    successful, it returns one kind of value. Otherwise, it returns some kind
+    of error indicator.</p>
+
+    <p>Since this is the most common approach to error handling, we'll use it
+    as a standard to which we'll compare exceptions.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Global Variables</h1>
+<p>Signal an error by updating a global variable.</p>
+<div class="handout">
+    <p>We've all seen this with <code>errno</code> (or <code>$!</code>).</p>
+
+    <p>The global variables for error codes have a couple of really
+    serious problems. The first is that they are global, and can therefore
+    be changed by code other than what we are currently checking.</p>
+
+    <p>Most global variable-based error handling is also hampered by the
+    fact that no one wants to stomp on an error that's already there. If
+    a function succeeds, it usually doesn't reset the global. This means that
+    if you have an error code, you don't know how long it's been an error.</p>
+
+    <p>We won't be looking at this approach further.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Signals</h1>
+<p>Asynchronous signalling from the OS or hardware.</p>
+<div class="handout">
+    <p>Requires a special handling routine to recover. Not useful in general,
+    but needs to be listed for completeness.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Abort or Exit</h1>
+<p>In case of error, stop the program.</p>
+<div class="handout">
+<p>Not particularly robust. But, on the positive side, you know there
+have been no errors before any piece of code that gets executed.</p>
+
+<p>Sometimes used when continuing would be more harmful than crashing. This
+approach (or actually restarting) is pretty common in embedded programs.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Exceptions</h1>
+<p>An exception is kind of like a <em>non-local return</em> with information
+attached.</p>
+<div class="handout">
+    <p>We'll have a lot more to say about these.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Philosophical Point</h1>
+<p><strong>bIlujDI' yIchegh()Qo'; yIHegh()!</strong></p>
+<p class="rt">-- Klingon programming proverb</p>
+</div>
+
+<div class="slide">
+<h1>Philosophical Point</h1>
+<p><strong>bIlujDI' yIchegh()Qo'; yIHegh()!</strong></p>
+<p class="rt">-- Klingon programming proverb</p>
+<p>It is better to die(); than to return() in failure!</p>
+<p class="rt">(thanks to Paul Fenwick)</p>
+<div class="handout">
+    <p>I apologize for inflicting this on you. But, I thought it was funny.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Exceptions in Perl</h1>
+<ul>
+    <li>die/eval</li>
+    <li>Exception</li>
+    <li>Exception::Class</li>
+    <li>Other modules we'll discuss later.</li>
+</ul>
+<div class="handout">
+    <p>Of course, there is more than one way to do Exceptions in Perl. But,
+    all forms start with the basic <code>die</code>/<code>eval</code> pair.</p>
+    
+    <p>You've probably used <code>die</code> before to display a message to
+    <code>STDERR</code> before exiting the program. Exiting the program is the
+    normal behavior for an <em>uncaught exception</em>. Perl provides a way
+    to catch the result of a <code>die</code> with a block <code>eval</code>.</p>
+
+    <p>The <code>Exception</code> module converts the string passed to
+    <code>die</code> into an exception object. The module also provides syntactic
+    sugar to make exceptions in Perl look more like exceptions in other
+    languages.</p>
+
+    <p>The <code>Exception::Class</code> module provides an approach to easily
+    declaring exception objects.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Why use Exceptions?</h1>
+<p>Exceptions separate error handling logic from the normal logic of the
+code.</p>
+<div class="handout">
+    <p>Done correctly, an exception handling strategy consolidates error
+    checking and recovery into well-defined points in the code. Instead of
+    handling errors where they occur (when you may not have enough information
+    to handle it properly), exceptions are passed to a higher level where
+    better recovery is possible.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Anatomy of Exception Code</h1>
+<ul>
+    <li><code>try</code> block</li>
+    <li>Exception handlers: <code>catch</code> block</li>
+    <li>Default exception handler: <em>catch all</em> block</li>
+    <li>Code to <code>throw</code> exception</li>
+    <li>Possibly a <code>finally</code> block</li>
+</ul>
+<div class="handout">
+    <p>This list uses more standard terms to describe exception handling. This
+    terminology is more specific than the keywords we use in Perl.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Simple Exception Example (C++)</h1>
+<pre><code>
+    try {
+        fragile();
+    }
+    catch( IOException &amp;ex )
+    {
+        // recover from IOException
+    }
+    catch( SQLException &amp;ex )
+    {
+        // recover from SQLException
+    }
+    catch( ... )
+    {
+        // recover from all others
+    }
+</code></pre>
+<div class="handout">
+    <p>I used C++ for this example because it follows the syntax many people
+    will be more familiar with. C++ and Java are very close in this respect.
+    </p>
+
+    <p>The <code>try</code> block specifies the code where we expect exceptions
+    to occur. (Shown here by the function named <code>fragile()</code>.
+    Following the <code>try</code> block are a series of <code>catch</code>
+    clauses that each handle a kind of exception. Inside that block you can
+    do whatever recovery you deem reasonable and either drop out of the block
+    or <em>re-throw</em> the exception.</p>
+
+    <p>The final <em>catch anything</em> case is not required. So that we may
+    defer the handling of other exceptions to a higher lever routine.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Perl Equivalent</h1>
+<pre><code>
+    eval { fragile(); };
+    if(ref $@ and my $ex = $@) {
+        if($ex-&gt;isa('Exception::IO'))
+        {
+            # recover from Exception::IO
+        }
+        elsif($ex-&gt;isa('Exception::SQL'))
+        {
+            # recover from Exception::SQL
+        }
+        else
+        {
+            # recover from all others
+        }
+    }
+<div class="handout">
+    <p>The Perl equivalent is similar in structure, but is missing the specialized
+    keywords and syntax. Several modules on <acronym title="Comprehensive Perl
+    Archive Network">CPAN</acronym>, provide syntactic structures to make this
+    system look more like people from other languages might expect.</p>
+
+    <p>The most unfortunate thing about the Perl syntax is the reliance on the
+    <code>$@</code> global variable. If you are not careful, you can easily
+    run code that changes this variable, losing the exception. That's why it
+    is very important to save the value of <code>$@</code> to another variable
+    as soon as you can.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Exception Advantages</h1>
+<ul>
+    <li>Can't accidentally ignore them</li>
+    <li>Simpler code paths.</li>
+    <li>Multiple error returns are easy</li>
+    <li>Handle errors at a different level than detected</li>
+    <li>Unhanded exceptions stop the program</li>
+</ul>
+<div class="handout">
+    <p>Fans of exceptions point out that they have lots of advantages.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Exception Disadvantages</h1>
+<ul>
+    <li>Extra code to ignore them</li>
+    <li>Exception path is (sort of) hidden</li>
+    <li>Care is needed to make code <em>exception safe</em></li>
+    <li>Unhanded exceptions stop the program</li>
+</ul>
+<div class="handout">
+    <p>The critics of exception handling point out that exceptions have many
+    disadvantages.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Perl Exception Disadvantages</h1>
+<ul>
+    <li>Odd syntax: <code>die</code>/<code>eval</code></li>
+    <li>Throwing strings vs. objects</li>
+    <li>The <code>$@</code> variable.</li>
+</ul>
+<div class="handout">
+    <p>Perl's exception handling mechanism is somewhat different than that in
+    most languages. People with experience with exception handling in other
+    languages sometimes look down on Perl's approach because it's different.</p>
+
+    <p>Using <code>die</code> to throw exceptions, Perl makes the simple <em>exit
+        on error</em> strategy compatible with exceptions. If you don't try to
+    catch an exception with an <code>eval</code> block, the <code>die</code>
+    exits the program.</p>
+
+    <p>To support the use of <code>die</code> to display a message and exit,
+    it can use a simple string instead of some special exception object. Many
+    people use regular expressions to look at the thrown string to determine
+    the type of exception. Since <code>die</code> takes </p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Error Return Advantages</h1>
+<ul>
+    <li>Easy to understand</li>
+    <li>Control flow is visible</li>
+    <li>Easy to ignore errors you don't care about</li>
+    <li>Unhandled errors do not stop the program</li>
+</ul>
+<div class="handout">
+    <p>Probably the most common approach to error handling is error returns.
+    Each function defines what it returns in the case of an error and each
+    calling function tests and handles any errors.</p>
+
+    <p>Since the error handling is explicit at each call and return, tracing
+    the control flow in the case of errors should be mostly straight-forward.
+    Moreover, if the error is non-fatal, you can just ignore the return value
+    and continue. If any error condition is not handled, the program is not
+    aborted early, unlike exception.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Error Return Disadvantages</h1>
+<ul>
+    <li>Error handling flow obscures program flow</li>
+    <li>Easy to ignore errors you don't know about</li>
+    <li>Unhandled errors are invisible</li>
+</ul>
+<div class="handout">
+    <p>Despite it's ease of use, the error return approach does have
+    disadvantages. The most obvious problem comes from the explicit nature
+    of the error recovery. A program that does a thorough job of recovering
+    from errors can be almost completely swamped in error recovery code.</p>
+
+    <p>The less obvious, but more dangerous, problem is the fact that errors
+    can easily be accidentally missed. There is no way to tell the difference
+    between errors you meant to ignore and ones you accidentally ignored.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Exception Safety</h1>
+<p>How does the code respond to exceptions?</p>
+<div class="handout">
+    <p>One complaint that many people make about exceptions is that you
+    have to be very careful because you never know what can throw an
+    exception.</p>
+
+    <p>For several years, people have tried different strategies for writing
+    exception-safe code. Most of the approaches that people developed were
+    somewhat ad-hoc, until David Abrahams described the levels of exception
+    safety.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Abrahams Guarantees</h1>
+<ol>
+    <li>No guarantee</li>
+    <li>Basic guarantee</li>
+    <li>Strong guarantee</li>
+    <li>No-throw guarantee</li>
+</ol>
+<div class="handout">
+    <p>These levels do not tell you how to deal with exceptions, they just
+    provide a way to reason about them.</p>
+
+    <p>The first level is not usually on the list, but it is a case you need
+    to consider.</p>
+
+    <p>The Basic guarantee covers two issues, no resource leaks and all
+    invariants remain. No exception should leave the code in an unstable or
+    illegal state.</p>
+
+    <p>The strong guarantee means that the action either completes successfully
+    or the state of the program is the same as if the code had never executed.
+    This is sometimes called a transactional or atomic guarantee.</p>
+
+    <p>The strongest guarantee is the <em>no-throw</em> guarantee which promises
+    that no exceptions are thrown and the code completes successfully.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Practical Exception Handling</h1>
+<p>Theory is great, but how do exceptions perform in reality?</p>
+<div class="handout">
+    <p>Without some actual code, it's quite hard to see the trade-offs you
+    need to consider when using exceptions. Most importantly, the difference
+    between exceptions and error returns are much smaller for a small piece
+    of code.</p>
+
+    <p>In a 20-line program, it really doesn't matter how you deal with errors.
+    As the code gets larger and more complex, exceptions help to deal with the
+    complexity of error handling.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>An Example</h1>
+<ul>
+    <li>Complicated enough to show trade-offs</li>
+    <li>Simple enough to be easily understood</li>
+    <li>Short enough that I'm willing to write it multiple times</li>
+</ul>
+<div class="handout">
+    <p>One problem with trying to demonstrate the usefulness of exceptions is
+    that it becomes more apparent in larger programs. This is a lot like
+    demonstrating objects. Object oriented code and exceptions both seem like
+    mostly overhead in a 20 line program.</p>
+
+    <p>Unfortunately, we're not going to want to build a 200K line system
+    two different ways to see the difference. The example that follows is
+    the minimum I could come up with that would begin to show the advantages
+    of exceptions. I hope you can imagine how these differences would expand
+    as a program increases in size.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Example Code without Exceptions</h1>
+    <p>This is <a target="_new" href="examples/return_codes.pl.html">a mock
+    program without exceptions</a>.</p>
+<div class="handout">
+    <p>This is a pointer to some code that has been written without exceptions.
+    It's not real code, but it follows patterns you may have seen.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Example Code Done Correctly</h1>
+<p>This is <a target="_new" href="examples/return_codes_full.pl.html">the same
+program with all errors actually checked</a>.</p>
+<div class="handout">
+    <p>Here's the same code with all of the potential errors covered.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Example with Exceptions</h1>
+<p>This is <a target="_new" href="examples/exceptions.pl.html">the same
+program with exceptions</a>.</p>
+<div class="handout">
+    <p>Here's the same code re-written with exceptions.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>autodie</h1>
+<p>Wouldn't it be great if Perl builtins threw exceptions?</p>
+<div class="handout">
+    <p>The <code>autodie</code> module turns functions that use error returns
+    into functions that use exceptions. Once you get used to using exceptions,
+    this can be extremely handy.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Example with <code>autodie</code></h1>
+<p>This is <a target="_new" href="examples/autodie.pl.html">the same
+program with <code>autodie</code> exceptions</a>.</p>
+<div class="handout">
+    <p>Let's revisit our code sample with <code>autodie</code> enabled.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Observations</h1>
+<ul>
+    <li>Reduced error propagation code</li>
+    <li>Potentially better error coverage</li>
+    <li>Error paths are harder to see</li>
+</ul>
+<div class="handout">
+    <p>From the examples, we can see some of the trade-offs that are involved
+    in using exceptions. We can see that progation of errors happens pretty
+    much automatically, which can reduce the lines of code in intermediate
+    functions.</p>
+
+    <p>Depending on the code, it is possible to get better coverage because
+    the low-level code can always throw exceptions, knowing that higher-level
+    code will do the right thing. This means that you are less likely to miss
+    a critical mistake because you didn't check for it.</p>
+
+    <p>However, the error paths are harder to see, because they may happen
+    mostly implicitly.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Exception Hierarchies</h1>
+<ul>
+    <li>The one, true hierarchy</li>
+    <li>Lots of small hierarchies</li>
+</ul>
+<div class="handout">
+    <p>When exception objects are used rather than strings, there is an ongoing
+    debate about whether the exceptions should be in one large hierarchy or 
+    multiple smaller hierarchies.</p>
+
+    <p>The main argument for the one-big hierachy is the <em>catch
+        everything</em> case. Where you want to be able to catch all exceptions
+    with a single base class.</p>
+
+    <p>Like most approaches that attempt to stuff everything into one large
+    hierachical structure, this tends to fall down when you end up forcing
+    very different kinds of exceptions into a parent-child relationship.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Other Exception Modules</h1>
+<ul>
+    <li><code>Exception::Class::TCF</code></li>
+    <li><code>Class::Throwable</code></li>
+    <li><code>Exception::Class::TryCatch</code></li>
+</ul>
+<div class="handout">
+    <p>There are various modules out there that add syntactic sugar to make
+    Perl exception handling look more like other languages. Each has its own
+    trade-offs.</p>
+
+    <p>There are also a number of modules that simplify the creation of
+    exception object.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Exception Advice</h1>
+<p>There are good and bad ways to use exceptions.</p>
+<div class="handout">
+    <p>Like any new technique, people often go overboard when they actually
+    <em>get it</em>. Here are a few <em>Do</em>s and <em>Don't</em>s to keep
+    in mind when using exceptions (in any language).</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Exception <em>Don't</em></h1>
+<p>Don't use exceptions for the normal path.</p>
+<div class="handout">
+    <p>Exceptions are meant to be used for exceptional or error conditions.
+    They should not be triggered in the normal functioning of the code. You
+    don't need to avoid exceptions, but use them as a tool for the purpose
+    they were designed.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Exception <em>Don't</em></h1>
+<p>Don't catch exceptions and rethrow them at every level.</p>
+<div class="handout">
+    <p>Almost every new user of exceptions comes up with the idea of catching
+    the all exceptions in each function (usually to add a little stack info)
+    and rethrow the exception. This results in a large amount of useless
+    monkey-motion that doesn't actually help matters much.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Exception <em>Don't</em></h1>
+<p>Don't catch and ignore exceptions (mostly)</p>
+<div class="handout">
+    <p>Catching an exception and ignoring it should be a relatively rare
+    circumstance. By doing that, you are ignoring a potential problem in the
+    code and hiding that from higher-level routines that might actually be
+    able to handle it.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Exception <em>Don't</em></h1>
+<p>Rarely use <em>catch all</em> handlers except at outermost level
+or propagating.</p>
+<div class="handout">
+    <p>Catch-all handlers are also easy to misuse. Except at the outer-most
+    level of your code (where it serves to catch anything that may have been
+    missed elsewhere). The best use of the catch-all handler for Perl is to
+    propagate any exceptions you didn't handle to higher levels.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Exception <em>Don't</em></h1>
+<p>Don't use exceptions in the place of simple conditionals</p>
+<div class="handout">
+    <p>If a method answers a simple question with a boolean, don't replace
+    it with an exception in the false case.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Exception <em>Don't</em></h1>
+<p>Don't use exceptions instead of other flow control</p>
+<div class="handout">
+    <p>If the code calls for an <code>if</code> or <code>switch</code>-type
+    construct, use them rather than overload exceptions for that purpose.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Exception <em>Do</em></h1>
+<p>Use exceptions to deal with errors and unexpected conditions.</p>
+<div class="handout">
+    <p>Exceptions can do a very good job of consolidating error handling and
+    recovery. Using them for their intended purpose can make your code more
+    maintainable.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Exception <em>Do</em></h1>
+<p>Throw (<code>die</code>) at low-level, as soon as the error is detected.</p>
+<div class="handout">
+    <p>Often the point where you can detect a problem is where you have the
+    least context for dealing with the problem. Don't try to recover from
+    errors low in the code. Throw an exception and let someone else react
+    appropriately for this circumstance.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Exception <em>Do</em></h1>
+<p>Catch (<code>eval</code>) only when you can handle an error.</p>
+<div class="handout">
+    <p>There's no since in catching an exception, if you can't do anything
+    about it. Allow the exception to propagate to a level with the appropriate
+    context to recover from it.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Exception <em>Do</em></h1>
+<p>Partially handle an exception with catch and re-throw idiom</p>
+<div class="handout">
+    <p>Sometimes you can't completely deal with an exception, but you can
+    perform some cleanup that would be inconvenient at a higher level. In this
+    case, it is perfectly reasonable to do some recovery and then rethrow the
+    exception for another level to finish the recovery.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Exception <em>Do</em></h1>
+<p>Catch-all at outer-most level of the code is a good idea</p>
+<div class="handout">
+    <p>No matter how careful you have been, eventually an exception is thrown
+    for which you have no recovery code. It may be caused by maintenance changes
+    changes to a library, or just something you missed. A catch everything case
+    at the highest level of the code prevents this from being a disaster.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Exception <em>Do</em></h1>
+<p>Converting exceptions at module boundaries can be a good idea</p>
+<div class="handout">
+    <p>In many cases, it is a good idea to catch exceptions at the boundaries
+    of (third-party) modules and convert them into exceptions that your code
+    is able to deal with. This is especially important if the exceptions from
+    the module are very low-level. Logging the exception and converting it into
+    a more generic exception may simplify later code.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Exception <em>Do</em></h1>
+<p>Use lexical variables and object lifetime for safe resource management</p>
+<div class="handout">
+    <p>By using lexical variables and class <code>DESTROY</code> methods, as
+    appropriate, Perl cleans up resources for you automatically in the presence
+    of exceptions.</p>
+</div>
+</div>
+
+
+
+</div>
+
+</body>
+</html>
