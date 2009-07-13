@@ -695,4 +695,15 @@
     </topic>
   </talk>
 
+  <talk num="0906">
+    <date>June 2009</date>
+    <topic href="/talks/2009talks/0906Talk/index.html">
+      <title>Catalyst, DBIC, and TT for world domination, a preview</title>
+      <presenter>Todd Rinaldo</presenter>
+      <abstract>At the end of the month, Todd was scheduled to give a presentation
+          at YAPC::NA 2009. He offered to give the group a preview of this
+          presentation for the June meeting.</abstract>
+    </topic>
+  </talk>
+
 </talklist>
