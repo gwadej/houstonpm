@@ -83,7 +83,7 @@
 </div>
 
 <div class="slide">
-<h1>Error returns</h1>
+<h1>Error Returns</h1>
 <p>Return special values to signal when code failed to act correctly.</p>
 <div class="handout">
     <p>This is the approach most people are familiar with. If a function is
@@ -164,7 +164,7 @@ attached.</p>
 <div class="slide">
 <h1>Exceptions in Perl</h1>
 <ul>
-    <li>die/eval</li>
+    <li><code>die</code>/<code>eval</code></li>
     <li>Exception</li>
     <li>Exception::Class</li>
     <li>Other modules we'll discuss later.</li>
@@ -288,7 +288,7 @@ code.</p>
 <h1>Exception Advantages</h1>
 <ul>
     <li>Can't accidentally ignore them</li>
-    <li>Simpler code paths.</li>
+    <li>Simpler code paths</li>
     <li>Multiple error returns are easy</li>
     <li>Handle errors at a different level than detected</li>
     <li>Unhanded exceptions stop the program</li>
@@ -317,7 +317,7 @@ code.</p>
 <ul>
     <li>Odd syntax: <code>die</code>/<code>eval</code></li>
     <li>Throwing strings vs. objects</li>
-    <li>The <code>$@</code> variable.</li>
+    <li>The <code>$@</code> variable</li>
 </ul>
 <div class="handout">
     <p>Perl's exception handling mechanism is somewhat different than that in
@@ -597,7 +597,7 @@ program with <code>autodie</code> exceptions</a>.</p>
 
 <div class="slide">
 <h1>Exception <em>Don't</em></h1>
-<p>Don't catch and ignore exceptions (mostly)</p>
+<p>Don't catch and ignore exceptions (mostly).</p>
 <div class="handout">
     <p>Catching an exception and ignoring it should be a relatively rare
     circumstance. By doing that, you are ignoring a potential problem in the
@@ -620,7 +620,7 @@ or propagating.</p>
 
 <div class="slide">
 <h1>Exception <em>Don't</em></h1>
-<p>Don't use exceptions in the place of simple conditionals</p>
+<p>Don't use exceptions in the place of simple conditionals.</p>
 <div class="handout">
     <p>If a method answers a simple question with a boolean, don't replace
     it with an exception in the false case.</p>
@@ -629,7 +629,7 @@ or propagating.</p>
 
 <div class="slide">
 <h1>Exception <em>Don't</em></h1>
-<p>Don't use exceptions instead of other flow control</p>
+<p>Don't use exceptions instead of other flow control.</p>
 <div class="handout">
     <p>If the code calls for an <code>if</code> or <code>switch</code>-type
     construct, use them rather than overload exceptions for that purpose.</p>
@@ -669,7 +669,7 @@ or propagating.</p>
 
 <div class="slide">
 <h1>Exception <em>Do</em></h1>
-<p>Partially handle an exception with catch and re-throw idiom</p>
+<p>Partially handle an exception with catch and re-throw idiom.</p>
 <div class="handout">
     <p>Sometimes you can't completely deal with an exception, but you can
     perform some cleanup that would be inconvenient at a higher level. In this
@@ -680,7 +680,7 @@ or propagating.</p>
 
 <div class="slide">
 <h1>Exception <em>Do</em></h1>
-<p>Catch-all at outer-most level of the code is a good idea</p>
+<p>Catch-all at outer-most level of the code is a good idea.</p>
 <div class="handout">
     <p>No matter how careful you have been, eventually an exception is thrown
     for which you have no recovery code. It may be caused by maintenance changes
@@ -691,7 +691,7 @@ or propagating.</p>
 
 <div class="slide">
 <h1>Exception <em>Do</em></h1>
-<p>Converting exceptions at module boundaries can be a good idea</p>
+<p>Converting exceptions at module boundaries can be a good idea.</p>
 <div class="handout">
     <p>In many cases, it is a good idea to catch exceptions at the boundaries
     of (third-party) modules and convert them into exceptions that your code
@@ -703,15 +703,13 @@ or propagating.</p>
 
 <div class="slide">
 <h1>Exception <em>Do</em></h1>
-<p>Use lexical variables and object lifetime for safe resource management</p>
+<p>Use lexical variables and object lifetime for safe resource management.</p>
 <div class="handout">
     <p>By using lexical variables and class <code>DESTROY</code> methods, as
     appropriate, Perl cleans up resources for you automatically in the presence
     of exceptions.</p>
 </div>
 </div>
-
-
 
 </div>
 
