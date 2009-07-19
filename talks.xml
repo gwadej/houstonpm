@@ -706,4 +706,15 @@
     </topic>
   </talk>
 
+  <talk num="0907">
+    <date>July 2009</date>
+    <topic href="/talks/2009talks/0907Talk/index.html">
+      <title>Exception Handling in Perl</title>
+      <presenter>G. Wade Johnson</presenter>
+      <abstract>This month, Wade discussed error handling in general and
+          exceptions in particular. The talk focused on the trade-offs of using
+          exceptions and argued for having this technique in your bag-of-tricks.</abstract>
+    </topic>
+  </talk>
+
 </talklist>
