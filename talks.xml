@@ -717,4 +717,26 @@
     </topic>
   </talk>
 
+  <talk num="0908">
+    <date>August 2009</date>
+    <topic href="/talks/2009talks/0908Talk/index.html">
+      <title>The FUSE File System</title>
+      <presenter>Robert Boone</presenter>
+      <abstract>This month, Robert covered the FUSE filesystem. This tool
+          allows Unix-based OSes to do specialized filesystems without doing
+          kernel coding.</abstract>
+    </topic>
+  </talk>
+
+  <talk num="0910">
+    <date>October 2009</date>
+    <!--   <topic href="/talks/2009talks/0908Talk/index.html"> -->
+    <topic>
+      <title>Higher Order Perl discussion: Recursion</title>
+      <presenter>Robert Boone</presenter>
+      <abstract>Robert lead a discussion on part of the first chapter of the
+          book <cite>Higher Order Perl</cite>.</abstract>
+    </topic>
+  </talk>
+
 </talklist>

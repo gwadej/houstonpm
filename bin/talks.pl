@@ -81,15 +81,16 @@ sub makeYearLinks
 
     foreach my $year (reverse START_YEAR .. END_YEAR)
     {
+        next unless -d "src/talks/${year}talks";
         # start with the indent.
         $output .= "     ";
 
-	# open list item
-	$output .= $curryear == $year ? q{<li class="curr">} : q{<li>};
+        # open list item
+        $output .= $curryear == $year ? q{<li class="curr">} : q{<li>};
 
-        # finish the link
-	$output .= qq{<a href="/talks/$year}
-	          . qq{talks/index.html">$year</a></li>\n};
+            # finish the link
+        $output .= qq{<a href="/talks/$year}
+                . qq{talks/index.html">$year</a></li>\n};
     }
 
     $output;
