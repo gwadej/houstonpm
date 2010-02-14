@@ -749,4 +749,15 @@
     </topic>
   </talk>
 
+  <talk num="1002">
+    <date>February 2010</date>
+    <topic href="/talks/2010talks/1002Talk/index.html">
+      <title>Introduction to Perl, Part 2</title>
+      <presenter>G. Wade Johnson</presenter>
+      <abstract>Wade continued the introductory Perl theme with more information
+          about the Perl community and Perl documentation. He also walked the
+          group through solving a (mostly) real-world problem.</abstract>
+    </topic>
+  </talk>
+
 </talklist>

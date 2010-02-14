@@ -1,0 +1,14 @@
+   Ideas for the Perl Intro presentation
+
+1. Goal of Perl
+2. Community
+3. Documentation
+    a. Books
+    b. perldoc
+    c. perldoc.org
+3. Quick Review
+4. Initial Tips/Tricks
+5. Problem to Solve
+6. Work through solution in Perl
+7. Some alternate ideas
+8. More Tips/Tricks

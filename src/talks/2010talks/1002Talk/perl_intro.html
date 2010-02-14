@@ -1,0 +1,375 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>Perl Introduction, Part 2</title>
+<!-- metadata -->
+<meta name="generator" content="S5" />
+<meta name="version" content="S5 1.1" />
+<meta name="presdate" content="20100210" />
+<meta name="author" content="G. Wade Johnson" />
+<meta name="company" content="Houston Perl Mongers" />
+<!-- configuration parameters -->
+<meta name="defaultView" content="slideshow" />
+<meta name="controlVis" content="hidden" />
+<!-- style sheet links -->
+<link rel="stylesheet" href="ui/houstonpm/slides.css" type="text/css" media="projection" id="slideProj" />
+<link rel="stylesheet" href="ui/default/outline.css" type="text/css" media="screen" id="outlineStyle" />
+<link rel="stylesheet" href="ui/default/print.css" type="text/css" media="print" id="slidePrint" />
+<link rel="stylesheet" href="ui/default/opera.css" type="text/css" media="projection" id="operaFix" />
+<style type="text/css">
+    .slide p { font-size: +1; margin-top: 3em; text-align: center; }
+    .handout p { font-size: normal; margin-top: 1em; text-align: left; }
+    .slide p.dos { text-align: left; margin-left: 3em; }
+    .slide p.head { margin-top: 1em; }
+    .slide h1 { text-transform: none; }
+    .slide ul.nobull { list-style:none; margin-left: 10%; }
+    iframe { border: 0; margin-top: 1em; margin-left:20%; }
+    .rt iframe { border: 0; margin-top: 1em; margin-left:10%; float:right; }
+</style>
+<!-- S5 JS -->
+<script src="ui/default/slides.js" type="text/javascript"></script>
+</head>
+<body>
+
+<div class="layout">
+<div id="controls"><!-- DO NOT EDIT --></div>
+<div id="currentSlide"><!-- DO NOT EDIT --></div>
+<div id="header"></div>
+<div id="footer">
+<h1>Houston.pm - February 10, 2010</h1>
+<h2>Perl Introduction, Part 2</h2>
+</div>
+
+</div>
+
+
+<div class="presentation">
+
+<div class="slide">
+<h1>Perl Introduction, Part 2</h1>
+<h2></h2>
+<h3>G. Wade Johnson</h3>
+<h4>Houston.pm</h4>
+</div>
+
+
+<div class="slide">
+<h1>Goal of Perl</h1>
+<p>Get stuff done.</p>
+<div class="handout">
+
+<p>Several other programming languages have explicit goals relating to forcing
+a particular programming paradigm, or fostering <em>good code design</em>.
+While these sound like noble goals they often detract from the ability to solve
+problems with the language.</p>
+
+<p>From the very beginning, Perl has been focused on solving real problems.</p>
+
+</div>
+</div>
+
+<div class="slide">
+<h1>Community</h1>
+<ul>
+    <li><a href="http://lists.cpan.org/" target="_blank">Mailing lists</a></li>
+    <li><a href="http:/www.irc.perl.org/" target="_blank">IRC</a></li>
+    <li><a href="http://www.pm.org/" target="_blank">Perl Mongers</a></li>
+    <li><a href="http://perlmonks.org/" target="_blank">Perl Monastery</a></li>
+    <li><a href="http://ironman.enlightenedperl.org/" target="_blank">Perl</a> <a href="http://blogd.perl.org/" target="_blank">Blogs</a></li>
+</ul> 
+<div class="handout">
+<p>A very important part of the Perl language is the community that surrounds it.
+Larry has explicitly worked to grow this community. Like any group, some members
+are difficult to get along with, while others are very friendly.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Documentation, Books</h1>
+<ul>
+    <li>Learning Perl</li>
+    <li>Programming Perl</li>
+    <li>Perl Cookbook</li>
+    <li>Perl Best Practices</li>
+    <li>Perl Testing: A Developer's Notebook</li>
+</ul>
+<div class="handout">
+
+<p>The O'Reilly books are the standard texts everyone relies on. There are
+a few other books from other publishers that are worth having, but these should
+be the core of your library.</p>
+
+</div>
+</div>
+
+<div class="slide">
+<h1>Documentation, perldoc</h1>
+<ul>
+    <li>perldoc perltoc</li>
+    <li>perldoc perl</li>
+    <li>perldoc perlmodlib</li>
+    <li>perldoc perlrun</li>
+    <li>perldoc -f {func}</li>
+    <li>perldoc -q {keyword}</li>
+    <li>perldoc {module}</li>
+</ul>
+<div class="handout">
+
+    <p>Perl has extensive documentation that that comes with every Perl distribution.
+    The tool <code>perldoc</code> allows access to this documentation.</p>
+
+    <p><code>perltoc</code> is an in-depth look at all of Perl. <code>perl</code> list of
+    functions, other perldocs, etc. <code>perlmodlib</code> lists all of the core modules.
+    <code>perlrun</code> covers command line parameters for the perl program.</p>
+
+</div>
+</div>
+
+<div class="slide">
+<h1>On-line Docs</h1>
+<p><a href="http://perldoc.perl.org/" target="_blank">perldoc.perl.org</a> is an on-line
+version of the <code>perldoc</code>s.</p>
+<div class="handout">
+
+<p>
+
+</div>
+</div>
+
+<div class="slide">
+<h1>A Quick Review: Variables</h1>
+<ul>
+    <li><code>$scalar</code> holds a number, string, or reference</li>
+    <li><code>@array</code> holds a list of scalars</li>
+    <li><code>%hash</code> maps strings to scalars</li>
+</ul>
+<div class="handout">
+    <p>I won't go into these unless someone really needs a refresher.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>A Quick Review: Flow Control</h1>
+<ul>
+    <li>Conditional: <code>if</code>, <code>else</code>, <code>elsif</code>, <code>unless</code></li>
+    <li>Looping: <code>while</code>, <code>until</code>, <code>for</code>, <code>foreach</code></li>
+    <li>Exceptions: <code>die</code>, <code>eval</code></li>
+    <li>Subroutines: <code>sub</code>
+</ul>
+<div class="handout">
+</div>
+</div>
+
+<div class="slide">
+<h1>Beginning Perl Tips</h1>
+<ul>
+    <li><code>use strict;</code></li>
+    <li><code>use warnings;</code></li>
+    <li>Be aware of command line switches</li>
+    <li>Perl is really good at munging text</li>
+</ul>
+<div class="handout">
+    notes
+</div>
+</div>
+
+<div class="slide">
+<h1>Command Line Switches</h1>
+<ul class="incremental">
+    <li><code>-n</code>: wrap the script in a <code>while(&lt;&gt;){ }</code> loop</li>
+    <li><code>-p</code>: wrap the script in a <code>while(&lt;&gt;){ } continue { print; }</code> loop</li>
+    <li><code>-e</code>: Supply Perl code as an argument</li>
+    <li><code>-i</code>: modify file in-place</li>
+    <li><code>-M</code>: Load a module</li>
+    <li><code>-c</code>: compile but do not run</li>
+</ul>
+<div class="handout">
+
+<p>The perl executable supports a large number of switches that makes it a powerful
+command-line tool for quick-and-dirty work. This is a list of some of the most
+common. It is by no means a complete list.</p>
+
+</div>
+</div>
+
+<div class="slide">
+<h1>Munging Text</h1>
+<ul class="incremental">
+    <li>Filter mode: <code>while(&lt;&gt;) { }</code></li>
+    <li><code>chomp</code> removes newlines</li>
+    <li>Regular expressions</li>
+    <li>String manipulation: <code>split</code>, <code>join</code>, <code>substr</code></li>
+    <li>Hashes for summarizing information</li>
+    <li>Transliteration: <code>tr///</code></li>
+</ul>
+<div class="handout">
+
+<p>Although Perl's regular expressions are it's most infamous and powerful
+string-manipulation feature, don't be fooled into thinking it is the only one.
+You can do a lot of data processing with only a tiny bit of regex magic.</p>
+
+<p>That being said, really understanding regular expressions is a necessity if
+you truly need to master text processing with Perl.</p>
+
+</div>
+</div>
+
+<div class="slide">
+<h1>A Real-World Problem</h1>
+<p>Summarizing data from a set of structured text files.</p>
+<div class="handout">
+
+<p>This problem is a slightly modified version of a problem that I needed to
+solve at work. The general structure of the problem is pretty straight-forward.
+I have a set of data files storing a number associated with a date. One of the
+files is supposed to be an accumulation of the other files. I need to verify
+that assertion.</p>
+
+</div>
+</div>
+
+<div class="slide">
+<h1>Approaches</h1>
+<ul class="incremental">
+    <li>By hand</li>
+    <li>Spreadsheet</li>
+    <li>Quick&amp;Dirty Command Line Approach</li>
+    <li>Real Perl Code</li>
+</ul>
+<div class="handout">
+
+<p>The obvious solution would be to walk through the data by hand, adding up the
+appropriate lines and comparing with the target. I hope everyone would agree that
+this is not the right solution.</p>
+
+<p>I've seen people solve similar problems by opening up the files with an editor,
+changing the format into something that Excel can read, and using it to do the
+work. Often, the file manipulation takes up more time than it would to write code.</p>
+
+<p>I will often apply a quick and dirty approach to see explore the problem. Knowledge
+of the Perl command line switches is critical to this solution.</p>
+
+<p>In many cases, a more structured approach is needed.</p>
+
+</div>
+</div>
+
+<div class="slide">
+<h1>Quick and Dirty</h1>
+<p>Quick one-liner logic to determine if there is a problem.</p>
+<pre class="incremental"><code>
+  perl -ne'$sum+=$1 if /=(\d+)/;}{print "$sum\n";' files
+</code></pre>
+<div class="handout">
+
+<p>One-liners are really good for answering a simple question. If the question
+gets too complicated, an actual script is needed.</p>
+
+<p>Some of the really bad Perl code that people complain about are the result
+of not realizing when a real Perl program was needed.</p>
+
+</div>
+</div>
+
+<div class="slide">
+<h1>A more complicated one-liner</h1>
+<p>Extracting a month's data.</p>
+<pre class="incremental"><code>
+  perl -ne'$sum{$1}+=$2 if /^(\d+\.\d+)\.\d+=(\d+)/;}
+     {print "$_: $sum{$_}\n" foreach sort keys %sum;' files
+</code></pre>
+<div class="handout">
+
+<p>Next, we would like to know if the problem is wide-spread or relatively
+contained. One way to do that would be to summarize the data in some relatively
+large subsets. Given the data, monthly groupings would be a good choice.</p>
+
+<p>This is probably about as complicated as a one-liner should ever get. Much
+more complicated than this and you will need more help from Perl to get things
+right.</p>
+
+</div>
+</div>
+
+<div class="slide">
+<h1>An Exploratory Script</h1>
+<p>Let's try to find how many days are wrong.</p>
+<div class="handout">
+
+<p>Now we want to figure out which days are wrong. We know from the previous
+tests that no more than 120 days would be affected.</p>
+
+</div>
+</div>
+
+<div class="slide">
+<h1>A Little More Information</h1>
+<p>Since only a few days are wrong, let's see them.</p>
+<div class="handout">
+
+<p>This is the next set of changes I would probably make.</p>
+
+</div>
+</div>
+
+<div class="slide">
+<h1>Good Modules to Know</h1>
+<ul class="incremental">
+    <li><code>CPAN</code></li>
+    <li><code>List::Util</code></li>
+    <li><code>List::MoreUtils</code></li>
+    <li><code>Data::Dumper</code></li>
+    <li><code>Devel::REPL</code></li>
+    <li><code>App::Ack</code></li>
+    <li><code>Getopt::Long</code></li>
+</ul>
+<div class="handout">
+
+<p>There are thousands of modules that you can use to solve parts of your problem.
+Here are a few that you want to learn about as soon as you can. They will save you
+loads of wasted time.</p>
+
+</div>
+</div>
+
+<div class="slide">
+<h1>CPAN</h1>
+<ul>
+    <li><a href="http://cpan.org/" target="_blank">CPAN</a></li>
+    <li><a href="http://search.cpan.org/" target="_blank">Search CPAN</a></li>
+</ul>
+<div class="handout">
+
+<p>CPAN may be Perl's greatest treasure. There are thousands of modules here,
+ranging from incredibly powerful to outright silly. After a short while doing
+Perl, you will learn to rely on CPAN.</p>
+
+</div>
+</div>
+
+<div class="slide">
+<h1>More Tips, Tricks, and Traps</h1>
+<p>See previous Houston.pm presentations</p>
+<ul>
+    <li><a href="http://houston.pm.org/talks/index.html"
+        target="_blank">Houston.pm Talks Archive</a></li>
+    <li><a href="http://houston.pm.org/talks/2006talks/0604Talk/tiddlywiki_weppsk.html"
+        target="_blank">What Every Perl Programmer Should Know</a></li>
+</ul>
+<div class="handout">
+
+<p>I hope to get last month's talk on-line soon. Other than that, slides from
+most of the Houston.pm presentations are available at the Houston.pm website.
+One example is a Tips, Tricks, and Traps talk I gave a few years ago.</p>
+
+</div>
+</div>
+
+
+
+</div>
+</body>
+</html>
