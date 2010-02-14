@@ -739,4 +739,14 @@
     </topic>
   </talk>
 
+  <talk num="1001">
+    <date>January 2010</date>
+    <topic href="/talks/2010talks/1001Talk/index.html">
+      <title>Complete Beginner's Introduction to Perl and the Perl Community</title>
+      <presenter>Will Willis</presenter>
+      <abstract>Will presented an introduction to Perl for complete beginners,
+         assuming no prior knowledge of Perl.</abstract>
+    </topic>
+  </talk>
+
 </talklist>

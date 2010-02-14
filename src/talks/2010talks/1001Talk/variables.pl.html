@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- Created by htmlize-1.34 in css mode. -->
+<html>
+  <head>
+    <title>variables.pl</title>
+    <style type="text/css">
+    <!--
+      body {
+        color: #F8F8F8;
+        background-color: #000000;
+      }
+      .comment {
+        /* font-lock-comment-face */
+        color: #AEAEAE;
+        font-style: italic;
+      }
+      .comment-delimiter {
+        /* font-lock-comment-delimiter-face */
+        color: #AEAEAE;
+        font-style: italic;
+      }
+      .constant {
+        /* font-lock-constant-face */
+        color: #D8FA3C;
+      }
+      .keyword {
+        /* font-lock-keyword-face */
+        color: #FBDE2D;
+      }
+      .string {
+        /* font-lock-string-face */
+        color: #61CE3C;
+      }
+      .type {
+        /* font-lock-type-face */
+        color: #8DA6CE;
+      }
+      .underline {
+      }
+      .variable-name {
+        /* font-lock-variable-name-face */
+        color: #FF6400;
+      }
+
+      a {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+        text-decoration: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    -->
+    </style>
+  </head>
+  <body>
+    <pre>
+<span class="comment-delimiter">#</span><span class="comment">!/usr/bin/perl
+</span><span class="keyword">use</span> <span class="constant">strict</span>;
+
+<span class="comment-delimiter"># </span><span class="comment">comments
+</span><span class="comment-delimiter"># </span><span class="comment">variables.pl
+</span><span class="comment-delimiter">#</span><span class="comment">
+</span>
+<span class="comment-delimiter"># </span><span class="comment">Scalar Variables
+</span>
+<span class="type">my</span> $<span class="variable-name">name</span> = <span class="string">"Will"</span>;
+
+<span class="type">my</span> $<span class="variable-name">area_code</span> = 713;
+
+<span class="comment-delimiter"> </span><span class="comment">
+</span><span class="type">my</span> $<span class="variable-name">desired_bonus</span> = 1_000_000;
+
+<span class="comment-delimiter"># </span><span class="comment">Better quotes
+</span>
+print qq<span class="string">(my name is $name, but you can call me "Willis")</span>;
+
+print q<span class="string">(What you talk'n about, "Willis"?)</span>;
+
+<span class="comment-delimiter"># </span><span class="comment">Array Variables
+</span>
+<span class="type">my</span> @<span class="underline"><span class="variable-name">friends</span></span> = ( <span class="string">'Ned'</span>, <span class="string">'Brady'</span>, <span class="string">'Keith'</span>, <span class="string">'John'</span>, <span class="string">'Mo'</span> );
+
+<span class="type">my</span> @<span class="underline"><span class="variable-name">favorite_numbers</span></span> = ( 8, 4, 22, 77 );
+
+<span class="type">my</span> @<span class="underline"><span class="variable-name">favorite_numbers</span></span> = qw( 8 4 22 77 );
+
+<span class="type">my</span> @<span class="underline"><span class="variable-name">random_scalars</span></span> = ( 8, <span class="string">"eight"</span>, -80, $<span class="variable-name">name</span> );
+
+<span class="comment-delimiter"># </span><span class="comment">Array elements
+</span>
+print $<span class="variable-name">friends</span>[1];    <span class="comment">#  "Brady"
+</span>
+print @<span class="underline"><span class="variable-name">friends</span></span>[ 1 .. 3 ];    <span class="comment"># "Brady", "Keith", "John"
+</span>
+<span class="comment-delimiter"># </span><span class="comment">Setting Array values
+</span>
+$<span class="variable-name">friend</span>[99] = <span class="string">'Todd'</span>;
+
+print <span class="string">"I have "</span> . $#<span class="underline"><span class="variable-name">friends</span></span> + 1 . <span class="string">" friends\n"</span>;
+
+<span class="type">my</span> $<span class="variable-name">friend_count</span> = @<span class="underline"><span class="variable-name">friends</span></span>;
+
+print <span class="string">"I have $friend_count friends\n"</span>;
+
+<span class="comment-delimiter"># </span><span class="comment">Hash Variables
+</span><span class="comment-delimiter"># </span><span class="comment">look-up tables or dictionaries
+</span>
+<span class="type">my</span> %<span class="underline"><span class="variable-name">spanish</span></span> = (
+    <span class="string">'one'</span>   =&gt; <span class="string">'uno'</span>,
+    <span class="string">'two'</span>   =&gt; <span class="string">'dos'</span>,
+    <span class="string">'three'</span> =&gt; <span class="string">'tres'</span>
+);
+
+<span class="type">my</span> $<span class="variable-name">three</span> = $<span class="variable-name">spanish</span>{three};
+
+$<span class="variable-name">spanish</span>{four} = <span class="string">'cuatro'</span>;
+
+@<span class="underline"><span class="variable-name">spanish</span></span>{<span class="string">'five'</span>, <span class="string">'six'</span>} = (<span class="string">'cinco'</span>, <span class="string">'seis'</span>)
+</pre>
+  </body>
+</html>

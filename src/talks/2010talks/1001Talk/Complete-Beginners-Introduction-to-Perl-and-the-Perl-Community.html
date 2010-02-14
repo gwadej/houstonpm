@@ -1,0 +1,880 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>Absolute Beginner's Introduction to Perl 5 and the Perl Community - Houston Perl Mongers - Jan 12 2010</title>
+<!-- metadata -->
+<meta name="generator" content="S5" />
+<meta name="version" content="S5 1.1" />
+<meta name="presdate" content="20050728" />
+<meta name="author" content="Will Willis" />
+<!-- configuration parameters -->
+<meta name="defaultView" content="slideshow" />
+<meta name="controlVis" content="hidden" />
+<!-- style sheet links -->
+<link rel="stylesheet" href="ui/default/slides.css" type="text/css" media="projection" id="slideProj" />
+<link rel="stylesheet" href="ui/default/outline.css" type="text/css" media="screen" id="outlineStyle" />
+<link rel="stylesheet" href="ui/default/print.css" type="text/css" media="print" id="slidePrint" />
+<link rel="stylesheet" href="ui/default/opera.css" type="text/css" media="projection" id="operaFix" />
+<!-- embedded styles -->
+<style type="text/css" media="all">
+.imgcon {width: 525px; margin: 0 auto; padding: 0; text-align: center;}
+#anim {width: 270px; height: 320px; position: relative; margin-top: 0.5em;}
+#anim img {position: absolute; top: 42px; left: 24px;}
+img#me01 {top: 0; left: 0;}
+img#me02 {left: 23px;}
+img#me04 {top: 44px;}
+img#me05 {top: 43px;left: 36px;}
+</style>
+<!-- S5 JS -->
+<script src="ui/default/slides.js" type="text/javascript"></script>
+</head>
+<body>
+
+<div class="layout">
+<div id="controls"><!-- DO NOT EDIT --></div>
+<div id="currentSlide"><!-- DO NOT EDIT --></div>
+<div id="header"></div>
+<div id="footer">
+<h1>Perl: Making easy things easy and hard things possible</h1>
+<h2>Jan 12 2010 - Houston Perl Mongers</h2>
+</div>
+
+</div>
+<div class="presentation">
+
+<div class="slide" >
+<h1 style="font-size: 2em">Absolute Beginner's Introduction to Perl 5 and the Perl Community</h1>
+<h3>Will Willis</h3>
+<h4><a href="mailto:will.willis@gmail.com">will.willis@gmail.com</a></h4>
+</div>
+
+
+
+<div class="slide">
+<h1>What is Perl?</h1>
+<ul class="incremental">
+<li>High-level, general-purpose, open sourced programming language</li>
+ <!-- * Strong Abstarction from the details of the computer. -->
+ <!-- * Portable -->
+ <!-- * Could care less about CPU operations and Memory access Models -->
+<li>Perl borrows features from other programming languages including C, shell scripting (sh), AWK, and sed</li>
+ <!-- * C => for loops / braces / semicolons -->
+ <!-- * sh => Sigils -->
+ <!-- * AWK => Hash Structure -->
+ <!-- * sed => regular expressions -->
+<li>Perl is nicknamed "<em>the Swiss Army chainsaw of programming languages</em>" 
+    due to its flexibility and adaptability.</li>
+</ul>
+</div>
+
+
+<div class="slide">
+<h1>Origins</h1>
+<ul class="incremental">
+<img src="pix/Larry.jpg" align="right" />
+<li>High-level, general-purpose programming language originally developed by <a href="http://www.wall.org/~larry/">Larry Wall</a> in 1987</li>
+<li>Larry continues to oversee the development of Perl. This Role is best conveyed by tese 2 Rules from the offical Documentation:</li>
+  <ol class="incremental"><li><small>Larry is always by definition right about how Perl should behave. This means he has final 
+      veto power on the core functionality.</small> </li>
+      <li><small>Larry is allowed to change his mind about any matter at a later date, regardless of whether
+      he previously invoked Rule 1. </small></li>
+  </ol>
+   <small class="incremental"> Larry is always right, even when he was wrong. It's rare to see either Rule exercised, but they are often alluded to.<sup><a href="http://perldoc.perl.org/perlhack.html#DESCRIPTION">[source]</a></sup></small>
+</ul>
+</div>
+
+
+<div class="slide">
+<h1>The Perl Philosophy</h1>
+<ul class="incremental">
+<li>TMTOWTDI</li>
+<li>Three Virtues of a Programmer</li>
+<ul>
+  <li>Laziness - The quality that makes you go to great effort to reduce overall energy expenditure.</li>
+  <li>Impatience - The anger you feel when the computer is being lazy.</li>
+  <li>Hubris - Excessive pride, the sort of thing Zeus zaps you for. Also the quality that makes you write (and maintain) programs that other people won't want to say bad things about.</li>
+</ul>
+</ul>
+</div>
+
+
+<div class="slide">
+<h1>Why Perl?</h1>
+<ul class="incremental">
+<li>Fills a gap</li>
+   <!-- Perl fills the gap between low level and high level programming languages -->
+           <!-- hard to write                Slow -->
+           <!-- Ugly                         hard -->
+           <!-- Unlimited                    Limited   -->
+<li>Functional and Object Oriented</li>
+<li>It's everywhere</li>
+<li>It's simple (enough)</li>
+<li>It makes easy things easy and hard things possible</li>
+<li>Mature</li>
+</ul>
+</div>
+
+
+<div class="slide">
+<h1>Getting Perl</h1>
+<ul>
+<li>For all operating Systems</li>
+  <ul>
+    <li><a href="http://www.perl.org/">http://www.perl.org/</a></li>
+    <li><a href="http://www.perl.com/download.csp">http://www.perl.com/download.csp</a></li>
+  </ul>
+</ul>
+</div>
+
+
+<div class="slide">
+<h1>Getting Perl</h1>
+<ul>
+<li>For Windows</li>
+  <ul>
+    <li>The <a href="http://win32.perl.org/">Win32 Perl Wiki</a> has information about downloading,
+    configuring, and compiling Perl on Windows. It is the best
+    single resource for this topic. <small><a href="http://win32.perl.org/">http://win32.perl.org/</a></small></li>
+    <img src="pix/strawberry.png" align="right" />
+    <li><a href="http://strawberryperl.com/">Strawberry Perl</a> is a community-developed distribution of Perl. 
+    It includes all of the tools necessary to configure, build, and install additional Perl libraries from the CPAN. 
+    <small><a href="http://strawberryperl.com/">http://strawberryperl.com/</a></small></li>
+    <li><a href="http://www.activestate.com/ActivePerl/">ActivePerl</a> is
+    another binary distribution of Perl with Windows
+    support. ActiveState offers commercial support for ActivePerl,
+    along with its own repository of popular CPAN distributions.  <small><a
+    href="http://www.activestate.com/ActivePerl/">http://www.activestate.com/ActivePerl/</a></small>
+    </li>
+  </ul>
+</ul>
+</div>
+
+
+<div class="slide">
+<h1>Getting Perl</h1>
+<ul>
+<li>For Windows</li>
+  <ul>
+    <li><a href="http://www.activestate.com/ActivePerl/">ActivePerl</a> is
+    another binary distribution of Perl with Windows
+    support. ActiveState offers commercial support for ActivePerl,
+    along with its own repository of popular CPAN distributions.  <small><a
+    href="http://www.activestate.com/ActivePerl/">http://www.activestate.com/ActivePerl/</a></small>
+    </li>
+    <li>Cygwin comes with Perl  <small><a href="http://www.cygwin.com/">http://www.cygwin.com/</a></small>
+    </li>
+      <ul><li>If you're running Cygwin, check out the <a href="http://code.google.com/p/puttycyg/">puttycyg project</a>. 
+      It runs Cygwin in a putty style terminal as opposed to a DOS cmd prompt 
+       <small><a href="http://code.google.com/p/puttycyg/">http://code.google.com/p/puttycyg/</a></small></li>
+     </ul>
+  </ul>
+</ul>
+</div>
+
+
+<div class="slide">
+<h1>Your First Perl Script/Program</h1>
+<ul>
+  <li><code>print "Hello World\n";</code></li>
+  <li>Put this in a file, <a href="hello.pl.html">hello.pl</a></li>
+  <li>Execute like so:</li>
+  <ul><li>perl hello.pl</li></ul>
+<ul>
+</div>
+
+
+<div class="slide">
+<h1>Variables</h1>
+<ul>
+  <li>A place where we put/retreive data</li>
+  <li>variable names contain alphanumeric characters and underscores</li>
+  <li>start with a punctuation mark (Sigil) indicating the type of data</li>
+<ul>
+  <li>$ - scalar</li>
+  <li>@ - array</li>
+  <li>% - hash</li>
+</ul>
+<li><a href="variables.pl.html">More on variables</a></li>
+<ul>
+</div>
+
+
+<div class="slide">
+<h1>Variables?</h1>
+<pre>
+while (<>) {
+  chomp;
+  print join("\t", (split /:/)[0, 2, 1, 5] ), "\n";
+}
+</pre>
+</div>
+
+
+<div class="slide">
+<h1>Special Variables &amp; The Default Variable</h1>
+
+<ul>
+  <li>Perl has many special variables, most start with punctuation marks as names</li>
+  <li>see <code>perlvar</code>
+  <li>Many Perl operators either set <code>$_</code> or use its value if no other is given<li>
+<pre>
+  for (@friends) {
+    print;
+  }
+</pre>
+</ul>
+</div>
+
+
+<div class="slide">
+<h1>Operators and Functions</h1>
+<ul>
+  <li>Routines built into the language to do "stuff"</li>
+  <li>see <code>perlop</code> and  <code>perlfunc</code> 
+<ul>
+</div>
+
+
+
+<div class="slide">
+<h1>Arithmetic Operators</h1>
+<ul>
+  <li>+ add</li>
+  <li>- subtract</li>
+  <li>* multiply</li>
+  <li>/ divide</li>
+  <li>% modulus (finds the remainder of division of one number divided by another)</li>
+  <li>** exponentiation</li>
+<ul>
+</div>
+
+
+<div class="slide">
+<h1>Shortcut Operators</h1>
+<ul>
+  <li>$total = $total + $amount</li>
+  <li>can be abbreviated to</li>
+  <li>$total += $amount</li>
+  <li></li>
+  <li>$x++ is the same as $x = $x + 1</li>
+  <li>$x-- is the same as $x = $x - 1</li>
+<ul>
+</div>
+
+
+<div class="slide">
+<h1>String Operators</h1>
+<ul>
+  <li>Concatenation (.)</li>
+  <li>$name = $firstname . ' ' . $lastname;</li>
+  <li>Repetition (x)</li>
+  <li>$funny = 'lol ' x 5;</li>
+  <li>$line = '-' x 80;</li>
+  <li>$page .= $line;</li>
+<ul>
+</div>
+
+
+<div class="slide">
+<h1>File Test Operators</h1>
+<ul>
+  <li>-e $file</li>
+  <li>-r $file &nbsp;   &nbsp;   -w $file</li>
+  <li>-d $file &nbsp;   &nbsp;   -T $file</li>
+<ul>
+</div>
+
+
+<div class="slide">
+<h1>Functions</h1>
+<ul>
+ <li>Have longer names than operators</li>
+ <li>Can take more arguments than operators</li>
+ <li>Arguments follow the function name</li>
+ <li>See perlfunc for a complete list of Perl's built-in functions</li>
+ <li>can return scalars or lists (or nothing)</li>
+ <li><a href="functions.pl.html">More on Functions and Operators</a></li>
+<ul>
+</div>
+
+
+<div class="slide">
+<h1>Conditional Constructs</h1>
+<ul>
+  <li>Conditional constructs allow us to choose different routes of execution through the program</li>
+  <li>the unit of program execution is a block of code</li>
+  <li>Blocks are delimited with braces { ... }</li>
+  <li>conditional Blocks are controlled by the evaluation of an expression.</li>
+<ul>
+</div>
+
+
+
+<div class="slide">
+<h1>What is Truth?</h1>
+<ul>
+  <li>In Perl it is easier to answer "what is false?"</li>
+  <li>0 (the number)</li>
+  <li>'' (the empty string)</li>
+  <li>() (an empty list)</li>
+  <li>undef (an undefined value)</li>
+<ul>
+</div>
+
+<div class="slide">
+<h1>Comparison Operators</h1>
+<ul>
+  <li>$x == $y</li>
+  <li>$x eq $y</li>
+  <li>$x != $y</li>
+  <li>$x ne $y</li>
+  <li>$x > $y</li>
+  <li>$x gt $y</li>
+  <li>$x >= $y</li>
+  <li>$x ge $y</li>
+<ul>
+</div>
+
+
+<div class="slide">
+<h1>Comparison Examples</h1>
+<ul>
+<li> 62 > 42 # true</li>
+<li>'0' == (3 * 2) - 6 # true</li>
+<li>'apple' gt 'banana' # false</li>
+<li>'apple' == 'banana' # true(!)</li>
+<li>1 + 2 == '3 bears' # true</li>
+<li>1 + 3 == 'three' # false</li>
+<ul>
+</div>
+
+
+
+<div class="slide">
+<h1>Boolean Operators</h1>
+<ul>
+  <li>EXPR_1 and EXPR_2</li>
+  <li> true if both are true</li>
+  <li>EXPR_1 or EXPR_2</li>
+  <li>true if either is true</li>
+<ul>
+</div>
+
+
+
+<div class="slide">
+<h1>Control Structures</h1>
+<ul>
+  <li>if</li>
+  <li>else</li>
+  <li>elsif</li>
+  <li>while</li>
+  <li>for</li>
+<ul>
+</div>
+
+
+<div class="slide">
+<h1>if</h1>
+<ul>
+  <li>if (expression) { do stuff... } </li>
+  <li> executes "do stuff..." only if "expression" is true</li>
+  <pre>
+    if ($presenter eq 'Will') {
+      clap(); 
+    }
+ </pre>
+<ul>
+</div>
+
+
+<div class="slide">
+<h1>if ... else</h1>
+<ul>
+  <li>if (expression) { BLOCK1 } else { BLOCK2 } </li>
+  <pre>
+    if ($presenter eq 'Will') {
+      clap(); 
+    } else {
+      hiss();
+    }
+ </pre>
+<ul>
+</div>
+
+
+<div class="slide">
+<h1>if ... elsif ... else</h1>
+<ul>
+  <li>
+ <pre>if (expression) { BLOCK1 }
+elsif (expression2) { BLOCK2 }
+else { BLOCK3 }
+</pre> </li>
+<ul>
+</div>
+
+
+<div class="slide">
+<h1>while</h1>
+<ul>
+  <li>
+ <pre>while (EXPR) { BLOCK }
+</pre> </li>
+<li>repeat BLOCK while EXPR is true</li>
+<ul>
+</div>
+
+<div class="slide">
+<h1>until</h1>
+<ul>
+  <li> the oposite of while</li>
+  <li>
+ <pre>until (EXPR) { BLOCK }
+</pre> </li>
+<li>execute BLOCK until EXPR is true</li>
+
+<ul>
+</div>
+
+<div class="slide">
+<h1>for - more complex looping</h1>
+<ul>
+  <li>for (INIT; EXPR; INCR) { BLOCK }</li>
+  <li>Like C </li>
+<li>Execute INIT If EXPR is false, exit loop, otherwise execute BLOCK, execute INCR and retest EXPR</li>
+<ul>
+</div>
+
+
+
+<div class="slide">
+<h1>for</h1>
+<ul>
+  <li>An Example</li>
+<ul>
+<pre>
+for ($i = 1; $i <= 10; $i++) {
+  print "$i squared is " , $i * $i , "\n";
+}
+</pre>
+</div>
+
+<div class="slide">
+<h1>foreach</h1>
+<ul>
+  <li>foreach - simpler looping over lists</li>
+  <li>foreach VAR (LIST) {BLOCK}</li>
+  <li>For each element of LIST, set VAR to equal the element and execute BLOCK </li>
+<ul>
+<pre>
+  foreach my $i (1..10) {
+    print "$i squared is ", $i * $i, "\n";
+  }
+</pre>
+</div>
+
+<div class="slide">
+<h1>Beaking out of Loops</h1>
+<ul>
+  <li>next - jump to next iteration of loop</li>
+  <li>last - jump out of loop</li>
+  <li>redo - jump to start of same iteration of loop</li>
+<ul>
+<pre>
+  foreach my $i (1..10) {
+    print "$i squared is ", $i * $i, "\n";
+    last if $i > 4;
+  }
+</pre>
+</div>
+
+<div class="slide">
+<h1>Subroutines</h1>
+<ul>
+  <li>Self contained "mini-programs" within your program</li>
+  <li>Make it easy to repeat code</li>
+<ul>
+<pre>
+sub NAME {
+  BLOCK
+}
+</pre>
+</div>
+
+
+<div class="slide">
+<h1>Subroutine Example</h1>
+<pre>
+sub yyyymmdd {
+    my @a = localtime();
+    my $yyyymmdd = sprintf( "%04d%02d%02d", $a[5] + 1900, $a[4] 
+      + 1, $a[3] );
+    return $yyyymmdd;
+}
+</pre>
+</div>
+
+<div class="slide">
+<h1>calling a Subroutine</h1>
+<ul>
+<li>&amp;yyyymmdd;</li>
+<li>yyyymmdd();</li>
+<li>yyyymmdd;</li>
+</ul>
+The last one only works if the sub has been predeclared.
+</div>
+
+<div class="slide">
+<h1> Subroutine Arguments</h1>
+<ul>
+<li>Functions become more useful if you can pass arguments to them</li>
+<li>yyyymmdd('yesterday');</li>
+<li>Arguments end up in the <code>@_</code> array within the sub</li>
+</ul>
+</div>
+
+<div class="slide">
+<h1>Regular Expressions</h1>
+<ul>
+<li>Patterns that match strings</li>
+<li>a "mini-language" within Perl</li>
+<li>Key to perl's text processing power</li>
+<li>sometimes overused</li>
+<li>see perldoc perlre</li>
+</ul>
+</div>
+
+
+<div class="slide">
+<h1>The Match Operator</h1>
+<ul>
+  <li><code>m/PATTERN/</code></li>
+  <li>Works on $_ by defualt</li>
+  <li>in scalar context returns true if successful</li>
+  <li>in list context returns list of "captured" text</li>
+  <li>m is optional if you use / characters</li>
+  <li>with m you can use any delimiters</li>
+  <li><a href="regexp.pl.html">More on Regular Expressions</a>
+<ul>
+</div>
+
+<div class="slide">
+<h1>Matching Example</h1>
+<pre>
+while(<FILE>){
+    print if /foo/;
+    print if /bar/i;
+    print if m|http://|;
+}
+</pre>
+</div>
+
+<div class="slide">
+<h1>Substitutions</h1>
+<ul>
+  <li><code>s/PATTERN/REPLACEMENT/</code></li>
+  <li>Works on $_ by defualt</li>
+  <li>in scalar context returns true if successful</li>
+  <li>in list context returns number of replacements</li>
+  <li>again, you can use any delimiters</li>
+<ul>
+</div>
+
+<div class="slide">
+<h1>Substitution Example</h1>
+<pre>
+while(<FILE>){
+    s/teh/the/gi;
+    s/freind/friend/gi;
+    s/sholud/should/gi;
+    print;
+}
+</pre>
+</div>
+
+<div class="slide">
+<h1>Binding Operator</h1>
+<ul>
+  <li>If we want m// or s// to work on something other than $_ we need to use the binding operator</li>
+  <li>$name =~ s/Will/William/;</li>
+<ul>
+</div>
+
+
+
+<div class="slide">
+<h1>Metacharacters</h1>
+Matching something other than literal text
+<ul>
+<li>^ - matches start of string</li>
+<li>$ - matches end of string</li>
+<li>. - matches any character (except new lines)</li>
+<li>\s - matches a whitespace character</li>
+<li>\S - matches a non-whitespace character</li>
+</ul>
+</div>
+
+<div class="slide">
+<h1>More Metacharacters</h1>
+<ul>
+<li>\d - matches any digit</li>
+<li>\D - matches any non-digit</li>
+<li>\w - matches any "word" character</li>
+<li>\W - matches any "non-word" character</li>
+<li>\b - matches a word boundry</li>
+<li>\B - matches anywhere except a word boundary</li>
+</ul>
+</div>
+
+
+<div class="slide">
+<h1>Metacharacter examples</h1>
+<pre>
+while (<FILE>) { 
+  print if m|^http|; 
+  print if /\bperl\b/; 
+  print if /\S/; 
+  print if /\$\d\.\d\d/; 
+}
+</pre>
+</div>
+
+
+<div class="slide">
+<h1>Quantifiers</h1>
+Specify the number of occurrences
+<ul>
+  <li>? - match zero or one</li>
+  <li>* - zero or more</li>
+  <li>+ match one of more</li>
+  <li>{n} - match exactly n</li>
+  <li>{n,} - match n or more</li>
+  <li>{n,m} - match between n and m</li>
+
+<ul>
+</div> 
+
+<div class="slide">
+<h1>Quantifier examples</h1>
+<pre>
+while (<FILE>) { 
+  print if /so+n/;
+  print if /\d*\.\d+/;
+  print if /\bA\w{3}\b/;
+}
+</pre>
+</div>
+
+<div class="slide">
+<h1></h1>
+<ul>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+<ul>
+</div>
+
+
+<div class="slide">
+<h1></h1>
+<ul>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+<ul>
+</div>
+<div class="slide">
+<h1></h1>
+<ul>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+<ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="slide">
+<h1>Getting Help</h1>
+<ol>
+  <li>Asking Questions the Smart Way <br><small><a href="http://catb.org/~esr/faqs/smart-questions.html">http://catb.org/~esr/faqs/smart-questions.html</a></small></li>
+</ol>
+<ul>
+<li>Built-in Documentation: perldoc / <a href="http://perldoc.perl.org/">http://perldoc.perl.org/</a></li>
+<ul>
+  <li><code>perldoc perl</code></li>
+  <li><code>perldoc perltoc</code></li>
+</ul>
+<li>Our mailing list, <small><a href="mailto:houston@pm.org">houston@pm.org</a></small></li>
+<li>PerlMonks <a href="http://www.perlmonks.org">http://perlmonks.org</a></li>
+<li>StackOverflow <small><a href="http://stackoverflow.com/questions/tagged/perl">http://stackoverflow.com/questions/tagged/perl</a></small></li>
+<li>IRC <small><a href="http://www.irc.perl.org/channels.mhtml">http://www.irc.perl.org/channels.mhtml</a></small> and <small><a href="http://pound.perl.org/">http://pound.perl.org/</a></small> </li>
+</ul>
+</div>
+
+
+<div class="slide">
+<h1>What Next</h1>
+<ul>
+<li>Learning Perl 5th edition</li>
+<li>Review! Much (all?) of this content was lifted from <a href="http://www.slideshare.net/davorg/introduction-to-perl-2659676">"Introduction to Perl" by dave Cros</a></li>
+<li>PerlMonks <a href="http://www.perlmonks.org">http://perlmonks.org</a></li>
+<li>StackOverflow <small><a href="http://stackoverflow.com/questions/tagged/perl">http://stackoverflow.com/questions/tagged/perl</a></small></li>
+<li>IRC <small><a href="http://www.irc.perl.org/channels.mhtml">http://www.irc.perl.org/channels.mhtml</a></small> and <small><a href="http://pound.perl.org/">http://pound.perl.org/</a></small> </li>
+</ul>
+</div>
+
+<!-- <div class="slide"> -->
+<!-- <h1>How It Works</h1> -->
+<!-- <ul> -->
+<!-- <li>Controls are... -->
+<!-- <ul> -->
+<!-- <li>Next slide: Space bar, return, right arrow, down arrow, page down, click anywhere in slide that isn't in the control area (lower right corner), click "arrow" in lower right corner, accesskey "X"</li> -->
+<!-- <li>Previous slide: Up arrow, left arrow, page up, click "arrow" in lower right corner, accesskey "Z"</li> -->
+<!-- <li>Toggle the slide styles: Click on the toggle button (to the left of the arrows), press "t", accesskey "T"</li> -->
+<!-- </ul> -->
+<!-- ...<a href="http://meyerweb.com/eric/tools/s5/features.html#controlchart" rel="external">plus more</a>! -->
+<!-- </li> -->
+<!-- <li>To invoke the navigation menu: mouse into the lower right corner of the slide (below the navigation arrows)</li> -->
+<!-- </ul> -->
+<!-- </div> -->
+
+
+<!-- <div class="slide"> -->
+<!-- <h1>The Advantages</h1> -->
+<!-- <ul> -->
+<!-- <li>With one file, you get a slide show, a printable outline, and a screen presentation</li> -->
+<!-- <li>Files are incredibly lightweight and compress easily</li> -->
+<!-- <li>Thanks to being semantic XHTML, slideshow files are also highly accessible</li> -->
+<!-- <li>New slide themes can be created simply by writing new style sheets</li> -->
+<!-- <li>Unlike Opera Show, which has all of the above advantages, S5 works in multiple browsers</li> -->
+<!-- </ul> -->
+<!-- </div> -->
+
+
+<!-- <div class="slide"> -->
+<!-- <h1>S5 Default File Structure</h1> -->
+<!-- <p style="text-align: center;"> -->
+<!-- <img src="pix/s5filemap.png" alt="" title="At a Glance" /> -->
+<!-- </p> -->
+<!-- </div> -->
+
+
+<!-- <div class="slide"> -->
+<!-- <h1>S5 Themes</h1> -->
+<!-- <p style="width: 520px; margin: 0 auto; text-align: center;"> -->
+<!-- <img src="pix/S501.jpg" alt="" title="Default" /> -->
+<!-- <img src="pix/S502.jpg" alt="" title="I18N" /> -->
+<!-- <img src="pix/S503.jpg" alt="" title="Blue" /> -->
+<!-- <img src="pix/S504.jpg" alt="" title="Flower" /> -->
+<!-- (just a sampling) -->
+<!-- </p> -->
+<!-- </div> -->
+
+
+<!-- <div class="slide"> -->
+<!-- <h1>Features New to 1.1</h1> -->
+<!-- <ul class="incremental"> -->
+<!-- <li>Incremental display of slide content</li> -->
+<!-- <li>Font scaling based on window size</li> -->
+<!-- <li>Support for PNG alpha channels in all supporting browsers, including IE/Win</li> -->
+<!-- <li>Ability to jump to any slide, or skip a number of slides, via keyboard commands</li> -->
+<!-- </ul> -->
+<!-- </div> -->
+
+<!-- <div class="slide"> -->
+<!-- <h1>Incremental Animation</h1> -->
+<!-- <ul> -->
+<!-- <li>A demonstration of just one of the many ways to accomplish simple animation-like effects <small>(using a diagram from <a href="http://gmpg.org/xfn/and/" rel="external">"XFN and..."</a>)</small></li> -->
+<!-- </ul> -->
+<!-- <p class="imgcon" id="anim"> -->
+<!-- <img src="pix/mememe01.png" id="me01" alt="" /> -->
+<!-- <img src="pix/mememe02.png" alt="" id="me02" class="incremental" /> -->
+<!-- <img src="pix/mememe03.png" alt="" id="me03" class="incremental" /> -->
+<!-- <img src="pix/mememe04.png" alt="" id="me04" class="incremental" /> -->
+<!-- <img src="pix/mememe05.png" alt="" id="me05" class="incremental" /> -->
+<!-- </p> -->
+<!-- </div> -->
+
+<!-- <div class="slide"> -->
+<!-- <h1>Current Limitations</h1> -->
+<!-- <ul> -->
+<!-- <li>Only one author can be listed in the metadata</li> -->
+<!-- <li>Opera falls back to use OperaShow; thus no extras (like the navigation menu or progress indication) are available</li> -->
+<!-- <li>Images are not scaled along with the text when the window size changes</li> -->
+<!-- </ul> -->
+<!-- </div> -->
+
+
+<div class="slide">
+<h1>Acknowledgement</h1>
+<ul>
+<li>Much of the contents of this presentation was lifted from dave Cross's presentation: <a href="http://www.slideshare.net/davorg/introduction-to-perl-2659676">http://www.slideshare.net/davorg/introduction-to-perl-2659676</a></li>
+</ul>
+</div>
+
+
+
+
+</div>
+
+</body>
+</html>
+
+
+<!-- <div class="slide"> -->
+<!-- <h1></h1> -->
+<!-- <ul> -->
+<!--   <li></li> -->
+<!-- <ul> -->
+<!-- </div> -->
+
+<div class="slide">
+<h1></h1>
+<ul>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+<ul>
+</div>
