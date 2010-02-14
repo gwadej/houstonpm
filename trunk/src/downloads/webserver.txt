@@ -1,0 +1,79 @@
+#!/usr/bin/perl
+
+use HTTP::Daemon;
+use HTTP::Status;
+use File::Spec;
+use Getopt::Std;
+
+use strict;
+use warnings;
+
+# Filename to use for directory indices.
+use constant INDEX_FILE => "index.html";
+
+my %opts = ();
+getopts( "p:d:", \%opts ) or die "Invalid argument\n";
+
+my $port    = $opts{p} || 8080;
+my $docroot = $opts{d} || ".";
+
+my $daemon = HTTP::Daemon->new( LocalPort => $port ) or die;
+print "Please contact me at: <URL:", $daemon->url(), ">\n",
+      "Documents in '$docroot'\n";
+
+while (my $conn = $daemon->accept())
+{
+    eval
+    {
+	while (my $r = $conn->get_request())
+	{
+            my $path = resolve_path( $r->url->path() );
+
+            if ($r->method ne "GET" or !defined( $path ))
+	    {
+        	$conn->send_error( RC_FORBIDDEN );
+            }
+            elsif(-e $path)
+	    {
+		if(-d $path)
+		{
+	    	    $path = File::Spec->catfile( $path, INDEX_FILE );
+		}
+
+		if(-r $path)
+		{
+                    $conn->send_file_response( $path );
+		}
+		else
+		{
+                    $conn->send_error( RC_FORBIDDEN );
+		}
+            }
+            else
+	    {
+        	$conn->send_error( RC_NOT_FOUND );
+	    }
+	}
+    };
+    
+    print STDERR "Caught exception: $@" if $@;
+
+    $conn->close();
+    undef($conn);
+}
+
+
+sub  resolve_path
+{
+    my $path = shift;
+    
+    # Fail if illegal characters
+    return undef if $path =~ m![^-a-zA-Z0-9_\./]!;
+
+    $path = File::Spec->canonpath( File::Spec->catfile( $docroot, $path ) );
+
+    # Fail if try to walk out of docroot.
+    return undef if $docroot ne substr( $path, 0, length $docroot );
+    
+    $path;
+}

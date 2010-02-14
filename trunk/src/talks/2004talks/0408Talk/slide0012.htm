@@ -1,0 +1,76 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE>Creating the Standard Header for a Virtual Document</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0013.htm">Creating the Header for a Redirection Request</a>
+    &nbsp;&nbsp;Previous: <a href="slide0011.htm">Calling CGI Functions that Take Multiple Arguments</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name="Creating the Standard Header for a Virtual Document">
+<center>
+<H1>Creating the Standard Header for a Virtual Document
+</H1></center>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+   print $query-&gt;header('image/gif');</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+This prints out the required HTTP Content-type: header and the requisite blank line beneath it. If no parameter is specified, it will default to 'text/html'.
+</P>
+
+
+<P>
+An extended form of this method allows you to specify a status code and a message to pass back to the browser:
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+   print $query-&gt;header(-type=&gt;'image/gif',
+                        -status=&gt;'204 No Response');</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+This presents the browser with a status code of 204 (No response). Properly-behaved browsers will take no action, simply remaining on the current page. (This is appropriate for a script that does some processing but doesn't need to display any results, or for a script called when a user clicks on an empty part of a clickable image map.)
+</P>
+
+
+<P>
+Several other named parameters are recognized. Here's a contrived example that uses many:
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+   print $query-&gt;header(-type=&gt;'image/gif',
+                        -status=&gt;'402 Payment Required',
+                        -expires=&gt;'+3d',
+                        -cookie=&gt;$my_cookie,
+                        -charset=&gt;'UTF-7',
+                        -attachment=&gt;'foo.gif',
+                        -Cost=&gt;'$0.02');</FONT></B></PRE></TD></TR></TABLE></UL>
+</BODY>
+</HTML>

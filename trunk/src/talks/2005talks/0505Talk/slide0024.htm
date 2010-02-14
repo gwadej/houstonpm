@@ -1,0 +1,50 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE> Simpler Substitutes</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0025.htm"> Knowing What to Keep</a>
+    &nbsp;&nbsp;Previous: <a href="slide0023.htm"> Simpler Matches</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name=" Simpler Substitutes">
+<center>
+<H1>12.3  Simpler Substitutes
+</H1></center>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+  # which one removes leading and trailing whitespace.
+  s/\s+(.*)\s+/$1/;
+    # or
+  s/\s*(.*?)\s*/$1/;
+    # or
+  s/^\s*(.*)\s*$/$1/;
+    # or
+  s/^\s*(.*?\S)\s*$/$1/;
+    # or
+  s/^\s+//;
+  s/\s+$//;
+</FONT></B></PRE></TD></TR></TABLE></UL>
+</BODY>
+</HTML>

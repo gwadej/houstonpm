@@ -1,0 +1,44 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE>Saving the State to a File</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0011.htm">Calling CGI Functions that Take Multiple Arguments</a>
+    &nbsp;&nbsp;Previous: <a href="slide0009.htm">Retreiving CGI Errors</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name="Saving the State to a File">
+<center>
+<H1>Saving the State to a File
+</H1></center>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+   $query-&gt;save(FILEHANDLE)</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+This writes the current query out to the file handle of your choice. The file handle must already be open and be writable, but other than that it can point to a file, a socket, a pipe, or whatever. The contents of the form are written out as TAG=VALUE pairs, which can be reloaded with the new() method at some later time. You can write out multiple queries to the same file and later read them into query objects one by one.
+</P>
+</BODY>
+</HTML>

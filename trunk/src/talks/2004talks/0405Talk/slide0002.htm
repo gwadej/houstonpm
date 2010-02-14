@@ -1,0 +1,116 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE>Benchmark</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0003.htm">CGI</a>
+    &nbsp;&nbsp;Previous: <a href="slide0001.htm">Perl Standard Modules</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name="Benchmark">
+<center>
+<H1>Benchmark
+</H1></center>
+
+
+<P>
+The Benchmark module encapsulates a number of routines to help you figure out how long it takes to execute some code.
+</P>
+
+<UL>
+<TABLE><TR><TD valign="TOP"><IMG SRC="./sqr_orange1.png"></TD><TD>
+timethis - run a chunk of code several times
+</TD></TR></TABLE>
+<TABLE><TR><TD valign="TOP"><IMG SRC="./sqr_orange1.png"></TD><TD>
+timethese - run several chunks of code several times
+</TD></TR></TABLE>
+<TABLE><TR><TD valign="TOP"><IMG SRC="./sqr_orange1.png"></TD><TD>
+cmpthese - print results of timethese as a comparison chart
+</TD></TR></TABLE>
+<TABLE><TR><TD valign="TOP"><IMG SRC="./sqr_orange1.png"></TD><TD>
+timeit - run a chunk of code and see how long it goes
+</TD></TR></TABLE>
+<TABLE><TR><TD valign="TOP"><IMG SRC="./sqr_orange1.png"></TD><TD>
+countit - see how many times a chunk of code runs in a given time
+</TD></TR></TABLE>
+</UL>
+
+
+<P>
+For example,
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+    use Benchmark qw( cmpthese ) ;
+    $x = 3;
+    cmpthese( -5, {
+        a =&gt; sub{$x*$x},
+        b =&gt; sub{$x**2},
+    } );</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+outputs something like this:
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+   Benchmark: running a, b, each for at least 5 CPU seconds...
+          Rate    b    a
+   b 1559428/s   -- -62%
+   a 4152037/s 166%   --</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+while
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+    use Benchmark qw( timethese cmpthese ) ;
+    $x = 3;
+    $r = timethese( -5, {
+        a =&gt; sub{$x*$x},
+        b =&gt; sub{$x**2},
+:           } );
+    cmpthese $r;</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+outputs something like this:
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+    Benchmark: running a, b, each for at least 5 CPU seconds...
+             a: 10 wallclock secs ( 5.14 usr +  0.13 sys =  5.27 CPU) @ 3835055.60/s (n=20210743)
+             b:  5 wallclock secs ( 5.41 usr +  0.00 sys =  5.41 CPU) @ 1574944.92/s (n=8520452)
+           Rate    b    a
+    b 1574945/s   -- -59%
+    a 3835056/s 144%   --</FONT></B></PRE></TD></TR></TABLE></UL>
+</BODY>
+</HTML>

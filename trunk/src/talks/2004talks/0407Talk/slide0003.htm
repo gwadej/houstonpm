@@ -1,0 +1,59 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE>Example document</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0004.htm"> Example header and footer templates</a>
+    &nbsp;&nbsp;Previous: <a href="slide0002.htm"> What is the Template Toolkit?</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name="Example document">
+<center>
+<H1>Example document
+</H1></center>
+
+
+<P>
+A document is a plain text file usually containing other content (e.g. HTML, XML, RTF, LaTeX, etc). Here's an example of an HTML document with additional Template Toolkit directives.
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+   [% INCLUDE header
+      title = 'This is an HTML example'
+   %]
+   &lt;h1&gt;Some Interesting Links&lt;/h1&gt;
+   [% webpages = [
+         { url =&gt; 'http://foo.org', title =&gt; 'The Foo Organization' }
+         { url =&gt; 'http://bar.org', title =&gt; 'The Bar Organization' }
+      ]
+   %]
+   Links:
+   &lt;ul&gt;
+   [% FOREACH link = webpages %]
+      &lt;li&gt;&lt;a href=&quot;[% link.url %]&quot;&gt;[% link.title %]&lt;/a&gt;
+   [% END %]
+   &lt;/ul&gt;
+   [% INCLUDE footer %]</FONT></B></PRE></TD></TR></TABLE></UL>
+</BODY>
+</HTML>

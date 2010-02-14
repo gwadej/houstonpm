@@ -1,0 +1,130 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE>Doing String Selections (Parsing)</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0014.htm">Doing Substitutions</a>
+    &nbsp;&nbsp;Previous: <a href="slide0012.htm">Matching: Putting it All Together</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name="Doing String Selections (Parsing)">
+<center>
+<H1>Doing String Selections (Parsing)
+</H1></center>
+
+
+<P>
+If regular expressions' only benefit was looking for a (albeit complex) string within a string, it wouldn't be worth learningl. Regular expressions (and PERL itself, for that matter) really start earning their keep by allowing you to select and process substrings based on what they contain, and the context in which they appear.
+</P>
+
+
+<P>
+For instance, create a program whose input is a piped in directory command and whose output is stdout, and whose output represents a batch file which copies every file (not directory) older than 12/22/97 to a directory called \oldie. This would be pretty nasty in C or C++. The directory outpt would look something like this:
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+  Volume in drive D has no label
+  Volume Serial Number is 4547-15E0
+  Directory of D:polomarco
+
+ .              &lt;DIR&gt;        12-18-97 11:14a .
+ ..             &lt;DIR&gt;        12-18-97 11:14a ..
+ INDEX    HTM         3,237  02-06-98  3:12p index.htm
+ APPDEV   HTM         6,388  12-24-97  5:13p appdev.htm
+ NORM     HTM         5,297  12-24-97  5:13p norm.htm
+ IMAGES         &lt;DIR&gt;        12-18-97 11:14a images
+ TCBK     GIF           532  06-02-97  3:14p tcbk.gif
+ LSQL     HTM         5,027  12-24-97  5:13p lsql.htm
+ CRASHPRF HTM        11,403  12-24-97  5:13p crashprf.htm
+ WS_FTP   LOG         5,416  12-24-97  5:24p WS_FTP.LOG
+ FIBB     HTM        10,234  12-24-97  5:13p fibb.htm
+ MEMLEAK  HTM        19,736  12-24-97  5:13p memleak.htm
+ LITTPERL       &lt;DIR&gt;        02-06-98  1:58p littperl
+         9 file(s)         67,270 bytes
+         4 dir(s)     132,464,640 bytes free</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+UUUUgly! I'd hate to do this in C or C++. But wait. It's 18 lines in Perl?
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+ while(&lt;STDIN&gt;)
+   {
+   my($line) = $_;
+   chomp($line);
+   if($line !~ /&lt;DIR&gt;/)         #directories don't count
+     {
+     #** only lines with dates at position 28 and (long) filename at pos 44 **
+     if ($line =~ /.{28}(\d\d)-(\d\d)-(\d\d).{8}(.+)$/)
+       {
+       my($filename) = $4;
+       my($yymmdd) = &quot;$3$1$2&quot;;
+       if($yymmdd lt &quot;971222&quot;)
+         {
+         print &quot;copy $filename \oldie\n&quot;;
+         }
+       }
+     }
+   }</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+Not bad for 18 lines of code. It could have been shorter, but I wanted to keep it readable. In the snippet above, $1, $2, $3 and $4 are the scalers inside the first, second, third and fourth parenthesis sets. The first three are re-assembled into a yymmdd date string which can be compared with the constant &quot;971222&quot;. The fourth holds the filename which will be copied to the \oldie directory if it's not a directory, it's a line with a date, and the date is before 971222. This is the true power of regular expressions and PERL.
+</P>
+
+
+<P>
+Now count the bytes in the directory:
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+ my($totalBytes) = 0;
+ while(&lt;STDIN&gt;)
+   {
+   my($line) = $_;
+   chomp($line);
+   if($line !~ /&lt;DIR&gt;/)         #directories don't count
+     {
+     #*** only lines with dates at position 28 ****
+     if ($line =~ /.{12}((\d| |,){14})  \d\d-\d\d-\d\d/)
+       {
+       my($bytes) = $1;
+       $bytes =~ s/,//;         #substitute nothing for comma -- delete commas
+       $totalBytes += $bytes;
+       }
+     }
+   }
+ print &quot;$totalBytes bytes in directory.\n&quot;;</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+Note the group within a group, where the inner one is used for character alternation,and the outer is used as a selection.
+</P>
+</BODY>
+</HTML>

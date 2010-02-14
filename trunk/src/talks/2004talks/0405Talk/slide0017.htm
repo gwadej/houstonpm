@@ -1,0 +1,58 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE>File::Find</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0018.htm">File::Path</a>
+    &nbsp;&nbsp;Previous: <a href="slide0016.htm">File::DosGlob</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name="File::Find">
+<center>
+<H1>File::Find
+</H1></center>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+    use File::Find;
+    find(\&amp;wanted, @directories_to_seach);
+    sub wanted { ... }
+
+    use File::Find;
+    finddepth(\&amp;wanted, @directories_to_search);
+    sub wanted { ... }
+
+    use File::Find;
+    find({ wanted =&gt; \&amp;process, follow =&gt; 1 }, '.');</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+These are functions for searching through directory trees doing work on each file found similar to the Unix find command.  File::Find exports two functions, &quot;find&quot; and &quot;finddepth&quot;.  They work similarly but have subtle differences.
+</P>
+
+
+<P>
+This is another module that has more functionality than I'm prepared to explain now.
+</P>
+</BODY>
+</HTML>

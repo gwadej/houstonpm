@@ -1,0 +1,39 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE>Processing Sequence</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0027.htm">Program Output</a>
+    &nbsp;&nbsp;Previous: <a href="slide0025.htm">Simple program</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name="Processing Sequence">
+<center>
+<H1>Processing Sequence
+</H1></center>
+
+
+<P>
+In the program, we used a call to the Getopt::Declare::version() function directly to print a version number. The interesting thing to note is when this is printed. All of the option actions take place immediately when each option is encounted, except for deferred options, which take place as soon as the command line is parsed and before any further code is executed. Hence, in our example, all of the files are processed by the time we get to the statement which prints the version number.
+</P>
+</BODY>
+</HTML>

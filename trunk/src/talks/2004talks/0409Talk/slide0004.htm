@@ -1,0 +1,67 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE> Perl/Tk Hello World</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0005.htm"> What did that do?</a>
+    &nbsp;&nbsp;Previous: <a href="slide0003.htm"> How to use Perl/Tk</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name=" Perl/Tk Hello World">
+<center>
+<H1>4  Perl/Tk Hello World
+</H1></center>
+
+
+<P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+#!/usr/bin/perl
+
+use Tk;
+use strict;
+use warnings;
+
+my $mw = new MainWindow;
+$mw-&gt;title( 'Hello' );
+
+$mw-&gt;Label( -text =&gt; 'Hello World' )-&gt;pack;
+$mw-&gt;Button( -text =&gt; &quot;Done&quot;, -command =&gt; sub { exit } )-&gt;pack;
+
+MainLoop;
+</FONT></B></PRE></TD></TR></TABLE></UL>
+
+</P>
+
+
+<P>
+What is all of that?
+</P>
+
+
+<P>
+We'll go through it a step at a time.
+</P>
+</BODY>
+</HTML>

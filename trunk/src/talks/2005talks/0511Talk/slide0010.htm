@@ -1,0 +1,89 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE> Inline::C Example</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0011.htm"> Inline::CPP Example</a>
+    &nbsp;&nbsp;Previous: <a href="slide0009.htm"> Configuring Inline</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name=" Inline::C Example">
+<center>
+<H1>7  Inline::C Example
+</H1></center>
+
+
+<P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+#!/usr/bin/perl
+
+use Inline C =&gt; 'DATA';
+
+use strict;
+use warnings;
+
+hello_world( $$ ^ time );
+
+for my $i (0 .. 10)
+{
+    my $roll = roll_dice( 3 );
+    print &quot;$i:\t$roll\n&quot;;
+}
+
+__DATA__
+__C__
+
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+/*
+ * Example C code
+ */
+
+void  hello_world( unsigned seed )
+{
+    srand( seed );
+    printf( &quot;Hello world!\n&quot; );
+}
+
+
+unsigned int  roll_dice( unsigned int count )
+{
+    unsigned int sum = 0;
+    int i =0;
+
+    for(i = 0; i &lt; count;++i)
+    {
+        /* Low order bits are often not very interesting. */
+        sum += (rand() % 6) + 1;
+    }
+
+    return sum;
+}
+</FONT></B></PRE></TD></TR></TABLE></UL>
+
+</P>
+</BODY>
+</HTML>

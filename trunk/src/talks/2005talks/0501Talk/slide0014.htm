@@ -1,0 +1,90 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE> A Slightly More Complicated Class</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0015.htm"> Define the Class</a>
+    &nbsp;&nbsp;Previous: <a href="slide0013.htm"> Using the Class</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name=" A Slightly More Complicated Class">
+<center>
+<H1>7  A Slightly More Complicated Class
+</H1></center>
+
+
+<P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+# The first derived Class
+
+package ClassDerived;
+
+use strict;
+use warnings;
+
+# old style: @ISA = [ &quot;ClassSimple&quot; ];
+use base &quot;ClassSimple&quot;;
+
+my $objCount = 0;
+
+sub  howMany
+{
+    $objCount;
+}
+
+sub  new
+{
+    my $self = shift;
+    my $class = ref $self || $self;
+
+    ++$objCount;
+    
+    bless ClassSimple::new(), $class;
+}
+
+sub  set
+{
+    my $self = shift;
+    $self-&gt;{counter} = shift;
+}
+
+sub  incr
+{
+    my $self = shift;
+    $self-&gt;add( 1 );
+}
+
+sub DESTROY
+{
+    my $self = shift;
+    --$objCount;
+}
+
+1;
+</FONT></B></PRE></TD></TR></TABLE></UL>
+
+</P>
+</BODY>
+</HTML>

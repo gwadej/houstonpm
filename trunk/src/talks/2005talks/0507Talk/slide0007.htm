@@ -1,0 +1,51 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE> The <CODE>Regexp::Common</CODE> Solution</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0008.htm"> The Differences</a>
+    &nbsp;&nbsp;Previous: <a href="slide0006.htm"> A Decent Solution</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name=" The <CODE>Regexp::Common</CODE> Solution">
+<center>
+<H1>2.5  The <CODE>Regexp::Common</CODE> Solution
+</H1></center>
+
+
+<P>
+Using <CODE>Regexp::Common</CODE>, the solution looks like this.
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+  use Regexp::Common;
+
+  /$RE{num}{int}{-sep =&gt; ','}{-group =&gt; 3}{-keep}/g;</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+This manages an exact match on positive and negative integers with commas grouping each set of three digits.
+</P>
+</BODY>
+</HTML>

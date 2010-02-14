@@ -1,0 +1,83 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE>Processing a List</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0010.htm">Filtering a List</a>
+    &nbsp;&nbsp;Previous: <a href="slide0008.htm">Grabbing and Changing Substrings within a String</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name="Processing a List">
+<center>
+<H1>Processing a List
+</H1></center>
+
+
+<P>
+We spent some time discussing scoping of the first and second examples. When the loop variable is declared in the foreach expression, the loop variable is not available anywhere outside the loop. However, if the loop variable is declared before the loop, as in the first example, it is scoped to whatever block encloses the loop. This means that the variable is available after the loop ends, and up to the next enclosing }.
+</P>
+
+
+<P>
+One issue that is not obvious in the foreach examples is the implication of the aliasing of the loop variable to the items in the loop. Any modification of the loop variable (intentional or not) modifies the corresponding item in the loop. This is especially surprising if you don't use and explicit loop variable and rely on the default $_ variable. Lots of Perl operators use $_ if they are not provided an argument. Many times this is what you want. However, in this case, if the operation changes $_ it would change your list.
+</P>
+
+
+<P>
+Now you might say &quot;That's okay. I just won't modify $_ inside the foreach loop.&quot; The problem tends to surface when you call a subroutine that uses $_ internally. This can result in changing your list even though you don't expect it to. My advice would be to always use an explicit loop variable, that way you are less likely to be surprised.
+</P>
+
+
+<P>
+Modifying the list through the loop variable is confusing to a lot of people. This example surprises some people because it may not quite be obvious the the list is modified.
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+ my @list = (1, 2, 3, 4);
+ foreach my $num (@list){
+     $num = $num * 2;
+ }
+    print &quot;@list\n&quot;; # 2 4 6 8</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+In general, I would tend to put the modified values into a new list like the following.
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+ my @list  = (1, 2, 3, 4);
+ my @list2 = ();
+     foreach my $num (@list){
+         push @list2, $num * 2;
+     }
+     print &quot;@list2\n&quot;; # 2 4 6 8</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+Well, to be honest, for this sort of problem, I would usually use map. But we won't be discussing that this time.
+</P>
+</BODY>
+</HTML>

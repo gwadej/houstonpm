@@ -1,0 +1,763 @@
+<?xml version="1.0" encoding="utf-8"?>
+<talklist>
+  <talk>
+    <date>June 2003</date>
+    <topic href="/talks/2003talks/0306Talk/index.htm">
+      <title>Jumpstart into Perl</title>
+      <presenter>Charles Bentley</presenter>
+      <abstract>Chuck began our regular Perl meetings with a
+         script for searching Perl's FAQs for questions relating to a keyword
+         or phrase. He shows the various steps he used to develop this program
+         and in the process showed a sampling of Perl's features.
+      </abstract>
+    </topic>
+  </talk>
+
+  <talk num="0307">
+    <date>July 2003</date>
+    <topic href="/talks/2003talks/0307Talk/index.htm">
+      <title>Perl Regular Expressions</title>
+      <presenter>Charles Bentley</presenter>
+      <abstract>Chuck gives an overview of Perl's regular
+         expressions. This topic is an ongoing source for questions from new
+         and experienced Perl programmers. 
+      </abstract>
+    </topic>
+  </talk>
+
+  <talk num="0308">
+    <date>August 2003</date>
+    <topic href="/talks/2003talks/0308Talk/index.htm">
+      <title>Using Perl as a Command Line Tool</title>
+      <presenter>Charles Bentley</presenter>
+      <abstract>One of the places that Perl really shines is
+         on the command line. Although most of the Perl code you write will
+         live in programs, Perl makes it easy to solve quick problems with
+         command line parameters. Chuck covers the most commonly needed command
+         line options and some operators that are particularly useful in this
+         mode.
+      </abstract>
+    </topic>
+  </talk>
+
+  <talk num="0309">
+    <date>September 2003</date>
+    <topic href="/talks/2003talks/0309Talk/index.htm">
+      <title>Strings, Lists and Arrays</title>
+      <presenter>Charles Bentley</presenter>
+      <abstract>This presentation covers some of the areas where
+        Perl is at its most powerful: strings and lists. Chuck's presentation
+        covers some string manipulation which may look familiar and list
+        manipulation which may not.
+      </abstract>
+    </topic>
+  </talk>
+
+  <talk num="0402">
+    <date>February 2004</date>
+    <topic href="/talks/2004talks/0402Talk/index.htm">
+      <title>Benchmarking Perl Routines</title>
+      <presenter>Charles Bentley</presenter>
+      <abstract>Although the focus of the presentation was
+         benchmarking, Chuck covered other topics such as the
+	 <code>DATA</code> file handle and the differences between
+	 <code>our</code> and <code>my</code> variables.
+      </abstract>
+    </topic>
+  </talk>
+
+  <talk num="0403">
+    <date>March 2004</date>
+    <topic href="/talks/2004talks/0403Talk/index.htm">
+       <title>Parsing Command Line Options</title>
+       <presenter>Charles Bentley</presenter>
+       <abstract>As you should expect from Perl, there are several
+          ways to process command line options. Chuck covers several methods
+          from manual processing through several modules that provide better
+	  interfaces.
+       </abstract>
+    </topic>
+  </talk>
+
+  <talk num="0404">
+    <date>April 2004</date>
+    <topic>
+      <title>Discussion of mail conversion</title>
+      <presenter>Charles Bentley</presenter>
+      <abstract>April didn't have slides as we discussed a mail
+         conversion project and the tools used to handle problems.
+      </abstract>
+    </topic>
+  </talk>
+
+  <talk num="0405">
+    <date>May 2004</date>
+    <topic href="/talks/2004talks/0405Talk/index.htm">
+      <title>Perl Standard Modules</title>
+      <presenter>Charles Bentley</presenter>
+      <abstract>The standard Perl distribution comes with a large
+         number of goodies in the form of standard modules. Although there was
+         not enough time to cover all of these modules in depth, Chuck did
+	 cover many of the most useful modules.
+      </abstract>
+    </topic>
+  </talk>
+
+  <talk num="0406">
+    <date>June 2004</date>
+    <topic href="/talks/2004talks/0406Talk/index.htm">
+      <title>Statement Modifiers and Loop Control</title>
+      <presenter>Charles Bentley</presenter>
+      <abstract>This presentation was a grab-bag of some important
+         features of the language, including statement modifiers, loop control,
+	 regular expression options, and the <code>map</code> operator.
+      </abstract>
+    </topic>
+  </talk>
+
+  <talk num="0407">
+    <date>July 2004</date>
+    <topic href="/talks/2004talks/0407Talk/index.htm">
+      <title>The Template Toolkit</title>
+      <presenter>Charles Bentley</presenter>
+      <abstract>This presentation began a series on Perl and the
+           Internet with the Template Toolkit.
+      </abstract>
+    </topic>
+  </talk>
+
+  <talk num="0408">
+    <date>August 2004</date>
+    <topic href="/talks/2004talks/0408Talk/index.htm">
+      <title>CGI.pm - A Perl5 CGI library</title>
+      <presenter>Charles Bentley</presenter>
+      <abstract>We got into CGI.pm since we had covered the basics
+        of what you could do with TT2 without using CGI, so we covered
+        enough of CGI.pm to allow continued exploration of TT2 if
+        desired.
+      </abstract>
+    </topic>
+  </talk>
+
+  <talk num="0409">
+    <date>September 2004</date>
+    <topic href="/talks/2004talks/0409Talk/index.htm">
+       <title>Perl/Tk 101</title>
+       <presenter>G. Wade Johnson</presenter>
+       <abstract>Wade gave a quick introduction to Perl/TK. We
+         walked through building a simple GUI and covered a few techniques for
+	 making Perl/Tk programs more maintainable.
+       </abstract>
+    </topic>
+  </talk>
+
+  <talk num="0410">
+    <date>October 2004</date>
+    <topic href="/talks/2004talks/0410Talk/index.htm">
+      <title>Intro to Perl DBI</title>
+      <presenter>G. Wade Johnson</presenter>
+      <abstract>Wade gave a brief introduction to the Perl DBI. The
+        DBI is Perl's new modular relational database framework. We discussed
+        how to call the DBI for a particular RDBMS, a little SQL overview, and
+        some of the ways to extract data with DBI.
+      </abstract>
+    </topic>
+  </talk>
+
+  <talk num="0411">
+    <date>November 2004</date>
+    <topic>
+      <title>vim Tips and Tricks</title>
+      <presenter>Paul Archer</presenter>
+      <abstract>Paul gave a short presentation on some of the
+         interesting features of the vim editor. Unfortunately, we
+	 don't have any of the content to display, because most of the
+	 presentation showed Paul walking us through the features. Even
+	 long-time users of vim gained some ideas from this talk.
+      </abstract>
+    </topic>
+    <topic href="/talks/2004talks/0411Talk/index.htm">
+      <title>A Simple Webserver</title>
+      <presenter>G. Wade Johnson</presenter>
+      <abstract>Most people are used to the concept of web servers
+         by now. This presentation shows how easy Perl makes building one.
+	 Although any <em>production</em> system would use a real web server
+	 like Apache, sometimes a small single-user webserver can solve a
+	 problem. Wade demonstrated how to build a web server that serves
+	 static pages from disk and one that displays dynamic content using the
+	 <code>HTTP::Daemon</code> module.
+      </abstract>
+      <example>
+         <ul>
+	   <li>A <a href="/downloads/webserver.txt">simple web server</a> in
+             less than 100 lines of Perl.</li>
+	   <li>A <a href="/downloads/webserver-dyn.txt">dynamic web server</a></li>
+         </ul>
+      </example>
+    </topic>
+  </talk>
+
+  <talk num="0501">
+    <date>January 2005</date>
+    <topic href="/talks/2005talks/0501Talk/index.htm">
+      <title>Intro to Object Oriented Perl</title>
+      <presenter>G. Wade Johnson</presenter>
+      <abstract>We began a rapid dive into Object Oriented
+        programming in Perl. We started with the basics of what constitutes
+        object oriented programming (OOP). Then, we covered how these
+        concepts are implemented with Perl. The session should be just
+        enough to get you started in OOP with Perl.
+      </abstract>
+    </topic>
+  </talk>
+
+  <talk num="0502">
+    <date>February 2005</date>
+    <topic href="/talks/2005talks/0502Talk/index.htm">
+      <title>Testing in Perl</title>
+      <presenter>G. Wade Johnson</presenter>
+      <abstract>We covered several ways to test Perl scripts and
+         modules, focusing mostly on <code>Test::More</code>. We also discussed
+	 an interesting technique to make a script testable as a module.
+      </abstract>
+    </topic>
+  </talk>
+
+  <talk num="0503">
+    <date>March 2005</date>
+    <topic href="/talks/2005talks/0503Talk/index.htm">
+      <title>Perl Core Language: References and Quoting</title>
+      <presenter>G. Wade Johnson</presenter>
+      <abstract>We discussed two basic parts of the Perl language:
+         references and different forms of quoting. Wade covered the basics of
+	 references, including how to create and use them. We also touched on
+	 objects. Next we turned to Perl's many quoting operators, how they
+	 are used, and how they differ.
+      </abstract>
+    </topic>
+  </talk>
+
+  <talk num="0504">
+    <date>April 2005</date>
+    <topic href="/talks/2005talks/0504Talk/index.htm">
+      <title>Perl Module: PAR</title>
+      <presenter>G. Wade Johnson</presenter>
+      <abstract>We went through the documentation and some examples
+         of the PAR module. This module supports building Perl ARchives (like
+	 JARs, except for Perl). It also supports turning those PAR files into
+	 executables.</abstract>
+      <example>
+	<ul>
+	  <li><a href="/downloads/httpGrab.exe">httpGrab.exe</a></li>
+          <li><a href="/downloads/httpGrab.par">httpGrab.par</a></li>
+	</ul>
+      </example>
+    </topic>
+
+  </talk>
+
+  <talk num="0505">
+    <date>May 2005</date>
+    <topic href="/talks/2005talks/0505Talk/index.htm">
+      <title>Basic/Intermediate Perl regular expressions (part 1 of 2)</title>
+      <presenter>G. Wade Johnson</presenter>
+      <abstract>We begin the discussion of Basic/Intermediate Perl
+         regular expressions. After a quick refresher on the basics of regular
+	 expressions, we go a bit beyond the basics. We also discussed when
+	 regular expressions aren't the right tool for the job, readability,
+	 and tips for improving your regular expressions.
+      </abstract>
+    </topic>
+  </talk>
+
+  <talk num="0506">
+    <date>June 2005</date>
+    <topic href="/talks/2005talks/0506Talk/index.htm">
+      <title>Basic/Intermediate Perl regular expressions (part 2 of 2)</title>
+      <presenter>G. Wade Johnson</presenter>
+      <abstract>This month, we finished the discussion of
+         Basic/Intermediate Perl regular expressions. The presentation
+         covered some of the lesser used options and anchors, regex
+	 surprises, and some optimization considerations.
+      </abstract>
+    </topic>
+  </talk>
+
+  <talk num="0507">
+    <date>July 2005</date>
+    <topic href="/talks/2005talks/0507Talk/index.htm">
+      <title>Perl Module: <code>Regexp::Common</code></title>
+      <presenter>G. Wade Johnson</presenter>
+      <abstract>After a couple of months of regular expressions, we
+         take a month off and learn how to <em>not</em> write regular
+	 expressions. The <code>Regexp::Common</code> module provides
+	 relatively easy access to a fairly large number of common regexes for
+	 your matching pleasure.
+      </abstract>
+    </topic>
+
+    <topic>
+      <title>General Perl Discussion</title>
+      <presenter>G. Wade Johnson</presenter>
+      <abstract>We had some extra time this month, so the members
+         started a interesting discussion of a number of Perl related topics,
+	 including CPAN, <code>pack</code> and <code>unpack</code>, and the
+	 modules in the standard Perl distribution.
+      </abstract>
+    </topic>
+  </talk>
+
+  <talk num="0508">
+    <date>August 2005</date>
+    <topic href="/talks/2005talks/0508Talk/index.html">
+      <title>Text::Query and Getopt::Long</title>
+      <presenter>Paul Archer</presenter>
+      <abstract>Paul discussed his program for manipulating
+	keywords in image files, focusing on the modules
+	<code>Text::Query</code> and <code>Getopt::Long</code>.</abstract>
+    </topic>
+  </talk>
+
+  <talk num="0509">
+    <date>September 2005</date>
+    <topic href="/talks/2005talks/0509Talk/index.htm">
+      <title>Development Tools for Perl</title>
+      <presenter>G. Wade Johnson</presenter>
+      <abstract>This month was planned as a discussion of development tools for
+         use with Perl and a discussion of projects we are working on. These
+	 slides list a few tools that work well with Perl, including editors,
+	 an IDE, and version control tools.</abstract>
+    </topic>
+    
+    <topic>
+      <title>Project Help</title>
+      <presenter>G. Wade Johnson</presenter>
+      <abstract>One of the members had some questions about Perl program design
+         involving a program from work. We spent about an hour discussing issues
+	 of Perl code design.</abstract>
+    </topic>
+  </talk>
+
+  <talk num="0510">
+    <date>October 2005</date>
+    <topic href="/talks/2005talks/0510Talk/index.html">
+      <title>Graphics in Perl</title>
+      <presenter>Bill Dillon</presenter>
+      <abstract>This month, Bill presented a talk combining Perl, Graphics,
+         programming metrics, and astronomy. He showed how easy it is to produce
+	 various charts with the <code>GD::Graph</code> Perl module. We saw how
+	 to convert a data set into line, bar, point, and pie charts. In the
+	 process, we also learned a bit about cataclysmic variable stars and
+	 amateur astronomy.</abstract>
+    </topic>
+  </talk>
+
+  <talk num="0511">
+    <date>November 2005</date>
+    <topic href="/talks/2005talks/0511Talk/index.html">
+      <title>Calling Other Languages from Perl</title>
+      <presenter>G. Wade Johnson</presenter>
+      <abstract>Sometimes you need to call code written in another language
+         from Perl. This month Wade covers both traditional and new ways of
+	 talking to code in other programming languages from your Perl code.</abstract>
+    </topic>
+  </talk>
+
+  <talk num="0601">
+    <date>January 2006</date>
+    <topic href="/talks/2006talks/0601Talk/index.html">
+      <title>Accessing a USB device from Perl</title>
+      <presenter>Paul Archer</presenter>
+      <abstract>Paul led a group programming session using Inline::C and libusb
+      to control a USB-based programmable light from Perl. The device was fun,
+      the code was interesting, and a good time was had by all.</abstract>
+    </topic>
+  </talk>
+
+  <talk num="0602">
+    <date>February 2006</date>
+    <topic href="/talks/2006talks/0602Talk/index.html">
+      <title>Accessing a USB device from Perl, part 2.</title>
+      <presenter>Paul Archer</presenter>
+      <abstract>Paul continued the group programming session using Inline::C
+      and libusb to control the USB Visual Indicator from Perl. In this
+      installment, we worked around discrepencies in the documents and
+      provided a Perl-friendly interface to a low-level function. Once
+      again, audience participation was half the fun.</abstract>
+    </topic>
+  </talk>
+
+  <talk num="0603">
+    <date>March 2006</date>
+    <topic href="/talks/2006talks/0603Talk/index.html">
+      <title>Accessing a USB device from Perl, part 3.</title>
+      <presenter>Paul Archer</presenter>
+      <abstract>Paul concluded this series of presentations on libusb for
+      control the USB Visual Indicator from Perl. We used the current
+      prototype to control two separate USB VSI devices on the same
+      laptop and solved some difficulties with Inline::C and modules.
+      </abstract>
+    </topic>
+  </talk>
+
+  <talk num="0604">
+    <date>April 2006</date>
+    <topic href="/talks/2006talks/0604Talk/index.html">
+      <title>What Every Perl Programmer Should Know: tips, tricks, and
+        common knowledge</title>
+      <presenter>G. Wade Johnson</presenter>
+      <abstract>Wade lead a discussion on common Perl features, tips, and tricks
+        that every Perl programmer should know.
+      </abstract>
+    </topic>
+  </talk>
+
+  <talk num="0605">
+    <date>May 2006</date>
+    <topic href="/talks/2006talks/0605Talk/index.html">
+      <title>What Every Perl Programmer Should Know: tips, tricks, and
+        common knowledge, part 2</title>
+      <presenter>G. Wade Johnson</presenter>
+      <abstract>We concluded our discussion on Perl <em>common</em> knowledge,
+         tip, and tricks. Plus, we discussed some <em>gotchas</em> relating
+	 to context and dubroutines.
+      </abstract>
+    </topic>
+  </talk>
+
+  <talk num="0606">
+    <date>June 2006</date>
+    <topic href="/talks/2006talks/0606Talk/index.html">
+      <title>An Overview of Subversion and Introduction to Caching</title>
+      <presenter>Paul Archer</presenter>
+      <abstract>Paul covered two separate topics this month. The first was a
+        quick overview of the Subversion version control system. Afterwards,
+        he explained the topics of caching and memoization as discussed in the
+        book <cite>Higher Order Perl</cite>. 
+      </abstract>
+    </topic>
+  </talk>
+
+  <talk num="0607">
+    <date>July 2006</date>
+    <topic href="/talks/2006talks/0607Talk/index.html">
+      <title>A Report on YAPC::NA 2006</title>
+      <presenter>Will Willis</presenter>
+      <presenter>Jeremy Fluhmann</presenter>
+      <abstract>Will and Jeremy presented their experiences at YAPC::NA
+        this year in Chicago. Jeremy also gave an update on the current
+        state of our proposal for YAPC::NA 2007 in Houston.</abstract>
+    </topic>
+  </talk>
+
+  <talk num="0608">
+    <date>August 2006</date>
+    <topic href="/talks/2006talks/0608Talk/index.html">
+      <title>Perl 6: an Overview</title>
+      <presenter>Robert Boone</presenter>
+      <abstract>Robert lead a discussion on Perl 6. The meeting was part
+        presentation, part question and answer session.</abstract>
+    </topic>
+  </talk>
+
+  <talk num="0609">
+    <date>September 2006</date>
+    <topic href="/talks/2006talks/0609Talk/index.html">
+      <title>Introduction to PDF::API2 and HTML::Template</title>
+      <presenter>Glenn Pringle</presenter>
+      <abstract>Glenn introduced the PDF::API2 module and showed how
+        it had been used to produce printable receipts online. He also
+        provided a brief introduction to HTML::Template.</abstract>
+    </topic>
+  </talk>
+
+  <talk num="0610">
+    <date>October 2006</date>
+    <topic href="/talks/2006talks/0610Talk/index.html">
+      <title>Using Perl::Critic to Improve Code</title>
+      <presenter>G. Wade Johnson</presenter>
+      <abstract>Wade gave an overview of the Perl::Critic module. This lead
+        to some group discussion about best practices in Perl.</abstract>
+    </topic>
+  </talk>
+
+  <talk num="0611">
+    <date>November 2006</date>
+    <topic href="/talks/2006talks/0611Talk/index.html">
+      <title>An Overview of Getopt::Euclid, Smart::Comments, and Log4Perl</title>
+      <presenter>Todd Rinaldo</presenter>
+      <abstract>Todd presented his experiences with three modules that he has
+        been using recently.</abstract>
+    </topic>
+  </talk>
+
+  <talk num="0701">
+    <date>January 2007</date>
+    <topic href="/talks/2007talks/0701Talk/index.html">
+      <title>Creating Perl Modules</title>
+      <presenter>G. Wade Johnson</presenter>
+      <abstract>Wade explained that creating CPAN-ready Perl modules is not
+        particularly difficult. Nowadays, there are several modules that
+        make it even easier.</abstract>
+    </topic>
+  </talk>
+
+  <talk num="0702">
+    <date>February 2007</date>
+    <topic href="/talks/2007talks/0702Talk/index.html">
+      <title>Introduction to Catalyst</title>
+      <presenter>Robert Boone</presenter>
+      <abstract>Robert gave an introduction to the Catalyst web development
+        framework.</abstract>
+    </topic>
+  </talk>
+
+  <talk num="0704">
+    <date>April 2007</date>
+    <topic href="/talks/2007talks/0704Talk/slides/index.html">
+      <title>Moose -It's the new camel</title>
+      <presenter>Robert Boone</presenter>
+      <abstract>Robert gave an interesting presentation on the Moose module and Class::MOP.
+        Moose defines a new standard for creating and using objects in Perl.</abstract>
+    </topic>
+  </talk>
+
+  <talk num="0709">
+    <date>September 2007</date>
+    <topic href="/talks/2007talks/0709Talk/index.html">
+      <title>Subroutines, Closures, and Coderefs</title>
+      <presenter>G. Wade Johnson</presenter>
+      <abstract>Wade gave a presentation about code references in Perl 5. This
+        talk explains some of the things you can do with coderefs, including
+        the concept of <em>closures</em> and ending with an introduction to
+        <em>currying</em>.</abstract>
+    </topic>
+  </talk>
+
+  <talk num="0710">
+    <date>October 2007</date>
+    <topic href="/talks/2007talks/0710Talk/index.html">
+      <title>Catalyst/DBIC</title>
+      <presenter>Brandon Black</presenter>
+      <abstract>Brandon covered some of the basics of Catalyst and DBIC.
+        </abstract>
+    </topic>
+  </talk>
+
+  <talk num="0711">
+    <date>November 2007</date>
+    <topic href="/talks/2007talks/0711Talk/index.html">
+      <title>Barely Used Perl</title>
+      <presenter>Robert Boone</presenter>
+      <abstract>Robert presented a few modules in the Perl core that don't get
+        used much.</abstract>
+    </topic>
+  </talk>
+
+  <talk num="0801">
+    <date>January 2008</date>
+    <topic href="/talks/2008talks/0801Talk/index.html">
+      <title>The <code>Net::Jabber::Bot</code> Project</title>
+      <presenter>Todd Rinaldo</presenter>
+      <abstract>Todd introduced the <code>Net::Jabber::Bot</code> module he has
+        been developing. The group helped to improve the testing of the module
+        and began the process of turning it into a group project.</abstract>
+    </topic>
+  </talk>
+
+  <talk num="0802">
+    <date>February 2008</date>
+    <topic href="/talks/2008talks/0802Talk/index.html">
+      <title>The <code>Net::Jabber::Bot</code> Project, continued</title>
+      <presenter>Todd Rinaldo</presenter>
+      <abstract>The group continued working on the project from last month. We
+        extended testing and worked on the version request.</abstract>
+    </topic>
+  </talk>
+
+  <talk num="0804">
+    <date>April 2008</date>
+    <topic href="/talks/2008talks/0804Talk/index.html">
+      <title>Open Perl Help Session</title>
+      <abstract>This session was an open invitation for people to bring
+        questions or problems for the group to provide help on.</abstract>
+    </topic>
+  </talk>
+
+  <talk num="0805">
+    <date>May 2008</date>
+    <topic href="/talks/2008talks/0805Talk/index.html">
+      <title>Open Perl Help Session</title>
+      <abstract>This session was another open invitation for people to bring
+        questions or problems for the group to provide help on.</abstract>
+    </topic>
+  </talk>
+
+  <talk num="0806">
+    <date>June 2008</date>
+    <topic href="/talks/2008talks/0806Talk/index.html">
+      <title>Emacs and Screen</title>
+      <presenter>Will Willis</presenter>
+      <abstract>The Emacs editor is popular with a large community of users.
+        This month, Will showed how Emacs can improve the life of a Perl
+        programmer. He went on to cover the screen program from the GNU
+        project.</abstract>
+    </topic>
+  </talk>
+
+  <talk num="0807">
+    <date>July 2008</date>
+    <topic href="/talks/2008talks/0807Talk/index.html">
+      <title>Testing Rakudo</title>
+      <presenter>Patrick Michaud</presenter>
+      <abstract>Todd Rinaldo got Patrick Michaud (Perl 6 Pumpking) on the
+        speaker phone for a presentation about improving the specifications
+        testing on Rakudo.</abstract>
+    </topic>
+  </talk>
+
+  <talk num="0808">
+    <date>August 2008</date>
+    <topic>
+      <title>Rakudo Testing Revisited and Open Help Session</title>
+      <abstract>We discussed how much each of us had accomplished in testing
+        Rakudo. We also discussed problems that were causing problems for
+        members of the group.</abstract>
+    </topic>
+  </talk>
+
+  <talk num="0809">
+    <date>September 2008</date>
+    <topic>
+      <title>Open Help Session</title>
+      <abstract>This session was another open invitation for people to bring
+        questions or problems for the group to provide help on.</abstract>
+    </topic>
+  </talk>
+
+  <talk num="0810">
+    <date>October 2008</date>
+    <topic href="/talks/2008talks/0810Talk/index.html">
+      <title>Git - The stupid content tracker</title>
+      <presenter>Robert Boone</presenter>
+      <abstract>Robert presented the <code>git</code> distributed version
+        control system.</abstract>
+    </topic>
+  </talk>
+
+  <talk num="0901">
+    <date>January 2009</date>
+    <topic href="/talks/2009talks/0901Talk/index.html">
+      <title>Programming Editors for Perl</title>
+      <presenter>Robert Boone</presenter>
+      <presenter>Phil King</presenter>
+      <presenter>Todd Rinaldo</presenter>
+      <presenter>G. Wade Johnson</presenter>
+      <abstract>The topic this month was programming editors and IDEs for use
+         with Perl. Given the time required to become really proficient with one
+         of these tools, it is almost impossible for one person to provide a fair
+         treatment of more than one. To handle this problem, four of our members
+         presented aspects of different editors. The focus was mainly on emacs,
+         Eclipse, and vim, with other editors mentioned along the way.</abstract>
+    </topic>
+  </talk>
+
+  <talk num="0902">
+    <date>February 2009</date>
+    <topic href="/talks/2009talks/0902Talk/index.html">
+      <title>RRDtool Tips and Traps</title>
+      <presenter>G. Wade Johnson</presenter>
+      <abstract>This month's topic was not directly related to Perl. G. Wade
+         Johnson described some of the tips and traps involved with using the
+         RRDtool software.</abstract>
+    </topic>
+  </talk>
+
+  <talk num="0903">
+    <date>March 2009</date>
+    <topic>
+        <title>Discussion of Catalyst/MVC</title>
+      <presenter>Todd Rinaldo</presenter>
+      <abstract>Todd lead a discussion of the <acronym title="Model, View, Controller">MVC</acronym>
+          paradigm as related to the Catalyst web framework. The discussion ranged
+          from MVC to other topics in object oriented programming. The discussion
+          finished up with some thoughts on Moose Roles.</abstract>
+    </topic>
+  </talk>
+
+  <talk num="0905">
+    <date>May 2009</date>
+    <topic href="/talks/2009talks/0905Talk/index.html">
+      <title>SVG from Perl</title>
+      <presenter>G. Wade Johnson</presenter>
+      <abstract>In this month's presentation, G. Wade Johnson describes the
+         SVG graphics format and techniques for generating SVG from Perl.</abstract>
+    </topic>
+  </talk>
+
+  <talk num="0906">
+    <date>June 2009</date>
+    <topic href="/talks/2009talks/0906Talk/index.html">
+      <title>Catalyst, DBIC, and TT for world domination, a preview</title>
+      <presenter>Todd Rinaldo</presenter>
+      <abstract>At the end of the month, Todd was scheduled to give a presentation
+          at YAPC::NA 2009. He offered to give the group a preview of this
+          presentation for the June meeting.</abstract>
+    </topic>
+  </talk>
+
+  <talk num="0907">
+    <date>July 2009</date>
+    <topic href="/talks/2009talks/0907Talk/index.html">
+      <title>Exception Handling in Perl</title>
+      <presenter>G. Wade Johnson</presenter>
+      <abstract>This month, Wade discussed error handling in general and
+          exceptions in particular. The talk focused on the trade-offs of using
+          exceptions and argued for having this technique in your bag-of-tricks.</abstract>
+    </topic>
+  </talk>
+
+  <talk num="0908">
+    <date>August 2009</date>
+    <topic href="/talks/2009talks/0908Talk/index.html">
+      <title>The FUSE File System</title>
+      <presenter>Robert Boone</presenter>
+      <abstract>This month, Robert covered the FUSE filesystem. This tool
+          allows Unix-based OSes to do specialized filesystems without doing
+          kernel coding.</abstract>
+    </topic>
+  </talk>
+
+  <talk num="0910">
+    <date>October 2009</date>
+    <!--   <topic href="/talks/2009talks/0908Talk/index.html"> -->
+    <topic>
+      <title>Higher Order Perl discussion: Recursion</title>
+      <presenter>Robert Boone</presenter>
+      <abstract>Robert lead a discussion on part of the first chapter of the
+          book <cite>Higher Order Perl</cite>.</abstract>
+    </topic>
+  </talk>
+
+  <talk num="1001">
+    <date>January 2010</date>
+    <topic href="/talks/2010talks/1001Talk/index.html">
+      <title>Complete Beginner's Introduction to Perl and the Perl Community</title>
+      <presenter>Will Willis</presenter>
+      <abstract>Will presented an introduction to Perl for complete beginners,
+         assuming no prior knowledge of Perl.</abstract>
+    </topic>
+  </talk>
+
+  <talk num="1002">
+    <date>February 2010</date>
+    <topic href="/talks/2010talks/1002Talk/index.html">
+      <title>Introduction to Perl, Part 2</title>
+      <presenter>G. Wade Johnson</presenter>
+      <abstract>Wade continued the introductory Perl theme with more information
+          about the Perl community and Perl documentation. He also walked the
+          group through solving a (mostly) real-world problem.</abstract>
+    </topic>
+  </talk>
+
+</talklist>

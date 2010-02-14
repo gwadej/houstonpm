@@ -1,0 +1,60 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE>Carp</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0005.htm">CGI::Carp</a>
+    &nbsp;&nbsp;Previous: <a href="slide0003.htm">CGI</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name="Carp">
+<center>
+<H1>Carp
+</H1></center>
+
+
+<P>
+A way to control error messages when programming web applications.
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+  carp    - warn of errors (from perspective of caller)
+
+  cluck   - warn of errors with stack backtrace
+            (not exported by default)
+
+  croak   - die of errors (from perspective of caller)
+
+  confess - die of errors with stack backtrace
+
+  shortmess - return the message that carp and croak produce
+
+  longmess - return the message that cluck and confess produce</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+The Carp routines are useful in your own modules because they act like die() or warn(), but with a message which is more likely to be useful to a user of your module.  In the case of cluck, confess, and longmess that context is a summary of every call in the call-stack.  For a shorter message you can use carp, croak or shortmess which report the error as being from where your module was called.  There is no guarantee that that's where the error was, but it's a good educated guess.
+</P>
+</BODY>
+</HTML>

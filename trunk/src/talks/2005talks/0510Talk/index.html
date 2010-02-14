@@ -1,0 +1,104 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+  <title>Summary of August 2005 Presentation</title>
+  <link rel="stylesheet" href="/styles/houston.css" type="text/css" />
+</head>
+<body>
+
+<div class="banner">
+   <a href="http://www.pm.org/index.html"><img alt="Perl Mongers' Site"
+       src="http://www.pm.org/graphics/title.png" height="65" width="150" /></a>
+   <h1>Houston.pm</h1>
+</div>
+<div id="outer">
+  <div id="navigation">
+  
+  <ul class="menu" id="mainmenu">
+     <li><a href="/index.html">Home</a></li>
+     <li><a href="/about.html">About Us</a></li>
+     <li><a href="/meetings.html">Meetings</a></li>
+     <li><a href="/faqs.html">FAQ</a></li>
+     <li><a href="/talks/mostrecent.html">Most Recent Talk</a></li>
+     <li><a href="/talks/index.html">Talks Archive</a></li>
+     <li><a href="/projects/index.html">Group Projects</a></li>
+  </ul>
+
+  </div>
+
+  <div class="content">
+
+    <p>Bill Dillon gave a presentation on <em>Graphics in Perl</em>. Since
+    this talk ranged from graphing metrics for programming QA through light
+    curves for cataclysmic variable stars. (Bill's hobby is astronomy.)</p>
+    
+    <p>Bill covered the GD::Graph module that supports creating various forms
+    of charts, including line, point, bar and pie charts. Since his work
+    data is proprietary, he began by graphing the number of attendees at the
+    Houston.pm meetings. (Actual numbers may vary.)</p>
+
+    <p>After showing how easy it is to chart data like this in multiple styles,
+    Bill went on to give an overview of cataclysmic variable stars and the
+    people who study them. (<a href="http://www.aavso.org/">AAVSO: American
+    Association of Variable Star Observers</a>.)</p>
+    
+    <p>This background leads to a point chart showing almost 100 years of data
+    on the cataclysmic variable star SS Cygni. In the process, Bill showed how he
+    used Perl and GD::Graph to display a data set that Excel would not open. He
+    also described the need to extend the graph size when dealing with large
+    data sets, as well as the problems with plotting star <em>magnitude</em>
+    data in a reasonable fashion for people to read.</p>
+
+    <p>Bill also recommended the books <cite>Perl Graphics Programming</cite>
+    (Wallace, 2002) and <cite>Graphics Programming with Perl</cite> (Verbruggen,
+    2002). He said that neither one had all of the information that he needed,
+    but between them, he could normally figure it out.</p>
+    
+    <ul>
+      <li>Bill's  PowerPoint <a href="graphics_in_perl.ppt">presentation</a>.</li>
+      <li>Example code from <cite>Perl Graphics Programming</cite>
+        <a href="wgd_graph_test.pl">wgd_graph_test.pl</a></li>
+      <li>The program that generated the lightcurve chart:
+        <a href="graph_jd_mag.pl">graph_jd_mag.pl</a></li>
+      <li><a href="ss_cyg_jd_mag_50kpix.png">Lightcurve</a> for the cataclysmic
+         variable star SS Cygni (Warning: this chart is 50,000 pixels wide.)</li>
+    </ul>
+
+    <p></p>
+    
+  </div>
+
+</div>
+<div id="footer">
+<p class="copyright">
+<!-- Creative Commons License -->
+<a rel="license" href="http://creativecommons.org/licenses/by/2.5/"><img alt="Creative Commons License" border="0" src="http://creativecommons.org/images/public/somerights20.gif" /></a>
+Copyright &copy; 2005 Houston.pm.<br /> Except as otherwise noted, this site is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/2.5/">Creative Commons Attribution 2.5 License</a>.
+<!-- /Creative Commons License -->
+
+
+<!--
+
+<rdf:RDF xmlns="http://web.resource.org/cc/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<Work rdf:about="">
+   <license rdf:resource="http://creativecommons.org/licenses/by/2.5/" />
+</Work>
+
+<License rdf:about="http://creativecommons.org/licenses/by/2.5/">
+   <permits rdf:resource="http://web.resource.org/cc/Reproduction" />
+   <permits rdf:resource="http://web.resource.org/cc/Distribution" />
+   <requires rdf:resource="http://web.resource.org/cc/Notice" />
+   <requires rdf:resource="http://web.resource.org/cc/Attribution" />
+   <permits rdf:resource="http://web.resource.org/cc/DerivativeWorks" />
+</License>
+
+</rdf:RDF>
+-->
+</p>
+<p>The use of the camel image in association with the Perl
+language is a trademark of O'Reilly &amp; Associates, Inc. Used with permission.</p>
+</div>
+</body>
+</html>

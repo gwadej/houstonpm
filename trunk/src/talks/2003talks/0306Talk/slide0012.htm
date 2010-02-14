@@ -1,0 +1,59 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE>Search and print.</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0013.htm">Faqgrep pod</a>
+    &nbsp;&nbsp;Previous: <a href="slide0011.htm">Read in perlfaq filenames.</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name="Search and print.">
+<center>
+<H1>Search and print.
+</H1></center>
+
+
+<P>
+We search through each faq file for lines beginning with =head2 that are followed by our $pattern, and we print out the filename, and the matching line. If we found the -f option on the command line, we also print the answer:
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+ foreach my $faq (@faqs) {
+      open(FAQ,&quot;$faqdir/$faq&quot;)||die &quot;can't $!&quot;;
+      while (&lt;FAQ&gt;) {
+           if (s/^=head2($pattern)/$1/io) {
+                 print &quot;$faq:$_&quot; ;
+           }
+      }
+      close FAQ;
+ }
+
+ if ($opt_f) {
+      while(&lt;FAQ&gt;){
+           last if m/^=head(?!$pattern)/io;
+           print;
+      }
+ }</FONT></B></PRE></TD></TR></TABLE></UL>
+</BODY>
+</HTML>

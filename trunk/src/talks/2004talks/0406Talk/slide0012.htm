@@ -1,0 +1,61 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE>Example 1</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0013.htm">Discussion</a>
+    &nbsp;&nbsp;Previous: <a href="slide0011.htm">Using the map() Function</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name="Example 1">
+<center>
+<H1>Example 1
+</H1></center>
+
+
+<P>
+For example, if you had an array of strings and wanted a corresponding array of the lengths of the strings you achieve this with a loop:
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+    my @strings = qw/foo bar quux blah/;
+    my @lengths;
+    foreach my $string (@strings){
+        push @lengths, length($string);
+    }
+    print &quot;@lengths\n&quot;;  # prints: 3 3 4 4</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+This loop becomes a one-liner using the map() function:
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+    my @strings = qw/foo bar quux blah/;
+    my @lengths = map{ length($_) } @strings;
+    print &quot;@lengths\n&quot;;  # prints: 3 3 4 4</FONT></B></PRE></TD></TR></TABLE></UL>
+</BODY>
+</HTML>

@@ -1,0 +1,28 @@
+<svg version="1.0" viewBox="0 0 400 300" width="400" height="300"
+     xmlns="http://www.w3.org/2000/svg">
+  <defs>
+     <style type="text/css">
+        text {
+            font-size:12px;
+            text-anchor:middle;
+            font-family:Bitstream Vera Sans;
+            text-align:center;
+            font-weight:normal;
+            font-style:normal;
+            fill:#000000;
+        }
+        .label { font-size:16px; font-weight: bold; }
+        ellipse { stroke:#000; fill-opacity:0.8; }
+     </style>
+  </defs>
+  <ellipse cx="125" cy="110" rx="100" ry="65" fill="#66d" />
+  <ellipse cx="270" cy="180" rx="100" ry="65" fill="#6d6" />
+  <text class="label" x="85" y="30">Perl</text>
+  <text class="label" x="325" y="110">SVG</text>
+  <text x="125" y="88">Create maze</text>
+  <text x="125" y="104">Generate display tiles</text>
+  <text x="125" y="120">Build movement table</text>
+  <text x="270" y="170">Display maze</text>
+  <text x="270" y="186">Interactivity</text>
+  <text x="270" y="202">Table-based movement</text>
+</svg>

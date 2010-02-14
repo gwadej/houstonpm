@@ -1,0 +1,788 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>SVG from Perl</title>
+<!-- metadata -->
+<meta name="generator" content="S5" />
+<meta name="version" content="S5 1.1" />
+<meta name="presdate" content="20090512" />
+<meta name="author" content="G. Wade Johnson" />
+<meta name="company" content="Houston Perl Mongers" />
+<!-- configuration parameters -->
+<meta name="defaultView" content="slideshow" />
+<meta name="controlVis" content="hidden" />
+<!-- style sheet links -->
+<link rel="stylesheet" href="ui/houstonpm/slides.css" type="text/css" media="projection" id="slideProj" />
+<link rel="stylesheet" href="ui/default/outline.css" type="text/css" media="screen" id="outlineStyle" />
+<link rel="stylesheet" href="ui/default/print.css" type="text/css" media="print" id="slidePrint" />
+<link rel="stylesheet" href="ui/default/opera.css" type="text/css" media="projection" id="operaFix" />
+<style type="text/css">
+    .slide p { font-size: +1; margin-top: 3em; text-align: center; }
+    .handout p { font-size: normal; margin-top: 1em; text-align: left; }
+    .slide p.dos { text-align: left; margin-left: 3em; }
+    .slide p.head { margin-top: 1em; }
+    .slide h1 { text-transform: none; }
+    .slide ul.nobull { list-style:none; margin-left: 10%; }
+    iframe { border: 0; margin-top: 1em; margin-left:20%; }
+    .rt iframe { border: 0; margin-top: 1em; margin-left:10%; float:right; }
+</style>
+<!-- S5 JS -->
+<script src="ui/default/slides.js" type="text/javascript"></script>
+</head>
+<body>
+
+<div class="layout">
+<div id="controls"><!-- DO NOT EDIT --></div>
+<div id="currentSlide"><!-- DO NOT EDIT --></div>
+<div id="header"></div>
+<div id="footer">
+<h1>Houston.pm - May 12, 2009</h1>
+<h2>SVG from Perl</h2>
+</div>
+
+</div>
+
+
+<div class="presentation">
+
+<div class="slide">
+<h1>SVG from Perl</h1>
+<h2></h2>
+<h3>G. Wade Johnson</h3>
+<h4>Houston.pm</h4>
+</div>
+
+
+<div class="slide">
+<h1>What is <acronym title="Scalable Vector Graphics">SVG</acronym>?</h1>
+<ul>
+<li>Scalable</li>
+<li>Vector</li>
+<li>Graphics</li>
+</ul>
+<div class="handout">
+    <p>SVG is a format for vector graphics. In raster graphics, the image is
+    made of a large number of colored dots. Vector graphics, on the other hand,
+    are made up of a series of graphic objects.</p>
+
+    <p>In a raster graphic, a blue circle is a bunch of blue dots that happen
+    to be contiguous and roughly circle shaped. In a vector graphic, a blue
+    circle consists of a circle object with a specific position, radius, and
+    a color of blue.</p>
+
+    <p>One side effect of this approach is that vector graphics are effectively
+    infinitely scalable.</p>
+</div>
+</div>
+
+
+<div class="slide">
+<h1>What is <acronym title="Scalable Vector Graphics">SVG</acronym>?</h1>
+<p>W3C Recommendation since 2001</p>
+<div class="handout">
+    <p>Although you may have only heard of SVG recently, it's actually been around
+    for a long while. Several viewers have been in place for many years. We're
+    currently on our 3rd revision of the standard (1.0, 1.1, and 1.2). The result
+    is a relatively mature specification.</p>
+</div>
+</div>
+
+
+<div class="slide">
+<h1>What is <acronym title="Scalable Vector Graphics">SVG</acronym>?</h1>
+<p>XML-based vector graphics format</p>
+<div class="handout">
+    <p>As an XML-based format, SVG is extensible. It is not a binary format that
+    is difficult to extend. SVG supports foreign namespaces. This allows you to
+    embed non-graphic information that is easily parsed out of the file. (We'll
+    have an example of this later.</p>
+
+    <p>This also means that creating SVG is something that you can do by hand,
+    with an XML editing tool, or through code.</p>
+
+    <p>Most of all, SVG is a graphics format.</p>
+</div>
+</div>
+
+
+<div class="slide">
+<h1>What is <acronym title="Scalable Vector Graphics">SVG</acronym>?</h1>
+<p>Support for declarative animation</p>
+<div class="handout">
+    <p>SVG imports parts of the <acronym title="Synchronized Multimedia Integration Language">SMIL</acronym>
+    specification relating to animation. This allows you to specify in XML animation
+    effects including movement and transformation of objects, changing attributes,
+    and some user interaction.</p>
+</div>
+</div>
+
+
+<div class="slide">
+<h1>What is <acronym title="Scalable Vector Graphics">SVG</acronym>?</h1>
+<p>Support for scripting</p>
+</ul>
+<div class="handout">
+    <p>SVG supports the ECMAscript scripting language for programmable interaction.
+    With scripting, you can interact with the DOM of the document, react to user
+    events, make calls to external servers, etc. This feature supports building
+    small applications in SVG.</p>
+
+    <p>Here in mid-2009, scripting seems to be implemented more widely than SMIL
+    in the web space. I have the impression that it's the reverse in mobile devices.</p>
+</div>
+</div>
+
+
+<div class="slide">
+<h1>What <acronym title="Scalable Vector Graphics">SVG</acronym> isn't?</h1>
+<p>A new programming language</p>
+<div class="handout">
+    <p>SVG is not a replacement for all of the programming work you are doing on
+    a given project.</p>
+</div>
+</div>
+
+
+<div class="slide">
+<h1>What <acronym title="Scalable Vector Graphics">SVG</acronym> isn't?</h1>
+<p>A complete replacement for Flash</p>
+<div class="handout">
+    <p>Many people remain focused on the idea of SVG as a <em>Flash killer</em>.
+    And, to be honest, there are some areas where Flash and SVG can both be
+    used. However, their approaches are quite different. So there are undoubtedly
+    places where one is more effective than the other.</p>
+
+    <p>I don't know enough about Flash to give a good explanation of where it
+    would be most effective.</p>
+</div>
+</div>
+
+
+<div class="slide">
+<h1>What <acronym title="Scalable Vector Graphics">SVG</acronym> isn't?</h1>
+<p>A magic solution to all web image woes</p>
+<div class="handout">
+    <p>Some people seem to want to use SVG to replace all images on their site.
+    But, SVG is not a replacement for everything. PNG and JPEG still have their
+    place. SVG is actually lousy for encoding photographs or photo-realistic
+    images. These kinds of images are much more efficiently stored in raster
+    formats.</p>
+</div>
+</div>
+
+
+<div class="slide">
+<h1>What <acronym title="Scalable Vector Graphics">SVG</acronym> isn't?</h1>
+<p>A <acronym title="Graphical User Interface">GUI</acronym> design tool</p>
+<div class="handout">
+    <p>I often see the complaint that SVG will never amount to anything because
+    it doesn't have menus, radio buttons, checkboxes, and other GUI controls.
+    Strangely, the same people don't claim that JPEG is dead for these same
+    reasons.</p>
+
+    <p>SVG was intended, from the beginning, to be a technology that would work
+    well with other XML-based specifications. There has been quite a bit of
+    experimentation with using SVG and HTML together. The W3C is also currently
+    working on better interaction between HTML and other forms of markup for
+    HTML 5.</p>
+
+    <p>That said, SVG is well-suited to building graphic elements for GUIs. It is
+    used relatively extensively in KDE. It is also supported by Opera widgets.</p>
+</div>
+</div>
+
+
+<div class="slide">
+<h1>What <acronym title="Scalable Vector Graphics">SVG</acronym> isn't?</h1>
+<p>Completely <a href="http://www.codedread.com/svg-support.php">supported</a> everywhere</p>
+<div class="handout">
+    <p>This is the biggest problem at the moment. SVG support is growing in all
+    of the major browsers except one. There are a few plugins that add support to
+    IE, with more on the way.</p>
+
+    <p>More importantly, browser support is increasing at a rapid pace. Three or
+    four years ago, browser support was almost non-existent. Now large portions
+    of the specification are supported by Firefox, Opera, Safari/Webkit, and Chrome.</p>
+
+    <p>It's my understanding that one of the biggest applications for SVG support
+    has been mobile phones, mostly in Asia. We are seeing a small amount of that
+    uptake trickling over to the west.</p>
+</div>
+</div>
+
+
+<div class="slide">
+<h1>What can <acronym title="Scalable Vector Graphics">SVG</acronym> do?</h1>
+<p>Infinitely scalable graphics</p>
+<div class="handout">
+    <p>Okay, this is basically in the definition, but it's worth saying.</p>
+</div>
+</div>
+
+
+<div class="slide">
+<h1>What can <acronym title="Scalable Vector Graphics">SVG</acronym> do?</h1>
+<p class="head">Art</p>
+<ul>
+    <li><a target="_blank" href="http://vendibles.wordpress.com/365-free-svg/">365 Free SVG files</a></li>
+    <li><a target="_blank" href="http://intertwingly.net/stories/2006/07/06/penroseTiling.svg">Penrose Tiling</a> by Sam Ruby</li>
+</ul>
+<div class="handout">
+    <p>SVG has been used quite a bit for clipart and icon development (KDE). But,
+    I've also heard of some people doing more interesting artsy things with the
+    technology. It's not my area, so I haven't looked into it very far.</p>
+</div>
+</div>
+
+
+<div class="slide">
+<h1>What can <acronym title="Scalable Vector Graphics">SVG</acronym> do?</h1>
+<p class="head">Comics</p>
+<ul>
+    <li><a target="_blank" href="http://www.mainada.net/comicssketch">Comics Sketch</a> Community Site</li>
+    <li><a target="_blank" href="http://www.pixelpalaces.com/dk/svg.htm">Dragon Knights</a></li>
+</ul>
+<div class="handout">
+    <p>Another area where I haven't spent much time. But, SVG seems to be a medium
+    some have used for web comics. I should warn you that the Dragon Knights comic
+    has some novel navigation effects and takes a bit of getting used to.</p>
+</div>
+</div>
+
+
+<div class="slide">
+<h1>What can <acronym title="Scalable Vector Graphics">SVG</acronym> do?</h1>
+<p class="head">Games</p>
+<ul>
+    <li><a target="_blank" href="http://www.koonts.com/crossword/">Crossword Project</a></li>
+    <li><a target="_blank" href="http://www.resource-solutions.de/svgraiders/main.svg">SVG Raiders</a></li>
+    <li><a target="_blank" href="http://www.croczilla.com/svg/samples/svgtetris/svgtetris.svg">SVG Tetris</a></li>
+    <li><a target="_blank" href="http://codedread.com/games.php">Games by Jeff Schiller</a></li>
+    <li><a target="_blank" href="http://www.kevlindev.com/alife/life/life_2_0_bw.svg">Life</a></li>
+    <li><a target="_blank" href="http://bighead.poli.usp.br/~juca/code/svg/minigame/minigame.svg">Mini Game</a></li>
+</ul>
+<div class="handout">
+    <p>Many people have coded games in SVG because it seems to be an obvious use
+    for graphics and scripting in the same tool.</p>
+</div>
+</div>
+
+
+<div class="slide">
+<h1>What can <acronym title="Scalable Vector Graphics">SVG</acronym> do?</h1>
+<p class="head">Maps</p>
+<ul>
+    <li><a target="_blank" href="http://www.redhat.com/about/where-is-open-source/activity/">Open Source Activity Map</a></li>
+    <li><a target="_blank" href="http://carto.net/">carto:net</a></li>
+</ul>
+<div class="handout">
+    <p>The cartography community has really embreaced SVG. They can not only generate
+    extremely high-quality maps, but they can add interactivity and extended data to
+    those maps. In some ways, these guys have been pushing the use of SVG more than
+    almost anyone else.</p>
+</div>
+</div>
+
+
+<div class="slide">
+<h1>What can <acronym title="Scalable Vector Graphics">SVG</acronym> do?</h1>
+<p>Applications</p>
+<p>(We'll have a few examples later.)</p>
+<div class="handout">
+    <p>All of the games could be treated as applications. I know of one company
+    that had an EMS (Energy Management System) with a Batik-based SVG front-end.</p>
+</div>
+</div>
+
+
+<div class="slide">
+<h1>Why Should I Care?</h1>
+<ul>
+<li>Easy to manipulate from code</li>
+<li>Powerful client-side features</li>
+<li>Increasing number of implementations</li>
+</ul>
+<div class="handout">
+    <p>This is the part of SVG that really grabbed my attention. Building nice-looking
+    graphics from code is not generally easy. How many of you can create nice-looking
+    JPEGs, given only a JPEG library? How many of you have used
+    <code>Image::Magick</code>? How easy is it?</p>
+
+    <p>About the only graphics most of us generate are relatively straight-forward
+    line and bar graphs. Maybe a pie chart, here and there. For those, we would
+    probably rely on a library that does the heavy lifting for us. It's not that
+    general graphics are impossible to do from code. But, most formats are optimized
+    for storage space and display speed, not ease of programming.</p>
+</div>
+</div>
+
+
+<div class="slide">
+<h1>How Do I View <acronym title="Scalable Vector Graphics">SVG</acronym>?</h1>
+<p class="head">Web Browsers</p>
+<ul>
+<li><a target="_blank" href="http://www.opera.com/">Opera</a></li>
+<li><a target="_blank" href="http://www.mozilla.com/">Firefox</a></li>
+<li><a target="_blank" href="http://webkit.org/">Safari/Webkit</a></li>
+<li><a target="_blank" href="http://www.google.com/chrome/">Chrome</a></li>
+</ul>
+<div class="handout">
+    <p>You'll probably notice one browser conspicuously missing from this list.
+    Although MS keeps saying they are looking into SVG, they don't seem to have
+    made any progress with this <em>open web standard</em>. Of course, they have
+    continued on their own <em>proprietary technologies</em>.</p>
+
+    <p>In fact, Tim Berners-Lee called them out on it in an MSNBC
+    <a target="_blank" href="http://www.msnbc.msn.com/id/26646919/">interview</a>.</p>
+</div>
+</div>
+
+
+<div class="slide">
+<h1>How Do I View <acronym title="Scalable Vector Graphics">SVG</acronym>?</h1>
+<p class="head">Browser Plugins</p>
+<ul>
+<li>Adobe SVG Viewer (ASV)</li>
+<li><strike>Corel SVG Viewer</strike></li>
+<li>Renesis Plugin (alpha)</li>
+<li>Bitflash</li>
+</ul>
+<div class="handout">
+    <p>Adobe released <acronym title="Adobe SVG Viewer">ASV</acronym> shortly
+    after the first SVG specification was released. Around the same time-frame,
+    Corel also introduced a plugin as well. Although not perfect, ASV was good
+    enough that no one found a need to build a new one.</p>
+
+    <p>When Adobe and Macromedia merged, ASV became a bit of an orphan. Adobe
+    has pledged to keep it available, but it is officially unsupported. Given the
+    fact that Microsoft has not provided SVG support in IE, several other groups
+    have stepped up to try to get an IE-compatible plugin for SVG display.</p>
+</div>
+</div>
+
+
+<div class="slide">
+<h1>How Do I View <acronym title="Scalable Vector Graphics">SVG</acronym>?</h1>
+<p class="head">SVG-specific Viewers</p>
+<ul>
+<li>Squiggle</li>
+<li>KDE</li>
+<li>GNOME</li>
+</ul>
+<div class="handout">
+    <p>The Batik library has an SVG viewer as an example application. Both KDE and
+    GNOME provide support in the window manager for display of SVG.</p>
+</div>
+</div>
+
+
+<div class="slide">
+<h1>How Do I View <acronym title="Scalable Vector Graphics">SVG</acronym>?</h1>
+<p class="head">Mobile devices</p>
+<ul>
+    <li>Trolltech</li>
+    <li>Ikivo</li>
+    <li>Opera Mobile</li>
+    <li>Webkit on the iPhone</li>
+</ul>
+<div class="handout">
+    <p>Japan has been pushing the state of the art in mobile devices. Asia has
+    actually embraced SVG as a core technology for their mobile devices. Both
+    Trolltech and Ikivo produce SVG libraries for mobile devices. The browser
+    maker Opera also has a mobile edition. The iPhone runs a Webkit-based browser.</p>
+</div>
+</div>
+
+
+<div class="slide">
+<h1>How Do I View <acronym title="Scalable Vector Graphics">SVG</acronym>?</h1>
+<p class="head">Development libraries</p>
+<ul>
+<li>Qt</li>
+<li>Batik (Java)</li>
+<li>librsvg</li>
+</ul>
+<div class="handout">
+<p>As graphics programmers have become more aware of SVG, general purpose graphics
+libraries sprout SVG support. There are also SVG-specific graphics libraries.</p>
+</div>
+</div>
+
+
+<div class="slide">
+<h1>Generating <acronym title="Scalable Vector Graphics">SVG</acronym> in Perl</h1>
+<p>Since SVG is XML (basically text), you can generate SVG any way you can generate XML.</p>
+<pre><code>
+    &lt;rect x="10" y="10" height="50" width="100"
+             fill="green" stroke="none" /&gt;
+</code></pre>
+<iframe height="70" width="120" src="images/green_rect.svg"></iframe>
+<div class="handout">
+    <p>Of course, to be XML it must be well-formed; and to be SVG, it must be
+    valid. But other than that, there are a number of ways to generate it.</p>
+</div>
+</div>
+
+
+<div class="slide">
+<h1>The <code>print</code> Method</h1>
+<pre><code>
+    print qq{&lt;rect x="10" y="10" height="50" width="100"},
+          qq{ fill="green" stroke="none" /&gt;\n};
+</code></pre>
+<div class="handout">
+    <p>It's relatively easy, and requires no extra libraries. However, there's
+    no support for making sure you are building well-formed SVG. There's no
+    help for attribute and element names. There's no help for getting the
+    namespaces correct.</p>
+
+    <p>You are basically on your own.</p>
+</div>
+</div>
+
+
+<div class="slide">
+<h1>The <code>XML::LibXML</code> Method</h1>
+<pre><code>
+    my $rect = $doc-&gt;createElementNS( $svgns, 'rect' );
+    $rect-&gt;setAttribute( 'x', 10 );
+    $rect-&gt;setAttribute( 'y', 10 );
+    $rect-&gt;setAttribute( 'height', 50 );
+    $rect-&gt;setAttribute( 'width', 100 );
+    $rect-&gt;setAttribute( 'fill', 'green' );
+    $rect-&gt;setAttribute( 'stroke', 'none' );
+</code></pre>
+<div class="handout">
+    <p>Much more verbose than the <code>print</code> approach. But, output is
+    guaranteed to be well-formed. There are no guarantees about valid SVG,
+    but at least the output is XML.</p>
+
+    <p>The verbosity issue can be handled with higher level subroutines.</p>
+</div>
+</div>
+
+
+<div class="slide">
+<h1>The <code>SVG</code> Method</h1>
+<pre><code>
+    $svg-&gt;rect(
+        x=&gt;10, y=&gt;10, height=&gt;50, width=&gt;100,
+        fill=&gt;'green', stroke=&gt;'none'
+    );
+</code></pre>
+<div class="handout">
+    <p>Much less verbose than the <code>XML::LibXML</code> approach. Slightly
+    more verbose than the <code>print</code> approach. More protection against
+    invalid elements. No protection against invalid attributes.</p>
+
+    <p>Namespace declarations are taken care of so you don't have to.</p>
+</div>
+</div>
+
+
+<div class="slide">
+<h1>The Template Toolkit Method</h1>
+<p style="margin-top: 1em;">In template</p>
+<pre><code>
+  &lt;rect x="[%x%]" y="[%y%]" height="[%height%]" width="[%width%]"
+           fill="[%color%]" stroke="none" /&gt;
+</code></pre>
+<p style="margin-top: 1em;">In code</p>
+<pre><code>
+  $tt-&gt;process( $fh,
+     {x=&gt;10, y=&gt;10, height=&gt;50, width=&gt;100, color=&gt;'green'}
+  );
+</code></pre>
+<div class="handout">
+    <p>This approach is very useful if much of the SVG you need to output is
+    boilerplate with a small amount that needs to change. Templates are a good
+    way to separate the presentation part from the output you really need to
+    create.</p>
+
+    <p>Thanks to its XML nature, every SVG file contains some boilerplate information.
+    In addition, many SVG images contain a number of elements used for background
+    imagery or supporting graphics. This boilerplate and static content can be placed
+    in the template and does not need to be generated.</p>
+</div>
+</div>
+
+
+<div class="slide">
+<h1>Specialty Perl Modules</h1>
+<ul>
+    <li><a target="_blank" href="http://search.cpan.org/search?query=SVG%3A%3AGraph">SVG::Graph</a></li>
+    <li><a target="_blank" href="http://search.cpan.org/search?query=SVG%3A%3ATemplate%3A%3AGraph">SVG::Template::Graph</a></li>
+    <li><a target="_blank" href="http://search.cpan.org/search?query=SVG%3A%3ATT%3A%3AGraph">SVG::TT::Graph</a></li>
+    <li><a target="_blank" href="http://search.cpan.org/search?query=SVGraph">SVGraph</a></li>
+    <li><a target="_blank" href="http://search.cpan.org/search?query=SVGGraph">SVGGraph</a></li>
+    <li><a target="_blank" href="http://search.cpan.org/search?query=SVG%3A%3ASparkline">SVG::Sparkline</a></li>
+</ul>
+<div class="handout">
+    <p>A lot of programmers decide to use SVG as an effective tool for generating
+    graphs and charts. It appears that most of the SVG modules on CPAN are designed
+    for graph generation.</p>
+</div>
+</div>
+
+
+<div class="slide">
+<h1>Separation of Concerns</h1>
+<p>Use a drawing package (like <a target="_blank" href="http://inkscape.org/">Inkscape</a>) to build
+the background portions of the <acronym title="Scalable Vector Graphics">SVG</acronym>
+and add to it with Perl.</p>
+<div class="handout">
+    <p>An SVG application often consist of a small amount of boilerplate text,
+    some background graphics, and some graphics that are generated by the code.
+    The background stuff doesn't have to be static, it could be animated or
+    support script-based interaction. The key part is that it does not need to
+    change from one run of the program to the next.</p>
+
+    <p>Unfortunately, if the whole SVG application is generated with code,
+    this boilerplate and background stuff needs to be written as well. But, some
+    stuff is much easier to generate with a drawing program instead of with
+    code. If the background portion can be read in and the result modified
+    by code, you get the best of both worlds.</p>
+
+    <p>A template-based approach works particularly well with this idea.</p>
+</div>
+</div>
+
+
+<div class="slide">
+<h1>Separation of Concerns: Animation</h1>
+<p class="dos"><strong>Do:</strong> Rely on <acronym title="Synchonized Multimedia Integration Language">SMIL</acronym>
+and scripting to animate on the client side.</p>
+<p class="dos"><strong>Don't:</strong> Try to animate from the Perl side</p>
+<div class="handout">
+    <p>If you aren't used to the scripting or animation capabilities of SVG,
+    you might be tempted to Use a lot of request/response code to call to a
+    Perl program to decide what to do next. This would not be the best
+    approach.</p>
+
+    <p>For maximum responsiveness, you want to do work on the client side
+    whenever possible. With SVG's scripting ability, you can do a surprising
+    amount in the application. The games from the examples before give you a
+    beginning idea of what is possible. If your viewer has SMIL support, you
+    can get some animation and interactivity without any scripting at all.</p>
+</div>
+</div>
+
+
+<div class="slide">
+<h1>Separation of Concerns: DOM Manipulation</h1>
+<p class="dos"><strong>Do:</strong> Use scripting to manipulate the
+<acronym title="Document Object Model">DOM</acronym> on the client side.</p>
+<p class="dos"><strong>Don't:</strong> Try to push lots of rewrites from Perl.</p>
+<div class="handout">
+    <p>If you need calculations or data that would be too much for the script
+    to handle, you might want to make an asynchronous call to a server to
+    retrieve just the data. Then, use scripting to manipulate the interface
+    using the returned data.</p>
+
+    <p>Just like the whole <acronym title="Asynchronous JavaScript and XML">AJAX</acronym>
+    thing, you don't need to send a whole new SVG file for an update. Maybe you
+    can get away with sending the data that you can use to make the appropriate
+    changes with scripting.</p>
+
+</div>
+</div>
+
+
+<div class="slide">
+<h1>Separation of Concerns: Interactivity</h1>
+<p class="dos"><strong>Do:</strong> Use scripting or
+<acronym title="Synchonized Multimedia Integration Language">SMIL</acronym>
+on the client side to interact with the user.</p>
+<p class="dos"><strong>Don't:</strong> Use request/response for user interactions.</p>
+<div class="handout">
+    <p>In order for the application to have any reasonable responsiveness, you
+    need to do as much interactive work as possible directly in the SVG. Users
+    don't like waitign for request/response any more than is necessary.</p>
+</div>
+</div>
+
+
+<div class="slide">
+<h1>Separation of Concerns: Perl</h1>
+<p class="dos"><strong>Do:</strong> Use Perl to generate initial conditions.</p>
+<p class="dos"><strong>Do:</strong> Pre-calculate tables of data to be used by the scripting.</p>
+<div class="handout">
+    <p>Perl is a really effective general-purpose language. As powerful as
+    ECMAscript has become, it still has limits because it is running in a
+    sandbox in the viewer.</p>
+    
+    <p>One thing that works extremely well is to take a trick from some
+    compiled languages. In the Perl code, you can pre-calculate information
+    that you output into the script as tables. This pre-calculation approach
+    can result in the script being capable of more because the heavy lifting
+    has already been done.</p>
+
+</div>
+</div>
+
+
+<div class="slide">
+<h1>Perl vs. SVG</h1>
+<p class="head">Focus on using the best tool for the job.</p>
+<ul class="nobull">
+<li>Perl<ul>
+   <li>Setup</li>
+   <li>Expensive calculations</li>
+   </ul></li>
+<li>SVG<ul>
+   <li>User Interaction</li>
+   <li>Graphics</li>
+   </ul></li>
+</ul>
+<div class="handout">
+    <p>The key to good Perl/SVG applications is to use the each language in
+    a way that plays to that language's strengths.</p>
+</div>
+</div>
+
+
+<div class="slide">
+<h1>Example: Maze Maker</h1>
+<div class="rt"><iframe width="400" height="300" src="images/maze_separation.svg"></iframe></div>
+<p><a target="_blank" href="http://anomaly.org/wade/projects/mazemaker/index.html">Game application</a>
+written for my son.</p>
+<div class="handout">
+    <p>This started as a simple application that took output from the <code>Games::Maze</code>
+    module and generated better looking graphs. From there, it evolved different styles and
+    sizes for more challenges. The interactive side came last as I realized that not much
+    was needed to make them actually playable.</p>
+</div>
+</div>
+
+
+<div class="slide">
+<h1>Example: Guidelines</h1>
+<div class="rt"><iframe width="400" height="300" src="images/guidelines_separation.svg"></iframe></div>
+<p><a target="_blank" href="http://www.anomaly.org/debbie/calligraphy/guidelines.html">Application</a>
+for my wife's calligraphy hobby.</p>
+<div class="handout">
+    <p>This was a quick-and-dirty implementation using the <code>print</code> method.
+    It's main positive attribute is that it works.</p>
+</div>
+</div>
+
+
+<div class="slide">
+<h1>Example: Profile Graph Generation</h1>
+<div class="rt"><iframe width="400" height="300" src="images/profiling_separation.svg"></iframe></div>
+<p>Perl program for generating <a target="_blank"
+    href="http://anomaly.org/wade/projects/svg/profiling/wuse-result.svg">graphs</a>
+using Template Toolkit from profiling data on different viewers.</p>
+<div class="handout">
+    <p>This application was part of a profiling project I did for measuring the
+    speed of scripting implementations across several viewers.</p>
+
+    <p>It was also the first time I had tried using Template Toolkit for generating
+    non-trivial SVG.</p>
+</div>
+</div>
+
+
+<div class="slide">
+<h1>Example: Instruments</h1>
+<div class="rt"><iframe width="400" height="300" src="images/instruments_separation.svg"></iframe></div>
+<p>Perl works as a server-side process to supply data to SVG-based
+<a target="_blank" href="http://anomaly.org/wade/projects/instruments/Instruments.svg">virtual instruments</a>.</p>
+<p>This is a work in progress.</p>
+<div class="handout">
+    <p>The application here is a prototype for the sole purpose of demoing the idea.
+    One of these days, I need to get around to finishing it.</p>
+</div>
+</div>
+
+
+<div class="slide">
+<h1>Example: SVG::Sparkline</h1>
+<p>Perl module for creating sparklines.</p>
+<p>The Perl code can support substantial
+<a target="_blank" href="http://anomaly.org/wade/projects/svgSparklines/">configuration</a>
+and build a small SVG file.</p>
+<div class="handout">
+    <p>Because there can never be too many graph modules on CPAN, I wrote the
+    SVG::Sparkline module. SVG makes sparklines easier than in most graphing
+    libraries because of the scaling issue. However, general-purpose graphing
+    libraries are too general to fit the intent of sparklines.</p>
+
+    <p>This library was also a mechanism for me to explore the SVG Perl module.</p>
+</div>
+</div>
+
+
+<div class="slide">
+<h1>SVG in Other Languages: Java</h1>
+<p><a target="_blank" href="http://xmlgraphics.apache.org/batik/">Batik</a></p>
+<div class="handout">
+    <p>Batik is probably the most mature of the language libraries out there.
+    It supports both generation and rendering of SVG. Current versions support
+    much of the specification, with the nightly builds pushing the support
+    even further.</p>
+</div>
+</div>
+
+
+<div class="slide">
+<h1>SVG in Other Languages: Ruby</h1>
+<ul>
+<li>RVG</li>
+<li><a target="_blank" href="http://freshmeat.net/projects/svggraph/">SVG::Graph</a></li>
+<li><a target="_blank" href="http://rubyforge.org/projects/svugy/">SVuGy</a></li>
+</ul>
+<div class="handout">
+    <p>There are a few libraries for generating SVG from Ruby. Of course, one
+    of them is a <acronym title="Domain Specific Language">DSL</acronym>.</p>
+</div>
+</div>
+
+
+<div class="slide">
+<h1>SVG in Other Languages: Python</h1>
+<p><a target="_blank" href="http://codeboje.de/pysvg/">pySVG</a></p>
+<div class="handout">
+    <p>There appears to be only one way to generate SVG from Python.</p>
+</div>
+</div>
+
+
+<div class="slide">
+<h1>SVG in Other Languages: Scheme</h1>
+<p><a target="_blank" href="http://www.svgopen.org/2007/paperAbstracts/AGraphLibraryExtensionOfSvg.html">SVG Graph</a></p>
+<div class="handout">
+    <p>In typical Scheme fashion, we generate SVG from Lisp-y S-expressions, because parentheses are
+    much more natural than angle brackets.&lt;grin/&gt;</p>
+</div>
+</div>
+
+
+<div class="slide">
+<h1>SVG in Other Languages: C++</h1>
+<p><a target="_blank" href="http://libboard.sourceforge.net/">LibBoard</a></p>
+<div class="handout">
+    <p>Even C++ has a library for generating SVG.</p>
+</div>
+</div>
+
+
+<div class="slide">
+<h1>References</h1>
+<ul>
+    <li><a target="_blank" href="http://www.w3.org/">World Wide Web Consortium</a></li>
+    <li><a target="_blank" href="http://www.w3.org/TR/SVG11/">SVG 1.1 Spec</a></li>
+    <li><a target="_blank" href="http://www.planetsvg.com/">Planet SVG</a></li>
+</ul>
+<div class="handout">
+    <p>These are good sources for the latest information on SVG.</p>
+</div>
+</div>
+
+
+</div>
+</body>
+</html>

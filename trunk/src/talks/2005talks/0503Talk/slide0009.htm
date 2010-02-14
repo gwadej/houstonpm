@@ -1,0 +1,57 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE> Using the Commands Hash</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0010.htm"> Calculator Example Has Flaws</a>
+    &nbsp;&nbsp;Previous: <a href="slide0008.htm"> The Commands Hash</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name=" Using the Commands Hash">
+<center>
+<H1>4.2  Using the Commands Hash
+</H1></center>
+
+<UL>
+<TABLE><TR><TD valign="TOP"><IMG SRC="./sqr_orange1.png"></TD><TD>
+The key to the <CODE>%Commands</CODE> hash is how it is used.
+</TD></TR></TABLE>
+</UL>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+    if(exists $Commands{$word})
+    {
+	$Commands{$word}-&gt;();
+    }</FONT></B></PRE></TD></TR></TABLE></UL>
+
+<UL>
+<TABLE><TR><TD valign="TOP"><IMG SRC="./sqr_orange1.png"></TD><TD>
+We test to see if a word is in the hash with <CODE>exists</CODE>.
+</TD></TR></TABLE>
+<TABLE><TR><TD valign="TOP"><IMG SRC="./sqr_orange1.png"></TD><TD>
+If so, we execute the coderef associated with the string.
+</TD></TR></TABLE>
+</UL>
+</BODY>
+</HTML>

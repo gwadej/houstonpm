@@ -1,0 +1,78 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE>Corrected Program.</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0028.htm">Summary.</a>
+    &nbsp;&nbsp;Previous: <a href="slide0026.htm">Problem Analysis.</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name="Corrected Program.">
+<center>
+<H1>Corrected Program.
+</H1></center>
+
+
+<P>
+Here's a modifier version of the above program with two different variations on checking the success of the pattern matches:
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+    #!/usr/bin/perl -w
+    use strict;
+    while(&lt;DATA&gt;){
+        next unless /\*/;
+        if (/^(\d+):/) {
+            print &quot;part number $1: &quot;;
+        } else {
+            die &quot;Couln't get part number on data line $.\n&quot;;
+        }
+        unless (/:\*(\w+)$/) {
+            die &quot;Couldn't get supplier name on data line $.\n&quot;;
+        }
+        print &quot;$1 manufacturer\n&quot;;
+    }
+    __DATA__
+    123:17.00:widgets:ACME
+    214:15.50:gadgets:*ACE
+    313:2.95:thingamabobs:TMG
+    222:4.95:widgets:*A-DS
+    524:0.15:gadgets:ACE</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+This program starts off fine and then dies and prints out the following error message on STDOUT:
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+    Couldn't get supplier name on data line 4</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+And we're immediately alerted to the problem and know which line of the data file to look at to find out why our pattern didn't match (and then we can adjust our pattern accordingly).
+</P>
+</BODY>
+</HTML>

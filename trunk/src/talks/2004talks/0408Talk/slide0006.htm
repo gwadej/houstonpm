@@ -1,0 +1,56 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE>Fetching The Value(s) Of A Named Parameter</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0007.htm">Setting The Value(s) Of A Named Parameter</a>
+    &nbsp;&nbsp;Previous: <a href="slide0005.htm">Creating a new CGI object</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name="Fetching The Value(s) Of A Named Parameter">
+<center>
+<H1>Fetching The Value(s) Of A Named Parameter
+</H1></center>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+   @values = $query-&gt;param('foo');
+             -or-
+   $value = $query-&gt;param('foo');</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+Pass the param() method a single argument to fetch the value of the named parameter. If the parameter is multivalued (e.g. from multiple selections in a scrolling list), you can ask to receive an array. Otherwise the method will return a single value.
+</P>
+
+
+<P>
+If a value is not given in the query string, as in the queries &quot;name1=&amp;name2=&quot; or &quot;name1&amp;name2&quot;, it will be returned as an empty string (not undef).
+</P>
+
+
+<P>
+If the parameter does not exist at all, then param() will return undef in a scalar context, and the empty list in a list context.
+</P>
+</BODY>
+</HTML>

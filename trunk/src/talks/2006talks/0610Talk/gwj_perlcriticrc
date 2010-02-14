@@ -1,0 +1,291 @@
+[BuiltinFunctions::ProhibitLvalueSubstr]
+severity = 3
+
+[BuiltinFunctions::ProhibitSleepViaSelect]
+severity = 5
+
+[BuiltinFunctions::ProhibitStringyEval]
+severity = 5
+
+[BuiltinFunctions::ProhibitStringySplit]
+severity = 3
+
+[BuiltinFunctions::ProhibitUniversalCan]
+severity = 3
+
+[BuiltinFunctions::ProhibitUniversalIsa]
+severity = 3
+
+[BuiltinFunctions::RequireBlockGrep]
+severity = 4
+
+[BuiltinFunctions::RequireBlockMap]
+severity = 4
+
+[BuiltinFunctions::RequireGlobFunction]
+severity = 5
+
+[BuiltinFunctions::RequireSimpleSortBlock]
+severity = 3
+
+[ClassHierarchies::ProhibitExplicitISA]
+severity = 3
+
+[ClassHierarchies::ProhibitOneArgBless]
+severity = 5
+
+[CodeLayout::ProhibitHardTabs]
+# default 3
+severity = 5
+allow_leading_tabs = 0
+
+[CodeLayout::ProhibitParensWithBuiltins]
+severity = 1
+
+[CodeLayout::ProhibitQuotedWordLists]
+severity = 2
+
+[CodeLayout::RequireTidyCode]
+severity = 1
+
+[CodeLayout::RequireTrailingCommas]
+# default 1
+severity = 4
+
+[ControlStructures::ProhibitCStyleForLoops]
+severity = 2
+
+[ControlStructures::ProhibitCascadingIfElse]
+severity = 3
+
+[ControlStructures::ProhibitDeepNests]
+# default 2
+severity = 3
+
+[ControlStructures::ProhibitUnreachableCode]
+severity = 4
+
+[ControlStructures::ProhibitUntilBlocks]
+severity = 2
+
+[Documentation::RequirePodAtEnd]
+severity = 1
+
+[Documentation::RequirePodSections]
+severity = 2
+
+[ErrorHandling::RequireCarping]
+severity = 3
+
+[InputOutput::ProhibitBacktickOperators]
+severity = 3
+
+[InputOutput::ProhibitBarewordFileHandles]
+severity = 5
+
+[InputOutput::ProhibitInteractiveTest]
+severity = 5
+
+[InputOutput::ProhibitOneArgSelect]
+severity = 4
+
+[InputOutput::ProhibitReadlineInForLoop]
+# default 4
+severity = 5
+
+[InputOutput::ProhibitTwoArgOpen]
+severity = 5
+
+[InputOutput::RequireBracedFileHandleWithPrint]
+severity = 1
+
+[Miscellanea::ProhibitFormats]
+severity = 3
+
+[Miscellanea::ProhibitTies]
+# default 2
+severity = 3
+
+[Modules::ProhibitAutomaticExportation]
+severity = 3
+
+#[Modules::ProhibitEvilModules]
+#severity = 5
+
+[Modules::ProhibitMultiplePackages]
+severity = 4
+
+[Modules::RequireBarewordIncludes]
+severity = 5
+
+[Modules::RequireEndWithOne]
+# default 4
+severity = 5
+
+[Modules::RequireExplicitPackage]
+severity = 4
+
+[Modules::RequireVersionVar]
+severity = 2
+
+[NamingConventions::ProhibitAmbiguousNames]
+severity = 3
+
+[NamingConventions::ProhibitMixedCaseSubs]
+severity = 1
+
+[NamingConventions::ProhibitMixedCaseVars]
+severity = 1
+
+[References::ProhibitDoubleSigils]
+# default 2
+severity = 5
+
+[RegularExpressions::ProhibitCaptureWithoutTest]
+# default 3
+severity = 4
+
+[RegularExpressions::RequireExtendedFormatting]
+# default 2
+severity = 4
+
+[RegularExpressions::RequireLineBoundaryMatching]
+severity = 3
+
+[Subroutines::ProhibitAmpersandSigils]
+# default 2
+severity = 4
+
+[Subroutines::ProhibitBuiltinHomonyms]
+severity = 4
+
+[Subroutines::ProhibitExcessComplexity]
+severity = 3
+
+[Subroutines::ProhibitExplicitReturnUndef]
+severity = 5
+
+[Subroutines::ProhibitSubroutinePrototypes]
+severity = 5
+
+[Subroutines::ProtectPrivateSubs]
+severity = 3
+
+[Subroutines::RequireFinalReturn]
+# default 4
+severity = 5
+
+[TestingAndDebugging::ProhibitNoStrict]
+severity = 5
+
+[TestingAndDebugging::ProhibitNoWarnings]
+severity = 4
+
+[TestingAndDebugging::RequireUseStrict]
+severity = 5
+
+[TestingAndDebugging::RequireUseWarnings]
+# default 4
+severity = 5
+
+[ValuesAndExpressions::ProhibitEmptyQuotes]
+severity = 2
+
+[ValuesAndExpressions::ProhibitEscapedCharacters]
+severity = 2
+
+[ValuesAndExpressions::ProhibitInterpolationOfLiterals]
+severity = 1
+
+[ValuesAndExpressions::ProhibitLeadingZeros]
+severity = 5
+
+[ValuesAndExpressions::ProhibitMixedBooleanOperators]
+severity = 4
+
+[ValuesAndExpressions::ProhibitNoisyQuotes]
+severity = 2
+
+[ValuesAndExpressions::ProhibitVersionStrings]
+severity = 3
+
+[ValuesAndExpressions::RequireInterpolationOfMetachars]
+severity = 1
+
+[ValuesAndExpressions::RequireNumberSeparators]
+severity = 2
+
+[ValuesAndExpressions::RequireQuotedHeredocTerminator]
+severity = 3
+
+[ValuesAndExpressions::RequireUpperCaseHeredocTerminator]
+severity = 1
+
+[Variables::ProhibitConditionalDeclarations]
+severity = 5
+
+[Variables::ProhibitLocalVars]
+severity = 2
+
+[Variables::ProhibitMatchVars]
+severity = 4
+
+[Variables::ProhibitPackageVars]
+severity = 3
+
+[Variables::ProhibitPunctuationVars]
+severity = 2
+
+[Variables::ProtectPrivateVars]
+severity = 3
+
+[Variables::RequireInitializationForLocalVars]
+severity = 3
+
+[Variables::RequireLexicalLoopIterators]
+severity = 5
+
+[Variables::RequireNegativeIndices]
+severity = 4
+
+# -------------------------------------------------------
+# Bangs Policies
+
+[Bangs::ProhibitCommentedOutCode]
+# default 1
+severity = 4
+
+[Bangs::ProhibitFlagComments]
+# default 1
+severity = 3
+
+[Bangs::ProhibitNoPlan]
+# default 5
+severity = 4
+
+[Bangs::ProhibitNumberedNames]
+# default 3
+severity = 4
+
+[Bangs::ProhibitRefProtoOrProto]
+# default 4
+severity = 5
+
+[Bangs::ProhibitVagueNames]
+# default 3
+severity = 4
+
+# ------------------------------------------------------------
+# I disagree with these.
+[-ControlStructures::ProhibitPostfixControls]
+# default 2
+
+[-ControlStructures::ProhibitUnlessBlocks]
+# default 2
+
+[-Miscellanea::RequireRcsKeywords]
+# default 2
+
+[-ValuesAndExpressions::ProhibitConstantPragma]
+# default 4
+

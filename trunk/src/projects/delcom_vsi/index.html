@@ -1,0 +1,174 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+  <title>Houston Perl Mongers' Projects</title>
+  <link rel="stylesheet" href="/styles/houston.css" type="text/css" />
+</head>
+<body>
+
+<div class="banner">
+   <a href="http://www.pm.org/index.html"><img alt="Perl Mongers' Site"
+       src="http://www.pm.org/graphics/title.png" height="65" width="150" /></a>
+   <h1>Houston.pm</h1>
+</div>
+<div id="outer">
+  <div id="navigation">
+  <ul class="menu" id="mainmenu">
+     <li><a href="/index.html">Home</a></li>
+     <li><a href="/about.html">About Us</a></li>
+     <li><a href="/meetings.html">Meetings</a></li>
+     <li><a href="/faqs.html">FAQ</a></li>
+     <li><a href="/talks/mostrecent.html">Most Recent Talk</a></li>
+     <li><a href="/talks/index.html">Talks Archive</a></li>
+     <li class="curr"><a href="/projects/index.html">Group Projects</a></li>
+  </ul>
+  </div>
+
+  <div class="content">
+    <h2 class="subhead">Delcom VSI/LibUSB Project</h2>
+
+    <div id="sidebar">
+      <h1 class="heading">Project Lead</h1>
+      <p>Paul Archer</p>
+      
+      <h1 class="heading">Developers</h1>
+      <ul>
+        <li>Paul Archer</li>
+	<li>G. Wade Johnson</li>
+      </ul>
+    </div>
+
+    <p>For the <a href="/talks/2006talks/0601Talk/index.html">January 2006</a> meeting,
+      Paul Archer presented a new project he was working on. The idea was to provide
+      Perl access to the <a href="http://www.delcom-eng.com/products_USBLMP.asp">USB
+      Visual Signal Indicator</a> from <a href="http://www.delcom-eng.com/">Delcom
+      Engineering</a>. This project was based on a set of articles in the
+      <a href="http://www.linux.journal.com/">Linux Journal</a>. For more information on
+      the origin of the project, see the notes on the first presentation.</p>
+
+    <p>Since the Delcom VSI is a USB device, controlling it from Perl requires a Perl
+      interface to USB. At the time Paul began working on this there was a minimal
+      module on CPAN for access to USB, but nothing complete. There is a C library for
+      accessing USB devices <a href="http://libusb.sourceforge.net/">libusb</a>. In
+      order to use this library, we need to be able to call C code from Perl. Paul
+      decided to use the <a
+      href="http://search.cpan.org/~ingy/Inline-0.44/C/C.pod">Inline::C </a> module to
+      provide this access.</p>
+
+    <p>The <a href="/talks/2006talks/0602Talk/index.html">February</a> meeting continued
+      the group development of some prototype code that was able to exercise the device.
+      Some work was accomplished to clean up the code for accessing the libusb library,
+      but the main focus was on the VSI itself. Since that time, Wade has been adding
+      some time and potential help to the project, focusing mostly on the LibUSB
+      interface and a possible language-based interface to the VSI library. We have
+      also elicited interface design help from the group at large.</p>
+
+    <p>The <a href="/talks/2006talks/0603Talk/index.html">March</a> meeting concluded
+      the sessions on this project. There is still development to do, but as the project
+      moves from a prototyping phase into more traditional development, it appears to
+      be less interesting in a meeting setting. We did a few new experiments and had a
+      bit more discussion about issues relating to getting the <code>LibUSB</code>
+      module ready to be released.</p>
+
+    <h3 class="subsub">Project Code</h3>
+
+    <p>This is the latest version of the code developed for this project. Since
+      it is a work in progress, don't be surprised if it is not complete.</p>
+
+    <ul>
+      <li><a href="./Device-USB-LibUSB-0.02.tar.gz">Device::USB::LibUSB</a>
+        module, version 0.02</li>
+    </ul>
+
+    <h3 class="subsub">Lessons Learned</h3>
+
+    <p>The Delcom documentation is mostly useful. But it did contain a few
+      discrepancies that made life more difficult. In many cases, the text would
+      contain a description of parameters to be passed and then an example to
+      clarify. These two often did not match. In general, the text seems to be
+      right and the example is wrong.</p>
+
+    <p>The Delcom documentation is also quite specific about the request type in
+      being <code>0x08</code> when making a <code>usb_control_msg</code> call.
+      Unfortunately, not only does that value not work, but example code that does
+      work uses a value of <code>0xc8</code>. It turns out that the request type
+      actually encodes three pieces of information, not just an address. In our
+      case, the value should be <code>0x48</code> for sending data to the device
+      and <code>0xc8</code> when requesting data from the device. When just using
+      the function to set control parameters (which is most of what we do) either
+      parameter appears to work.</p>
+
+    <p>Although the <code>Inline::C</code> module has been extremely helpful in
+      accessing <code>libusb</code> from Perl, it has also been the source of some
+      difficulty. Since the <code>Inline::C</code> parser is not a full parser, we
+      have seen some cases where function prototypes did not act as expected. In
+      particular, a function with no parameters cannot be declared with
+      <code>void</code> as the parameter list.</p>
+
+    <p>Also the <code>"DATA"</code> approach to declaring the C code inline works
+      great in a script, but it does not work so well in a module. The names of
+      functions declared in the inline portion will not be available in the module.
+      This problem can be solved either by moving the code to a <em>here</em>
+      document or directly calling the <code>Inline->init()</code> method after
+      your <code>use Inline</code> call.</p>
+
+    <h3 class="subsub">References</h3>
+    <ul>
+      <li><a href="http://www.delcom-eng.com/">Delcom Engineering</a></li>
+      <li><a href="http://www.delcom-eng.com/products_USBLMP.asp">USB Visual Signal
+        Indicator</a></li>
+      <li>Linux Journal articles by Greg Kroah-Hartman:
+        <ul>
+	  <li><a href="http://www.linuxjournal.com/article/7353">Writing a Simple USB Driver</a></li>
+	  <li><a href="http://www.linuxjournal.com/article/7466">Writing a Real Driver --
+            In User Space</a></li>
+	</ul></li>
+      <li><a href="http://libusb.sourceforge.net/">libusb</a></li>
+      <li><a href="http://www.usb.org/home">USB.org</a>: source for specifications and
+        such on the USB.</li>
+      <li><a href="http://search.cpan.org/~xantus/Device-USB-0.015/USB.pm">Device::USB</a>
+        module providing partial libusb implementation</li>
+      <li><a href="http://search.cpan.org/~ingy/Inline-0.44/C/C.pod">Inline::C</a>
+        module for accessing C code from Perl</li>
+      <li><a href="http://search.cpan.org/~dconway/Parse-RecDescent-1.94/lib/Parse/RecDescent.pod">Parse::RecDescent</a>
+        module parsing an input language for controlling the VSI</li>
+      <li><a href="http://www.nntp.perl.org/group/perl.inline">inline@perl.org</a>
+        mailing list archive</li>
+    </ul>
+
+  </div>
+
+</div>
+<div id="footer">
+<p class="copyright">
+<!-- Creative Commons License -->
+<a rel="license" href="http://creativecommons.org/licenses/by/2.5/"><img alt="Creative Commons License" border="0" src="http://creativecommons.org/images/public/somerights20.gif" /></a>
+Copyright &copy; 2006 Houston.pm.<br /> Except as otherwise noted, this site is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/2.5/">Creative Commons Attribution 2.5 License</a>.
+<!-- /Creative Commons License -->
+
+
+<!--
+
+<rdf:RDF xmlns="http://web.resource.org/cc/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<Work rdf:about="">
+   <license rdf:resource="http://creativecommons.org/licenses/by/2.5/" />
+</Work>
+
+<License rdf:about="http://creativecommons.org/licenses/by/2.5/">
+   <permits rdf:resource="http://web.resource.org/cc/Reproduction" />
+   <permits rdf:resource="http://web.resource.org/cc/Distribution" />
+   <requires rdf:resource="http://web.resource.org/cc/Notice" />
+   <requires rdf:resource="http://web.resource.org/cc/Attribution" />
+   <permits rdf:resource="http://web.resource.org/cc/DerivativeWorks" />
+</License>
+
+</rdf:RDF>
+-->
+</p>
+<p>The use of the camel image in association with the Perl
+language is a trademark of O'Reilly &amp; Associates, Inc. Used with permission.</p>
+</div>
+</body>
+</html>

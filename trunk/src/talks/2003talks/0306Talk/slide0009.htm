@@ -1,0 +1,52 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE>Get Options</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0010.htm">Create Keyword Pattern</a>
+    &nbsp;&nbsp;Previous: <a href="slide0008.htm">Initialize Variables</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name="Get Options">
+<center>
+<H1>Get Options
+</H1></center>
+
+
+<P>
+We use a simple method to extract our command line options and die with a usage statement if we get an unrecognized option:
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+ while($ARGV[0]=~/^-/){
+      $_=$ARGV[0];
+      if (/^-or$/){$opt_or=1;shift @ARGV;next}
+      if (/^-f$/){$opt_f=1;shift @ARGV;next}
+ die&lt;&lt;HERE;
+ illegal option: $_
+ usage: faqgrep [-f] [-or] [keywords...]
+ HERE
+ }</FONT></B></PRE></TD></TR></TABLE></UL>
+</BODY>
+</HTML>

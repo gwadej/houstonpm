@@ -1,0 +1,56 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE>Avoiding Duplicates with Hashes</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0020.htm">Extracting unique items</a>
+    &nbsp;&nbsp;Previous: <a href="slide0018.htm">The Benefit</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name="Avoiding Duplicates with Hashes">
+<center>
+<H1>Avoiding Duplicates with Hashes
+</H1></center>
+
+
+<P>
+Any time you have a problem that involves getting a 'set' of something, or a list or count of 'unique' or 'distinct' values (no duplicates) you should immediately think of using a hash variable.
+</P>
+
+
+<P>
+By definition, the keys in a hash are unique (they form a set) and you can't have a hash that has the same key twice -- if you try to, all you'll end up doing is overwriting the value that the key already had:
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+    my %hash;
+    $hash{key_one} = 42;
+    $hash{key_one} = 13;</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+In the above, the hash has only one key called key_one and its value after the third statement is 13.  This means we can use this property of hashes to our advantage to extract unique items in a list.
+</P>
+</BODY>
+</HTML>

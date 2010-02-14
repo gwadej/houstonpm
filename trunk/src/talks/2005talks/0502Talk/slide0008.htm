@@ -1,0 +1,56 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE> Approach: Testing with Diff</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0009.htm"> The Purpose of Diff Testing</a>
+    &nbsp;&nbsp;Previous: <a href="slide0007.htm"> Perl Testing Frameworks</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name=" Approach: Testing with Diff">
+<center>
+<H1>8  Approach: Testing with Diff
+</H1></center>
+
+
+<P>
+Say I have some code that gives the correct answer, but needs to be cleaned up.
+</P>
+
+<UL>
+<TABLE><TR><TD valign="TOP"><IMG SRC="./sqr_orange1.png"></TD><TD>
+Black box regression testing is a good approach in this case.
+</TD></TR></TABLE>
+</UL>
+<UL>
+
+<OL>
+<LI VALUE=1>Run the code to generate an output that we save to a file.</LI>
+<LI>Make a change.</LI>
+<LI>Generate a new output file.</LI>
+<LI>Compare the output to the reference file.</LI>
+<LI>If it matches, go back to 2.</LI>
+<LI>If it doesn't match, either back out the change or fix the error,</LI>
+<LI>Go to 3.</LI>
+</OL>
+</BODY>
+</HTML>

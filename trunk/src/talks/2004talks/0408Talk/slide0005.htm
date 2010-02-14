@@ -1,0 +1,50 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE>Creating a new CGI object</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0006.htm">Fetching The Value(s) Of A Named Parameter</a>
+    &nbsp;&nbsp;Previous: <a href="slide0004.htm">Object Oriented use</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name="Creating a new CGI object">
+<center>
+<H1>Creating a new CGI object
+</H1></center>
+
+
+<P>
+The most basic use of CGI.pm is to get at the query parameters submitted to your script. To create a new CGI object that contains the parameters passed to your script, put the following at the top of your perl CGI programs:
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+    use CGI;
+    $query = new CGI;</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+In the object-oriented world of Perl 5, this code calls the new() method of the CGI class and stores a new CGI object into the variable named $query. The new() method does all the dirty work of parsing the script parameters and environment variables and stores its results in the new object. You'll now make method calls with this object to get at the parameters, generate form elements, and do other useful things.
+</P>
+</BODY>
+</HTML>

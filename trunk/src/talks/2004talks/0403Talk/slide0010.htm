@@ -1,0 +1,71 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE>Using Arguments.</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0011.htm">Summary Getopt::Std.</a>
+    &nbsp;&nbsp;Previous: <a href="slide0009.htm">Using Hashes</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name="Using Arguments.">
+<center>
+<H1>Using Arguments.
+</H1></center>
+
+
+<P>
+The getotps() function allows you to define both options that act as switches and those that take arguments. In this case, in the string argument, each character that you want to take an argument is followed by a ':' character:
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+    #!/usr/bin/perl -w
+    use strict;
+    use Getopt::Std;
+    my %opts;
+    getopts('f:d',\%opts);
+
+    print &quot;-f is $opts{f}\n&quot; if defined $opts{f};
+    print &quot;-d is $opts{d}\n&quot; if defined $opts{d};
+    print &quot;other args: @ARGV\n&quot;;
+    __END__</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+In this case, the -f option will take an argument and the -d option acts a switch:
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+    perl opts.pl -f f_arg -d  other
+    -f is f_arg
+    -d is 1
+    other args: other</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+The getopts() version also gives you a warning if the program is called with options that haven't been defined (for some reason, the getopt() function doesn't give us such warnings).
+</P>
+</BODY>
+</HTML>

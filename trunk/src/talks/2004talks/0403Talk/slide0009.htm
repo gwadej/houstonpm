@@ -1,0 +1,53 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE>Using Hashes</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0010.htm">Using Arguments.</a>
+    &nbsp;&nbsp;Previous: <a href="slide0008.htm">Getopt::Std Module Functions.</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name="Using Hashes">
+<center>
+<H1>Using Hashes
+</H1></center>
+
+
+<P>
+To avoid setting global variables, you can also specify a reference to a hash as a second argument to the getopt() function (and the getopts() function which we'll look at next):
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+    #!/usr/bin/perl -w
+    use strict;
+    use Getopt::Std;
+    my %opts;
+    getopt('fd',\%opts);
+
+    print &quot;-f is $opts{f}\n&quot; if defined $opts{f};
+    print &quot;-d is $opts{d}\n&quot; if defined $opts{d};
+    print &quot;other args: @ARGV\n&quot;;
+    __END__</FONT></B></PRE></TD></TR></TABLE></UL>
+</BODY>
+</HTML>

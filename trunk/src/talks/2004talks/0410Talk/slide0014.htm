@@ -1,0 +1,73 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE> Error Handling</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0015.htm"> Binding Parameters (Input)</a>
+    &nbsp;&nbsp;Previous: <a href="slide0013.htm"> Handles</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name=" Error Handling">
+<center>
+<H1>14  Error Handling
+</H1></center>
+
+
+<P>
+The DBI adds a very useful feature for controlling the amount of error handling that you need to do.
+</P>
+
+<UL>
+<TABLE><TR><TD valign="TOP"><IMG SRC="./sqr_orange1.png"></TD><TD>
+PrintError - display a message using <CODE>warn</CODE> on error and continue. (default)
+</TD></TR></TABLE>
+<TABLE><TR><TD valign="TOP"><IMG SRC="./sqr_orange1.png"></TD><TD>
+RaiseError - <CODE>die</CODE> with an message on error.
+</TD></TR></TABLE>
+<TABLE><TR><TD valign="TOP"><IMG SRC="./sqr_orange1.png"></TD><TD>
+Explicit error handling (not recommended).
+</TD></TR></TABLE>
+</UL>
+
+
+<P>
+These modes are enabled through the use of an optional reference to hash argument at the end of a DBI call. If used when creating a handle, the error checking mode is set for all methods called through that handle.
+</P>
+
+
+<P>
+So by using,
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+    my $dbh = DBI-&gt;connect( &quot;dbi:CSV:f_dir=db&quot;, &quot;fred&quot;, &quot;secret&quot;,
+                            { RaiseError =&gt; 1 }
+			  );</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+We can make all errors into fatal errors and remove the need for explicit error checking. (Good for a quickie script.) Need better handling for a real program.
+</P>
+</BODY>
+</HTML>

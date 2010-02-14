@@ -1,0 +1,52 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE> Unnecessary Captures</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0024.htm"> Unnecessary Quantifiers</a>
+    &nbsp;&nbsp;Previous: <a href="slide0022.htm"> Quantifiers Woes</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name=" Unnecessary Captures">
+<center>
+<H1>5.6  Unnecessary Captures
+</H1></center>
+
+<UL>
+<TABLE><TR><TD valign="TOP"><IMG SRC="./sqr_orange1.png"></TD><TD>
+If you don't need the text, don't capture it.
+</TD></TR></TABLE>
+<TABLE><TR><TD valign="TOP"><IMG SRC="./sqr_orange1.png"></TD><TD>
+Capturing generates a small amount of overhead for copying and saving the matched text.
+</TD></TR></TABLE>
+<TABLE><TR><TD valign="TOP"><IMG SRC="./sqr_orange1.png"></TD><TD>
+Backtracking over a capture adds more overhead for deleting the old save.
+</TD></TR></TABLE>
+<TABLE><TR><TD valign="TOP"><IMG SRC="./sqr_orange1.png"></TD><TD>
+Use <CODE>(?: )</CODE> grouping if you don't need a capture.
+</TD></TR></TABLE>
+<TABLE><TR><TD valign="TOP"><IMG SRC="./sqr_orange1.png"></TD><TD>
+Don't use <CODE>$`</CODE>, <CODE>$&amp;</CODE>, or <CODE>$'</CODE>, they slow down all regexes.
+</TD></TR></TABLE>
+</UL>
+</BODY>
+</HTML>

@@ -1,0 +1,53 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE>Text::Tabs</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0029.htm">Text::Wrap</a>
+    &nbsp;&nbsp;Previous: <a href="slide0027.htm">Text::Soundex</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name="Text::Tabs">
+<center>
+<H1>Text::Tabs
+</H1></center>
+
+
+<P>
+Text::Tabs does about what the unix utilities expand(1) and unexpand(1) do.  Given a line with tabs in it, expand will replace the tabs with the appropriate number of spaces.  Given a line with or without tabs in it, unexpand will add tabs when it can save bytes by doing so.  Invisible compression with plain ascii!
+</P>
+
+
+<P>
+Some examples
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+  use Text::Tabs;
+
+  $tabstop = 4;
+  @lines_without_tabs = expand(@lines_with_tabs);
+  @lines_with_tabs = unexpand(@lines_without_tabs);</FONT></B></PRE></TD></TR></TABLE></UL>
+</BODY>
+</HTML>

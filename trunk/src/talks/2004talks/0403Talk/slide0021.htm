@@ -1,0 +1,50 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE>Description Of Example</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0022.htm">-not option</a>
+    &nbsp;&nbsp;Previous: <a href="slide0020.htm">Example</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name="Description Of Example">
+<center>
+<H1>Description Of Example
+</H1></center>
+
+
+<P>
+Briefly, we first define our specification for our option parsing in the form of a single quoted here-doc (a multi-line single quoted string is fine as well). Each option specification is comprised of three main segments: the option pattern itself, a description, and optionally an action. The format is very specific:
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+    option_pattern &lt;tab&gt; description [optional directive]
+                         {action}</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+This entire specification is passed to the Getopt::Declare-&gt;new() function which builds a parser according to the specification and returns an object we can use to access the various options (we do not directly access them in the present example).
+</P>
+</BODY>
+</HTML>

@@ -1,0 +1,61 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE>Making Regular Expressions More Readable</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a name="xx"></a>
+    &nbsp;&nbsp;Previous: <a href="slide0019.htm">Lookahead assertions</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name="Making Regular Expressions More Readable">
+<center>
+<H1>Making Regular Expressions More Readable
+</H1></center>
+
+
+<P>
+We've started to get a glimpse just how complicated regular expressions can get. It is possible to do some almost absurdly difficult-to-understand things with regular expression (but ones that are nonetheless useful).
+</P>
+
+
+<P>
+There are two basic facilities that some of the more advanced regular expression tools use in clarifying expressions. One is allowing regular expressions to continue over multiple lines (by ignoring whitespace like trailing spaces and newlines). The second is allowing comments within regular expressions.
+</P>
+
+
+<P>
+The example given uses Perl's extend modifier to enable commented multi-line regular expressions.
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+ /                 # identify URLs within a text file
+             [^=&quot;] # do not match URLs in IMG tags like:
+                   # &lt;img src=&quot;http://mysite.com/mypic.png&quot;&gt;
+ (http|ftp|gopher) # make sure we find a resource type
+           :\/\/ # ...needs to be followed by colon-slash-slash
+       [^ \n\t]+ # some stuff than space, newline, tab is in URL
+     (?=[\s\.,]) # assert: followed by whitespace/period/comma
+ /</FONT></B></PRE></TD></TR></TABLE></UL>
+</BODY>
+</HTML>

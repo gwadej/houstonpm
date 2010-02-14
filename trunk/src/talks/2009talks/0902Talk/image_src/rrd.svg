@@ -1,0 +1,37 @@
+<svg height="200" width="200" viewBox="-100 -100 200 200"
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink">
+   <defs>
+      <style type="text/css">
+         circle { stroke:black; stroke-width:1px; }
+         line { stroke:#000; stroke-width:1px; }
+         path { stroke-width:1px; fill:none; }
+         .next { stroke: #6f6; }
+         .last { stroke: #f66; }
+         .data { fill: #eee; }
+         .uninit { fill: #ccc; stroke: none; }
+         .inner { fill: white; }
+      </style>
+      <path id="arrow" d="m20,0h39l-10,5m10,-5l-10,-5"/>
+   </defs>
+
+   <circle class="data" r="90" cx="0" cy="0"/>
+   <path class="uninit" d="M0,0h89 A88,88 0 0,0 44,-77.94 z"/>
+   <g id="sector">
+       <line id="line" x1="0" y1="0" x2="90" y2="0"/>
+       <use xlink:href="#line" transform="rotate(10)"/>
+       <use xlink:href="#line" transform="rotate(20)"/>
+       <use xlink:href="#line" transform="rotate(30)"/>
+       <use xlink:href="#line" transform="rotate(40)"/>
+       <use xlink:href="#line" transform="rotate(50)"/>
+       <use xlink:href="#line" transform="rotate(60)"/>
+       <use xlink:href="#line" transform="rotate(70)"/>
+       <use xlink:href="#line" transform="rotate(80)"/>
+   </g>
+   <use xlink:href="#sector" transform="rotate(90)"/>
+   <use xlink:href="#sector" transform="rotate(180)"/>
+   <use xlink:href="#sector" transform="rotate(270)"/>
+   <circle class="inner" r="60" cx="0" cy="0"/>
+   <use class="last" xlink:href="#arrow" transform="rotate(5)"/>
+   <use class="next" xlink:href="#arrow" transform="rotate(-55)"/>
+</svg>

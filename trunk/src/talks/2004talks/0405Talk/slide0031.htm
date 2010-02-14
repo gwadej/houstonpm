@@ -1,0 +1,64 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE>diagnostics</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0032.htm">integer</a>
+    &nbsp;&nbsp;Previous: <a href="slide0030.htm">constant</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name="diagnostics">
+<center>
+<H1>diagnostics
+</H1></center>
+
+
+<P>
+This module extends the terse diagnostics normally emitted by both the perl compiler and the perl interpreter, augmenting them with the more explicative and endearing descriptions found in perldiag.  Like the other pragmata, it affects the compilation phase of your program rather than merely the execution phase.
+</P>
+
+
+<P>
+To use in your program as a pragma, merely invoke
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+    use diagnostics;</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+at the start (or near the start) of your program.  (Note that this does enable perl's -w flag.)  Your whole compilation will then be subject(ed :-) to the enhanced diagnostics.  These still go out STDERR.
+</P>
+
+
+<P>
+Due to the interaction between runtime and compiletime issues, and because it's probably not a very good idea anyway, you may not use &quot;no diagnostics&quot; to turn them off at compiletime.  However, you may control their behaviour at runtime using the disable() and enable() methods to turn them off and on respectively.
+</P>
+
+
+<P>
+The -verbose flag first prints out the perldiag introduction before any other diagnostics.  The $diagnostics::PRETTY variable can generate nicer escape sequences for pagers.
+</P>
+</BODY>
+</HTML>

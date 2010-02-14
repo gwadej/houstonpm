@@ -1,0 +1,85 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE>Using Simple &quot;Wildcards&quot; and &quot;Repetitions&quot;</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0008.htm">Using Groups ( ) in Matching</a>
+    &nbsp;&nbsp;Previous: <a href="slide0006.htm">Simple String Comparisons</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name="Using Simple &quot;Wildcards&quot; and &quot;Repetitions&quot;">
+<center>
+<H1>Using Simple &quot;Wildcards&quot; and &quot;Repetitions&quot;
+</H1></center>
+
+
+<P>
+Calling these &quot;wildcards&quot; may actually conflict with the theoretical grammer and syntax of PERL, but in fact is the most intuitive way to think of it, and will not lead to any coding mistakes.
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+  .  Match any character
+ \w  Match &quot;word&quot; character (alphanumeric plus &quot;_&quot;)
+ \W  Match non-word character
+ \s  Match whitespace character
+ \S  Match non-whitespace character
+ \d  Match digit character
+ \D  Match non-digit character
+ \t  Match tab
+ \n  Match newline
+ \r  Match return
+ \f  Match formfeed
+ \a  Match alarm (bell, beep, etc)
+ \e  Match escape
+ \021  Match octal char ( in this case 21 octal)
+ \xf0  Match hex char ( in this case f0 hexidecimal)</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+You can follow any character, wildcard, or series of characters and/or wildcard with a repetiton. Here's where you start getting some power:
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+ *      Match 0 or more times
+ +      Match 1 or more times
+ ?      Match 1 or 0 times
+ {n}    Match exactly n times
+ {n,}   Match at least n times
+ {n,m}  Match at least n but not more than m times</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+Now for some examples:
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+ $string =~ m/\s*rem/i;   #true if the first printable text is rem or REM
+
+ $string =~ m/^\S{1,8}\.\S{0,3}/;   # check for DOS 8.3 filename (note a few illegals can sneak thru)</FONT></B></PRE></TD></TR></TABLE></UL>
+</BODY>
+</HTML>

@@ -1,0 +1,57 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE> Resolving the Path</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0012.htm"> Static Server Summary</a>
+    &nbsp;&nbsp;Previous: <a href="slide0010.htm"> Handle the Request</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name=" Resolving the Path">
+<center>
+<H1>5.6  Resolving the Path
+</H1></center>
+
+
+<P>
+This function handles all of the mess of validating and resolving the path to find the file in question.
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+    sub  resolve_path
+    {
+        my $path = shift;
+
+        # Fail if illegal characters
+        return undef if $path =~ m![^-a-zA-Z0-9_./]!;
+
+        $path = File::Spec-&gt;canonpath( File::Spec-&gt;catfile( $docroot, $path ) );
+
+        # Fail if try to walk out of docroot.
+        return undef if $docroot ne substr( $path, 0, length $docroot );
+
+        $path;
+    }</FONT></B></PRE></TD></TR></TABLE></UL>
+</BODY>
+</HTML>

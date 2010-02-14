@@ -1,0 +1,51 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE>Programming Defensively</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0023.htm">Data Input Specification</a>
+    &nbsp;&nbsp;Previous: <a href="slide0021.htm">Avoiding Duplicates Summary</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name="Programming Defensively">
+<center>
+<H1>Programming Defensively
+</H1></center>
+
+
+<P>
+Very often we write quick little programs to work on data that we know conforms to a specific format, or that will read files that we know will exist and that we have permissions to open and read from or write to.  But, relying on those assumptions isn't good practice.  The first suggestion is to check the return value of system calls like the open() function:
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+    open(FILE, $file) || die &quot;Can't open $file: $!&quot;; # good
+    open FILE, $file  or die &quot;can't open $file: $!&quot;; # good
+    open(FILE, $file);  # not good</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+The open() function returns a false value if it fails, so in the first two examples above, if the call fails the die() function is called. We often don't want to continue with the program if we couldn't open the file, but you could do other things if that's more appropriate for your program.  If you've used Perl for very long, read the docs, or spent any time reading the comp.lang.perl.misc newsgroup then you've probably seen this advice before.  Even in short little programs or examples this a good thing to do (it should be mandatory).  However, defensive programming is not limited to checking the return value of the open() call.
+</P>
+</BODY>
+</HTML>

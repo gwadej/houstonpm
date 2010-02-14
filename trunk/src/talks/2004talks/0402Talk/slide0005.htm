@@ -1,0 +1,55 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE>Results of Benchmark.pm run.</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0006.htm">Benchmark summary.</a>
+    &nbsp;&nbsp;Previous: <a href="slide0004.htm">Benchmark.pm</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name="Results of Benchmark.pm run.">
+<center>
+<H1>Results of Benchmark.pm run.
+</H1></center>
+
+
+<P>
+The output of the above run is (reformatted due to long lines):
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+    Benchmark: timing 100000 iterations of cntrl, subst, trans...
+         cntrl:  2 wallclock secs ( 1.10 usr +  0.00 sys =  1.10 CPU)
+                 @ 90909.09/s (n=100000)
+         subst: 10 wallclock secs ( 5.11 usr +  0.00 sys =  5.11 CPU)
+                 @ 19569.47/s (n=100000)
+         trans:  6 wallclock secs ( 2.45 usr +  0.00 sys =  2.45 CPU)
+                 @ 40816.33/s (n=100000)</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+This output gives the elapsed wallclock time (the time you notice), the user and system times, and the number of runs per second (I've reformatted the output in this case).  We used a control routine so we can factor out the common assignment operation used in each routine if we want a better measure of just the difference between the two operations.
+</P>
+</BODY>
+</HTML>

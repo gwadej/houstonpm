@@ -1,0 +1,97 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE> Filtering a List</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0005.htm">Adding and Removing Elements from an Array</a>
+    &nbsp;&nbsp;Previous: <a href="slide0003.htm">Processing a List</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name=" Filtering a List">
+<center>
+<H1> Filtering a List
+</H1></center>
+
+
+<P>
+Sometimes we don't want to process each item in a list, but filter it to create a new list based on some filtering criteria. For example, we might have a list of names and we want to create a new list of just those names that start with an A, B, or C. We can do this using the foreach loop to loop through the array and test each element and push it onto a new array if it passes the test:
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+    my @names = qw(Andrew Brad Greg John Alison Barney);
+    my @abc_names;
+    foreach my $name (@names) {
+        push @abc_names, $name if $name =~ /^[ABC]/;
+    }
+    print &quot;@abc_names\n&quot;; # Andrew Brad Alison Barney</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+However, Perl gives us a function designed for just such purposes, the grep() function. This function is called like:
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+    grep BLOCK LIST
+    grep EXPRESSION, LIST</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+What grep() does is take each item in the list in turn and aliases it to the default $_ variable. You then use this $_ variable in the expression or block to see if it is something you want. In a list context grep returns a list of the all the elements of the incoming list for which the expression (or the last statement of the block) produced a true value. In a scalar context grep() returns the number of list elements that passed the test. Our above example can be written as:
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+    my @names = qw(Andrew Brad Greg John Alison Barney);
+    my @abc_names = grep /^[ABC]/, @names;
+    print &quot;@abc_names\n&quot;; # Andrew Brad Alison Barney</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+Or, using the block form:
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+    my @names = qw(Andrew Brad Greg John Alison Barney);
+    my @abc_names = grep {/^[ABC]/} @names;
+    print &quot;@abc_names\n&quot;; # Andrew Brad Alison Barney</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+Note, there is no comma after the block. The grep() function is not limited to using a regex as the test criteria -- here is one of the standard FAQ answers for extracting the unique elements of a list:
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+    my @list = qw/one two two three four three two/;
+    my %seen;
+    my @uniq = grep {! $seen{$_}++} @list;
+    print &quot;@uniq\n&quot;; # one two three four</FONT></B></PRE></TD></TR></TABLE></UL>
+</BODY>
+</HTML>

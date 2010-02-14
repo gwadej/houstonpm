@@ -1,0 +1,70 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE>Using Character Classes [ ]</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0010.htm">Other Quirks</a>
+    &nbsp;&nbsp;Previous: <a href="slide0008.htm">Using Groups ( ) in Matching</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name="Using Character Classes [ ]">
+<center>
+<H1>Using Character Classes [ ]
+</H1></center>
+
+
+<P>
+Character classes are alternative single characters within square brackets, and are not to be confused with OOP classes, which are blueprints for objects. If not used carefully, they can yield unexpected results. Remember that groups are an alternative.
+</P>
+
+
+<P>
+Character classes have three main advantages:
+</P>
+
+<OL>
+<LI VALUE=1>Shorthand notation, as [AEIOUY] instead of (A|E|I|O|U|Y). This advantage is minor at best.</LI>
+<LI>Character Ranges, such as [A-Z].</LI>
+<LI>One to one mapping from on class to another, as in tr/[a-z]/[A-Z]. This is essential! It will be discussed in the section on translations.</LI>
+</OL>
+
+
+<P>
+<B>THE WHOLE THING IN THE SQUARE BRACKETS REPRESENTS EXACTLY ONE CHARACTER!!!</B>
+</P>
+
+
+<P>
+Did I shout loud enough? It may be tempting to do something like this:
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+ if($string =~ /[Clinton|Bush|Reagan]/){$office = &quot;President&quot;}</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+The above may even appear to work upon casual testing. Don't do it. Remember that everything inside the brackets represents <B>ONE</B> character, simply listing all it's alternative possibilities.
+</P>
+</BODY>
+</HTML>

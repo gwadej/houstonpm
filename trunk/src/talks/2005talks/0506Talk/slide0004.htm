@@ -1,0 +1,52 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE> Evaluate Option</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0005.htm"> Other Anchors</a>
+    &nbsp;&nbsp;Previous: <a href="slide0003.htm"> Options</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name=" Evaluate Option">
+<center>
+<H1>2.2  Evaluate Option
+</H1></center>
+
+<UL>
+<TABLE><TR><TD valign="TOP"><IMG SRC="./sqr_orange1.png"></TD><TD>
+e - evaluate right side (of substitute) as a Perl expression
+</TD></TR></TABLE>
+</UL>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+  my $i = 0;
+  foreach my $file (@files)
+  {
+      my $newfle = $file;
+      $newfile =~ s/([a-zA-Z_]+)(\d+)/sprintf &quot;Picture%3d&quot;, ++$i/e;
+      # Do something with the names...
+  }
+</FONT></B></PRE></TD></TR></TABLE></UL>
+</BODY>
+</HTML>

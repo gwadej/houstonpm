@@ -1,0 +1,62 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE> Diff Testing Example</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0011.htm"> Approach: Testing with Test::More</a>
+    &nbsp;&nbsp;Previous: <a href="slide0009.htm"> The Purpose of Diff Testing</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name=" Diff Testing Example">
+<center>
+<H1>8.2  Diff Testing Example
+</H1></center>
+
+
+<P>
+A typical successful diff test session would run like this:
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+   $ prog &gt; test.out
+   $ diff standard.out test.out
+   $</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+A typical unsuccessful diff test session would run like this:
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+   $ prog &gt; test.out
+   $ diff standard.out test.out
+
+   2c2
+   &lt; Value: 1.0000
+   ---
+   &gt; Value: 1.0001</FONT></B></PRE></TD></TR></TABLE></UL>
+</BODY>
+</HTML>

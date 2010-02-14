@@ -1,0 +1,57 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE>Autosplitting from the Command Line.</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0006.htm">Changing the Autosplit Delimiter on the Command Line</a>
+    &nbsp;&nbsp;Previous: <a href="slide0004.htm">The -p switch.</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name="Autosplitting from the Command Line.">
+<center>
+<H1>Autosplitting from the Command Line.
+</H1></center>
+
+
+<P>
+Often, a command line script is processing or filtering a data file of records with separated fields in each record (line). The -a switch (in conjunction with the -n or -p switches) turns on autosplit mode so that each line automatically is split with a split(' ') command into the special @F array (this is an awk emulation mode).
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+    perl -ane 'print &quot;$F[1]\n&quot;' filename</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+This will print the second space-separated field in each line and is equivalent to:
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+    while(&lt;&gt;) {
+        @F = split(' ');
+        print &quot;$F[1]\n&quot;;
+    }</FONT></B></PRE></TD></TR></TABLE></UL>
+</BODY>
+</HTML>

@@ -1,0 +1,49 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE>Error messages using strict</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0014.htm">Example using <I>our</I></a>
+    &nbsp;&nbsp;Previous: <a href="slide0012.htm">Lexically scoped variables</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name="Error messages using strict">
+<center>
+<H1>Error messages using strict
+</H1></center>
+
+
+<P>
+If you use strict and you try to access a variable that's not previously declared, you'll get an error similar to the following:
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+    Global symbol &quot;$foo&quot; requires explicit package name at C:\test.pl +line 2.</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+Basically, Perl expects that you're trying to use a package variable, but left off the package name. The problem with using package names ($main::foo) is that strict ignores these variables and if you type $main::field in one place and $main::feild in another place, strict won't warn you of the typo.
+</P>
+</BODY>
+</HTML>

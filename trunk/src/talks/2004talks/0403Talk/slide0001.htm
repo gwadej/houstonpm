@@ -1,0 +1,56 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE>Parsing Command Line Options - manual option processing</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0002.htm">Boolean Options</a>
+    &nbsp;&nbsp;Previous: <a href="slide0000.htm" target="Data">Index</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name="Parsing Command Line Options - manual option processing">
+<center>
+<H1>Parsing Command Line Options - manual option processing
+</H1></center>
+
+
+<P>
+Command line options provide a way for your program to offer flexible behavior under various usage conditions. For example, the perl program offers several different options that control how it behaves:
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+    perl -c program   &lt;- compile program only, do not run program
+    perl -w program   &lt;- compile and run program with warnings
+    perl -e 'code'    &lt;- treat 'code' as the script</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+See the perlrun pod-page for the complete list of command line options and their effects.
+</P>
+
+
+<P>
+Back in June of 2003, I gave a talk on the 'faqgrep' program. That program allows for two command line options to control its behavior (-f and -or). The option processing loop in that program is the type of manual processing we'll look at in this section (We'll discuss other means of option processing in following slides).
+</P>
+</BODY>
+</HTML>

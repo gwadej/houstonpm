@@ -1,0 +1,91 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE>Creating the Header for a Redirection Request</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0014.htm">Creating an HTML Header</a>
+    &nbsp;&nbsp;Previous: <a href="slide0012.htm">Creating the Standard Header for a Virtual Document</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name="Creating the Header for a Redirection Request">
+<center>
+<H1>Creating the Header for a Redirection Request
+</H1></center>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+   print $query-&gt;redirect('http://somewhere.else/in/the/world');</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+This generates a redirection request for the remote browser. It will immediately go to the indicated URL. You should exit soon after this. Nothing else will be displayed.
+</P>
+
+
+<P>
+You can add your own headers to this as in the header() method.
+</P>
+
+
+<P>
+You should always use full URLs (including the http: or ftp: part) in redirection requests. Relative URLs will not work correctly.
+</P>
+
+
+<P>
+An alternative syntax for redirect() is:
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+  print $query-&gt;redirect(-location=&gt;'http://somewhere.else/',
+                          -nph=&gt;1,
+                          -status=&gt;301);</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+The -location parameter gives the destination URL. You may also use -uri or -url if you prefer.
+</P>
+
+
+<P>
+The -nph parameter, if non-zero tells CGI.pm that this script is running as a no-parsed-header script. See Using NPH Scripts for more information.
+</P>
+
+
+<P>
+The -status parameter will set the status of the redirect. HTTP defines three different possible redirection status codes:
+</P>
+
+
+<P>
+301 Moved Permanently 302 Found 303 See Other
+</P>
+
+
+<P>
+The default if not specified is 302, which means &quot;moved temporarily.&quot; You may change the status to another status code if you wish. Be advised that changing the status to anything other than 301, 302 or 303 will probably break redirection.
+</P>
+</BODY>
+</HTML>

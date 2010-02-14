@@ -1,0 +1,61 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE> Here Documents</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0021.htm"> More Here Documents</a>
+    &nbsp;&nbsp;Previous: <a href="slide0019.htm"> Unusual Quoting</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name=" Here Documents">
+<center>
+<H1>7.4  Here Documents
+</H1></center>
+
+<UL>
+<TABLE><TR><TD valign="TOP"><IMG SRC="./sqr_orange1.png"></TD><TD>
+A <I>Here Document</I> is a special syntax usually used for long, multi-line strings.
+</TD></TR></TABLE>
+</UL>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+  my $usage = &lt;&lt;&quot;EOM&quot;;
+  Usage: $0 [-i -l -s] {filename} ...
+
+  where:  -i   process as integer
+          -l   process as long
+	  -s   process as string
+  and   {filename} is the name(s) of one or more files to process.
+  EOM</FONT></B></PRE></TD></TR></TABLE></UL>
+
+<UL>
+<TABLE><TR><TD valign="TOP"><IMG SRC="./sqr_orange1.png"></TD><TD>
+The (possibly quoted) terminating string after the &lt;&lt; determines where the here document ends.
+</TD></TR></TABLE>
+<TABLE><TR><TD valign="TOP"><IMG SRC="./sqr_orange1.png"></TD><TD>
+The terminating string must occur on a line by itself (without quotes or whitespace) to work.
+</TD></TR></TABLE>
+</UL>
+</BODY>
+</HTML>

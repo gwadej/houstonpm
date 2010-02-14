@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+ <head>
+  <title>examples/exceptions.pl</title>
+  <link rel="stylesheet" type="text/css" href="highlight.css" />
+ </head>
+ <body>
+
+<pre><span class="synPreProc">#!/usr/bin/env perl</span>
+
+<span class="synStatement">use strict</span>;
+<span class="synStatement">use warnings</span>;
+<span class="synStatement">use </span>Commands;
+
+<span class="synStatement">eval</span> {
+    <span class="synStatement">while</span>(&lt;&gt;)
+    {
+        <span class="synStatement">chomp</span>;
+        <span class="synStatement">next</span> <span class="synStatement">unless</span> <span class="synStatement">/</span><span class="synSpecial">\S</span><span class="synStatement">/</span>;
+        <span class="synStatement">my</span> <span class="synIdentifier">$data_out</span> = process_line( <span class="synIdentifier">$_</span> );
+        output( <span class="synIdentifier">$data_out</span> );
+    }
+};
+<span class="synStatement">if</span>(<span class="synIdentifier">$@</span>)
+{
+    <span class="synStatement">my</span> <span class="synIdentifier">$ex</span> = <span class="synIdentifier">$@</span>;
+    <span class="synStatement">if</span>(<span class="synIdentifier">$ex</span> =~ <span class="synStatement">/</span><span class="synConstant">^Command: </span><span class="synSpecial">(.*)</span><span class="synStatement">/</span>)
+    {
+        <span class="synStatement">print</span> <span class="synConstant">&quot;Command processing error on line </span><span class="synIdentifier">$.</span><span class="synConstant">: </span><span class="synIdentifier">$1</span><span class="synSpecial">\n</span><span class="synConstant">&quot;</span>;
+    }
+    <span class="synStatement">else</span>
+    {
+        <span class="synStatement">print</span> <span class="synConstant">&quot;Error on line </span><span class="synIdentifier">$.</span><span class="synConstant">: </span><span class="synIdentifier">$@</span><span class="synConstant">&quot;</span>;
+    }
+}
+
+<span class="synStatement">sub </span><span class="synIdentifier">process_line</span>
+{
+    <span class="synStatement">my</span> <span class="synIdentifier">$line</span> = <span class="synStatement">shift</span>;
+    <span class="synStatement">my</span> <span class="synIdentifier">$command</span> = parse_command( <span class="synIdentifier">$line</span> );
+    <span class="synStatement">return</span> exec_command( <span class="synIdentifier">$command</span> );
+}
+
+<span class="synStatement">sub </span><span class="synIdentifier">parse_command</span>
+{
+    <span class="synStatement">my</span> <span class="synIdentifier">$line</span> = <span class="synStatement">shift</span>;
+    <span class="synStatement">die</span> <span class="synConstant">&quot;Command: invalid string</span><span class="synSpecial">\n</span><span class="synConstant">&quot;</span>
+        <span class="synStatement">unless</span> <span class="synStatement">/</span><span class="synSpecial">(\w+))\s*[=:]\s*(\w+)</span><span class="synConstant">,</span><span class="synSpecial">\s*(\w+)</span><span class="synConstant">,</span><span class="synSpecial">\s*(\w+)</span><span class="synStatement">/</span>;
+    <span class="synStatement">return</span> { <span class="synConstant">name</span> =&gt; <span class="synIdentifier">$1</span>, <span class="synConstant">cmd</span> =&gt; <span class="synIdentifier">$2</span>, <span class="synConstant">args</span> =&gt; [ <span class="synIdentifier">$3</span>, <span class="synIdentifier">$4</span> ] };
+}
+
+<span class="synStatement">sub </span><span class="synIdentifier">exec_command</span>
+{
+    <span class="synStatement">my</span> <span class="synIdentifier">$command</span> = <span class="synStatement">shift</span>;
+    <span class="synStatement">die</span> <span class="synConstant">'Missing command hash'</span> <span class="synStatement">unless</span> <span class="synConstant">'HASH'</span> <span class="synStatement">eq</span> <span class="synStatement">ref</span> <span class="synIdentifier">$command</span>;
+    <span class="synStatement">my</span> <span class="synIdentifier">$data</span> = Command::do_cmd( <span class="synIdentifier">$command-&gt;{</span><span class="synConstant">cmd</span><span class="synIdentifier">}</span>, <span class="synIdentifier">$command-&gt;{</span><span class="synConstant">args</span><span class="synIdentifier">}</span> );
+    <span class="synStatement">return</span> { <span class="synIdentifier">%{$data}</span>, <span class="synConstant">name</span> =&gt; <span class="synIdentifier">$command-&gt;{</span><span class="synConstant">name</span><span class="synIdentifier">}</span> };
+}
+
+<span class="synStatement">sub </span><span class="synIdentifier">output</span>
+{
+    <span class="synStatement">my</span> <span class="synIdentifier">$data</span> = <span class="synStatement">shift</span>;
+    <span class="synStatement">open</span> <span class="synStatement">my</span> <span class="synIdentifier">$fh</span>, <span class="synConstant">'&gt;&gt;'</span>, <span class="synConstant">'output.log'</span> <span class="synStatement">or</span> <span class="synStatement">die</span> <span class="synConstant">&quot;Unable to open log: </span><span class="synIdentifier">$!</span><span class="synSpecial">\n</span><span class="synConstant">&quot;</span>;
+    <span class="synStatement">print</span> <span class="synIdentifier">$fh</span> <span class="synConstant">&quot;</span><span class="synIdentifier">$data-&gt;{</span><span class="synConstant">name</span><span class="synIdentifier">}</span><span class="synConstant">:</span><span class="synSpecial">\n\t</span><span class="synIdentifier">$data-&gt;{</span><span class="synConstant">output</span><span class="synIdentifier">}</span><span class="synSpecial">\n</span><span class="synConstant">&quot;</span>
+        <span class="synStatement">or</span> <span class="synStatement">die</span> <span class="synConstant">&quot;Unable to write to log: </span><span class="synIdentifier">$!</span><span class="synSpecial">\n</span><span class="synConstant">&quot;</span>;
+    <span class="synStatement">close</span> <span class="synIdentifier">$fh</span> <span class="synStatement">or</span> <span class="synStatement">die</span> <span class="synConstant">&quot;Unable to close log: </span><span class="synIdentifier">$!</span><span class="synSpecial">\n</span><span class="synConstant">&quot;</span>;
+}
+</pre>
+
+ </body>
+</html>

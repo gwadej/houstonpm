@@ -1,0 +1,64 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE> A <I>Common</I> Example</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0005.htm"> First Wrinkle</a>
+    &nbsp;&nbsp;Previous: <a href="slide0003.htm"> The <I>Common</I> in the Module Name</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name=" A <I>Common</I> Example">
+<center>
+<H1>2.2  A <I>Common</I> Example
+</H1></center>
+
+
+<P>
+Let's look at a relatively simple problem. We are given a chunk of text that we want to extract all the numbers from.
+</P>
+
+
+<P>
+The simplest solution that most people come up with looks like this:
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+   /(<CODE>\</CODE>d+)/g</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+If you realized that there might be negative numbers, you might have done:
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+   /(-?<CODE>\</CODE>d+)/g</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+Both of these are relatively straight-forward, matching clusters of digits.
+</P>
+</BODY>
+</HTML>

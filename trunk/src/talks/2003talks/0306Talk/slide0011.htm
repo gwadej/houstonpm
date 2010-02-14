@@ -1,0 +1,46 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE>Read in perlfaq filenames.</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0012.htm">Search and print.</a>
+    &nbsp;&nbsp;Previous: <a href="slide0010.htm">Create Keyword Pattern</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name="Read in perlfaq filenames.">
+<center>
+<H1>Read in perlfaq filenames.
+</H1></center>
+
+
+<P>
+We use opendir and readdir to get a list of the files in the $faqdir, and extract only those with the substring 'faq' in their names using the grep function:
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+ opendir(FAQDIR,$faqdir)|| die &quot;can't open $faqdir $!&quot;;
+ my @faqs = grep /faq/,readdir FAQDIR;
+ closedir FAQDIR;</FONT></B></PRE></TD></TR></TABLE></UL>
+</BODY>
+</HTML>

@@ -1,0 +1,44 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE>SelfLoader module</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0010.htm">&quot;<I>our</I>&quot; is not &quot;<I>my</I>&quot;</a>
+    &nbsp;&nbsp;Previous: <a href="slide0008.htm">Example</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name="SelfLoader module">
+<center>
+<H1>SelfLoader module
+</H1></center>
+
+
+<P>
+The __DATA__ token is also used to allow you to create modules that use the SelfLoader module to autoload subroutines on demand.  If your module uses the SelfLoader module, then any subroutines that aren't necessary for the module to be compiled, and which aren't often used may be placed after the __DATA__ token.  SelfLoader will read and parse these, but it will only compile them into perl's internal format if they're actually called in the program that uses your module. This can speed up the initial compilation phase of the script, but slightly slow down the first call to any selfloaded subroutine.
+</P>
+
+
+<P>
+Information on the __DATA__ and __END__ tokens can be found in the perldata manpage, as well as in the documentation for the SelfLoader module.
+</P>
+</BODY>
+</HTML>

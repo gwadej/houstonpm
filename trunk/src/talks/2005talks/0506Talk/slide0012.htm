@@ -1,0 +1,68 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE> Greedy Matching</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0013.htm"> More Unexpected Matches</a>
+    &nbsp;&nbsp;Previous: <a href="slide0011.htm"> Unexpected Matches</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name=" Greedy Matching">
+<center>
+<H1>4.2  Greedy Matching
+</H1></center>
+
+<UL>
+<TABLE><TR><TD valign="TOP"><IMG SRC="./sqr_orange1.png"></TD><TD>
+Using a greedy quantifier is sometimes surprising:
+</TD></TR></TABLE>
+</UL>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+  $string = &quot;This is a &lt;em&gt;string&lt;/em&gt; with embedded &lt;b&gt;tags&lt;/b&gt;.&quot;;
+
+  # Remove html tags
+  $string =~ s/&lt;.*&gt;//g;
+
+  # $string is now &quot;This is a.&quot;
+</FONT></B></PRE></TD></TR></TABLE></UL>
+
+<UL>
+<TABLE><TR><TD valign="TOP"><IMG SRC="./sqr_orange1.png"></TD><TD>
+Non-greedy matching may match less:
+</TD></TR></TABLE>
+</UL>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+  $string = &quot;This is a &lt;em&gt;string&lt;/em&gt; with embedded &lt;b&gt;tags&lt;/b&gt;.&quot;;
+
+  # Remove html tags
+  $string =~ s/&lt;.*?&gt;//g;
+
+  # $string is now &quot;This is a string with embedded tags.&quot;
+</FONT></B></PRE></TD></TR></TABLE></UL>
+</BODY>
+</HTML>

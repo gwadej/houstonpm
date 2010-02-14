@@ -1,0 +1,97 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE>Shell</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0027.htm">Text::Soundex</a>
+    &nbsp;&nbsp;Previous: <a href="slide0025.htm">Net::Ping</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name="Shell">
+<center>
+<H1>Shell
+</H1></center>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+Date: Thu, 22 Sep 94 16:18:16 -0700
+Message-Id: &lt;9409222318.AA17072@scalpel.netlabs.com&gt;
+To: perl5-porters@isu.edu
+From: Larry Wall &lt;lwall@scalpel.netlabs.com&gt;
+Subject: a new module I just wrote
+</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+Here's one that'll whack your mind a little out.
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+    #!/usr/bin/perl
+
+    use Shell;
+
+    $foo = echo(&quot;howdy&quot;, &quot;&lt;funny&gt;&quot;, &quot;world&quot;);
+    print $foo;
+
+    $passwd = cat(&quot;&lt;/etc/passwd&quot;);
+    print $passwd;
+
+    sub ps;
+    print ps -ww;
+
+    cp(&quot;/etc/passwd&quot;, &quot;/tmp/passwd&quot;);</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+That's maybe too gonzo. Maybe the usual usage should be
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+    use Shell qw(echo cat ps cp);</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+Larry
+</P>
+
+
+<P>
+If you set $Shell::capture_stderr to 1, the module will attempt to capture the STDERR of the process as well.
+</P>
+
+
+<P>
+The module now should work on Win32.
+</P>
+
+
+<P>
+Jenda
+</P>
+</BODY>
+</HTML>

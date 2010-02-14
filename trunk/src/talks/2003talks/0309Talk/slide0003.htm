@@ -1,0 +1,98 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE>Processing a List</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0004.htm"> Filtering a List</a>
+    &nbsp;&nbsp;Previous: <a href="slide0002.htm">Finding Strings withing Strings</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name="Processing a List">
+<center>
+<H1>Processing a List
+</H1></center>
+
+
+<P>
+Perl has many functions for working with lists, but if you want to do something for each item in a list or array, or change each item in a list or array then the foreach loop is what you want. The general syntax is:
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+    my $loop_var;
+    foreach $loop_var (@list) {
+        #do something
+    }</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+If you leave out the loop variable ($loop_var in this case) then the default $_ variable is used instead. Since version 5.004 (or so) you can also include the loop variables declaration directly in the loop statement:
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+    foreach my $loop_var (@list) {
+        # do something
+    }</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+I prefer the latter method as it restricts the scope of the loop variable. What happens is that each item in the list is aliased to the loop variable and the loop block is executed:
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+    my @list = qw(one two three);
+    foreach my $item (@list) {
+        print &quot;$item\n&quot;;
+    }</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+If the list is made up of variables (or array elements) then the loop variable is an alias for the real variable (or array element). This means that changing the loop variable changes the element of the list directly. Let's say we have an array of integers and we want to change that array to contain each integer multiplied by two:
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+    my @list = (1, 2, 3, 4);
+    foreach my $num (@list){
+        $num = $num * 2;
+    }
+    print &quot;@list\n&quot;; # 2 4 6 8</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+The foreach loop (as with all the control constructs) can also be used as a single statement modifier as well, but here we have to use the defualt $_ variable as the loop variable. So the above can also be written as:
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+    my @list = (1, 2, 3, 4);
+    $_ = $_ * 2 foreach (@list);
+    print &quot;@list\n&quot;; # 2 4 6 8</FONT></B></PRE></TD></TR></TABLE></UL>
+</BODY>
+</HTML>

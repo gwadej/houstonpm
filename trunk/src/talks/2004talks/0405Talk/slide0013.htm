@@ -1,0 +1,75 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE>File::CheckTree</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0014.htm">File::Compare</a>
+    &nbsp;&nbsp;Previous: <a href="slide0012.htm">File::Basename</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name="File::CheckTree">
+<center>
+<H1>File::CheckTree
+</H1></center>
+
+
+<P>
+This is one of the neatest modules I've seen.
+</P>
+
+
+<P>
+This is how you'd use it to do a whole bunch of tests at once:
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+    use File::CheckTree;
+
+    $num_warnings = validate( q{
+        /vmunix                 -e || die
+        /boot                   -e || die
+        /bin                    cd
+            csh                 -ex
+            csh                 !-ug
+            sh                  -ex
+            sh                  !-ug
+        /usr                    -d || warn &quot;What happened to $file?\n&quot;
+    });</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+The validate() routine takes a single multiline string consisting of directives, each containing a filename plus a file test to try on it. (The file test may also be a &quot;cd&quot;, causing subsequent relative filenames to be interpreted relative to that directory.)  After the file test you may put &quot;|| die&quot; to make it a fatal error if the file test fails.  The default is &quot;|| warn&quot;.  The file test may optionally have a &quot;!' prepended to test for the opposite condition.  If you do a cd and then list some relative filenames, you may want to indent them slightly for readability.  If you supply your own die() or warn() message, you can use $file to interpolate the filename.
+</P>
+
+
+<P>
+Filetests may be bunched:  &quot;-rwx&quot; tests for all of &quot;-r&quot;, &quot;-w&quot;, and &quot;-x&quot;.  Only the first failed test of the bunch will produce a warning.
+</P>
+
+
+<P>
+The routine returns the number of warnings issued.
+</P>
+</BODY>
+</HTML>

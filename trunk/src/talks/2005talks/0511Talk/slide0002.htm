@@ -1,0 +1,106 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE> Traditional Methods</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0003.htm"> XS and SWIG</a>
+    &nbsp;&nbsp;Previous: <a href="slide0001.htm"> Calling Other Languages from Perl</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name=" Traditional Methods">
+<center>
+<H1>2  Traditional Methods
+</H1></center>
+
+<UL>
+<TABLE><TR><TD valign="TOP"><IMG SRC="./sqr_orange1.png"></TD><TD>
+system()
+</TD></TR></TABLE>
+</UL>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+   (0 == system( 'program arg1 arg2' ))
+       or die &quot;Unable to execute program: $?\n&quot;;
+   # or
+   (0 == system( 'program', 'arg1', 'arg2' ))
+      or die &quot;Unable to execute program: $?\n&quot;;</FONT></B></PRE></TD></TR></TABLE></UL>
+
+<UL>
+<TABLE><TR><TD valign="TOP"><IMG SRC="./sqr_orange1.png"></TD><TD>
+exec()
+</TD></TR></TABLE>
+</UL>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+   exec( 'program arg1 arg2' )
+      or die &quot;Unable to execute program: $!\n&quot;;</FONT></B></PRE></TD></TR></TABLE></UL>
+
+<UL>
+<TABLE><TR><TD valign="TOP"><IMG SRC="./sqr_orange1.png"></TD><TD>
+open()
+</TD></TR></TABLE>
+</UL>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+   open( my $fh, &quot;program |&quot; )
+      or die &quot;Unable to execute program: $!\n&quot;;
+   # or
+   open( my $fh, &quot;| program&quot; )
+      or die &quot;Unable to execute program: $!\n&quot;;</FONT></B></PRE></TD></TR></TABLE></UL>
+
+<UL>
+<TABLE><TR><TD valign="TOP"><IMG SRC="./sqr_orange1.png"></TD><TD>
+backticks
+</TD></TR></TABLE>
+</UL>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+   my $output = qx/ls -l/;
+   #or
+   my @output = qx/ls -l/;</FONT></B></PRE></TD></TR></TABLE></UL>
+
+<UL>
+<TABLE><TR><TD valign="TOP"><IMG SRC="./sqr_orange1.png"></TD><TD>
+IPC::Open2
+</TD></TR></TABLE>
+</UL>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+   open2( *README, *WRITEME, 'program' )
+      or die &quot;Unable to run program: $!\n&quot;;
+
+   print WRITEME &quot;Here's input to the program.\n&quot;;
+   my $output = &lt;README&gt;;
+   close( README );
+   close( WRITEME );</FONT></B></PRE></TD></TR></TABLE></UL>
+</BODY>
+</HTML>

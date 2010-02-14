@@ -1,0 +1,66 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE>Getopt::Std Module Functions.</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0009.htm">Using Hashes</a>
+    &nbsp;&nbsp;Previous: <a href="slide0007.htm">Parsing Command Line Options - Getopt::Std</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name="Getopt::Std Module Functions.">
+<center>
+<H1>Getopt::Std Module Functions.
+</H1></center>
+
+
+<P>
+The Getopt::Std module provides us with two functions: getopt() and getopts(). The getopt() function allows you to define single character options that will take arguments. You pass the function a string of the option characters and the function takes care of setting global variables of the form: $opt_f or $opt_d (where f and d were characters passed to the function). To use this under 'use strict' you want to declare your global option variables prior to calling getopt():
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+    #!/usr/bin/perl -w
+    use strict;
+    use Getopt::Std;
+    use vars qw/$opt_f $opt_d/;
+    getopts('fd');
+
+    print &quot;-f is $opt_f\n&quot; if defined $opt_f;
+    print &quot;-d is $opt_d\n&quot; if defined $opt_d;
+    print &quot;other args: @ARGV\n&quot;;
+    __END__</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+You can call the above as follows (assuming the program is named 'opt.pl'):
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+    perl opts.pl -f somefile -d12 other
+    -f is somefile
+    -d is 12
+    other args: other</FONT></B></PRE></TD></TR></TABLE></UL>
+</BODY>
+</HTML>

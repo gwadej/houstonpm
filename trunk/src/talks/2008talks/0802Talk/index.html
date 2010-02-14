@@ -1,0 +1,80 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+  <title>Summary of February 2008 Presentation</title>
+  <link rel="stylesheet" href="/styles/houston.css" type="text/css" />
+</head>
+<body>
+
+<div class="banner">
+   <a href="http://www.pm.org/index.html"><img alt="Perl Mongers' Site"
+       src="http://www.pm.org/graphics/title.png" height="65" width="150" /></a>
+   <h1>Houston.pm</h1>
+</div>
+<div id="outer">
+  <div id="navigation">
+  
+  <ul class="menu" id="mainmenu">
+     <li><a href="/index.html">Home</a></li>
+     <li><a href="/about.html">About Us</a></li>
+     <li><a href="/meetings.html">Meetings</a></li>
+     <li><a href="/faqs.html">FAQ</a></li>
+     <li><a href="/talks/mostrecent.html">Most Recent Talk</a></li>
+     <li><a href="/talks/index.html">Talks Archive</a></li>
+     <li><a href="/projects/index.html">Group Projects</a></li>
+  </ul>
+
+  </div>
+
+  <div class="content">
+    <h2 class="subhead">The <code>Net::Jabber::Bot</code> Project, continued</h2>
+
+    <p>For the February meeting, we continued working on <code>Net::Jabber::Bot</code>.
+     We used the <code>MockJabberClient</code> to override <code>Net::Jabber::Client</code>
+     to simplify testing and began looking at the version request.</p>
+
+    <p>We spent quite a bit of time working on the problem of creating a new
+      Jabber namespace for use with the version request. The main breakthrough
+      of the evening was realizing that <code>jabber.iq.version</code> already
+      existed and was exactly what we needed. After a bit more work, we were
+      able to get the child nodes set up correctly making version requests
+      functional.</p>
+
+    <p>The <a href="http://code.google.com/p/perl-net-jabber-bot/">project</a>
+      is still hosted at Google's <a href="http://code.google.com/">code site</a>.</p>
+  </div>
+
+</div>
+<div id="footer">
+<p class="copyright">
+<!-- Creative Commons License -->
+<a rel="license" href="http://creativecommons.org/licenses/by/2.5/"><img alt="Creative Commons License" border="0" src="http://creativecommons.org/images/public/somerights20.gif" /></a>
+Copyright &copy; 2008 Houston.pm.<br /> Except as otherwise noted, this site is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/2.5/">Creative Commons Attribution 2.5 License</a>.
+<!-- /Creative Commons License -->
+
+
+<!--
+
+<rdf:RDF xmlns="http://web.resource.org/cc/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<Work rdf:about="">
+   <license rdf:resource="http://creativecommons.org/licenses/by/2.5/" />
+</Work>
+
+<License rdf:about="http://creativecommons.org/licenses/by/2.5/">
+   <permits rdf:resource="http://web.resource.org/cc/Reproduction" />
+   <permits rdf:resource="http://web.resource.org/cc/Distribution" />
+   <requires rdf:resource="http://web.resource.org/cc/Notice" />
+   <requires rdf:resource="http://web.resource.org/cc/Attribution" />
+   <permits rdf:resource="http://web.resource.org/cc/DerivativeWorks" />
+</License>
+
+</rdf:RDF>
+-->
+</p>
+<p>The use of the camel image in association with the Perl
+language is a trademark of O'Reilly &amp; Associates, Inc. Used with permission.</p>
+</div>
+</body>
+</html>

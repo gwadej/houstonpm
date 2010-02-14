@@ -1,0 +1,57 @@
+<HTML>
+<!-- *** Created by pp2html, build 1.21 from PerlPoint-Converters 1.01  -->
+<HEAD>
+<TITLE>Example</TITLE>
+</HEAD>
+<!-- ************************************************************** -->
+<BODY bgcolor="#FFFFFF" text="#000000" link="#1874cd" vlink="#AAAAAA" alink="#FF0000">
+<!--
+  *** NAVIGATION BAR =================================================
+  $Revision: 1.2 $
+  $Date: 2001/12/06 21:38:12 $
+-->
+
+<center>
+<TABLE> 
+<TR>
+  <TD colspan=3 >
+    <font size=-1>
+    Next: <a href="slide0009.htm">SelfLoader module</a>
+    &nbsp;&nbsp;Previous: <a href="slide0007.htm">Using The DATA Filehandle</a>
+     &nbsp;&nbsp;Contents: <a href="slide0000.htm" target="Data">Index</a>
+    </font> 
+  </td>
+</TR>
+</TABLE>
+<img src="orange_line.png">
+</center>
+
+<a name="Example">
+<center>
+<H1>Example
+</H1></center>
+
+
+<P>
+If you wanted to play around with constructs for dealing with colon separated data you might use something like:
+</P>
+
+<UL>
+<TABLE BORDER=2 CELLPADDING=5 WIDTH=80%><TR><TD bgcolor="#e5e5e5"><PRE>
+<B><FONT COLOR="#000000">
+    #!/usr/bin/perl -w
+    use strict;
+    while(&lt;DATA&gt;){
+        my @array = split /:/;
+        print join '|', @array;
+    }
+    __END__
+    abc:def:ghi
+    123:456:789</FONT></B></PRE></TD></TR></TABLE></UL>
+
+
+<P>
+If you're using modules, you can also access any data contained after that module's __DATA__ token (not the __END__ token).  From within the module itself you read from the DATA filehandle as always, but if you want to read the module's data from the main program (or elsewhere) you need to qualify the DATA filehandle with the appropriate package name.  For instance, if you use the Foo module (package Foo) then you may read Foo's data via the Foo::DATA filehandle in your main script.
+</P>
+</BODY>
+</HTML>
