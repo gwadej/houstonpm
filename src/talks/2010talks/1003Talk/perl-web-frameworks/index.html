@@ -1,0 +1,199 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <title>Perl Web Framworks</title>
+  <!-- metadata -->
+  <meta name="generator" content="S5" />
+  <meta name="version" content="S5 1.1" />
+  <meta name="presdate" content="20050728" />
+  <meta name="author" content="Eric A. Meyer" />
+  <meta name="company" content="Complex Spiral Consulting" />
+  <!-- configuration parameters -->
+  <meta name="defaultView" content="slideshow" />
+  <meta name="controlVis" content="hidden" />
+  <!-- style sheet links -->
+  <link rel="stylesheet" href="ui/default/slides.css" type="text/css" media="projection" id="slideProj" />
+  <link rel="stylesheet" href="ui/default/outline.css" type="text/css" media="screen" id="outlineStyle" />
+  <link rel="stylesheet" href="ui/default/print.css" type="text/css" media="print" id="slidePrint" />
+  <link rel="stylesheet" href="ui/default/opera.css" type="text/css" media="projection" id="operaFix" />
+  <!-- S5 JS -->
+  <script src="ui/default/slides.js" type="text/javascript"></script>
+</head>
+<body>
+
+  <div class="layout">
+    <div id="controls"><!-- DO NOT EDIT --></div>
+    <div id="currentSlide"><!-- DO NOT EDIT --></div>
+    <div id="header"></div>
+    <div id="footer">
+      <h1>Houston.pm</h1>
+      <h2>Perl Web Frameworks</h2>
+    </div>
+</div>
+
+
+  <div class="presentation">
+
+    <div class="slide">
+      <h1>Perl Web Frameworks</h1>
+      <h3>Robert Boone</h3>
+      <h4>Houston.pm</h4>
+    </div>
+
+
+    <div class="slide">
+      <h1>TMTOWTDI</h1>
+      <ul>
+	<li>There is more than one way to do it</li>
+	<li>Web frameworks in perl may take this to an extreme</li>
+	<li>But different framework aim at different scales</li>
+	<li>Choose the one that works best for you</li>
+	<li>Every once in a while try a new one for a different perspective</li>
+      </ul>
+      <div class="handout">
+	[any material that should appear in print but not on the slide]
+      </div>
+    </div>
+    
+    <div class="slide">
+      <h1>What we are going to talk about</h1>
+      <ol>
+	<li><a href="http://www.catalystframework.org/">Catalyst</a></li>
+	<li><a href="http://jifty.org/view/HomePage">Jifty</a></li>
+	<li><a href="http://labs.kraih.com/">Mojolicous</a></li>
+	<li><a href="http://search.cpan.org/~sukria/Dancer-1.150/lib/Dancer.pm">Dancer</a></li>
+      </ol>
+      <div class="handout">
+	[any material that should appear in print but not on the slide]
+      </div>
+    </div>
+    
+    <div class="slide">
+      <h1>The Plan</h1>
+      <ul>
+        <li>Look at two large and two micro frameworks</li>
+	<li>Build a simple web application for each one</li>
+	<li>Look at some of the features of each framework</li>
+      </ul>
+      <div class="handout">
+	[any material that should appear in print but not on the slide]
+      </div>
+    </div>
+
+
+    <div class="slide">
+      <h1>Catalyst</h1>
+      <ul>
+	<li>Maybe the most popular perl web framework</li>
+	<li>There is tree based documentation</li>
+	<ul>
+	  <li><a href="http://www.apress.com/book/view/1430223650">The
+	      Definitive Guide to Catalyst</a> from Apress</li>
+	</ul>
+	<li><a href="http://en.wikipedia.org/wiki/Model–view–controller">MVC</a>
+	  Based (Model View Control)</li>
+	<li>Catalyst provides good defaults but there are hundreds of
+	  plugins on the CPAN</li>
+	<ul>
+	  <li>Default Model <a href="http://search.cpan.org/dist/DBIx-Class/">DBIx::Class</a></li>
+	  <li>Default View <a href="http://search.cpan.org/dist/Template-Toolkit/">Template Toolkit</a></li>
+	</ul>
+        <li>Helper tools</li>
+        <ul>
+          <li>catalyst.pl *_cgi.pl *_create.pl *_fastcgi.pl
+          *_server.pl *_test.pl</li>
+        </ul>
+	<li>It's also very easy to extend</li>
+     </ul>
+      <div class="handout">
+	[any material that should appear in print but not on the slide]
+      </div>
+    </div>
+
+    <div class="slide">
+      <h1>Jifty</h1>
+      <ul>
+	<li>Very opinionated software</li>
+	<li>Defaults has one way to do everything</li>
+	<li>From the POD Documentation:</li>
+	<ul>
+	  <li>
+	    Out of the proverbial box, Jifty comes with one way to do
+	    everything you should need to do: One database mapper, one
+	    templating system, one web services layer, one AJAX
+	    toolkit, one set of handlers for standalone or FastCGI
+	    servers. We work hard to make all the bits play well
+	    together, so you don't have to.
+	  </li>
+	</ul>
+	<li>That said they support two views for templating:</li>
+	<ul>
+	  <li><a href="http://search.cpan.org/dist/Template-Declare/">Template::Declare</a> which is prefered</li>
+	  <li><a href="http://search.cpan.org/dist/HTML-Mason/">HTML::Mason</a></li>
+	</ul>
+        <li>Helper tools</li>
+        <ul>
+          <li>jifty ./bin/jifty</li>
+        </ul>
+        <li>Many Plugins are on the CPAN</li>
+      </ul>
+    </div>
+
+    <div class="slide">
+      <h1>Mojolicous</h1>
+      <ul>
+        <li>Back Story</li>
+          <ul>
+            <li>Written by Sebastian Riedel </li>
+            <li>He took over Maypole when Simon Cozens became a
+        missionary</li>
+            <li>he wanted to make incompatible changes to Maypole</li>
+            <li>Started writing Catalyst</li>
+            <li>At version 4 of Catalyst he left to do rails work</li>
+            <li>He has now come back to perl with a new framework
+            based on <a href="http://www.sinatrarb.com/">Sinatra</a></li>
+          </ul>
+        </li>
+      <li>Mojolicous::Lite is a micro-framework</li>
+      <li>Has a REST base interface for a controller</li>
+      <li>Has a built in template language</li>
+      <li>Code runs from a single file</li>
+      <li>Template</li>
+      <ul> 
+        <li><a href="http://search.cpan.org/perldoc?Mojo::Template">Mojo::Template</a></li>
+        <li>Template::Toolkit</li>
+        <li>HTML::Mason</li>
+      </ul>
+      <li>Helper tools</li>
+      <ul>
+        <li>mojolicious</li>
+      </ul>
+    </div>
+
+    <div class="slide">
+      <h1>Dancer</h1>
+      <ul>
+        <li>Also base on the ruby
+        project <a href="http://www.sinatrarb.com/">Sinatra</a></li>
+        <li>Also another micro-framework, but Mojolicious::Lite seems
+        a little smaller</li>
+        <li>Templates</li>
+        <ul>
+          <li><a href="http://search.cpan.org/~sukria/Dancer-1.160/lib/Dancer/Template/Simple.pm">Dancer::Template::Simple</a></li>
+          <li>Template::Toolkit, by default uses '<% %>' as start and
+            stop tags</li>
+        </ul>
+        <li>Helper tools</li>
+        <ul>
+          <li>dancer</li>
+        </ul>
+      </ul>
+    </div>
+      
+  </div>
+    
+</body>
+</html>

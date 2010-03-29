@@ -760,4 +760,14 @@
     </topic>
   </talk>
 
+  <talk num="1003">
+    <date>March 2010</date>
+    <topic href="/talks/2010talks/1003Talk/index.html">
+      <title>Perl Web Frameworks</title>
+      <presenter>Robert Boone</presenter>
+      <abstract>Robert did a quick overview, with example code, of some of the
+          web development frameworks available to Perl programmers.</abstract>
+    </topic>
+  </talk>
+
 </talklist>
