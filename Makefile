@@ -2,6 +2,7 @@
 
 OUTDIR=out
 INSTALLDIR=/var/www-vhost/houstonpm/
+PUBLISHDIR=/mnt/houstonpm/
 
 TALKSUMMARIES=${OUTDIR}/talks/mostrecent.html \
               ${OUTDIR}/talks/index.html \
@@ -56,6 +57,9 @@ ${OUTDIR}/talks/2010talks/index.html: talks.xml yeartalks.xsl templates/yeartalk
 
 install:
 	cp -R ${OUTDIR}/* ${INSTALLDIR}
+
+publish:
+	cp -R ${OUTDIR}/* ${PUBLISHDIR}
 
 clean:
 	find . -name '*.bck' -exec rm {} \;
