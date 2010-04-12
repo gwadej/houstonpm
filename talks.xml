@@ -770,4 +770,16 @@
     </topic>
   </talk>
 
+  <talk num="1004">
+    <date>April 2010</date>
+    <topic href="/talks/2010talks/1004Talk/index.html">
+      <title>Introduction to Object Oriented Programming with Moose</title>
+      <presenter>Todd Rinaldo</presenter>
+      <abstract>Todd introduced Object Oriented programming in Perl using
+          the Moose library. Unlike most Moose talks, Todd targeted people
+          with less OO experience, teaching Moose without an assumption of
+          familarity with Perl OO Programming.</abstract>
+    </topic>
+  </talk>
+
 </talklist>
