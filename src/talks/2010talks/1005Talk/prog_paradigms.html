@@ -1,0 +1,376 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>Programming Paradigms in Perl</title>
+<!-- metadata -->
+<meta name="generator" content="S5" />
+<meta name="version" content="S5 1.1" />
+<meta name="presdate" content="20100513" />
+<meta name="author" content="G. Wade Johnson" />
+<meta name="company" content="Houston Perl Mongers" />
+<!-- configuration parameters -->
+<meta name="defaultView" content="slideshow" />
+<meta name="controlVis" content="hidden" />
+<!-- style sheet links -->
+<link rel="stylesheet" href="ui/houstonpm/slides.css" type="text/css" media="projection" id="slideProj" />
+<link rel="stylesheet" href="ui/default/outline.css" type="text/css" media="screen" id="outlineStyle" />
+<link rel="stylesheet" href="ui/default/print.css" type="text/css" media="print" id="slidePrint" />
+<link rel="stylesheet" href="ui/default/opera.css" type="text/css" media="projection" id="operaFix" />
+<style type="text/css">
+    .slide p { font-size: +1; margin-top: 3em; text-align: center; }
+    .handout p { font-size: normal; margin-top: 1em; text-align: left; }
+    .slide p.dos { text-align: left; margin-left: 3em; }
+    .slide p.head { margin-top: 1em; }
+    .slide h1 { text-transform: none; }
+    .slide ul.nobull { list-style:none; margin-left: 10%; }
+    iframe { border: 0; margin-top: 1em; margin-left:20%; }
+    .rt iframe { border: 0; margin-top: 1em; margin-left:10%; float:right; }
+</style>
+<!-- S5 JS -->
+<script src="ui/default/slides.js" type="text/javascript"></script>
+</head>
+<body>
+
+<div class="layout">
+<div id="controls"><!-- DO NOT EDIT --></div>
+<div id="currentSlide"><!-- DO NOT EDIT --></div>
+<div id="header"></div>
+<div id="footer">
+<h1>Houston.pm - May 13, 2010</h1>
+<h2>Programming Paradigms in Perl</h2>
+</div>
+
+</div>
+
+
+<div class="presentation">
+
+<div class="slide">
+<h1>Programming Paradigms in Perl</h1>
+<h2></h2>
+<h3>G. Wade Johnson</h3>
+<h4>Houston.pm</h4>
+</div>
+
+<div class="slide">
+<h1>What is it?</h1>
+<p>What is a Programming Paradigm?</p>
+<div class="handout">
+<p>A Programming Paradigm is just an approach to thinking about problems and
+solutions. Applying a particular paradigm limits the size of the solution
+space by providing a framework for thinking about problems.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Programming Paradigms (Major)</h1>
+<ul>
+    <li>Procedural (Imperative)</li>
+    <li>Object-Oriented</li>
+    <li>Functional</li>
+    <li>Logical</li>
+</ul>
+<div class="handout">
+<p>The four major programming paradigms are listed here. Almost everyone
+starts off by learning the procedural paradigm, because it is more
+straight-forward in many ways than the others.</p>
+
+<p>The OO paradigm has been the dominant paradigm for more than a decade
+now. The functional paradigm has been making a comeback thanks to problems
+with concurrency.</p>
+
+<p>The logical paradigm is possibly the most abstract of the set.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Procedural Paradigm</h1>
+<ul class="incremental">
+    <li>Last dominant paradigm</li>
+    <li>Recipe-like</li>
+    <li>Describe how to solve problem</li>
+    <li>Most people learn this one first</li>
+</ul>
+<div class="handout">
+<p>Programming originally began with hardware and progressed to procedural
+proramming. It's relatively easy to reason about. Most programmers can pick it
+up much easier than the other paradigms.</p>
+
+<p>On the other hand, there's less of a theoretical background for it.
+Originally, it was quite messy until refined with structured programming.</p>
+
+<p>Many from the OO camp consider procedural programming to be old-fashioned
+and not capable of scaling to production environments. These people tend to
+forget how much of the world runs on procedural code.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Example: Procedural</h1>
+<p>A simple <a href="examples/procedural.html" target="_blank">example</a> in
+the procedural style.</p>
+<div class="handout">
+    notes
+</div>
+</div>
+
+
+<div class="slide">
+<h1>Object Oriented Paradigm</h1>
+<ul class="incremental">
+    <li>Dominant paradigm today</li>
+    <li>Model the problem with software objects</li>
+    <li>Objects can represent <em>nouns</em> in the solution space</li>
+    <li>Objects can also represent concepts</li>
+    <li>Message passing</li>
+    <li>Classes vs. Prototypes</li>
+</ul>
+<div class="handout">
+<p>The idea most people are taught about OO is that objects allow the code to
+more closely model the real world. <em>Obviously</em>, modeling the world with
+objects would result in solutions that are easier to understand. This promise
+has not actually been fullfilled.</p>
+
+<p>The major real advantage of OO programming is the way it supports
+partitioning problems. This effect helps with construction of massive software
+projects using large numbers of developers. Some OO fans would suggest that
+large, complex systems cannot be built without an Object Oriented system.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Example: Object Oriented</h1>
+<p>A simple <a href="examples/object.html" target="_blank">example</a> in the
+object oriented style.</p>
+<div class="handout">
+    notes
+</div>
+</div>
+
+<div class="slide">
+<h1>Functional Paradigm</h1>
+<ul class="incremental">
+    <li>Functions are first-class values</li>
+    <li>Evaluation of expressions, rather than execution of commands</li>
+    <li>No side effects</li>
+    <li>Immutable data</li>
+    <li>Solid mathematical backing</li>
+    <li>Hard for many people to understand</li>
+</ul>
+<div class="handout">
+<p>The functional paradigm was born from research into an area of math called
+lambda calculus. Given the mathematical foundations of functional programming,
+it should not be surprising that there is a history of proving software
+correctness. This usually works with limited scope of programs.</p>
+
+<p>With the new push towards more concurrency in programs, functional
+programming is making a comeback.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Example: Functional</h1>
+<p>A simple <a href="examples/functional.html" target="_blank">example</a> in
+the functional style.</p>
+<div class="handout">
+    notes
+</div>
+</div>
+
+<div class="slide">
+<h1>Logical Paradigm</h1>
+<ul class="incremental">
+    <li>Describe what to do, not how</li>
+    <li>Program based on axioms and inference rules</li>
+    <li>Given enough data and rules, program searches for answer</li>
+    <li>Hard for many people to understand</li>
+</ul>
+<div class="handout">
+<p>As far as I understand it, logic programming has been mostly used in
+artificial intelligence and, especially, expert systems. The only language
+I'm aware of that supported it directly is Prolog.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Programming Paradigms (Minor)</h1>
+<ul>
+    <li>Generic</li>
+    <li>State-Oriented</li>
+    <li>Aspect-Oriented</li>
+    <li>Pattern-Matching</li>
+    <li>Agent-Oriented</li>
+    <li>Event Driven</li>
+</ul>
+<div class="handout">
+<p>In addition to the major paradigms, there are a number of lesser ones as
+well. Some of these (like Generic and Aspect-Oriented) are normally associated
+with a major paradigm (OO in these cases). Others (like State-Oriented and
+Event Driven) are only minor because they tend to only be used in limited
+circumstances.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Generic Programming</h1>
+<ul class="incremental">
+    <li>Type-safe algorithms</li>
+    <li>Not tied to specific class hierarchy</li>
+    <li>Less useful in dynamic languages</li>
+</ul>
+<div class="handout">
+<p>Developed in Ada and C++, generic programming attempts to reduce some of the
+redundancy caused by strong type checking. The approach is to allow
+constructing <em>generic</em> algorithms that can worm on any object that
+implements certain operations, not just subclasses of a given class.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>State-Oriented Programming</h1>
+<ul class="incremental">
+    <li>Transitions between defined states</li>
+    <li>Popular in embedded systems</li>
+    <li>Static proofs of program functionality</li>
+</ul>
+<div class="handout">
+<p>Programs are defined as a series of states with transitions between states
+caused by incoming events. One major advantage of this approach is the ability
+to statically determine whether or not every combination of input and state
+is accounted for. This prevents ambiguous situations where an unexpected input
+cause the system to misbehave.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Multi-Paradigm Languages</h1>
+<ul>
+    <li>Not forced to use one approach</li>
+    <li>Some paradigms are more effective in some situations</li>
+    <li>Perl is a good example</li>
+    <li>Yet another aspect of <acronym title="There is more than one way to do it">TIMTOWTDI</acronym></li>
+</ul>
+<div class="handout">
+<p>Perl does not enforce a particular paradigm. In fact, Perl allows relatively
+simple use of multiple paradigms in a single program.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>In fact...</h1>
+<p>Two of the examples you saw were actually multi-paradigm.</p>
+<div class="handout">
+<p>Technically, the OO example was mostly procedural and only used one object.
+The functional example was not <em>pure functional</em> because the code had
+side effects (reading a file and printing) and <code>chomp</code> was used to
+mutate <code>$_</code>.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Purists</h1>
+<p>Fans of some paradigms are convinced theirs is the <em>One,
+True Way</em> to develop software.</p>
+<div class="handout">
+<p>Perl's slogan TIMTOWTDI shows some disdain for the <em>one, true way</em>
+approach to programming. This may be why Perl is often abused by people whose
+language of choice pushes a particular paradigm.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Which is Best?</h1>
+<p>Answer: It depends.</p>
+<div class="handout">
+<p>Despite what people want you to believe each paradigm has strengths and
+weaknesses. In some cases, the procedural approach is perfect and OO is too
+heavyweight. In other cases, a predominantly object design is best. In most
+cases a combination of approaches is the perfect solution.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Familiarity</h1>
+<p>People to to use what they are comfortable with.</p>
+<div class="handout">
+    notes
+</div>
+</div>
+
+<div class="slide">
+<h1>Procedural: Step by Step</h1>
+<ul class="incremental">
+    <li>Short, step-based solutions, work well.</li>
+    <li>A small number of people working on it.</li>
+    <li>Batch problems</li>
+</ul>
+<div class="handout">
+    notes
+</div>
+</div>
+
+<div class="slide">
+<h1>Object Oriented: Complexity</h1>
+<ul class="incremental">
+    <li>The OO paradigm can help manage complexity.</li>
+    <li>It can also generate complexity.</li>
+    <li>Large teams</li>
+    <li>GUI programming</li>
+</ul>
+<div class="handout">
+    notes
+</div>
+</div>
+
+<div class="slide">
+<h1>Functional</h1>
+<ul class="incremental">
+    <li>Some people suggest concurrency.</li>
+    <li>?</li>
+</ul>
+<div class="handout">
+    notes
+</div>
+</div>
+
+<div class="slide">
+<h1>Logical: Expert Systems</h1>
+<p>The only good examples I know are expert systems.</p>
+<div class="handout">
+    notes
+</div>
+</div>
+
+<div class="slide">
+<h1>Toolbox</h1>
+<p>The real key is to add paradigms to your toolbox.</p>
+<div class="handout">
+    notes
+</div>
+</div>
+
+<div class="slide">
+<h1>References</h1>
+<ul>
+    <li><a href="http://en.wikipedia.org/wiki/Programming_paradigm">Wikipedia:
+        Programming Paradigm</a></li>
+    <li><a href="http://www.cs.aau.dk/~normark/prog3-03/html/notes/paradigms_themes-paradigm-overview-section.html">Overview
+        of the four main programming paradigms</a></li>
+    <li><a href="http://burks.bton.ac.uk/burks/progging/paradigm/index.htm">Links
+        on Programming Paradigms</a></li>
+    <li><a href="http://c2.com/cgi/wiki?ProgrammingParadigm">Portland Pattern
+        Repository: ProgrammingParadigm</a></li>
+</ul>
+<div class="handout">
+    notes
+</div>
+</div>
+
+
+
+</div>
+</body>
+</html>
