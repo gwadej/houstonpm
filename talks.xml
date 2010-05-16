@@ -782,4 +782,15 @@
     </topic>
   </talk>
 
+  <talk num="1005">
+    <date>May 2010</date>
+    <topic href="/talks/2010talks/1005Talk/index.html">
+      <title>Programming Paradigms in Perl</title>
+      <presenter>G. Wade Johnson</presenter>
+      <abstract>Wade introduced a few of the major programming paradigms
+          and explained how the relate to Perl. There were a few examples
+          and a fair bit of discussion.</abstract>
+    </topic>
+  </talk>
+
 </talklist>
