@@ -1,0 +1,275 @@
+<svg height="100%" width="100%" viewBox="0 0 600 450"
+     preserveAspectRatio="xMidYMid"
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink">
+<!--
+   Author:      G. Wade Johnson
+
+   Copyright: 2009 G. Wade Johnson
+      You are free to use this code however you like.
+ -->
+  <title>Scatter Plot example</title>
+  <desc>Scatter plot of two different functions with added random error.</desc>
+  <defs>
+    <style type="text/css">
+        .heading {
+            text-anchor: middle;
+            font-family: arial, helvetica, sans-serif;
+            font-size: 16px;
+        }
+        .labels { fill: black; font-size:10px; }
+        .title {
+            text-anchor: middle;
+            font-family: arial, helvetica, sans-serif;
+            font-size: 12px;
+        }
+        .detail, #instructions {
+            font-family: arial, helvetica, sans-serif;
+            font-size: 10px;
+        }
+        .rtjust { text-anchor: end; }
+        .center { text-anchor: middle; }
+        .axes {
+            stroke: black;
+            stroke-width: 1px;
+        }
+        .grid {
+            stroke: #888;
+            stroke-width: 0.5px;
+        }
+        .background {
+            fill: #eef;
+            stroke: none;
+        }
+        .data1 {
+            fill: none;
+            stroke: blue;
+            stroke-width: 1px;
+        }
+        .data2 {
+            fill: none;
+            stroke: green;
+            stroke-width: 1px;
+        }
+    </style>
+    <path id="x" d="M-2,-2L2,2M2,-2L-2,2" />
+    <path id="cross" d="M0,-2v4M-2,0h4" />
+  </defs>
+
+  <rect x="0" y="0" width="100%" height="100%" class="background"/>
+ 
+  <text x="300" y="15" class="heading">Random Number Plot</text>
+  <path class="grid" d=" M40,415v4 L40,25 M99.44,415v4 L99.44,25 M158.89,415v4 L158.89,25 M218.33,415v4 L218.33,25 M277.78,415v4 L277.78,25 M337.22,415v4 L337.22,25 M396.67,415v4 L396.67,25 M456.11,415v4 L456.11,25 M515.56,415v4 L515.56,25 M575,415v4 L575,25"/>
+  <line x1="40" y1="415" x2="40" y2="25" class="axes"/>
+  <line x1="40" y1="415" x2="575" y2="415" class="axes"/>
+  <text x="300" y="440" class="title">Entry</text>
+  <text x="12" y="225" class="title" transform="rotate(-90,12,225)">Data Point</text>
+  <text x="40" y="428" class="center labels">0</text>
+  <text x="99.44" y="428" class="center labels">10</text>
+  <text x="158.89" y="428" class="center labels">20</text>
+  <text x="218.33" y="428" class="center labels">30</text>
+  <text x="277.78" y="428" class="center labels">40</text>
+  <text x="337.22" y="428" class="center labels">50</text>
+  <text x="396.67" y="428" class="center labels">60</text>
+  <text x="456.11" y="428" class="center labels">70</text>
+  <text x="515.56" y="428" class="center labels">80</text>
+  <text x="575" y="428" class="center labels">90</text>
+  <text x="35" y="415" class="rtjust labels">0</text>
+  <text x="35" y="376" class="rtjust labels">15</text>
+  <text x="35" y="337" class="rtjust labels">30</text>
+  <text x="35" y="298" class="rtjust labels">45</text>
+  <text x="35" y="259" class="rtjust labels">60</text>
+  <text x="35" y="220" class="rtjust labels">75</text>
+  <text x="35" y="181" class="rtjust labels">90</text>
+  <text x="35" y="142" class="rtjust labels">105</text>
+  <text x="35" y="103" class="rtjust labels">120</text>
+  <text x="35" y="64" class="rtjust labels">135</text>
+  <text x="35" y="25" class="rtjust labels">150</text>
+  <path class="grid" d=" M40,415h-4 L575,415 M40,376h-4 L575,376 M40,337h-4 L575,337 M40,298h-4 L575,298 M40,259h-4 L575,259 M40,220h-4 L575,220 M40,181h-4 L575,181 M40,142h-4 L575,142 M40,103h-4 L575,103 M40,64h-4 L575,64 M40,25h-4 L575,25"/>
+
+    <g id="data" class="data1" transform="translate(40,415) scale(1,-1)">
+        <use xlink:href="#x" x="5.94" y="30.40" />
+        <use xlink:href="#x" x="11.89" y="99.03" />
+        <use xlink:href="#x" x="17.83" y="10.41" />
+        <use xlink:href="#x" x="23.78" y="92.83" />
+        <use xlink:href="#x" x="29.72" y="21.95" />
+        <use xlink:href="#x" x="35.67" y="71.70" />
+        <use xlink:href="#x" x="41.61" y="86.75" />
+        <use xlink:href="#x" x="47.56" y="64.19" />
+        <use xlink:href="#x" x="53.50" y="48.44" />
+        <use xlink:href="#x" x="59.44" y="69.50" />
+        <use xlink:href="#x" x="65.39" y="35.72" />
+        <use xlink:href="#x" x="71.33" y="53.90" />
+        <use xlink:href="#x" x="77.28" y="60.37" />
+        <use xlink:href="#x" x="83.22" y="130.15" />
+        <use xlink:href="#x" x="89.17" y="69.37" />
+        <use xlink:href="#x" x="95.11" y="137.29" />
+        <use xlink:href="#x" x="101.06" y="101.89" />
+        <use xlink:href="#x" x="107.00" y="158.58" />
+        <use xlink:href="#x" x="112.94" y="126.40" />
+        <use xlink:href="#x" x="118.89" y="89.05" />
+        <use xlink:href="#x" x="124.83" y="166.71" />
+        <use xlink:href="#x" x="130.78" y="124.91" />
+        <use xlink:href="#x" x="136.72" y="88.39" />
+        <use xlink:href="#x" x="142.67" y="144.65" />
+        <use xlink:href="#x" x="148.61" y="150.59" />
+        <use xlink:href="#x" x="154.56" y="118.93" />
+        <use xlink:href="#x" x="160.50" y="176.60" />
+        <use xlink:href="#x" x="166.44" y="144.51" />
+        <use xlink:href="#x" x="172.39" y="161.47" />
+        <use xlink:href="#x" x="178.33" y="128.53" />
+        <use xlink:href="#x" x="184.28" y="177.71" />
+        <use xlink:href="#x" x="190.22" y="115.90" />
+        <use xlink:href="#x" x="196.17" y="110.02" />
+        <use xlink:href="#x" x="202.11" y="117.06" />
+        <use xlink:href="#x" x="208.06" y="151.18" />
+        <use xlink:href="#x" x="214.00" y="176.73" />
+        <use xlink:href="#x" x="219.94" y="131.38" />
+        <use xlink:href="#x" x="225.89" y="171.42" />
+        <use xlink:href="#x" x="231.83" y="203.08" />
+        <use xlink:href="#x" x="237.78" y="212.53" />
+        <use xlink:href="#x" x="243.72" y="159.24" />
+        <use xlink:href="#x" x="249.67" y="222.37" />
+        <use xlink:href="#x" x="255.61" y="182.77" />
+        <use xlink:href="#x" x="261.56" y="190.03" />
+        <use xlink:href="#x" x="267.50" y="173.37" />
+        <use xlink:href="#x" x="273.44" y="208.83" />
+        <use xlink:href="#x" x="279.39" y="241.35" />
+        <use xlink:href="#x" x="285.33" y="175.84" />
+        <use xlink:href="#x" x="291.28" y="201.60" />
+        <use xlink:href="#x" x="297.22" y="193.14" />
+        <use xlink:href="#x" x="303.17" y="196.58" />
+        <use xlink:href="#x" x="309.11" y="265.70" />
+        <use xlink:href="#x" x="315.06" y="233.19" />
+        <use xlink:href="#x" x="321.00" y="247.89" />
+        <use xlink:href="#x" x="326.94" y="217.70" />
+        <use xlink:href="#x" x="332.89" y="280.93" />
+        <use xlink:href="#x" x="338.83" y="254.92" />
+        <use xlink:href="#x" x="344.78" y="284.23" />
+        <use xlink:href="#x" x="350.72" y="288.27" />
+        <use xlink:href="#x" x="356.67" y="264.69" />
+        <use xlink:href="#x" x="362.61" y="270.97" />
+        <use xlink:href="#x" x="368.56" y="295.32" />
+        <use xlink:href="#x" x="374.50" y="200.55" />
+        <use xlink:href="#x" x="380.44" y="265.79" />
+        <use xlink:href="#x" x="386.39" y="222.35" />
+        <use xlink:href="#x" x="392.33" y="237.35" />
+        <use xlink:href="#x" x="398.28" y="235.58" />
+        <use xlink:href="#x" x="404.22" y="312.12" />
+        <use xlink:href="#x" x="410.17" y="268.01" />
+        <use xlink:href="#x" x="416.11" y="228.51" />
+        <use xlink:href="#x" x="422.06" y="243.48" />
+        <use xlink:href="#x" x="428.00" y="280.71" />
+        <use xlink:href="#x" x="433.94" y="243.26" />
+        <use xlink:href="#x" x="439.89" y="272.71" />
+        <use xlink:href="#x" x="445.83" y="301.15" />
+        <use xlink:href="#x" x="451.78" y="285.27" />
+        <use xlink:href="#x" x="457.72" y="318.08" />
+        <use xlink:href="#x" x="463.67" y="320.05" />
+        <use xlink:href="#x" x="469.61" y="328.43" />
+        <use xlink:href="#x" x="475.56" y="299.68" />
+        <use xlink:href="#x" x="481.50" y="310.34" />
+        <use xlink:href="#x" x="487.44" y="339.65" />
+        <use xlink:href="#x" x="493.39" y="280.10" />
+        <use xlink:href="#x" x="499.33" y="351.02" />
+        <use xlink:href="#x" x="505.28" y="308.60" />
+        <use xlink:href="#x" x="511.22" y="318.31" />
+        <use xlink:href="#x" x="517.17" y="358.15" />
+        <use xlink:href="#x" x="523.11" y="354.11" />
+        <use xlink:href="#x" x="529.06" y="359.77" />
+        <use xlink:href="#x" x="535.00" y="288.30" />
+    </g>
+
+    <g id="data" class="data2" transform="translate(40,415) scale(1,-1)">
+        <use xlink:href="#cross" x="5.94" y="4.05" />
+        <use xlink:href="#cross" x="11.89" y="97.49" />
+        <use xlink:href="#cross" x="17.83" y="45.34" />
+        <use xlink:href="#cross" x="23.78" y="126.01" />
+        <use xlink:href="#cross" x="29.72" y="90.84" />
+        <use xlink:href="#cross" x="35.67" y="100.36" />
+        <use xlink:href="#cross" x="41.61" y="92.53" />
+        <use xlink:href="#cross" x="47.56" y="171.04" />
+        <use xlink:href="#cross" x="53.50" y="88.33" />
+        <use xlink:href="#cross" x="59.44" y="110.25" />
+        <use xlink:href="#cross" x="65.39" y="134.03" />
+        <use xlink:href="#cross" x="71.33" y="192.62" />
+        <use xlink:href="#cross" x="77.28" y="188.86" />
+        <use xlink:href="#cross" x="83.22" y="170.06" />
+        <use xlink:href="#cross" x="89.17" y="184.97" />
+        <use xlink:href="#cross" x="95.11" y="112.25" />
+        <use xlink:href="#cross" x="101.06" y="188.80" />
+        <use xlink:href="#cross" x="107.00" y="168.20" />
+        <use xlink:href="#cross" x="112.94" y="180.26" />
+        <use xlink:href="#cross" x="118.89" y="213.32" />
+        <use xlink:href="#cross" x="124.83" y="146.86" />
+        <use xlink:href="#cross" x="130.78" y="175.12" />
+        <use xlink:href="#cross" x="136.72" y="146.85" />
+        <use xlink:href="#cross" x="142.67" y="226.42" />
+        <use xlink:href="#cross" x="148.61" y="131.72" />
+        <use xlink:href="#cross" x="154.56" y="172.59" />
+        <use xlink:href="#cross" x="160.50" y="193.18" />
+        <use xlink:href="#cross" x="166.44" y="230.15" />
+        <use xlink:href="#cross" x="172.39" y="204.13" />
+        <use xlink:href="#cross" x="178.33" y="201.89" />
+        <use xlink:href="#cross" x="184.28" y="196.67" />
+        <use xlink:href="#cross" x="190.22" y="139.57" />
+        <use xlink:href="#cross" x="196.17" y="214.16" />
+        <use xlink:href="#cross" x="202.11" y="160.95" />
+        <use xlink:href="#cross" x="208.06" y="158.86" />
+        <use xlink:href="#cross" x="214.00" y="196.83" />
+        <use xlink:href="#cross" x="219.94" y="165.06" />
+        <use xlink:href="#cross" x="225.89" y="173.20" />
+        <use xlink:href="#cross" x="231.83" y="145.81" />
+        <use xlink:href="#cross" x="237.78" y="166.30" />
+        <use xlink:href="#cross" x="243.72" y="225.40" />
+        <use xlink:href="#cross" x="249.67" y="203.89" />
+        <use xlink:href="#cross" x="255.61" y="234.59" />
+        <use xlink:href="#cross" x="261.56" y="235.74" />
+        <use xlink:href="#cross" x="267.50" y="175.27" />
+        <use xlink:href="#cross" x="273.44" y="218.37" />
+        <use xlink:href="#cross" x="279.39" y="241.26" />
+        <use xlink:href="#cross" x="285.33" y="254.92" />
+        <use xlink:href="#cross" x="291.28" y="207.87" />
+        <use xlink:href="#cross" x="297.22" y="187.66" />
+        <use xlink:href="#cross" x="303.17" y="171.62" />
+        <use xlink:href="#cross" x="309.11" y="175.28" />
+        <use xlink:href="#cross" x="315.06" y="156.03" />
+        <use xlink:href="#cross" x="321.00" y="184.55" />
+        <use xlink:href="#cross" x="326.94" y="248.68" />
+        <use xlink:href="#cross" x="332.89" y="254.03" />
+        <use xlink:href="#cross" x="338.83" y="195.53" />
+        <use xlink:href="#cross" x="344.78" y="226.59" />
+        <use xlink:href="#cross" x="350.72" y="243.40" />
+        <use xlink:href="#cross" x="356.67" y="241.74" />
+        <use xlink:href="#cross" x="362.61" y="214.66" />
+        <use xlink:href="#cross" x="368.56" y="242.05" />
+        <use xlink:href="#cross" x="374.50" y="258.70" />
+        <use xlink:href="#cross" x="380.44" y="259.56" />
+        <use xlink:href="#cross" x="386.39" y="190.47" />
+        <use xlink:href="#cross" x="392.33" y="219.95" />
+        <use xlink:href="#cross" x="398.28" y="189.55" />
+        <use xlink:href="#cross" x="404.22" y="166.80" />
+        <use xlink:href="#cross" x="410.17" y="194.09" />
+        <use xlink:href="#cross" x="416.11" y="190.86" />
+        <use xlink:href="#cross" x="422.06" y="233.98" />
+        <use xlink:href="#cross" x="428.00" y="200.20" />
+        <use xlink:href="#cross" x="433.94" y="225.51" />
+        <use xlink:href="#cross" x="439.89" y="187.91" />
+        <use xlink:href="#cross" x="445.83" y="204.78" />
+        <use xlink:href="#cross" x="451.78" y="236.41" />
+        <use xlink:href="#cross" x="457.72" y="268.71" />
+        <use xlink:href="#cross" x="463.67" y="174.49" />
+        <use xlink:href="#cross" x="469.61" y="203.51" />
+        <use xlink:href="#cross" x="475.56" y="198.57" />
+        <use xlink:href="#cross" x="481.50" y="238.81" />
+        <use xlink:href="#cross" x="487.44" y="244.57" />
+        <use xlink:href="#cross" x="493.39" y="198.54" />
+        <use xlink:href="#cross" x="499.33" y="191.03" />
+        <use xlink:href="#cross" x="505.28" y="220.21" />
+        <use xlink:href="#cross" x="511.22" y="183.97" />
+        <use xlink:href="#cross" x="517.17" y="220.19" />
+        <use xlink:href="#cross" x="523.11" y="220.83" />
+        <use xlink:href="#cross" x="529.06" y="239.71" />
+        <use xlink:href="#cross" x="535.00" y="269.94" />
+    </g>
+</svg>

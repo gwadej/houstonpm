@@ -1,0 +1,180 @@
+<?xml version="1.0"?>
+
+  <?xml-stylesheet href="../style/lines.css" type="text/css"?>
+
+<svg preserveAspectRatio="xMidyMid" width="100%" height="100%" viewBox="0 0 350 200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<!-- \\\\\\\\\\\\\\\\\\\\\\\\\\\\  -->
+<!-- Created with SVG::TT::Graph   -->
+<!-- Stephen Morgan / Leo Lapworth -->
+<!-- ////////////////////////////  -->
+
+<!-- svg bg -->
+<rect x="0" y="0" width="350" height="200" class="svgBackground"/>
+
+<!-- ///////////////// CALCULATE GRAPH AREA AND BOUNDARIES //////////////// -->
+<!-- get dimensions of actual graph area (NOT SVG area) -->
+
+<!-- set start/default coords of graph --> 
+
+<!-- calc min and max values -->
+            
+                                  
+                
+                        
+                
+                        
+                
+                        
+          
+                        
+                
+                        
+                
+                        
+                
+                        
+                
+                        
+    
+
+<!-- CALC HEIGHT AND Y COORD DIMENSIONS -->
+<!-- reduce height of graph area if there is labelling on x axis -->
+
+<!-- reduce height if x labels are rotated -->
+
+<!-- stagger x labels if overlapping occurs -->
+
+
+<!-- pad top of graph if y axis has data labels so labels do not get chopped off -->
+
+<!-- reduce height if graph has title or subtitle -->
+
+<!-- reduce graph dimensions if there is a KEY -->
+
+
+<!-- find start value for scale on y axis -->
+  
+<!-- base line -->
+
+<!-- how much padding between largest bar and top of graph -->
+  
+
+<!-- default to 10 scale_divisions if none have been set -->
+  
+        
+<!-- JUMP THE GUN AND CALC BAR WIDTHS AS THESE ARE USED FOR PADDING IF LARGE X LABELS ARE USED -->
+<!-- get number of data points on x scale -->
+
+<!-- get distribution width on x axis -->
+
+
+<!-- CALC WIDTH AND X COORD DIMENSIONS -->
+<!-- reduce width of graph area if there is large labelling on x axis -->
+
+<!-- find the string length of max value -->
+
+<!-- label width in pixels -->
+<!-- If the y labels are shown but the size of the x labels are small, pad for y labels -->
+
+  <!-- allow slightly more padding if small labels -->
+            
+    
+
+<!-- //////////////////////////////  BUILD GRAPH AREA ////////////////////////////// -->
+<!-- graph bg -->
+<rect x="52" y="10" width="316" height="145" class="graphBackground"/>
+
+<!-- axis -->
+<path d="M52 10 v145" class="axis" id="xAxis"/>
+<path d="M52 155 h316" class="axis" id="yAxis"/>
+
+<!-- //////////////////////////////  AXIS DISTRIBUTIONS //////////////////////////// -->
+<!-- get number of data points on x scale -->
+
+<!-- get distribution width on x axis -->
+
+
+  
+<!-- x axis labels -->
+            <text x="69.5" y="170"  class="xAxisLabels">20</text>
+                                          <text x="104.5" y="170" class="xAxisLabels">30</text>
+        <path d="M104.5 155 v0" class="staggerGuideLine" />
+                                          <text x="139.5" y="170" class="xAxisLabels">40</text>
+                                                  <text x="174.5" y="170" class="xAxisLabels">50</text>
+        <path d="M174.5 155 v0" class="staggerGuideLine" />
+                                          <text x="209.5" y="170" class="xAxisLabels">60</text>
+                                                  <text x="244.5" y="170" class="xAxisLabels">70</text>
+        <path d="M244.5 155 v0" class="staggerGuideLine" />
+                                          <text x="279.5" y="170" class="xAxisLabels">80</text>
+                                                  <text x="314.5" y="170" class="xAxisLabels">90</text>
+        <path d="M314.5 155 v0" class="staggerGuideLine" />
+                                          <text x="349.5" y="170" class="xAxisLabels">100</text>
+                                
+
+<!-- distribute Y scale -->
+<!-- ensure y_data_points butt up to edge of graph -->
+          <!-- no stroke for first line -->
+      <text x="47" y="155" class="yAxisLabels">0</text>
+                        <text x="47" y="121" class="yAxisLabels">5</text>
+      <path d="M52 121 h316" class="guideLines"/>
+                        <text x="47" y="87" class="yAxisLabels">10</text>
+      <path d="M52 87 h316" class="guideLines"/>
+                        <text x="47" y="53" class="yAxisLabels">15</text>
+      <path d="M52 53 h316" class="guideLines"/>
+                        <text x="47" y="19" class="yAxisLabels">20</text>
+      <path d="M52 19 h316" class="guideLines"/>
+              
+
+
+<!-- //////////////////////////////  AXIS TITLES ////////////////////////////// -->
+
+<!-- x axis title -->
+          <text x="210" y="190" class="xAxisTitle">Percentile</text>
+
+<!-- y axis title -->
+      <text class="yAxisTitle" transform="translate(15,82.5) rotate(270)">Number of Scores</text>
+  
+
+
+<!-- //////////////////////////////  SHOW DATA ////////////////////////////// -->
+
+<!-- data points on graph -->
+
+
+    <!-- find the lowest data value for each dataset -->
+
+        <path d="M52 155 V155 h35 V155 Z" class="fill1"/>
+                    <!-- find the lowest data value for each dataset -->
+
+        <path d="M87 155 V148.2 h35 V155 Z" class="fill1"/>
+                    <!-- find the lowest data value for each dataset -->
+
+        <path d="M122 155 V141.4 h35 V155 Z" class="fill1"/>
+                    <!-- find the lowest data value for each dataset -->
+
+        <path d="M157 155 V141.4 h35 V155 Z" class="fill1"/>
+                    <!-- find the lowest data value for each dataset -->
+
+        <path d="M192 155 V121 h35 V155 Z" class="fill1"/>
+                    <!-- find the lowest data value for each dataset -->
+
+        <path d="M227 155 V87 h35 V155 Z" class="fill1"/>
+                    <!-- find the lowest data value for each dataset -->
+
+        <path d="M262 155 V19 h35 V155 Z" class="fill1"/>
+                    <!-- find the lowest data value for each dataset -->
+
+        <path d="M297 155 V53 h35 V155 Z" class="fill1"/>
+                    <!-- find the lowest data value for each dataset -->
+
+        <path d="M332 155 V121 h35 V155 Z" class="fill1"/>
+                
+
+<!-- //////////////////////////////// KEY /////// ////////////////////////// -->
+
+<!-- //////////////////////////////// MAIN TITLES ////////////////////////// -->
+
+<!-- main graph title -->
+
+<!-- graph sub title -->
+</svg>

@@ -1,0 +1,36 @@
+<svg height="100%" width="100%" viewBox="0 0 350 200"
+   xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <style type="text/css">
+        .axes {
+            fill: none;
+            stroke: #888;
+            stroke-width: 1px;
+        }
+        .data {
+            fill: none;
+            stroke: #33f;
+            stroke-width: 1px;
+        }
+        .label {
+            fill: #666;
+            font-family: Arial, sans-serif;
+            font-size: 8px;
+            text-anchor: middle;
+        }
+    </style>
+  <g class="axes" transform="translate(175,100)">
+    <path id="axis"
+       d="M0,0v-80M-2,-16h4m-4,-16h4m-4,-16h4m-4,-16h4m-4,-16h4" />
+    <use xlink:href="#axis" transform="rotate(72)" />
+    <use xlink:href="#axis" transform="rotate(144)" />
+    <use xlink:href="#axis" transform="rotate(-144)" />
+    <use xlink:href="#axis" transform="rotate(-72)" />
+  </g>
+  <path class="data"
+     d="m 174.57627,36.016949 30.85194,54.328751 -21.10618,22.78989 -37.44867,25.77838 -18.0598,-53.744479 45.76271,-49.152542 z"/>
+  <text class="label" x="175" y="15">Location</text>
+  <text class="label" x="255" y="70">Price</text>
+  <text class="label" x="225" y="175">Size</text>
+  <text class="label" x="125" y="175">Schools</text>
+  <text class="label" x="95" y="70">Age</text>
+</svg>

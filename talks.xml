@@ -793,4 +793,16 @@
     </topic>
   </talk>
 
+  <talk num="1006">
+    <date>June 2010</date>
+    <topic href="/talks/2010talks/1006Talk/index.html">
+      <title>Data Visualization with Perl and SVG</title>
+      <presenter>G. Wade Johnson</presenter>
+      <abstract>Wade previewed the talk he will present at YAPC::NA 2010.
+          This lead to a lively discussion about the capabilities of the
+          SVG image format. Todd Rinaldo asked for help on the Net::Ident
+          module.</abstract>
+    </topic>
+  </talk>
+
 </talklist>

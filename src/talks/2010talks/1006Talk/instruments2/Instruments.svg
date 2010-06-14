@@ -1,0 +1,653 @@
+<svg height="100%" width="100%" viewBox="0 0 400 300"
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     xmlns:in="http://www.anomaly.org/2003/instruments"
+     onload="init()">
+
+  <title>SVG-based Instruments Demo</title>
+  <desc>This demonstration shows some of my instruments as driven by random
+      data. It doesn't really do much of anything except show that they work.
+  </desc>
+  <metadata>
+    <!--
+        Copyright 2010, G. Wade Johnson
+	Some rights reserved.
+    -->
+    <rdf:RDF xmlns="http://web.resource.org/cc/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <Work rdf:about="">
+       <dc:title>SVG Instruments Demo</dc:title>
+       <dc:date>2010</dc:date>
+       <dc:description>A demonstration of my SVG instrumentation classes.</dc:description>
+       <dc:creator><Agent>
+	  <dc:title>G. Wade Johnson</dc:title>
+       </Agent></dc:creator>
+       <dc:rights><Agent>
+	  <dc:title>G. Wade Johnson</dc:title>
+       </Agent></dc:rights>
+       <dc:type rdf:resource="http://purl.org/dc/dcmitype/Interactive" />
+       <license rdf:resource="http://creativecommons.org/licenses/by-sa/2.0/" />
+    </Work>
+
+    <License rdf:about="http://creativecommons.org/licenses/by-sa/2.0/">
+       <permits rdf:resource="http://web.resource.org/cc/Reproduction" />
+       <permits rdf:resource="http://web.resource.org/cc/Distribution" />
+       <requires rdf:resource="http://web.resource.org/cc/Notice" />
+       <requires rdf:resource="http://web.resource.org/cc/Attribution" />
+       <permits rdf:resource="http://web.resource.org/cc/DerivativeWorks" />
+       <requires rdf:resource="http://web.resource.org/cc/ShareAlike" />
+    </License>
+
+    </rdf:RDF>
+  </metadata>
+
+  <defs>
+    <style type="text/css">
+      /* headings */
+      .heading { text-anchor: middle;
+                 font-family: arial, helvetica, sans-serif;
+		 font-size: 10px;
+	       }
+      .subhead { text-anchor: middle;
+                 font-family: arial, helvetica, sans-serif;
+		 font-size: 8px;
+	       }
+
+      /* gauges */
+      .ticks   { stroke-width: 0.1; stroke:#000; fill:none; }
+      .labels  { fill: black; font-size:4px; }
+      .rightjust { text-anchor: end; }
+      .center  { text-anchor:middle; }
+
+      /* bar gauges */
+      .bar     { stroke-width: 0; stroke:none; fill:#66f; }
+      .alarmed .bar { stroke-width: 0; stroke:none; fill:red; }
+
+      /* radial gauges */
+      .needle  { fill:#66f; stroke:#66f; }
+      .face    { fill:#ddd; stroke:black; stroke-width:0.1px; }
+
+      /* indicators */
+      .bevel           { fill:silver; stroke:none; }
+      .on              { fill: #f00; }
+      .off             { fill: #500; }
+      .greenlamp .on   { fill: #0f0; }
+      .greenlamp .off  { fill: #050; }
+
+      .alarmed         { fill: red; font-size:8px; }
+
+      /* readouts */
+      .display  { text-anchor: end; }
+      .readout  { font-size:8px; }
+      .readout2 { font-size:8px; font-family: times, serif; }
+      .panel {
+               fill: #fff; stroke: black; stroke-width:0.1;
+             }
+      .rate {
+          font-size: 6px;
+          fill: #888;
+      }
+    </style>
+    <script type="text/ecmascript" xlink:href="Instruments.es"/>
+    <script type="text/ecmascript" xlink:href="StripChart.es"/>
+    <script type="text/ecmascript" xlink:href="Params.es"/>
+    <script type="text/ecmascript"><![CDATA[
+     // test harness
+
+     var gauges = new Instruments();
+     var gNames = [ 'bargauge1', 'bargauge2', 'bargauge3',
+                    'bargauge4', 'bargauge5',
+                    'dial1', 'dial2', 'dial3', 'dial4', 'dial5',
+		    'lamp1', 'lamp2', 'lamp3', 'lamp4', 'lamp5',
+                    'readout1', 'readout2', 'readout3',
+		    'chart1', 'chart2', 'chart3', 'chart4', 'chart5'
+                  ];
+     function update_gauges( data )
+     {
+        for( i in data )
+        {
+            var g = gauges.get( i );
+            if( g !== null )
+            {
+                g.setValue( data[i] );
+            }
+        }
+        gauges.get( 'counter' ).setValue( 1 );
+     }
+     function parse_response()
+     {
+        if(xmlhttp.readyState == 4)
+        {
+            if(xmlhttp.status == 200)
+            {
+                update_gauges( JSON.parse( xmlhttp.responseText ) );
+            }
+        }
+     }
+
+     var xmlhttp;
+     function init()
+     {
+         gauges.addAll( gNames );
+         gauges.add( 'counter' );
+         if(window.XMLHttpRequest)
+         {
+            xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = parse_response;
+         }
+         else
+         {
+            alert( "Cannot make server request" );
+         }
+         if(window.JSON === null)
+         {
+            alert( "Cannot parse JSON" );
+         }
+     }
+
+     function request_update()
+     {
+        // Make an HTTP request to get input to the system.
+        if(xmlhttp !== null)
+        {
+            xmlhttp.open( 'GET', "http://localhost:8088/cgi-bin/instruments.cgi", true );
+            xmlhttp.send( '' );
+        }
+     }
+
+     var parms = new Params();
+     var rate = (null != parms['interval'] && parms['interval'].match( /^[1-9]\d*$/ ))
+         ? parms['interval']
+         : 500;
+    ]]></script>
+    <linearGradient id="fade2" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" style="stop-color:orange;"/>
+      <stop offset="100%" style="stop-color:yellow;"/>
+    </linearGradient>
+  </defs>
+  <rect id="bkg" x="0" y="0" width="100%" height="100%" fill="#eee"/>
+  <text class="heading" x="200" y="10">Instruments in SVG</text>
+
+  <!-- Bar Gauges -->
+
+  <g transform="translate(2,20)">
+    <title>Bar Gauges</title>
+
+    <text class="subhead" x="48" y="0">Bar Gauges</text>
+    <g id="bargauge1" transform="translate(2,10)" class="bar">
+      <metadata>
+        <in:ranged hlim="85" over="alarmed" normal="bar">
+          <in:gauge high="100" low="0"/>
+	</in:ranged>
+      </metadata>
+      <g transform="rotate(180,5,50)">
+	<rect id="bargauge1.bar"
+              x="0" y="0" width="10" height="100" transform="scale(1,1)"/>
+      </g>
+      <path class="ticks"
+            d="M10,0
+               h5m-5,5 h2m-2,5 h2m-2,5 h2m-2,5 h2m-2,5
+	       h5m-5,5 h2m-2,5 h2m-2,5 h2m-2,5 h2m-2,5
+	       h5m-5,5 h2m-2,5 h2m-2,5 h2m-2,5 h2m-2,5
+	       h5m-5,5 h2m-2,5 h2m-2,5 h2m-2,5 h2m-2,5 h5
+	       M0,0 h10 v100 h-10 v-100"/>
+      <text transform="translate(16,2)" class="labels">
+	<tspan x="0" y="100">0</tspan>
+	<tspan x="0" y="75">25</tspan>
+	<tspan x="0" y="50">50</tspan>
+	<tspan x="0" y="25">75</tspan>
+	<tspan x="0" y="0">100</tspan>
+      </text>
+    </g>
+
+    <g id="bargauge2" transform="translate(42,10)" class="bar">
+      <metadata>
+        <in:gauge high="100" low="0"/>
+      </metadata>
+      <g transform="rotate(180,5,50)">
+	<rect id="bargauge2.bar"
+              x="0" y="0" width="10" height="100" transform="scale(1,1)"/>
+      </g>
+      <path class="ticks"
+            d="M0,0
+               h-5m5,5 h-2m2,5 h-2m2,5 h-2m2,5 h-2m2,5
+	       h-5m5,5 h-2m2,5 h-2m2,5 h-2m2,5 h-2m2,5
+	       h-5m5,5 h-2m2,5 h-2m2,5 h-2m2,5 h-2m2,5
+	       h-5m5,5 h-2m2,5 h-2m2,5 h-2m2,5 h-2m2,5 h-5
+	       M0,0 h10 v100 h-10 v-100"/>
+      <text transform="translate(-6,2)" class="labels rightjust">
+	<tspan x="0" y="100">0</tspan>
+	<tspan x="0" y="75">25</tspan>
+	<tspan x="0" y="50">50</tspan>
+	<tspan x="0" y="25">75</tspan>
+	<tspan x="0" y="0">100</tspan>
+      </text>
+    </g>
+
+    <g id="bargauge3" transform="translate(64,10)" class="bar">
+      <metadata>
+        <in:ranged hlim="100" over="alarmed" normal="bar">
+          <in:clamp>
+            <in:gauge high="100" low="0"/>
+  	  </in:clamp>
+        </in:ranged>
+      </metadata>
+      <g transform="rotate(180,5,50)">
+	<rect id="bargauge3.bar"
+              x="0" y="0" width="10" height="100" transform="scale(1,1)"/>
+      </g>
+      <path class="ticks"
+            d="M1,0.25
+               h8m-6,4.75 h4m-4,5 h4m-4,5 h4m-4,5 h4m-6,5
+	       h8m-6,5    h4m-4,5 h4m-4,5 h4m-4,5 h4m-6,5
+	       h8m-6,5    h4m-4,5 h4m-4,5 h4m-4,5 h4m-6,5
+	       h8m-6,5    h4m-4,5 h4m-4,5 h4m-4,5 h4m-6,4.75 h8"/>
+      <text transform="translate(-1,2)" class="labels rightjust">
+	<tspan x="0" y="100">0</tspan>
+	<tspan x="0" y="75">25</tspan>
+	<tspan x="0" y="50">50</tspan>
+	<tspan x="0" y="25">75</tspan>
+	<tspan x="0" y="0">100</tspan>
+      </text>
+    </g>
+
+    <g id="bargauge4" transform="translate(87,10)" class="bar">
+      <metadata>
+        <in:gauge high="100" low="0"/>
+      </metadata>
+      <g transform="rotate(180,5,50)">
+	<rect id="bargauge4.bar"
+              x="0" y="0" width="10" height="100" transform="scale(1,1)"/>
+      </g>
+      <path class="ticks"
+            d="M0,0.25
+               h5m-5,4.75 h2m-2,5 h2m-2,5 h2m-2,5 h2m-2,5
+               h5m-5,5    h2m-2,5 h2m-2,5 h2m-2,5 h2m-2,5
+	       h5m-5,5    h2m-2,5 h2m-2,5 h2m-2,5 h2m-2,5
+	       h5m-5,5    h2m-2,5 h2m-2,5 h2m-2,5 h2m-2,4.75 h5"/>
+      <text transform="translate(-1,2)" class="labels rightjust">
+	<tspan x="0" y="100">0</tspan>
+	<tspan x="0" y="75">25</tspan>
+	<tspan x="0" y="50">50</tspan>
+	<tspan x="0" y="25">75</tspan>
+	<tspan x="0" y="0">100</tspan>
+      </text>
+    </g>
+
+    <g id="bargauge5" transform="translate(8,115)" class="bar">
+      <metadata>
+        <in:gauge high="100" low="0"/>
+      </metadata>
+      <g transform="rotate(270,5,10)">
+	<rect id="bargauge5.bar"
+              x="0" y="0" width="10" height="100" transform="scale(1,1)"/>
+      </g>
+      <g transform="rotate(90,45,50)">
+      <path class="ticks"
+            d="M1,0.25
+               h8m-6,4.75 h4m-4,5 h4m-4,5 h4m-4,5 h4m-6,5
+	       h8m-6,5    h4m-4,5 h4m-4,5 h4m-4,5 h4m-6,5
+	       h8m-6,5    h4m-4,5 h4m-4,5 h4m-4,5 h4m-6,5
+	       h8m-6,5    h4m-4,5 h4m-4,5 h4m-4,5 h4m-6,4.75 h8"/>
+      <text transform="translate(15,0) rotate(-90)" class="labels center">
+	<tspan x="-100" y="0">0</tspan>
+	<tspan x="-75"  y="0">25</tspan>
+	<tspan x="-50"  y="0">50</tspan>
+	<tspan x="-25"  y="0">75</tspan>
+	<tspan x="0"    y="0">100</tspan>
+      </text>
+      </g>
+    </g>
+  </g>
+
+  <!-- Dials -->
+
+  <g transform="translate(150,20)">
+    <title>Dials</title>
+    <text class="subhead" x="50" y="0">Radial Gauges</text>
+
+    <g id="dial1" transform="translate(0,30)">
+      <metadata>
+        <in:dial high="100" low="0" angle="-180"/>
+      </metadata>
+      <path d="M-20,0a20,20 0 1,1 40,0z" class="face"/>
+      <path class="ticks"
+            d="M20,0 h-3m-17,-20 v3m-20,17 h3"/>
+      <path class="ticks" transform="rotate(-30)"
+            d="M20,0 h-1m-19,-20 v1"/>
+      <path class="ticks" transform="rotate(-60)"
+            d="M20,0 h-1m-19,-20 v1"/>
+      <text class="labels center">
+	<tspan x="14"  y="2">0</tspan>
+	<tspan x="0"   y="-13">50</tspan>
+	<tspan x="-13" y="2">100</tspan>
+      </text>
+      <path id="dial1.needle" transform="rotate(0)" class="needle"
+            style="stroke:none;"
+            d="M0,-.5l20,.5l-20,.5a0.5,0.5 0 1,1 0,-1"/>
+    </g>
+
+    <g id="dial2" transform="translate(50,30)">
+      <metadata>
+        <in:dial high="100" low="0" angle="-180"/>
+      </metadata>
+      <path d="M-20,0a20,20 0 1,1 40,0z" class="face"/>
+      <path class="ticks"
+            d="M20,0 h-3m-17,-20 v3m-20,17 h3"/>
+      <path class="ticks" transform="rotate(-30)"
+            d="M20,0 h-1m-19,-20 v1"/>
+      <path class="ticks" transform="rotate(-60)"
+            d="M20,0 h-1m-19,-20 v1"/>
+      <text class="labels center">
+	<tspan x="14"  y="2">0</tspan>
+	<tspan x="0"   y="-13">50</tspan>
+	<tspan x="-13" y="2">100</tspan>
+      </text>
+      <path id="dial2.needle" transform="rotate(0)" class="needle"
+            style="stroke:black; stroke-width:0.1;"
+            d="M0,0l13,0l2,-1l4,1l-4,1l-2,-1"/>
+    </g>
+
+    <g id="dial3" transform="translate(100,30)">
+      <metadata>
+        <in:dial high="100" low="0" angle="360"/>
+      </metadata>
+      <circle cx="0" cy="0" r="20" class="face"/>
+      <path class="ticks"
+            d="M20,0 h-3m-17,-20 v3m-20,17 h3m17,20 v-3"/>
+      <path class="ticks" transform="rotate(-30)"
+            d="M20,0 h-1m-19,-20 v1m-20,19 h1m19,20 v-1"/>
+      <path class="ticks" transform="rotate(-60)"
+            d="M20,0 h-1m-19,-20 v1m-20,19 h1m19,20 v-1"/>
+      <text class="labels" style="text-anchor:middle;">
+	<tspan x="0"   y="-13">0</tspan>
+	<tspan x="-14" y="2">25</tspan>
+	<tspan x="0"   y="16">50</tspan>
+	<tspan x="14"  y="2">75</tspan>
+      </text>
+      <path id="dial3.needle" transform="rotate(0)" class="needle"
+            style="stroke:black; stroke-width:0.1;"
+            d="M0,0l0,-13l-1,-2l1,-4l1,4l-1,2"/>
+    </g>
+
+    <g id="dial4" transform="translate(0,70)">
+      <metadata>
+        <in:dial high="100" low="0" angle="270"/>
+      </metadata>
+      <g transform="rotate(45)">
+	<path d="M20,0a20,20 0 1,0 -20,20z" class="face"/>
+	<path class="ticks"
+              d="M20,0 h-3m-17,-20 v3m-20,17 h3m17,20 v-3"/>
+	<path class="ticks" transform="rotate(-45)"
+              d="M20,0 h-1m-19,-20 v1m-20,19 h1"/>
+	<path id="dial4.needle" transform="rotate(0)" class="needle"
+              style="stroke:none;"
+              d="M-.5,0l0.5,20l0.5,-20a0.5,0.5 0 1,0 -1,0"/>
+      </g>
+      <text class="labels center">
+	<tspan x="-10" y="12">0</tspan>
+	<tspan x="-10" y="-9">33</tspan>
+	<tspan x="10"  y="-9">66</tspan>
+	<tspan x="10"  y="12">100</tspan>
+      </text>
+    </g>
+
+    <g id="dial5" transform="translate(50,70)">
+      <metadata>
+        <in:delta>
+          <in:dial high="100" low="-100" angle="-180"/>
+	</in:delta>
+      </metadata>
+      <path d="M-20,0a20,20 0 1,1 40,0z" class="face"/>
+      <path class="ticks"
+            d="M20,0 h-3m-17,-20 v3m-20,17 h3"/>
+      <path class="ticks" transform="rotate(-30)"
+            d="M20,0 h-1m-19,-20 v1"/>
+      <path class="ticks" transform="rotate(-60)"
+            d="M20,0 h-1m-19,-20 v1"/>
+      <text class="labels center">
+	<tspan x="11"  y="2">-100</tspan>
+	<tspan x="0"   y="-13">0</tspan>
+	<tspan x="-13" y="2">100</tspan>
+      </text>
+      <path id="dial5.needle" transform="rotate(-90)" class="needle"
+            style="stroke:black; stroke-width:0.1;"
+            d="M0,0l13,0l2,-1l4,1l-4,1l-2,-1"/>
+    </g>
+
+  </g>
+
+  <!-- Indicator Lamps -->
+
+  <g transform="translate(310,20)">
+    <title>Indicator Lamps</title>
+    <text class="subhead" x="40" y="00">Indicator Lamps</text>
+
+    <g id="lamp1" transform="translate(0,10)">
+      <metadata>
+        <in:threshold high="2" low="0" thresh="1">
+          <in:lamp/>
+	</in:threshold>
+      </metadata>
+      <circle r="5" cx="5" cy="5" class="bevel"/>
+      <circle id="lamp1.lamp" r="4" cx="5" cy="5" class="on"/>
+    </g>
+
+    <g id="lamp2" transform="translate(20,10)">
+      <metadata>
+        <in:threshold high="2" low="0" thresh="1">
+          <in:lamp/>
+	</in:threshold>
+      </metadata>
+      <rect x="0" y="0" width="6" height="10" class="bevel"/>
+      <rect id="lamp2.lamp" x="1" y="1" width="4" height="8" class="off"/>
+    </g>
+
+    <g id="lamp3" transform="translate(35,10)">
+      <metadata>
+        <in:threshold high="2" low="0" thresh="1">
+          <in:lamp/>
+	</in:threshold>
+      </metadata>
+      <rect x="0" y="0" width="10" height="6" class="bevel"/>
+      <rect id="lamp3.lamp" x="1" y="1" width="8" height="4" class="on"/>
+    </g>
+
+    <g id="lamp4" transform="translate(50,10)" class="greenlamp">
+      <metadata>
+        <in:threshold high="2" low="0" thresh="1">
+          <in:lamp/>
+	</in:threshold>
+      </metadata>
+      <circle r="5" cx="5" cy="5" class="bevel"/>
+      <circle id="lamp4.lamp" r="4" cx="5" cy="5" class="on"/>
+    </g>
+
+    <g id="lamp5" transform="translate(65,10)" class="greenlamp">
+      <metadata>
+        <in:threshold high="2" low="0" thresh="1">
+          <in:lamp/>
+	</in:threshold>
+      </metadata>
+      <rect x="0" y="0" width="10" height="6" class="bevel"/>
+      <rect id="lamp5.lamp" x="1" y="1" width="8" height="4" class="off"/>
+    </g>
+  </g>
+
+  <!-- Readouts -->
+
+  <g transform="translate(310,60)">
+    <title>Readouts</title>
+    <text class="subhead" x="40" y="0">Readouts</text>
+    <g id="readout1" transform="translate(0,5)" class="readout">
+      <metadata>
+        <in:ranged hlim="8000" over="alarmed" llim="100" under="alarmed"
+	            normal="readout">
+          <in:readout digits="4" dec="1" signed="no"/>
+	</in:ranged>
+      </metadata>
+      <rect x="0" y="0" width="32" height="10" class="panel"/>
+      <text id="readout1.disp" x="30" y="8" class="display">0.0</text>
+    </g>
+
+    <g id="readout2" transform="translate(45,5)" class="readout2">
+      <metadata>
+        <in:readout digits="3" dec="1" signed="yes"/>
+      </metadata>
+      <text id="readout2.disp" x="28" y="8" class="display">0.0</text>
+    </g>
+
+    <g id="readout3" transform="translate(45,25)" class="readout2">
+      <metadata>
+        <in:readout digits="3" dec="1" signed="yes"/>
+      </metadata>
+      <text id="readout3.disp" x="28" y="8" class="display">0.0</text>
+      <text id="readout3.sign" x="33" y="8" class="display"> </text>
+    </g>
+
+    <g id="counter" transform="translate(0,25)" class="readout">
+      <metadata>
+        <in:accumulator>
+          <in:readout digits="3" dec="0"/>
+	</in:accumulator>
+      </metadata>
+      <text id="counter.disp" x="28" y="8" class="display">0</text>
+    </g>
+  </g>
+
+
+  <!-- StripCharts -->
+
+  <g transform="translate(150,125)">
+    <title>Strip Charts</title>
+    <text class="subhead" x="115" y="00">Strip Charts</text>
+
+    <g id="chart1" transform="translate(0,10)" width="100" height="40">
+      <metadata>
+	<in:stripchart high="20" low="-20" height="40" width="100" step="4"/>
+      </metadata>
+      <rect id="chart1.bkg" x="0" y="0" width="100" height="40"
+            style="fill:white; stroke:black; stroke-width:0.2;"/>
+      <line class="ticks" x1="0" y1="20" x2="100" y2="20"/>
+      <text transform="translate(-1,2)" class="labels rightjust">
+	<tspan x="0" y="40">-20</tspan>
+	<tspan x="0" y="30">-10</tspan>
+	<tspan x="0" y="20">0</tspan>
+	<tspan x="0" y="10">10</tspan>
+	<tspan x="0" y="0">20</tspan>
+      </text>
+      <g transform="translate(0,40) scale(1,-1)">
+	<path id="chart1.line" style="fill:none; stroke:blue; stroke-width:1;"
+              d="M0,0"/>
+      </g>
+    </g>
+
+    <g id="chart2" transform="translate(0,60)" width="100" height="40">
+      <metadata>
+	<in:stripchart high="100" low="0" height="40" width="100" step="4"/>
+      </metadata>
+      <rect id="chart2.bkg" x="0" y="0" width="100" height="40"
+            style="fill:white; stroke:black; stroke-width:0.2;"/>
+      <text transform="translate(-1,2)" class="labels rightjust">
+	<tspan x="0" y="0">100</tspan>
+	<tspan x="0" y="10">75</tspan>
+	<tspan x="0" y="20">50</tspan>
+	<tspan x="0" y="30">25</tspan>
+	<tspan x="0" y="40">0</tspan>
+      </text>
+      <g transform="translate(0,40) scale(1,-1)">
+	<path id="chart2.fill" style="fill:#dfd; stroke:none;"
+              d="M0,0"/>
+	<path id="chart2.line" style="fill:none; stroke:green; stroke-width:1;"
+              d="M0,0"/>
+      </g>
+    </g>
+
+    <g id="chart3" transform="translate(130,10)" width="100" height="40">
+      <metadata>
+	<in:stripchart high="40" low="0" height="40" width="100" step="4"/>
+      </metadata>
+      <rect id="chart3.bkg" x="0" y="0" width="100" height="40"
+            style="fill:white; stroke:black; stroke-width:0.2;"/>
+      <g transform="translate(0,40) scale(1,-1)">
+	<path id="chart3.fill" style="fill:blue; stroke:none;"
+              d="M0,0"/>
+      </g>
+      <g style="stroke-width:0.5; stroke:#fff; opacity:0.5;">
+        <line x1="0" y1="30" x2="100" y2="30"/>
+        <line x1="0" y1="20" x2="100" y2="20"/>
+        <line x1="0" y1="10" x2="100" y2="10"/>
+      </g>
+      <text transform="translate(-1,2)" class="labels rightjust">
+	<tspan x="0" y="0">100</tspan>
+	<tspan x="0" y="10">75</tspan>
+	<tspan x="0" y="20">50</tspan>
+	<tspan x="0" y="30">25</tspan>
+	<tspan x="0" y="40">0</tspan>
+      </text>
+    </g>
+
+    <g id="chart4" transform="translate(130,60)" width="100" height="40">
+      <metadata>
+	<in:stripchart high="100" low="0" height="40" width="100" step="4"/>
+      </metadata>
+      <rect id="chart4.bkg" x="0" y="0" width="100" height="40"
+            style="fill:white; stroke:black; stroke-width:0.2;"/>
+      <g transform="translate(0,40) scale(1,-1)">
+	<path id="chart4.fill" style="fill:url(#fade2); stroke:none;"
+              d="M0,0h0"/>
+	<path id="chart4.line" style="fill:none; stroke:orange; stroke-width:1;"
+              d="M0,0"/>
+      </g>
+      <g class="ticks" style="stroke-dasharray:1,3;">
+        <line x1="0" y1="30" x2="100" y2="30"/>
+        <line x1="0" y1="20" x2="100" y2="20"/>
+        <line x1="0" y1="10" x2="100" y2="10"/>
+      </g>
+      <text transform="translate(-1,2)" class="labels rightjust">
+	<tspan x="0" y="0">100</tspan>
+	<tspan x="0" y="10">75</tspan>
+	<tspan x="0" y="20">50</tspan>
+	<tspan x="0" y="30">25</tspan>
+	<tspan x="0" y="40">0</tspan>
+      </text>
+    </g>
+
+    <g id="chart5" transform="translate(0,110)">
+      <metadata>
+	<in:stripchart high="50" low="-50" height="40" width="100" step="4"/>
+      </metadata>
+      <rect id="chart5.bkg" x="0" y="0" width="100" height="40"
+            style="fill:white; stroke:black; stroke-width:0.2;"/>
+      <g transform="translate(0,40) scale(1,-1)">
+	<path id="chart5.fill" style="fill:#dfd; stroke:none;"
+              d="M0,0"/>
+	<path id="chart5.line" style="fill:none; stroke:green; stroke-width:1;"
+              d="M0,0"/>
+      </g>
+      <line class="ticks" x1="0" y1="20" x2="100" y2="20"/>
+      <text transform="translate(-1,2)" class="labels rightjust">
+	<tspan x="0" y="0">50</tspan>
+	<tspan x="0" y="10">25</tspan>
+	<tspan x="0" y="20">0</tspan>
+	<tspan x="0" y="30">-25</tspan>
+	<tspan x="0" y="40">-50</tspan>
+      </text>
+    </g>
+  </g>
+  <rect id="start" x="5" y="290" height="5" width="5" fill="#666" stroke="none"
+        onclick="toggle( evt )" />
+  <script type="text/javascript">
+    var interval = null;
+    function toggle( e ) {
+        if ( null === interval ) {
+            interval = setInterval( request_update, rate );
+        }
+        else {
+            clearInterval( interval );
+            interval = null;
+        }
+    }
+  </script>
+</svg>

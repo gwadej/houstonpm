@@ -1,0 +1,512 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>Data Visualization with Perl and SVG</title>
+<!-- metadata -->
+<meta name="generator" content="S5" />
+<meta name="version" content="S5 1.1" />
+<meta name="presdate" content="20100622" />
+<meta name="author" content="G. Wade Johnson" />
+<!-- configuration parameters -->
+<meta name="defaultView" content="slideshow" />
+<meta name="controlVis" content="hidden" />
+<!-- style sheet links -->
+<link rel="stylesheet" href="ui/yapc/slides.css" type="text/css" media="projection" id="slideProj" />
+<link rel="stylesheet" href="ui/default/outline.css" type="text/css" media="screen" id="outlineStyle" />
+<link rel="stylesheet" href="ui/default/print.css" type="text/css" media="print" id="slidePrint" />
+<link rel="stylesheet" href="ui/default/opera.css" type="text/css" media="projection" id="operaFix" />
+<link rel="stylesheet" href="ui/yapc/syntax-highlight.css" type="text/css" media="screen" />
+<style type="text/css">
+    .slide p { font-size: +1; margin-top: 3em; text-align: center; }
+    p.app { margin-top: 1em; }
+    p.just { text-align: left; margin: 3em; }
+    .handout p { font-size: normal; margin-top: 1em; text-align: left; }
+    .slide p.dos { text-align: left; margin-left: 3em; }
+    .slide p.head { margin-top: 1em; }
+    .slide h1 { text-transform: none; }
+    .slide ul.nobull { list-style:none; margin-left: 10%; }
+    .slide p.by { font-size: smaller; text-align: right; margin:0.5em 15% 0 0; }
+    .slide blockquote { margin-top:3em; font-variant: italic; }
+    p.small { font-size: medium; }
+</style>
+<!-- S5 JS -->
+<script src="ui/default/slides.js" type="text/javascript"></script>
+</head>
+<body>
+
+<div class="layout">
+<div id="controls"><!-- DO NOT EDIT --></div>
+<div id="currentSlide"><!-- DO NOT EDIT --></div>
+<div id="header"></div>
+<div id="footer">
+<h1>SVG/Perl</h1>
+</div>
+
+</div>
+
+
+<div class="presentation">
+
+<div class="slide">
+<h1>Data Visualization with Perl and SVG</h1>
+<h2></h2>
+<h3>G. Wade Johnson</h3>
+<h4>YAPC::NA 2010</h4>
+</div>
+
+<div class="slide">
+<h1>SVG</h1>
+<p>How many people here are familiar with
+<acronym title="Scalable Vector Graphics">SVG</acronym>?</p>
+<div class="handout">
+    <p>Despite it's maturity, many people really don't know much about it.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>SVG</h1>
+<p><acronym title="Scalable Vector Graphics">SVG</acronym> is an
+<acronym title="eXtensible Markup Language">XML</acronym>-based vector graphics
+image format<br />specified by the <a target="_blank" href="http://www.w3.org/">W3C</a></p>
+<div class="handout">
+<p>Unlike raster graphics, all objects are drawn with high-level descriptions,
+not individual colored pixels. These objects hold their identities in the
+completed drawing which allows for effects associated with the objects.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>SVG Features</h1>
+<ul>
+    <li>Graphics primitives</li>
+    <li>Powerful filtering capabilities</li>
+    <li><acronym title="Cascading StyleSheet">CSS</acronym> support</li>
+    <li>Declarative animation</li>
+    <li>Scripting support</li>
+</ul>
+<div class="handout">
+<p>I could spend a long time trying to list all of the individual elements and
+features of SVG and still not really do them justice. We'll just hit the high
+points for now.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>SVG Maturity</h1>
+<ul>
+    <li>First specification (<a target="_blank" href="http://www.w3.org/TR/SVG10/">SVG 1.0</a>) in 2000</li>
+    <li>Updated in 2003 (<a target="_blank" href="http://www.w3.org/TR/SVG11/">SVG 1.1</a>)</li>
+    <li>Modularized in 2005 (<a target="_blank" href="http://www.w3.org/TR/SVG12/">SVG 1.2</a>)</li>
+    <li>(Partially) supported in most major browsers</li>
+</ul>
+<div class="handout">
+<p>Implemented in a number of non-browser applications over the last decade.
+This has allowed programmers, designers, and artists to make use of the
+technology and help it improve. All of the major browsers, except 1, have
+significant portions of the specification implemented. Microsoft has announced
+that IE 9 will have support for SVG.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Data Visualization</h1>
+<p>What do we mean by Data Visualization?</p>
+<div class="handout">
+    <p>What do most people mean by the term?</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>DV: Business Graphics?</h1>
+<object style="margin-left: 10%;" height="50%" width="70%" type="image/svg+xml"
+    data="images/business_graphics.svg"></object>
+<div class="handout">
+<p>Most business people and students probably think of the standard set of
+presentation graphics tools when trying to decide how to present data.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>DV: Scatter Plots?</h1>
+<object style="margin-left: 25%;" height="50%" width="50%" type="image/svg+xml"
+    data="images/scatter_plot.svg"></object>
+<div class="handout">
+<p>Scatter plots are great for data that includes randome error. Often you
+can get an idea of potential curves to fit from looking at the plot itself.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>DV: Histograms?</h1>
+<object style="margin-left: 25%;" height="50%" width="50%" type="image/svg+xml"
+    data="images/histogram.svg"></object>
+<div class="handout">
+<p>Histograms are similar to bar graphs. But, they normally serve to quantize
+discrete or continuous data in categories.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>DV: Radar Graphs?</h1>
+<object style="margin-left: 25%;" height="50%" width="50%" type="image/svg+xml"
+    data="images/radar_graph.svg"></object>
+<div class="handout">
+<p>Radar graphs seem to be falling out of favor, but you still see them
+every now and then.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>DV: Sparklines?</h1>
+<p>Sparklines are word-sized graphics designed<br />
+by Edward Tufte for use within text. They can<br />
+display trends
+<object display="inline" height="1em" type="image/svg+xml"
+    data="images/sl_line.svg"></object>, the win/loss
+record of your<br />favorite ball team
+<object display="inline" height="1em" type="image/svg+xml"
+    data="images/sl_winloss.svg"></object>, or any other
+data
+<object display="inline" height="1em" type="image/svg+xml"
+    data="images/sl_rainrange.svg"></object><br />that
+would benefit from a quick summary.</p>
+<div class="handout">
+    notes
+</div>
+</div>
+
+<div class="slide">
+<h1>Data Visualization</h1>
+<p>Different meanings to different people.</p>
+<div class="handout">
+<p>I'm sure that most of you have used one or another of these tools in the
+past. There are plenty of others. People like Edward Tufte and Stephen Few
+have categorized and studied may ways of visualizing data (good and bad)
+for years.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Improvement</h1>
+<p>How can SVG improve on basic charts?</p>
+<div class="handout">
+<p>As we saw in the examples, SVG can easily duplicate the functionality of any
+data visualization format. But, it is fair to ask what can SVG do that other
+formats cannot? After all, if it doesn't provide any new benefits, what's the
+point of using it?</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Scalability</h1>
+<p>Vector graphics are inherently scalable.</p>
+<div class="handout">
+<p>Zoom in or out to anmost any degree and vector graphics remain just as
+sharp. This is an inherent advantage of vector graphics.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Interactivity</h1>
+<p>What if you could interact with the data?</p>
+<div class="handout">
+<p>The definition of each object is not a matter of which pixels are which
+color. Objects are defined explicitly and a new representation can be
+generated, by the viewer, after any scaling.</p>
+<p>As a consequence of the fact that the graphical objects remain in the
+representation of the image and SVG supports scripting, we have the interesting
+possibility of providing graphics that the user can interact with.</p>
+<p>While this capability is often used more for games or user interface
+components, it can allow combining multiple instances of a single graphic into
+one. Given the appropriate clues, a user can then interact with the graphic to
+explore the data in new ways.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>A Line Graph...Plus</h1>
+<object style="margin-left: 25%;" height="50%" width="50%" type="image/svg+xml"
+    data="images/lin-wuse-result.svg"></object>
+<div class="handout">
+<p>A couple of years ago, I began doing some profiling work on the speed of the
+script engines in various browsers and SVG viewers. When I wanted to display
+the result, I naturally turned to SVG as my data visualization tool of
+choice.</p>
+<p>Unfortunately, none of the libraries that I found out there quite displayed
+the data the way I wanted. A little bit of Perl and I had this output with a
+small amount of interactivity.</p> 
+</div>
+</div>
+
+
+<div class="slide">
+<h1>Data Exploration</h1>
+<p><a href="http://www.codedread.com/">Jeff Schiller</a>'s <a target="_blank" href="http://www.codedread.com/displayWebStats.svg">Web Statistics.</a></p>
+<div class="handout">
+<p>Jeff Schiller built a wonderfully interactive example showing percentage of
+users accessing his site from each of the major browsers. By using the
+interactive features of SVG, Jeff was able to provide a way to explore the
+data, not just display it.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Map-based Data Visualization</h1>
+<p>Cartographers display data on maps.</p>
+<div class="handout">
+<p>It turns out that one group that has really embraced SVG is the cartography
+community. Displaying data on maps is something that SVG does quite well.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Mappetizer</h1>
+<p>Ruth Lang provided an <a target="_blank" href="http://www.mappetizer.de/de/beispiele/bw_statdaten/index.html">example</a>
+generated with the <a target="_blank" href="http://www.mappetizer.de/en/index.html">Mappetizer</a> tool.</p>
+<div class="handout">
+<p>This example was posted on the SVG Developers' Mailing List in part of a
+discussion of interactive controls. This shows one of the directions that many
+cartographers have followed in displaying map-based data with SVG.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Time</h1>
+<p>With SVG we can also display changes in time.</p>
+<div class="handout">
+<p>Use scripting or <acronym title="Synchronized Multimedia Integration Language">SMIL</acronym>
+for graphs that change over time. This can be used for either real-time display
+or a tactic for displaying yet another changing variable on a single graphic.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Dynamic Data Displays</h1>
+<object style="margin-left: 25%;" height="50%" width="50%" type="image/svg+xml"
+    data="instruments/Instruments.svg"></object>
+<div class="handout">
+<p>The instruments demo was one of my first serious uses of SVG. This is a
+variation of a tool I used to show data streaming in from an external server.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>What About Perl?</h1>
+<p>So SVG is cool, but what has this got to do with Perl?</p>
+<div class="handout">
+<p>Although we normally think only of the graphics that result from data
+visualization. Generation of the graphics can be a separate issue from the
+display of the graphic.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Generating SVG with Perl</h1>
+<p>SVG is just XML.</p>
+<div class="handout">
+<p>Unlike many other graphics formats, SVG is just XML. XML is just (Unicode)
+text. Perl excels at parsing and generating text. There are many ways to write
+XML from Perl.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>XML-Specific Modules</h1>
+<ul>
+    <li>XML::LibXML</li>
+    <li>XML::Writer</li>
+</ul>
+<div class="handout">
+<p>Since SVG is just XML, libraries that write XML can write SVG. (Assuming
+they support namespaces.)</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>SVG is Just (Unicode) Text</h1>
+<ul>
+    <li>Template Toolkit</li>
+    <li>raw <code>print</code></li>
+</ul>
+<div class="handout">
+<p>Although there is less of a safety net, anything that you can use to output
+raw text can also be used to write SVG.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>SVG-specific Modules</h1>
+<ul>
+    <li>SVG</li>
+    <li>SVG::TT::Graph</li>
+    <li>SVG::Sparkline</li>
+    <li>SVG::Template::Graph</li>
+    <li>GD::SVG</li>
+</ul>
+<div class="handout">
+<p>There are a number of modules that provide a Perl interface for writing
+SVG.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1><code>SVG</code> Example</h1>
+<pre><code>
+<span class="synPreProc">#!/usr/bin/env perl</span>
+
+<span class="synStatement">use </span>SVG;
+
+<span class="synStatement">my</span> <span class="synIdentifier">$svg</span> = SVG-&gt;new( <span class="synConstant">width</span> =&gt; <span class="synConstant">200</span>, <span class="synConstant">height</span> =&gt; <span class="synConstant">150</span> );
+<span class="synIdentifier">$svg-&gt;line</span>( <span class="synConstant">class</span>=&gt;<span class="synConstant">'axes'</span>,
+    <span class="synConstant">x1</span>=&gt;<span class="synConstant">50</span>, <span class="synConstant">y1</span>=&gt; <span class="synConstant">20</span>, <span class="synConstant">x2</span>=&gt;<span class="synConstant">50</span>, <span class="synConstant">y2</span>=&gt;<span class="synConstant">130</span> );
+<span class="synIdentifier">$svg-&gt;line</span>( <span class="synConstant">class</span>=&gt;<span class="synConstant">'axes'</span>,
+    <span class="synConstant">x1</span>=&gt;<span class="synConstant">50</span>, <span class="synConstant">y1</span>=&gt; <span class="synConstant">130</span>, <span class="synConstant">x2</span>=&gt;<span class="synConstant">150</span>, <span class="synConstant">y2</span>=&gt;<span class="synConstant">130</span> );
+<span class="synIdentifier">$svg-&gt;path</span>( <span class="synConstant">class</span>=&gt;<span class="synConstant">'data'</span>,
+    <span class="synConstant">d</span>=&gt;<span class="synConstant">'M50,130l10,-50l10,-30l10,40'</span>
+      . <span class="synConstant">'l10,-50l10,20l10,30l10,-80'</span>
+);
+
+<span class="synStatement">print</span> <span class="synIdentifier">$svg-&gt;xmlify</span>;
+</code></pre>
+<div class="handout">
+    notes
+</div>
+</div>
+
+<div class="slide">
+<h1><code>SVG::TT::Graph</code> Example</h1>
+<pre><code>
+<span class="synPreProc">#!/usr/bin/env perl</span>
+
+<span class="synStatement">use </span>SVG::TT::Graph::Pie;
+<span class="synStatement">my</span> <span class="synIdentifier">$graph</span> = SVG::TT::Graph::Pie-&gt;new({
+    <span class="synConstant">'height'</span> =&gt; <span class="synConstant">200</span>, <span class="synConstant">'width'</span> =&gt; <span class="synConstant">350</span>,
+    <span class="synConstant">'compress'</span> =&gt; <span class="synConstant">0</span>, <span class="synConstant">'expand_greatest'</span> =&gt; <span class="synConstant">1</span>,
+    <span class="synConstant">'fields'</span> =&gt; [ <span class="synConstant">qw/Jan Feb Mar Apr May/</span> ],
+});
+
+<span class="synIdentifier">$graph-&gt;add_data</span>({ <span class="synConstant">'data'</span> =&gt; [ <span class="synConstant">50</span>, <span class="synConstant">60</span>, <span class="synConstant">53</span>, <span class="synConstant">58</span> ], });
+
+<span class="synStatement">print</span> <span class="synIdentifier">$graph-&gt;burn</span>;
+</code></pre>
+<div class="handout">
+<p>Here's a quick example of how to generate a pie-chart with the
+<code>SVG::TT::Graph</code> module.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1><code>SVG::Sparkline</code> Example</h1>
+<pre><code>
+<span class="synPreProc">#!/usr/bin/env perl</span>
+
+<span class="synStatement">use </span>SVG::Sparkline;
+
+<span class="synStatement">my</span> <span class="synIdentifier">@temps</span> = (<span class="synConstant">61</span>,<span class="synConstant">67</span>,<span class="synConstant">67</span>,<span class="synConstant">77</span>,<span class="synConstant">83</span>,<span class="synConstant">84</span>,<span class="synConstant">82</span>,<span class="synConstant">84</span>,<span class="synConstant">84</span>,<span class="synConstant">86</span>,<span class="synConstant">78</span>,<span class="synConstant">50</span>,<span class="synConstant">44</span>,<span class="synConstant">47</span>,
+    <span class="synConstant">54</span>,<span class="synConstant">76</span>,<span class="synConstant">72</span>,<span class="synConstant">78</span>,<span class="synConstant">78</span>,<span class="synConstant">80</span>,<span class="synConstant">80</span>,<span class="synConstant">82</span>,<span class="synConstant">81</span>,<span class="synConstant">77</span>,<span class="synConstant">82</span>,<span class="synConstant">74</span>,<span class="synConstant">77</span>,<span class="synConstant">64</span>,<span class="synConstant">72</span>,<span class="synConstant">75</span>,<span class="synConstant">71</span>);
+<span class="synStatement">my</span> <span class="synIdentifier">$svg</span> = SVG::Sparkline-&gt;new( <span class="synConstant">Line</span> =&gt; { <span class="synConstant">values</span>=&gt;\<span class="synIdentifier">@temps</span> } );
+
+<span class="synStatement">print</span> <span class="synIdentifier">$svg</span>;
+</code></pre>
+<div class="handout">
+<p>Quick example using the <code>SVG::Sparkline</code> module to create
+a simple line graph.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Backend Feed Data to Visualize</h1>
+<p>JavaScript in SVG can call out to a server.</p>
+<div class="handout">
+<p>Remember Jeff Schiller's web browser application and the instruments demo.
+Both of these were designed to retrieve data from a server for display in the
+browser.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Perl Serving Data</h1>
+<ul>
+    <li>Catalyst, Plack, or HTTP::Daemon</li>
+    <li>JSON or JSON::Syck</li>
+</ul>
+<div class="handout">
+<p>Need I say more?</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Server-Driven SVG</h1>
+<object style="margin-left: 25%;" height="50%" width="50%" type="image/svg+xml"
+    data="http://anomaly.org/houstonpm/instruments2/Instruments.svg"></object>
+<div class="handout">
+<p>This version of the instruments demo is driven from a server. Depending on
+the venue, this is either a CGI script or an <code>HTTP::Daemon</code>
+standalone server.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>The Server</h1>
+<p>A standalone <a target="_blank" href="instruments2/instruments_srvr.html">server</a>
+can be pretty simple.</p>
+<div class="handout">
+    notes
+</div>
+</div>
+
+
+
+
+
+<div class="slide">
+<h1>References: Web</h1>
+<ul>
+    <li>The Official W3C <a target="_blank" href="http://www.w3.org/TR/SVG/">Specification</a></li>
+    <li><a target="_blank" href="http://www.planetsvg.com/">Planet SVG</a></li>
+    <li><a target="_blank" href="http://www.w3.org/Graphics/SVG/IG/resources/svgprimer.html">SVG
+        Primer for Today's Browsers</a></li>
+    <li><a target="_blank" href="http://svglbc.datenverdrahten.de/?code=a&znr=onhttp://svglbc.datenverdrahten.de/?code=a&znr=on">SVG
+        - Learning by Coding</a> - German</li>
+    <li><a target="_blank" href="http://jwatt.org/svg/authoring/">SVG Authoring
+        Guidelines</a> - Jonathan Watt</li>
+    <li><a href="http://www.ibm.com/developerworks/library/x-svgclientside/">Create client-side diagrammatic interaction in Web applications with SVG</a></li>
+</ul>
+<div class="handout">
+<p>This is a subset of the resources I use for information on SVG. Some are general
+information, and others give specific advice.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>References: Print</h1>
+<ul>
+    <li><cite>SVG Essentials</cite>
+        <br />- J. David Eisenberg</li>
+    <li><cite>The Visual Display of Quantitative Information</cite>
+        <br />- Edward R. Tufte</li>
+    <li><cite>Information Dashboard Design</cite>
+        <br />- Stephen Few</li>
+</ul>
+<div class="handout">
+<p>The first book is a bit out of date, but it is the one I learned SVG from.
+The other two represent what I'm trying to learn about data visualization. Both
+provide examples that are far beyond my current abilities.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1></h1>
+<p>Questions?</p>
+<div class="handout">
+    notes
+</div>
+</div>
+
+
+</div>
+</body>
+</html>

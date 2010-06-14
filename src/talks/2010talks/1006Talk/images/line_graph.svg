@@ -1,0 +1,525 @@
+<?xml version="1.0"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN"
+  "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+
+  <?xml-stylesheet href="../style/lines.css" type="text/css"?>  
+
+<svg width="100%" height="100%" preserveAspectRatio="xMidyMid" viewBox="0 0 500 200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+<!-- \\\\\\\\\\\\\\\\\\\\\\\\\\\\  -->
+<!-- Created with SVG::TT::Graph   -->
+<!-- Stephen Morgan / Leo Lapworth -->
+<!-- ////////////////////////////  -->
+
+
+<!-- svg bg -->
+<rect x="0" y="0" width="500" height="200" class="svgBackground"/>
+
+
+<!-- ///////////////// CALCULATE GRAPH AREA AND BOUNDARIES //////////////// -->
+<!-- get dimensions of actual graph area (NOT SVG area) -->
+
+<!-- set start/default coords of graph --> 
+
+
+
+<!-- calc min and max values -->
+<!-- find largest labels -->
+        
+                    
+              
+                                  
+    
+        
+          
+              
+                        
+    
+        
+          
+    
+              
+    
+        
+          
+              
+              
+    
+        
+          
+              
+              
+    
+        
+          
+              
+              
+    
+        
+          
+    
+              
+    
+        
+          
+    
+              
+    
+        
+          
+    
+              
+    
+              
+          
+              
+              
+    
+        
+          
+    
+              
+    
+        
+          
+    
+              
+    
+        
+          
+    
+              
+    
+        
+          
+    
+              
+    
+        
+          
+    
+              
+    
+        
+          
+    
+              
+    
+        
+          
+    
+              
+    
+        
+          
+    
+              
+    
+        
+          
+    
+              
+    
+        
+          
+    
+              
+    
+        
+          
+    
+              
+    
+        
+          
+    
+              
+    
+        
+          
+    
+              
+    
+        
+          
+    
+              
+    
+        
+          
+    
+              
+    
+        
+          
+    
+              
+    
+        
+          
+    
+              
+    
+        
+          
+    
+              
+    
+        
+          
+    
+              
+    
+        
+          
+    
+              
+    
+      
+
+<!-- CALC HEIGHT AND Y COORD DIMENSIONS -->
+<!-- reduce height of graph area if there is labelling on x axis -->
+
+<!-- reduce height if x labels are rotated -->
+
+<!-- stagger x labels if overlapping occurs -->
+
+
+<!-- pad top of graph if y axis has data labels so labels do not get chopped off -->
+
+<!-- reduce height if graph has title or subtitle -->
+
+
+<!-- reduce graph dimensions if there is a KEY -->
+
+
+<!-- find start value for scale on y axis -->
+  
+<!-- base line -->
+
+<!-- how much padding between largest bar and top of graph -->
+  
+
+<!-- default to 10 scale_divisions if none have been set -->
+  
+
+<!-- find the string length of max value -->
+
+<!-- label width in pixels -->
+<!-- If the y labels are shown but the size of the x labels are small, pad for y labels -->
+
+<!-- CALC WIDTH AND X COORD DIMENSIONS -->
+<!-- reduce width of graph area if there is large labelling on x axis -->
+
+      <!-- pad both sides -->
+        
+
+  <!-- allow slightly more padding if small labels -->
+            
+    
+
+<!-- //////////////////////////////  BUILD GRAPH AREA ////////////////////////////// -->
+<!-- graph bg -->
+<rect x="47.5" y="10" width="448" height="145" class="graphBackground"/>
+
+<!-- axis -->
+<path d="M47.5 10 v145" class="axis" id="xAxis"/>
+<path d="M47.5 155 h448" class="axis" id="yAxis"/>
+
+<!-- //////////////////////////////  AXIS DISTRIBUTIONS //////////////////////////// -->
+<!-- get number of data points on x scale -->
+<!-- ensure x_data_points butt up to edge of graph -->
+
+<!-- get distribution width on x axis -->
+
+
+<!-- x axis labels -->
+            <text x="47.5" y="170" class="xAxisLabels">1</text>
+                                          <text x="62.95" y="170" class="xAxisLabels">2</text>
+        <path d="M62.95 155 v0" class="staggerGuideLine"/>
+                                          <text x="78.4" y="170" class="xAxisLabels">3</text>
+                                                  <text x="93.85" y="170" class="xAxisLabels">4</text>
+        <path d="M93.85 155 v0" class="staggerGuideLine"/>
+                                          <text x="109.3" y="170" class="xAxisLabels">5</text>
+                                                  <text x="124.75" y="170" class="xAxisLabels">6</text>
+        <path d="M124.75 155 v0" class="staggerGuideLine"/>
+                                          <text x="140.2" y="170" class="xAxisLabels">7</text>
+                                                  <text x="155.65" y="170" class="xAxisLabels">8</text>
+        <path d="M155.65 155 v0" class="staggerGuideLine"/>
+                                          <text x="171.1" y="170" class="xAxisLabels">9</text>
+                                                  <text x="186.55" y="170" class="xAxisLabels">10</text>
+        <path d="M186.55 155 v0" class="staggerGuideLine"/>
+                                          <text x="202" y="170" class="xAxisLabels">11</text>
+                                                  <text x="217.45" y="170" class="xAxisLabels">12</text>
+        <path d="M217.45 155 v0" class="staggerGuideLine"/>
+                                          <text x="232.9" y="170" class="xAxisLabels">13</text>
+                                                  <text x="248.35" y="170" class="xAxisLabels">14</text>
+        <path d="M248.35 155 v0" class="staggerGuideLine"/>
+                                          <text x="263.8" y="170" class="xAxisLabels">15</text>
+                                                  <text x="279.25" y="170" class="xAxisLabels">16</text>
+        <path d="M279.25 155 v0" class="staggerGuideLine"/>
+                                          <text x="294.7" y="170" class="xAxisLabels">17</text>
+                                                  <text x="310.15" y="170" class="xAxisLabels">18</text>
+        <path d="M310.15 155 v0" class="staggerGuideLine"/>
+                                          <text x="325.6" y="170" class="xAxisLabels">19</text>
+                                                  <text x="341.05" y="170" class="xAxisLabels">20</text>
+        <path d="M341.05 155 v0" class="staggerGuideLine"/>
+                                          <text x="356.5" y="170" class="xAxisLabels">21</text>
+                                                  <text x="371.95" y="170" class="xAxisLabels">22</text>
+        <path d="M371.95 155 v0" class="staggerGuideLine"/>
+                                          <text x="387.4" y="170" class="xAxisLabels">23</text>
+                                                  <text x="402.85" y="170" class="xAxisLabels">24</text>
+        <path d="M402.85 155 v0" class="staggerGuideLine"/>
+                                          <text x="418.3" y="170" class="xAxisLabels">25</text>
+                                                  <text x="433.75" y="170" class="xAxisLabels">26</text>
+        <path d="M433.75 155 v0" class="staggerGuideLine"/>
+                                          <text x="449.2" y="170" class="xAxisLabels">27</text>
+                                                  <text x="464.65" y="170" class="xAxisLabels">28</text>
+        <path d="M464.65 155 v0" class="staggerGuideLine"/>
+                                          <text x="480.1" y="170" class="xAxisLabels">29</text>
+                                                  <text x="495.55" y="170" class="xAxisLabels">30</text>
+        <path d="M495.55 155 v0" class="staggerGuideLine"/>
+                        
+
+<!-- distribute Y scale -->
+<!-- ensure y_data_points butt up to edge of graph -->
+            <!-- no stroke for first line -->
+      <text x="42.5" y="155" class="yAxisLabels">0</text>
+                        <text x="42.5" y="141" class="yAxisLabels">9</text>
+      <path d="M47.5 141 h448" class="guideLines"/>
+                        <text x="42.5" y="127" class="yAxisLabels">18</text>
+      <path d="M47.5 127 h448" class="guideLines"/>
+                        <text x="42.5" y="113" class="yAxisLabels">27</text>
+      <path d="M47.5 113 h448" class="guideLines"/>
+                        <text x="42.5" y="99" class="yAxisLabels">36</text>
+      <path d="M47.5 99 h448" class="guideLines"/>
+                        <text x="42.5" y="85" class="yAxisLabels">45</text>
+      <path d="M47.5 85 h448" class="guideLines"/>
+                        <text x="42.5" y="71" class="yAxisLabels">54</text>
+      <path d="M47.5 71 h448" class="guideLines"/>
+                        <text x="42.5" y="57" class="yAxisLabels">63</text>
+      <path d="M47.5 57 h448" class="guideLines"/>
+                        <text x="42.5" y="43" class="yAxisLabels">72</text>
+      <path d="M47.5 43 h448" class="guideLines"/>
+                        <text x="42.5" y="29" class="yAxisLabels">81</text>
+      <path d="M47.5 29 h448" class="guideLines"/>
+                        <text x="42.5" y="15" class="yAxisLabels">90</text>
+      <path d="M47.5 15 h448" class="guideLines"/>
+              
+
+<!-- //////////////////////////////  AXIS TITLES ////////////////////////////// -->
+
+<!-- x axis title -->
+          <text x="271.5" y="190" class="xAxisTitle">Date</text>
+
+<!-- y axis title -->
+      <text class="yAxisTitle" transform="translate(15,82.5) rotate(270)">Temp. (F)</text>
+  
+
+
+
+<!-- //////////////////////////////  SHOW DATA ////////////////////////////// -->
+
+
+  
+  <!--- create line -->
+  <path d="M
+            47.5 105.222222222222           L     62.95 109.888888888889              78.4 95.8888888888889              93.85 86.5555555555556              109.3 63.2222222222222              124.75 58.5555555555556              140.2 50.7777777777778              155.65 55.4444444444444              171.1 49.2222222222222              186.55 47.6666666666667              202 77.2222222222222              217.45 88.1111111111111              232.9 89.6666666666667              248.35 91.2222222222222              263.8 81.8888888888889              279.25 81.8888888888889              294.7 80.3333333333333              310.15 85              325.6 86.5555555555556              341.05 83.4444444444444              356.5 75.6666666666667              371.95 50.7777777777778              387.4 47.6666666666667              402.85 66.3333333333333              418.3 69.4444444444444              433.75 81.8888888888889              449.2 95.8888888888889              464.65 97.4444444444444              480.1 85              495.55 74.1111111111111      " class="line2"/>
+    
+                        <!-- datapoint shown -->
+        <circle cx="47.5" cy="105.222222222222" r="2.5" class="fill2"/>
+                  
+                              <!-- datapoint shown -->
+        <circle cx="62.95" cy="109.888888888889" r="2.5" class="fill2"/>
+                  
+                              <!-- datapoint shown -->
+        <circle cx="78.4" cy="95.8888888888889" r="2.5" class="fill2"/>
+                  
+                              <!-- datapoint shown -->
+        <circle cx="93.85" cy="86.5555555555556" r="2.5" class="fill2"/>
+                  
+                              <!-- datapoint shown -->
+        <circle cx="109.3" cy="63.2222222222222" r="2.5" class="fill2"/>
+                  
+                              <!-- datapoint shown -->
+        <circle cx="124.75" cy="58.5555555555556" r="2.5" class="fill2"/>
+                  
+                              <!-- datapoint shown -->
+        <circle cx="140.2" cy="50.7777777777778" r="2.5" class="fill2"/>
+                  
+                              <!-- datapoint shown -->
+        <circle cx="155.65" cy="55.4444444444444" r="2.5" class="fill2"/>
+                  
+                              <!-- datapoint shown -->
+        <circle cx="171.1" cy="49.2222222222222" r="2.5" class="fill2"/>
+                  
+                              <!-- datapoint shown -->
+        <circle cx="186.55" cy="47.6666666666667" r="2.5" class="fill2"/>
+                  
+                              <!-- datapoint shown -->
+        <circle cx="202" cy="77.2222222222222" r="2.5" class="fill2"/>
+                  
+                              <!-- datapoint shown -->
+        <circle cx="217.45" cy="88.1111111111111" r="2.5" class="fill2"/>
+                  
+                              <!-- datapoint shown -->
+        <circle cx="232.9" cy="89.6666666666667" r="2.5" class="fill2"/>
+                  
+                              <!-- datapoint shown -->
+        <circle cx="248.35" cy="91.2222222222222" r="2.5" class="fill2"/>
+                  
+                              <!-- datapoint shown -->
+        <circle cx="263.8" cy="81.8888888888889" r="2.5" class="fill2"/>
+                  
+                              <!-- datapoint shown -->
+        <circle cx="279.25" cy="81.8888888888889" r="2.5" class="fill2"/>
+                  
+                              <!-- datapoint shown -->
+        <circle cx="294.7" cy="80.3333333333333" r="2.5" class="fill2"/>
+                  
+                              <!-- datapoint shown -->
+        <circle cx="310.15" cy="85" r="2.5" class="fill2"/>
+                  
+                              <!-- datapoint shown -->
+        <circle cx="325.6" cy="86.5555555555556" r="2.5" class="fill2"/>
+                  
+                              <!-- datapoint shown -->
+        <circle cx="341.05" cy="83.4444444444444" r="2.5" class="fill2"/>
+                  
+                              <!-- datapoint shown -->
+        <circle cx="356.5" cy="75.6666666666667" r="2.5" class="fill2"/>
+                  
+                              <!-- datapoint shown -->
+        <circle cx="371.95" cy="50.7777777777778" r="2.5" class="fill2"/>
+                  
+                              <!-- datapoint shown -->
+        <circle cx="387.4" cy="47.6666666666667" r="2.5" class="fill2"/>
+                  
+                              <!-- datapoint shown -->
+        <circle cx="402.85" cy="66.3333333333333" r="2.5" class="fill2"/>
+                  
+                              <!-- datapoint shown -->
+        <circle cx="418.3" cy="69.4444444444444" r="2.5" class="fill2"/>
+                  
+                              <!-- datapoint shown -->
+        <circle cx="433.75" cy="81.8888888888889" r="2.5" class="fill2"/>
+                  
+                              <!-- datapoint shown -->
+        <circle cx="449.2" cy="95.8888888888889" r="2.5" class="fill2"/>
+                  
+                              <!-- datapoint shown -->
+        <circle cx="464.65" cy="97.4444444444444" r="2.5" class="fill2"/>
+                  
+                              <!-- datapoint shown -->
+        <circle cx="480.1" cy="85" r="2.5" class="fill2"/>
+                  
+                              <!-- datapoint shown -->
+        <circle cx="495.55" cy="74.1111111111111" r="2.5" class="fill2"/>
+                  
+                     
+  
+  
+  <!--- create line -->
+  <path d="M
+            47.5 60.1111111111111           L     62.95 50.7777777777778              78.4 50.7777777777778              93.85 35.2222222222222              109.3 25.8888888888889              124.75 24.3333333333333              140.2 27.4444444444444              155.65 24.3333333333333              171.1 24.3333333333333              186.55 21.2222222222222              202 33.6666666666667              217.45 77.2222222222222              232.9 86.5555555555556              248.35 81.8888888888889              263.8 71              279.25 36.7777777777778              294.7 43              310.15 33.6666666666667              325.6 33.6666666666667              341.05 30.5555555555556              356.5 30.5555555555556              371.95 27.4444444444444              387.4 29              402.85 35.2222222222222              418.3 27.4444444444444              433.75 39.8888888888889              449.2 35.2222222222222              464.65 55.4444444444444              480.1 43              495.55 38.3333333333333      " class="line1"/>
+    
+                        <!-- datapoint shown -->
+        <circle cx="47.5" cy="60.1111111111111" r="2.5" class="fill1"/>
+                  
+                              <!-- datapoint shown -->
+        <circle cx="62.95" cy="50.7777777777778" r="2.5" class="fill1"/>
+                  
+                              <!-- datapoint shown -->
+        <circle cx="78.4" cy="50.7777777777778" r="2.5" class="fill1"/>
+                  
+                              <!-- datapoint shown -->
+        <circle cx="93.85" cy="35.2222222222222" r="2.5" class="fill1"/>
+                  
+                              <!-- datapoint shown -->
+        <circle cx="109.3" cy="25.8888888888889" r="2.5" class="fill1"/>
+                  
+                              <!-- datapoint shown -->
+        <circle cx="124.75" cy="24.3333333333333" r="2.5" class="fill1"/>
+                  
+                              <!-- datapoint shown -->
+        <circle cx="140.2" cy="27.4444444444444" r="2.5" class="fill1"/>
+                  
+                              <!-- datapoint shown -->
+        <circle cx="155.65" cy="24.3333333333333" r="2.5" class="fill1"/>
+                  
+                              <!-- datapoint shown -->
+        <circle cx="171.1" cy="24.3333333333333" r="2.5" class="fill1"/>
+                  
+                              <!-- datapoint shown -->
+        <circle cx="186.55" cy="21.2222222222222" r="2.5" class="fill1"/>
+                  
+                              <!-- datapoint shown -->
+        <circle cx="202" cy="33.6666666666667" r="2.5" class="fill1"/>
+                  
+                              <!-- datapoint shown -->
+        <circle cx="217.45" cy="77.2222222222222" r="2.5" class="fill1"/>
+                  
+                              <!-- datapoint shown -->
+        <circle cx="232.9" cy="86.5555555555556" r="2.5" class="fill1"/>
+                  
+                              <!-- datapoint shown -->
+        <circle cx="248.35" cy="81.8888888888889" r="2.5" class="fill1"/>
+                  
+                              <!-- datapoint shown -->
+        <circle cx="263.8" cy="71" r="2.5" class="fill1"/>
+                  
+                              <!-- datapoint shown -->
+        <circle cx="279.25" cy="36.7777777777778" r="2.5" class="fill1"/>
+                  
+                              <!-- datapoint shown -->
+        <circle cx="294.7" cy="43" r="2.5" class="fill1"/>
+                  
+                              <!-- datapoint shown -->
+        <circle cx="310.15" cy="33.6666666666667" r="2.5" class="fill1"/>
+                  
+                              <!-- datapoint shown -->
+        <circle cx="325.6" cy="33.6666666666667" r="2.5" class="fill1"/>
+                  
+                              <!-- datapoint shown -->
+        <circle cx="341.05" cy="30.5555555555556" r="2.5" class="fill1"/>
+                  
+                              <!-- datapoint shown -->
+        <circle cx="356.5" cy="30.5555555555556" r="2.5" class="fill1"/>
+                  
+                              <!-- datapoint shown -->
+        <circle cx="371.95" cy="27.4444444444444" r="2.5" class="fill1"/>
+                  
+                              <!-- datapoint shown -->
+        <circle cx="387.4" cy="29" r="2.5" class="fill1"/>
+                  
+                              <!-- datapoint shown -->
+        <circle cx="402.85" cy="35.2222222222222" r="2.5" class="fill1"/>
+                  
+                              <!-- datapoint shown -->
+        <circle cx="418.3" cy="27.4444444444444" r="2.5" class="fill1"/>
+                  
+                              <!-- datapoint shown -->
+        <circle cx="433.75" cy="39.8888888888889" r="2.5" class="fill1"/>
+                  
+                              <!-- datapoint shown -->
+        <circle cx="449.2" cy="35.2222222222222" r="2.5" class="fill1"/>
+                  
+                              <!-- datapoint shown -->
+        <circle cx="464.65" cy="55.4444444444444" r="2.5" class="fill1"/>
+                  
+                              <!-- datapoint shown -->
+        <circle cx="480.1" cy="43" r="2.5" class="fill1"/>
+                  
+                              <!-- datapoint shown -->
+        <circle cx="495.55" cy="38.3333333333333" r="2.5" class="fill1"/>
+                  
+                     
+  
+<!-- /////////////////////////////////// KEY /////////////////////////////// -->
+
+<!-- //////////////////////////////// MAIN TITLES ////////////////////////// -->
+
+<!-- main graph title -->
+
+<!-- graph sub title -->
+</svg>

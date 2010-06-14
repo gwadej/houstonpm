@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+ <head>
+  <title>[untitled]</title>
+  <style>
+/*
+ * A stylesheet designed to be used with the HTML output of the
+ * Perl module Text::Highlight::Vim.
+ *
+ * This is designed to make the highlighting look like the default gvim
+ * colour scheme, with 'background=light'.
+ *
+ * Geoff Richards (qef@laxan.com)
+ *
+ * This CSS file (light.css) is public domain.  Do what you want with it.
+ * That doesn't mean that HTML with this CSS in is public domain.
+ */
+
+body { color: black; background: white none }
+
+A:link { color: #00F; background: white none }
+A:visited { color: #909; background: white none }
+A:hover { color: #F00; background: white none }
+A:active { color: #F00; background: white none }
+
+.synComment    { color: #0000FF }
+.synConstant   { color: #FF00FF }
+.synIdentifier { color: #008B8B }
+.synStatement  { color: #A52A2A ; font-weight: bold }
+.synPreProc    { color: #A020F0 }
+.synType       { color: #2E8B57 ; font-weight: bold }
+.synSpecial    { color: #6A5ACD }
+.synUnderlined { color: #000000 ; text-decoration: underline }
+.synError      { color: #FFFFFF ; background: #FF0000 none }
+.synTodo       { color: #0000FF ; background: #FFFF00 none }
+</style>
+ </head>
+ <body>
+
+<pre><span class="synPreProc">#!/usr/bin/env perl</span>
+
+<span class="synStatement">use strict</span>;
+<span class="synStatement">use warnings</span>;
+<span class="synStatement">use </span><span class="synConstant">5.010</span>;
+
+<span class="synStatement">use </span>HTTP::Daemon;
+<span class="synStatement">use </span>HTTP::Status;
+<span class="synStatement">use </span>HTTP::Response;
+<span class="synStatement">use </span>JSON::Syck;
+
+<span class="synStatement">my</span> <span class="synIdentifier">@gauges</span> = (
+    { <span class="synConstant">name</span> =&gt; <span class="synConstant">'bargauge1'</span>, <span class="synConstant">code</span> =&gt; <span class="synStatement">sub </span>{ <span class="synStatement">return</span> gauge( <span class="synConstant">0</span>, <span class="synConstant">100</span> ); }, },
+    { <span class="synConstant">name</span> =&gt; <span class="synConstant">'bargauge2'</span>, <span class="synConstant">code</span> =&gt; <span class="synStatement">sub </span>{ <span class="synStatement">return</span> gauge( <span class="synConstant">0</span>, <span class="synConstant">100</span> ); }, },
+    { <span class="synConstant">name</span> =&gt; <span class="synConstant">'bargauge3'</span>, <span class="synConstant">code</span> =&gt; <span class="synStatement">sub </span>{ <span class="synStatement">return</span> over_gauge( <span class="synConstant">0</span>, <span class="synConstant">100</span> ); }, },
+    { <span class="synConstant">name</span> =&gt; <span class="synConstant">'bargauge4'</span>, <span class="synConstant">code</span> =&gt; <span class="synStatement">sub </span>{ <span class="synStatement">return</span> gauge( <span class="synConstant">0</span>, <span class="synConstant">100</span> ); }, },
+    { <span class="synConstant">name</span> =&gt; <span class="synConstant">'bargauge5'</span>, <span class="synConstant">code</span> =&gt; <span class="synStatement">sub </span>{ <span class="synStatement">return</span> gauge( <span class="synConstant">0</span>, <span class="synConstant">100</span> ); }, },
+    { <span class="synConstant">name</span> =&gt; <span class="synConstant">'dial1'</span>,     <span class="synConstant">code</span> =&gt; <span class="synStatement">sub </span>{ <span class="synStatement">return</span> gauge( <span class="synConstant">0</span>, <span class="synConstant">100</span> ); }, },
+    { <span class="synConstant">name</span> =&gt; <span class="synConstant">'dial2'</span>,     <span class="synConstant">code</span> =&gt; <span class="synStatement">sub </span>{ <span class="synStatement">return</span> gauge( <span class="synConstant">0</span>, <span class="synConstant">100</span> ); }, },
+    { <span class="synConstant">name</span> =&gt; <span class="synConstant">'dial3'</span>,     <span class="synConstant">code</span> =&gt; <span class="synStatement">sub </span>{ <span class="synStatement">return</span> gauge( <span class="synConstant">0</span>, <span class="synConstant">100</span> ); }, },
+    { <span class="synConstant">name</span> =&gt; <span class="synConstant">'dial4'</span>,     <span class="synConstant">code</span> =&gt; <span class="synStatement">sub </span>{ <span class="synStatement">return</span> gauge( <span class="synConstant">0</span>, <span class="synConstant">100</span> ); }, },
+    { <span class="synConstant">name</span> =&gt; <span class="synConstant">'dial5'</span>,     <span class="synConstant">code</span> =&gt; <span class="synStatement">sub </span>{ <span class="synStatement">return</span> <span class="synStatement">sprintf</span> <span class="synConstant">'%.04f'</span>, <span class="synStatement">rand</span>() * <span class="synConstant">100</span>; }, },
+    { <span class="synConstant">name</span> =&gt; <span class="synConstant">'lamp1'</span>,     <span class="synConstant">code</span> =&gt; <span class="synStatement">sub </span>{ <span class="synStatement">return</span> gauge( <span class="synConstant">0</span>, <span class="synConstant">2</span> ); }, },
+    { <span class="synConstant">name</span> =&gt; <span class="synConstant">'lamp2'</span>,     <span class="synConstant">code</span> =&gt; <span class="synStatement">sub </span>{ <span class="synStatement">return</span> gauge( <span class="synConstant">0</span>, <span class="synConstant">2</span> ); }, },
+    { <span class="synConstant">name</span> =&gt; <span class="synConstant">'lamp3'</span>,     <span class="synConstant">code</span> =&gt; <span class="synStatement">sub </span>{ <span class="synStatement">return</span> gauge( <span class="synConstant">0</span>, <span class="synConstant">2</span> ); }, },
+    { <span class="synConstant">name</span> =&gt; <span class="synConstant">'lamp4'</span>,     <span class="synConstant">code</span> =&gt; <span class="synStatement">sub </span>{ <span class="synStatement">return</span> gauge( <span class="synConstant">0</span>, <span class="synConstant">2</span> ); }, },
+    { <span class="synConstant">name</span> =&gt; <span class="synConstant">'lamp5'</span>,     <span class="synConstant">code</span> =&gt; <span class="synStatement">sub </span>{ <span class="synStatement">return</span> gauge( <span class="synConstant">0</span>, <span class="synConstant">2</span> ); }, },
+    { <span class="synConstant">name</span> =&gt; <span class="synConstant">'readout1'</span>,  <span class="synConstant">code</span> =&gt; <span class="synStatement">sub </span>{ <span class="synStatement">return</span> gauge( <span class="synConstant">0</span>, <span class="synConstant">9999</span> ); }, },
+    { <span class="synConstant">name</span> =&gt; <span class="synConstant">'readout2'</span>,  <span class="synConstant">code</span> =&gt; <span class="synStatement">sub </span>{ <span class="synStatement">return</span> gauge( -<span class="synConstant">999</span>, <span class="synConstant">1999</span> ); }, },
+    { <span class="synConstant">name</span> =&gt; <span class="synConstant">'readout3'</span>,  <span class="synConstant">code</span> =&gt; <span class="synStatement">sub </span>{ <span class="synStatement">return</span> gauge( -<span class="synConstant">999</span>, <span class="synConstant">1999</span> ); }, },
+	{ <span class="synConstant">name</span> =&gt; <span class="synConstant">'chart1'</span>,    <span class="synConstant">code</span> =&gt; <span class="synStatement">sub </span>{ <span class="synStatement">return</span> gauge( -<span class="synConstant">20</span>, <span class="synConstant">40</span> ); }, },
+    { <span class="synConstant">name</span> =&gt; <span class="synConstant">'chart2'</span>,    <span class="synConstant">code</span> =&gt; <span class="synStatement">sub </span>{ <span class="synStatement">return</span> gauge( <span class="synConstant">0</span>, <span class="synConstant">100</span> ); }, },
+    { <span class="synConstant">name</span> =&gt; <span class="synConstant">'chart3'</span>,    <span class="synConstant">code</span> =&gt; <span class="synStatement">sub </span>{ <span class="synStatement">return</span> gauge( <span class="synConstant">0</span>, <span class="synConstant">40</span> ); }, },
+    { <span class="synConstant">name</span> =&gt; <span class="synConstant">'chart4'</span>,    <span class="synConstant">code</span> =&gt; <span class="synStatement">sub </span>{ <span class="synStatement">return</span> gauge( <span class="synConstant">0</span>, <span class="synConstant">40</span> ); }, },
+    { <span class="synConstant">name</span> =&gt; <span class="synConstant">'chart5'</span>,    <span class="synConstant">code</span> =&gt; <span class="synStatement">sub </span>{ <span class="synStatement">return</span> gauge( -<span class="synConstant">50</span>, <span class="synConstant">100</span> ); }, },
+);
+
+<span class="synStatement">my</span> <span class="synIdentifier">$d</span> = HTTP::Daemon-&gt;new( <span class="synConstant">LocalPort</span> =&gt; <span class="synConstant">8088</span> ) || <span class="synStatement">die</span>;
+<span class="synStatement">print</span> <span class="synConstant">&quot;Please contact me at: &lt;URL:&quot;</span>, <span class="synIdentifier">$d-&gt;url</span>, <span class="synConstant">&quot;&gt;</span><span class="synSpecial">\n</span><span class="synConstant">&quot;</span>;
+<span class="synStatement">while</span>(<span class="synStatement">my</span> <span class="synIdentifier">$c</span> = <span class="synIdentifier">$d-&gt;accept</span>)
+{
+    <span class="synStatement">while</span>(<span class="synStatement">my</span> <span class="synIdentifier">$r</span> = <span class="synIdentifier">$c-&gt;get_request</span>)
+    {
+        <span class="synStatement">my</span> <span class="synIdentifier">$path</span> = <span class="synIdentifier">$r-&gt;uri-&gt;path</span>;
+        <span class="synStatement">if</span>(<span class="synIdentifier">$path</span> <span class="synStatement">eq</span> <span class="synConstant">'/Instruments.svg'</span> || <span class="synIdentifier">$path</span> =~ <span class="synStatement">/</span><span class="synSpecial">\.</span><span class="synConstant">es$</span><span class="synStatement">/</span>)
+        {
+            <span class="synIdentifier">$path</span> =~ <span class="synStatement">s{</span><span class="synConstant">^</span><span class="synSpecial">.*</span><span class="synConstant">/</span><span class="synStatement">}{</span><span class="synConstant">./</span><span class="synStatement">}</span>;
+            <span class="synIdentifier">$c-&gt;send_file_response</span>( <span class="synIdentifier">$path</span> );
+        }
+        <span class="synStatement">elsif</span>(<span class="synIdentifier">$path</span> <span class="synStatement">eq</span> <span class="synConstant">'/cgi-bin/instruments.cgi'</span>)
+        {
+            <span class="synIdentifier">$c-&gt;send_response</span>(
+                HTTP::Response-&gt;new(
+                    <span class="synConstant">200</span>, <span class="synConstant">'OK'</span>, [ <span class="synConstant">'Content-Type'</span>=&gt;<span class="synConstant">'application/json'</span>],
+                    JSON::Syck::Dump( make_response() )
+                )
+            );
+        }
+        <span class="synStatement">else</span>
+        {
+            <span class="synIdentifier">$c-&gt;send_error</span>(RC_FORBIDDEN)
+        }
+    }
+    <span class="synIdentifier">$c-&gt;close</span>;
+    <span class="synStatement">undef</span>(<span class="synIdentifier">$c</span>);
+}
+
+<span class="synStatement">sub </span><span class="synIdentifier">make_response </span>{
+    <span class="synStatement">my</span> <span class="synIdentifier">%response</span>;
+
+    <span class="synStatement">foreach</span> <span class="synStatement">my</span> <span class="synIdentifier">$e</span> ( <span class="synIdentifier">@gauges</span> )
+    {
+        <span class="synStatement">next</span> <span class="synStatement">if</span> <span class="synStatement">rand</span> &gt; <span class="synConstant">0.8</span>;
+        <span class="synIdentifier">$response{$e-&gt;{</span><span class="synConstant">name</span><span class="synIdentifier">}}</span> = <span class="synIdentifier">$e-&gt;{</span><span class="synConstant">code</span><span class="synIdentifier">}</span>-&gt;();
+    }
+
+    <span class="synStatement">return</span> \<span class="synIdentifier">%response</span>;
+}
+
+<span class="synStatement">sub </span><span class="synIdentifier">over_gauge </span>{
+    <span class="synStatement">my</span> (<span class="synIdentifier">$min</span>, <span class="synIdentifier">$range</span>) = <span class="synIdentifier">@_</span>;
+    <span class="synStatement">return</span> <span class="synStatement">sprintf</span> <span class="synConstant">'%.04f'</span>, <span class="synIdentifier">$min</span> + <span class="synIdentifier">$range</span> * <span class="synStatement">rand</span>() * <span class="synConstant">1.1</span>;
+}
+<span class="synStatement">sub </span><span class="synIdentifier">gauge </span>{
+    <span class="synStatement">my</span> (<span class="synIdentifier">$min</span>, <span class="synIdentifier">$range</span>) = <span class="synIdentifier">@_</span>;
+    <span class="synStatement">return</span> <span class="synStatement">sprintf</span> <span class="synConstant">'%.04f'</span>, <span class="synIdentifier">$min</span> + <span class="synIdentifier">$range</span> * <span class="synStatement">rand</span>;
+}
+
+</pre>
+
+ </body>
+</html>

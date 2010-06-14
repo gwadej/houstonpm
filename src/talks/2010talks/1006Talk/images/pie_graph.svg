@@ -1,0 +1,257 @@
+<?xml version="1.0"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN"
+  "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+
+  
+<svg width="100%" height="100%" preserveAspectRatio="xMidyMid" viewBox="0 0 500 200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+<!-- \\\\\\\\\\\\\\\\\\\\\\\\\\\\  -->
+<!-- Created with SVG::TT::Graph   -->
+<!-- Stephen Morgan / Leo Lapworth -->
+<!-- ////////////////////////////  -->
+<defs>
+  <radialGradient id="shadow">
+    <stop offset="85%" style="stop-color: #ccc;"/>
+    <stop offset="100%" style="stop-color: #ccc;stop-opacity: 0"/>
+  </radialGradient>
+
+<!-- include default stylesheet if none specified -->
+<style type="text/css">
+<![CDATA[
+/* Copy from here for external style sheet */
+.svgBackground{
+  fill:none;
+}
+.graphBackground{
+  fill:#f0f0f0;
+}
+
+/* graphs titles */
+.mainTitle{
+  text-anchor: middle;
+  fill: #000000;
+  font-size: 14px;
+  font-family: "Arial", sans-serif;
+  font-weight: normal;
+}
+.subTitle{
+  text-anchor: middle;
+  fill: #999999;
+  font-size: 12px;
+  font-family: "Arial", sans-serif;
+  font-weight: normal;
+}
+
+.dataPointLabel{
+  fill: #000000;
+  text-anchor:middle;
+  font-size: 10px;
+  font-family: "Arial", sans-serif;
+  font-weight: normal;
+}
+
+          
+  .key1,.dataPoint1{
+    fill: #ff0000;
+    fill-opacity: 0.5;
+    stroke: none;
+    stroke-width: 1px;
+  }
+
+            
+  .key2,.dataPoint2{
+    fill: #0000ff;
+    fill-opacity: 0.5;
+    stroke: none;
+    stroke-width: 1px;
+  }
+
+            
+  .key3,.dataPoint3{
+    fill: #00ff00;
+    fill-opacity: 0.5;
+    stroke: none;
+    stroke-width: 1px;
+  }
+
+            
+  .key4,.dataPoint4{
+    fill: #ffcc00;
+    fill-opacity: 0.5;
+    stroke: none;
+    stroke-width: 1px;
+  }
+
+            
+  .key5,.dataPoint5{
+    fill: #00ccff;
+    fill-opacity: 0.5;
+    stroke: none;
+    stroke-width: 1px;
+  }
+
+  
+.keyText{
+  fill: #000000;
+  text-anchor:start;
+  font-size: 10px;
+  font-family: "Arial", sans-serif;
+  font-weight: normal;
+}
+/* End copy for external style sheet */
+]]>
+</style>
+</defs>
+
+
+<!-- svg bg -->
+<rect x="0" y="0" width="500" height="200" class="svgBackground"/>
+
+<!-- ///////////////// CALCULATE GRAPH AREA AND BOUNDARIES //////////////// -->
+<!-- get dimensions of actual graph area (NOT SVG area) -->
+
+<!-- calc min and max values -->
+                                                                      
+<!-- reduce height if graph has title or subtitle -->
+
+<!-- set start/default coords of graph --> 
+
+<!-- move centre of pie chart if title present -->
+
+
+<!-- calc radius and check whether KEY will affect this -->
+    
+    
+
+<!-- if chart expanded -->
+  
+
+  <!-- check if a shadow size has been entered -->
+          
+    
+
+<circle cx="250" cy="100" r="80" fill="#ffffff"/>
+
+
+<!-- half values used to show values next to wedges -->
+
+  
+              
+    <!-- calc percentage -->
+    
+        
+          <!-- offset values at start to get mid point -->
+          
+            
+        
+            
+        
+
+    <!-- segments displayed clockwise from ' 3 o'clock ' -->
+                  <path id="w1" d="M320 100 A70 70 0 
+        0 1 282.6847381778 161.9007907078 L250 100 Z" class="dataPoint1" />
+        
+    
+    <!-- show values next to wedges -->
+                                <text id="d1" x="304.9496942129" y="141.1390946729">17%</text>
+
+    <!-- show rollover field names next to wedge values -->
+        
+                
+                
+    <!-- calc percentage -->
+    
+        
+              
+            
+        
+            
+        
+
+    <!-- segments displayed clockwise from ' 3 o'clock ' -->
+                  <path id="w2" d="M282.6847381778 161.9007907078 A70 70 0 
+        0 1 220.9031416403 163.6661042753 L250 100 Z" class="dataPoint2" />
+        
+    
+    <!-- show values next to wedges -->
+                                <text id="d2" x="246.9993257352" y="174.9714420075">15%</text>
+
+    <!-- show rollover field names next to wedge values -->
+        
+                
+                
+    <!-- calc percentage -->
+    
+        
+              
+            
+        
+            
+        
+
+    <!-- segments displayed clockwise from ' 3 o'clock ' -->
+                  <path id="w3" d="M220.9031416403 163.6661042753 A70 70 0 
+        0 1 180.2975900027 93.552206535 L250 100 Z" class="dataPoint3" />
+        
+    
+    <!-- show values next to wedges -->
+                                <text id="d3" x="184.4251411801" y="140.0811413575">20%</text>
+
+    <!-- show rollover field names next to wedge values -->
+        
+                
+                
+    <!-- calc percentage -->
+    
+        
+              
+            
+        
+            
+        
+
+    <!-- segments displayed clockwise from ' 3 o'clock ' -->
+                  <path id="w4" d="M180.2975900027 93.552206535 A70 70 0 
+        0 1 226.6902696232 33.9950269316 L250 100 Z" class="dataPoint4" />
+        
+    
+    <!-- show values next to wedges -->
+                                <text id="d4" x="189.7770068285" y="61.9834796249">18%</text>
+
+    <!-- show rollover field names next to wedge values -->
+        
+                
+                
+    <!-- calc percentage -->
+    
+        
+              
+            
+        
+            
+        
+
+    <!-- segments displayed clockwise from ' 3 o'clock ' -->
+                                          <path id="w5" d="M230.7327282517 28.2802628738 A70 70 0 
+        0 1 324.0424586275 94.2848644396 L254.0424586285 94.2852359422 Z" class="dataPoint5" />
+        
+    
+    <!-- show values next to wedges -->
+                                <text id="d5" x="285.424586285" y="47.8523594215">30%</text>
+
+    <!-- show rollover field names next to wedge values -->
+        
+                
+  
+
+<!-- //////////////////////////////// KEY ////////////////////////////////// -->
+
+
+
+<!-- //////////////////////////////// MAIN TITLES ////////////////////////// -->
+
+<!-- main graph title -->
+
+<!-- graph sub title -->
+
+</svg>
