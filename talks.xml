@@ -805,4 +805,16 @@
     </topic>
   </talk>
 
+  <talk num="1007">
+    <date>July 2010</date>
+    <topic href="/talks/2010talks/1007Talk/index.html">
+      <title>The Musical Instrument Known as Perl</title>
+      <presenter>Erin Schoenhals</presenter>
+      <abstract>Erin demonstrated some of the low-level code needed
+          to work with MIDI and WAV files in Perl. In the process,
+          he demonstrated some of the basics of generating sound
+          with Perl.</abstract>
+    </topic>
+  </talk>
+
 </talklist>
