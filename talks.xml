@@ -817,4 +817,28 @@
     </topic>
   </talk>
 
+  <talk num="1009">
+    <date>September 2010</date>
+    <topic href="/talks/2010talks/1009Talk/index.html">
+        <title>Making the Computer Work for You</title>
+      <presenter>G. Wade Johnson</presenter>
+      <abstract>This was a much more entry-level presentation, aimed at
+         introducing computer-savvy individuals to basic programming. Wade
+         walked through the process of automating a few repetitive tasks
+         with a little relatively simple code.</abstract>
+    </topic>
+  </talk>
+
+  <talk num="1010">
+    <date>October 2010</date>
+    <topic href="/talks/2010talks/1010/index.html">
+      <title></title>
+      <presenter>Todd Rinaldo</presenter>
+      <abstract>Todd gave a short presentation showing how Dist::Zilla simplifies
+         the maintainence of CPAN-compatible modules. Afterward, we applied the 
+         experience and skills of the group to solving a problem presented by one
+         of the attendees.</abstract>
+    </topic>
+  </talk>
+
 </talklist>
