@@ -831,8 +831,8 @@
 
   <talk num="1010">
     <date>October 2010</date>
-    <topic href="/talks/2010talks/1010/index.html">
-      <title></title>
+    <topic href="/talks/2010talks/1010Talk/index.html">
+      <title>Publishing CPAN Modules with Dist::Zilla</title>
       <presenter>Todd Rinaldo</presenter>
       <abstract>Todd gave a short presentation showing how Dist::Zilla simplifies
          the maintainence of CPAN-compatible modules. Afterward, we applied the 
