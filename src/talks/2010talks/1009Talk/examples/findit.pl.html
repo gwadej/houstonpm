@@ -1,0 +1,21 @@
+<span class="synPreProc">#!/usr/bin/perl</span>
+
+<span class="synStatement">use strict</span>;
+<span class="synStatement">use warnings</span>;
+
+<span class="synStatement">while</span>(&lt;&gt;) {
+    <span class="synStatement">my</span> <span class="synIdentifier">@fields</span> = <span class="synStatement">split</span> <span class="synStatement">/</span><span class="synConstant"> </span><span class="synStatement">/</span>, <span class="synIdentifier">$_</span>;
+    <span class="synStatement">if</span>( <span class="synIdentifier">$fields[</span><span class="synConstant">0</span><span class="synIdentifier">]</span> =~ <span class="synStatement">/</span><span class="synSpecial">\D</span><span class="synStatement">/</span> ) {
+        <span class="synStatement">print</span> <span class="synConstant">&quot;</span><span class="synIdentifier">$ARGV</span><span class="synConstant">: </span><span class="synIdentifier">$_</span><span class="synConstant">&quot;</span>;
+        <span class="synStatement">next</span>;
+    }
+    <span class="synStatement">if</span>( <span class="synIdentifier">$fields[</span><span class="synConstant">0</span><span class="synIdentifier">]</span> &lt; <span class="synConstant">1000</span> ) {
+        <span class="synStatement">print</span> <span class="synConstant">&quot;</span><span class="synIdentifier">$ARGV</span><span class="synConstant">: </span><span class="synIdentifier">$_</span><span class="synConstant">&quot;</span>;
+        <span class="synStatement">next</span>;
+    }
+    <span class="synStatement">if</span>( <span class="synIdentifier">$fields[</span><span class="synConstant">0</span><span class="synIdentifier">]</span> &gt; <span class="synStatement">time</span>() ) {
+        <span class="synStatement">print</span> <span class="synConstant">&quot;</span><span class="synIdentifier">$ARGV</span><span class="synConstant">: </span><span class="synIdentifier">$_</span><span class="synConstant">&quot;</span>;
+        <span class="synStatement">next</span>;
+    }
+}
+
