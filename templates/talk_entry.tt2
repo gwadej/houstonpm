@@ -1,0 +1,9 @@
+  <talk num="[%yr%][%mon%]">
+    <date>[%monthname%] [%year%]</date>
+    <topic href="/talks/[%year%]talks/[%yr%][%mon%]Talk/index.html">
+      <title>[%title%]</title>
+      <presenter>[%author%]</presenter>
+      <abstract>Add Abstract Here!</abstract>
+    </topic>
+  </talk>
+
