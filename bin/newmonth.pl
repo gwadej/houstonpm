@@ -40,8 +40,18 @@ my %vars = (
 add_talk_entry( \%vars );
 make_talk_dir( \%vars );
 
-say q{Don't forget to update the abstract in the talks.xml file.};
-say qq(Don't forget to fill in the rest of $vars{indexfile}.);
+say <<EOM;
+
+Don't forget:
+
+ * update the abstract in the talks.xml file.
+ * fill in the rest of $vars{indexfile}.
+ * update "What's New" on the index page.
+ * remove entry from upcoming meetings page.
+ * add to atom feed?
+EOM
+
+exit;
 
 sub add_talk_entry
 {
