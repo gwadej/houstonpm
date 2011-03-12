@@ -79,9 +79,15 @@ sub new_year
 {
     my ($year) = @_;
 
-die "Should not get here yet.\n";
-    # Create year directory.
-    # Update Makefile
+    my %vars = (
+        year => $year,
+        yearlist => [ 2003..$year ],
+    );
+    mkpath( "$talksdir/${year}talks" );
+    my $tt = Template->new( INCLUDE_PATH => 'templates' );
+    $tt->process( 'Makefile.tt2', \%vars, 'Makefile' )
+        or die "Unable to create Makefile: " . $tt->error() . "\n";
+    return;
 }
 
 sub make_talk_dir
