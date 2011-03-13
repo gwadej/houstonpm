@@ -13,7 +13,9 @@ TALKSUMMARIES=${OUTDIR}/talks/mostrecent.html \
               ${OUTDIR}/talks/2007talks/index.html \
               ${OUTDIR}/talks/2008talks/index.html \
               ${OUTDIR}/talks/2009talks/index.html \
-              ${OUTDIR}/talks/2010talks/index.html
+              ${OUTDIR}/talks/2010talks/index.html \
+              ${OUTDIR}/talks/2011talks/index.html
+
 
 site: base ${TALKSUMMARIES}
 
@@ -54,6 +56,9 @@ ${OUTDIR}/talks/2009talks/index.html: talks.xml yeartalks.xsl templates/yeartalk
 
 ${OUTDIR}/talks/2010talks/index.html: talks.xml yeartalks.xsl templates/yeartalks.tmpl
 	bin/talks.pl --style=yeartalks.xsl --template=templates/yeartalks.tmpl --define year2=10 talks.xml > $@
+
+${OUTDIR}/talks/2011talks/index.html: talks.xml yeartalks.xsl templates/yeartalks.tmpl
+	bin/talks.pl --style=yeartalks.xsl --template=templates/yeartalks.tmpl --define year2=11 talks.xml > $@
 
 install:
 	cp -R ${OUTDIR}/* ${INSTALLDIR}

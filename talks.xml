@@ -851,4 +851,15 @@ virtual file system in Perl.</abstract>
     </topic>
   </talk>
 
+  <talk num="1103">
+    <date>March 2011</date>
+    <topic href="/talks/2011talks/1103Talk/index.html">
+      <title>Your Perl is Slow (and it does not have to be)</title>
+      <presenter>Nick Koston</presenter>
+      <abstract>Nick Koston explored using Devel::NYTProf, Benchmark, and Data::Dumper to
+optimize Perl code. He explored some of the reasons that Perl code can be slow,
+and how to fix it.</abstract>
+    </topic>
+  </talk>
+
 </talklist>
