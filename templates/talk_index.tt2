@@ -29,10 +29,10 @@
   <div class="content">
       <h2 class="subhead">[%title%]</h2>
 
-      <p></p>
+[% FOREACH p IN writeup -%]
+      <p>[%p%]</p>
 
-      <p></p>
-
+[% END -%]
       <p>We had [%attendees%] people attending this month. As always, we'd like to thank
         cPanel, Inc. for providing the meeting space and food for the group.</p>
   </div>

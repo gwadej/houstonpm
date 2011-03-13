@@ -3,7 +3,7 @@
     <topic href="/talks/[%year%]talks/[%yr%][%mon%]Talk/index.html">
       <title>[%title%]</title>
       <presenter>[%author%]</presenter>
-      <abstract>Add Abstract Here!</abstract>
+      <abstract>[%abstract%]</abstract>
     </topic>
   </talk>
 
