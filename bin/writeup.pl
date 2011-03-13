@@ -16,6 +16,7 @@ use POSIX qw(strftime);
 my @months = ( '', 'January', 'February', 'March', 'April', 'May', 'June',
     'July', 'August', 'September', 'October', 'November', 'December' );
 my $talksdir = 'src/talks';
+my $savefile = 'writeup.json';
 
 my ($mon, $year) = (localtime)[4,5];
 ++$mon;
@@ -46,6 +47,8 @@ my %vars = (
     writeup => [ split /\n\n/, $write_up ],
 );
 
+write_file( $savefile, encode_json \%vars );
+
 add_talk_entry( \%vars );
 make_talk_dir( \%vars );
 add_feed_entry( \%vars );
@@ -60,6 +63,7 @@ Don't forget:
  * remove entry from upcoming meetings page
 EOM
 
+unlink $savefile;
 exit;
 
 sub add_talk_entry
