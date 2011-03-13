@@ -841,4 +841,14 @@
     </topic>
   </talk>
 
+  <talk num="1011">
+    <date>November 2010</date>
+    <topic href="/talks/2010talks/1011Talk/index.html">
+      <title>Filesys::POSIX -- A real, in-memory filesystem written entirely in Perl</title>
+      <presenter>Erin Schoenhals</presenter>
+      <abstract>Erin describes the new Filesys::POSIX module that provides a POSIX-compliant
+virtual file system in Perl.</abstract>
+    </topic>
+  </talk>
+
 </talklist>
