@@ -26,6 +26,7 @@ dirs:
 base: dirs
 	cp -r src/* ${OUTDIR}
 	find out -type d -name '.svn' -exec rm -rf {} \; -prune
+	cp atom.xml ${OUTDIR}
 
 ${OUTDIR}/talks/mostrecent.html: talks.xml mostrecent.xsl templates/mostrecent.tmpl
 	bin/talks.pl --style=mostrecent.xsl --template=templates/mostrecent.tmpl talks.xml > $@
