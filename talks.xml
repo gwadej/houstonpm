@@ -862,4 +862,15 @@ and how to fix it.</abstract>
     </topic>
   </talk>
 
+  <talk num="1104">
+    <date>April 2011</date>
+    <topic href="/talks/2011talks/1104Talk/index.html">
+      <title>Automated Browser Interaction Using WWW::Selenium</title>
+      <presenter>Gordon Child</presenter>
+      <abstract>Gordon described the problem with testing Web Applications. He demonstrated
+using Selenium to test applications by automating different browsers to
+actually execute the web application.</abstract>
+    </topic>
+  </talk>
+
 </talklist>
