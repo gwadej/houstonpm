@@ -1,0 +1,359 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>Introduction to Perl: Testing</title>
+<!-- metadata -->
+<meta name="generator" content="S5" />
+<meta name="version" content="S5 1.1" />
+<meta name="presdate" content="20110512" />
+<meta name="author" content="G. Wade Johnson" />
+<meta name="company" content="Houston.pm" />
+<!-- configuration parameters -->
+<meta name="defaultView" content="slideshow" />
+<meta name="controlVis" content="hidden" />
+<!-- style sheet links -->
+<link rel="stylesheet" href="ui/houstonpm/slides.css" type="text/css" media="projection" id="slideProj" />
+<link rel="stylesheet" href="ui/default/outline.css" type="text/css" media="screen" id="outlineStyle" />
+<link rel="stylesheet" href="ui/default/print.css" type="text/css" media="print" id="slidePrint" />
+<link rel="stylesheet" href="ui/default/opera.css" type="text/css" media="projection" id="operaFix" />
+<!-- S5 JS -->
+<script src="ui/default/slides.js" type="text/javascript"></script>
+<style type="text/css">
+    .centered { text-align: center; }
+    .left { float: left; }
+</style>
+</head>
+<body>
+
+<div class="layout">
+<div id="controls"><!-- DO NOT EDIT --></div>
+<div id="currentSlide"><!-- DO NOT EDIT --></div>
+<div id="header"></div>
+<div id="footer">
+<h1>Houston.pm</h1>
+<h2>May 12, 2011</h2>
+</div>
+
+</div>
+
+
+<div class="presentation">
+
+<div class="slide">
+<h1>Introduction to Perl</h1>
+<h2>Testing</h2>
+<h3>G. Wade Johnson</h3>
+<h4><a href="http://houston.pm.org/">Houston.pm</a></h4>
+<div class="handout">
+    notes
+</div>
+</div>
+
+<div class="slide">
+<h1>What is Testing?</h1>
+<p>A way to ...</p>
+<ul class="incremental">
+    <li>catch bugs?</li>
+    <li>improve the quality of code?</li>
+    <li>improve the design of the code?</li>
+    <li>prove you are <em>Agile</em>?</li>
+</ul>
+<div class="handout">
+    <p>The word <em>testing</em> means different things to different people. In
+    many cases, testing is just a means to an end. When we are talking about
+    testing in Perl, we are actually talking more about a development
+    philosophy.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Ad Hoc Testing</h1>
+<p class="centered">Exercise the code by hand to see if it breaks</p>
+<div class="centered"><object height="249" width="157" type="image/svg+xml" data="pix/PackardJennings_Karate_girl_breaks_board.svg"></object></div>
+<div class="handout">
+    <p>There is nothing wrong with <em>ad hoc testing</em>, unless it is the
+    only form of testing you use. This approach (obviously) requires a lot of
+    person-hours to perform. It is also not really suitable for use in verifying
+    code repeatedly. It is very repetitious, which generally means error-prone
+    when executed by humans.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Automated Testing</h1>
+<p class="centered">Have the computer do the boring work.</p>
+<div class="centered"><object height="205" width="318" type="image/svg+xml" data="pix/AJ_Computer.svg"></object></div>
+<div class="handout">
+    <p>Most of the testing we want to talk about is automated. When the
+    procedure is to run the same test day after day, you really want to hand
+    the test off to a computer. This makes the test more reproducable and,
+    quite frankly, the computer does not get bored and wander off topic.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>How to Test?</h1>
+<p></p>
+<div class="centered"><object height="185" width="178" type="image/svg+xml" data="pix/ryanlerch_Red_-_Query_Icon.svg"></object></div>
+<div class="handout">
+    <p>Many different people have created testing frameworks in hopes of
+    automating away the tedium of tests. Some are complicated. Some are simple.
+    Others are incredibly flexible and customizable.</p>
+
+    <p>In keeping with Perl's philosophy, there are many ways to test Perl code
+    as well. We will focus on the most widely used and standardized system in
+    the Perl ecosystem: TAP.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Test Anything Protocol (TAP)</h1>
+<code><pre>
+    1..4
+    ok 1 - Initial sanity verified
+    ok 2 - Sanity still exists
+    not ok 3 - Sanity has left the building
+    #   Failed test 'Sanity has left the building'
+    #   at examples/sanity.t line 11.
+    #          got: '4'
+    #     expected: '5'
+    ok 4 - Sanity has been restored
+    # Looks like you failed 1 test of 4.
+</pre></code>
+<div class="handout">
+    <p>This is a very simple example of the output from a TAP-based test.
+    It shows all of the major parts of a TAP test.</p>
+
+    <ul>
+        <li>Marker indicating the number of tests to run</li>
+        <li>A series of test assertions.
+            <ul>
+                <li>Success indicator: <em>ok</em> or <em>not ok</em></li>
+                <li>Assertion number</li>
+                <li>Assertion name/label</li>
+            </ul></li>
+        <li>Diagnostic information preceded by a <code>#</code></li>
+    </ul>
+</div>
+</div>
+
+<div class="slide">
+<h1>Test::Simple</h1>
+<code><pre>
+    #!/usr/bin/perl
+    use Test::Simple tests =&gt; 4;
+
+    use strict;
+    use warnings;
+
+    my $var = 1;
+    ok( $var == 1, 'Initial sanity verified' );
+    ok( $var =~ m/^\d+$/, 'Sanity still exists' );
+    ok( 2+2 == 5, 'Sanity has left the building' );
+    ok( 2+2 != 5, 'Sanity has been restored' );
+</pre></code>
+<div class="handout">
+    <p>The simplest Perl module supporting TAP is <code>Test::Simple</code>.
+    It only supplies the ability to set the test plan and a single function
+    <code>ok()</code>. The <code>ok()</code> function tests a scalar value,
+    printing <em>ok</em> on true and <em>not ok</em> for a false value.</p>
+
+    <p>It also provides the assertion number automatically, and adds a
+    label if provided as a second argument.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Test::More</h1>
+<code><pre>
+    #!/usr/bin/perl
+    use Test::More tests =&gt; 4;
+
+    use strict;
+    use warnings;
+
+    my $var = 1;
+    is( $var, 1, 'Initial sanity verified' );
+    like( $var, qr/^\d+$/, 'Sanity still exists' );
+    is( 2+2, 5, 'Sanity has left the building' );
+    isnt( 2+2, 5, 'Sanity has been restored' );
+</pre></code>
+<div class="handout">
+    <p>The more advanced <code>Test::More</code> module provides a more
+    complete set of assertion functions. These don't really do much more
+    than the straight <code>ok()</code> function (which is also provided)
+    if the assertion succeeds. But, if the assertion fails, they provide
+    more useful diagnostic output.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Test::More Assertions</h1>
+<ul class="incremental">
+    <li><code>ok()</code> - same as in <code>Test::Simple</code></li>
+    <li><code>is()</code> and <code>isnt()</code> - equality</li>
+    <li><code>like()</code> and <code>unlike()</code> - regex match</li>
+    <li><code>cmp_ok()</code> - arbitrary binary comparison</li>
+    <li><code>is_deeply()</code> - compare arbitrary data structures</li>
+    <li><code>isa_ok()</code> and <code>can_ok()</code> - objects and classes</li>
+</ul>
+<div class="handout">
+    <p>These are the major test assertion functions provided by
+    <code>Test::More</code>. The module does provide other functionality, but
+    we will not be exploring that in an introduction.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>More Test Modules</h1>
+<ul class="incremental">
+    <li><code>Test::Differences</code></li>
+    <li><code>Test::Deep</code></li>
+    <li><code>Test::LongString</code></li>
+    <li><code>Test::Exception</code> or <code>Test::Fatal</code></li>
+    <li><code>Test::Warn</code></li>
+    <li><code>Test::NoWarnings</code></li>
+</ul>
+<div class="handout">
+    <p>You are not limited to <code>Test::Simple</code> and
+    <code>Test::More</code>. There are a large number of specialized modules
+    that provide other assertions and extend functionality. All of these still
+    output TAP, so they are compatible with any tools that would recognize that
+    output.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>More Advanced Testing</h1>
+<ul class="incremental">
+    <li><code>Test::Timer</code></li>
+    <li><code>Test::Perl::Critic</code></li>
+    <li><code>Test::WWW::Mechanize</code></li>
+    <li><code>Test::WWW::Selenium</code></li>
+</ul>
+<div class="handout">
+    <p>There are also test modules that go far beyond just testing what
+    your methods return.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Why Test?</h1>
+<p></p>
+<div class="centered"><object height="185" width="178" type="image/svg+xml" data="pix/ryanlerch_Red_-_Query_Icon.svg"></object></div>
+<div class="handout">
+    notes
+</div>
+</div>
+
+<div class="slide">
+<h1>Robust Code</h1>
+<p>Testing cannot find <em>all</em> bugs, but not testing cannot find <em>any</em> bugs.</p>
+<div class="handout">
+    notes
+</div>
+</div>
+
+<div class="slide">
+<h1>Documentation</h1>
+<p>Well-written tests show how the module should be used.</p>
+<div class="handout">
+    notes
+</div>
+</div>
+
+<div class="slide">
+<h1>Interface Design</h1>
+<p>Writing tests makes you use an interface.</p>
+<div class="handout">
+    notes
+</div>
+</div>
+
+<div class="slide">
+<h1>Regression Protection</h1>
+<p>Any bug that is covered by a unit test will not come back<br />
+(without you knowing).</p>
+<div class="handout">
+    notes
+</div>
+</div>
+
+<div class="slide">
+<h1>What to Test</h1>
+<ul class="incremental">
+    <li>"Anything that can break"</li>
+    <li>Happy path</li>
+    <li>Edge/corner/boundary cases</li>
+    <li>Failure cases (bad args, etc.)</li>
+    <li>Fundamental assumptions/assertions</li>
+</ul>
+<div class="handout">
+    <p>The old Extreme Programming methodology used the first approach to
+    decide what should be tested.</p>
+
+    <p>Most people remember to test the obvious success case. It is equally
+    important to look for places on the edges of good behavior or changes in
+    behavior and test around those areas as well. Edges are a rich source of
+    bugs.</p>
+
+    <p>Fewer developers remember to test the failure cases. Do you know how the
+    code acts if it is passed a bad parameter? How about if a file it depends
+    on does not exist? How about permission failures? Testing these areas makes
+    certain code is in place to handle the sorts of surprises that happen in
+    the real world. These corners of code are often never tested except by
+    unit tests. So the first time they may execute is in production.</p>
+
+    <p>Almost nobody remembers to test their assumptions. These assertions
+    almost never fail. When they do, they tend to generate very strange
+    behavior that may take days to unravel.</p>
+</div>
+</div>
+
+
+<div class="slide">
+<h1>Example Unit Tests</h1>
+<p>Look at test code from <code>SVG::Sparkline</code>.</p>
+<ul>
+    <li><a href="examples/simple_line.t.html">simple_line.t</a></li>
+    <li><a href="examples/simple_whiskers.t.html">simple_whiskers.t</a></li>
+</ul>
+<div class="handout">
+    <p>These files are real unit tests copied from the
+    <code>SVG::Sparkline</code> module. They are tests for real code, but are
+    not much more complex than the simple examples from before.</p>
+</div>
+</div>
+
+
+<div class="slide">
+<h1>Kinds of Testing</h1>
+<ul class="incremental">
+    <li>Smoke Testing</li>
+    <li>Unit Testing</li>
+    <li>Functional Testing</li>
+    <li>Performance Testing</li>
+    <li>Coverage Testing</li>
+    <li>Regression Testing</li>
+    <li>Exploratory Testing</li>
+    <li>Usability Testing</li>
+</ul>
+<div class="handout">
+    notes
+</div>
+</div>
+
+<div class="slide">
+<h1>Unit Tests for Coverage</h1>
+<p>The <code>Devel::Cover</code> module helps determine what code is executed.</p>
+<p>Together with a good test suite, we can increase confidence in our code.</p>
+<div class="handout">
+    notes
+</div>
+</div>
+
+</body>
+</html>

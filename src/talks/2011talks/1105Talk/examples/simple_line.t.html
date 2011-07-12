@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+ <head>
+  <title>[untitled]</title>
+  <style>
+/*
+ * A stylesheet designed to be used with the HTML output of the
+ * Perl module Text::Highlight::Vim.
+ *
+ * This is designed to make the highlighting look like the default gvim
+ * colour scheme, with 'background=light'.
+ *
+ * Geoff Richards (qef@laxan.com)
+ *
+ * This CSS file (light.css) is public domain.  Do what you want with it.
+ * That doesn't mean that HTML with this CSS in is public domain.
+ */
+
+body { color: black; background: white none }
+
+A:link { color: #00F; background: white none }
+A:visited { color: #909; background: white none }
+A:hover { color: #F00; background: white none }
+A:active { color: #F00; background: white none }
+
+.synComment    { color: #0000FF }
+.synConstant   { color: #FF00FF }
+.synIdentifier { color: #008B8B }
+.synStatement  { color: #A52A2A ; font-weight: bold }
+.synPreProc    { color: #A020F0 }
+.synType       { color: #2E8B57 ; font-weight: bold }
+.synSpecial    { color: #6A5ACD }
+.synUnderlined { color: #000000 ; text-decoration: underline }
+.synError      { color: #FFFFFF ; background: #FF0000 none }
+.synTodo       { color: #0000FF ; background: #FFFF00 none }
+</style>
+ </head>
+ <body>
+
+<pre><span class="synPreProc">#!/usr/bin/env perl</span>
+
+<span class="synStatement">use </span>Test::More <span class="synConstant">tests</span> =&gt; <span class="synConstant">9</span>;
+<span class="synStatement">use </span>Carp;
+<span class="synStatement">use </span>SVG::Sparkline;
+
+<span class="synStatement">use strict</span>;
+<span class="synStatement">use warnings</span>;
+
+<span class="synStatement">my</span> <span class="synIdentifier">@yvalues</span> = (<span class="synConstant">10</span>,<span class="synConstant">5</span>,-<span class="synConstant">10</span>,-<span class="synConstant">5</span>,<span class="synConstant">3</span>,<span class="synConstant">8</span>,<span class="synConstant">12</span>,<span class="synConstant">20</span>,<span class="synConstant">18</span>,<span class="synConstant">10</span>,<span class="synConstant">5</span>);
+<span class="synStatement">my</span> <span class="synIdentifier">$points</span> = <span class="synConstant">'0,-3.33 3.2,-1.67 6.4,3.33 9.6,1.67 12.8,-1 16,-2.67 19.2,-4 22.4,-6.67 25.6,-6 28.8,-3.33 32,-1.67'</span>;
+
+<span class="synStatement">my</span> <span class="synIdentifier">$l1</span> = SVG::Sparkline-&gt;new( <span class="synConstant">Line</span> =&gt; { <span class="synConstant">values</span>=&gt;\<span class="synIdentifier">@yvalues</span>, <span class="synConstant">width</span>=&gt;<span class="synConstant">33</span> } );
+isa_ok( <span class="synIdentifier">$l1</span>, <span class="synConstant">'SVG::Sparkline'</span>, <span class="synConstant">'Created a Line-type Sparkline.'</span> );
+is( <span class="synConstant">&quot;</span><span class="synIdentifier">$l1</span><span class="synConstant">&quot;</span>,
+    <span class="synConstant">qq{&lt;svg height=&quot;12&quot; viewBox=&quot;0 -7.67 33 12&quot; width=&quot;33&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;&lt;polyline fill=&quot;none&quot; points=&quot;</span><span class="synIdentifier">$points</span><span class="synConstant">&quot; stroke=&quot;#000&quot; stroke-linecap=&quot;round&quot; stroke-width=&quot;1&quot; /&gt;&lt;/svg&gt;}</span>,
+    <span class="synConstant">'width &amp; 11 points: output correct'</span>
+);
+is( <span class="synConstant">&quot;</span><span class="synIdentifier">$l1</span><span class="synConstant">&quot;</span>, <span class="synIdentifier">$l1-&gt;to_string</span>, <span class="synConstant">'Stringify works'</span> );
+
+<span class="synStatement">my</span> <span class="synIdentifier">$l2</span> = SVG::Sparkline-&gt;new( <span class="synConstant">Line</span> =&gt; { <span class="synConstant">values</span>=&gt;\<span class="synIdentifier">@yvalues</span>, <span class="synConstant">thick</span>=&gt;<span class="synConstant">0.5</span>, <span class="synConstant">width</span>=&gt;<span class="synConstant">33</span> } );
+is( <span class="synConstant">&quot;</span><span class="synIdentifier">$l2</span><span class="synConstant">&quot;</span>,
+    <span class="synConstant">qq{&lt;svg height=&quot;12&quot; viewBox=&quot;0 -7.67 33 12&quot; width=&quot;33&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;&lt;polyline fill=&quot;none&quot; points=&quot;</span><span class="synIdentifier">$points</span><span class="synConstant">&quot; stroke=&quot;#000&quot; stroke-linecap=&quot;round&quot; stroke-width=&quot;0.5&quot; /&gt;&lt;/svg&gt;}</span>,
+    <span class="synConstant">'thickness changed: output correct'</span>
+);
+
+<span class="synStatement">my</span> <span class="synIdentifier">$l3</span> = SVG::Sparkline-&gt;new( <span class="synConstant">Line</span> =&gt; { <span class="synConstant">values</span>=&gt;\<span class="synIdentifier">@yvalues</span>, <span class="synConstant">color</span>=&gt;<span class="synConstant">'#888'</span>, <span class="synConstant">width</span>=&gt;<span class="synConstant">33</span> } );
+is( <span class="synConstant">&quot;</span><span class="synIdentifier">$l3</span><span class="synConstant">&quot;</span>,
+    <span class="synConstant">qq{&lt;svg height=&quot;12&quot; viewBox=&quot;0 -7.67 33 12&quot; width=&quot;33&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;&lt;polyline fill=&quot;none&quot; points=&quot;</span><span class="synIdentifier">$points</span><span class="synConstant">&quot; stroke=&quot;#888&quot; stroke-linecap=&quot;round&quot; stroke-width=&quot;1&quot; /&gt;&lt;/svg&gt;}</span>,
+    <span class="synConstant">'color changed: output correct'</span>
+);
+
+<span class="synStatement">my</span> <span class="synIdentifier">$i</span> = <span class="synConstant">0</span>;
+<span class="synStatement">my</span> <span class="synIdentifier">@values</span> = <span class="synStatement">map {</span> [ <span class="synIdentifier">$i</span>++, <span class="synIdentifier">$_</span> ] <span class="synStatement">}</span> <span class="synIdentifier">@yvalues</span>;
+<span class="synStatement">my</span> <span class="synIdentifier">$l4</span> = SVG::Sparkline-&gt;new( <span class="synConstant">Line</span> =&gt; { <span class="synConstant">values</span>=&gt;\<span class="synIdentifier">@values</span>, <span class="synConstant">width</span>=&gt;<span class="synConstant">33</span> } );
+is( <span class="synConstant">&quot;</span><span class="synIdentifier">$l4</span><span class="synConstant">&quot;</span>,
+    <span class="synConstant">qq{&lt;svg height=&quot;12&quot; viewBox=&quot;0 -7.67 33 12&quot; width=&quot;33&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;&lt;polyline fill=&quot;none&quot; points=&quot;</span><span class="synIdentifier">$points</span><span class="synConstant">&quot; stroke=&quot;#000&quot; stroke-linecap=&quot;round&quot; stroke-width=&quot;1&quot; /&gt;&lt;/svg&gt;}</span>,
+    <span class="synConstant">'width &amp; 11 points: output correct'</span>
+);
+
+<span class="synIdentifier">$points</span> = <span class="synConstant">'0,-3.33 2,-1.67 4,3.33 6,1.67 8,-1 10,-2.67 12,-4 14,-6.67 16,-6 18,-3.33 20,-1.67'</span>;
+<span class="synStatement">my</span> <span class="synIdentifier">$l5</span> = SVG::Sparkline-&gt;new( <span class="synConstant">Line</span> =&gt; { <span class="synConstant">values</span>=&gt;\<span class="synIdentifier">@yvalues</span> } );
+is( <span class="synConstant">&quot;</span><span class="synIdentifier">$l5</span><span class="synConstant">&quot;</span>,
+    <span class="synConstant">qq{&lt;svg height=&quot;12&quot; viewBox=&quot;0 -7.67 21 12&quot; width=&quot;21&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;&lt;polyline fill=&quot;none&quot; points=&quot;</span><span class="synIdentifier">$points</span><span class="synConstant">&quot; stroke=&quot;#000&quot; stroke-linecap=&quot;round&quot; stroke-width=&quot;1&quot; /&gt;&lt;/svg&gt;}</span>,
+    <span class="synConstant">'width &amp; 11 points: output correct'</span>
+);
+
+<span class="synIdentifier">$points</span> = <span class="synConstant">'0,-3.33 2,-1.67 4,3.33 6,1.67 8,-1 10,-2.67 12,-4 14,-6.67 16,-6 18,-3.33 20,-1.67'</span>;
+<span class="synStatement">my</span> <span class="synIdentifier">$l6</span> = SVG::Sparkline-&gt;new( <span class="synConstant">Line</span> =&gt; { -<span class="synConstant">sized</span> =&gt; <span class="synConstant">1</span>, <span class="synConstant">values</span>=&gt;\<span class="synIdentifier">@yvalues</span> } );
+is( <span class="synConstant">&quot;</span><span class="synIdentifier">$l6</span><span class="synConstant">&quot;</span>,
+    <span class="synConstant">qq{&lt;svg height=&quot;12&quot; viewBox=&quot;0 -7.67 21 12&quot; width=&quot;21&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;&lt;polyline fill=&quot;none&quot; points=&quot;</span><span class="synIdentifier">$points</span><span class="synConstant">&quot; stroke=&quot;#000&quot; stroke-linecap=&quot;round&quot; stroke-width=&quot;1&quot; /&gt;&lt;/svg&gt;}</span>,
+    <span class="synConstant">'sized true: output correct'</span>
+);
+
+<span class="synIdentifier">$points</span> = <span class="synConstant">'0,-3.33 2,-1.67 4,3.33 6,1.67 8,-1 10,-2.67 12,-4 14,-6.67 16,-6 18,-3.33 20,-1.67'</span>;
+<span class="synStatement">my</span> <span class="synIdentifier">$l7</span> = SVG::Sparkline-&gt;new( <span class="synConstant">Line</span> =&gt; { -<span class="synConstant">sized</span> =&gt; <span class="synConstant">0</span>, <span class="synConstant">values</span>=&gt;\<span class="synIdentifier">@yvalues</span> } );
+is( <span class="synConstant">&quot;</span><span class="synIdentifier">$l7</span><span class="synConstant">&quot;</span>,
+    <span class="synConstant">qq{&lt;svg viewBox=&quot;0 -7.67 21 12&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;&lt;polyline fill=&quot;none&quot; points=&quot;</span><span class="synIdentifier">$points</span><span class="synConstant">&quot; stroke=&quot;#000&quot; stroke-linecap=&quot;round&quot; stroke-width=&quot;1&quot; /&gt;&lt;/svg&gt;}</span>,
+    <span class="synConstant">'sized false: output correct'</span>
+);
+
+</pre>
+
+ </body>
+</html>
