@@ -873,4 +873,16 @@ actually execute the web application.</abstract>
     </topic>
   </talk>
 
+  <talk num="1105">
+    <date>May 2011</date>
+    <topic href="/talks/2011talks/1105Talk/index.html">
+      <title>Introduction to Perl: Testing</title>
+      <presenter>G. Wade Johnson</presenter>
+      <abstract>In this talk, Wade introduces the basics of automated testing assuming little
+knowledge of the Perl testing culture. The purpose of the presentation is
+not to make you an expert tester, but to introduce the concepts, tools, and
+reasoning behind automated testing in Perl.</abstract>
+    </topic>
+  </talk>
+
 </talklist>
