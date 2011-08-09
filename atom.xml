@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="us-ascii"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><id>tag:houston.pm.org,2011-03:news</id><title type="html">Houston.pm: What&#39;s New</title><link href="http://houston.pm.org/"/><link href="http://houston.pm.org/atom.xml" rel="self"/><updated>2011-07-11T03:49:11Z</updated><author><name>G. Wade Johnson</name></author><category term="news"/><generator uri="http://search.cpan.org/dist/XML-Atom-SimpleFeed/" version="0.86">XML::Atom::SimpleFeed</generator><entry><published>2011-07-11T03:49:11Z</published><link href="http://houston.pm.org/talks/2011talks/1105Talk/index.html"/><content type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><p>In this talk, Wade introduces the basics of automated testing assuming little
+<feed xmlns="http://www.w3.org/2005/Atom"><id>tag:houston.pm.org,2011-03:news</id><title type="html">Houston.pm: What&#39;s New</title><link href="http://houston.pm.org/"/><link href="http://houston.pm.org/atom.xml" rel="self"/><updated>2011-08-08T23:45:56Z</updated><author><name>G. Wade Johnson</name></author><category term="news"/><generator uri="http://search.cpan.org/dist/XML-Atom-SimpleFeed/" version="0.86">XML::Atom::SimpleFeed</generator><entry><published>2011-08-08T23:44:15Z</published><content type="html">&lt;div&gt;&lt;p&gt;Our next technical meeting will be August 11, 2011.
+As usual, the meeting will start at 3131 W. Alabama St. at 7pm.&lt;/p&gt;
+
+&lt;p&gt;Mark Allen will be presenting the &lt;em&gt;Intro to Dancer&lt;/em&gt; talk he gave at
+OSCON 2011. If he has time, Mark has also offered to give a quick
+overview of things he learned at OSCON. If you&#39;ve never been to OSCON
+and would like to know what it&#39;s like, you should be there.&lt;/p&gt;
+
+&lt;p&gt;Someone (probably me) will be in the lobby on the parking level
+starting about 6:40pm collecting people. We&#39;ll make our way upstairs to
+the meeting room.&lt;/p&gt;
+&lt;/div&gt;</content><updated>2011-08-08T23:44:15Z</updated><id>tag:houston.pm.org.2011-03:announce-201102d02d-8</id><title>Intro to Dancer with Mark Allen</title></entry><entry><link href="http://houston.pm.org/talks/2011talks/1107Talk/index.html"/><published>2011-08-08T12:30:24Z</published><content type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><p>Gordon Child presented the Cobbler installation system. It supports rapid deployment
+and configuration of servers via a network boot.</p></div></content><title type="html">Notes for &#39;Cooking with Cobbler&#39; posted.</title><id>tag:houston.pm.org,2011-03:presentation:1107</id><updated>2011-08-08T12:30:24Z</updated><category term="technical meeting"/></entry><entry><published>2011-07-11T03:49:11Z</published><link href="http://houston.pm.org/talks/2011talks/1105Talk/index.html"/><content type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><p>In this talk, Wade introduces the basics of automated testing assuming little
 knowledge of the Perl testing culture. The purpose of the presentation is
 not to make you an expert tester, but to introduce the concepts, tools, and
 reasoning behind automated testing in Perl.</p></div></content><category term="technical meeting"/><updated>2011-07-11T03:49:11Z</updated><id>tag:houston.pm.org,2011-03:presentation:1105</id><title type="html">Notes for &#39;Introduction to Perl: Testing&#39; posted.</title></entry><entry><link href="http://houston.pm.org/talks/2011talks/1104Talk/index.html"/><published>2011-04-25T03:22:26Z</published><content type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><p>Gordon described the problem with testing Web Applications. He demonstrated

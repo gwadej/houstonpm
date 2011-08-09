@@ -885,4 +885,14 @@ reasoning behind automated testing in Perl.</abstract>
     </topic>
   </talk>
 
+  <talk num="1107">
+    <date>July 2011</date>
+    <topic href="/talks/2011talks/1107Talk/index.html">
+      <title>Cooking with Cobbler</title>
+      <presenter>Gordon Child</presenter>
+      <abstract>Gordon Child presented the Cobbler installation system. It supports rapid deployment
+and configuration of servers via a network boot.</abstract>
+    </topic>
+  </talk>
+
 </talklist>
