@@ -895,4 +895,13 @@ and configuration of servers via a network boot.</abstract>
     </topic>
   </talk>
 
+  <talk num="1108">
+    <date>August 2011</date>
+    <topic href="/talks/2011talks/1108Talk/index.html">
+      <title>Intro to Dancer</title>
+      <presenter>Mark Allen</presenter>
+      <abstract>Mark Allen will be presenting the "Intro to Dancer" talk he gave at OSCON 2011. If he has time, Mark has also offered to give a quick overview of some of the Perl information he learned at OSCON.</abstract>
+    </topic>
+  </talk>
+
 </talklist>
