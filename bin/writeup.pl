@@ -167,5 +167,6 @@ sub prompt_long_text
     my $output;
     $output = read_file( $tmpfile ) if -s $tmpfile ne 2+length $prompt;
     unlink $tmpfile;
+    $output =~ s/^#.*?\n//smg;
     return $output;
 }

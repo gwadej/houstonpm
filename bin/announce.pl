@@ -68,10 +68,12 @@ sub prompt_long_text
 {
     my ($prompt) = @_;
     my $tmpfile = '.textarea.tmp';
-    write_file( $tmpfile, join( "\n", map { "# $_" } split /\n/, $prompt );
+    my $label = join( "\n", map { "# $_" } split /\n/, $prompt );
+    write_file( $tmpfile, $label );
     system 'vim', '-i', 'NONE', $tmpfile;
     my $output;
     $output = read_file( $tmpfile ) if -s $tmpfile ne 2+length $prompt;
     unlink $tmpfile;
+    $output =~ s/^#.*?\n//smg;
     return $output;
 }
