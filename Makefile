@@ -24,10 +24,10 @@ dirs:
 	if [ ! -d ${OUTDIR}/talks ]; then mkdir ${OUTDIR}/talks; fi
 
 base: dirs
-	cp -r src/* ${OUTDIR}
+	cp -r --preserve=mode,timestamps src/* ${OUTDIR}
 	find out -type d -name '.svn' -exec rm -rf {} \; -prune
-	cp atom.xml ${OUTDIR}
-	cp feed-icon-10x10.png ${OUTDIR}
+	cp --preserve=mode,timestamps atom.xml ${OUTDIR}
+	cp --preserve=mode,timestamps feed-icon-10x10.png ${OUTDIR}
 
 ${OUTDIR}/talks/mostrecent.html: talks.xml mostrecent.xsl templates/mostrecent.tmpl
 	bin/talks.pl --style=mostrecent.xsl --template=templates/mostrecent.tmpl talks.xml > $@
@@ -66,7 +66,9 @@ install:
 	cp -R ${OUTDIR}/* ${INSTALLDIR}
 
 publish:
-	cp -R ${OUTDIR}/* ${PUBLISHDIR}
+	rsync -rptvz ${OUTDIR}/ ${PUBLISHDIR}
+	#cp -r --preserve=mode,timestamps ${OUTDIR}/* ${PUBLISHDIR}
+	#cp -R ${OUTDIR}/* ${PUBLISHDIR}
 
 clean:
 	find . -name '*.bck' -exec rm {} \;
