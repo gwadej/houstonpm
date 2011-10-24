@@ -904,4 +904,22 @@ and configuration of servers via a network boot.</abstract>
     </topic>
   </talk>
 
+  <talk num="1109">
+    <date>September 2011</date>
+    <topic href="/talks/2011talks/1109Talk/index.html">
+      <title>An Intro to the Qore Language for Perl Programmers</title>
+      <presenter>Brett Estrade</presenter>
+      <abstract><p>Brett talked about the Qore programming language. The syntax of the
+language has some elements in common with Perl. On the other side, Qore has
+some strong features for concurrency as a fundamental feature.</p>
+
+<p>Next, Jake described some work he has done recently for converting ranges
+of IP addresses in various forms into a set of IP addresses. This talk was
+more low-level than most presentations.</p>
+
+<p>Finally, we had a series of lightning talks that covered several different
+topics.</p></abstract>
+    </topic>
+  </talk>
+
 </talklist>
