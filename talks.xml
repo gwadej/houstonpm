@@ -906,19 +906,35 @@ and configuration of servers via a network boot.</abstract>
 
   <talk num="1109">
     <date>September 2011</date>
-    <topic href="/talks/2011talks/1109Talk/index.html">
-      <title>An Intro to the Qore Language for Perl Programmers</title>
+    <topic href="/talks/2011talks/1109Talk/index.html#quore">
+      <title>The Qore Language ... for Perl Programmers</title>
       <presenter>Brett Estrade</presenter>
       <abstract><p>Brett talked about the Qore programming language. The syntax of the
 language has some elements in common with Perl. On the other side, Qore has
-some strong features for concurrency as a fundamental feature.</p>
-
-<p>Next, Jake described some work he has done recently for converting ranges
+some strong features for concurrency as a fundamental feature.</p></abstract>
+    </topic>
+    <topic href="/talks/2011talks/1109Talk/index.html#bithack">
+      <title>Bit Hacks on IP Ranges</title>
+      <presenter>Jake Gelbman</presenter>
+      <abstract><p>Next, Jake described some work he has done recently for converting ranges
 of IP addresses in various forms into a set of IP addresses. This talk was
 more low-level than most presentations.</p>
 
 <p>Finally, we had a series of lightning talks that covered several different
 topics.</p></abstract>
+    </topic>
+  </talk>
+
+  <talk num="1110">
+    <date>October 2011</date>
+    <topic href="/talks/2011talks/1110Talk/index.html">
+      <title>The Perl Compiler</title>
+      <presenter>Reini Urban</presenter>
+      <abstract>Perl programs are normally compiled from script into memory and executed
+without a separate compilation step. The standard distribution once had a
+program that could compile as Perl script into a standalone executable. In this
+talk, Reini Urban describes the Perl compiler and some of the issues with
+updating this program to modern Perl versions.</abstract>
     </topic>
   </talk>
 
