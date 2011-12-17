@@ -1,5 +1,21 @@
 <?xml version="1.0" encoding="us-ascii"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><id>tag:houston.pm.org,2011-03:news</id><title type="html">Houston.pm: What&#39;s New</title><link href="http://houston.pm.org/"/><link href="http://houston.pm.org/atom.xml" rel="self"/><updated>2011-11-06T02:04:19Z</updated><author><name>G. Wade Johnson</name></author><category term="news"/><generator uri="http://search.cpan.org/dist/XML-Atom-SimpleFeed/" version="0.86">XML::Atom::SimpleFeed</generator><entry><published>2011-11-06T02:00:58Z</published><content type="html">&lt;div&gt;&lt;p&gt;We have an unusual opportunity this month to have brian d foy talk to the
+<feed xmlns="http://www.w3.org/2005/Atom"><id>tag:houston.pm.org,2011-03:news</id><title type="html">Houston.pm: What&#39;s New</title><link href="http://houston.pm.org/"/><link href="http://houston.pm.org/atom.xml" rel="self"/><updated>2011-12-06T01:29:12Z</updated><author><name>G. Wade Johnson</name></author><category term="news"/><generator uri="http://search.cpan.org/dist/XML-Atom-SimpleFeed/" version="0.86">XML::Atom::SimpleFeed</generator><entry><published>2011-12-06T01:17:17Z</published><content type="html">&lt;div&gt;&lt;p&gt;This Thursday is the December social meeting for Houston.pm.&lt;/p&gt;
+
+&lt;p&gt;As usual, we will meet at the Black Labrador around 7pm. Ask for &#34;Wade&#34;
+or &#34;the Perl Group&#34; and they&#39;ll point you to us.&lt;/p&gt;
+
+&lt;p&gt;As with all social meetings, there will be good food, good drink, and
+plenty of conversation (on Perl and not). All are welcome, whether
+you&#39;ve been to a technical meeting or not. Here is a chance to meet and
+chat with other people interested in Perl.&lt;/p&gt;
+
+&lt;p&gt;I have had a couple of people say that they weren&#39;t sure where the
+Black Lab was located. It is on Montrose, just north of Richmond. There
+is usually plenty of parking in the back.
+(&lt;a href=&#34;http://maps.google.com/maps?q=The+Black+Labrador,+Houston,+TX&#38;amp;hl=en&#38;amp;sll=37.0625,-95.677068&#38;amp;sspn=56.112526,92.021484&#38;amp;vpsrc=0&#38;amp;hq=The+Black+Labrador,+Houston,+TX&#38;amp;t=m&#38;amp;z=15&gt;map&lt;/a&gt;)&lt;/p&gt;
+&lt;/div&gt;</content><updated>2011-12-06T01:17:17Z</updated><id>tag:houston.pm.org.2011-03:announce-201102d02d-12</id><title>Houston.pm December Social Meeting</title></entry><entry><link href="http://houston.pm.org/talks/2011talks/1111Talk/index.html"/><published>2011-11-21T05:09:25Z</published><content type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><p>brian gave a presentation listing some of the Perl idioms and tricks
+he found during an examination of some of his code. This presentation
+was originally presented at <acronym title="Yet Another Perl Conference">YAPC</acronym>::Brasil.</p></div></content><title type="html">Notes for &#39;My Perl Bag of Tricks&#39; posted.</title><id>tag:houston.pm.org,2011-03:presentation:1111</id><updated>2011-11-21T05:09:25Z</updated><category term="technical meeting"/></entry><entry><published>2011-11-06T02:00:58Z</published><content type="html">&lt;div&gt;&lt;p&gt;We have an unusual opportunity this month to have brian d foy talk to the
 group. Many of you will recognize brian&#39;s name as the author of several Perl
 books, including &lt;em&gt;Learning Perl&lt;/em&gt;, &lt;em&gt;Intermediate Perl&lt;/em&gt;,
 &lt;em&gt;Mastering Perl&lt;/em&gt;, and &lt;em&gt;Effective Perl Programming&lt;/em&gt;. He also

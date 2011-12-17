@@ -938,4 +938,15 @@ updating this program to modern Perl versions.</abstract>
     </topic>
   </talk>
 
+  <talk num="1111">
+    <date>November 2011</date>
+    <topic href="/talks/2011talks/1111Talk/index.html">
+      <title>My Perl Bag of Tricks</title>
+      <presenter>brian d foy</presenter>
+      <abstract>brian gave a presentation listing some of the Perl idioms and tricks
+he found during an examination of some of his code. This presentation
+was originally presented at <acronym title="Yet Another Perl Conference">YAPC</acronym>::Brasil.</abstract>
+    </topic>
+  </talk>
+
 </talklist>
