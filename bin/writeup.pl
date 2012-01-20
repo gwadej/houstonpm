@@ -27,8 +27,8 @@ $year = prompt( -integer => sub { 2010 <= $_ && $_ <= $year }, -def => $year, "Y
 my $author = prompt( "Author:" );
 my $title  = prompt( "Title:" );
 my $attendees = prompt( -integer => sub { 0 < $_ }, "How many attendees? " );
-my $abstract = prompt_long_text( 'Enter an abstract for the presentation:' );
-my $write_up = prompt_long_text( 'Enter a review of the meeting:' );
+my $abstract = prompt_long_text( 'Enter an abstract for the presentation (no <p/> needed):' );
+my $write_up = prompt_long_text( 'Enter a review of the meeting (no <p/> needed):' );
 chomp( $abstract, $write_up );
 
 die "Missing required parameter.\n"

@@ -14,7 +14,8 @@ TALKSUMMARIES=${OUTDIR}/talks/mostrecent.html \
               ${OUTDIR}/talks/2008talks/index.html \
               ${OUTDIR}/talks/2009talks/index.html \
               ${OUTDIR}/talks/2010talks/index.html \
-              ${OUTDIR}/talks/2011talks/index.html
+              ${OUTDIR}/talks/2011talks/index.html \
+              ${OUTDIR}/talks/2012talks/index.html
 
 
 site: base ${TALKSUMMARIES}
@@ -24,10 +25,8 @@ dirs:
 	if [ ! -d ${OUTDIR}/talks ]; then mkdir ${OUTDIR}/talks; fi
 
 base: dirs
-	cp -r --preserve=mode,timestamps src/* ${OUTDIR}
+	cp -r src/* ${OUTDIR}
 	find out -type d -name '.svn' -exec rm -rf {} \; -prune
-	cp --preserve=mode,timestamps atom.xml ${OUTDIR}
-	cp --preserve=mode,timestamps feed-icon-10x10.png ${OUTDIR}
 
 ${OUTDIR}/talks/mostrecent.html: talks.xml mostrecent.xsl templates/mostrecent.tmpl
 	bin/talks.pl --style=mostrecent.xsl --template=templates/mostrecent.tmpl talks.xml > $@
@@ -62,13 +61,14 @@ ${OUTDIR}/talks/2010talks/index.html: talks.xml yeartalks.xsl templates/yeartalk
 ${OUTDIR}/talks/2011talks/index.html: talks.xml yeartalks.xsl templates/yeartalks.tmpl
 	bin/talks.pl --style=yeartalks.xsl --template=templates/yeartalks.tmpl --define year2=11 talks.xml > $@
 
+${OUTDIR}/talks/2012talks/index.html: talks.xml yeartalks.xsl templates/yeartalks.tmpl
+	bin/talks.pl --style=yeartalks.xsl --template=templates/yeartalks.tmpl --define year2=12 talks.xml > $@
+
 install:
 	cp -R ${OUTDIR}/* ${INSTALLDIR}
 
 publish:
-	rsync -rptvz ${OUTDIR}/ ${PUBLISHDIR}
-	#cp -r --preserve=mode,timestamps ${OUTDIR}/* ${PUBLISHDIR}
-	#cp -R ${OUTDIR}/* ${PUBLISHDIR}
+	cp -R ${OUTDIR}/* ${PUBLISHDIR}
 
 clean:
 	find . -name '*.bck' -exec rm {} \;

@@ -949,4 +949,15 @@ was originally presented at <acronym title="Yet Another Perl Conference">YAPC</a
     </topic>
   </talk>
 
+  <talk num="1201">
+    <date>January 2012</date>
+    <topic href="/talks/2012talks/1201Talk/index.html">
+      <title>Perl Object?</title>
+      <presenter>Nicolas Rochelemagne</presenter>
+      <abstract>Nicolas presented an overview of object orientd programming in Perl. After
+covering the basics, he surveyed the different Perl modules that provide
+support for OO in Perl.</abstract>
+    </topic>
+  </talk>
+
 </talklist>
