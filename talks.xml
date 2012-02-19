@@ -960,4 +960,13 @@ support for OO in Perl.</abstract>
     </topic>
   </talk>
 
+  <talk num="1202">
+    <date>February 2012</date>
+    <topic href="/talks/2012talks/1202Talk/index.html">
+      <title>DistZilla from one newb to another</title>
+      <presenter>Mark Allen</presenter>
+      <abstract>Mark Allen introduced the Dist::Zilla distribution building module from the point of view of someone who is new to the module.</abstract>
+    </topic>
+  </talk>
+
 </talklist>
