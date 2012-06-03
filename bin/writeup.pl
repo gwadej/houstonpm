@@ -64,6 +64,7 @@ Don't forget:
 EOM
 
 unlink $savefile;
+remove_tempfiles();
 exit;
 
 sub add_talk_entry
@@ -158,15 +159,27 @@ sub add_feed_entry
     return;
 }
 
-sub prompt_long_text
-{
-    my ($prompt) = @_;
-    my $tmpfile = '.textarea.tmp';
-    write_file( $tmpfile, "# $prompt" );
-    system 'vim', '-i', 'NONE', $tmpfile;
-    my $output;
-    $output = read_file( $tmpfile ) if -s $tmpfile ne 2+length $prompt;
-    unlink $tmpfile;
-    $output =~ s/^#.*?\n//smg;
-    return $output;
+BEGIN {
+    my $count = 0;
+    sub get_tempfile_name {
+        return '.textarea.' . shift() . '.tmp';
+    }
+    sub prompt_long_text
+    {
+        my ($prompt) = @_;
+        my $output;
+        do {
+            my $tmpfile = get_tempfile_name( $count++ );
+            write_file( $tmpfile, "# $prompt" ) unless -f $tmpfile;
+            system 'vim', '-i', 'NONE', $tmpfile;
+            $output = read_file( $tmpfile ) if -s $tmpfile ne 2+length $prompt;
+            $output =~ s/^#.*?\n//smg;
+        } while( length $output && prompt 'Content is empty, retry?', '-y' );
+
+        return $output;
+    }
+
+    sub remove_tempfiles {
+        unlink grep { -f $_ } map { get_tempfile_name( $_ ) } 0 .. $count-1;
+    }
 }

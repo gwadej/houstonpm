@@ -50,6 +50,7 @@ foreach my $entry ( @{$entries} )
 }
 
 write_file( 'atom.xml', $feed->as_string );
+remove_tempfiles();
 exit;
 
 
@@ -58,22 +59,34 @@ sub get_categories {
         grep { /\S/ } map { s/\s*#.*//; s/^\s+//; s/\s+$//; }
         split /\n/, prompt_long_text( <<"EOM" );
 Enter categories, one per line. Or uncomment ones you wish to use.
-meeting
-technical
-social
+#meeting
+#technical
+#social
 EOM
 }
 
-sub prompt_long_text
-{
-    my ($prompt) = @_;
-    my $tmpfile = '.textarea.tmp';
-    my $label = join( "\n", map { "# $_" } split /\n/, $prompt );
-    write_file( $tmpfile, $label );
-    system 'vim', '-i', 'NONE', $tmpfile;
-    my $output;
-    $output = read_file( $tmpfile ) if -s $tmpfile ne 2+length $prompt;
-    unlink $tmpfile;
-    $output =~ s/^#.*?\n//smg;
-    return $output;
+BEGIN {
+    my $count = 0;
+    sub get_tempfile_name {
+        return '.textarea.' . shift() . '.tmp';
+    }
+    sub prompt_long_text
+    {
+        my ($prompt) = @_;
+        my $output;
+        do {
+            my $tmpfile = get_tempfile_name( $count++ );
+            write_file( $tmpfile, "# $prompt" ) unless -f $tmpfile;
+            system 'vim', '-i', 'NONE', $tmpfile;
+            $output = read_file( $tmpfile ) if -s $tmpfile ne 2+length $prompt;
+            $output =~ s/^#.*?\n//smg;
+        } while( 0 == length $output && prompt 'Content is empty, retry?', '-y' );
+
+        return $output;
+    }
+
+    sub remove_tempfiles {
+        unlink grep { -f $_ } map { get_tempfile_name( $_ ) } 0 .. $count-1;
+    }
 }
+
