@@ -173,8 +173,8 @@ BEGIN {
             write_file( $tmpfile, "# $prompt" ) unless -f $tmpfile;
             system 'vim', '-i', 'NONE', $tmpfile;
             $output = read_file( $tmpfile ) if -s $tmpfile ne 2+length $prompt;
-            $output =~ s/^#.*?\n//smg;
-        } while( length $output && prompt 'Content is empty, retry?', '-y' );
+            $output =~ s/^#[^\n]*\n//smg;
+        } while( (0 == length $output) && prompt 'Content is empty, retry?', '-y' );
 
         return $output;
     }
