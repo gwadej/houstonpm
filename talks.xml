@@ -969,4 +969,41 @@ support for OO in Perl.</abstract>
     </topic>
   </talk>
 
+  <talk num="1203">
+    <date>March 2012</date>
+    <topic href="/talks/2012talks/1203Talk/index.html">
+      <title>Advanced Modulinos</title>
+      <presenter>brian d foy</presenter>
+      <abstract>brian was back in Houston and volunteered to give an early look
+          at the "Advanced Modulinos" talk he plans for the summer conference
+          season. The modulino technique arose as a way to make scripts more
+          testable. In this presentation, brian explains how to convert a
+          script into a modulino as well as best practices for refactoring to
+          make it more testable and flexible. Since the presentation was not
+          complete at the time of the presentation, brian then lead a
+          discussion about other techniques and ideas that the group could
+          identify for better modulinos. brian also talked quite a bit about
+          his history and how he came to be the developer and author he is
+          today.</abstract>
+    </topic>
+  </talk>
+
+  <talk num="1204">
+    <date>April 2012</date>
+    <topic href="/talks/2012talks/1204Talk/index.html">
+      <title>App::perlall</title>
+      <presenter>Reini Urban</presenter>
+      <abstract>Reini describes a script he uses to test a large number of Perl versions as part of the development of the Perl compiler.</abstract>
+    </topic>
+  </talk>
+
+  <talk num="1205">
+    <date>May 2012</date>
+    <topic href="/talks/2012talks/1205Talk/index.html">
+      <title>Perl Platform as a Service Shootout</title>
+      <presenter>Mark Allen</presenter>
+      <abstract>Mark indulged his curiosity about which Platform as a Service providers do a good job of supporting Perl.</abstract>
+    </topic>
+  </talk>
+
 </talklist>
