@@ -1,0 +1,778 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>Perl Unit Testing Tools</title>
+<!-- metadata -->
+<meta name="generator" content="S5" />
+<meta name="version" content="S5 1.1" />
+<meta name="presdate" content="20120523" />
+<meta name="author" content="G. Wade Johnson" />
+<meta name="company" content="Houston.pm" />
+<!-- configuration parameters -->
+<meta name="defaultView" content="slideshow" />
+<meta name="controlVis" content="hidden" />
+<!-- style sheet links -->
+<link rel="stylesheet" href="ui/houstonpm/slides.css" type="text/css" media="projection" id="slideProj" />
+<link rel="stylesheet" href="ui/default/outline.css" type="text/css" media="screen" id="outlineStyle" />
+<link rel="stylesheet" href="ui/default/print.css" type="text/css" media="print" id="slidePrint" />
+<link rel="stylesheet" href="ui/default/opera.css" type="text/css" media="projection" id="operaFix" />
+<!-- S5 JS -->
+<script src="ui/default/slides.js" type="text/javascript"></script>
+<style type="text/css">
+    .centered { text-align: center; }
+    .left { float: left; }
+    .slide dt { font-weight: bold; }
+</style>
+</head>
+<body>
+
+<div class="layout">
+<div id="controls"><!-- DO NOT EDIT --></div>
+<div id="currentSlide"><!-- DO NOT EDIT --></div>
+<div id="header"></div>
+<div id="footer">
+<h1>Houston.pm</h1>
+<h2>June 21, 2012</h2>
+</div>
+
+</div>
+
+<div class="presentation">
+
+<div class="slide">
+<h1>Perl Unit Testing: Tools and Techniques</h1>
+<h2></h2>
+<h3>G. Wade Johnson</h3>
+<h4><a href="http://houston.pm.org/">Houston.pm</a></h4>
+<div class="handout">
+    notes
+</div>
+</div>
+
+<div class="slide">
+<h1>Unit Testing in Perl</h1>
+<ul>
+    <li>Terminology</li>
+    <li><code>Test::More</code> assertions</li>
+    <li>Naming test assertions</li>
+    <li>Other Test modules</li>
+    <li>Testing Patterns</li>
+    <li>Testing Anti-Patterns</li>
+    <li>Test Strategies</li>
+    <li>Coverage</li>
+</ul>
+<div class="handout">
+    <p>These are the topics I plan to cover today. This won't cover everything you
+    need to know about unit testing in Perl, but it will give you more than the
+    intro talk.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Terminology</h1>
+<dl>
+    <dt>assertion</dt>
+    <dd><em>A confident and forceful statement of fact or belief.</em><br />A condition that must be true for a test to succeed.</dd>
+    <dt>test</dt>
+    <dd>A set of assertions that specify success of some action.</dd>
+    <dt>test suite</dt>
+    <dd>A set of tests that exercise and verify a piece of software.</dd>
+</dl>
+<div class="handout">
+    <p>This just sets up some definitions so we will be on the same page when I
+    begin talking about tests. A test usually requires some quantity of setup,
+    the execution of code, and then one or more assertions about the result of
+    the code.</p>
+</div>
+</div>
+
+<div class="slide">
+    <h1><code>Test::More</code> Assertions</h1>
+<ul>
+    <li><code>is( $actual, $expected, $name )</code></li>
+    <li><code>isnt( $actual, $expected, $name )</code></li>
+    <li><code>like( $actual, $regex, $name )</code></li>
+    <li><code>unlike( $actual, $regex, $name )</code></li>
+</ul>
+<div class="handout">
+    <p><code>Test::More</code> provides several wrappers around <code>ok</code>
+    that do a much better job of expressing intent and providing troubleshooting
+    information. These are the most obvious ones.</p>
+
+    <p><code>is()</code> and <code>isnt()</code> use string comparisons. Most
+    of the time that doesn't matter. But, once in a while you need to know.</p>
+</div>
+</div>
+
+<div class="slide">
+    <h1>Usage of <code>Test::More</code> Assertions</h1>
+<code><pre>
+#!/usr/bin/perl
+use Test::More tests =&gt; 4;
+use strict;
+use warnings;
+
+my $var = 1;
+is( $var, 1, 'Initial sanity verified' );
+like( $var, qr/^\d+$/, 'Sanity still exists' );
+is( 2+2, 5, 'Sanity has left the building' );
+isnt( 2+2, 5, 'Sanity has been restored' );
+</pre></code>
+<div class="handout">
+    <p>These assertions are more expressive. These don't really do much more
+    than the straight <code>ok()</code> function if the assertion succeeds.
+    But, if the assertion fails, they provide more useful diagnostic
+    output.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Output of <code>Test::More</code> Assertions</h1>
+<code><pre>
+1..4
+ok 1 - Initial sanity verified
+ok 2 - Sanity still exists
+not ok 3 - Sanity has left the building
+#   Failed test 'Sanity has left the building'
+#   at examples/sanity.t line 11.
+#          got: '4'
+#     expected: '5'
+ok 4 - Sanity has been restored
+# Looks like you failed 1 test of 4.
+</pre></code>
+<div class="handout">
+    <p>As you can see, the failure condition actually gives useful output
+    this time. If I had given actual useful names to the assertions, you might
+    even be able to tell what the problem is from here.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Misused <code>Test::More</code> Assertions</h1>
+<ul>
+    <li><code>use_ok</code></li>
+    <li><code>require_ok</code></li>
+</ul>
+<div class="handout">
+    <p>These assertions are not nearly as useful as they appear at first glance.
+    They attempt to <code>use</code> (or <code>require</code>) the specified module.
+    A successful load passes the assertion and and unsuccessful load, fails. This
+    seems relatively straight-forward and reasonable.</p>
+
+    <p>The two points that fall down are:</p>
+    <ul>
+        <li><code>use_ok</code> happens at runtime, unlike <code>use</code>.</li>
+        <li>On failure, the test file continues executing. Which will likely
+        generate a large number of extra assertion failures.</li>
+    </ul>
+</div>
+</div>
+
+<div class="slide">
+<h1>More Assertions</h1>
+<ul>
+    <li><code>is_deeply( $actual, $expect, $name )</code></li>
+    <li><code>cmp_ok( $actual, $op, $expect, $name )</code></li>
+    <li><code>isa_ok( $actual, $type, $name )</code></li>
+    <li><code>can_ok( $obj_or_class, @methods )</code></li>
+</ul>
+<div class="handout">
+</div>
+</div>
+
+<div class="slide">
+<h1>Use of More Assertions</h1>
+<code><pre>
+#!/usr/bin/perl
+use Test::More tests =&gt; 4;
+use strict;
+use warnings;
+
+my %hash = qw/c 3 b 2 a 1/;
+is_deeply( {a=&gt;1, b=&gt;2, c=&gt;3}, \%hash, 'hash items' );
+cmp_ok( 4, '&lt;', 5, 'integer ordering' );
+isa_ok( \%hash, 'HASH', '%hash' );
+can_ok( 'Test::More', qw/ok is isnt like unlike/ );
+</pre></code>
+<div class="handout">
+    <p>Use of all of these are pretty much as you might expect.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>A Quick Aside</h1>
+<p>Each assertion returns a true value on success and false on failure.</p>
+<div class="handout">
+    <p>This is a feature of the assertions that can sometimes be exploited to
+    make your test suites even more useful.
+</div>
+</div>
+
+<div class="slide">
+<h1>Displaying More Information</h1>
+<ul>
+    <li><code>diag()</code> - display output as comments in TAP</li>
+    <li><code>note()</code> - display output only when verbose</li>
+    <li><code>explain()</code> - dumper-like tool</li>
+</ul>
+<div class="handout">
+    <p>These are sometimes used to display information that the maintainer
+    of the suite may find interesting. Unfortunately, this information is
+    not always as useful the 400th time you see it.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Useful Troubleshooting Trick</h1>
+<code><pre>
+#!/usr/bin/perl
+use Test::More tests =&gt; 1;
+use strict;
+use warnings;
+
+my %hash = qw/c 3 b 2 a 1/;
+# Pretend that $output came from a function under test.
+my $output = {a=&gt;1, b=&gt;2, c=&gt;3};
+is_deeply( $output, \%hash, 'hash items' )
+    or note explain $output;
+</pre></code>
+<div class="handout">
+    <p>The <em>or note explain</em> idiom is much more useful than what we
+    normally do.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Troubleshoot the Hard Way</h1>
+<ol class="incremental">
+    <li>Curse the failing test, and the author of the failing code</li>
+    <li>Track down failing test.</li>
+    <li>Add a call to <code>print Dumper( $output )</code></li>
+    <li>Re-run test</li>
+    <li>Re-edit file, adding the <code>use Data::Dumper</code> we forgot</li>
+    <li>Debug and fix the code and/or test.</li>
+    <li>Remove troubleshooting code</li>
+</ol>
+<div class="handout">
+    notes
+</div>
+</div>
+
+<div class="slide">
+<h1>Troubleshoot with <em>or note explain</em></h1>
+<ol class="incremental">
+    <li>Curse the failing test, and the author of the failing code</li>
+    <li>Re-run test in verbose mode</li>
+    <li>Debug and fix the code and/or test.</li>
+</ol>
+<div class="handout">
+    notes
+</div>
+</div>
+
+<div class="slide">
+<h1>How to Name Assertions</h1>
+<ul class="incremental">
+    <li>Unique (in a given file)</li>
+    <li>Expressive</li>
+    <li>Describe expected behavior</li>
+</ul>
+<div class="handout">
+<p>Unique names are easier to find in the file when an assertion fails. A quick
+grep is all it takes. Saves you from troubleshooting the wrong assertion.</p>
+
+<p>If the name is expressive enough, you may be able to go right to the problem
+in the code, instead of spending time relearning the tests. It also documents
+what you are testing.</p>
+
+<ul>
+    <li>May tell you enough to go right to problem.</li>
+    <li>Helps to document what you are testing.</li>
+</ul>
+<p>Don't assume the person troubleshooting a failure knows why you are making
+this assertion.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>More Test Modules</h1>
+<ul>
+    <li><code>Test::NoWarnings</code></li>
+    <li><code>Test::Warn</code></li>
+    <li><code>Test::Exception</code></li>
+    <li><code>Test::Output</code></li>
+</ul>
+<div class="handout">
+</div>
+</div>
+
+<div class="slide">
+<h1><code>Test::NoWarnings</code></h1>
+<ul>
+    <li>Adds an additional assertion at exit</li>
+    <li>Assertion is true if there were no (unchecked) warnings</li>
+</ul>
+<div class="handout">
+    <p>The fact that it adds an extra (hidden) assertion can be a source of confusion.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1><code>Test::Warn</code></h1>
+<code><pre>
+#!/usr/bin/perl
+use Test::More tests =&gt; 5;
+use strict;
+use warnings;
+
+warning_is { noisy() } "Bad things\n",
+    'noisy triggers a warning';
+warnings_are { annoying() } ["Bad things\n", "More bad\n"],
+    'annoying triggers multiple warnings';
+warning_like { noisy() } qr/Bad/, 'noisy triggers a warning';
+warnings_like { annoying() } [qr/Bad/, qr/More/],
+    'noisy triggers a warning';
+warnings_exist { annoying() } [ qr/Bad/ ],
+    'At least this warning';
+</pre></code>
+<div class="handout">
+    <p>These also have special forms for Carp-based warnings</p>
+</div>
+</div>
+
+<div class="slide">
+<h1><code>Test::Exception</code></h1>
+<code><pre>
+#!/usr/bin/perl
+use Test::More tests =&gt; 4;
+use strict;
+use warnings;
+
+lives_ok { robust() } 'robust() never dies';
+dies_ok { fragile() } 'fragile() dies, as expected';
+
+throws_ok { fragile() } qr/Badness happens/, 'fragile() dies';
+throws_ok { fragile2() } 'Acme::Exception',
+    'fragile2() throws class';
+</pre></code>
+<div class="handout">
+    <p>These also have special forms for Carp-based warnings</p>
+</div>
+</div>
+
+<div class="slide">
+<h1><code>Test::Output</code> Example</h1>
+<code><pre>
+use Test::Output;
+
+stdout_is { print "Hello World"; } 'Hello World';
+stdout_like { print 'Hello Wade'; } qw/Wade/;
+
+stderr_is { print STDERR 'Hello'; } 'Hello';
+combined_is { print STDOUT 'Hello '; print STDERR 'All'; }
+    'Hello All';
+output_is { print STDOUT 'Hello '; print STDERR 'All'; }
+    'Hello ', 'All';
+</pre></code>
+<div class="handout">
+<p><code>Test::Output</code> methods check the appropriate streams for
+expected output. You can test either STDOUT, STDERR, or both. You can
+test the output for an exact match or for a regulr expression.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Finding Libraries</h1>
+<p><code>use lib</code> is your friend</p>
+<code><pre>
+use lib "t/lib";
+
+use FindBin;
+use lib "$FindBin::Bin/lib";
+</pre></code>
+<div class="handout">
+</div>
+</div>
+
+<div class="slide">
+<h1>Testing Patterns</h1>
+<ul>
+    <li>Levels of Failure</li>
+    <li>Expected Failures</li>
+    <li>Planning</li>
+    <li>Related Assertions</li>
+</ul>
+<div class="handout">
+    <p>When thinking about unit testing at a high level, you begin to see
+    certain patterns and practices emerge.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Levels of Failure</h1>
+<ul>
+    <li>Fail normal assertion</li>
+    <li><code>die</code> stops entire test file</li>
+    <li><code>BAIL_OUT()</code> to stop entire run</li
+</ul>
+<div class="handout">
+    <p>The simplest and most common failure in a test suite manifests as one
+    (or a few) individual assertion failures. These are normally pretty easy to
+    localize. Something changed. Find and fix.</p>
+
+    <p>Sometimes there is a failure that pretty much makes the rest of the test
+    file immaterial. You need to perform some tests on a database and
+    connection fails. No sense in going any further. Using <code>die</code> to
+    fail the whole test <em>file</em> is appropriate here.</p>
+
+    <p>Finally, there is the rare circumstance where there's a problem so
+    severe that you need to abort the entire test suite. In that case, the
+    <code>BAIL_OUT()</code> function is the right choice.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Skipping Tests</h1>
+<code><pre>
+#!/usr/bin/perl
+use Test::More tests =&gt; 4;
+use strict;
+use warnings;
+
+SKIP: {
+    skip 'Root access needed', 2 if $&lt; != 0;
+    ok( do_root_action(), 'Root does action' );
+    is( get_root_information(), 'root stuff',
+        'Root gets info' );
+}
+ok( perform_unprivileged(), 'Any user action' );
+is( get_information(), 'unprivileged',
+    'Get normal information' );
+</pre></code>
+<div class="handout">
+    <p>Sometimes you need to run tests in only certain circumstances. The
+    <code>skip</code> function allows you to bypass assertions, treating
+    them as successful for the sake of the test suite.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Skipping Test File</h1>
+<code><pre>
+#!/usr/bin/perl
+use Test::More ($^O eq 'MSWin32'
+        ? (skip_all =&gt; 'Cannot test under windows')
+        : (tests =&gt; 4));
+</pre></code>
+<div class="handout">
+    <p>If all of the assertions in a given file must be bypassed for the
+    same reason, <em>skip_all</em> is the better tool.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Automated TODOs</h1>
+<code><pre>
+#!/usr/bin/perl
+use Test::More tests =&gt; 4;
+use strict;
+use warnings;
+
+ok( working_method(), 'this works' );
+TODO: {
+    local $TODO = 'foo method is not finished';
+
+    ok( !foo(), 'foo with no arguments' );
+    is_deeply( foo(qw/a b c/), [qw/C B A/],
+        'foo with arguments' );
+}
+ok( other_working_method(), 'this does too' );
+</pre></code>
+<div class="handout">
+    <p>These tests serve as reminders that we need to write more functionality.
+    However, they are not counted as failures, even though the assertions do not
+    succeed. Just as importantly, they also report if they begin functioning.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Planning</h1>
+<ul>
+    <li><code>use Test::More 'no_plan';</code></li>
+    <li><code>use Test::More;<br /> ...<br />done_testing();</code></li>
+    <li><code>use Test::More 'tests' =&gt; 42;</code></li>
+    <li><code>plan( ... );</code></li>
+</ul>
+<div class="handout">
+    <p>The <em>no_plan</em> option is a really bad idea. You can accidentally
+    bypass or miss assertions without any indication from the test harness. The
+    <code>done_testing</code> option is safer and becoming more popular. However,
+    it also allows the possibility of skipped assertions without any indication.</p>
+
+    <p>Explicitly setting the number of tests is the safest option. But it is more
+    work to keep it properly configured when building your test file.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Related Assertions</h1>
+<ul>
+    <li>Foo object: correct type</li>
+    <li>Foo object: name is correct</li>
+    <li>Foo object: minimum bar flux</li>
+    <li>Foo object: blagh uninitialized</li>
+</ul>
+<div class="handout">
+<p>I find myself using pattern quite a bit. The idea is that the initial string
+should describe the overall function, method, or behavior we are testing and
+the individual assertions are the details of how we know the test passes.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Related Assertions, Another Style</h1>
+<ul>
+    <li>Foo object - correct type</li>
+    <li> ... name is correct</li>
+    <li> ... minimum bar flux</li>
+    <li> ... blargh uninitialized</li>
+</ul>
+<div class="handout">
+    notes
+</div>
+</div>
+
+<div class="slide">
+<h1>Testing Anti-Patterns</h1>
+<ul>
+    <li>Testing mode (flag)</li>
+    <li>Saving data during run for test code</li>
+    <li>Don't test the hard stuff</li>
+</ul>
+<div class="handout">
+    notes
+</div>
+</div>
+
+<div class="slide">
+<h1>Test Mode</h1>
+<ul>
+    <li>Unit tests don't actually test production code</li>
+    <li>Flags are almost never a good idea</li>
+    <li>Added conditions slow production code</li>
+</ul>
+<div class="handout">
+    notes
+</div>
+</div>
+
+<div class="slide">
+<h1>Saving Data for Test Code</h1>
+<ul>
+    <li>Saved data may not match actual functionality</li>
+    <li>Added code slows production code</li>
+    <li>Adds a global side effect</li>
+</ul>
+<div class="handout">
+    notes
+</div>
+</div>
+
+<div class="slide">
+<h1>Don't Test</h1>
+<ul>
+    <li>Should be obvious</li>
+</ul>
+<div class="handout">
+    notes
+</div>
+</div>
+
+<div class="slide">
+<h1>Testing Strategies</h1>
+<ul>
+    <li>Edge Cases/Boundary Conditions</li>
+    <li>Data-Driven Tests</li>
+    <li>Error-Handling Testing</li>
+    <li>Fuzz Testing</li>
+</ul>
+<div class="handout">
+    <p>The first two are mostly useful for reducing global dependencies and
+    removing coupling between independent systems. The third through fifth are
+    ways to think about generating new tests. The final is magic.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Edge Cases/Boundary Conditions</h1>
+<p>Bugs lurk in corners and congregate at boundaries.</p>
+<p style="float: right">&mdash; Boris Bezier</p>
+<div class="handout">
+    <p>Most of the inputs of a function are pretty much the same. Boundaries are
+    where behaviour of the function changes. Concentrate in those areas more.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Potential Boundaries</h1>
+<ul>
+    <li>For scalars: <code>undef</code></li>
+    <li>For numbers: 0, -1, 1, max int, min int</li>
+    <li>For ranged numbers: largest num, smallest num</li>
+    <li>For strings: empty, single character, "\0"</li>
+    <li>For limited strings: longest string, larger than longest string</li>
+    <li>For hashes: empty hash, missing keys, extra keys</li>
+    <li>For lists: empty list, longer than expected, <code>undef</code> elements</li>
+</ul>
+<div class="handout">
+    notes
+</div>
+</div>
+
+<div class="slide">
+<h1>Data-Driven Tests</h1>
+<p>See <a href="examples/valid_domain.t.html" target="_blank">example code</a></p>
+<div class="handout">
+</div>
+</div>
+
+<div class="slide">
+<h1>Error-Handling Testing</h1>
+<ul>
+    <li>It is important to test error handling</li>
+    <li>It is important to test validation</li>
+    <li>Error checking code tends to be the least tested</li>
+    <li>Latent bugs in error checking code can be insidious, because it should not get run.<br />
+        When it does, we're already dealing with a problem.</li>
+</ul>
+<div class="handout">
+    notes
+</div>
+</div>
+
+<div class="slide">
+<h1>Fuzz Testing</h1>
+<p>Random inputs in the hopes of triggering unusual error conditions.</p>
+<p>Often used to attack code.</p>
+<div class="handout">
+</div>
+</div>
+
+
+<div class="slide">
+<h1>Conclusion</h1>
+<ul>
+    <li>Good tests catch regressions</li>
+    <li>Well-designed tests help troubleshooting</li>
+    <li>Well-designed test names help documentation</li>
+    <li>There's a lot more to good testing than just the assertions.</li>
+</ul>
+<div class="handout">
+</div>
+</div>
+
+<div class="slide">
+<h1>Coverage</h1>
+<p>How do you know how well you have tested your code?</p>
+<div class="handout">
+    notes
+</div>
+</div>
+
+<div class="slide">
+<h1>Levels of Coverage</h1>
+<ul class="incremental">
+    <li>Subroutine coverage</li>
+    <li>Statement coverage</li>
+    <li>Branch coverage</li>
+    <li>Condition coverage</li>
+    <li>Path coverage</li>
+</ul>
+<div class="handout">
+</div>
+</div>
+
+<div class="slide">
+<h1>Statement vs. Branch Coverage</h1>
+<code><pre>
+if( get_value() &gt; 0 ) {
+    do_it();
+}
+do_other();
+</pre></code>
+<div class="handout">
+</div>
+</div>
+
+<div class="slide">
+<h1>Branch vs. Condition Coverage</h1>
+<code><pre>
+if( defined $var &amp;&amp; $var &gt; 0 ) {
+    do_it();
+}
+else {
+    do_other();
+}
+</pre></code>
+<div class="handout">
+</div>
+</div>
+
+<div class="slide">
+<h1><code>Devel::Cover</code></h1>
+<p>CPAN module that instruments code to determine what parts of it have been exercised.</p>
+<div class="handout">
+</div>
+</div>
+
+<div class="slide">
+<h1><code>Devel::Cover</code> Output</h1>
+<p>See <a href="examples/cover_db/coverage.html" target="_blank">example</a></p>
+<div class="handout">
+</div>
+</div>
+
+<div class="slide">
+<h1>100% Coverage</h1>
+<ul>
+    <li>Any code not covered may not have been executed.</li>
+    <li>Some conditions may be difficult to duplicate.</li>
+    <li>Law of Diminishing Returns</li>
+    <li>100% coverage is not the same as exhaustively tested.</li>
+    <li>Perfect coverage with lousy tests is not good</li>
+</ul>
+<div class="handout">
+</div>
+</div>
+
+<div class="slide">
+<h1>Don't Trust 100% Coverage</h1>
+<p>100% coverage is necessary for complete testing, but it may not be sufficient.</p>
+<div class="handout">
+</div>
+</div>
+
+<div class="slide">
+<h1>Intelligent Testing vs. Code Coverage</h1>
+<p>Think about what needs to be tested rather than try to hit every line/branch.</p>
+<div class="handout">
+</div>
+</div>
+
+<div class="slide">
+<h1>Conclusion</h1>
+<ul>
+    <li>Any coverage is better than none.</li>
+    <li>Full statement coverage is good, but full branch coverage is better.</li>
+    <li>Full path coverage is probably not possible.</li>
+    <li>While 80% coverage is better than 20% coverage, 100% may not be better than 80%.</li>
+    <li>Coverage is an indicator, not a goal.</li>
+</ul>
+<div class="handout">
+</div>
+</div>
+</body>
+</html>

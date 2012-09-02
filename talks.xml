@@ -1006,4 +1006,29 @@ support for OO in Perl.</abstract>
     </topic>
   </talk>
 
+  <talk num="1206">
+    <date>June 2012</date>
+    <topic href="/talks/2012talks/1206Talk/index.html">
+      <title>Perl Unit Testing: Tools and Techniques</title>
+      <presenter>G. Wade Johnson</presenter>
+      <abstract>Wade presented more high-level testing tools and strategies for testing,
+rather than the normal <em>introduction to Perl unit testing</em> which
+we have done in the past.</abstract>
+    </topic>
+  </talk>
+
+  <talk num="1207">
+    <date>July 2012</date>
+    <topic href="/talks/2012talks/1207Talk/index.html">
+      <title>Intro to Git for Perl Hackers</title>
+      <presenter>Mark Allen</presenter>
+      <abstract>Mark presented an overview of using the git version control system with an
+emphasis on what the average Perl Hacker needs to know. Since this was a
+preview of the talk he planned to give at OSCON, the audience was able to help
+improve the talk. The audience was a good mix of people with little or no git
+experience as well as old-hands. The audience appeared to enjoy the talk and
+enjoyed helping in the improvements.</abstract>
+    </topic>
+  </talk>
+
 </talklist>
