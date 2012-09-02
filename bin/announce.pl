@@ -23,7 +23,7 @@ $entries = decode_json scalar read_file $savefile if -f $savefile;
 my $now = strftime( '%Y-%m-%dT%H:%M:%SZ', gmtime );
 my $new_entry = {
     title => ''.scalar prompt( 'Entry Title: '),
-    id => 'tag:houston.pm.org.2011-03:'.scalar prompt( -def => sprintf('announce-%04d02d02d-%d',$yr,$mon,$day,$$), 'Sub-ID: [enter for default]', ),
+    id => 'tag:houston.pm.org.2011-03:'.scalar prompt( -def => sprintf('announce-%04d%02d%02d-%d',$yr,$mon,$day,$$), 'Sub-ID: [enter for default]', ),
     content => '<div>'.prompt_long_text( 'Enter msg in valid xhtml:' ).'</div>',
     published => $now,
     updated => $now,
