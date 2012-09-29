@@ -24,9 +24,9 @@ dirs:
 	if [ ! -d ${OUTDIR} ]; then mkdir ${OUTDIR}; fi
 	if [ ! -d ${OUTDIR}/talks ]; then mkdir ${OUTDIR}/talks; fi
 
-base: dirs
+base: dirs convert
 	cp -r src/* ${OUTDIR}
-	find out -type d -name '.svn' -exec rm -rf {} \; -prune
+	find out -type f -name '*.tt2' -exec rm -rf {} \; -prune
 	cp atom.xml ${OUTDIR}
 
 ${OUTDIR}/talks/mostrecent.html: talks.xml mostrecent.xsl templates/mostrecent.tmpl
@@ -64,6 +64,9 @@ ${OUTDIR}/talks/2011talks/index.html: talks.xml yeartalks.xsl templates/yeartalk
 
 ${OUTDIR}/talks/2012talks/index.html: talks.xml yeartalks.xsl templates/yeartalks.tmpl
 	bin/talks.pl --style=yeartalks.xsl --template=templates/yeartalks.tmpl --define year2=12 talks.xml > $@
+
+convert:
+	bin/process.pl src/ ${OUTDIR}
 
 install:
 	cp -R ${OUTDIR}/* ${INSTALLDIR}
