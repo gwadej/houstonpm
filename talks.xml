@@ -1031,4 +1031,25 @@ enjoyed helping in the improvements.</abstract>
     </topic>
   </talk>
 
+  <talk num="1209">
+    <date>September 2012</date>
+    <topic href="/talks/2012talks/1209Talk/index.html">
+      <title>A Small On Line Wellness Business Built Using Perl</title>
+      <presenter>Fraser Baker</presenter>
+      <abstract>Fraser has a business providing a web-based administration system for
+businesses providing CAM services. In this talk, he presents some details
+on the Perl code that drives the system.</abstract>
+    </topic>
+  </talk>
+
+  <talk num="1210">
+    <date>October 2012</date>
+    <topic href="/talks/2012talks/1210Talk/index.html">
+      <title>Bag of Tricks</title>
+      <presenter>Erin Schoenhals</presenter>
+      <abstract>Many people use Perl for manipulating text files. Erin explains several of her
+favorite small techniques in this area.</abstract>
+    </topic>
+  </talk>
+
 </talklist>
