@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>Archive of talks given at Houston.pm</title>
-  {{content}}
+  [%content%]
   <link rel="stylesheet" href="/styles/houston.css" type="text/css" />
 </head>
 <body>

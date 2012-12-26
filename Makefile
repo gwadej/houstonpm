@@ -29,10 +29,10 @@ base: dirs convert
 	find out -type f -name '*.tt2' -exec rm -rf {} \; -prune
 	cp atom.xml ${OUTDIR}
 
-${OUTDIR}/talks/mostrecent.html: talks.xml mostrecent.xsl templates/mostrecent.tmpl
-	bin/talks.pl --style=mostrecent.xsl --template=templates/mostrecent.tmpl talks.xml > $@
+${OUTDIR}/talks/mostrecent.html: talks.xml mostrecent.xsl templates/mostrecent.tt2
+	bin/talks.pl --style=mostrecent.xsl --template=mostrecent.tt2 talks.xml > $@
 
-${OUTDIR}/talks/index.html: talks.xml recenttalks.xsl templates/recenttalks.tmpl
+${OUTDIR}/talks/index.html: talks.xml recenttalks.xsl templates/recenttalks.tt2
 	bin/talks.pl --style=recenttalks.xsl --template=recenttalks.tt2 talks.xml > $@
 
 ${OUTDIR}/talks/2003talks/index.html: talks.xml yeartalks.xsl templates/yeartalks.tmpl
