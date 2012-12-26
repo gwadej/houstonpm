@@ -1,0 +1,5 @@
+[% WRAPPER talks_wrap.tt2 %]
+    <h2 class="subhead">Presentations for [%year%]</h2>
+
+    [%content-%]
+[% END -%]

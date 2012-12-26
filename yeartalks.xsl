@@ -9,7 +9,7 @@
 <xsl:template match="talklist">
    <xsl:for-each select="talk">
      <xsl:sort select="@num" order="ascending"/>
-     <xsl:if test="starts-with( @num, $year2 )">
+     <xsl:if test="starts-with( @num, $year2 ) or starts-with( @num, concat( '0', $year2 ) )">
         <div class="talk">
           <xsl:apply-templates match="talk"/>
         </div><xsl:text>

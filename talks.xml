@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <talklist>
-  <talk>
+  <talk num="0306">
     <date>June 2003</date>
     <topic href="/talks/2003talks/0306Talk/index.htm">
       <title>Jumpstart into Perl</title>

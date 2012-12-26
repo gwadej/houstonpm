@@ -29,8 +29,8 @@ ${OUTDIR}/talks/index.html: talks.xml recenttalks.xsl templates/recenttalks.tt2
 	bin/talks.pl --style=recenttalks.xsl --template=recenttalks.tt2 talks.xml > $@
 
 [% FOREACH y IN yearlist-%]
-${OUTDIR}/talks/[%y%]talks/index.html: talks.xml yeartalks.xsl templates/yeartalks.tmpl
-	bin/talks.pl --style=yeartalks.xsl --template=templates/yeartalks.tmpl --define year=[%y%] talks.xml > $@
+${OUTDIR}/talks/[%y%]talks/index.html: talks.xml yeartalks.xsl templates/yeartalks.tt2
+	bin/talks.pl --style=yeartalks.xsl --template=yeartalks.tt2 --define year=[%y%] talks.xml > $@
 
 [% END -%]
 convert:

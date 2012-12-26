@@ -35,35 +35,35 @@ ${OUTDIR}/talks/mostrecent.html: talks.xml mostrecent.xsl templates/mostrecent.t
 ${OUTDIR}/talks/index.html: talks.xml recenttalks.xsl templates/recenttalks.tt2
 	bin/talks.pl --style=recenttalks.xsl --template=recenttalks.tt2 talks.xml > $@
 
-${OUTDIR}/talks/2003talks/index.html: talks.xml yeartalks.xsl templates/yeartalks.tmpl
-	bin/talks.pl --style=yeartalks.xsl --template=templates/yeartalks.tmpl --define year2=03 talks.xml > $@
+${OUTDIR}/talks/2003talks/index.html: talks.xml yeartalks.xsl templates/yeartalks.tt2
+	bin/talks.pl --style=yeartalks.xsl --template=yeartalks.tt2 --define year=2003 talks.xml > $@
 
-${OUTDIR}/talks/2004talks/index.html: talks.xml yeartalks.xsl templates/yeartalks.tmpl
-	bin/talks.pl --style=yeartalks.xsl --template=templates/yeartalks.tmpl --define year2=04 talks.xml > $@
+${OUTDIR}/talks/2004talks/index.html: talks.xml yeartalks.xsl templates/yeartalks.tt2
+	bin/talks.pl --style=yeartalks.xsl --template=yeartalks.tt2 --define year=2004 talks.xml > $@
 
-${OUTDIR}/talks/2005talks/index.html: talks.xml yeartalks.xsl templates/yeartalks.tmpl
-	bin/talks.pl --style=yeartalks.xsl --template=templates/yeartalks.tmpl --define year2=05 talks.xml > $@
+${OUTDIR}/talks/2005talks/index.html: talks.xml yeartalks.xsl templates/yeartalks.tt2
+	bin/talks.pl --style=yeartalks.xsl --template=yeartalks.tt2 --define year=2005 talks.xml > $@
 
-${OUTDIR}/talks/2006talks/index.html: talks.xml yeartalks.xsl templates/yeartalks.tmpl
-	bin/talks.pl --style=yeartalks.xsl --template=templates/yeartalks.tmpl --define year2=06 talks.xml > $@
+${OUTDIR}/talks/2006talks/index.html: talks.xml yeartalks.xsl templates/yeartalks.tt2
+	bin/talks.pl --style=yeartalks.xsl --template=yeartalks.tt2 --define year=2006 talks.xml > $@
 
-${OUTDIR}/talks/2007talks/index.html: talks.xml yeartalks.xsl templates/yeartalks.tmpl
-	bin/talks.pl --style=yeartalks.xsl --template=templates/yeartalks.tmpl --define year2=07 talks.xml > $@
+${OUTDIR}/talks/2007talks/index.html: talks.xml yeartalks.xsl templates/yeartalks.tt2
+	bin/talks.pl --style=yeartalks.xsl --template=yeartalks.tt2 --define year=2007 talks.xml > $@
 
-${OUTDIR}/talks/2008talks/index.html: talks.xml yeartalks.xsl templates/yeartalks.tmpl
-	bin/talks.pl --style=yeartalks.xsl --template=templates/yeartalks.tmpl --define year2=08 talks.xml > $@
+${OUTDIR}/talks/2008talks/index.html: talks.xml yeartalks.xsl templates/yeartalks.tt2
+	bin/talks.pl --style=yeartalks.xsl --template=yeartalks.tt2 --define year=2008 talks.xml > $@
 
-${OUTDIR}/talks/2009talks/index.html: talks.xml yeartalks.xsl templates/yeartalks.tmpl
-	bin/talks.pl --style=yeartalks.xsl --template=templates/yeartalks.tmpl --define year2=09 talks.xml > $@
+${OUTDIR}/talks/2009talks/index.html: talks.xml yeartalks.xsl templates/yeartalks.tt2
+	bin/talks.pl --style=yeartalks.xsl --template=yeartalks.tt2 --define year=2009 talks.xml > $@
 
-${OUTDIR}/talks/2010talks/index.html: talks.xml yeartalks.xsl templates/yeartalks.tmpl
-	bin/talks.pl --style=yeartalks.xsl --template=templates/yeartalks.tmpl --define year2=10 talks.xml > $@
+${OUTDIR}/talks/2010talks/index.html: talks.xml yeartalks.xsl templates/yeartalks.tt2
+	bin/talks.pl --style=yeartalks.xsl --template=yeartalks.tt2 --define year=2010 talks.xml > $@
 
-${OUTDIR}/talks/2011talks/index.html: talks.xml yeartalks.xsl templates/yeartalks.tmpl
-	bin/talks.pl --style=yeartalks.xsl --template=templates/yeartalks.tmpl --define year2=11 talks.xml > $@
+${OUTDIR}/talks/2011talks/index.html: talks.xml yeartalks.xsl templates/yeartalks.tt2
+	bin/talks.pl --style=yeartalks.xsl --template=yeartalks.tt2 --define year=2011 talks.xml > $@
 
-${OUTDIR}/talks/2012talks/index.html: talks.xml yeartalks.xsl templates/yeartalks.tmpl
-	bin/talks.pl --style=yeartalks.xsl --template=templates/yeartalks.tmpl --define year2=12 talks.xml > $@
+${OUTDIR}/talks/2012talks/index.html: talks.xml yeartalks.xsl templates/yeartalks.tt2
+	bin/talks.pl --style=yeartalks.xsl --template=yeartalks.tt2 --define year=2012 talks.xml > $@
 
 convert:
 	ttree --define year=2012 -f _ttreerc
