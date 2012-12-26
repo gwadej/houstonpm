@@ -30,7 +30,26 @@ ignore = \..*\.swp$
 # ditto for things that should be copied rather than processed.
 copy = \.png$
 copy = \.gif$
+copy = \.jpg$
 copy = \.css$
+copy = \.(js|es)$
+copy = \.htc$
+copy = \.pdf$
+copy = \.exe$
+copy = \.par$
+copy = \.txt$
+copy = iptckeyword$
+copy = \.conf$
+copy = \.htm$
+copy = \.key$
+copy = \.plist$
+copy = \.gz$
+copy = \.pl(\.html)?$
+copy = \.svg$
+copy = \.cgi$
+copy = \.t(\.html)?$
+copy = \.opd$
+copy = \.vroom$
 
 # by default, everything not ignored or copied is accepted; add 'accept'
 # lines if you want to filter further. e.g.
