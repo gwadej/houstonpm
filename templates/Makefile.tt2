@@ -1,4 +1,5 @@
 # Makefile for the Houston.pm website
+[%- yearlist = [ 2003 .. year ] %]
 
 OUTDIR=out
 INSTALLDIR=/var/www-vhost/houstonpm/
@@ -16,9 +17,10 @@ dirs:
 	if [ ! -d ${OUTDIR} ]; then mkdir ${OUTDIR}; fi
 	if [ ! -d ${OUTDIR}/talks ]; then mkdir ${OUTDIR}/talks; fi
 
-base: dirs
+base: dirs convert
 	cp -r src/* ${OUTDIR}
-	find out -type d -name '.svn' -exec rm -rf {} \; -prune
+	find out -type f -name '*.tt2' -exec rm -rf {} \; -prune
+	cp atom.xml ${OUTDIR}
 
 ${OUTDIR}/talks/mostrecent.html: talks.xml mostrecent.xsl templates/mostrecent.tmpl
 	bin/talks.pl --style=mostrecent.xsl --template=templates/mostrecent.tmpl talks.xml > $@
@@ -31,6 +33,9 @@ ${OUTDIR}/talks/[%y%]talks/index.html: talks.xml yeartalks.xsl templates/yeartal
 	bin/talks.pl --style=yeartalks.xsl --template=templates/yeartalks.tmpl --define year2=[% y.substr( 2, 2 ) %] talks.xml > $@
 
 [% END -%]
+convert:
+	ttree --define year=[%year%] -f _ttreerc about.tt2 faqs.tt2 index.tt2 meetings.tt2 remote_meetings.tt2
+
 install:
 	cp -R ${OUTDIR}/* ${INSTALLDIR}
 
@@ -42,3 +47,6 @@ clean:
 
 clobber: clean
 	rm -rf ${OUTDIR}/*
+
+makefile: templates/Makefile.tt2
+	tpage --define year=`perl -e"print 1900+((localtime)[5])"` templates/Makefile.tt2 > Makefile

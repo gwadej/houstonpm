@@ -79,3 +79,6 @@ clean:
 
 clobber: clean
 	rm -rf ${OUTDIR}/*
+
+makefile: templates/Makefile.tt2
+	tpage --define year=`perl -e"print 1900+((localtime)[5])"` templates/Makefile.tt2 > Makefile
