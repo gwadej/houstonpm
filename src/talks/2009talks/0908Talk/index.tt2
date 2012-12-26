@@ -1,70 +1,9 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
-<html>
-<head>
-  <title>Summary of August 2009 Presentation</title>
-  <link rel="stylesheet" href="/styles/houston.css" type="text/css" />
-</head>
-<body>
-
-<div class="banner">
-   <a href="http://www.pm.org/index.html"><img alt="Perl Mongers' Site"
-       src="http://www.pm.org/graphics/title.png" height="65" width="150" /></a>
-   <h1>Houston.pm</h1>
-</div>
-<div id="outer">
-  <div id="navigation">
-
-  <ul class="menu" id="mainmenu">
-     <li><a href="/index.html">Home</a></li>
-     <li><a href="/about.html">About Us</a></li>
-     <li><a href="/meetings.html">Meetings</a></li>
-     <li><a href="/faqs.html">FAQ</a></li>
-     <li><a href="/talks/mostrecent.html">Most Recent Talk</a></li>
-     <li><a href="/talks/index.html">Talks Archive</a></li>
-     <li><a href="/projects/index.html">Group Projects</a></li>
-  </ul>
-
-  </div>
-
-  <div class="content">
+[% WRAPPER writeup_wrap.tt2
+    title='Summary of August 2009 Presentation'
+%]
       <h2 class="subhead">The FUSE File System</h2>
 
       <p>Robert Boone presents on the FUSE filesystem.</p>
 
       <p><script language='javascript' type='text/javascript' src='https://webmeeting.dimdim.com/portal/html/portal/js/common_support.js'> </script><object type='application/x-shockwave-flash' data='https://widgets.clearspring.com/o/499d781e7a2ff8ce/49a40d8b9c8624f5/499d781e7a2ff8ce/79d00f94/borderColor/0xb0b6be/boxColor/0x405e87/headerFrom/0x8c99a6/headerTo/0x516881/mainColor/0x385475/mainColorTo/0x5382c3/mainFColor/0xffffff/meetingId/5d6513ab-2e9e-477e-84e3-d79795c18e45/messageFColor/0xfbfe20/portalUrl/http%3A%2F%2Fwebmeeting.dimdim.com%3A80%2Fportal/showRecording/true/showTimer/true/showTranscript/true/showRegistration/false/-storeInPid/true' id='W499d781e7a2ff8ce49a40d8b9c8624f5' width='250' height='310'><param name='movie' value='https://widgets.clearspring.com/o/499d781e7a2ff8ce/49a40d8b9c8624f5/499d781e7a2ff8ce/79d00f94/borderColor/0xb0b6be/boxColor/0x405e87/headerFrom/0x8c99a6/headerTo/0x516881/mainColor/0x385475/mainColorTo/0x5382c3/mainFColor/0xffffff/meetingId/5d6513ab-2e9e-477e-84e3-d79795c18e45/messageFColor/0xfbfe20/portalUrl/http%3A%2F%2Fwebmeeting.dimdim.com%3A80%2Fportal/showRecording/true/showTimer/true/showTranscript/true/showRegistration/false/-storeInPid/true' /><param name='wmode' value='transparent' /><param name='allowNetworking' value='all' /><param name='allowScriptAccess' value='always' /></object></p>
-  </div>
-
-</div>
-<div id="footer">
-<p class="copyright">
-<!-- Creative Commons License -->
-<a rel="license" href="http://creativecommons.org/licenses/by/2.5/"><img alt="Creative Commons License" border="0" src="http://creativecommons.org/images/public/somerights20.gif" /></a>
-Copyright &copy; 2009 Houston.pm.<br /> Except as otherwise noted, this site is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/2.5/">Creative Commons Attribution 2.5 License</a>.
-<!-- /Creative Commons License -->
-
-
-<!--
-
-<rdf:RDF xmlns="http://web.resource.org/cc/"
-    xmlns:dc="http://purl.org/dc/elements/1.1/"
-    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-<Work rdf:about="">
-   <license rdf:resource="http://creativecommons.org/licenses/by/2.5/" />
-</Work>
-
-<License rdf:about="http://creativecommons.org/licenses/by/2.5/">
-   <permits rdf:resource="http://web.resource.org/cc/Reproduction" />
-   <permits rdf:resource="http://web.resource.org/cc/Distribution" />
-   <requires rdf:resource="http://web.resource.org/cc/Notice" />
-   <requires rdf:resource="http://web.resource.org/cc/Attribution" />
-   <permits rdf:resource="http://web.resource.org/cc/DerivativeWorks" />
-</License>
-
-</rdf:RDF>
--->
-</p>
-<p>The use of the camel image in association with the Perl
-language is a trademark of O'Reilly &amp; Associates, Inc. Used with permission.</p>
-</div>
-</body>
-</html>
+[% END -%]

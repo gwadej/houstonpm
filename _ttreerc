@@ -50,6 +50,8 @@ copy = \.cgi$
 copy = \.t(\.html)?$
 copy = \.opd$
 copy = \.vroom$
+copy = \.xul$
+copy = \.log$
 
 # by default, everything not ignored or copied is accepted; add 'accept'
 # lines if you want to filter further. e.g.
