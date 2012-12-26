@@ -1,0 +1,22 @@
+[% WRAPPER writeup_wrap.tt2
+    title='Summary of October 2008 Presentation'
+%]
+    <h2 class="subhead">Git - The stupid content tracker</h2>
+
+    <p>For the October meeting, Robert Boone gave a presentation on the
+     <code>git</code> distributed version control system. He also answered
+     questions from the audience.</p>
+
+    <p>In addition to explaining the mechanics of working with git, Robert
+      spent a fair amount of time helping the audience to understand the
+      reasons for using a distributed version control system and the general
+      flow of working with one.</p>
+
+    <p>Most of the audience was very comfortable with more traditional,
+      non-distributed version control systems, like Subversion or CVS. Despite
+      initial skepticism, by the end of the talk the audience appeared
+      convinced that they should give git a try.</p>
+
+    <p>The <a href="git.html">slides</a> for Robert's talk are available as
+      HTML.</p>
+[% END -%]

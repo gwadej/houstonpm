@@ -1,0 +1,26 @@
+[% WRAPPER writeup_wrap.tt2
+    title='Summary of April 2008 Presentation'
+%]
+    <h2 class="subhead">Perl Help Session</h2>
+
+    <p>Since we didn't really have a topic lined up for this month, we opened
+      the meeting to any questions, problems, or topics people wanted to
+      discuss. The discussion wandered over a number of topics, including:</p>
+
+    <ul>
+      <li>Questions about working with SQL</li>
+      <li>Discussion of Andy Lester's <a href="http://petdance.com/ack/">ack</a> tool</li>
+      <li>Discussion of the magical <code>e</code> option on the substitute
+        operator (<code>s///e</code>) that executes the replacement text.</li>
+      <li><code>POE</code></li>
+      <li>A short discussion of <a href="http://search.cpan.org/~ash/DBIx-Class-0.08010/lib/DBIx/Class.pm">DBIx::Class</a>,
+        including the example of <a href="http://search.cpan.org/~domm/App-TimeTracker-0.08/lib/App/TimeTracker.pm">App::TimeTracker</a>
+        that uses it.</li>
+      <li>A short discussion on command line tools and gui interfaces lead to
+        finding <a href="http://search.cpan.org/~szabgab/App-Wack-0.05/lib/App/Wack.pm">App::Wack</a>
+        the <em>wisual</em> <code>ack</code></li>
+      <li>A quick walk through on <a
+        href="http://search.cpan.org/~mramberg/Catalyst-Runtime-5.7015/lib/Catalyst.pm">Catalyst</a>
+        with the <code>DBI</code> model.</li>
+    </ul>
+[% END -%]

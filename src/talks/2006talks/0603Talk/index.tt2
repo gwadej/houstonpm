@@ -1,0 +1,36 @@
+[% WRAPPER writeup_wrap.tt2
+    title='Summary of March 2006 Presentation'
+%]
+    <p>For the March meeting, Paul Archer lead a further session on the
+      LibUSB/Delcom VSI project. During this presentation, we experimented
+      with controlling two of the Delcom devices on one computer. None of the
+      current prototyping code supports multiple devices with the same vendor
+      and product id, so Paul solved the problem by</p>
+
+    <ol>
+      <li>plugging in one device</li>
+      <li>programming it to flash all three colors</li>
+      <li>plugging in the other device</li>
+      <li>programming it to flash all three colors</li>
+    </ol>
+
+    <p>We were also able to get the serial numbers from the two devices
+      to verify show that we were looking at two different devices. There
+      was some talk of changes to the libraries to allow us to talk to
+      two devices at a time without plugging them in separately.</p>
+
+    <p>Paul explained the use of the <code>Inline::init</code> function for
+      allow us to keep the C code in the <code>__DATA__</code> section while
+      still building a module. (It's in the <code>Inline::C</code> cookbook
+      documentation, I just didn't read far enough.)</p>
+
+    <p>We also decided that this project had passed beyond the point where
+      it makes an interesting presentation. There is still quite a bit of
+      cleanup and some more functionality to implement. But none of that
+      makes for an interesting presentation. Maybe we can have another quick
+      wrapup when the project is complete.</p>
+
+    <p>Any further information about the project will be added to the project
+      page: <a href="/projects/delcom_vsi/index.html">Delcom VSI/LibUSB
+      Project</a>.</p>
+[% END -%]

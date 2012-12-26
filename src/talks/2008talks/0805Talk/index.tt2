@@ -1,0 +1,21 @@
+[% WRAPPER writeup_wrap.tt2
+    title='Summary of May 2008 Presentation'
+%]
+    <h2 class="subhead">Perl Help Session</h2>
+
+    <p>Since we didn't really have a topic lined up for this month, we opened
+      the meeting to any questions, problems, or topics people wanted to
+      discuss.</p>
+
+    <p>We spent a fair amount of time discussing encryption and different
+      techniques that have been used to protect licensed software. As part
+      of the process, Wade described a secure system used many years ago to
+      allow a third party to authenticate a connection between a client and
+      a server.</p>
+
+    <p>We also discussed issues that people had with the <code>Net::SSH::Perl</code>
+      module.</p>
+
+    <p>There was also some discussion about estimating software projects. Wade
+      recommmended the book <cite>Software Estimation</cite> by Steve McConnell.</p>
+[% END -%]

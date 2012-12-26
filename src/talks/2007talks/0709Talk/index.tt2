@@ -1,0 +1,15 @@
+[% WRAPPER writeup_wrap.tt2
+    title='Summary of September 2007 Presentation'
+%]
+    <h2 class="subhead">Subroutines, Closures, and Coderefs</h2>
+
+    <p>Wade gave a quick overview of references in Perl with a goal of covering
+      coderefs and some of the interesting things you can do with them.</p>
+
+    <p>The full <a href="slides/subs_closures_talk.html">set of slides</a> is available
+      as an <a href="http://meyerweb.com/eric/tools/s5/">S5</a> presentation.
+      Clicking anywhere on the slide moves to the next slide. When printed, the
+      presentation also contains notes for the speaker. These notes are visible
+      in the browser by clicking on the "&#216;" in the control panel on the lower
+      right portion of the screen.</p>
+[% END -%]

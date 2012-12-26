@@ -1,0 +1,40 @@
+[% WRAPPER writeup_wrap.tt2
+    title='Summary of May 2006 Presentation'
+%]
+    <p>For the May meeting, G. Wade Johnson lead the conclusion of the two-part
+      discussion entitled <em>What Every Perl Programmer Should Know: tips,
+      tricks, and common knowledge</em>. The idea from the presentation came
+      from a book for another language I read called <cite>C++ Common
+      Knowledge</cite>. That book got started a chain of thought about what we
+      as Perl programmers should all know.</p>
+
+    <p>Like the previous meeting, we kept more to a discussion format than
+      a pure presentation. We continued using the <a
+      href="http://www.tiddlywiki.com/">TiddlyWiki</a> used last time to store
+      and organize the material used in the presentation. Just like in April,
+      we extended the document based on the discussions triggered by comments
+      and questions from the audience. There was enough additional information
+      generated this time around, that the document needed some serious
+      reorganization.</p>
+
+    <p>The resulting presentation is available on the <a
+      href="../0604Talk/tiddlywiki_weppsk.html">attached page</a>. Instead
+      of having two version of the document online, the document from last
+      month has been extended with the new information.</p>
+
+    <p>As the session wound down, we ended up discussing two topics that don't
+      really fall into the common knowledge theme: debugging and version
+      control.</p>
+
+    <p>The debugging question concerned alternatives to <code>print</code>
+      statements for debugging CGI scripts. The ability to run
+      <code>CGI.pm</code>-based CGI scripts from the command line was discussed
+      slightly. We also talked about using the built-in Perl debugger and the
+      <code>Devel::ptkdb</code> module that provides a gui front-end to the
+      debugger.</p>
+
+    <p>The question of version control came up, with some people commenting that
+      they tend to just make backup copies for small projects. Wade recommended
+      looking seriously at <a href="http://subversion.tigris.org/">Subversion</a>
+      for any level of development.</p>
+[% END -%]

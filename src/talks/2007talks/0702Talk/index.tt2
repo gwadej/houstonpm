@@ -1,0 +1,46 @@
+[% WRAPPER writeup_wrap.tt2
+    title='Summary of February 2007 Presentation'
+%]
+    <h2 class="subhead">Introduction to Catalyst</h2>
+
+    <p>Robert Boone presented an introduction to the Catalyst web application
+      framework.</p>
+
+    <p>Robert pointed out that there are three modules that you will want
+      to make sure to install when using Catalyst:</p>
+
+    <ul>
+      <li><code>Catalyst::Runtime</code></li>
+      <li><code>Catalyst::Devel</code></li>
+      <li><code>Catalyst::Manual</code></li>
+    </ul>
+
+    <p>The Catalyst functionality is supplied by three major pieces:</p>
+
+    <ul>
+      <li>Catalyst</li>
+      <li><code>DBIx::Class</code></li>
+      <li>Templates</li>
+    </ul>
+
+    <p>As an example, he demonstrated his RedX code snippet server. The
+      database code is all defined in one module using the module
+      <code>DBIx::Class</code>. The Catalyst code then just uses the
+      class interface for all database access. The <code>DBIx::Class:SchemaLoader</code>
+      simplifies defining classes from an existing database.</p>
+
+    <p>He also demonstrated the <code>Syntax::Highlight::Engine::Kate</code>
+      modules which generate syntax-highlighted HTML from source code.
+      Robert also mentioned the <code>Text::VimColor</code> module that uses
+      the <code>vim</code> editor for its syntax highlighting. He also
+      demonstrated <code>Catalyst::Controller::FormBuilder</code>, which
+      simplifies building forms through the use of templates.</p>
+
+    <p>The best source for Catalyst information is the IRC channel. Robert
+      does say to be careful, they can be a bit rough on newbies. You should
+      check the Catalyst website to find the most up-to-date plugins.</p>
+
+    <p>A potential pitfall worth remembering is that the YAML file that
+      Catalyst uses for configuration can override any configuration that
+      you may think you have done.</p>
+[% END -%]

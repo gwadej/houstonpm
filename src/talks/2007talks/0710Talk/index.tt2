@@ -1,0 +1,37 @@
+[% WRAPPER writeup_wrap.tt2
+    title='Summary of October 2007 Presentation'
+%]
+    <h2 class="subhead">Catalyst/DBIC</h2>
+
+    <p>Brandon presented some basics of Catalyst development and the
+    <code>DBIx::Class</code> (DBIC) module.</p>
+
+    <p><code>DBIx::Class</code> provides an OO abstraction over a SQL <acronym
+    title="Relational Database Management System">RDBMS</acronym>. All data is
+    accessed in a resultset abstraction. Transactions are supported. The library
+    even handles retries if the server ever goes down.</p>
+
+    <p>Catalyst is a webapp framework for Perl. It follows the <acronym
+    title="Model, View, Controller">MVC</acronym> pattern. The framework supports
+    plugins that extend what the framework does for you.</p>
+
+    <p>Brandon mentioned several resources that are worth checking out if you
+    are interested in developing with Catalyst:</p>
+
+    <ul>
+      <li>The <code>Catalyst-Manual</code> module contains extensive
+      documentation for Catalyst.</li>
+      <li>The <code>Task::Catalyst</code> module installs all of Catalyst (and
+      is newer that <code>Catalyst::Bundle</code>).</li>
+      <li>The <code>Catalyst::Devel</code> module contains some tools that
+      help with Catalyst development.</li>
+      <li>The <a href="http://www.catalystframework.org/">Catalyst website</a>
+      is the definitive source for the framework.</li>
+      <li><a href="http://planet.catalystframework.org/">Planet Catalyst</a> contains
+      a number of blogs on Catalyst and development using Catalyst.</li>
+    </ul>
+
+    <p>The talk itself is available as a XUL
+    <a href="http://dtmf.com/houston_pm/catdbic.xul">slideshow</a>
+    (Firefox only.)</p>
+[% END -%]

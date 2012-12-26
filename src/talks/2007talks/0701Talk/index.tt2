@@ -1,0 +1,41 @@
+[% WRAPPER writeup_wrap.tt2
+    title='Summary of January 2007 Presentation'
+%]
+    <h2 class="subhead">Creating Perl Modules</h2>
+
+    <p>G. Wade Johnson did a talk on some of the modules that make building
+      a Perl module easier.</p>
+    <ul>
+      <li><code>Module::Starter</code></li>
+      <li><code>Module::Starter::PBP</code></li>
+      <li><code>Test::More</code></li>
+      <li><code>Test::Harness</code></li>
+      <li><code>Perl::Critic</code></li>
+    </ul>
+
+    <p>The <code>Module::Starter</code> module was created by Andy Lester to make
+      creating modules a little easier. The previous standard method was designed
+      for creating XS-based modules and had a somewhat arcane interface.
+      <code>Module::Starter</code> provides a script named <code>module-starter</code>,
+      which provides a straight-forward interface for creating CPAN-ready modules. The
+      <code>Module::Starter::PBP</code> module extends <code>Module::Starter</code>
+      to support the recommendations from <cite>Perl Best Practices</cite> by Damian
+      Conway.</p>
+
+    <p>Anyone creating a module for reuse should be familiar with <code>Test::More</code>
+      for generating tests for their modules. If you have installed a module from CPAN,
+      you have seen the results of the tests when executing <code>make test</code>. The
+      actual results of the testing would be much more verbose without the help of
+      <code>Test::Harness</code>. This module takes the output of a set of Perl tests
+      and summarizes them nicely. This is the output you normally see from
+      <code>make test</code>. <code>Test::Harness</code> also provides a utility
+      script called <code>prove</code> which applies <code>Test::Harness</code> to
+      the scripts listed on its command line.</p>
+
+    <p>The final module on the list was <code>Perl::Critic</code>. This module
+      provides a script <code>perlcritic</code> that tests your code against the
+      guidelines described in <cite>Perl Best Practices</cite>. This module supports
+      a configuration file for customizing the importance of the various rules.
+      This allows you to specify which practices you want to follow and simplifies
+      checking your code.</p>
+[% END -%]

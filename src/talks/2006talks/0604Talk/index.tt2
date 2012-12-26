@@ -1,0 +1,40 @@
+[% WRAPPER writeup_wrap.tt2
+    title='Summary of April 2006 Presentation'
+%]
+    <p>For the April meeting, G. Wade Johnson lead the first in a two-part
+      discussion entitled <em>What Every Perl Programmer Should Know: tips,
+      tricks, and common knowledge</em>. The idea from the presentation came
+      from a book for another language I read called <cite>C++ Common
+      Knowledge</cite>. That book got started a chain of thought about what we
+      as Perl programmers should all know.</p>
+
+    <p>This presentation was very different from many of the others because of
+      a change in presentation technology and focus. I wanted this to be more
+      of a discussion than a lecture. The PerlPoint presentations used in the
+      past have the same problem as their PowerPoint equivalents, linear
+      presentation style. This form of presentation does not lend itself to
+      discussion and almost discourages tangential topics.</p>
+
+    <p>Instead, I used <a href="http://www.tiddlywiki.com/">TiddlyWiki</a> to
+      store the material I wanted to cover. I also added more content than I
+      expected to cover to allow tailoring the discussion to junior or more
+      senior Perl programmers, depending on who was there.</p>
+
+    <p>As the discussion progressed, we ended up adding examples and more
+      content to the wiki. The result was a much more interactive session and
+      better content than I started with. The resulting presentation is
+      available on the <a href="tiddlywiki_weppsk.html">attached page</a>.</p>
+
+    <p>There are a few things that may not be obvious on viewing this Wiki. The
+      left hand menu is a list of topics I had planned to cover. Underneath that
+      are links to lists of topics covered by the named tags. The <em>apr</em>
+      tag lists all of the pages we covered at the April meeting. The right-hand
+      side contains admin functions and a set of tabs that give other
+      organization of the content. Finally, if you use the <em>save link as</em>
+      feature of your browser on the link above, you will get a single HTML page
+      that contains the entire presentation. When opened as a file in the
+      browser, the wiki is editable.</p>
+
+    <p>Near the end of the meeting we decided to do one more meeting next month
+      on this topic to see if we can get more of the information covered.</p>
+[% END -%]

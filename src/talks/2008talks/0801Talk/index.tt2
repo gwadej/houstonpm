@@ -1,0 +1,33 @@
+[% WRAPPER writeup_wrap.tt2
+    title='Summary of January 2008 Presentation'
+%]
+    <h2 class="subhead">The <code>Net::Jabber::Bot</code> Project</h2>
+
+    <p>For the January meeting, Todd Rinaldo lead a maintenance session on
+     the <code>Net::Jabber::Bot</code> module. This module is based on the
+     <code>Net::Jabber</code> module. Unfortunately, <code>Net::Jabber</code>
+     is not currently maintained. We talked about the potential of trying to
+     take over the <code>Net::Jabber</code> module and maintain it. This
+     is, however, a pretty big job and is tangential to the main project.</p>
+
+    <p>One problem that Todd had been fighting was warning messages from
+      inside the <code>IO::Prompt</code> module caused by the <code>-w</code>
+      switch. We modified the tests to remove this warning. Todd's current
+      implementation uses <code>Class::Std</code> for its OO support.</p>
+
+    <p>One major difficulty with testing modules like this is that they
+      depend on access to an external server to function. The dolution to
+      this problem is a technique called <em>Dependency Injection</em>.
+      We modify the object construction to allow us to supply a replacement
+      object for the internal <code>Net::Jabber</code> object that we
+      normally create and that connects to the server.</p>
+
+    <p>We can now provide a <em>mock object</em> that provides just enough
+      functionality to support the tests we want to run. This mock must
+      match the portion of the interface we are depending on, but it does
+      not need to implement it in the same way.</p>
+
+    <p>Todd also set up a <a href="http://code.google.com/p/perl-net-jabber-bot/">project</a>
+      for development of <code>Net::Jabber::Bot</code> at Google's
+      <a href="http://code.google.com/">code site</a>.</p>
+[% END -%]

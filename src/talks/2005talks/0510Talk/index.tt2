@@ -1,0 +1,39 @@
+[% WRAPPER writeup_wrap.tt2
+    title='Summary of October 2005 Presentation'
+%]
+    <p>Bill Dillon gave a presentation on <em>Graphics in Perl</em>. Since
+    this talk ranged from graphing metrics for programming QA through light
+    curves for cataclysmic variable stars. (Bill's hobby is astronomy.)</p>
+
+    <p>Bill covered the GD::Graph module that supports creating various forms
+    of charts, including line, point, bar and pie charts. Since his work
+    data is proprietary, he began by graphing the number of attendees at the
+    Houston.pm meetings. (Actual numbers may vary.)</p>
+
+    <p>After showing how easy it is to chart data like this in multiple styles,
+    Bill went on to give an overview of cataclysmic variable stars and the
+    people who study them. (<a href="http://www.aavso.org/">AAVSO: American
+    Association of Variable Star Observers</a>.)</p>
+
+    <p>This background leads to a point chart showing almost 100 years of data
+    on the cataclysmic variable star SS Cygni. In the process, Bill showed how he
+    used Perl and GD::Graph to display a data set that Excel would not open. He
+    also described the need to extend the graph size when dealing with large
+    data sets, as well as the problems with plotting star <em>magnitude</em>
+    data in a reasonable fashion for people to read.</p>
+
+    <p>Bill also recommended the books <cite>Perl Graphics Programming</cite>
+    (Wallace, 2002) and <cite>Graphics Programming with Perl</cite> (Verbruggen,
+    2002). He said that neither one had all of the information that he needed,
+    but between them, he could normally figure it out.</p>
+
+    <ul>
+      <li>Bill's  PowerPoint <a href="graphics_in_perl.ppt">presentation</a>.</li>
+      <li>Example code from <cite>Perl Graphics Programming</cite>
+        <a href="wgd_graph_test.pl">wgd_graph_test.pl</a></li>
+      <li>The program that generated the lightcurve chart:
+        <a href="graph_jd_mag.pl">graph_jd_mag.pl</a></li>
+      <li><a href="ss_cyg_jd_mag_50kpix.png">Lightcurve</a> for the cataclysmic
+         variable star SS Cygni (Warning: this chart is 50,000 pixels wide.)</li>
+    </ul>
+[% END -%]

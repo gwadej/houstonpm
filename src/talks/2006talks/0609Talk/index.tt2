@@ -1,0 +1,29 @@
+[% WRAPPER writeup_wrap.tt2
+    title='Summary of September 2006 Presentation'
+%]
+    <p>Glenn Pringle provided an introduction to building PDF files in Perl.
+      He focused on the <code>PDF::API2</code> module. Although this module
+      is pretty low-level and does not supply a lot of <em>helper</em> methods
+      to simplify building a PDF, it did supply everything needed to solve
+      Glenn's problem on a project.</p>
+
+    <p>Glenn demonstrated a CGI script that was used to request a car for
+      use by employees of a government agency. One of the important aspects
+      of the problem was a printable receipt generated for each request.
+      Using PDFs for the receipt provided an official looking printout that
+      solved the customer's requirements.</p>
+
+    <p>Unfortunately, due to the low-level nature of the module, Glenn found
+      himself spending a fair amount of time on issues such as aligning text
+      and handling word-wrap manually. Despite the extra work, the module
+      did handle everything that he needed and he was able to complete the
+      project successfully.</p>
+
+    <p>Glenn, then, went on to show how he used <code>HTML::Template</code>
+      to make the CGI script easier to maintain by separating the HTML into
+      a template and keeping the code in the Perl script. Comments from the
+      audience provided further insight. Although it does not support all
+      of the bells and whistles of some of the bigger templating solutions.
+      <code>HTML::Template</code> apparently is simple to get working
+      quickly and can handle many tasks needed for a set of web pages.</p>
+[% END -%]

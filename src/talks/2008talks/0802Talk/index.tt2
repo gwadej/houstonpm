@@ -1,0 +1,19 @@
+[% WRAPPER writeup_wrap.tt2
+    title='Summary of February 2008 Presentation'
+%]
+    <h2 class="subhead">The <code>Net::Jabber::Bot</code> Project, continued</h2>
+
+    <p>For the February meeting, we continued working on <code>Net::Jabber::Bot</code>.
+     We used the <code>MockJabberClient</code> to override <code>Net::Jabber::Client</code>
+     to simplify testing and began looking at the version request.</p>
+
+    <p>We spent quite a bit of time working on the problem of creating a new
+      Jabber namespace for use with the version request. The main breakthrough
+      of the evening was realizing that <code>jabber.iq.version</code> already
+      existed and was exactly what we needed. After a bit more work, we were
+      able to get the child nodes set up correctly making version requests
+      functional.</p>
+
+    <p>The <a href="http://code.google.com/p/perl-net-jabber-bot/">project</a>
+      is still hosted at Google's <a href="http://code.google.com/">code site</a>.</p>
+[% END -%]

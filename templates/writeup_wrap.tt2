@@ -1,7 +1,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <html>
 <head>
-  <title>Summary of October 2008 Presentation</title>
+  <title>[% title %]</title>
   <link rel="stylesheet" href="/styles/houston.css" type="text/css" />
 </head>
 <body>
@@ -13,38 +13,19 @@
 </div>
 <div id="outer">
   <div id="navigation">
-
-  <ul class="menu" id="mainmenu">
-     <li><a href="/index.html">Home</a></li>
-     <li><a href="/about.html">About Us</a></li>
-     <li><a href="/meetings.html">Meetings</a></li>
-     <li><a href="/faqs.html">FAQ</a></li>
-     <li><a href="/talks/mostrecent.html">Most Recent Talk</a></li>
-     <li><a href="/talks/index.html">Talks Archive</a></li>
-     <li><a href="/projects/index.html">Group Projects</a></li>
-  </ul>
-
+    <ul class="menu" id="mainmenu">
+      <li><a href="/index.html">Home</a></li>
+      <li><a href="/about.html">About Us</a></li>
+      <li><a href="/meetings.html">Meetings</a></li>
+      <li><a href="/faqs.html">FAQ</a></li>
+      <li><a href="/talks/mostrecent.html">Most Recent Talk</a></li>
+      <li><a href="/talks/index.html">Talks Archive</a></li>
+      <li><a href="/projects/index.html">Group Projects</a></li>
+    </ul>
   </div>
 
   <div class="content">
-    <h2 class="subhead">Git - The stupid content tracker</h2>
-
-    <p>For the October meeting, Robert Boone gave a presentation on the
-     <code>git</code> distributed version control system. He also answered
-     questions from the audience.</p>
-
-    <p>In addition to explaining the mechanics of working with git, Robert
-      spent a fair amount of time helping the audience to understand the
-      reasons for using a distributed version control system and the general
-      flow of working with one.</p>
-
-    <p>Most of the audience was very comfortable with more traditional,
-      non-distributed version control systems, like Subversion or CVS. Despite
-      initial skepticism, by the end of the talk the audience appeared
-      convinced that they should give git a try.</p>
-
-    <p>The <a href="git.html">slides</a> for Robert's talk are available as
-      HTML.</p>
+    [%- content %]
   </div>
 
 </div>
@@ -52,7 +33,7 @@
 <p class="copyright">
 <!-- Creative Commons License -->
 <a rel="license" href="http://creativecommons.org/licenses/by/2.5/"><img alt="Creative Commons License" border="0" src="http://creativecommons.org/images/public/somerights20.gif" /></a>
-Copyright &copy; 2008 Houston.pm.<br /> Except as otherwise noted, this site is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/2.5/">Creative Commons Attribution 2.5 License</a>.
+Copyright &copy; 2003-[% year %] Houston.pm.<br /> Except as otherwise noted, this site is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/2.5/">Creative Commons Attribution 2.5 License</a>.
 <!-- /Creative Commons License -->
 
 

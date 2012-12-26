@@ -1,0 +1,37 @@
+[% WRAPPER writeup_wrap.tt2
+    title='Summary of November 2007 Presentation'
+%]
+    <h2 class="subhead">Barely Used Perl</h2>
+
+    <p>Robert Boone presented 3 <em>barely used</em> features from the Perl
+    core modules. Robert's company heavily uses perl. Their customers
+    often have the problem of not having the exact Perl modules expected
+    when trying to use Robert's company's code. Therefore, they are taking
+    the approach of preferring modules that come with the Perl distribution,
+    thus assuring that the customer has the modules out of the box.</p>
+
+    <p>The first module was <code>NEXT</code>, which is a Perl builtin module
+    to provide proper inheritance calling for complex object structures.</p>
+
+    <p>The second topic was a module called <code>overload</code>, which
+    allows you to change the behaviour of operators (+, -, ., etc.) so that
+    you can do cool object things like adding 4 to an object and have it
+    have meaning. This allows your code to be a lot more intuitive.</p>
+
+    <p>The third topic was <code>Attribute::Handlers</code>. An overly
+    simplistic explanation of this complex topic is that it will allow your
+    subroutines to behave differently based on what they should return. It
+    also provides support for better inheritance handling.</p>
+
+    <p>We also re-hashed briefly some issues I had after Wade's talk on
+    anonymous code references (<a href="/talks/2007talks/0709Talk/index.html">September
+    2007</a>). Todd was attempting to use anonymous code creation when inside
+    an object. We were able to work through the issues ending with a sub in
+    an object that creates references to subroutines in the scope of the object
+    (phew!).</p>
+
+    <p>(Thanks to Todd Rinaldo for the summary this month.)</p>
+
+    <p>Robert's <a href="barely-used-perl/index.html">presentation</a> is now
+      available.</p>
+[% END -%]
