@@ -1,0 +1,49 @@
+[% WRAPPER main_wrap.tt2
+    title='Houston Perl Mongers - About Us'
+    curr_page='about'
+%]
+    <h2 class="subhead">About Houston.pm</h2>
+    
+    <p>Houston.pm is a group of people who use Perl. Some of us use Perl in our
+      jobs (officially or unofficially), others just like to play with the
+      language.</p>
+
+    <p>We have all level of members from complete novices to very experienced
+      Perl programmers working in Perl daily and more than willing to share
+      their expertise.</p>
+
+    <h2 class="subhead">Our Goals</h2>
+    <p>The Houston branch of the <a href="http://www.pm.org/">Perl
+      Mongers</a> has several goals. In no particular order, our goals
+      include:</p>
+
+    <ul>
+       <li>Provide a forum for Perl programmers in the Houston area to share
+          knowledge and expertise.</li>
+
+       <li>Provide help and mentoring to local Perl programmers.</li>
+
+       <li>Educate individuals and companies about the potential benefits of
+         using Perl for solving their problems.</li>
+
+       <li>Provide a focus for the Perl community in Houston.</li>
+
+       <li>Have fun with Perl.</li>
+
+       <li>Meet other Perl users in the Houston area.</li>
+    </ul>
+
+   <h2 class="subhead">Join Us</h2>
+   <p>Unlike many groups, Houston.pm is pretty informal. Feel free to come to
+     meetings to meet us, learn more about Perl, and share your knowledge and
+     experience with Perl.</p>
+
+    <p>We have a mailing list. To join, go to the
+      <a href="http://mail.pm.org/mailman/listinfo/houston/">Houston.pm Mailing
+      List</a> page and fill out the form to subscribe.</p>
+
+    <p>If you feel like contributing, volunteer to give a presentation. Any
+      topic that may be of interest to Perl programmers is welcome.</p>
+
+    <p>Bring your curiosity, questions, problem code, or expertise to share.</p>
+[% END -%]

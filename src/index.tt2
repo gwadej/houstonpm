@@ -3,12 +3,12 @@
 
     <div id="sidebar">
         <h1 class="heading">What's New <a href="atom.xml"><img style="border:0;float:right;" src="feed-icon-10x10.png" /></a></h1>
-      <p>July meeting notes are on-line.</p>
-      <p>June meeting notes are on-line.</p>
+      <p>October meeting notes are on-line.</p>
+      <p>September meeting notes are on-line.</p>
       <h1 class="heading">Next Meeting</h1>
         <dl>
-            <dt>Sept 13, 2012</dt>
-            <dd><em>A Small On Line Wellness Business Built Using Perl</em> by Fraser Baker</dd>
+            <dt>Dec. 13, 2012</dt>
+            <dd>Social Meeting at Black Labrador</dd>
         </dl>
     </div>
 
