@@ -1,0 +1,109 @@
+[% WRAPPER main_wrap.tt2
+    title='Houston Perl Mongers - Remote Meetings'
+    curr_page='meetings'
+%]
+    <h2 class="subhead">Remote Meetings</h2>
+
+    <p>At the July 2009 monthly meeting, we tried to add remote access to
+    the meeting, as requested by a few people on the mailing list.</p>
+
+    <p>We only got the last pieces in place hours before the meeting began.
+    Despite the incomplete planning and a few technical glitches, the first
+    remote meeting went fairly well.</p>
+
+    <h2 class="subhead">The Details</h2>
+
+    <p>Before the meeting, we explored several technologies to see what
+    would be possibly with minimal effort and expense. We determined a number
+    of requirements for a technical meeting.</p>
+
+    <ol>
+        <li>Ability for everyone to see the slides/presentation</li>
+        <li>Audio for people to hear the presenter</li>
+        <li>Mechanism for the remote users to ask questions/make comments</li>
+        <li>Support for the major operating systems</li>
+        <li>Audio from remote sites (optional)</li>
+        <li>Full video of presentation (optional)</li>
+        <li>Ability to record the presentation (optional)</li>
+    </ol>
+
+    <p>We explored a few approaches to screen-sharing and just sharing the
+    presentation to deal with the first requirement. Most of the screen-sharing
+    technologies ran afoul of issue 4. In the end, we used the Google Docs
+    Presentation Tool which allows a presenter to walk everyone through the
+    presentation at once (with the caveat that only people logged in to a
+    Google account could see the slides advance).</p>
+
+    <p>Based on past experiences, we thought a conference call type setup would
+    probably be adequate. We considered 3 approaches: someone conference
+    calling from a business phone, Skype (up to 14), and
+    <code>freeconference.com</code>.  Skype was our best choice, but it was
+    eliminated due to restrictions where we hold the meetings. We ended up
+    going with <code>freeconference.com</code>, despite the long distance
+    charges involved (and less-than-perfect voice quality).</p>
+
+    <p>Based on previous experiences with long distance meetings, we decided
+    that IRC was a useful solution for issue 3. We got the channel
+    <code>#houston.pm</code> on <code>irc.perl.org</code>. This allowed side
+    conversations and remote questions. We also used it to signal when the
+    presenter changed slides for those who were not logged on at Google. One
+    thing we did not do, that we should have was capture the chat for inclusion
+    in the presentation notes.</p>
+
+    <p>The most contentious issue was number 4. This eliminated Windows-only
+    solutions. Also as a kind of worst-case scenario, this month's presenter
+    uses Linux, which eliminated some alternate solutions that only support
+    as a viewer, not a presenter. Given that the reason for the remote meeting
+    was the statement that some people were excluded because they could not
+    travel to the meeting location. Excluding people based on their chosen
+    platform seemed a bad idea.</p>
+
+    <p>We were able to hear the remote sites through the conference call.
+    Unfortunately, the lower voice quality from <code>freeconference.com</code>
+    made this much less useful than the IRC.</p>
+
+    <p>We ended up not trying for full video or audio recording of this
+    meeting due to lack of time, expertise, and interest.</p>
+
+    <h2 class="subhead">Summary of the Meeting</h2>
+
+    <p>As experiments go, this one was a qualified success. People were able
+    to join the meeting from remote locations and the remote presentation did
+    appear to mostly function. We didn't have as many remote people as I had
+    hoped, but I suspect part of that we due to changes in the last 24 hours
+    as we tried to get everything together. We also lost the first 20 minutes
+    of the meeting to messing around with the technologies involved, but that's
+    to be expected with a bunch of technical people.</p>
+    
+    <p>The audio was not as good as I would have liked and we were occasionally
+    interrupted by bursts of static. From previous experience, Skype has much
+    better audio quality, especially if everyone other than the presenter stays
+    muted (unless asking a question). The long distance call may have also been
+    minor factor.</p>
+
+    <p>The main advantage of the Google Docs presentation was the ability to
+    have the presenter drive the slides. Since we had some difficulties with
+    that, I'm unsure whether it is a better solution than just posting slides
+    on a website before the meeting.</p>
+
+    <p>There were some difficulties with people getting to the IRC using
+    the <a href="http://irc.rlb3.com/">script</a> that Robert had set up. It
+    was a particular problem for people behind a corporate proxy. On the plus
+    side, it was really useful for sending URL and such to everyone.</p>
+
+    <h2 class="subhead">Future Directions</h2>
+
+    <p>Given the partial success, I think it is worth running this experiment
+    again. Hopefully, we can be better organized next time and help people get
+    set up appropriately before the meeting begins.</p>
+
+    <p>We need to work out the IRC issues. This technology has been around
+    long enough that we should not have needed this much effort.</p>
+
+    <p>We also need to work a little harder on the audio portion of the system.
+    Although <code>freeconference.com</code> did work, the audio quality left
+    a but to be desired and I wonder if a few people in the general area were
+    put off by the need for a long distance call to reach a local meeting.
+    Given the IRC functionality, some form of straight streaming audio might
+    be a reasonable solution, provided we have a good microphone.</p>
+[% END -%]
