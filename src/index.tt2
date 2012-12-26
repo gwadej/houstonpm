@@ -1,4 +1,4 @@
-[% WRAPPER index_wrap.tmpl %]
+[% WRAPPER index_wrap.tt2 %]
     <h2 class="subhead">Houston Perl Mongers Group</h2>
 
     <div id="sidebar">
