@@ -1,5 +1,5 @@
 [%- MACRO menu_item BLOCK; IF curr == page %]<li class="curr">[%ELSE%]<li>[% END; END -%]
-[%- yearlist = [ 2003 .. year ] -%]
+[%- yearlist = [ 2003 .. end_year ] -%]
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <html>
 <head>
@@ -28,7 +28,7 @@
   <ul class="menu">
      <li class="head">By Year</li>
 [% FOREACH y IN yearlist.reverse-%]
-     [% IF y == curr_year %]<li class="curr">[%ELSE%]<li>[%END%]<a href="/talks/[%y%]talks/index.html">[%y%]</a></li>
+     [% IF y == year %]<li class="curr">[%ELSE%]<li>[%END%]<a href="/talks/[%y%]talks/index.html">[%y%]</a></li>
 [% END -%]
   </ul>
 
@@ -43,7 +43,7 @@
 <p class="copyright">
 <!-- Creative Commons License -->
 <a rel="license" href="http://creativecommons.org/licenses/by/2.5/"><img alt="Creative Commons License" border="0" src="http://creativecommons.org/images/public/somerights20.gif" /></a>
-Copyright &copy; 2003-[% year %] Houston.pm.<br /> Except as otherwise noted, this site is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/2.5/">Creative Commons Attribution 2.5 License</a>.
+Copyright &copy; 2003-[% end_year %] Houston.pm.<br /> Except as otherwise noted, this site is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/2.5/">Creative Commons Attribution 2.5 License</a>.
 <!-- /Creative Commons License -->
 
 

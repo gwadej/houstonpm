@@ -12,24 +12,22 @@ use constant START_YEAR => 2003;
 use constant END_YEAR => ( ( localtime )[5] + 1900 );
 
 my $StyleSheet;
-my $TemplateFile;
+my $template;
 
-my %params = ( 'year2' => ( END_YEAR % 100 ) );
+my %params;
 
 GetOptions(
     'stylesheet=s' => \$StyleSheet,
-    'template=s'   => \$TemplateFile,
+    'template=s'   => \$template,
     'define=s'     => \%params
 ) or die "Invalid option\n";
 
 my $TalksFile = shift;
 die "Missing talks data file\n" unless $TalksFile;
 die "Missing stylesheet\n"      unless $StyleSheet;
+die "Missing template\n"        unless $template;
 
-# parameter fixup
-$params{year} = END_YEAR;
-
-my $template = $TemplateFile;# ? loadTemplate( $TemplateFile ) : undef;
+$params{year2} = $params{year} % 100 if $params{year};
 
 my $parser = XML::LibXML->new();
 my $xslt   = XML::LibXSLT->new();
@@ -52,8 +50,8 @@ my $tt = Template->new(
 );
 my $vars = {
     content => $results,
-#    curr_year => $params{year},
-    year => END_YEAR,
+    %params,
+    end_year => END_YEAR,
 };
 $tt->process( $template, $vars ) or die $tt->error(), "\n";
 #if( $template )

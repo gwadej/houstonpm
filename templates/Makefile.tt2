@@ -30,7 +30,7 @@ ${OUTDIR}/talks/index.html: talks.xml recenttalks.xsl templates/recenttalks.tt2
 
 [% FOREACH y IN yearlist-%]
 ${OUTDIR}/talks/[%y%]talks/index.html: talks.xml yeartalks.xsl templates/yeartalks.tmpl
-	bin/talks.pl --style=yeartalks.xsl --template=templates/yeartalks.tmpl --define year2=[% y.substr( 2, 2 ) %] talks.xml > $@
+	bin/talks.pl --style=yeartalks.xsl --template=templates/yeartalks.tmpl --define year=[%y%] talks.xml > $@
 
 [% END -%]
 convert:
