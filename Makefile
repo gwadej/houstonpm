@@ -66,7 +66,7 @@ ${OUTDIR}/talks/2012talks/index.html: talks.xml yeartalks.xsl templates/yeartalk
 	bin/talks.pl --style=yeartalks.xsl --template=templates/yeartalks.tmpl --define year2=12 talks.xml > $@
 
 convert:
-	ttree --define year=2012 -f _ttreerc about.tt2 faqs.tt2 index.tt2 meetings.tt2 remote_meetings.tt2
+	ttree --define year=2012 -f _ttreerc about.tt2 faqs.tt2 index.tt2 meetings.tt2 remote_meetings.tt2 projects/index.tt2
 
 install:
 	cp -R ${OUTDIR}/* ${INSTALLDIR}

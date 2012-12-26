@@ -30,6 +30,7 @@ ignore = \..*\.swp$
 # ditto for things that should be copied rather than processed.
 copy = \.png$
 copy = \.gif$
+copy = \.css$
 
 # by default, everything not ignored or copied is accepted; add 'accept'
 # lines if you want to filter further. e.g.
