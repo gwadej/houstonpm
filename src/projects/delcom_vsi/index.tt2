@@ -1,40 +1,17 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
-<html>
-<head>
-  <title>Houston Perl Mongers' Projects</title>
-  <link rel="stylesheet" href="/styles/houston.css" type="text/css" />
-</head>
-<body>
-
-<div class="banner">
-   <a href="http://www.pm.org/index.html"><img alt="Perl Mongers' Site"
-       src="http://www.pm.org/graphics/title.png" height="65" width="150" /></a>
-   <h1>Houston.pm</h1>
-</div>
-<div id="outer">
-  <div id="navigation">
-  <ul class="menu" id="mainmenu">
-     <li><a href="/index.html">Home</a></li>
-     <li><a href="/about.html">About Us</a></li>
-     <li><a href="/meetings.html">Meetings</a></li>
-     <li><a href="/faqs.html">FAQ</a></li>
-     <li><a href="/talks/mostrecent.html">Most Recent Talk</a></li>
-     <li><a href="/talks/index.html">Talks Archive</a></li>
-     <li class="curr"><a href="/projects/index.html">Group Projects</a></li>
-  </ul>
-  </div>
-
-  <div class="content">
+[% WRAPPER main_wrap.tt2
+    title="Houston Perl Mongers' Projects"
+    curr_page='projects'
+%]
     <h2 class="subhead">Delcom VSI/LibUSB Project</h2>
 
     <div id="sidebar">
       <h1 class="heading">Project Lead</h1>
       <p>Paul Archer</p>
-      
+
       <h1 class="heading">Developers</h1>
       <ul>
         <li>Paul Archer</li>
-	<li>G. Wade Johnson</li>
+        <li>G. Wade Johnson</li>
       </ul>
     </div>
 
@@ -109,7 +86,7 @@
       great in a script, but it does not work so well in a module. The names of
       functions declared in the inline portion will not be available in the module.
       This problem can be solved either by moving the code to a <em>here</em>
-      document or directly calling the <code>Inline->init()</code> method after
+      document or directly calling the <code>Inline-&gt;init()</code> method after
       your <code>use Inline</code> call.</p>
 
     <h3 class="subsub">References</h3>
@@ -135,40 +112,4 @@
       <li><a href="http://www.nntp.perl.org/group/perl.inline">inline@perl.org</a>
         mailing list archive</li>
     </ul>
-
-  </div>
-
-</div>
-<div id="footer">
-<p class="copyright">
-<!-- Creative Commons License -->
-<a rel="license" href="http://creativecommons.org/licenses/by/2.5/"><img alt="Creative Commons License" border="0" src="http://creativecommons.org/images/public/somerights20.gif" /></a>
-Copyright &copy; 2006 Houston.pm.<br /> Except as otherwise noted, this site is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/2.5/">Creative Commons Attribution 2.5 License</a>.
-<!-- /Creative Commons License -->
-
-
-<!--
-
-<rdf:RDF xmlns="http://web.resource.org/cc/"
-    xmlns:dc="http://purl.org/dc/elements/1.1/"
-    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-<Work rdf:about="">
-   <license rdf:resource="http://creativecommons.org/licenses/by/2.5/" />
-</Work>
-
-<License rdf:about="http://creativecommons.org/licenses/by/2.5/">
-   <permits rdf:resource="http://web.resource.org/cc/Reproduction" />
-   <permits rdf:resource="http://web.resource.org/cc/Distribution" />
-   <requires rdf:resource="http://web.resource.org/cc/Notice" />
-   <requires rdf:resource="http://web.resource.org/cc/Attribution" />
-   <permits rdf:resource="http://web.resource.org/cc/DerivativeWorks" />
-</License>
-
-</rdf:RDF>
--->
-</p>
-<p>The use of the camel image in association with the Perl
-language is a trademark of O'Reilly &amp; Associates, Inc. Used with permission.</p>
-</div>
-</body>
-</html>
+[% END -%]
