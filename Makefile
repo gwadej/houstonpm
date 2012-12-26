@@ -33,7 +33,7 @@ ${OUTDIR}/talks/mostrecent.html: talks.xml mostrecent.xsl templates/mostrecent.t
 	bin/talks.pl --style=mostrecent.xsl --template=templates/mostrecent.tmpl talks.xml > $@
 
 ${OUTDIR}/talks/index.html: talks.xml recenttalks.xsl templates/recenttalks.tmpl
-	bin/talks.pl --style=recenttalks.xsl --template=templates/recenttalks.tmpl talks.xml > $@
+	bin/talks.pl --style=recenttalks.xsl --template=recenttalks.tt2 talks.xml > $@
 
 ${OUTDIR}/talks/2003talks/index.html: talks.xml yeartalks.xsl templates/yeartalks.tmpl
 	bin/talks.pl --style=yeartalks.xsl --template=templates/yeartalks.tmpl --define year2=03 talks.xml > $@

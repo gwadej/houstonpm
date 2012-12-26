@@ -1,0 +1,8 @@
+[% WRAPPER talks_wrap.tt2
+    title='Archive of talks given at Houston.pm'
+    curr_page='talks'
+%]
+    <h2 class="subhead">Most Recent Presentations</h2>
+
+    [%content-%]
+[%- END -%]
