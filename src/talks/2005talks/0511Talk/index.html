@@ -13,7 +13,7 @@
 </div>
 <div id="outer">
   <div id="navigation">
-  
+
   <ul class="menu" id="mainmenu">
      <li><a href="/index.html">Home</a></li>
      <li><a href="/about.html">About Us</a></li>
@@ -31,7 +31,7 @@
     <p>During October's meeting, Jay asked how to call Python code from Perl. This
     brings up the larger question of how you might interface between code written
     in other languages from your Perl code.</p>
-    
+
     <p>There are three major approaches to solving this problem. If the code you
     need to communicate with is a standalone program, it is relatively easy. The
     methods you might want to try are briefly covered in the presentation.</p>
@@ -42,16 +42,16 @@
     time and effort to set up and learn the interface tool. When trying to quickly
     find a way to call a library written in another language. This may not be
     the fastest route.</p>
-    
+
     <p>This leads us to the <code>Inline</code> modules that were created by Brian
     Ingerson. Ingerson created the <code>Inline::C</code> module and support code
     to make calling C code from Perl much easier. He also built the framework that
     allows other languages to be called in the same way. Most of the
     <a href="index.htm">presentation</a> is focused on these modules.</p>
-    
+
     <p>There are also a few gotcha's I found along the way that did not become part
     of the presentation. These were covered in the talk, so I'll add them here.</p>
-    
+
     <ol>
       <li>When using <code>Inline::C</code>, use <code>func()</code> not
         <code>func( void )</code> for a function with no arguments.</li>
@@ -68,7 +68,7 @@
     <code>import</code>ing the appropriate headers/libraries/etc., you can expose
     the interfaces you need to the <code>Inline</code> modules. Those modules will
     supply the wrapper code that you need to make the calls from Perl.</p>
-    
+
   </div>
 
 </div>
