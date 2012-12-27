@@ -2,7 +2,7 @@
     title='Summary of October 2012 Presentation'
     year=2012
 %]
-      <h2 class="subhead">Bag of Tricks</h2>
+      <h1 class="subhead">Bag of Tricks</h1>
 
       <p>Erin covered several techniques that are useful for dealing with a files and the
 text in the files. This is definitely more of a basic talk than we have had

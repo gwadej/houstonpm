@@ -2,7 +2,7 @@
     title='Summary of February 2009 Presentation'
     year=2009
 %]
-    <h2 class="subhead">RRDtool Tips and Traps</h2>
+    <h1 class="subhead">RRDtool Tips and Traps</h1>
 
     <p>G. Wade Johnson gave a presentation on the <a href="http://oss.oetiker.ch/rrdtool/">RRDtool</a>
       tool for manipulating time-series data. Although the tool is quite powerful,

@@ -2,7 +2,7 @@
     title='Summary of October 2008 Presentation'
     year=2008
 %]
-    <h2 class="subhead">Git - The stupid content tracker</h2>
+    <h1 class="subhead">Git - The stupid content tracker</h1>
 
     <p>For the October meeting, Robert Boone gave a presentation on the
      <code>git</code> distributed version control system. He also answered

@@ -2,7 +2,7 @@
     title='Summary of May 2012 Presentation'
     year=2012
 %]
-      <h2 class="subhead">Perl Platform as a Service Shootout</h2>
+      <h1 class="subhead">Perl Platform as a Service Shootout</h1>
 
       <p>There are a large number of services that provide computing resources and
 storage as a service. This month, Mark told us about the research he had done

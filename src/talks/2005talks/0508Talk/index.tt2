@@ -2,6 +2,7 @@
     title='Summary of August 2005 Presentation'
     year=2005
 %]
+    <h1 class="subhead">Text::Query and Getopt::Long</h1>
     <p>Paul Archer gave an interesting talk that covered the modules
     <code>Image::IPTCInfo</code>, <code>Getopt::Long</code>, and
     <code>Text::Query</code>. He described these modules in the context of

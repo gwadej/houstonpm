@@ -2,7 +2,7 @@
     title='Summary of April 2010 Presentation'
     year=2010
 %]
-      <h2 class="subhead">Introduction to Object Oriented Programming with Moose</h2>
+      <h1 class="subhead">Introduction to Object Oriented Programming with Moose</h1>
 
       <p>Todd targeted his <a href="http://www.slideshare.net/toddr/intro-to-moose">Introduction to Object Oriented Programming with Moose</a>
         presentation for Perl programmers with less experience with Perl OO.

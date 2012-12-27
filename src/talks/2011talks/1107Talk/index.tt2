@@ -2,7 +2,7 @@
     title='Summary of July 2011 Presentation'
     year=2011
 %]
-      <h2 class="subhead">Cooking with Cobbler</h2>
+      <h1 class="subhead">Cooking with Cobbler</h1>
 
       <p>Gordon introduced the group to the Cobbler install server. This system supports
 consistent configuration and deployment of multiple Linux systems. Gordon

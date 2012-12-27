@@ -2,7 +2,7 @@
     title='Summary of October 2007 Presentation'
     year=2007
 %]
-    <h2 class="subhead">Catalyst/DBIC</h2>
+    <h1 class="subhead">Catalyst/DBIC</h1>
 
     <p>Brandon presented some basics of Catalyst development and the
     <code>DBIx::Class</code> (DBIC) module.</p>

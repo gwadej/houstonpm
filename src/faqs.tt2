@@ -2,7 +2,7 @@
     title='Houston Perl Mongers - FAQ'
     curr_page='faqs'
 %]
-    <h2 class="subhead">Houston Perl Mongers FAQ</h2>
+    <h1 class="subhead">Houston Perl Mongers FAQ</h1>
 
     <p>There are many questions that come up regularly in the meetings and on the mailing
       list that would qualify for FAQ status. Here are some of them. Sometimes the answer will

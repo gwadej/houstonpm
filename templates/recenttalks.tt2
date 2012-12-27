@@ -2,7 +2,7 @@
     title='Archive of talks given at Houston.pm'
     curr_page='talks'
 %]
-    <h2 class="subhead">Most Recent Presentations</h2>
+    <h1 class="subhead">Most Recent Presentations</h1>
 
     [%content-%]
 [%- END -%]

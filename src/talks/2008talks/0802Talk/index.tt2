@@ -2,7 +2,7 @@
     title='Summary of February 2008 Presentation'
     year=2008
 %]
-    <h2 class="subhead">The <code>Net::Jabber::Bot</code> Project, continued</h2>
+    <h1 class="subhead">The <code>Net::Jabber::Bot</code> Project, continued</h1>
 
     <p>For the February meeting, we continued working on <code>Net::Jabber::Bot</code>.
      We used the <code>MockJabberClient</code> to override <code>Net::Jabber::Client</code>

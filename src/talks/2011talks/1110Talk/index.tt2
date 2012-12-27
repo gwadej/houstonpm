@@ -2,7 +2,7 @@
     title='Summary of October 2011 Presentation'
     year=2011
 %]
-      <h2 class="subhead">The Perl Compiler</h2>
+      <h1 class="subhead">The Perl Compiler</h1>
 
       <p>
 This month Reini gave an overview of the Perl compiler project. He has been

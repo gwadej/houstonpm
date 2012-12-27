@@ -2,6 +2,7 @@
     title='Summary of July 2006 Presentation'
     year=2006
 %]
+    <h1 class="subhead">A Report on YAPC::NA 2006</h1>
     <p>Will Willis presented on his experience at <abbr
       title="Yet Another Perl Conference">YAPC</abbr>::<abbr title="North America">NA</abbr>::2006
       in Chicago, IL. This presentation was different in that it was more

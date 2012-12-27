@@ -2,7 +2,7 @@
     title='Summary of September 2007 Presentation'
     year=2007
 %]
-    <h2 class="subhead">Subroutines, Closures, and Coderefs</h2>
+    <h1 class="subhead">Subroutines, Closures, and Coderefs</h1>
 
     <p>Wade gave a quick overview of references in Perl with a goal of covering
       coderefs and some of the interesting things you can do with them.</p>

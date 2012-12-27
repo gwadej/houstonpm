@@ -2,7 +2,7 @@
     title='Summary of January 2008 Presentation'
     year=2008
 %]
-    <h2 class="subhead">The <code>Net::Jabber::Bot</code> Project</h2>
+    <h1 class="subhead">The <code>Net::Jabber::Bot</code> Project</h1>
 
     <p>For the January meeting, Todd Rinaldo lead a maintenance session on
      the <code>Net::Jabber::Bot</code> module. This module is based on the

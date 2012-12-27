@@ -2,7 +2,7 @@
     title='Summary of June 2009 Presentation'
     year=2009
 %]
-    <h2 class="subhead">Catalyst, DBIC, and TT for world domination, a preview</h2>
+    <h1 class="subhead">Catalyst, DBIC, and TT for world domination, a preview</h1>
 
     <p>Todd Rinaldo gave us a preview of his <acronym title="Yet Another Perl Conference">YAPC</acronym>::<acronym title="North America">NA</acronym>
     2009 talk in June. Todd covered what he has learned in using the

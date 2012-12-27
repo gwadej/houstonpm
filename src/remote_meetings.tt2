@@ -2,7 +2,7 @@
     title='Houston Perl Mongers - Remote Meetings'
     curr_page='meetings'
 %]
-    <h2 class="subhead">Remote Meetings</h2>
+    <h1 class="subhead">Remote Meetings</h1>
 
     <p>At the July 2009 monthly meeting, we tried to add remote access to
     the meeting, as requested by a few people on the mailing list.</p>

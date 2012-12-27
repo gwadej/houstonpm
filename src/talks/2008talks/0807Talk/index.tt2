@@ -2,7 +2,7 @@
     title='Summary of July 2008 Presentation'
     year=2008
 %]
-    <h2 class="subhead">Testing Perl 6/Rakudo</h2>
+    <h1 class="subhead">Testing Perl 6/Rakudo</h1>
 
     <p>Todd Rinaldo talked with Patrick Michaud, the Perl 6 Pumpking, at
       <acronym title="Yet Another Perl Conference">YAPC</acronym>::<acronym

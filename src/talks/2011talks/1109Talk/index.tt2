@@ -2,7 +2,7 @@
     title='Summary of September 2011 Presentation'
     year=2011
 %]
-      <h2 id="qore" class="subhead">The Qore Language ... for Perl Programmers</h2>
+      <h1 id="qore" class="subhead">The Qore Language ... for Perl Programmers</h1>
 
       <p>This was an unusual technical meeting, because we had two technical
 presentations and 4 lightning talks.</p>

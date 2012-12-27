@@ -2,6 +2,8 @@
     title='Summary of January 2006 Presentation'
     year=2006
 %]
+    <h1 class="subhead">Accessing a USB device from Perl</h1>
+
     <p>Paul Archer led an interesting presentation where the group built some
     Perl code to interface with a USB-based device using libusb. This project
     was based on a pair of <a href="http://www.linux.journal.com/">Linux Journal</a>

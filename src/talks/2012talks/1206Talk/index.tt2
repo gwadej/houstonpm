@@ -2,7 +2,7 @@
     title='Summary of June 2012 Presentation'
     year=2012
 %]
-      <h2 class="subhead">Perl Unit Testing: Tools and Techniques</h2>
+      <h1 class="subhead">Perl Unit Testing: Tools and Techniques</h1>
 
       <p>Wade gave a somewhat longer than usual presentation on tools and techniques for
 Perl Unit Testing. In earlier testing talks, Wade had focused on the basics.

@@ -9,7 +9,7 @@
 <div class="banner">
    <a href="http://www.pm.org/index.html"><img alt="Perl Mongers' Site"
        src="http://www.pm.org/graphics/title.png" height="65" width="150" /></a>
-   <h1>Houston.pm</h1>
+   <p>Houston.pm</p>
 </div>
 <div id="outer">
   <div id="navigation">

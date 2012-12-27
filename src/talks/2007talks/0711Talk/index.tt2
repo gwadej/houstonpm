@@ -2,7 +2,7 @@
     title='Summary of November 2007 Presentation'
     year=2007
 %]
-    <h2 class="subhead">Barely Used Perl</h2>
+    <h1 class="subhead">Barely Used Perl</h1>
 
     <p>Robert Boone presented 3 <em>barely used</em> features from the Perl
     core modules. Robert's company heavily uses perl. Their customers

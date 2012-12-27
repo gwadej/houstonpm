@@ -2,7 +2,7 @@
     title='Summary of May 2009 Presentation'
     year=2009
 %]
-    <h2 class="subhead">SVG from Perl</h2>
+    <h1 class="subhead">SVG from Perl</h1>
 
     <p><acronym title="Scalable Vector Graphics">SVG</acronym> is an XML-based,
       vector graphics format specified by the <a href="http://w3.org/">World Wide

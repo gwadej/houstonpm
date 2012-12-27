@@ -2,6 +2,7 @@
     title='Summary of June 2006 Presentation'
     year=2006
 %]
+    <h1 class="subhead">An Overview of Subversion and Introduction to Caching</h1>
     <p>Paul Archer began the night with a solid introduction to the
       <a href="http://subversion.tigris.org/">Subversion</a> version control
       system. In addition to the main project site, he showed two other

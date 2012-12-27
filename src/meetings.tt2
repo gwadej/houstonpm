@@ -2,7 +2,7 @@
     title='Houston Perl Mongers - Meetings'
     curr_page='meetings'
 %]
-    <h2 class="subhead">Monthly Meetings</h2>
+    <h1 class="subhead">Monthly Meetings</h1>
 
     <p>We meet the second Thursday of each month. Houston.pm meetings have
     split into technical meetings and social meetings. The technical

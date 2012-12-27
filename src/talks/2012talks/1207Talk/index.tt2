@@ -2,7 +2,7 @@
     title='Summary of July 2012 Presentation'
     year=2012
 %]
-      <h2 class="subhead">Intro to Git for Perl Hackers</h2>
+      <h1 class="subhead">Intro to Git for Perl Hackers</h1>
 
       <p>Mark presented an overview of using the git version control system with an
 emphasis on what the average Perl Hacker needs to know. Since this was a

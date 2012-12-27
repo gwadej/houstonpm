@@ -2,7 +2,7 @@
     title='Summary of July 2009 Presentation'
     year=2009
 %]
-    <h2 class="subhead">Exception Handling in Perl</h2>
+    <h1 class="subhead">Exception Handling in Perl</h1>
 
     <p>Exceptions are an error handling technology that is very useful for
     large or complex systems. This monght G. Wade Johnson gave a <a

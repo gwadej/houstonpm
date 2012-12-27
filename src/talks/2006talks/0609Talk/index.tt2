@@ -2,6 +2,7 @@
     title='Summary of September 2006 Presentation'
     year=2006
 %]
+    <h1 class="subhead">Introduction to PDF::API2 and HTML::Template</h1>
     <p>Glenn Pringle provided an introduction to building PDF files in Perl.
       He focused on the <code>PDF::API2</code> module. Although this module
       is pretty low-level and does not supply a lot of <em>helper</em> methods

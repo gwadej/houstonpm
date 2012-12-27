@@ -2,7 +2,7 @@
     title='Summary of February 2012 Presentation'
     year=2012
 %]
-      <h2 class="subhead">DistZilla from one newb to another</h2>
+      <h1 class="subhead">DistZilla from one newb to another</h1>
 
       <p>Mark's presentation introduced the <code>Dist::Zilla</code> distribution
 builder from the point of view of a new user of the module. As such, he gave

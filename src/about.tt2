@@ -2,7 +2,7 @@
     title='Houston Perl Mongers - About Us'
     curr_page='about'
 %]
-    <h2 class="subhead">About Houston.pm</h2>
+    <h1 class="subhead">About Houston.pm</h1>
 
     <p>Houston.pm is a group of people who use Perl. Some of us use Perl in our
       jobs (officially or unofficially), others just like to play with the

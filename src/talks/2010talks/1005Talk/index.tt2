@@ -2,7 +2,7 @@
     title='Summary of May 2010 Presentation'
     year=2010
 %]
-      <h2 class="subhead">Programming Paradigms in Perl</h2>
+      <h1 class="subhead">Programming Paradigms in Perl</h1>
 
       <p>During last month's session, some attendees mentioned that they did
         not really know what was meant by Object-Oriented Perl. So, this month

@@ -2,7 +2,7 @@
     title='Summary of August 2009 Presentation'
     year=2009
 %]
-      <h2 class="subhead">The FUSE File System</h2>
+      <h1 class="subhead">The FUSE File System</h1>
 
       <p>Robert Boone presents on the FUSE filesystem.</p>
 

@@ -19,6 +19,7 @@
       the other.</p>
     </div>
 
+    <h1 class="subhead">Accessing a USB device from Perl, part 2.</h1>
     <p>This month we continued Paul Archer's exploration of the <a
     href="http://www.delcom-eng.com/">Delcom Engineering</a> <a
     href="http://www.delcom-eng.com/products_USBLMP.asp">USB Visual Signal

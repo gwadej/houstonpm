@@ -2,6 +2,7 @@
     title='Summary of November 2006 Presentation'
     year=2006
 %]
+    <h1 class="subhead">An Overview of Getopt::Euclid, Smart::Comments, and Log4Perl</h1>
     <p>Todd introduced the modules <code>Smart::Comments</code>,
       <code>Getopt::Euclid</code>, and <code>Log::Log4perl</code>. The first
       two modules were recommended by <cite>Perl Best Practices</cite> by

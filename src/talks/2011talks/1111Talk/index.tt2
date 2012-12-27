@@ -2,7 +2,7 @@
     title='Summary of November 2011 Presentation'
     year=2011
 %]
-      <h2 class="subhead">My Perl Bag of Tricks</h2>
+      <h1 class="subhead">My Perl Bag of Tricks</h1>
 
       <p>Since he was in Houston to give training, brian agreed to talk to the
 Houston.pm group. The <em>Bag of Tricks</em> topic was terrific for the group

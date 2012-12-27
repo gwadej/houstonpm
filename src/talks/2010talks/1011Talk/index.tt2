@@ -2,7 +2,7 @@
     title='Summary of November 2010 Presentation'
     year=2010
 %]
-      <h2 class="subhead">Filesys::POSIX -- A real, in-memory filesystem written entirely in Perl</h2>
+      <h1 class="subhead">Filesys::POSIX -- A real, in-memory filesystem written entirely in Perl</h1>
 
       <p>Erin gave a rather complete overview of the virtual file system she wrote in
 Perl. This was definitely a more tech-heavy presentation than we have been

@@ -2,6 +2,7 @@
     title='Summary of March 2006 Presentation'
     year=2006
 %]
+    <h1 class="subhead">Accessing a USB device from Perl, part 3.</h1>
     <p>For the March meeting, Paul Archer lead a further session on the
       LibUSB/Delcom VSI project. During this presentation, we experimented
       with controlling two of the Delcom devices on one computer. None of the

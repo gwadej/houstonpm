@@ -2,7 +2,7 @@
     title='Summary of March 2011 Presentation'
     year=2011
 %]
-      <h2 class="subhead">Your Perl is Slow (and it does not have to be)</h2>
+      <h1 class="subhead">Your Perl is Slow (and it does not have to be)</h1>
 
       <p>Nick Koston is obviously knowledgeable and interested in optimizing Perl code.
 In this presentation, he explored some Perl tools that help in optimizing

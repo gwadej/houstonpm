@@ -2,6 +2,8 @@
     title='Summary of October 2005 Presentation'
     year=2005
 %]
+    <h1 class="subhead">Graphics in Perl</h1>
+
     <p>Bill Dillon gave a presentation on <em>Graphics in Perl</em>. Since
     this talk ranged from graphing metrics for programming QA through light
     curves for cataclysmic variable stars. (Bill's hobby is astronomy.)</p>

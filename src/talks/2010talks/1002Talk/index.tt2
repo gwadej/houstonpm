@@ -2,7 +2,7 @@
     title='Summary of February 2010 Presentation'
     year=2010
 %]
-      <h2 class="subhead">Introduction to Perl, Part 2</h2>
+      <h1 class="subhead">Introduction to Perl, Part 2</h1>
 
       <p>G. Wade Johnson continued the theme from last month by presenting
         an <a href="perl_intro.html">Introduction to Perl, Part 2</a>.</p>

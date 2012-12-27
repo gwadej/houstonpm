@@ -2,7 +2,7 @@
     title='Summary of April 2012 Presentation'
     year=2012
 %]
-      <h2 class="subhead">App::perlall</h2>
+      <h1 class="subhead">App::perlall</h1>
 
       <p>
 In this presentation, Reini took us deeper into low-level details than is

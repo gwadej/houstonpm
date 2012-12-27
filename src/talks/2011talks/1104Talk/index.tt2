@@ -2,7 +2,7 @@
     title='Summary of April 2011 Presentation'
     year=2011
 %]
-      <h2 class="subhead">Automated Browser Interaction Using WWW::Selenium</h2>
+      <h1 class="subhead">Automated Browser Interaction Using <code>WWW::Selenium</code></h1>
 
       <p>Gordon described how the <code>WWW::Selenium</code> module works as a client
 for the Selenium application.  Selenium is a tool for testing web applications
