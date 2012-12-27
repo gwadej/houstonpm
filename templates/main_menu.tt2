@@ -1,0 +1,10 @@
+[%- MACRO menu_item BLOCK; IF curr == page %]<li class="curr">[%ELSE%]<li>[% END; END -%]
+    <ul class="menu" id="mainmenu">
+      [% menu_item( curr=curr_page, page='index' )%]<a href="/index.html">Home</a></li>
+      [% menu_item( curr=curr_page, page='about' )%]<a href="/about.html">About Us</a></li>
+      [% menu_item( curr=curr_page, page='meetings' )%]<a href="/meetings.html">Meetings</a></li>
+      [% menu_item( curr=curr_page, page='faqs' )%]<a href="/faqs.html">FAQ</a></li>
+      [% menu_item( curr=curr_page, page='recent' )%]<a href="/talks/mostrecent.html">Most Recent Talk</a></li>
+      [% menu_item( curr=curr_page, page='talks' )%]<a href="/talks/index.html">Talks Archive</a></li>
+      [% menu_item( curr=curr_page, page='projects' )%]<a href="/projects/index.html">Group Projects</a></li>
+    </ul>

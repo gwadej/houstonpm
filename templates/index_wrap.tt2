@@ -13,15 +13,7 @@
 </div>
 <div id="outer">
   <div id="navigation">
-  <ul class="menu" id="mainmenu">
-     <li class="curr"><a href="/index.html">Home</a></li>
-     <li><a href="/about.html">About Us</a></li>
-     <li><a href="/meetings.html">Meetings</a></li>
-     <li><a href="/faqs.html">FAQ</a></li>
-     <li><a href="/talks/mostrecent.html">Most Recent Talk</a></li>
-     <li><a href="/talks/index.html">Talks Archive</a></li>
-     <li><a href="/projects/index.html">Group Projects</a></li>
-  </ul>
+[% INCLUDE main_menu.tt2 curr_page='index' %]
 
   <ul class="menu" id="externlinks">
      <li class="head">External Resources</li>
