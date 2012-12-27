@@ -34,7 +34,7 @@ ${OUTDIR}/talks/[%y%]talks/index.html: talks.xml yeartalks.xsl templates/yeartal
 
 [% END -%]
 convert:
-	ttree --define year=[%year%] -f _ttreerc
+	ttree --define end_year=[%year%] -f _ttreerc
 
 install:
 	cp -R ${OUTDIR}/* ${INSTALLDIR}
