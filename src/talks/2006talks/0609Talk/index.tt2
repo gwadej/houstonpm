@@ -1,5 +1,6 @@
 [% WRAPPER writeup_wrap.tt2
     title='Summary of September 2006 Presentation'
+    year=2006
 %]
     <p>Glenn Pringle provided an introduction to building PDF files in Perl.
       He focused on the <code>PDF::API2</code> module. Although this module

@@ -1,5 +1,6 @@
 [% WRAPPER writeup_wrap.tt2
     title='Summary of October 2012 Presentation'
+    year=2012
 %]
       <h2 class="subhead">Bag of Tricks</h2>
 

@@ -1,5 +1,6 @@
 [% WRAPPER writeup_wrap.tt2
     title='Summary of June 2012 Presentation'
+    year=2012
 %]
       <h2 class="subhead">Perl Unit Testing: Tools and Techniques</h2>
 

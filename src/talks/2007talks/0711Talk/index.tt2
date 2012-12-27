@@ -1,5 +1,6 @@
 [% WRAPPER writeup_wrap.tt2
     title='Summary of November 2007 Presentation'
+    year=2007
 %]
     <h2 class="subhead">Barely Used Perl</h2>
 

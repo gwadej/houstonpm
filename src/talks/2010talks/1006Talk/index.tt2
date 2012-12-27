@@ -1,5 +1,6 @@
 [% WRAPPER writeup_wrap.tt2
     title='Summary of June 2010 Presentation'
+    year=2010
 %]
       <h2 class="subhead">Data Visualization with Perl and SVG</h2>
 

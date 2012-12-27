@@ -1,5 +1,6 @@
 [% WRAPPER writeup_wrap.tt2
     title='Summary of October 2008 Presentation'
+    year=2008
 %]
     <h2 class="subhead">Git - The stupid content tracker</h2>
 

@@ -1,5 +1,6 @@
 [% WRAPPER writeup_wrap.tt2
     title='Summary of October 2005 Presentation'
+    year=2005
 %]
     <p>Bill Dillon gave a presentation on <em>Graphics in Perl</em>. Since
     this talk ranged from graphing metrics for programming QA through light

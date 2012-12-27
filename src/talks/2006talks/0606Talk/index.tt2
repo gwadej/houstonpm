@@ -1,5 +1,6 @@
 [% WRAPPER writeup_wrap.tt2
     title='Summary of June 2006 Presentation'
+    year=2006
 %]
     <p>Paul Archer began the night with a solid introduction to the
       <a href="http://subversion.tigris.org/">Subversion</a> version control

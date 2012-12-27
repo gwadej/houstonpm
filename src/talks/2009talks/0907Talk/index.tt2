@@ -1,5 +1,6 @@
 [% WRAPPER writeup_wrap.tt2
     title='Summary of July 2009 Presentation'
+    year=2009
 %]
     <h2 class="subhead">Exception Handling in Perl</h2>
 

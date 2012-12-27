@@ -1,5 +1,6 @@
 [% WRAPPER writeup_wrap.tt2
     title='Summary of August 2006 Presentation'
+    year=2006
 %]
     <p>Robert Boone lead a lively overview of Perl 6. The topic drew a
       good crowd and unlike most nights, this crowd had questions. In the

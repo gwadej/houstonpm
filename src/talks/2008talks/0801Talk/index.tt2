@@ -1,5 +1,6 @@
 [% WRAPPER writeup_wrap.tt2
     title='Summary of January 2008 Presentation'
+    year=2008
 %]
     <h2 class="subhead">The <code>Net::Jabber::Bot</code> Project</h2>
 

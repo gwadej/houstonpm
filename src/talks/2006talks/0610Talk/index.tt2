@@ -1,5 +1,6 @@
 [% WRAPPER writeup_wrap.tt2
     title='Summary of October 2006 Presentation'
+    year=2006
 %]
     <p>Wade introduced the modules <a href="http://search.cpan.org/~thaljef/Perl-Critic-0.2/">Perl::Critic</a>
       and <a href="http://search.cpan.org/~petdance/Perl-Critic-Bangs-0.22/">Perl::Critic::Bangs</a>.

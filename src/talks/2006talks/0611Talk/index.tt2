@@ -1,5 +1,6 @@
 [% WRAPPER writeup_wrap.tt2
     title='Summary of November 2006 Presentation'
+    year=2006
 %]
     <p>Todd introduced the modules <code>Smart::Comments</code>,
       <code>Getopt::Euclid</code>, and <code>Log::Log4perl</code>. The first

@@ -118,6 +118,7 @@ sub make_talk_dir
     print {$fh} <<"EOF";
 [% WRAPPER writeup_wrap.tt2
     title='Summary of $vars->{monthname} $vars->{year} Presentation'
+    year=$vars->{year}
 %]
       <h2 class="subhead">$vars->{title}</h2>
 EOF

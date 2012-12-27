@@ -1,5 +1,6 @@
 [% WRAPPER writeup_wrap.tt2
     title='Summary of March 2011 Presentation'
+    year=2011
 %]
       <h2 class="subhead">Your Perl is Slow (and it does not have to be)</h2>
 

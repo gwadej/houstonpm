@@ -1,5 +1,6 @@
 [% WRAPPER writeup_wrap.tt2
     title='Summary of November 2005 Presentation'
+    year=2005
 %]
     <p>During October's meeting, Jay asked how to call Python code from Perl. This
     brings up the larger question of how you might interface between code written

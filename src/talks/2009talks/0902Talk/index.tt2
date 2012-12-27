@@ -1,5 +1,6 @@
 [% WRAPPER writeup_wrap.tt2
     title='Summary of February 2009 Presentation'
+    year=2009
 %]
     <h2 class="subhead">RRDtool Tips and Traps</h2>
 

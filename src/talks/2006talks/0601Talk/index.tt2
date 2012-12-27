@@ -1,5 +1,6 @@
 [% WRAPPER writeup_wrap.tt2
     title='Summary of January 2006 Presentation'
+    year=2006
 %]
     <p>Paul Archer led an interesting presentation where the group built some
     Perl code to interface with a USB-based device using libusb. This project

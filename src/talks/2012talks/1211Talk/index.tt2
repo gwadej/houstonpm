@@ -1,5 +1,6 @@
 [% WRAPPER writeup_wrap.tt2
     title='Summary of November 2012 Presentation'
+    year=2012
 %]
       <h2 class="subhead">Automating Daily Tasks</h2>
       <p>Wade lead a discussion of small scripts or code snippets that people use to

@@ -1,5 +1,6 @@
 [% WRAPPER writeup_wrap.tt2
     title='Summary of June 2009 Presentation'
+    year=2009
 %]
     <h2 class="subhead">Catalyst, DBIC, and TT for world domination, a preview</h2>
 

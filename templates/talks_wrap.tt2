@@ -1,3 +1,8 @@
+[%# The wrapper for the talk year index page.
+    end_year - the latest year in which we have anything
+    year - the year containing these talks
+    title - an optional title for the page
+-%]
 [%- yearlist = [ 2003 .. end_year ] -%]
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <html>
@@ -31,33 +36,7 @@
 
 </div>
 <div id="footer">
-<p class="copyright">
-<!-- Creative Commons License -->
-<a rel="license" href="http://creativecommons.org/licenses/by/2.5/"><img alt="Creative Commons License" border="0" src="http://creativecommons.org/images/public/somerights20.gif" /></a>
-Copyright &copy; 2003-[% end_year %] Houston.pm.<br /> Except as otherwise noted, this site is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/2.5/">Creative Commons Attribution 2.5 License</a>.
-<!-- /Creative Commons License -->
-
-
-<!--
-
-<rdf:RDF xmlns="http://web.resource.org/cc/"
-    xmlns:dc="http://purl.org/dc/elements/1.1/"
-    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-<Work rdf:about="">
-   <license rdf:resource="http://creativecommons.org/licenses/by/2.5/" />
-</Work>
-
-<License rdf:about="http://creativecommons.org/licenses/by/2.5/">
-   <permits rdf:resource="http://web.resource.org/cc/Reproduction" />
-   <permits rdf:resource="http://web.resource.org/cc/Distribution" />
-   <requires rdf:resource="http://web.resource.org/cc/Notice" />
-   <requires rdf:resource="http://web.resource.org/cc/Attribution" />
-   <permits rdf:resource="http://web.resource.org/cc/DerivativeWorks" />
-</License>
-
-</rdf:RDF>
--->
-</p>
+[% INCLUDE copyright.tt2 begin_year=year %]
 <p>The use of the camel image in association with the Perl
 language is a trademark of O'Reilly &amp; Associates, Inc. Used with permission.</p>
 </div>

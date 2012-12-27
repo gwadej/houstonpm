@@ -1,5 +1,6 @@
 [% WRAPPER writeup_wrap.tt2
     title='Summary of August 2005 Presentation'
+    year=2005
 %]
     <p>Paul Archer gave an interesting talk that covered the modules
     <code>Image::IPTCInfo</code>, <code>Getopt::Long</code>, and

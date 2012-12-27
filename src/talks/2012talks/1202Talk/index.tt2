@@ -1,5 +1,6 @@
 [% WRAPPER writeup_wrap.tt2
     title='Summary of February 2012 Presentation'
+    year=2012
 %]
       <h2 class="subhead">DistZilla from one newb to another</h2>
 

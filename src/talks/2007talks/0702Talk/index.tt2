@@ -1,5 +1,6 @@
 [% WRAPPER writeup_wrap.tt2
     title='Summary of February 2007 Presentation'
+    year=2007
 %]
     <h2 class="subhead">Introduction to Catalyst</h2>
 

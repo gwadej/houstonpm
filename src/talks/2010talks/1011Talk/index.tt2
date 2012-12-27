@@ -1,5 +1,6 @@
 [% WRAPPER writeup_wrap.tt2
     title='Summary of November 2010 Presentation'
+    year=2010
 %]
       <h2 class="subhead">Filesys::POSIX -- A real, in-memory filesystem written entirely in Perl</h2>
 

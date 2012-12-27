@@ -1,5 +1,6 @@
 [% WRAPPER writeup_wrap.tt2
     title='Summary of March 2006 Presentation'
+    year=2006
 %]
     <p>For the March meeting, Paul Archer lead a further session on the
       LibUSB/Delcom VSI project. During this presentation, we experimented

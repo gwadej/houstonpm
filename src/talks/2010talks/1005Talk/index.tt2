@@ -1,5 +1,6 @@
 [% WRAPPER writeup_wrap.tt2
     title='Summary of May 2010 Presentation'
+    year=2010
 %]
       <h2 class="subhead">Programming Paradigms in Perl</h2>
 

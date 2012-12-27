@@ -1,3 +1,4 @@
+[%# The variable curr_page specifies which link is marked current. -%]
 [%- MACRO menu_item BLOCK; IF curr == page %]<li class="curr">[%ELSE%]<li>[% END; END -%]
     <ul class="menu" id="mainmenu">
       [% menu_item( curr=curr_page, page='index' )%]<a href="/index.html">Home</a></li>
