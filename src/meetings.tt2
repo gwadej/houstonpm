@@ -38,10 +38,10 @@
     <h2 class="subhead">Upcoming Meetings</h2>
 
     <dl>
-        <dt>Dec. 13, 2012</dt>
-        <dd>Social Meeting at Black Labrador</dd>
-
         <dt>Jan. 10, 2013</dt>
+        <dd>TBD</dd>
+
+        <dt>Feb. 14, 2013</dt>
         <dd>TBD</dd>
     </dl>
 [% END -%]

@@ -114,11 +114,27 @@ sub make_talk_dir
     die "Talk directory already exists.\n" if -e $dir;
 
     mkpath( $dir );
-    my $tt = Template->new( INCLUDE_PATH => 'templates' );
-    $tt->process( 'talk_index.tt2', $vars, "$dir/index.html" )
-        or die "Unable to build index " . $tt->error() . "\n";
+    open my $fh, '>', "$dir/index.tt2" or die "Unable to create new talk writeup.\n";
+    print {$fh} <<"EOF";
+[% WRAPPER writeup_wrap.tt2
+    title='Summary of $vars->{monthname} $vars->{year} Presentation'
+%]
+      <h2 class="subhead">$vars->{title}</h2>
+EOF
+    foreach my $p (@{$vars->{writeup}})
+    {
+        print {$fh} <<"EOP";
+      <p>$p</p>
+EOP
+    }
+    print {$fh} <<"EOT";
+      <p>We had $vars->{attendees} people attending this month. As always, we'd like to thank
+        cPanel, Inc. for providing the meeting space and food for the group.</p>
+[% END -%]
+EOT
+    close $fh or die "Unable to close index.tt2\n";
 
-    $vars->{indexfile} = "$dir/index.html";
+    $vars->{indexfile} = "$dir/index.tt2";
     return;
 }
 

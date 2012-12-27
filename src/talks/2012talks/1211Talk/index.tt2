@@ -1,0 +1,11 @@
+[% WRAPPER writeup_wrap.tt2
+    title='Summary of November 2012 Presentation'
+%]
+      <h2 class="subhead">Automating Daily Tasks</h2>
+      <p>Wade lead a discussion of small scripts or code snippets that people use to
+make their lives easier.</p>
+      <p>A few others described or demonstrated some of their favorite tricks. Since
+the discussion was pretty much off-the-cuff, there were no slides to post.</p>
+      <p>We had 5 people attending this month. As always, we'd like to thank
+        cPanel, Inc. for providing the meeting space and food for the group.</p>
+[% END -%]
