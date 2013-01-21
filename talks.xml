@@ -1062,4 +1062,17 @@ that different people use for getting work done in their day.</abstract>
     </topic>
   </talk>
 
+  <talk num="1301">
+    <date>January 2013</date>
+    <topic href="/talks/2013talks/1301Talk/index.html">
+      <title>A Web-based Defect Management/Tracking System Developed Non-Programmer</title>
+      <presenter>Jay Vogt</presenter>
+      <abstract>Many interesting projects come out of someone <em>scratching their own
+itch</em>. Jay Vogt presented a web-based program for querying a bug-tracking
+system he uses at work. Although the original system allowed people to enter
+all of the information needed to track issues, the query interface was not
+powerful enough for some needs.</abstract>
+    </topic>
+  </talk>
+
 </talklist>

@@ -1,0 +1,23 @@
+[% WRAPPER writeup_wrap.tt2
+    title='Summary of January 2013 Presentation'
+    year=2013
+%]
+      <h2 class="subhead">A Web-based Defect Management/Tracking System Developed Non-Programmer</h2>
+      <p>Jay Vogt works at Schlumberger, where his team deals with software for oil
+exploration. Part of his presentation introduced us to the software his team
+supports. He spent quite a bit of time trying to convince us that he is not a
+programmer.</p>
+      <p>He, then, proceeded to demonstrate a pretty respectable web interface that he
+had written to query the defect/feature tracking system he works with. The app
+supports querying, sorting, and filtering the data by a number of different
+criteria. The interface was also color-coded to make it easier to identify some
+information at a glance.</p>
+      <p>The result is a powerful and usable system. Jay's program provides an effective
+interface, queries the Oracle database, and displays the data in a format that
+is useful to several teams in his company. This is an effective system by most
+people's definition.</p>
+      <p>This talk did a great job of displaying real, functional software solving a
+real need.</p>
+      <p>We had 11 people attending this month. As always, we'd like to thank
+        cPanel, Inc. for providing the meeting space and food for the group.</p>
+[% END -%]

@@ -38,10 +38,10 @@
     <h2 class="subhead">Upcoming Meetings</h2>
 
     <dl>
-        <dt>Jan. 10, 2013</dt>
-        <dd>Demo of a Web-based Defect Management/Tracking System Developed in Perl by a Non-Programmer</dd>
+        <dt>Feb. 21, 2013</dt>
+        <dd>TBD</dd>
 
-        <dt>Feb. 14, 2013</dt>
+        <dt>Mar. 14, 2013</dt>
         <dd>TBD</dd>
     </dl>
 [% END -%]

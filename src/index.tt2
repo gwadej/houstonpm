@@ -3,11 +3,11 @@
 
     <div id="sidebar">
         <h1 class="heading">What's New <a href="atom.xml"><img style="border:0;float:right;" src="feed-icon-10x10.png" /></a></h1>
-      <p>November meeting notes are on-line.</p>
+      <p>January meeting notes are on-line.</p>
       <h1 class="heading">Next Meeting</h1>
         <dl>
-            <dt>Jan. 10, 2013</dt>
-            <dd>Demo of a Web-based Defect Management/Tracking System Developed in Perl by a Non-Programmer</dd>
+            <dt>Feb. 21, 2013</dt>
+            <dd>TBD</dd>
         </dl>
     </div>
 
