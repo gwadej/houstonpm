@@ -38,10 +38,10 @@
     <h2 class="subhead">Upcoming Meetings</h2>
 
     <dl>
-        <dt>Feb. 21, 2013</dt>
-        <dd>Auditing CPAN for Security Vulnerabilities with JD Lightsey</dd>
-
         <dt>Mar. 14, 2013</dt>
+        <dd>TBA</dd>
+
+        <dt>Apr. 11. 2013</dt>
         <dd>TBD</dd>
     </dl>
 [% END -%]

@@ -1,0 +1,26 @@
+[% WRAPPER writeup_wrap.tt2
+    title='Summary of February 2013 Presentation'
+    year=2013
+%]
+      <h2 class="subhead">Auditing CPAN for Security Vulnerabilities</h2>
+      <p>J.D. Lightsey presents a early draft of a presentation he plans to give at YAPC::NA 2013.
+The talk showed both the interesting part of scanning code to find vulnerabilities, as well
+as the less fun part of properly reporting the vulnerabilities and convincing the author
+that they need to be fixed.</p>
+      <p>J.D. suggested resources to use to learn about security issues, such as <a taget="_blank"
+href="https://www.owasp.org/">OWASP</a>. He talked about specific vulnerabilities and how
+to find some with through nothing more than a <em>grep</em> of the code. There is even
+an online service <a href="http://grep.cpan.me/" target="_blank">grep.cpan.me</a> that
+searches all of CPAN from one page.</p>
+      <p>Although J.D. spent some time on the mechanics and reasons for finding vulnerabilities in
+code, he also spent described the frustrations of reporting a vulnerability and having it
+ignored by the author. He walked through the steps of a responsible disclosure process. He
+also described both successes and failures dealing with authors of modules.</p>
+      <p>All in all, it was a fascinating view of a part of the development process that many of us
+do not see every day. The audience was riveted during the whole talk. In the end, the group
+was able to provide some insight into how J.D. could improve his presentation, specifically
+in places where information had been unclear.</p>
+      <p>Since the presentation is not complete, the slides are not published at this time.</p>
+      <p>We had 13 people attending this month. As always, we'd like to thank
+        cPanel, Inc. for providing the meeting space and food for the group.</p>
+[% END -%]

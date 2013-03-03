@@ -1075,4 +1075,15 @@ powerful enough for some needs.</abstract>
     </topic>
   </talk>
 
+  <talk num="1302">
+    <date>February 2013</date>
+    <topic href="/talks/2013talks/1302Talk/index.html">
+      <title>Auditing CPAN for Security Vulnerabilities</title>
+      <presenter>J. D. Lightsey</presenter>
+      <abstract>JD Does an early trial run of his talk about auditing CPAN modules for vulnerabilities.
+He covers both techniques for simple security audits and the process of responsible
+disclosure of those vulnerabilities to the author.</abstract>
+    </topic>
+  </talk>
+
 </talklist>
