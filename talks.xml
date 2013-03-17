@@ -1086,4 +1086,15 @@ disclosure of those vulnerabilities to the author.</abstract>
     </topic>
   </talk>
 
+  <talk num="1303">
+    <date>March 2013</date>
+    <topic href="/talks/2013talks/1303Talk/index.html">
+      <title>Pari/GP and Perl - Past, Present and Future</title>
+      <presenter>Charles Boyd</presenter>
+      <abstract>Charles Boyd introduces the Pari/GP library and discusses how its design makes
+creating bindings to the library easier. He also discusses some current Perl
+bindings to the library, as well as future directions for this work.</abstract>
+    </topic>
+  </talk>
+
 </talklist>

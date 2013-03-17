@@ -1,0 +1,222 @@
+\documentclass{beamer}
+
+\mode<presentation>
+{
+  \usetheme{default}
+  \usecolortheme{default}
+  \usefonttheme{serif}
+  \setbeamertemplate{navigation symbols}{}
+  \setbeamertemplate{caption}[numbered]
+} 
+
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+
+\usepackage{pgfpages}
+\pgfpagesuselayout{resize to}[%
+  physical paper width=8in, physical paper height=6in]
+
+\title[PARI/GP and Perl]{PARI/GP and Perl: Past, Present, Future}
+\author{Charles Boyd}
+\institute{Houston Perl Mongers}
+\date{March 14, 2013}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\section{Introduction}
+
+\begin{frame}{PARI/GP - A Gentle Introduction}
+
+\begin{block}{What is PARI/GP?}
+PARI/GP is a fast and portable computer algebra system, primarily for use in algebraic number theory. 
+\end{block}
+
+\begin{itemize}
+	\item \texttt{PARI} is a C library for fast computations.
+    \item \texttt{GP} is a scripting language and interpreter for PARI functions.
+    \item \texttt{gp} is an interactive shell that provides an interface to the PARI/GP system.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Examples of PARI/GP}
+
+\begin{itemize}
+	\item \texttt{factor(2302984)}
+    \item \texttt{factor($x^6 - 4x^3 + 7x^2 - 9x + 3$)}
+    \item \texttt{primes(100)}
+    \item \texttt{for(i=0,10,print(fibonacci(i))}
+    \item \texttt{taylor(sin(x),x)}
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Other uses of PARI/GP}
+
+\begin{itemize}
+	\item Fast linear algebra library for computations with vectors and matrices.
+    \item General-purpose mathematical functions for summations, series, derivatives and integrals.
+    \item Number Theoretic functions for special computations over the ring of integers $\mathbb{Z}$,the ring of univariate polynomials over integers $\mathbb{Z}[x]$, $p$-adic number fields, finite fields, more general number fields, Galois Theory, \dots
+    \item Computing elliptic curves and their properties, applications to cryptography.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Why use PARI/GP with Perl?}
+
+\begin{itemize}
+	\item To use PARI/GP for quick computation from other Perl programs.
+    \item Create new interfaces for computer algebra.
+    \item For PARI developers to test new features quickly and easily.
+    \item For researchers to parse/verify/manipulate data before or after evaluation by PARI/GP.
+    \item Cryptography? (See the CPAN module for \texttt{RSA} encryption)
+	\item Because we can!
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{What about Math::Pari?}
+
+\begin{block}{Note on Math::Pari}
+The CPAN module \texttt{Math::Pari} satisfies the use case of writing a GP program in Perl. This is achieved by overloading Perl's arithmetic operators, conversion between Perl and PARI data structures, and importing PARI functions (as barewords) to be used in a Perl script. 
+\end{block}
+
+\end{frame}
+
+\section{GPP}
+
+\begin{frame}{GPP - Introduction}
+
+\begin{block}{Basic Goals}
+My goal is quite different from what \texttt{Math::Pari} achieves:
+\end{block}
+
+\begin{itemize}
+	\item No overloading of Perl's operators.
+    \item Keep the \texttt{PARI} stack completely separate from Perl's stack.
+    \item Clean and simple interface for communication between Perl programs and \texttt{PARI} library.
+    \item No (implicit) conversion of data structures, strings are the universal language.
+    \item Make it extremely simple to write a \texttt{gp} clone in Perl.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{GPP - Overview}
+
+\begin{block}{Design Principles}
+Our goals suggest the basic design concepts.
+\end{block}
+
+\begin{itemize}
+	\item Call \texttt{PARI} functions through a simple wrapper library that evaluates a string and returns a string.
+    \item Strict separation between Perl and \texttt{PARI} stacks.
+    \item Make the Perl interface as simple and lean as possible, any "heavy lifting" should be done in the \texttt{C} wrapper library or by patching \texttt{PARI/GP}.
+    \item Don't reify \texttt{PARI/GP} - design should be general enough to easily support inclusion of other (sufficiently wrapped) mathematics libraries.
+    \item Keep \texttt{PARI}-specific code under the \texttt{GPP::Pari} namespace.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{GPP - Communicating with Pari}
+\begin{block}{Important Structures and Functions}
+Pari uses the \texttt{long *GEN} structure as an internal representation of all mathematical objects. The following functions are used by \texttt{GPP::Pari} to communicate with \texttt{libpari}.
+\end{block}
+\begin{itemize}
+	\item \texttt{GEN gp\_read\_str(char *in)}
+	\item \texttt{char *GENtostr(GEN z)}
+	\item \texttt{long typ(GEN z)}
+	\item \texttt{const char *type type\_name(long n)}
+\end{itemize}
+\begin{block}{Technical note}
+In \texttt{parisv.c}, every \texttt{GEN} type is declared as \texttt{volatile} so we can trap amd recover from errors with \texttt{longjmp(jmp\_buf env, long errnum)}.
+\end{block}
+
+\end{frame}
+
+\begin{frame}{GPP - Wrapper Library}
+
+\begin{block}{So, I heard you like wrappers\dots}
+The C program \texttt{parisv.c} implements simple wrapper functions to facilitate passing strings between \texttt{libpari} and another program.
+\end{block}
+
+\begin{itemize}
+	\item \texttt{char *evaluate(const char *in)} - Evaluates input and returns result.
+	\item We also handle a \texttt{pari\_stack} structure so output from 	\texttt{libpari} can be redirected to controlling process rather than to \texttt{STDOUT}.
+	\item \texttt{char *parisv\_type(const char *in)} - Returns the type of resulting Pari object.
+	\item Implementation for \texttt{init(), version(), help(), quit()} functions.
+	\item Uses \texttt{swig} to generate XS wrapper code for \texttt{GPP::Pari::Native} module.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{GPP - Perl Library}
+
+\begin{itemize}
+	\item \texttt{GPP} - Processes user input, handles metacommands, sends everything else to be evaluated by \texttt{GPP::Pari} and pushes results to \texttt{GPP::Stack} object.
+    \item \texttt{GPP::Pari} - Provides high-level interface to \texttt{libpari} functions via \texttt{GPP::Pari::Native}.
+    \item \texttt{GPP::Pari::Native} - Wrapper module for \texttt{Native.so} functions, generated by Swig.
+    \item \texttt{GPP::Stack} - Really just an array of hashes, each element has a key for input, output and result type.
+    \item \texttt{Native.so} - Shared library linked against \texttt{libpari.so} that contains symbols from \texttt{parisv.c} along with generated XS wrappers from \texttt{Native\_wrap.c}.
+\end{itemize}
+
+\end{frame}
+
+\section{Applications}
+
+\begin{frame}{\texttt{primefactors.pl}}
+
+\begin{block}{Using \texttt{GPP} in a script}
+The \texttt{examples/primefactors.pl} script demonstrates using \texttt{GPP} to compute prime factors of 100 randomly generated integers $0 \leq n \leq 1000$. Runs in less than 1 second.
+\end{block}
+
+\end{frame}
+
+\begin{frame}{\texttt{gpp}}
+
+\begin{block}{Using \texttt{GPP} to write an application}
+The \texttt{bin/gpp} script demonstrates using \texttt{GPP} to write an application that provides an interactive shell to \texttt{libpari}. 
+
+\vspace{1cm}
+
+It emulates about 90\% the functionality of the \texttt{gp} binary distributed with Pari/GP. Uses \texttt{Term::Readline::Zoid} for readline functionality (command history and emacs-like keybindings).
+\end{block}
+
+\end{frame}
+
+\begin{frame}{Ideas}
+\begin{itemize}
+	\item Graphical application using \texttt{XUL::Gui}. (Proof of concept has been done, but very incomplete/buggy)
+    \item Web application with a live script editor, pretty printing with using \texttt{libpari} function \texttt{GENtoTeXstr()} to generate \LaTeX{} output and MathML to render \LaTeX{} in the browser.
+    \item Ability to convert Pari data structures into "natural" Perl objects.
+    \item Extend the \texttt{GP} language with pure-perl features.
+    \item Possibly create similar bindings to other mathematics libraries.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Problems and Open Questions}
+\begin{itemize}
+	\item Build environment makes too many assumptions, not very robust.
+	\item It would be nice to turn Pari \texttt{t\_VEC, t\_MAT} structures into Perl arrays (of arrays (of arrays\dots) ) but turns out to be a tricky problem to solve in full generality.
+    \item Export \texttt{libpari} constants and functions in a reasonable way.
+    \item Need to check version of \texttt{libpari} on system before compiling wrapper library, this is also not particularly easy to do in a portable (across all unix variants) manner.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{End}
+
+\begin{itemize}
+	\item GPP source code and wiki: \texttt{github.com/FreeMonad/GPP}
+	\item E-mail: \texttt{charles.boyd@freemonad.org}
+\end{itemize}
+
+\begin{block}{Thanks!}
+That's it. Thank you for listening.
+\end{block}
+
+\end{frame}
+
+\end{document}

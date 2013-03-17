@@ -1,0 +1,15 @@
+[% WRAPPER writeup_wrap.tt2
+    title='Summary of March 2013 Presentation'
+    year=2013
+%]
+      <h2 class="subhead">Pari/GP and Perl - Past, Present and Future</h2>
+      <p>Charles talked about the work he's been doing for the past few years on libpari
+wrappers. He's already written an Android library wrapper and has now turned to
+making a more thin wrapper to Pari in perl than <code>Math::Pari</code> does.</p>
+      <p>Right now he's looking for advice on how to continue. We talked about a
+<acronym title="Yet Another Perl Conference">YAPC</acronym> talk and the possibility
+of talking about it in a lightning talk and getting some feedback from perl devs.</p>
+      <p>The presentation is available as a <a href="gpp-beamer.pdf">PDF</a>.</p>
+      <p>We had 10 people attending this month. As always, we'd like to thank
+        cPanel, Inc. for providing the meeting space and food for the group.</p>
+[% END -%]
