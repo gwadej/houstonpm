@@ -27,7 +27,8 @@ dirs:
 
 base: dirs convert
 	cp -r src/* ${OUTDIR}
-	find out -type f -name '*.tt2' -exec rm -rf {} \; -prune
+	cp images/feed-icon-10x10.png ${OUTDIR}
+	find ${OUTDIR} -type f -name '*.tt2' -exec rm -rf {} \; -prune
 	cp atom.xml ${OUTDIR}
 
 ${OUTDIR}/talks/mostrecent.html: talks.xml mostrecent.xsl templates/mostrecent.tt2
