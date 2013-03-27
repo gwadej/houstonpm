@@ -87,3 +87,13 @@ clobber: clean
 
 makefile: templates/Makefile.tt2
 	tpage --define year=`perl -e"print 1900+((localtime)[5])"` templates/Makefile.tt2 > Makefile
+
+help:
+	@echo This Makefile handles construction and publishing of the houston.pm.org website
+	@echo The targets of interest in the Makefile:
+	@echo
+	@echo "site:     Create the website in the ./out subdirectory. Default target."
+	@echo "install:  Copies the website to a docroot on local machine to use for testing."
+	@echo "publish:  Copies the website to the webdav directory representing the real site."
+	@echo "clobber:  Wipe the output directory."
+	@echo "makefile: Recreate the Makefile to deal with a new year."
