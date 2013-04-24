@@ -38,7 +38,10 @@
     <h2 class="subhead">Upcoming Meetings</h2>
 
     <dl>
-        <dt>Apr. 11. 2013</dt>
-        <dd>TBD</dd>
+        <dt>Apr. 25, 2013</dt>
+        <dd>Social at Little Pappasito's with brian d. foy</dd>
+
+        <dt>May. 2, 2013</dt>
+        <dd>Michael Schwern, details soon</dd>
     </dl>
 [% END -%]
