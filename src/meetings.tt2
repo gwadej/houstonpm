@@ -38,13 +38,13 @@
     <h2 class="subhead">Upcoming Meetings</h2>
 
     <dl>
-        <dt>May 2, 2013</dt>
-        <dd>Socal at Big Woodrow's with Michael Schwern</dd>
-
         <dt>June 13, 2013</dt>
-        <dd>TBD</dd>
+        <dd>p2: The Design and VM of a Next Generation Perl (11=5+6) with Reini Urban</dd>
 
         <dt>July 11, 2013</dt>
+        <dd>TBD</dd>
+
+        <dt>August 8, 2013</dt>
         <dd>TBD</dd>
     </dl>
 [% END -%]
