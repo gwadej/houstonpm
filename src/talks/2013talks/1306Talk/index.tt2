@@ -1,0 +1,33 @@
+[% WRAPPER writeup_wrap.tt2
+    title='Summary of June 2013 Presentation'
+    year=2013
+%]
+      <h2 class="subhead">p2: The Design and VM of a Next Generation Perl (11 = 5+6)</h2>
+      <p>As you would expect from a talk on re-implementing the Perl compiler and run-time,
+this was a really dense talk. Reini definitely has the technical chops to dig
+into the details and difficulties of this project.</p>
+      <p>Reini began with discussions about a year ago where a new group of people have
+decided that we need to clean up the Perl 5 code to make it more maintainable
+and easier to change. Several different people have made their own attempts to
+begin this project and the head of Booking.com decided to get them together
+last year to coordinate.</p>
+      <p>In the intervening year, the concept of Perl 11, as a target has emerged. This
+is a combination of Perl 5 and what we have learned from Perl 6. Reini's
+implementation of Perl 11 is called <em>p2</em> and is based on the Potion
+virtual machine.</p>
+      <p>The main goals of the project are the following:</p>
+      <p><ul>
+    <li>Features (must match Perl 5 to be used)</li>
+    <li>Performance</li>
+    <li>Threads (automatic, rather than explicit)</li>
+    <li>Sanity</li>
+    <li>Future (must be easier to extend)</li>
+</ul></p>
+      <p>This was a much deeper talk than we normally have. There were a lot fewer
+questions than usual, because people seemed much more overwhelmed.</p>
+
+      <p>The slides for this talk are available as a <a href="p2-yapcna2013.pdf">PDF</a>.
+
+      <p>We had 11 people attending this month. As always, we'd like to thank
+        cPanel, Inc. for providing the meeting space and food for the group.</p>
+[% END -%]

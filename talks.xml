@@ -1097,4 +1097,14 @@ bindings to the library, as well as future directions for this work.</abstract>
     </topic>
   </talk>
 
+  <talk num="1306">
+    <date>June 2013</date>
+    <topic href="/talks/2013talks/1306Talk/index.html">
+      <title>p2: The Design and VM of a Next Generation Perl (11 = 5+6)</title>
+      <presenter>Reini Urban</presenter>
+      <abstract>Reini Urban covered some of the background and low-level details of one of the
+efforts to modernize the compiler and run-time for Perl 5.</abstract>
+    </topic>
+  </talk>
+
 </talklist>
