@@ -17,6 +17,7 @@
 
   <ul class="menu" id="externlinks">
      <li class="head">External Resources</li>
+     <li><a href="https://plus.google.com/104331489743076486517" rel="publisher">Houston.pm on G+</a></li>
      <li><a href="http://padre.perlide.org/" title="perl editor">Perl IDE</a></li>
      <li><a href="http://blogs.perl.org/">Perl Blogs</a></li>
      <li><a href="http://ironman.enlightenedperl.org/">Planet Perl Iron Man</a></li>
