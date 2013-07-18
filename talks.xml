@@ -1107,4 +1107,15 @@ efforts to modernize the compiler and run-time for Perl 5.</abstract>
     </topic>
   </talk>
 
+  <talk num="1307">
+    <date>July 2013</date>
+    <topic href="/talks/2013talks/1307Talk/index.html">
+      <title>Houston.pm July Hack-a-thon</title>
+      <presenter></presenter>
+      <abstract>We opened the conference room for anyone to work on their projects or help
+others as a Hack-a-thon. Unlike the previous attempt, no <em>official</em>
+project was specified that we would work on.</abstract>
+    </topic>
+  </talk>
+
 </talklist>

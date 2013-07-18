@@ -3,11 +3,11 @@
 
     <div id="sidebar">
         <h1 class="heading">What's New <a href="atom.xml"><img style="border:0;float:right;" src="feed-icon-10x10.png" /></a></h1>
-      <p>June meeting notes are on-line.</p>
+      <p>July meeting notes are on-line.</p>
       <h1 class="heading">Next Meeting</h1>
         <dl>
-            <dt>July 11, 2013</dt>
-            <dd>Hack-a-thon</dd>
+            <dt>August 8, 2013</dt>
+            <dd><em>An Introduction to Work Queuing with Redis.pm</em> with Brett Estrade</dd>
         </dl>
     </div>
 

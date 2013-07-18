@@ -1,0 +1,20 @@
+[% WRAPPER writeup_wrap.tt2
+    title='Summary of July 2013 Presentation'
+    year=2013
+%]
+      <h2 class="subhead">Houston.pm July Hack-a-thon</h2>
+      <p>This month we decided to try something different (for Houston.pm) and hold a
+hack-a-thon.  Unlike the last attempt we made, we did not designate a
+particular project we were going to work on. Instead, everyone was encouraged
+to bring their own projects and either work on it or help others who had
+questions.</p>
+      <p>There was quite a bit of non-programming discussion, and a few groups
+working on code projects. There was at least one serious design discussion and
+two groups where a more experienced person was training a less experienced
+one.</p>
+      <p>All in all, it appeared to be a successful event. We started a bit earlier
+than usual and the group also began to break up earlier than normal. (Although
+some of us stayed really late.)</p>
+      <p>We had 10 people attending this month. As always, we'd like to thank
+        cPanel, Inc. for providing the meeting space and food for the group.</p>
+[% END -%]
