@@ -4,8 +4,9 @@
 %]
     <h1 class="subhead">About Houston.pm</h1>
 
-    <p>Houston.pm is a group of people who use Perl. Some of us use Perl in our
-      jobs (officially or unofficially), others just like to play with the
+    <p>Houston.pm is a group of people who use the Perl programming language.
+      Some of us use Perl in our jobs (officially or unofficially), others just
+      like to play with the
       language.</p>
 
     <p>We have all level of members from complete novices to very experienced
@@ -24,7 +25,7 @@
        <li>Provide help and mentoring to local Perl programmers.</li>
 
        <li>Educate individuals and companies about the potential benefits of
-         using Perl for solving their problems.</li>
+         using the Perl language and modules for solving their problems.</li>
 
        <li>Provide a focus for the Perl community in Houston.</li>
 

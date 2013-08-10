@@ -25,6 +25,7 @@
             Myths</a></li>
      <li><a href="http://www.perlmonks.org/">The Perl Monastery</a></li>
      <li><a href="http://www.cpan.org/">CPAN</a></li>
+     <li><a href="http://metacpan.org/">Meta CPAN</a></li>
      <li><a href="http://www.perl.org/">The Perl Directory</a></li>
      <li><a href="http://www.perl.com/">Perl.com</a></li>
      <li class="head">News</li>
@@ -48,7 +49,7 @@
 </div>
 <div id="footer">
 [% INCLUDE copyright.tt2 %]
-<p>The use of the camel image in association with the Perl
+<p>The use of the camel image in association with the Perl programming
 language is a trademark of O'Reilly &amp; Associates, Inc. Used with permission.</p>
 </div>
 </body>
