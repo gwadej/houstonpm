@@ -1,0 +1,22 @@
+[% WRAPPER writeup_wrap.tt2
+    title='Summary of August 2013 Presentation'
+    year=2013
+%]
+      <h2 class="subhead">An Introduction to Work Queuing with Redis.pm</h2>
+      <p>Brett gave a quick introduction to the Redis data store. He introduced the
+Redis.pm Perl language wrapper module.</p>
+      <p>The bulk of the presentation focused on the use of Redis for implementing a
+work queue. He showed how a work queue decouples producers from consumers,
+allowing for efficient use of resources. He also introduced other patterns
+of usage, touching on some of the control issues involved. Brett also discussed
+some of the failover options supported by Redis and some high-availability
+options that are in development.</p>
+      <p>Brett provided a number of resources for his talk.</p>
+      <ul>
+        <li>Presentation as a <a href="WorkQueuingWithRedis.pdf">PDF</a></li>
+        <li>Example code and files on <a href="https://github.com/estrabd/houston-pm-redis-talk">github</a></li>
+        <li>A <a href="http://vimeo.com/72078698">Screen cast</a> of the presentation</li>
+      </ul>
+      <p>We had 6 people attending this month. As always, we'd like to thank
+        cPanel, Inc. for providing the meeting space and food for the group.</p>
+[% END -%]

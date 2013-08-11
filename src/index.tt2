@@ -3,17 +3,18 @@
 
     <div id="sidebar">
         <h1 class="heading">What's New <a href="atom.xml"><img style="border:0;float:right;" src="feed-icon-10x10.png" /></a></h1>
-      <p>July meeting notes are on-line.</p>
+      <p>August meeting notes are on-line.</p>
       <h1 class="heading">Next Meeting</h1>
         <dl>
-            <dt>August 8, 2013</dt>
-            <dd><em>An Introduction to Work Queuing with Redis.pm</em> with Brett Estrade</dd>
+            <dt>September 12, 2013</dt>
+            <dd>TBA</dd>
         </dl>
     </div>
 
     <p>This is the branch of the <a href="http://www.pm.org/">Perl Mongers</a>
     meeting in Houston, Texas. Perl Mongers is a loose association of
-    international Perl User Groups.</p>
+    international Perl User Groups. We discuss and educate people on the Perl
+    programming language, as well as projects and modules written in Perl.</p>
 
     <p>We meet on the second Thursday of each month in the lobby of
       <a href="http://maps.google.com/maps?q=3131+W.+Alabama,+Houston,+TX&hl=en&z=17">3131 W. Alabama St.</a>,

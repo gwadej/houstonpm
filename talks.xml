@@ -1118,4 +1118,14 @@ project was specified that we would work on.</abstract>
     </topic>
   </talk>
 
+  <talk num="1308">
+    <date>August 2013</date>
+    <topic href="/talks/2013talks/1308Talk/index.html">
+      <title>An Introduction to Work Queuing with Redis.pm</title>
+      <presenter>Brett Estrade</presenter>
+      <abstract>Brett explains how to use the Redis data store as a work queue. Many of the
+features of Redis support producer-consumer queuing.</abstract>
+    </topic>
+  </talk>
+
 </talklist>
