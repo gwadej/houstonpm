@@ -1128,4 +1128,15 @@ features of Redis support producer-consumer queuing.</abstract>
     </topic>
   </talk>
 
+  <talk num="1309">
+    <date>September 2013</date>
+    <topic href="/talks/2013talks/1309Talk/index.html">
+      <title>Hack-a-thon and Perl Help Session</title>
+      <presenter>G. Wade Johnson</presenter>
+      <abstract>This meeting was intended to be another hack-a-thon for those people who had
+projects to work on. For those relatively new to Perl, Wade was going to run a
+help session to answer questions and go over Perl basics.</abstract>
+    </topic>
+  </talk>
+
 </talklist>

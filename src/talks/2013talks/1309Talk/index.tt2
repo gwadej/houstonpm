@@ -1,0 +1,32 @@
+[% WRAPPER writeup_wrap.tt2
+    title='Summary of September 2013 Presentation'
+    year=2013
+%]
+      <h2 class="subhead">Hack-a-thon and Perl Help Session</h2>
+      <p>Because of the last-minute nature of this meeting, no one was prepared to bring
+a project for working hack-a-thon style.</p>
+      <p>Instead we began by talking about what the Houston.pm group does (we had one
+new person) and a little about people's interests in Perl. We talked a bit
+about Perl 6 and recent changes to the language. As part of the discussion, we
+touched on backwards-compatibility issues, which lead to a discussion of the
+hash-table changes in recent Perl versions.</p>
+      <p>This lead to Wade doing an impromptu presentation on how hash-tables work, why
+the <acronym title="Denial Of Service">DOS</acronym> attack on hash-tables
+existed and why the Perl 5 Porters group had to change Perls hashes.</p>
+      <p>The discussion went further into more complicated data structures (arrays of
+arrays, arrays of hashes, etc.) and autovivification. We also discussed issues
+of computational complexity relating to use of arrays and hashes.</p>
+      <p>Fraser Baker asked a question about the intersection of shebang lines, Apache,
+and Windows.  So ideas were proprosed, but no one had a compelling answer. We
+suggested he post to the mailing list.</p>
+      <p>Will Willis asked a debugging question involving long running, deeply nested
+code. He was looking for strategies to make using the debugger easier in those
+cases. We suggested using print statements to help get an idea of the shape of
+the problem and then conditional breakpoints to shorten the manual work of
+getting to the interesting part of the code. Chris also suggested using the
+<code>PERLDB_OPTS</code> environment variable to turn on tracing with extra
+information.</p>
+      <p>All in all, the discussion seemed pretty lively and a good time was had.</p>
+      <p>We had 6 people attending this month. As always, we'd like to thank
+        cPanel, Inc. for providing the meeting space and food for the group.</p>
+[% END -%]
