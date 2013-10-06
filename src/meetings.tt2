@@ -38,8 +38,8 @@
     <h2 class="subhead">Upcoming Meetings</h2>
 
     <dl>
-        <dt>October 10, 2013</dt>
-        <dd>TBD</dd>
+        <dt>October 17, 2013</dt>
+        <dd>A JSON parser regex with brian d foy</dd>
 
         <dt>November 14, 2013</dt>
         <dd>TBD</dd>
