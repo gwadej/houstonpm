@@ -1,0 +1,30 @@
+[% WRAPPER writeup_wrap.tt2
+    title='Summary of October 2013 Presentation'
+    year=2013
+%]
+      <h2 class="subhead">A JSON parser regex</h2>
+      <p>Perl regular expressions have become very powerful over the years, adding more
+and more abilities. When looking to explain some advanced regex features for
+<em>Mastering Perl</em>, brian decided to use an example written by Randal
+Schwartz. Randal's code parses a <acronym title="JavaScript Object Notation">JSON</acronym>
+expression, replacing it with the parsed data structure. (See the <a
+href="http://www.perlmonks.org/?node_id=995856">original code</a> to see how
+Randal described it.)</p>
+      <p>brian used this expression as a jumping off point to show the advanced regex
+features in a set of simpler problems. Once the pieces were explained, he could
+go back to the original expression and show how it works.</p>
+      <p>This was a great example of seeing a Perl expert explain some of the powerful
+features of the language. The most of the audience was able to follow the
+explanation and understand how it worked.</p>
+      <p>After the main presentation, brian took questions from the audience. There was
+some discussion of other tools for data serialization and a few other topics.
+The group then adjourned to the <em>Stag's Head</em> for drinks and more
+discussion.</p>
+      <p>We also attempted to screencast this meeting. Despite some initial technical
+issues, the video did turn out reasonably well and is available at <a
+href="https://www.youtube.com/watch?v=iJW1bDduk-U">YouTube</a>. </p>
+      <p>brian has also made his <a href="https://www.slideshare.net/brian_d_foy/json-regex">slides</a>
+available at SlideShare.</p>
+      <p>We had 14 people attending this month. As always, we'd like to thank
+        cPanel, Inc. for providing the meeting space and food for the group.</p>
+[% END -%]

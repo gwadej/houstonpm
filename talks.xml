@@ -1139,4 +1139,14 @@ help session to answer questions and go over Perl basics.</abstract>
     </topic>
   </talk>
 
+  <talk num="1310">
+    <date>October 2013</date>
+    <topic href="/talks/2013talks/1310Talk/index.html">
+      <title>A JSON parser regex</title>
+      <presenter>brian d foy</presenter>
+      <abstract>brian d foy explains some of Perl's more powerful regular expression features using
+a regex written by Randal Schwartz to parse JSON.</abstract>
+    </topic>
+  </talk>
+
 </talklist>
