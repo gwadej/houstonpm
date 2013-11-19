@@ -1149,4 +1149,17 @@ a regex written by Randal Schwartz to parse JSON.</abstract>
     </topic>
   </talk>
 
+  <talk num="1311">
+    <date>November 2013</date>
+    <topic href="/talks/2013talks/1311Talk/index.html">
+      <title>Bitcoin Payment Processing</title>
+      <presenter>J. D. Lightsey</presenter>
+      <abstract>Bitcoin is a cryptocurrency based on a 2008 paper by a pseudonymous developer.
+The creation an use of bitcoins is decentralized and based on strong
+cryptography. JD gives a high level explanation of how bitcoins work and how
+they are used. Unlike most information you see on-line, JD also covers some of
+the attacks that are possible against bitcoin.</abstract>
+    </topic>
+  </talk>
+
 </talklist>

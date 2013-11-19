@@ -1,0 +1,25 @@
+[% WRAPPER writeup_wrap.tt2
+    title='Summary of November 2013 Presentation'
+    year=2013
+%]
+      <h2 class="subhead">Bitcoin Payment Processing</h2>
+      <p> JD started his presentation with the kind of background material that you can
+find almost anywhere about bitcoin. He explained a bit about the mechanisms for
+creating and using bitcoin. Unlike most on-line information, JD also discussed
+some of the (currently theoretical) attacks that can be made against bitcoin.
+Some of these attacks have been successfully applied to systems that are similar
+to bitcoin.</p>
+      <p>He went on to discuss exchanges, bitcoin mining, wallets, and various sites for
+using bitcoin.</p>
+      <p>Toward the end of the meeting, he introduced the command line utilities for
+bitcoin. He showed how they could be used to extract information from your
+wallet.  He also described the <abbr title="Application Programming
+Interface">API</abbr>. This interface supplies information in <acronym
+title="JavaScript Object Notation">JSON</acronym>, which is quite convenient
+for web applications. Finally, he discussed a few Perl modules.</p>
+      <p>The group was very interested. Several people asked questions, quite often
+digging in to detail to make certain they understood.</p>
+      <p>The notes for JD's talk are <a href="bitcoin_payments.txt">available</a>.</p>
+      <p>We had 11 people attending this month. As always, we'd like to thank
+        cPanel, Inc. for providing the meeting space and food for the group.</p>
+[% END -%]

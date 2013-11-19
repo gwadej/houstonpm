@@ -1,0 +1,627 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+* Bitcoin Payment Processing
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+** Crypto currencies
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+** Bitcoin specification
+
+*** Based on a 2008 paper by a developer under the pseudonym "Satoshi Nakamoto"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*** Core concepts
+
+**** Decentralized
+**** Secure
+**** Auto-correcting
+**** Irreversible
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+** How it works
+
+*** P2P network
+*** Blockchain
+**** Block headers
+**** Transactions
+*** Wallets
+*** Miners
+*** Pools
+*** Exchanges
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+** Mining
+
+*** Get the current blockchain
+*** Append new VALID transactions
+*** sha256(sha256(nonce))
+*** meets difficulty requirements
+*** Append mining payout to new block
+*** Share
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+** Automatic Tuning
+
+*** Difficulty adjusts at intervals automatically
+*** Difficulty computed for 10 minute transaction processing
+*** Block rewards decrease predictably
+*** Transaction fees
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+** Attacks
+
+*** 50%
+*** flooding
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+** Pools
+
+*** Predictability
+*** Payout schemes
+*** 50%?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+** Exchanges
+
+*** Speculation
+*** Currency conversion
+*** Funding
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+** Exchange alternatives
+
+*** localbitcoins
+*** sell services
+*** physical bitcoins
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+** The wallet
+
+*** Blockchain sync
+*** Blockchain validation
+*** Transaction validation
+*** Address generator
+*** Transaction generator
+*** Mining work generator
+*** Miner
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+** Transaction flow
+
+*** Receiver generates address and communicates it to sender
+*** Sender generates transactions from existing addresses to destination
+*** Sender broadcasts transaction
+*** Block solved
+*** Network confirms block
+*** Receiver verifies address has funds
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+** Managing a wallet
+
+*** accounts
+*** addresses
+*** transactions
+*** validated blockchain
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+** Upsides to your own wallet
+
+*** 0 fees
+*** Privacy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+** Downsides to your own wallet
+
+*** Security
+*** Resources
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+** Wallet alternatives
+
+*** partial blockchain
+*** 3rdparty wallet
+*** Store in funded account
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+** Bitcoin command line
+
+*** getinfo
+*** listaccounts
+*** listtransactions
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+** JSON API
+
+*** getinfo
+*** listaccounts
+*** listtransactions
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+** Perl modules
+
+*** Finance::Bitcoin
+*** Exchange APIs
+*** Catalyst::Helper::Model::Bitcoin
