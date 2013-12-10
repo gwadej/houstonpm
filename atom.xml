@@ -1,5 +1,19 @@
 <?xml version="1.0" encoding="us-ascii"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><id>tag:houston.pm.org,2011-03:news</id><title type="html">Houston.pm: What&#39;s New</title><link href="http://houston.pm.org/"/><link href="http://houston.pm.org/atom.xml" rel="self"/><updated>2013-11-19T19:23:08Z</updated><author><name>G. Wade Johnson</name></author><category term="news"/><generator uri="http://search.cpan.org/dist/XML-Atom-SimpleFeed/" version="0.86">XML::Atom::SimpleFeed</generator><entry><published>2013-11-19T19:23:08Z</published><link href="http://houston.pm.org/talks/2013talks/1311Talk/index.html"/><content type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><p>Bitcoin is a cryptocurrency based on a 2008 paper by a pseudonymous developer.
+<feed xmlns="http://www.w3.org/2005/Atom"><id>tag:houston.pm.org,2011-03:news</id><title type="html">Houston.pm: What&#39;s New</title><link href="http://houston.pm.org/"/><link href="http://houston.pm.org/atom.xml" rel="self"/><updated>2013-12-10T18:10:01Z</updated><author><name>G. Wade Johnson</name></author><category term="news"/><generator uri="http://search.cpan.org/dist/XML-Atom-SimpleFeed/" version="0.86">XML::Atom::SimpleFeed</generator><entry><published>2013-12-10T18:02:06Z</published><content type="html">&lt;div&gt;&lt;p&gt;In 2011, while working for ByWater Solutions, Ruth Bavousett converted over
+fifty libraries from diverse legacy library information system packages to
+&lt;a href=&#34;http://koha-community.org&#34;&gt;Koha&lt;/a&gt;. In this talk, she talks not only about
+the code she wrote to handle this massive undertaking, but the mindset and
+processes necessary for consistent high-quality results not only for
+herself, but for teammates who followed in her footsteps.&lt;/p&gt;
+
+&lt;p&gt;As usual, we&#39;ll meet at the cPanel offices, 3131 W. Alabama, between 6:30 and 7.
+Around 7, we&#39;ll go up to the training room for the meeting.&lt;/p&gt;
+&lt;/div&gt;</content><updated>2013-12-10T18:02:06Z</updated><id>tag:houston.pm.org.2011-03:announce-20131210-13628</id><title>January Meeting: Migrate ALL THE THINGS: Large Scale Library Data Manipulations with Perl</title></entry><entry><published>2013-12-10T17:48:43Z</published><content type="html">&lt;div&gt;&lt;p&gt;For December, we are going to do a social meeting at a different location.
+We&#39;ll meet at the Empire Cafe, 1732 Westheimer at 7pm, on Thursday, Dec. 12.
+There should be plenty of parking behind the building.&lt;/p&gt;
+
+&lt;p&gt;Expect lots of socializing and a little Perl.&lt;/p&gt;
+&lt;/div&gt;</content><title>Houston.pm December Social Meeting</title><id>tag:houston.pm.org.2011-03:announce-20131210-9637</id><updated>2013-12-10T17:48:43Z</updated></entry><entry><published>2013-11-19T19:23:08Z</published><link href="http://houston.pm.org/talks/2013talks/1311Talk/index.html"/><content type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><p>Bitcoin is a cryptocurrency based on a 2008 paper by a pseudonymous developer.
 The creation an use of bitcoins is decentralized and based on strong
 cryptography. JD gives a high level explanation of how bitcoins work and how
 they are used. Unlike most information you see on-line, JD also covers some of
