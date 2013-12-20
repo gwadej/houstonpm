@@ -6,14 +6,14 @@
 
     <p>Houston.pm is a group of people who use the Perl programming language.
       Some of us use Perl in our jobs (officially or unofficially), others just
-      like to play with the
-      language.</p>
+      like to play with the language.</p>
 
     <p>We have all level of members from complete novices to very experienced
       Perl programmers working in Perl daily and more than willing to share
       their expertise.</p>
 
     <h2 class="subhead">Our Goals</h2>
+
     <p>The Houston branch of the <a href="http://www.pm.org/">Perl
       Mongers</a> has several goals. In no particular order, our goals
       include:</p>
@@ -35,6 +35,7 @@
     </ul>
 
    <h2 class="subhead">Join Us</h2>
+
    <p>Unlike many groups, Houston.pm is pretty informal. Feel free to come to
      meetings to meet us, learn more about Perl, and share your knowledge and
      experience with Perl.</p>
@@ -43,8 +44,23 @@
       <a href="http://mail.pm.org/mailman/listinfo/houston/">Houston.pm Mailing
       List</a> page and fill out the form to subscribe.</p>
 
-    <p>If you feel like contributing, volunteer to give a presentation. Any
-      topic that may be of interest to Perl programmers is welcome.</p>
+    <p>If mailing lists aren't your thing, we also announce the meetings
+      on the <a href="http://www.meetup.com/Houston-Perl-Meetup/">Houston Perl Meetup</a> page
+      and the <a href="https://plus.google.com/b/104331489743076486517/104331489743076486517/posts">Houston.pm
+      Google+</a> page.
+
+    <p>There is also a Houston.pm <a href="https://twitter.com/houstonpm">Twitter account</a>.
+
+    <p>If you feel like contributing, you can volunteer to give a presentation
+      or lead a discussion. Any topic that may be of interest to Perl
+      programmers is welcome. You don't have to be an expert in the topic, we
+      often have presentations just to see other views of a topic.</p>
+
+    <p>If you are uncomfortable with public speaking, Houston.pm is a good
+      place to start. The group is friendly and doesn't heckle. Several of our
+      members have also used a technical meeting to practice a talk before
+      presenting it elsewhere. The group has been happy to provide input and
+      suggestions to improve if you ask for it.</p>
 
     <p>Bring your curiosity, questions, problem code, or expertise to share.</p>
 [% END -%]
