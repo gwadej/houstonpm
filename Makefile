@@ -26,10 +26,10 @@ dirs:
 	if [ ! -d ${OUTDIR}/talks ]; then mkdir ${OUTDIR}/talks; fi
 
 base: dirs convert
-	cp -r src/* ${OUTDIR}
-	cp images/feed-icon-10x10.png ${OUTDIR}
+	cp -a src/* ${OUTDIR}
+	cp -a images/feed-icon-10x10.png ${OUTDIR}
 	find ${OUTDIR} -type f -name '*.tt2' -exec rm -rf {} \; -prune
-	cp atom.xml ${OUTDIR}
+	cp -a atom.xml ${OUTDIR}
 
 ${OUTDIR}/talks/mostrecent.html: talks.xml mostrecent.xsl templates/mostrecent.tt2
 	bin/talks.pl --style=mostrecent.xsl --template=mostrecent.tt2 talks.xml > $@
@@ -74,10 +74,10 @@ convert:
 	ttree --define end_year=2013 -f _ttreerc
 
 install:
-	cp -R ${OUTDIR}/* ${INSTALLDIR}
+	cp -a ${OUTDIR}/* ${INSTALLDIR}
 
 publish:
-	cp -R ${OUTDIR}/* ${PUBLISHDIR}
+	cp -a ${OUTDIR}/* ${PUBLISHDIR}
 
 clean:
 	find . -name '*.bck' -exec rm {} \;
