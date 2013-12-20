@@ -24,13 +24,13 @@
       page could be moved to SourceForge or some other collaborative development
       environment at the discretion of the Project Lead.</p>
 
-    <h3 class="subsub"/>Active Projects</h3>
+    <h3 class="subsub">Past Projects</h3>
     <ul>
        <li><a href="/projects/delcom_vsi/index.html">Delcom VSI/LibUSB project</a></li>
        <li><a href="/projects/net_jabber_bot/index.html">Net::Jabber::Bot project</a></li>
     </ul>
 
-    <h3 class="subsub"/>Suggested Projects</h3>
+    <h3 class="subsub">Suggested Projects</h3>
     <ul>
        <li>Sudoku solver in Perl</li>
        <li>Bayou-Cam project</li>
