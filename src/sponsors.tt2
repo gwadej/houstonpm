@@ -1,0 +1,15 @@
+[% WRAPPER main_wrap.tt2
+    title='Houston Perl Mongers - Sponsors'
+    curr_page='meetings'
+%]
+    <h1 class="subhead">Sponsors</h1>
+
+    <p>For the last few years, the Houston.pm meetings have been sponsored by
+      <a href="http://cpanel.net/">cPanel, Inc.</a> They have generously
+      provided a location for our meetings at <a href="http://maps.google.com/maps?q=3131+W.+Alabama,+Houston,+TX&hl=en&z=17">3131 W. Alabama St.</a>,
+      with audio/visual equipment and internet access for the meeting. They have also
+      provided free pizza.</p>
+
+    <p>Houston.pm and the Perl community in Houston cannot really thank cPanel, Inc.
+      and CEO J. Nick Koston enough for this generous support.</p>
+[% END -%]

@@ -12,12 +12,6 @@
       feel free to email the list or the group lead. You don't have to wait for
       the request for presentations.</p>
 
-    <p>The technical meetings have been held at
-      <a href="http://maps.google.com/maps?q=3131+W.+Alabama,+Houston,+TX&hl=en&z=17">3131 W. Alabama St.</a>.
-      We meet in the lobby on the first floor above ground between 6:30pm and 7pm. When everyone
-      has arrived, we go to the conference room. Parking is free on the
-      upper level of the garage.</p>
-
     <p>Our technical meetings usually consist of a presentation, with plenty of
       audience participation (but no heckling). Before and after the
       presentation, we discuss various topics that are of interest to Perl
@@ -28,6 +22,14 @@
     <p>People are encouraged to bring problems they are working on to the
       meetings. If you need a fresh set of eyes on a Perl problem, there
       are probably a few people at each meeting who can help.</p>
+
+    <p>For the last few years, our meetings have been sponsored by <a
+      href="http://cpanel.net/">cPanel, Inc.</a> So, the technical meetings
+      have been held at
+      <a href="http://maps.google.com/maps?q=3131+W.+Alabama,+Houston,+TX&hl=en&z=17">3131 W. Alabama St.</a>.
+      We meet in the lobby on the first floor above ground between 6:30pm and 7pm. When everyone
+      has arrived, we go to the conference room. Parking is free on the
+      upper level of the garage.</p>
 
     <p>If there is no topic for a given month, we normally have a <a
       href="social_meeting.html">social meeting</a> instead.</p>
