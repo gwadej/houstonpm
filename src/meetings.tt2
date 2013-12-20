@@ -4,37 +4,19 @@
 %]
     <h1 class="subhead">Monthly Meetings</h1>
 
-    <p>We meet the second Thursday of each month. Houston.pm meetings have
-    split into technical meetings and social meetings. The technical
-    meetings have been at
-      <a href="http://maps.google.com/maps?q=3131+W.+Alabama,+Houston,+TX&hl=en&z=17">3131 W. Alabama St.</a>.
-      We meet in the lobby on the first floor above ground between 6:30pm and 7pm. When everyone
-      has arrived, we go to the conference room. Parking is free on the
-      upper level of the garage.</p>
-
-      <p>Our most recent social meetings have been at <a href="http://blacklabradorpub.com/">The
-          Black Labrador</a>.
-      Our social meetings usually involve some technical discussion.</p>
-
-    <p>Houston.pm is also on Meetup.com as <a href="http://www.meetup.com/Houston-Perl-Meetup/">Houston Perl Meetup</a>.
-    We're using this site to help bring more people to Houston.pm. We have
-    also been running some technical meetings with DimDim for remote access.</p>
-
-    <p>Our technical meetings usually consisted of a presentation, with plenty
-      of audience participation. Before and after the presentation, we discuss
-      various topics that are at least vaguely related to Perl. We have also
-      had presentations on projects that various members were working on.</p>
-
-    <p>People are encouraged to bring problems they are working on to the
-      meetings. If you need a fresh set of eyes on a Perl problem, there
-      are probably a few people at each meeting who can help.</p>
-
-    <p>We have also had group programming projects. The idea was to spend
-      a few months following a programming project by some members of the
-      group. Once the project gets past the experiment and prototype phase,
-      we stop working on it in the meetings. Some of the resulting code is
-      now on CPAN, and more is in development.</p>
-
+    <p>We meet the second Thursday of each month, starting around 7pm and ending
+      around 9pm. Houston.pm meetings have split into <a
+      href="technical_meetings.html">technical meetings</a> and
+      <a href="social_meetings.html">social meetings</a>.</p>
+      
+    <p>The meetings are announced on the Houston.pm mailing list, on
+      the <a href="http://www.meetup.com/Houston-Perl-Meetup/">Houston Perl
+      Meetup</a> page, and on the <a
+      href="https://plus.google.com/b/104331489743076486517/104331489743076486517/posts">Houston.pm
+      Google+</a> page, in our <a href="http://houston.pm.home/atom.xml">Atom
+      feed</a>. We try to announce the meetings at least a few weeks in
+      advance, but that is not guaranteed.</p>
+      
     <h2 class="subhead">Upcoming Meetings</h2>
 
     <dl>

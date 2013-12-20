@@ -1,0 +1,24 @@
+[% WRAPPER main_wrap.tt2
+    title='Houston Perl Mongers - Social Meetings'
+    curr_page='meetings'
+%]
+    <h2 class="subhead">Social Meetings</h2>
+
+    <p>If no one is interested in presenting for a <a
+      href="technical_meetings.html">technical meeting</a> or if we have a
+      special guest, we schedule a social meeting at some restaurant, pub, etc.
+      Our social meetings usually involve some technical discussion. The main
+      criteria we use for trying to pick a spot are:</p>
+
+    <ul>
+        <li>Quiet enough for people to socialize</li>
+        <li>Ability to handle a group of 10-20 on a Thursday night</li>
+        <li>Some kind of food</li>
+        <li>Beer</li>
+        <li>Parking</li>
+    </ul>
+
+    <p>For a long while, our social meetings were consistently held at
+      <a href="http://blacklabradorpub.com/">The Black Labrador</a>. Lately, we
+      have been branching out into other restaurants or pubs nearby.</p>
+[% END -%]

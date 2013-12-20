@@ -6,11 +6,11 @@
       <p>November meeting notes are on-line.</p>
       <h1 class="heading">Next Meetings</h1>
         <dl>
-            <dt>December 12, 2013</dt>
-            <dd>Social Meeting at Empire Cafe</dd>
-
             <dt>January 9, 2013</dt>
             <dd><em>Migrate ALL THE THINGS: Large Scale Library Data Manipulations with Perl</em> with Ruth Bavousett</dd>
+
+            <dt>February 13, 2013</dt>
+            <dd>TBD</dd>
         </dl>
     </div>
 
@@ -19,16 +19,35 @@
     international Perl User Groups. We discuss and educate people on the Perl
     programming language, as well as projects and modules written in Perl.</p>
 
-    <p>We meet on the second Thursday of each month in the lobby of
+    <p>We meet on the second Thursday of each month. The meeting officially
+      starts at 7pm and runs until around 9pm. Meetings are open to the public.
+      We don't have any <em>official</em> membership or dues or anything like
+      that.</p>
+
+    <p>For technical meetings, we meet in the lobby of
       <a href="http://maps.google.com/maps?q=3131+W.+Alabama,+Houston,+TX&hl=en&z=17">3131 W. Alabama St.</a>,
       starting sometime between 6:30pm and 7pm. Once everyone arrives, we
-      head upstairs to a conference room for the meeting.
-      Check the <a href="meetings.html">meetings</a> link for details.</p>
+      head upstairs to a conference room for the meeting.</p>
+
+    <p>We also have social meetings at some nearby restaurant or pub in some
+      months if there is no topic for a technical meeting.</p>
+
+    <p>Check the <a href="meetings.html">meetings</a> link for details.</p>
 
     <p>Our meeting attendance has always been highly variable. Recently,
      there have been 10-20 people at the meetings.</p>
 
-    <p>To join our mailing list, go to the
+    <h2 class="subhead">Follow Houston.pm</h2>
+
+    <p>Requests for presentations, meeting announcements, and general Perl
+    discussions happen on our mailing list. Join the list on the
       <a href="http://mail.pm.org/mailman/listinfo/houston/">Houston.pm Mailing
-      List</a> page and fill out the form to subscribe.</p>
+      List</a> page.</p>
+
+    <p>For those who don't follow mailing lists, we also make meeting
+      announcements on the <a href="http://www.meetup.com/Houston-Perl-Meetup/">Houston Perl Meetup</a> page
+      and the <a href="https://plus.google.com/b/104331489743076486517/104331489743076486517/posts">Houston.pm
+      Google+</a> page.
+
+    <p>There is also a Houston.pm <a href="https://twitter.com/houstonpm">Twitter account</a>.
 [% END %]
