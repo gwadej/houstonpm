@@ -71,6 +71,8 @@ suffix tt2=html
 #    depend index.html=mainpage,sidebar
 #    depend menu=menuitem,menubar
 # 
+depend *=main_wrap,main_menu,copyright
+depend index.html=index_wrap,main_menu,copyright
 
 #------------------------------------------------------------------------
 # The following options usually relate to a particular project so 

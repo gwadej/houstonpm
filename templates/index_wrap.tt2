@@ -17,7 +17,6 @@
 
   <ul class="menu" id="externlinks">
      <li class="head">External Resources</li>
-     <li><a href="https://plus.google.com/104331489743076486517" rel="publisher">Houston.pm on G+</a></li>
      <li><a href="http://padre.perlide.org/" title="perl editor">Perl IDE</a></li>
      <li><a href="http://blogs.perl.org/">Perl Blogs</a></li>
      <li><a href="http://ironman.enlightenedperl.org/">Planet Perl Iron Man</a></li>
@@ -28,6 +27,8 @@
      <li><a href="http://metacpan.org/">Meta CPAN</a></li>
      <li><a href="http://www.perl.org/">The Perl Directory</a></li>
      <li><a href="http://www.perl.com/">Perl.com</a></li>
+     <li><a href="http://perlmaven.com/">Perl Maven</a></li>
+     <li><a href="http://theperlhub.com/">The Perl Hub</a></li>
      <li class="head">News</li>
      <li><a href="http://perlbuzz.com/">Perl Buzz</a></li>
      <li><a href="http://perlbuzz.com/mechanix/">Mechanix</a></li>
@@ -39,6 +40,7 @@
      <li><a href="http://learn.perl.org/tutorials/">Perl tutorials</a></li>
      <li><a href="http://onyxneon.com/books/modern_perl/">Modern Perl Book</a></li>
      <li><a href="http://perlmaven.com/perl-tutorial">Perl Maven Tutorial</a></li>
+     <li><a href="http://perlmeme.org/">Perl Meme</a></li>
   </ul>
   </div>
 

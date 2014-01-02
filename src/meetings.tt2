@@ -20,13 +20,10 @@
     <h2 class="subhead">Upcoming Meetings</h2>
 
     <dl>
-        <dt>December 12, 2013</dt>
-        <dd>Social Meeting at Empire Cafe</dd>
-
-        <dt>January 9, 2013</dt>
+        <dt>January 9, 2014</dt>
         <dd><em>Migrate ALL THE THINGS: Large Scale Library Data Manipulations with Perl</em> with Ruth Bavousett</dd>
 
-        <dt>February 13, 2013</dt>
+        <dt>February 13, 2014</dt>
         <dd>TBD</dd>
     </dl>
 [% END -%]
