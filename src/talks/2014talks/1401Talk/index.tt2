@@ -1,0 +1,29 @@
+[% WRAPPER writeup_wrap.tt2
+    title='Summary of January 2014 Presentation'
+    year=2014
+%]
+      <h2 class="subhead">Migrate ALL THE THINGS</h2>
+      <p>
+Ruth worked for a couple of decades helping libraries (and librarians) moving
+data from various library information systems into the <a
+href="http://koha-community.org">Koha</a> Library Software. In the process of
+doing these conversions, she ended up using Perl to extract and munge data from
+a number of library systems.</p>
+      <p>In this talk, Ruth gave an overview of the kinds of information systems
+libraries use. She discussed some of the issues with converting from one system
+to another.  She also gave a bit more insight into what real librarians
+actually do (hint: it's not just about shelving books).</p>
+      <p>Along the way, Ruth developed a number of tools in Perl that helped her make
+these conversions.</p>
+      <p>The talk sparked quite a few questions and a lively discussion.</p>
+
+      <ul>
+        <li>The <a href="Migrate%20ALL%20THE%20THINGS.pdf">slides</a> from the talk.</li>
+        <li>The <a href="http://youtu.be/srdEXEwdupY">talk</a> on YouTube.</li>
+        <li><a href="http://git.hiruthie.net/?p=koha_migration_tools.git;a=summary">Git</a>
+            repo for the code Ruth discussed.</a></li>
+      </ul>
+
+      <p>We had 13 people attending this month. As always, we'd like to thank
+        cPanel, Inc. for providing the meeting space and food for the group.</p>
+[% END -%]

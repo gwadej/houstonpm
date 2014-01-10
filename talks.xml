@@ -1162,4 +1162,16 @@ the attacks that are possible against bitcoin.</abstract>
     </topic>
   </talk>
 
+  <talk num="1401">
+    <date>January 2014</date>
+    <topic href="/talks/2014talks/1401Talk/index.html">
+      <title>Migrate ALL THE THINGS</title>
+      <presenter>D Ruth Bavousett</presenter>
+      <abstract>
+Ruth gives an overview of Library information systems and the work she did in migrating libraries
+from various systems to the open source Koha system. Perl's abilities to manipulate text-based
+data efficiently was critical to this work.</abstract>
+    </topic>
+  </talk>
+
 </talklist>
