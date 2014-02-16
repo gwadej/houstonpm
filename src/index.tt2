@@ -6,8 +6,9 @@
       <p>January meeting notes are on-line.</p>
       <h1 class="heading">Next Meetings</h1>
         <dl>
-            <dt>February 13, 2014</dt>
-            <dd><em>Pseudo-Random Number Generation - How it Works, What the CIA Knows, and What Options Exist in Perl?</em> by Robert Stone</dd>
+            <dt>March 13, 2014</dt>
+            <dd><em>Indexing Stuff &amp; Things with Sphinx and Perl</em> with Brett Estrade and<br/>
+                <em>SPAM Handling with Mail::SpamAssassin</em> with Todd Rinaldo at cPanel, Inc.</dd>
         </dl>
     </div>
 

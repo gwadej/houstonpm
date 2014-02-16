@@ -1,0 +1,32 @@
+[% WRAPPER writeup_wrap.tt2
+    title='Summary of February 2014 Presentation'
+    year=2014
+%]
+      <h2 class="subhead">Pseudo-Random Number Generation - How it Works, What the CIA Knows, and What Options Exist in Perl?</h2>
+      <p>
+Generation of Pseudo-Random Number Sequences is a wide and interesting topic.
+Much more than could be completely covered in an hour. Robert Stone did a very
+good job of covering enough to give a good flavor of the topic, without
+overwhelming the audience.</p>
+      <p>In the process, Robert discussed the difference between true randomness and what
+can be generated on a computer. He discussed the basics of PRNGs, focusing a
+bit on the Perl aspects. He also gave a medium-high-level overview of the
+recent disclosures about the backdoored random number generator that has been
+making news. </p>
+      <p>In the final portion of the talk, Robert covered some best practices for the
+generation of pseudo-random numbers in Perl. He discussed some of the modules
+available and gave some recommendations.</p>
+      <p>Several people in the audience asked probing questions. Robert's answers showed
+very strong knowledge of this area. The audience remained engaged through the
+entire talk.</p>
+
+    <ul>
+      <li>The <a href="Psuedo%20Random%20Number%20Generation.pptx">slides</a>
+        for the talk</li>
+      <li>The <a href="https://github.com/drzigman/perl-random">source code</a>
+        used in the talk.</li>
+    </ul>
+
+      <p>We had 17 people attending this month. As always, we'd like to thank
+        Hostgator LLC for providing the meeting space and food for the group.</p>
+[% END -%]

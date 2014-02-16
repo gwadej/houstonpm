@@ -1174,4 +1174,19 @@ data efficiently was critical to this work.</abstract>
     </topic>
   </talk>
 
+  <talk num="1402">
+    <date>February 2014</date>
+    <topic href="/talks/2014talks/1402Talk/index.html">
+      <title>Pseudo-Random Number Generation - How it Works, What the CIA Knows, and What Options Exist in Perl?</title>
+      <presenter>Robert Stone</presenter>
+      <abstract>Random numbers are important in many areas of computing. A very important
+approach to generating random number sequences is Pseudo-Random Number
+Generators. Robert Stone gives an overview of Pseudo-Random Number Generation,
+with some explanation of Cryptographically Secure Pseudo-Random Number
+Generators.  He also discusses some of the ways this can go wrong, including
+examples from recent security news. He finishes up with information about Perl
+modules that can be used for generating Pseudo-Random Number Sequences.</abstract>
+    </topic>
+  </talk>
+
 </talklist>
