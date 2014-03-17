@@ -1,0 +1,37 @@
+[% WRAPPER writeup_wrap.tt2
+    title='Summary of March 2014 Presentation'
+    year=2014
+%]
+      <h2 class="subhead">Introducing Erlang</h2>
+      <p>Mark Allen began with a <a href="https://www.erlang-solutions.com/downloads/download-erlang-otp">url
+to download Erlang</a>, so that everyone would be able
+to try out the language for themselves later in the evening.</p>
+      <p>While people were downloading and installing Erlang, Mark gave an overview of
+the language discussing positive and negative points of the language. The audience
+was quite engaged, asking questions ranging from tooling, ability to connect to
+libraries in other languages, and comparisons of Erlang's concurrency model with
+other languages.</p>
+      <p>After giving the group a taste of why you might be interested in Erlang, Mark
+posed a relatively simple programming challenge: FizzBuzz. He gave some basic
+syntax and concepts needed to solve the problem and told us how to work with
+the Erlang environment. Although most of the group found the syntax and approach
+challenging, almost no one wanted to give up and have Mark show us the solution.</p>
+      <p>Although not a Perl talk, this presentation was a really good <em>stretch your
+mind</em> exercise. Learning a language very different from the ones you already
+know is good for your programming ability. Erlang appears to be a good exercise
+for those who are more used to standard dynamic languages.</p>
+    <p>Mark has provided several resources that complement the talk:</p>
+    <ul>
+        <li>The <a href="Introducing_Erlang.pdf">slides</a> for the talk</li>
+        <li>The <a href="http://introducingerlang.com/">Introducing Erlang</a>
+            website</li>
+        <li>The <a href="https://github.com/introducingerlang/todolist">github
+            repo</a> for a second Erlang application</li>
+    </ul>
+
+    <p>The presentation was recorded as a <a href="https://plus.google.com/events/ck5golj1fauavj5br0k1goakrc8">Google Hangout</a> if you would like to
+      see the whole presentation.</p>
+
+      <p>We had 15 people attending this month. As always, we'd like to thank
+        cPanel, Inc. for providing the meeting space and food for the group.</p>
+[% END -%]

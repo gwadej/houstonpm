@@ -20,11 +20,13 @@
     <h2 class="subhead">Upcoming Meetings</h2>
 
     <dl>
-        <dt>March 13, 2014</dt>
-        <dd><em>Indexing Stuff &amp; Things with Sphinx and Perl</em> with Brett Estrade and<br/>
-            <em>SPAM Handling with Mail::SpamAssassin</em> with Todd Rinaldo at cPanel, Inc.</dd>
-
         <dt>April 10, 2014</dt>
+        <dd>TBD</dd>
+
+        <dt>May 8, 2014</dt>
+        <dd>TBD</dd>
+
+        <dt>June 12, 2014</dt>
         <dd>TBD</dd>
     </dl>
 [% END -%]

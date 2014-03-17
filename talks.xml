@@ -1189,4 +1189,16 @@ modules that can be used for generating Pseudo-Random Number Sequences.</abstrac
     </topic>
   </talk>
 
+  <talk num="1403">
+    <date>March 2014</date>
+    <topic href="/talks/2014talks/1403Talk/index.html">
+      <title>Introducing Erlang</title>
+      <presenter>Mark Allen</presenter>
+      <abstract>Mark Allen gave a presentation intended to help people with no experience with
+Erlang up to the point of having written a simple Erlang program in one hour.
+Although it took a little longer than that, the audience got some pretty good
+insight into this fascinating language.</abstract>
+    </topic>
+  </talk>
+
 </talklist>

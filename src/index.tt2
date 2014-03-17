@@ -3,12 +3,11 @@
 
     <div id="sidebar">
         <h1 class="heading">What's New <a href="atom.xml"><img style="border:0;float:right;" src="feed-icon-10x10.png" /></a></h1>
-      <p>January meeting notes are on-line.</p>
+      <p>March meeting notes are on-line.</p>
       <h1 class="heading">Next Meetings</h1>
         <dl>
-            <dt>March 13, 2014</dt>
-            <dd><em>Indexing Stuff &amp; Things with Sphinx and Perl</em> with Brett Estrade and<br/>
-                <em>SPAM Handling with Mail::SpamAssassin</em> with Todd Rinaldo at cPanel, Inc.</dd>
+            <dt>April 10, 2014</dt>
+            <dd>TBD</dd>
         </dl>
     </div>
 
