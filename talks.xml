@@ -788,7 +788,7 @@
       <title>Programming Paradigms in Perl</title>
       <presenter>G. Wade Johnson</presenter>
       <abstract>Wade introduced a few of the major programming paradigms
-          and explained how the relate to Perl. There were a few examples
+          and explained how they relate to Perl. There were a few examples
           and a fair bit of discussion.</abstract>
     </topic>
   </talk>
@@ -954,7 +954,7 @@ was originally presented at <acronym title="Yet Another Perl Conference">YAPC</a
     <topic href="/talks/2012talks/1201Talk/index.html">
       <title>Perl Object?</title>
       <presenter>Nicolas Rochelemagne</presenter>
-      <abstract>Nicolas presented an overview of object orientd programming in Perl. After
+      <abstract>Nicolas presented an overview of object oriented programming in Perl. After
 covering the basics, he surveyed the different Perl modules that provide
 support for OO in Perl.</abstract>
     </topic>
