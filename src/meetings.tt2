@@ -8,7 +8,7 @@
       around 9pm. Houston.pm meetings have split into <a
       href="technical_meetings.html">technical meetings</a> and
       <a href="social_meetings.html">social meetings</a>.</p>
-      
+
     <p>The meetings are announced on the Houston.pm mailing list, on
       the <a href="http://www.meetup.com/Houston-Perl-Meetup/">Houston Perl
       Meetup</a> page, and on the <a
@@ -16,12 +16,12 @@
       Google+</a> page, in our <a href="http://houston.pm.home/atom.xml">Atom
       feed</a>. We try to announce the meetings at least a few weeks in
       advance, but that is not guaranteed.</p>
-      
+
     <h2 class="subhead">Upcoming Meetings</h2>
 
     <dl>
         <dt>April 10, 2014</dt>
-        <dd>TBD</dd>
+        <dd>Beginning Moose with Daniel Culver</dd>
 
         <dt>May 8, 2014</dt>
         <dd>TBD</dd>
