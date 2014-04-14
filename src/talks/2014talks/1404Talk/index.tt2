@@ -1,0 +1,27 @@
+[% WRAPPER writeup_wrap.tt2
+    title='Summary of April 2014 Presentation'
+    year=2014
+%]
+      <h2 class="subhead">Beginning Moose</h2>
+      <p>
+Daniel Culver started by telling the group that he was mostly a beginner at
+Moose. This gave a unique viewpoint to the presentation. Instead of digging
+deeply into the features and capabilities of Moose, Daniel focused on what a
+new user of the module would need to know.</p>
+      <p>He started by showing how to build simple classes. He showed how to use
+subtypes and roles to make simple classes do more. He pointed out some pitfalls
+of the coercion system and recommended that beginners shy away from it.</p>
+      <p>After the main presentation, the question and answer session was quite lively.
+Several members of the audience were proficient in Moose, Object Oriented
+Programming, or both. We got multiple viewpoints and careful discussions of
+the trade-offs between Roles, inheritance, and aggregation. People with
+different levels of experience described their practices and the pitfalls
+they could see.</p>
+      <p>Overall, people seemed to have a great time.</p>
+
+      <p>The <a href="Beginning_Moose.pptx">slides</a> for the talk are available
+        as usual.</p>
+
+      <p>We had 10 people attending this month. As always, we'd like to thank
+        Hostgator for providing the meeting space and food for the group.</p>
+[% END -%]

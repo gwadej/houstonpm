@@ -1201,4 +1201,14 @@ insight into this fascinating language.</abstract>
     </topic>
   </talk>
 
+  <talk num="1404">
+    <date>April 2014</date>
+    <topic href="/talks/2014talks/1404Talk/index.html">
+      <title>Beginning Moose</title>
+      <presenter>Daniel Culver</presenter>
+      <abstract>Daniel gives a presentation describing Moose from the point of view of a
+beginner.</abstract>
+    </topic>
+  </talk>
+
 </talklist>

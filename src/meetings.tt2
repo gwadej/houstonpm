@@ -20,13 +20,13 @@
     <h2 class="subhead">Upcoming Meetings</h2>
 
     <dl>
-        <dt>April 10, 2014</dt>
-        <dd>Beginning Moose with Daniel Culver</dd>
-
         <dt>May 8, 2014</dt>
         <dd>TBD</dd>
 
         <dt>June 12, 2014</dt>
+        <dd>TBD</dd>
+
+        <dt>July 10, 2014</dt>
         <dd>TBD</dd>
     </dl>
 [% END -%]
