@@ -21,12 +21,12 @@
 
     <dl>
         <dt>May 8, 2014</dt>
-        <dd>TBD</dd>
+        <dd><em>Indexing Stuff & Things with Sphinx and Perl</em> with Brett Estrade at cPanel</dd>
 
         <dt>June 12, 2014</dt>
-        <dd>TBD</dd>
+        <dd>Potential<em>Markov Chains</em> with Eris Caffee at Hostgator</dd>
 
         <dt>July 10, 2014</dt>
-        <dd>TBD</dd>
+        <dd>TBD at cPanel</dd>
     </dl>
 [% END -%]
