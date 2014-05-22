@@ -20,13 +20,13 @@
     <h2 class="subhead">Upcoming Meetings</h2>
 
     <dl>
-        <dt>May 8, 2014</dt>
-        <dd><em>Indexing Stuff & Things with Sphinx and Perl</em> with Brett Estrade at cPanel</dd>
-
         <dt>June 12, 2014</dt>
-        <dd>Potential<em>Markov Chains</em> with Eris Caffee at Hostgator</dd>
+        <dd>TBD at Hostgator</dd>
 
         <dt>July 10, 2014</dt>
         <dd>TBD at cPanel</dd>
+
+        <dt>August 14, 2014</dt>
+        <dd>TBD at Hostgator</dd>
     </dl>
 [% END -%]

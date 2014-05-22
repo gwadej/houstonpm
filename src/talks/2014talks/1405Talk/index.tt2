@@ -1,0 +1,25 @@
+[% WRAPPER writeup_wrap.tt2
+    title='Summary of May 2014 Presentation'
+    year=2014
+%]
+      <h2 class="subhead">Indexing Stuff & Things with Sphinx and Perl</h2>
+      <p>Brett gave an overview of the work he has been doing with the Sphinx search
+server. The tool allows you to do a full-text search over data that is stored
+in a number of different stores, including SQL. The system consists of an
+indexer and a search server that are run separately. The server keeps all of
+the data indexes in memory for speed.</p>
+      <p>Searches use a subset of <acronym title="Structured Query Language">SQL</acronym>.
+All indexing is done internally using integers, so text is encoded as integers
+using a CRC32 operation. In addition to data queried from a SQL database, the
+tool supports getting data from other sources in the XMLPipe2 format.</p>
+      <p>The attendees were interested and asked several questions. This system works a
+little differently than more traditional approaches to searching data, so the
+questions served to clarify the unfamiliar points.</p>
+
+      <p>The <a href="Sphinx_and_Perl-Houston_Perl_Mongers-May_8th_2014.pdf">slides</a>
+        and <a href="https://www.youtube.com/watch?v=Ku4tIsxmeXw">hangout</a> are
+        available.</p>
+
+      <p>We had 13 people attending this month. As always, we'd like to thank
+        cPanel, Inc. for providing the meeting space and food for the group.</p>
+[% END -%]

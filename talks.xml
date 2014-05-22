@@ -1211,4 +1211,16 @@ beginner.</abstract>
     </topic>
   </talk>
 
+  <talk num="1405">
+    <date>May 2014</date>
+    <topic href="/talks/2014talks/1405Talk/index.html">
+      <title>Indexing Stuff &amp; Things with Sphinx and Perl</title>
+      <presenter>Brett Estrade</presenter>
+      <abstract>
+Brett introduced the Sphinx indexing/search system and showed how to use it
+from Perl. This system allows queries to be made against a local set of
+data.</abstract>
+    </topic>
+  </talk>
+
 </talklist>
