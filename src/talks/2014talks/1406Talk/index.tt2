@@ -1,0 +1,35 @@
+[% WRAPPER writeup_wrap.tt2
+    title='Summary of June 2014 Presentation'
+    year=2014
+%]
+      <h2 class="subhead">Perl and Bioinformatics</h2>
+      <p>Daniel Culver became interested in bioinformatics after finding a set of
+coding challenges in the subject on-line. Most of the problems were quite
+solvable using Perl's strengths.</p>
+      <p>In the talk, Daniel introduced the subject and gave a really quick overview of
+bioinformatics and a little biology. A fair amount of the work of
+bioinformatics revolves around manipulating and processing long strings of DNA
+bases. Perl's strong string processing support makes these chores quite easy.
+The discussion during the talk was quite lively. The discussion wandered through
+details of the biology and programming optimizations for the presented scripts.
+There was even a little talk of more advanced string processing algorithms
+from computer science.</p>
+      <p>The presentation introduced the <a href="http://rosalind.info/">Rosalind</a>
+project, where Daniel found the on-line challenges. He also mentioned the <a
+href="http://bioperl.org">BioPerl</a> project, which has been a force in
+bioinformatics for years.</p>
+      <p>To keep the discussion from getting too dry, there were also pictures of kittens
+and squirrels.</p>
+
+      <p>The resources for the presentation are available.</p>
+      <ul>
+        <li>The <a href="PerlMongers-Bioinformatics.pptx">slides</a> are
+          available as a PowerPoint deck.</li>
+        <li>The <a
+        href="https://github.com/dculver1986/PerlMongers_06_12_2014">files</a>
+        used in the presentation are available on GitHub.</p>
+      </ul>
+
+      <p>We had 10 people attending this month. Once again, we'd like to thank
+        HostGator, LLC. for providing the meeting space and food for the group.</p>
+[% END -%]

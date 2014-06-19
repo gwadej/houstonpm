@@ -1223,4 +1223,15 @@ data.</abstract>
     </topic>
   </talk>
 
+  <talk num="1406">
+    <date>June 2014</date>
+    <topic href="/talks/2014talks/1406Talk/index.html">
+      <title>Perl and Bioinformatics</title>
+      <presenter>Daniel Culver</presenter>
+      <abstract>Perl has turned out to be a popular choice for processing bioinformatics
+data. Daniel Culver introduced the group to subject and a set of challenges
+for anyone wishing to try their hand at the field.</abstract>
+    </topic>
+  </talk>
+
 </talklist>
