@@ -1234,4 +1234,15 @@ for anyone wishing to try their hand at the field.</abstract>
     </topic>
   </talk>
 
+  <talk num="1407">
+    <date>July 2014</date>
+    <topic href="/talks/2014talks/1407Talk/index.html">
+      <title>Reading Perl Code: Code Smells</title>
+      <presenter>G. Wade Johnson</presenter>
+      <abstract>Wade talked about both general Code Smells and Perl-specific Code Smells. The
+focs of the talk were on Perl code smells, since they are not documented
+elsewhere.</abstract>
+    </topic>
+  </talk>
+
 </talklist>

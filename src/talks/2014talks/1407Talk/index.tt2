@@ -1,0 +1,20 @@
+[% WRAPPER writeup_wrap.tt2
+    title='Summary of July 2014 Presentation'
+    year=2014
+%]
+      <h2 class="subhead">Reading Perl Code: Code Smells</h2>
+      <p>Wade started the talk by establishing a little context on reading code. After
+defining Code Smells, he moved on to a relatively fast overview of a number of
+general code smells. The bulk of the talk was on Perl-specific code smells with
+example code.  The audience participated quite a bit with discussion and
+questions throughout.</p>
+      <p>After the main presentation, there were a number of questions to clarify a few
+points. The discussion continued among the audience members after the
+presentation was over, suggesting that the topic had struck a cord.</p>
+
+      <p>The <a href="code_smells.html">slides</a> are available. clicking on
+      the &#216; symbol in the lower right of any slide will display the notes
+      on the whole presentation.</p>
+      <p>We had 13 people attending this month. As always, we'd like to thank
+        cPanel, Inc. for providing the meeting space and food for the group.</p>
+[% END -%]

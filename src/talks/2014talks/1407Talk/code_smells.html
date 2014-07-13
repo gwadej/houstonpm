@@ -1,0 +1,758 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>Reading Perl Code: Code Smells</title>
+<!-- metadata -->
+<meta name="generator" content="S5" />
+<meta name="version" content="S5 1.1" />
+<meta name="presdate" content="20140710" />
+<meta name="author" content="G. Wade Johnson" />
+<meta name="company" content="Houston.pm" />
+<!-- configuration parameters -->
+<meta name="defaultView" content="slideshow" />
+<meta name="controlVis" content="hidden" />
+<!-- style sheet links -->
+<link rel="stylesheet" href="ui/houstonpm/slides.css" type="text/css" media="projection" id="slideProj" />
+<link rel="stylesheet" href="ui/default/outline.css" type="text/css" media="screen" id="outlineStyle" />
+<link rel="stylesheet" href="ui/default/print.css" type="text/css" media="print" id="slidePrint" />
+<link rel="stylesheet" href="ui/default/opera.css" type="text/css" media="projection" id="operaFix" />
+<!-- S5 JS -->
+<script src="ui/default/slides.js" type="text/javascript"></script>
+<style type="text/css">
+    .centered { text-align: center; }
+    .left { float: left; }
+</style>
+</head>
+<body>
+
+<div class="layout">
+<div id="controls"><!-- DO NOT EDIT --></div>
+<div id="currentSlide"><!-- DO NOT EDIT --></div>
+<div id="header"></div>
+<div id="footer">
+<h1>Houston.pm</h1>
+<h2>July 10, 2014</h2>
+</div>
+
+</div>
+
+
+<div class="presentation">
+
+<div class="slide">
+<h1>Reading Perl Code</h1>
+<h2>Code Smells</h2>
+<h3>G. Wade Johnson</h3>
+<h4>Campbell Johnson</h4>
+</div>
+
+
+<div class="slide">
+<h1>Code Reading</h1>
+<p>Code is written to be:</p>
+<ul class="incremental">
+<li>executed</li>
+<li>read by humans</li>
+<li>maintained</li>
+</ul>
+<div class="handout">
+
+</div>
+</div>
+
+<div class="slide">
+<h1>Why Read Code?</h1>
+<ul class="incremental">
+    <li>To understand the code</li>
+    <li>To learn new techniques</li>
+    <li>To learn new idioms</li>
+    <li>To bask in the beauty of some well-written code</li>
+    <li>To figure out what the heck is going on in this broken code</li>
+</ul>
+<div class="handout">
+    notes
+</div>
+</div>
+
+<div class="slide">
+<h1>Good Code versus Bad Code</h1>
+<p>You can learn from both good code and bad code.</p>
+<ul>
+    <li>Imitate/Learn from good code</li>
+    <li>Learn from bad code</li>
+</ul>
+<div class="handout">
+    notes
+</div>
+</div>
+
+<div class="slide">
+<h1>What is a Code Smell?</h1>
+<p>A code smell is a symptom of a potential problem in source code. A code
+smell differs from a bug in two major ways.</p>
+<ol>
+<li>The code may actually work, but it is suboptimal.</li>
+<li>Sometimes a code smell refers to a piece of code that is ugly because the
+problem it is solving is ugly.</li>
+</ol>
+
+<div class="handout">
+<p>The code may be suboptimal from a design or architecture viewpoint. I could
+also violate minor house style issues, or not match the style of the
+surrounding code.</p>
+<p>Sometimes ugly code is the result of solving an ugly problem. This could
+result in <em>smelly</em> code that is actually correct for the situation.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>General Code Smells</h1>
+<p>The <a href="http://c2.com/">Portland Pattern Repository</a> has a good list
+of <a href="http://c2.com/cgi/wiki?CodeSmell">Code Smells</a> that cover
+general object oriented programming.</p>
+<div class="handout">
+    notes
+</div>
+</div>
+
+<div class="slide">
+<h1>Long Method/Subroutine</h1>
+<p>Long subroutines are hard to test and maintain. The definition of long is
+context dependent.</p>
+<div class="handout">
+    notes
+</div>
+</div>
+
+<div class="slide">
+<h1>Large Class/Package</h1>
+<p>Large packages are harder to test, understand, and maintain. Large packages
+usually violate the Single Responsibility Principle.</p>
+<div class="handout">
+    notes
+</div>
+</div>
+
+<div class="slide">
+<h1>Duplicate Code</h1>
+<p>Duplicated code usually begins to diverge over time. This results in code
+that is subtly inconsistent and bugs that seem to <em>come back</em> after
+being fixed.</p>
+<div class="handout">
+    <p>This is why we have subroutines and modules.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Dead Code</h1>
+<p>If code is never called, it should be removed.</p>
+<div class="handout">
+<p>Remember code that does not exist, has no bugs.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Divergent Change</h1>
+<p>One class/module commonly changed in different ways for different
+reasons.</p>
+<div class="handout">
+    <p>This is a symptom of a Single Responsibility Principle violation.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Shotgun Surgery</h1>
+<p>Changes influence many classes/modules and methods.</p>
+<p>This is normally the result of having some functionality or knowledge that
+is not the responsibility of one piece of code.</p>
+<div class="handout">
+    notes
+</div>
+</div>
+
+<div class="slide">
+<h1>Data Clumps</h1>
+<p>Data that is (almost) always used together and would make a great class.</p>
+<p>This smell specifically refers to separate variables or structures that are
+used together.</p>
+<div class="handout">
+    <p> This does not refer to a structure, where a series of related pieces of
+    data are in a single hash or other structure.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Long Parameter list</h1>
+<p> This is a real maintenance problem because later readers of the code will
+find it hard to remember which parameters are which.</p>
+<div class="handout">
+    <p>Subroutines with too many parameters are usually violating the Single
+    Responsibility Principle.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Feature Envy</h1>
+<p>Feature Envy describes a subroutine seems to focus more on manipulating
+another package than dealing with the package it is in.</p>
+<div class="handout">
+    <p>This is usually a sign that the subroutine needs to move.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Inappropriate Intimacy</h1>
+<p>This smell describes a class or function that has too much intimate
+knowledge about another class/package.</p>
+<p>Some packages (or subroutines) use package variables to change the behavior
+of the package, which forces Inappropriate Intimacy.</p>
+<div class="handout">
+<p>It makes the code much more difficult to deal with, due to Action at a
+Distance issues.</p>
+    <p>Several of the procedural CPAN modules do this. For example,
+    Data::Dumper has a few package variables that control formatting.</p>
+    <p>One place where this can work well, is Dependency Injection. This should
+    really only be used to facilitate testing.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Magic Literals</h1>
+<p>Raw literals in the code are almost never a good idea. Make a named constant
+instead.</p>
+<p>Most people are pretty good about doing this with magic numbers, but they
+forget that raw strings are also magic literals.</p>
+<div class="handout">
+    notes
+</div>
+</div>
+
+<div class="slide">
+<h1>Complex Conditional</h1>
+<p>The more complex the conditional in an <code>if</code>, <code>unless</code>,
+<code>while</code>, etc., the harder the code is to read and maintain.</p>
+<p>This leads to a number of opportunities for misunderstanding or
+<em>fixes</em> that break code.</p>
+<div class="handout">
+    <p> Instead of getting a relatively good understanding at a glance, any
+    reader of the code is going to need to parse the conditional, reason
+    through the logic, try to determine the edge cases handled, and (in a way)
+    simulate the conditional in their head to understand it.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Vague Identifier</h1>
+<p>Variable, subroutine/method, and package names should be specific and
+informative.</p>
+<div class="handout">
+<p>If you can't come up with a good name, that suggests that the function is
+not as well defined or understood as it should be.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Inconsistent Names</h1>
+<p>The code should use the same term for the same concept throughout the
+code.</p>
+<div class="handout">
+<p>Any time the same term is used for different items or two different terms
+are used for the same item, a reader or maintainer of the code is likely to be
+confused.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Backpedaling</h1>
+<p>Backpedaling is a where you execute a piece of code and then go through
+various indicators, data stores, and state queries to figure out what had
+happened in the function.</p>
+<p>It is an indicator that information is not being communicated correctly.</p>
+<div class="handout">
+    <p>When code does something, it knows it's doing it. It can communicate
+    that to a function to-be-named-later, who will know with certainty exactly
+    what it's supposed to be doing. A concrete example is a subroutine that
+    uses globals or package variables to return extra data separate from the
+    normal return.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Primitive Obsession</h1>
+<p>When we use primitive data types to represent domain ideas.</p>
+<p>For example, we use a string to represent an exception or an integer to
+represent an amount of money.
+<div class="handout">
+<p>In many cases, there should be constraints (and possibly behavior)
+associated with the actual idea that are not available with the primitive type.
+A value object would encapsulate the meaning in a usable name.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Code Junk</h1>
+<p>Code Junk  refers to extraneous, unnecessary syntax added to make sure the
+code is doing what we intend.</p>
+<p>Syntactic noise is often a maintenance issue, because other developers may
+waste time trying to figure out why anyone used this strange construct.</p>
+<div class="handout">
+<p>This can be caused by oddities in a language's design, but more often it's
+caused by fundamental misunderstandings about the language on the part of the
+programmer.</p>
+    <p>Code Junk is language specific. Some syntax is optional in one language
+    but required in another.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Perl Code Smells</h1>
+<p>Each language has its own code smells.</p>
+<p>What follows are some Perl smells that I am aware of.</p>
+<div class="handout">
+    <p>I developed this list while working on coding standards for cPanel. I
+    sought input from cPanel developers on the smells themselves as well as the
+    names we wanted to use.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>C-style for Loop</h1>
+<p>The C-style for loop is a very flexible approach to looping.</p>
+<pre><code>
+for( my $i = 0; $i < @list; ++$i ) {
+  ...
+}</code></pre>
+<div class="handout">
+    <p>You will often see this overused by old C programmers.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>C-style for Loop - 2</h1>
+<p>One of the problems of this approach is the amount of <a href="#CodeJunk">Code Junk</a> devoted to just dealing with the index.</p>
+<p>However with minor changes, this loop can be used to</p>
+<ul>
+<li>process every other element, </li>
+<li>process the elements in reverse order,</li>
+<li>move backward and forward through the list by manipulating <code>$i</code>,</li>
+<li>whatever else you can think of.</li>
+</ul>
+<div class="handout">
+<p>This makes the construct harder to maintain, since anyone reading the code pretty much has to look at the whole loop carefully to determine if there is any funny business going on with <code>$i</code>.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>C-style for Loop - 3</h1>
+<p>Normally, Perl lists can be efficiently processed an element at a time with a list-based <code>for</code> loop.</p>
+<pre><code>
+foreach my $var (@list) {
+  ...
+}</code></pre>
+<p>When used in this form, the each element in turn is aliased by the variable allowing both read and write access without knowing an index into the list.
+<div class="handout">
+    <p>As such, the maintainer can see, at a glance, that the list is being processed in one direction only, and while it is possible that items might be skipped (using <code>next</code> or <code>last</code>), we are not doing anything weirder with the list order.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>C-style for Loop - 4</h1>
+<p>When you really do need the index, the following construct is more idiomatic than the C-style loop.</p>
+
+<pre><code>
+foreach my $i ( 0..$#list ) {
+      ...
+}</code></pre>
+<p>This gives the variable <code>$i</code> that can be used to index into <code>@list</code> arbitrarily.
+
+<div class="handout">
+    <p>The main difference between this construct and the C-style loop is that there is no possibility that the code could be changing the order in which you are processing the list, which is actually pretty easy with the C-style.</p>
+    <p>We can actually do quite a bit of the same kind of manipulation by modifying the index list to start with (<code>grep</code> for even indexes, <code>reverse</code> to do the list in backward order, etc.) Since all of those manipulations are in one place, the code is still easier to read.</p>
+    <p>Since these two styles are more idiomatic, the maintenance programmer is more likely to spend the extra time trying to figure out why the original programmer decided to use the C-style loop. This is wasted time and effort every time a programmer needs to read this code. Additionally, the extra <a href="#CodeJunk">Code Junk</a> in the C-style <code>for</code> loop almost requires reading the entire loop to be certain you know exactly what the loop is doing. </p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Implicit Return Value</h1>
+<p>In the absence of a <code>return</code> statement, Perl guarantees that the value of the last expression evaluated is returned.</p>
+<p>The problem is that this is often not the expected result.</p>
+<div class="handout">
+    <p>The most common surprise I have seen is in subroutines that end with an <code>if</code> or <code>unless</code> or a C-style <code>for</code> loop. In all of these cases, the last expression executed is the conditional. Another case is having a <code>print</code> or <code>close</code> as the last statement, making the return value be something that we normally ignore.</p>
+    <p>Worse, minor changes in the code can result in unexpected changes in return values. For example, putting a <code>print</code> statement at the end of the subroutine changes it's return code.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Schizo Return</h1>
+<p>Perl's subroutines have a no type associated with their returns, so it is possible to have different parts of a subroutine return different kinds of values.</p>
+<pre><code>
+sub schizo_routine {
+     my ($input) = @_;
+
+     return if !defined $input;
+     return 0 if !$input;
+     #  do cool stuff
+     ...
+     return scalar @array;
+}</code></pre>
+<div class="handout">
+    <p>From a quick look at the code, I'm not sure what the return is supposed to be. Is it supposed to be a number or a boolean? Is <code>0</code> supposed to be the same as <code>undef</code>.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Schizo Return - 2</h1>
+<p>More egregious examples would include subroutines that:</p>
+<ul>
+<li> Return either a hashref or a string</li>
+<li> Return either a number or a string</li>
+<li> Return a number or a list</li>
+<li> Return three or more different types of things</li>
+</ul>
+<div class="handout">
+<p>Other than a programmer trying to be too clever, the most likely causes of this code smell are either the <a href="#LongSubroutine">Long Method/Subroutine</a> Code Smell or a violation of the <em>Single Responsibility Principle</em> applied to subroutines.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Schizo Array Return</h1>
+<p>When people first learn about Perl's ability to change behavior based on context, they often come up with the following clever construction:</p>
+<pre><code>
+return wantarray ? @array : \@array;</code></pre>
+
+<p> How could that possibly go wrong?</p>
+<div class="handout">
+<p>At first glance, this appears like a good idea. If we want to use the result of this routine in a <code>for</code> loop or other list context, we get the list directly. If we assign to a scalar, we get a reference.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Schizo Array Return - 2</h1>
+<p>In reality, Perl provides list context most of the time.</p>
+<pre><code>
+    my $status = do_work( schizo_routine() );
+
+    my $config = {
+          'name' => 'Herman Munster',
+          'address' => '1313 Mockingbird Lane',
+          'task' => schizo_routine(),
+    };</code></pre>
+<div class="handout">
+<ol>
+    <li>Pass result as an argument to a subroutine.</li>
+    <li>Use result as a value when building a hash.</li>
+</ol>
+<p>In both of these cases, we are actually in list context and the result is
+not usually what the caller expected.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Schizo Array Return - 3</h1>
+<p>An even worse case is using the
+subroutine as the condition for an <code>if</code> or <code>unless</code>.</p>
+<pre><code>
+    if( schizo_routine() ) {
+         do_work();
+    }
+    else {
+         print "Error\n";
+    }</code></pre>
+<p>Since this forces scalar context, you will always get a reference.</p>
+<div class="handout">
+    <p>Since it's a reference, it will always be true. From the fact we are in
+    a conditional that's probably not the expected behavior.</p>
+    <p>This smell is a special case of <a href="#SchizoReturn">Schizo
+    Return</a>.</p>
+    <p>Since the type of output changes drastically depending on the context
+    where it's called, this code smell causes problems if the developer and the
+    language have different ideas of the actual context in which the code is
+    called. This can result in confusion and wasted time troubleshooting code
+    that should be unambiguous. Worse, the failure modes are not always obvious
+    at a glance. It would probably be better to avoid the special logic and
+    just return one type.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Context Oversensitivity</h1>
+<p>The <code>wantarray</code> function allows you to perform different behavior depending on the context where the subroutine is called. This can be useful for optimizations where you want to avoid a lot of work when the results will not be used.</p>
+<p>Unfortunately, people normally try to use <code>wantarray</code> to do something <em>clever</em>.</p>
+<div class="handout">
+    <p> That clever thing is almost always odd enough that programmers using the code will be regularly surprised as the code does something unexpected. That surprise is a direct cause of maintenance issues.</p>
+    <p>The real impact of this construct is in the confusion for maintenance programmers that are trying to use the code. Without a really good understanding of context and the decisions made inside the routine, this code is likely to be misused at least part of the time. Any construct that leads us to generate errors is definitely smelly.</p>
+    <p>There are very few ways to actually use <code>wantarray</code> in a way that is obvious to the maintenance programmer. One place that I have seen this done well is as an optimization. If I had a function that returned a sorted list, I could see using <code>wantarray</code> to avoid the sort, if we are not called in list context. This would avoid work that is just going to be thrown away in the case that we are calling the code (for instance) in a conditional.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1><code>grep</code> in Void Context</h1>
+<p>Since <code>grep</code> is designed to either build a list or count items in a list, calling it in void context is definitely a code smell.</p>
+<pre><code>
+ grep { $_ < 100 } @scores;
+</code></pre>
+<div class="handout">
+<p>In fact, it is a strong sign that someone is doing something bad in the <code>grep</code> block. More importantly, given <code>grep</code>s only real purpose is filtering the list and we are throwing it's output away, the usage is almost certainly a bug.</p>
+    <p>At best, this would be an expensive no-op. At worst, we expected the output to go somewhere and the code no longer reflects that fact.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1><code>map</code> in Void Context</h1>
+<p>Since <code>map</code> is designed to build a list, calling it in void context is definitely a code smell.</p>
+<pre><code>
+ map { 2*$_ } @values;
+</code></pre>
+<div class="handout">
+<p>In fact, it is a strong sign that someone is doing something bad in the <code>map</code> block. If the block has side effects, we have another code smell (<a href="#ListModMap">List-modifying <code>map</code> Expression</a>). If the block has no side effects, then the <code>map</code> is an expensive no-op.</p>
+    <p>At best, this would be an expensive no-op. At worst, we expected the output to go somewhere and the code no longer reflects that fact.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>List-modifying <code>grep</code> Expression</h1>
+<p>Since the <code>$_</code> variable is aliased to each element in the list, it is actually possible to modify the original list as part of the <code>grep</code> operation.</p>
+<pre><code>
+    my @long_times = grep {
+            /(\d+):(\d+)/;
+            $_ = $1*60+$2;
+            $_ > 120
+        } @times;
+</code></pre>
+<div class="handout">
+    <p> This may not be obvious to a maintenance programmer and would violate the <a href="/bin/view/LinuxDev/CPanelCodingConventions#PrincipleLeastAstonishment">Principle of Least Astonishment</a>. If you need to modify the original list and filter at the same time, a <code>foreach</code> loop would be clearer.</p>
+    notes
+</div>
+</div>
+
+<div class="slide">
+<h1>List-modifying <code>map</code> Expression</h1>
+<p>Since the <code>$_</code> variable is aliased to each element in the list, it is actually possible to modify the original list as part of the <code>map</code> operation.</p>
+<pre><code>
+    my @minutes = map {
+        /(\d+):(\d+)/;
+        $_ = $1*60+$2;
+    } @times;
+</code></pre>
+<div class="handout">
+    <p> This may not be obvious to a maintenance programmer and would violate the <a href="/bin/view/LinuxDev/CPanelCodingConventions#PrincipleLeastAstonishment">Principle of Least Astonishment</a>. If you need to modify the original list and create a new list at the same time, a <code>foreach</code> loop would be clearer. If you just want to modify the original list, you can use <code>map</code> to modify generate a new list and assign back tot he original array.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Insatiable Match Variables</h1>
+<p>The match variables <code>$`</code>, <code>$&amp;</code>, or <code>$'</code> collect the string before the match, the string of the match, and the string after the match.
+<p>The real problem is that using these once in a program causes a change to the regex engine that causes every regular expression in the system to set these variables.</p>
+<div class="handout">
+    <p>This means that using any one of these variables causes a decrease in performance in every regular expression in the entire program.</p>
+    <p>These variables have far-reaching performance impacts. Using even one anywhere in a program causes all regular expressions to be slower.</p>
+    <p>I think this cost may have been removed in recent versions of Perl.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Bareword File/Directory Handle</h1>
+<p>Bareword filehandles are global to the current package. Lexical filehandles are scoped.</p>
+<pre><code>
+  open FH, ">", "output.log" or die;
+  print FH "Help!\n";
+  close FH;
+</code></pre>
+<div class="handout">
+    <p> Another advantage is that lexical handles are automatically closed when they go out of scope. Except in a very small number of cases, you should always be able to replace a bareword filehandle with a lexical filehandle.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Complex <code>map</code> Expression</h1>
+<p>Code using <code>map</code> can be quite clear and easy to read provided that the expression or block is not too complicated.</p>
+<p>With a complicated expression, the <code>map</code> quickly becomes unreadable.</p>
+<pre><code>
+    my @output = map {
+        my $t = /(\d+):(\d+)(?:(\d+))?/
+            ? ($1*3600+$2*60+($3||0)) : 0;
+        $t /= 3600;
+        $t
+    } @input;
+</code></pre>
+<div class="handout">
+<p>If the expression begins needing multiple statements or multiple lines, this smell indicates that the expression may need to be refactored for ease of maintenance. If the code really needs to be that complex, converting the code to a named subroutine gives the advantages of being more readable in the <code>map</code> expression and more testable.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Complex <code>grep</code> Expression</h1>
+<p>Code using <code>grep</code> can be quite clear and easy to read provided that the expression or block is not too complicated.</p>
+<p>Complicated <code>grep</code> expressions can also become almost unreadable in short order.</p>
+<pre><code>
+    my @output = grep {
+        /(\d+):(\d+):(\d+)/
+            ? (($1*3600+$2*60+($3||0))/3600 < 4.35)
+            : length $_
+    } @input;
+</code></pre>
+<div class="handout">
+<p>If the expression begins needing multiple statements or multiple lines, this smell indicates that the expression may need to be refactored for ease of maintenance. If the code really needs to be that complex, converting the code to a named subroutine gives the advantages of being more readable in the <code>grep</code> expression and more testable.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Complex <code>sort</code> Expression</h1>
+<p>Perl's <code>sort</code> operator is quite flexible thanks to its use of a code block to declare the sorting criteria.</p>
+<p>This results in a two-part problem.</p>
+<ul>
+    <li>A more complex expression is harder to read and, therefore, harder to maintain.</li>
+    <li>The expression is evaluated for each comparison. Sometimes more than once per item.</li>
+<div class="handout">
+    <p> Unfortunately, there can be a tendency to make this expression very
+    complex for some kinds of sorts. If the expression is complex, but not very
+    expensive, replacing the in-line expression with a subroutine would be the
+    cleanest solution.</p>
+<p>Since the complexity of the sort operation is effectively O(n log n), it's
+possible to greatly slow down a <code>sort</code> by performing the same
+complex expression multiple times for a given element in the list. If the
+expression is expensive, even if it is not too complex, the <em>Shwartzian
+Transform</em> is an approach that can reduce the expense.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>One-shot Lookup Hash</h1>
+<p>Everyone is aware that hash lookup is faster than the searching an array (unless the array is small). Unfortunately, people sometimes use that <em>knowledge</em> to make a very bad pessimization.
+<pre><code>
+sub clever_lookup {
+    my ($to_find) = @_;
+    my %lookup_hash = map { $_ => 1 } @a_long_list;
+    return exists $lookup_hash{$to_find};
+}</code></pre>
+<div class="handout">
+<p>The problem with this code is that the hash construction and lookup are pure
+overhead. The purpose of using the hash is to avoid scanning the entire array
+to find your item. Since we walk the entire list anyway, we don't get any
+benefit from the lookup hash.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>One-shot Lookup Hash - 2</h1>
+<p>Under almost every circumstance, the following would be faster.</p>
+<pre><code>
+sub simple_lookup {
+    my ($to_find) = @_;
+    return 0 != grep { $_ eq $to_find } @a_long_list;
+}</code></pre>
+<p>If the hash can be used for multiple lookups, this becomes the <em>Hash for
+    Fast List Search</em> idiom.</p>
+<div class="handout">
+<p>Some people might argue that this could be a premature optimization, but in
+actuality it is the opposite. The main problem with a premature optimization is
+that it makes the code less clear for no benefit. In this case, we are
+simplifying code to make it faster and clearer.</p>
+<p>If there is an actual need to make this faster, if you can use
+<code>List::Util::first</code> or a <code>foreach</code> loop to exit early.
+That may yield a little more performance at the cost of code that is slightly
+less clear. So, actual performance should be measured before making this
+change.</p>
+<p>This construct is actually quite a bit slower than the correct solution.  A
+quick benchmark ranging from 5 to 78 items showed a factor 10 - 15 improvement,
+with the larger improvement being in the longer lists. By the way, that was
+<em>10 times</em> to <em>15 times</em> faster, not 10%-15% faster. This also
+highlights the difference between a <em>premature optimization</em> and a
+<em>premature pessimization</em>. Not using the One Shot Hash generates a
+factor of 10 improvement with an improvement in the readability of the code (a
+premature pessimization not to make the change).  Adding code to exit early
+instead of using <code>grep</code> is approximately a 50% speedup, at the cost
+of slightly less readable code (a premature optimization unless the speedup in
+this case is worth the reduction in readability).</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Inappropriate <code>sort</code> Variables</h1>
+<p>The variables <code>$a</code> and <code>$b</code> from the current package are used directly by the <code>sort</code> operator.</p>
+<p>In general, you should probably avoid the use of these variable names.</p>
+<div class="handout">
+    <p>Using these package variables in other places in your code would cause them to change any time you use a <code>sort</code>. Additionally, if you declare <code>$a</code> or <code>$b</code> as lexical variables in a subroutine using a <code>sort</code> block, the block will be looking at the lexical variables, which mask the ones modified by <code>sort</code>. This will not end up doing what you want.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Perl 4 Subroutine Call</h1>
+<p>In Perl 4, a subroutine call was always prefixed with the &amp; sigil. It allowed the perl binary to recognize a subroutine call without any parameters or parens. This is no longer necessary.</p>
+<p>In Perl 5, this does something subtly different.</p>
+<ul>
+    <li><code>foo();</code></li>
+    <li><code>foo;</code></li>
+    <li><code>&amp;foo();</code></li>
+    <li><code>&amp;foo;</code></li>
+</ul>
+<div class="handout">
+    <p>If a subroutine is called with the &amp; sigil without any arguments, it
+    is called with the exact same arguments as the calling subroutine. Since
+    this is not obvious in any way from the call (and violates the
+    <em>Principle of Least Astonishment</em>), it is confusing to read and
+    maintain.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>System Infatuation</h1>
+<p>You will sometimes find shell scripts converted to Perl, through almost nothing
+but calls to <code>system()</code>.</p>
+<pre><code>
+   system( "chmod +r logfile" );
+   system( "grep -i error logfile > errors.txt" );
+   system( "wc -l errors.txt" );
+</code></pre>
+<div class="handout">
+    <p>This was obviously a shell script, converted by someone who doesn't know
+    Perl. This could be more easily done without a single
+    <code>system()</code>.</p>
+    <p>This worst version of this I've every seen had Perl code that built text
+    files and shell scripts to process the input files, and then passed control
+    to the shell scripts.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Recognizing Code Smells</h1>
+<p>The ability to recognize code smells is a step on the way to writing better
+code.</p>
+<p>Learning to correct code smells is yet another step.</p>
+<div class="handout">
+    <p>Most senior programmers have certain constructs that they avoid due to
+    bad experiences in the past. Code smells are just a way of naming some of
+    these practices.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>References</h1>
+<ul>
+    <li><a href="https://en.wikipedia.org/wiki/Code_smell">https://en.wikipedia.org/wiki/Code_smell</a></li>
+    <li><a href="http://martinfowler.com/bliki/CodeSmell.html">http://martinfowler.com/bliki/CodeSmell.html</a></li>
+    <li><a href="http://c2.com/cgi/wiki?CodeSmell">http://c2.com/cgi/wiki?CodeSmell</a></li>
+    <li><a href="http://blog.codinghorror.com/code-smells/">http://blog.codinghorror.com/code-smells/</a></li>
+</ul>
+<div class="handout">
+    notes
+</div>
+</div>
+
+<div class="slide">
+<h1></h1>
+<p>Questions?</p>
+<div class="handout">
+    notes
+</div>
+</div>
+
+
+
+</div>
+
+</body>
+</html>
