@@ -29,10 +29,11 @@ my $title  = prompt( "Title:" );
 my $attendees = prompt( -integer => sub { 0 < $_ }, "How many attendees? " );
 my $abstract = prompt_long_text( 'Enter an abstract for the presentation (no <p/> needed):' );
 my $write_up = prompt_long_text( 'Enter a review of the meeting (no <p/> needed):' );
+my $sponsor  = prompt( "Sponsor:", -1, -menu => [ 'cPanel, Inc.', 'Hostgator, LLC' ] );
 chomp( $abstract, $write_up );
 
 die "Missing required parameter.\n"
-    unless defined $mon && defined $year && $author && $title && $attendees && $abstract;
+    unless defined $mon && defined $year && $author && $title && $attendees && $abstract && $sponsor;
 
 # Identity transforms below to remove IO::Prompter special objects.
 my %vars = (
@@ -44,6 +45,7 @@ my %vars = (
     title => $title.'',
     attendees => $attendees+0,
     abstract => $abstract.'',
+    sponsor => $sponsor.'',
     writeup => [ split /\n\n/, $write_up ],
 );
 
@@ -130,7 +132,7 @@ EOP
     }
     print {$fh} <<"EOT";
       <p>We had $vars->{attendees} people attending this month. As always, we'd like to thank
-        cPanel, Inc. for providing the meeting space and food for the group.</p>
+        $vars->{sponsor} for providing the meeting space and food for the group.</p>
 [% END -%]
 EOT
     close $fh or die "Unable to close index.tt2\n";
@@ -198,5 +200,6 @@ BEGIN {
 
     sub remove_tempfiles {
         unlink grep { -f $_ } map { get_tempfile_name( $_ ) } 0 .. $count-1;
+        return;
     }
 }
