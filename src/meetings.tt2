@@ -20,8 +20,11 @@
     <h2 class="subhead">Upcoming Meetings</h2>
 
     <dl>
+        <dt>July 31, 2014</dt>
+        <dd>CPAN Workshop with brian d foy (potential)</dd>
+
         <dt>August 14, 2014</dt>
-        <dd>TBD at Hostgator</dd>
+        <dd>Introduction to ASN.1 BER Encoding with Christopher Mevissen at Hostgator</dd>
 
         <dt>September 11, 2014</dt>
         <dd>TBD at cPanel</dd>

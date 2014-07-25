@@ -6,8 +6,11 @@
       <p>July meeting notes are on-line.</p>
       <h1 class="heading">Next Meetings</h1>
         <dl>
+            <dt>July 31, 2014</dt>
+            <dd>CPAN Workshop with brian d foy (potential)</dd>
+
             <dt>August 14, 2014</dt>
-            <dd>TBD at Hostgator</dd>
+            <dd>Introduction to ASN.1 BER Encoding with Christopher Mevissen at Hostgator</dd>
         </dl>
     </div>
 
