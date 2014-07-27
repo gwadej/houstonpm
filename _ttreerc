@@ -41,6 +41,7 @@ copy = \.txt$
 copy = iptckeyword$
 copy = \.conf$
 copy = \.htm$
+copy = \.html$
 copy = \.key$
 copy = \.plist$
 copy = \.gz$
