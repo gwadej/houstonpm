@@ -3,11 +3,41 @@
     year=2014
 %]
       <h2 class="subhead">Upload Your First Module to CPAN</h2>
-      <p>As always, brian d foy is an interesting and engaging speaker.</p>
+      <p>brian d foy gave a workshop focused on giving people the skills they
+      need to upload a module to <acronym title="Comprehensive Perl Archive
+      Network">CPAN</acronym>. Out of the people who attended, a little less
+      than half already had a <acronym title="Perl Archive Upload
+      SErver">PAUSE</acronym> account. More experienced people helped the less
+      experienced.</p>
+
+      <p>This is one of brian's efforts he wants to do in more places. The idea
+is to teach someone how to:</p>
+
+      <ol>
+        <li>Set up a PAUSE account</li>
+        <li>Set up a github account</li>
+        <li>Use a utility (like module-starter) to make a basic tree which can
+          be uploaded to PAUSE and indexed.</li>
+      </ol>
+
+     <p>Next, brian had people break the module in some way and upload it. Then,
+     people paired off and had to submit a change through github to each other's
+     modules. This gives someone the basic steps needed to be a CPAN author and
+     maintain their code on github.</p>
+
+     <p>Different people had different issues and we worked through them
+together / individually, depending. We also had many side
+conversations. Like: "What the @#$@# is h2xs??" And an explanation of
+the current state of PAUSE and the code it runs on.</p>
+
+      <p>The result is that we have a whole new batch of people who know how
+      easy it is to upload to CPAN.</p>
+
+      <p>Afterwards, several folks joined brian at Velvet Melvin to hang out and chat.</p>
 
       <p>brian's slides are <a href="Create_and_Upload_to_CPAN-Houston_2014.pdf">available</a>
       for download as a PDF.</p>
 
-      <p>We had 10 people attending this month. As always, we'd like to thank
+      <p>We had about 16 people attending this month. As always, we'd like to thank
         cPanel, Inc. for providing the meeting space and food for the group.</p>
 [% END -%]
