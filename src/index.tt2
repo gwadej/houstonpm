@@ -3,12 +3,9 @@
 
     <div id="sidebar">
         <h1 class="heading">What's New <a href="atom.xml"><img style="border:0;float:right;" src="feed-icon-10x10.png" /></a></h1>
-      <p>July meeting notes are on-line.</p>
+      <p>July 31 workshop notes are on-line.</p>
       <h1 class="heading">Next Meetings</h1>
         <dl>
-            <dt>July 31, 2014</dt>
-            <dd>CPAN Workshop with brian d foy at cPanel</dd>
-
             <dt>August 14, 2014</dt>
             <dd>Introduction to ASN.1 BER Encoding with Christopher Mevissen at Hostgator</dd>
         </dl>

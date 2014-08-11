@@ -1245,4 +1245,15 @@ elsewhere.</abstract>
     </topic>
   </talk>
 
+  <talk num="140731">
+    <date>July 31 2014</date>
+    <topic href="/talks/2014talks/140731Talk/index.html">
+      <title>Upload Your First Module to CPAN</title>
+      <presenter>brian d foy</presenter>
+      <abstract>brian d foy gives a workshop showing how to create and upload
+your first Perl module to CPAN. The workshop also shows how to use github as
+the repository for your module.</abstract>
+    </topic>
+  </talk>
+
 </talklist>

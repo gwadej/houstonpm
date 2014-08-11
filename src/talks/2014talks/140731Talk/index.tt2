@@ -1,0 +1,13 @@
+[% WRAPPER writeup_wrap.tt2
+    title='Summary of July 31, 2014 Workshop'
+    year=2014
+%]
+      <h2 class="subhead">Upload Your First Module to CPAN</h2>
+      <p>As always, brian d foy is an interesting and engaging speaker.</p>
+
+      <p>brian's slides are <a href="Create_and_Upload_to_CPAN-Houston_2014.pdf">available</a>
+      for download as a PDF.</p>
+
+      <p>We had 10 people attending this month. As always, we'd like to thank
+        cPanel, Inc. for providing the meeting space and food for the group.</p>
+[% END -%]
