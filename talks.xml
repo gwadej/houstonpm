@@ -1256,4 +1256,16 @@ the repository for your module.</abstract>
     </topic>
   </talk>
 
+  <talk num="1408">
+    <date>August 2014</date>
+    <topic href="/talks/2014talks/1408Talk/index.html">
+      <title>Introduction to ASN.1 BER Encoding</title>
+      <presenter>Chris Mevissen</presenter>
+      <abstract>Chris introduced the <acronym title="Basic Encoding Rules">BER</acronym> encoding for
+<acronym title="Abstract Syntax Notation One">ASN.1</acronym>. He showed some
+code and decoding examples to introduce this notation that underlies several
+technologies we use every day.</abstract>
+    </topic>
+  </talk>
+
 </talklist>

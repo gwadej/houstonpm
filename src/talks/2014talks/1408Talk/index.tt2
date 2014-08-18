@@ -1,0 +1,22 @@
+[% WRAPPER writeup_wrap.tt2
+    title='Summary of August 2014 Presentation'
+    year=2014
+%]
+      <h2 class="subhead">Introduction to ASN.1 BER Encoding</h2>
+      <p>Although <acronym title="Abstract Syntax Notation One">ASN.1</acronym> and
+<acronym title="Basic Encoding Rules">BER</acronym> are lower-level than many
+of our recent talks, Chris did a really good job of covering the subject in a
+way that everyone could understand. The questions from the audience were
+handled well and everyone seemed to be following the topic.</p>
+      <p>Near the end, the discussion turned to releasing his code on CPAN and potential
+alternate implementations. Chris pointed out that there are other
+implementations already on CPAN and most of his coding had been in service of
+learning and understanding.</p>
+      <p>Chris has made his <a
+      href="http://despertargz.github.io/ber/">presentation</a> available
+      on-line. His presentation and supporting code are <a
+      href="https://github.com/despertargz/BerDecoder.git">available</a> on
+      github.</p>
+      <p>We had 8 people attending this month. As always, we'd like to thank
+        Hostgator, LLC for providing the meeting space and food for the group.</p>
+[% END -%]
