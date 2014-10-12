@@ -1,0 +1,36 @@
+[% WRAPPER writeup_wrap.tt2
+    title='Summary of October 2014 Presentation'
+    year=2014
+%]
+      <h2 class="subhead">A Clear Text Explanation of the AES Cipher</h2>
+      <p>Robert explained that he is implementing <code>Crypt::Rijndael::PP</code> as a
+pure Perl implementation of the algorithm selected as the <acronym
+title="Advanced Encryption Standard">AES</acronym> by <acronym
+title="National Institute of Standards and Technology">NIST</acronym>.</p>
+      <p>In this presentation, Robert walked us through a history of the AES. Then, he
+proceeded through a high-level description of how the algorithm works. He
+dipped into implementation details where they weren't too overwhelming. He finished
+the talk with a discussion of some weaknesses that have been found since
+Rijndael was selected as the AES.</p>
+      <p>Since this was an extremely technical talk, Robert had to walk a fine line between
+too much detail and too high-level a description. He managed this quite well,
+as was shown be a number of really good questions after the talk. The group
+discussed the presentation and asked quite a few questions afterwards. Even as
+most of the group left, several people remained for more hard-core discussion
+that included delving into implementation details and suggestions for improving
+the implementation when it is converted to C/XS.</p>
+      <p>Robert also provided some resources if you want to dig into this topic
+         further.</p>
+      <ul>
+        <li>His <a href="A_Clear_Text_Explanation_of_the_AES_Cipher.pptx">presentation</a>
+          is available on-line.</li>
+        <li>The source for <a href="https://github.com/drzigman/crypt-rijndael-pp">Crypt::Rijndael::PP</a>
+          is available on Github.
+        <li>For more information, check out <a href="http://csrc.nist.gov/publications/fips/fips197/fips-197.pdf">NIST
+          Specification of AES</a></li>
+        <li>The <a href="http://eprint.iacr.org/2009/317.pdf">AES Related Key Attacks</a>
+          paper is also on-line.</li>
+      </ul>
+      <p>We had 18 people attending this month. As always, we'd like to thank
+        Hostgator, LLC for providing the meeting space and food for the group.</p>
+[% END -%]

@@ -20,13 +20,13 @@
     <h2 class="subhead">Upcoming Meetings</h2>
 
     <dl>
-        <dt>October 9, 2014</dt>
-        <dd><em>A Clear Text Explanation of the AES Cipher</em> with Robert Stone at Hostgator</dd>
-
         <dt>November 13, 2014</dt>
         <dd>TBD at cPanel</dd>
 
         <dt>December 11, 2014</dt>
         <dd>TBD at Hostgator</dd>
+
+        <dt>January 8, 2015</dt>
+        <dd>TBD at cPanel</dd>
     </dl>
 [% END -%]

@@ -3,12 +3,11 @@
 
     <div id="sidebar">
         <h1 class="heading">What's New <a href="atom.xml"><img style="border:0;float:right;" src="feed-icon-10x10.png" /></a></h1>
-      <p>July 31 workshop notes are on-line.</p>
-      <p>August meeting notes are on-line.</p>
-      <h1 class="heading">Next Meetings</h1>
+      <p>October meeting notes are on-line.</p>
+      <h1 class="heading">Next Meeting</h1>
         <dl>
-            <dt>October 9, 2014</dt>
-            <dd><em>A Clear Text Explanation of the AES Cipher</em> with Robert Stone at Hostgator</dd>
+            <dt>November 13, 2014</dt>
+            <dd>TBD at cPanel</dd>
         </dl>
     </div>
 

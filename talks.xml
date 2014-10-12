@@ -1268,4 +1268,16 @@ technologies we use every day.</abstract>
     </topic>
   </talk>
 
+  <talk num="1410">
+    <date>October 2014</date>
+    <topic href="/talks/2014talks/1410Talk/index.html">
+      <title>A Clear Text Explanation of the AES Cipher</title>
+      <presenter>Robert Stone</presenter>
+      <abstract>Robert is working on a pure Perl implementation of the Rijndael cipher in
+order to fully understand the algorithm. He presents his findings, with code.
+This helps others to understand this algorithm that has become critical to
+modern cryptography.</abstract>
+    </topic>
+  </talk>
+
 </talklist>
