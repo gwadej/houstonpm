@@ -20,13 +20,13 @@
     <h2 class="subhead">Upcoming Meetings</h2>
 
     <dl>
-        <dt>November 13, 2014</dt>
-        <dd>Lightning Talks at cPanel</dd>
-
         <dt>December 11, 2014</dt>
         <dd>TBD at Hostgator</dd>
 
         <dt>January 8, 2015</dt>
         <dd>TBD at cPanel</dd>
+
+        <dt>February 12, 2015</dt>
+        <dd>TBD at Hostgator</dd>
     </dl>
 [% END -%]

@@ -1280,4 +1280,15 @@ modern cryptography.</abstract>
     </topic>
   </talk>
 
+  <talk num="1411">
+    <date>November 2014</date>
+    <topic href="/talks/2014talks/1411Talk/index.html">
+      <title>November Lightning Talks</title>
+      <presenter>Various</presenter>
+      <abstract>A number of people vounteered to give lightning talks, which are talks on a
+single topic time limited to no more than 5 minutes. Talks ranged from Perl
+builtins to using other languages in Perl.</abstract>
+    </topic>
+  </talk>
+
 </talklist>

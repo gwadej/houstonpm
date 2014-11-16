@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>Lightning Talk: Use map</title>
+<!-- metadata -->
+<meta name="generator" content="S5" />
+<meta name="version" content="S5 1.1" />
+<meta name="presdate" content="20141113" />
+<meta name="author" content="G. Wade Johnson" />
+<meta name="company" content="Houston.pm" />
+<!-- configuration parameters -->
+<meta name="defaultView" content="slideshow" />
+<meta name="controlVis" content="hidden" />
+<!-- style sheet links -->
+<link rel="stylesheet" href="ui/houstonpm/slides.css" type="text/css" media="projection" id="slideProj" />
+<link rel="stylesheet" href="ui/default/outline.css" type="text/css" media="screen" id="outlineStyle" />
+<link rel="stylesheet" href="ui/default/print.css" type="text/css" media="print" id="slidePrint" />
+<link rel="stylesheet" href="ui/default/opera.css" type="text/css" media="projection" id="operaFix" />
+<!-- S5 JS -->
+<script src="ui/default/slides.js" type="text/javascript"></script>
+<style type="text/css">
+    .centered { text-align: center; }
+    .left { float: left; }
+</style>
+</head>
+<body>
+
+<div class="layout">
+<div id="controls"><!-- DO NOT EDIT --></div>
+<div id="currentSlide"><!-- DO NOT EDIT --></div>
+<div id="header"></div>
+<div id="footer">
+<h1>Houston.pm</h1>
+<h2>November 13, 2014</h2>
+</div>
+
+</div>
+
+
+<div class="presentation">
+
+<div class="slide">
+<h1>Use map</h1>
+<h2></h2>
+<h3>G. Wade Johnson</h3>
+<h4>Houston.pm</h4>
+</div>
+
+<div class="slide">
+<h1>Perl's map operator</h1>
+<p>Fundamental operation on lists.</p>
+<p>Similar in some ways to <code>*</code> for numbers</p>
+<div class="handout">
+    <p>You can't really get good at list processing without using map. Looping
+        instead of using map is sort of like doing repeated adds in a loop instead
+        of using multiplication with integers.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>What does it do?</h1>
+<p>Transform one list into another.</p>
+<div class="handout">
+<p>Keep this in mind every time you use map. If you are not really doing
+    a transform, then map is the wrong tool.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Simple Example</h1>
+<pre><code>
+   my @minutes = map { int( $_/60 ) } @seconds;
+</code></pre>
+<div class="handout">
+    <p>Simple transformation from an array of seconds into an array of minutes.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Better Example</h1>
+<pre><code>
+  my @dts = map { DateTime-&gt;from_epoch( epoch =&gt; $_ ) }
+            @unix_times;
+</code></pre>
+<div class="handout">
+<p>The last example wasn't very likely to ever be really useful, but this
+    is something that you might actually imagine doing. I have a list of
+    Unix epoch times, but I want DateTime objects, so...</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Weird Example</h1>
+<p>Turn the whole idea inside out: <a href="examples/summary.pl" target="_blank">summary.pl</a>.</p>
+<div class="handout">
+<p>I would never do this in production code, because the other developers would
+    probably find it hard to follow. In this case, I'm processing a piece of data
+    with an array of code references, to generate summary information about the
+    data.</p>
+</div>
+</div>
+
+</div>
+
+</body>
+</html>

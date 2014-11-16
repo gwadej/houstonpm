@@ -1,0 +1,103 @@
+[% WRAPPER writeup_wrap.tt2
+    title='Summary of November 2014 Presentation'
+    year=2014
+%]
+      <h2 class="subhead">November Lightning Talks</h2>
+      <p>In the run up to the meeting, 9 people volunteered to present. For one reason
+or another, 2 of those had to bow out before the meeting started. One of the
+original list of presenters gave a second lightning talk off the cuff, and another
+attendee volunteered to give a lightning talk with no prep. This gave us 9
+talks in the end.</p>
+      <p>Of those 9 talks, 7 finished in less than their alloted 5 minutes. One problem
+that came out was the Houston.pm lead did not do a good job of letting the
+speaker know how much time was remaining. He got his act together after a couple
+of presentations, but since he was off to one side of the room, the speaker did
+not always see him.</p>
+      <p>The presentations were as follows:</p>
+      <h3>Robert Stone - <code>$#</code> sigil</h3>
+      <p>Robert covered both the <code>$#</code> global variable and the <code>$#</code>
+sigil when applied to an array. Resources included:</p>
+      <p><ul>
+  <li><a href="The_Perl_%24%23_Sigil.pptx">Slides</a> are on-line</li>
+  <li><a href="http://search.cpan.org/~andyd/perl5.003_07/pod/perlvar.pod" target="_blank">Obsolete Documentation for $#</a> 
+  <li><a href="https://www.gnu.org/software/gawk/manual/html_node/OFMT.html" target="_blank">OFMT in awk</a></li>
+  <li><a href="http://search.cpan.org/~dapm/perl-5.10.1/pod/perl5100delta.pod#The_%24%2a_and_%24%23_variables_have_been_removed" target="_blank">Obsoletion of $# Notice</a></li>
+  <li><a href="http://perl5.git.perl.org/perl.git/commit/8d063cd8450e59ea1c611a2f4f5a21059a" target="_blank">The first Perl commit</a></li>
+  <li><a href="http://perldoc.perl.org/perldata.html#Variable-names" target="_blank">Documentation for $#array</a></li>
+</ul>  </p>
+      <h3>Todd Rinaldo - Mocking subs with Test::MockModule</h3>
+      <p>Todd described problems with unit tests that run too long because of expensive
+internal dependencies. He showed how to use <a href="https://metacpan.org/pod/Test::MockModule" target="_blank">Test::MockModule</a>
+to decouple these dependencies in the code under test. This can help tests become
+fast enough that they will be run consistently.</p>
+      <p>The <a href="https://github.com/toddr/houston.pm/tree/master/2014-November" target="_blank">code</a> for Todd's talk is available on github.</p>
+      <h3>Julian Brown - PostgreSQL Unit Testing</h3>
+      <p>Julian showed how he uses temporary tables in PostgreSQL to make unit tests that
+are useful and don't leave test data in any production databases.</p>
+      <h3>Chris Mevissen - Tail recursion using Clojure</h3>
+      <p>Chris gave an introduction to the concept of tail recursion and explained how
+some languages can optimize it. He showed how tail recursion works using the
+Clojure programming language.</p>
+      <h3>Brett Estrade - Text Mining in Perl</h3>
+      <p>Brett introduced the book <a href="http://www.wiley.com/WileyCDA/WileyTitle/productCd-0470176431.html" target="_blank">Practical
+Text Mining with Perl</a> and showed a technique for determining the simularity
+between documents by counting words and applying vector math. While this sounds
+crazily advanced, Brett's explanation was clear and pretty easy to understand.</p>
+      <h3>Zaki Mughal - Embedding R in Perl through the C API</h3>
+      <p>Zaki briefly introduced the problem of doing statistical analysis in Perl. There
+do not appear to be many modules supporting serious statistical analysis. The
+R language does support serious statistics, but it's not Perl.</p>
+      <p>Zaki showed how he embedded R in Perl to test the idea of using R from Perl form
+real statistical analysis.</p>
+      <p><ul>
+   <li>Git repo for <a href="https://github.com/zmughal/embedding-r-in-perl-experiment" target="_blank">Embedding R in Perl</a></li>
+   <li>Git repo for <a href="https://github.com/zmughal/data-frame-experiment" target="_blank">Perl data frame implementation</a></li>
+</ul></p>
+      <p>He says that everything is a bit experimental at this point and the APIs are
+likely to change.</p>
+      <h3>G. Wade Johnson - Use <code>map</code></h3>
+      <p>Wade spent a short time talking about the virtues of Perl's <code>map</code> operator,
+before getting down to the business of showing how it should be used. He finished with
+an example of using <code>map</code> in a way that most people would not expect. He
+did stress that he would never do this in production code.</p>
+      <p>The <a href="lt_map.html" target="_blank">slides</a> are available on-line.</p>
+      <h3>Jim Bacon - When to Delegate Instead of Inherit</h3>
+      <p>Jim gave a quick unprepared talk on an OO design decision that many people find
+difficult: when do you inherit from a class and when do you aggregate and delegate.</p>
+      <p>His advice is if you will not pass the other class's unit tests, you cannot
+inherit and must delegate. This is a concrete test for the advice that you
+often find on-line for only inheriting if the subclass ISA base class.</p>
+      <p>Jim went further to talk about how Moo and Moose support easy delegation. He
+also suggested checking out the Throwable module.</p>
+      <h3>Brett Estrade - Try::Tny and nested try/catch blocks</h3>
+      <p>Brett got up again to give one more talk. He described a piece of code
+        he had found that seemed particularly offensive.</p>
+
+<pre><code>
+try {
+   do_this;
+}
+catch {
+  try {
+    do_that;
+  }
+  catch {
+    last_try; # which may die or throw an exception
+  }
+}
+</code></pre>
+
+      <p>Brett had not found a solution that he really liked, yet. But he was
+      exploring the possibility of doing something with the exception outside
+      the try/catch. Something like:
+
+<pre><code>
+my $x = try { do_this } catch { $_ };
+# now do something with $x
+</code></pre>
+
+      <h3>Summary</h3>
+
+      <p>We had 17 people attending this month. As always, we'd like to thank
+        cPanel, Inc. for providing the meeting space and food for the group.</p>
+[% END -%]
