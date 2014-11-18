@@ -44,6 +44,8 @@ Clojure programming language.</p>
 Text Mining with Perl</a> and showed a technique for determining the simularity
 between documents by counting words and applying vector math. While this sounds
 crazily advanced, Brett's explanation was clear and pretty easy to understand.</p>
+      <p>Brett has provided a more advanced <a href="https://github.com/estrabd/lightning-talks/tree/master/houston-pm-13-nov-2014-text-mining" target="_blank">example</a>
+      of the document simularity concept on github.</p>
       <h3>Zaki Mughal - Embedding R in Perl through the C API</h3>
       <p>Zaki briefly introduced the problem of doing statistical analysis in Perl. There
 do not appear to be many modules supporting serious statistical analysis. The
@@ -70,32 +72,17 @@ inherit and must delegate. This is a concrete test for the advice that you
 often find on-line for only inheriting if the subclass ISA base class.</p>
       <p>Jim went further to talk about how Moo and Moose support easy delegation. He
 also suggested checking out the Throwable module.</p>
-      <h3>Brett Estrade - Try::Tny and nested try/catch blocks</h3>
+      <h3>Brett Estrade - Try::Tiny and nested try/catch blocks</h3>
       <p>Brett got up again to give one more talk. He described a piece of code
-        he had found that seemed particularly offensive.</p>
+        he had found that seemed particularly offensive. To show what he meant, Brett
+        has provided code to explain his position.</p>
 
-<pre><code>
-try {
-   do_this;
-}
-catch {
-  try {
-    do_that;
-  }
-  catch {
-    last_try; # which may die or throw an exception
-  }
-}
-</code></pre>
-
-      <p>Brett had not found a solution that he really liked, yet. But he was
-      exploring the possibility of doing something with the exception outside
-      the try/catch. Something like:
-
-<pre><code>
-my $x = try { do_this } catch { $_ };
-# now do something with $x
-</code></pre>
+      <ul>
+        <li><a href="https://github.com/estrabd/lightning-talks/blob/master/houston-pm-13-nov-2014-try-tiny/error-propagation-example.pl" target="_blank">Code</a>
+          showing the original problem with nested exception handling.</li>
+        <li>A potential <a href="https://github.com/estrabd/lightning-talks/blob/master/houston-pm-13-nov-2014-try-tiny/best-idea-sofar.pl" target="_blank">solution</a>
+          without nesting.</li>
+      </ul>
 
       <h3>Summary</h3>
 
