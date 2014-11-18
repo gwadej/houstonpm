@@ -1,0 +1,142 @@
+Unit Testing Postgresql
+using Temp Tables
+
+---------------------------------
+Unit Test Requirements
+- Stable (always works)
+- Leaves no trace (no cruft if crashes)
+   o Does not leave rows in existing tables
+   o Does not modify existing tables
+
+---------------------------------
+Minor Design Changes
+- Use “our $tTableOne” in sql statements, where $tTableOne can be
+overridden.
+- Use RETURNING “key” to get insert_id rather than $dbh->last_insert_id ();
+- Create routine in module: _createTempTables, that recreates the full
+schema as temp tables.
+
+---------------------------------
+Using Our Table Names
+
+package PerlMongers::DataSet;
+
+use strict;
+use warnings;
+
+use PerlMongers::DB;
+use PerlMongers::Common;
+
+our $OHLCDataSets = qq~"pm"."OHLCDataSets"~;
+our $OHLCData     = qq~”pm"."OHLCData"~;
+
+---------------------------------
+_createTempTables
+
+sub _createTempTables
+{
+    my $dbh = PerlMongers::DB::getPgDBH ();
+
+    my $sql = qq~
+CREATE TEMP TABLE $OHLCDataSets
+(
+  "OHLCDataSetID" serial NOT NULL,
+  "Name" character varying(50) NOT NULL,
+  "Pair" character(6) NOT NULL,
+  period smallint NOT NULL,
+  CONSTRAINT "OHLCDataSets_pkey" PRIMARY KEY ("OHLCDataSetID")
+)
+---------------------------------
+Use RETURNING for last_insert_id
+
+sub createDataSet
+{
+    my ($name, $pair, $period, @data) = @_;
+
+    my $dbh = PerlMongers::DB::getPgDBH ();
+
+    # create dataset record
+
+    my $sql = qq~INSERT INTO $OHLCDataSets ("Name", "Pair", "period")
+VALUES (?, ?, ?) RETURNING "OHLCDataSetID";~;
+    my $sth = $dbh->prepare ($sql);
+    my $results = $sth->execute ($name, $pair, $period);
+
+    my $ref = $sth->fetchrow_arrayref;
+    my $dataset_id = $ref->[0];
+
+    $sth->finish ();
+
+    # now insert the actual data
+
+    $sql = qq~INSERT INTO $OHLCData ("OHLCDataSetID", "Date", "EpochTime",
+"Open", "High", "Low", "Close")
+            VALUES (?, ?, ?, ?, ?, ?, ?);~;
+
+    $sth = $dbh->prepare ($sql);
+
+    foreach my $ref (@data)
+    {
+        my $etime = PerlMongers::Common::getTimeFromDate ($ref->{'Date'});
+
+        $sth->execute ($dataset_id,
+            $ref->{'Date'},
+            $etime,
+            $ref->{'Open'},
+            $ref->{'High'},
+            $ref->{'Low'},
+            $ref->{'Close'});
+    }
+
+    $sth->finish ();
+
+    return $dataset_id;
+}
+---------------------------------
+Populating DataSets, and organizing tests.
+
+my $data_set_name = "EURAUD_daily";
+my @base_data = PerlMongers::DataSet::loadDataSet ($data_set_name);
+my @compare_base_data = copyAndRemoveKey ("OHLCDataSetID", @base_data);
+
+{
+    local $PerlMongers::DataSet::OHLCDataSets = "tOHLCDataSets";
+    local $PerlMongers::DataSet::OHLCData = "tOHLCData";
+
+    PerlMongers::DataSet::_createTempTables ();
+
+    my $currencyPair = "XYZZYX";
+    my $dataSetName = $currencyPair . "_daily";
+
+    my $dataset_id = PerlMongers::DataSet::createDataSet ($dataSetName,
+$currencyPair, 1440, @base_data);
+    my @copy_data = PerlMongers::DataSet::loadDataSet ($dataSetName);
+
+    is (@copy_data, @base_data, "Identical number of points");
+
+    # Unfortunately, OHLCDataSetID will be different between the 2 runs, so
+I
+    # have to remove it before comparing the datasets, quickly
+
+    my @compare_copy_data = copyAndRemoveKey ("OHLCDataSetID", @base_data);
+
+    is_deeply (\@compare_copy_data, \@compare_base_data, "data created
+identically");
+
+    my $copy_dataset_id = PerlMongers::DataSet::getDataSetID ($dataSetName);
+
+    is ($copy_dataset_id, $dataset_id, "getDataSetID is correct");
+
+    PerlMongers::DataSet::deleteDataSet ($dataSetName);
+
+    my $dbh = PerlMongers::DB::getPgDBH ();
+    my $sql = qq~SELECT COUNT(*) FROM $PerlMongers::DataSet::OHLCDataSets
+WHERE "OHLCDataSetID" = ?~;
+    my $sth = $dbh->prepare ($sql);
+    my $results = $sth->execute ($dataset_id);
+
+    my $ref = $sth->fetchrow_arrayref ();
+    my $count = $ref->[0];
+
+    is ($count, 0, 'deleteDataSet deleted OHLCDataSet');
+
