@@ -34,7 +34,10 @@ fast enough that they will be run consistently.</p>
       <h3>Julian Brown - PostgreSQL Unit Testing</h3>
       <p>Julian showed how he uses temporary tables in PostgreSQL to make unit tests that
 are useful and don't leave test data in any production databases.</p>
-      <p>The <a href="unit_testing_postgresql.txt" target="_blank">text</a> of his slides are available.</p>
+      <ul>
+        <li>The <a href="unit_testing_postgresql.txt" target="_blank">text</a> of his slides are available.</li>
+        <li>An example <a href="UnitTestPGSql.tar.gz" target="_blank">project</a> demonstrating the technique is also available.</li>
+      </ul>
       <h3>Chris Mevissen - Tail recursion using Clojure</h3>
       <p>Chris gave an introduction to the concept of tail recursion and explained how
 some languages can optimize it. He showed how tail recursion works using the
