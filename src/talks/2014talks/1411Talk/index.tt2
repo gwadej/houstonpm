@@ -42,6 +42,10 @@ are useful and don't leave test data in any production databases.</p>
       <p>Chris gave an introduction to the concept of tail recursion and explained how
 some languages can optimize it. He showed how tail recursion works using the
 Clojure programming language.</p>
+      <ul>
+         <li><a href="https://docs.google.com/presentation/d/1Ab6Z_ttUMwpobPgb1AZooco4w8TyoP2i0cmcvVDmI2Q/pub?start=true&loop=false&delayms=60000&slide=id.g4b6c40694_11" target="_blank">Slides</a></li>
+         <li><a href="https://github.com/despertargz/demo-tailrecursion" target="_blank">Code</a></li>
+      </ul>
       <h3>Brett Estrade - Text Mining in Perl</h3>
       <p>Brett introduced the book <a href="http://www.wiley.com/WileyCDA/WileyTitle/productCd-0470176431.html" target="_blank">Practical
 Text Mining with Perl</a> and showed a technique for determining the simularity
