@@ -5,7 +5,7 @@
     <h1 class="subhead">Exception Handling in Perl</h1>
 
     <p>Exceptions are an error handling technology that is very useful for
-    large or complex systems. This monght G. Wade Johnson gave a <a
+    large or complex systems. This month G. Wade Johnson gave a <a
         href="exception_handling_in_perl.html">presentation</a> on error
     handling strategies, focusing on exceptions.</p>
 
