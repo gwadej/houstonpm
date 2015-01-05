@@ -20,13 +20,13 @@
     <h2 class="subhead">Upcoming Meetings</h2>
 
     <dl>
-        <dt>December 11, 2014</dt>
-        <dd>Social Meeting at The Black Lab</dd>
-
         <dt>January 8, 2015</dt>
-        <dd>TBD at cPanel</dd>
+        <dd><em>Best Practices Gone Bad</em> with G. Wade Johnson at cPanel, Inc.</dd>
 
         <dt>February 12, 2015</dt>
         <dd>TBD at Hostgator</dd>
+
+        <dt>March 12, 2015</dt>
+        <dd>TBD at cPanel</dd>
     </dl>
 [% END -%]
