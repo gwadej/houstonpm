@@ -1291,4 +1291,16 @@ builtins to using other languages in Perl.</abstract>
     </topic>
   </talk>
 
+  <talk num="1501">
+    <date>January 2015</date>
+    <topic href="/talks/2015talks/1501Talk/index.html">
+      <title>Best Practices Gone Bad</title>
+      <presenter>G. Wade Johnson</presenter>
+      <abstract>Best practices serve as kind-of a short-hand for pointing the way to good
+programming practices. Unfortunately, there are many ways that people can
+misuse any given best practice to generate a bad result. G. Wade Johnson
+covers a few ways that best practices have gone bad in his career.</abstract>
+    </topic>
+  </talk>
+
 </talklist>

@@ -1,0 +1,26 @@
+[% WRAPPER writeup_wrap.tt2
+    title='Summary of January 2015 Presentation'
+    year=2015
+%]
+      <h2 class="subhead">Best Practices Gone Bad</h2>
+      <p>G. Wade Johnson described what is meant by best practices and some of the many
+ways that they can be applied badly. Mostly, he focused on anecdotes from his
+career to describe particular points where someone did really bad things in the
+name of a best practice.</p>
+      <p>The group appeared to be following the topic intently, and there were only a
+few questions during the talk. After the talk, the floodgates opened and we
+spent another 15 minutes digging into some other examples. Some of the points
+were clarified by further discussion.</p>
+      <p>We had decided to try again to use Google Hangouts on Air to stream the talk
+and record it for later. Unfortunately a combination of difficult Wifi and the
+drivers in Wade's laptop resulted in the talk being cut off in the middle. We
+were able to get a wired connection up and continnued to the end of the talk.</p>
+      <ul>
+        <li>The <a href="bpgb.html" target="_blank">slides</a> are available.</li>
+        <li>An edited version of the <a href="https://www.youtube.com/watch?v=T93aexpXShEA"
+           target="_blank">video</a> (missing the technical difficulties) is also
+           available.</li>
+      </ul>
+      <p>We had 8 people attending this month. As always, we'd like to thank
+        cPanel, Inc. for providing the meeting space and food for the group.</p>
+[% END -%]

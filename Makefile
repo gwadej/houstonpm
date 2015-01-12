@@ -17,7 +17,8 @@ TALKSUMMARIES=${OUTDIR}/talks/mostrecent.html \
               ${OUTDIR}/talks/2011talks/index.html \
               ${OUTDIR}/talks/2012talks/index.html \
               ${OUTDIR}/talks/2013talks/index.html \
-              ${OUTDIR}/talks/2014talks/index.html
+              ${OUTDIR}/talks/2014talks/index.html \
+              ${OUTDIR}/talks/2015talks/index.html
 
 
 site: base ${TALKSUMMARIES}
@@ -27,6 +28,7 @@ dirs:
 	if [ ! -d ${OUTDIR}/talks ]; then mkdir ${OUTDIR}/talks; fi
 
 base: dirs convert
+	cp -a -L src/* ${OUTDIR}
 	cp -a images/feed-icon-10x10.png ${OUTDIR}
 	find ${OUTDIR} -type f -name '*.tt2' -exec rm -rf {} \; -prune
 	cp -a atom.xml ${OUTDIR}
@@ -73,14 +75,17 @@ ${OUTDIR}/talks/2013talks/index.html: talks.xml yeartalks.xsl templates/yeartalk
 ${OUTDIR}/talks/2014talks/index.html: talks.xml yeartalks.xsl templates/yeartalks.tt2
 	bin/talks.pl --style=yeartalks.xsl --template=yeartalks.tt2 --define year=2014 talks.xml > $@
 
+${OUTDIR}/talks/2015talks/index.html: talks.xml yeartalks.xsl templates/yeartalks.tt2
+	bin/talks.pl --style=yeartalks.xsl --template=yeartalks.tt2 --define year=2015 talks.xml > $@
+
 convert:
-	ttree --define end_year=2014 -f _ttreerc
+	ttree --define end_year=2015 -f _ttreerc
 
 install:
-	cp -a ${OUTDIR}/* ${INSTALLDIR}
+	cp -r -p ${OUTDIR}/* ${INSTALLDIR}
 
 publish:
-	cp -a ${OUTDIR}/* ${PUBLISHDIR}
+	cp -r -p ${OUTDIR}/* ${PUBLISHDIR}
 
 clean:
 	find . -name '*.bck' -exec rm {} \;

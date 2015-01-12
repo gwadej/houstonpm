@@ -1,0 +1,467 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>Best Practices Go Bad</title>
+<!-- metadata -->
+<meta name="generator" content="S5" />
+<meta name="version" content="S5 1.1" />
+<meta name="presdate" content="20140710" />
+<meta name="author" content="G. Wade Johnson" />
+<meta name="company" content="Campbell Johnson" />
+<!-- configuration parameters -->
+<meta name="defaultView" content="slideshow" />
+<meta name="controlVis" content="hidden" />
+<!-- style sheet links -->
+<link rel="stylesheet" href="ui/houstonpm/slides.css" type="text/css" media="projection" id="slideProj" />
+<link rel="stylesheet" href="ui/houstonpm/outline.css" type="text/css" media="screen" id="outlineStyle" />
+<link rel="stylesheet" href="ui/default/print.css" type="text/css" media="print" id="slidePrint" />
+<link rel="stylesheet" href="ui/default/opera.css" type="text/css" media="projection" id="operaFix" />
+<!-- S5 JS -->
+<script src="ui/default/slides.js" type="text/javascript"></script>
+<style type="text/css">
+    .centered { text-align: center; }
+    .left { float: left; }
+    .right { float: right; }
+    h1 + blockquote, h1 + q { margin-top: 2em; }
+</style>
+</head>
+<body>
+
+<div class="layout">
+<div id="controls"><!-- DO NOT EDIT --></div>
+<div id="currentSlide"><!-- DO NOT EDIT --></div>
+<div id="header"></div>
+<div id="footer">
+<h1>Houston.pm</h1>
+<h2>January 8, 2015</h2>
+</div>
+
+</div>
+
+<div class="presentation">
+
+<div class="slide">
+<h1>Best Practices Gone Bad</h1>
+<h2></h2>
+<h3>G. Wade Johnson</h3>
+<h4>Campbell Johnson</h4>
+</div>
+
+<div class="slide">
+<h1>What Are Best Practices?</h1>
+<p><q>Commercial or professional procedures that are accepted or prescribed as
+        being correct or most effective.</q></p>
+<p>Practices agreed on by a given community.</p>
+<div class="handout">
+    <p>Best practices serve as a kind of mental shorthand to avoid having to
+        rethink how to do everything each time. This also helps less senior
+        people do mostly the right thing, even if they don't understand why.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>How Can Best Practices Go Bad?</h1>
+<p>They don't.</p>
+<p>People misuse these practices.</p>
+<div class="handout">
+    <p>Best practices do not cover all of the reality of a particular process
+        They mostly work as a reminder if you already know what you are doing.
+        They also serve as a good starting point for those who are completely
+        lost.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Why Do People Misapply Best Practices?</h1>
+<p>This is easier to explain after some examples.</p>
+<div class="handout">
+<p>Honestly, you wouldn't believe me if I told you now.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>A Tale of Two Lengths</h1>
+<p>The goal is to have readable, maintainable code.</p>
+<p>Define coding standards to enforce consistency.</p>
+<div class="handout">
+<p>This is an example from a place I worked years ago. They had a very rigid
+    set of coding standards/coding style. I was not able to get a decent
+    explanation of most of the rules during the short time I was there.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>The Practices</h1>
+<ul class="incremental">
+    <li>Expressive (long) names</li>
+    <li>80 character line length</li>
+    <li>Java/method chaining</li>
+</ul>
+<div class="handout">
+<p>The first two points were specified in the company standards. There were no
+    provisions for violating the rules under any circumstances. The final is a
+    common coding practice in the Java community. Since the code was written in
+    Java, it was not surprising that we saw it.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Results of Tale</h1>
+<pre><code>
+    SpecialResultClass resultOfInterestingAction
+        = businessObjectCollection.getItemByIndex(
+            theIndexOfTheObjectOfInterest
+          ).performActionReturningInternalObject()
+           .performInterestingAction();
+</code></pre>
+<div class="handout">
+<p>Obviously, the names have been changed to protect the guilty. This is
+    actually pretty close to some of the code I saw while working there.</p>
+<p>Take a moment to see if you can tell what is actually happening.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Clearer, Less-Cluttered Approach</h1>
+<pre><code>
+    Result result = businessObjs.get( i ).getFoo().act();
+</code></pre>
+<div class="handout">
+<p>Except for a little license for too generic names, this is much easier to
+    understand. Even if the variable and method names are shorter, it is
+    still as clear as the original (if not more so). And, as a bonus, it
+    doesn't take up 20-25% of a screen.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Why did it fail?</h1>
+<p>The two best practices were pushing in opposite directions.</p>
+<p>These results clashed especially with language common practice.</p>
+<div class="handout">
+<p>This is a case of two best practices chosen with reasonable thought
+    individually, but with no thought to how they would interact. To make
+    matters worse, when it was obvious the rules were conflicting they just
+    got more stubborn about enforcing the rule.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Unnecessarily <abbr title="Don't Repeat Yourself">DRY</abbr></h1>
+<h2>The <abbr title="Don't Repeat Yourself">DRY</abbr> Principle</h2>
+<br />
+<blockquote>Every piece of knowledge must have a single, unambiguous,
+    authoritative representation within a system.</blockquote>
+<p class="right"><cite>Pragmatic Programmer</cite>, Hunt and Thomas</p>
+<div class="handout">
+<p>I originally saw this as the <em>One Right Place</em> principle from P. J.
+    Plauger's book <cite>Programming on Purpose</cite>. Each piece of knowledge
+    in a system should be be represented in only one place. And this place
+    should be the obvious, or right place for that information.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>What most people hear</h1>
+<p class="center">Remove duplication.</p>
+<div class="handout">
+<p>Despite a very clear explanation of what the authors meant by <abbr
+    title="Don't Repeat Yourself">DRY</abbr>, what most people hear is don't
+    duplicate your code.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Overly <abbr title="Don't Repeat Yourself">DRY</abbr> Constants</h1>
+<pre><code>
+   constant FOUR =&gt; 4;
+
+   $hour = DECEMBER;
+
+   my @months = ('') x DECEMBER;
+</code></pre>
+<div class="handout">
+<p>In the first case, we probably had a series of uses of the literal <code>4</code>
+    with no obvious relation. So, the programmer gave a very generic (and
+    therefore, useless) name for the constant. In one system I maintained a long
+    time ago. The constant <code>FOUR</code> had actually been given the value
+    <code>5</code> at some point.</p>
+<p>In the other two cases, we have a constant for the month of December and the
+    code uses it inappropriately. What's worse, depending on how the value is
+    used, it's obvious value could be either <code>11</code> or <code>12</code>
+    and we have no idea which.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Overly <abbr title="Don't Repeat Yourself">DRY</abbr> Code</h1>
+<pre><code>
+   sub process_items {
+       my ($which, @items) = @_;
+       foreach my $item (@items) {
+           if( $which == 0 ) { $item = ''; }
+           elsif( $which == 1 ) { $item .= reverse $item; }
+           elsif( $which == 2 ) { $item *= 2; }
+           else { $item *= $item; }
+       }
+       return @items;
+   }
+</code></pre>
+<div class="handout">
+<p>In this case, someone noticed a bunch of loops that processed an array. To
+    avoid having the loop in multiple places, they decided to copy them all to
+    this one routine and provide a control variable to tell which thing to do.
+    The first clue that this is a bad idea is the name of the function. It does
+    mostly say what the routine does, but it doesn't tell you anything. Also,
+    we will be doing one or more comparisons on the variable for each item of the
+    loop. That's obviously an unnecessary waste of time.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Why did it fail?</h1>
+<p>The focus is on code/text duplication rather than knowledge duplication.</p>
+<div class="handout">
+<p>In most cases of <abbr>DRY</abbr> failure, the problem was focusing on the
+    actual text that is duplicated and not on the knowledge. In both the
+    constant and code cases, it's pretty obvious that focusing on the meaning
+    rather than the code would have made us realize that even though the text
+    is the same, there is no duplication.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Design Patterns</h1>
+<ul class="incremental">
+    <li>Good solutions to repeated problems</li>
+    <li>Good names for recognizable solutions</li>
+    <li>A new way of formulating and describing solutions</li>
+    <li>Good design practice</li>
+</ul>
+<div class="handout">
+<p>The <cite>Design Patterns</cite> book by the <em>Gang of Four</em> came out
+    in 1995. The book made a rather sizable impression on people doing <abbr
+        title="Object Oriented Programming">OOP</abbr> at the time. Most people
+    realized that this was an important piece of work. But not everyone agreed
+    why. Interestingly, the Java programming language was taking off about the
+    same time, and Design Patterns became very much tied up in what many Java
+    programmers saw as the right way to write code.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Pattern Mania</h1>
+<ul class="incremental">
+    <li><q>Your design is bad, because it doesn't contain <em>real</em> patterns.</q></li>
+    <li>hello_world: 17 patterns</li>
+    <li>Java has multiple levels of decorator for its <code>InputStream</code>s</li>
+    <li><q>I had a problem, so I used Java. Now I have a <code>ProblemFactory</code>.</q></li>
+</ul>
+<div class="handout">
+<p>The first comment usually comes from people who have never programmed in a
+    time without Design Patterns. It sometimes also comes from people who had a
+    religious conversion upon reading the book.</p>
+<p>The second item is a joke based on a problem you see from junior programmers
+    that first find patterns. After all, they reason, if one pattern is good
+    using all of them must be better.</p>
+<p>Although the Decorator approach to I/O that Java uses is quite elegant and
+    allows a fair amount of flexibility without too many classes, they do not
+    give a shortcut for the most common use of file input. This requires that
+    you always have to create a <code>FileInputStream</code> and wrap it in a
+    <code>BufferedInputStream</code>. Therefore, people who aren't aware of
+    this are always stuck with unbuffered output.</p>
+<p>The final is a joke about some Java programmers who use designs as the default
+    way to solve any problem. It's not really a comment on the language. It's
+    more about how it's often used.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Why did it fail?</h1>
+<p>Instead of using Design Patterns descriptively or as an aid to think about
+    a problem. They are spread on the problem like a condiment.</p>
+<div class="handout">
+<p>If you really read the Gang of Four book, you can see that each pattern has
+    not only suggestions on how it should be used, but also consequences of
+    using the pattern. Most of the pattern zealots don't notice there is any
+    downside. As with any form of abstraction, the code is somewhat harder to
+    understand with a pattern in place. Unless the pattern really provides
+    enough benefit, a simpler, less powerful solution may be better.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>How to Do Design</h1>
+<p>Any reasonable sized programming problem requires some design.</p>
+<div class="handout">
+<p>This one is a little less clear than the others, because there is not one
+    clear best practice for design. It's actually a complicated enough topic
+    that people may easily disagree. Let's start off with a couple of
+    approaches that most would agree don't work.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Code and Fix</h1>
+<p><q>You guys start coding and I'll go find out what they want us to build.</q></p>
+<div class="handout">
+<p>Many inexperienced programmers start solving problems with code before they
+    have the slightest idea where they are going. The result is usually an
+    unmaintainable, big ball of mud.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Big Design Up Front</h1>
+<ul class="incremental">
+    <li>Waterfall approach</li>
+    <li>Designing when you know the least you will ever know</li>
+    <li>Design is usually compromised as soon as coding begins</li>
+    <li><abbr title="Unified Modelling Language">UML</abbr></li>
+    <li>Analysis Paralysis</li>
+</ul>
+<div class="handout">
+<p>To fix the problem with programmers coding without a plan, some decided that
+    we should lay out the whole plan ahead of time so we know where we are going
+    and when we will get there.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Excessive Flexibility</h1>
+<ul class="incremental">
+    <li>Requires predicting the future</li>
+    <li>Predicting the future is hard</li>
+    <li>Design for change that may not happen</li>
+    <li>You probably will miss changes that actually do happen</li>
+    <li>Even reasonable assumptions can fail</li>
+    <li>SOAP is so flexible most people avoid it</li>
+</ul>
+<div class="handout">
+<p>In trying to deal with the fact that things would change, many decided that
+    we could design flexibility into the system. Portions of the design would
+    be easy to change to prepare for things we guessed wrong or changes in the
+    requirements.</p>
+<p>This can work reasonably well if you are building a project just like ones
+    you've built in the past. One might wonder why you just don't use one of
+    them.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Push-back Against Big Design: <abbr title="You Aren't Gonna Need It">YAGNI</abbr></h1>
+<blockquote>Always implement things when you <strong>actually</strong> need
+    them, never when you just <strong>foresee</strong> that you need
+    them.</blockquote>
+<div class="handout">
+<p>After dealing with too many <em>flexible</em> systems that were unmaintainable
+    because the requirements never flexed where the code did, there was push-back
+    to try to get back to simpler design again.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>What is <abbr title="You Aren't Gonna Need It">YAGNI</abbr>?</h1>
+<ul class="incremental">
+    <li>From Extreme Programming</li>
+    <li>Do the simplest thing that could possibly work</li>
+    <li>Avoid maintenance of code that is not yet needed</li>
+    <li>Avoid bugs in code that is not yet needed</li>
+    <li>You know less now than you will when you really need it</li>
+    <li>This would only work if it costs more later to implement</li>
+</ul>
+<div class="handout">
+<p>Done correctly, this should reduce the <em>code bloat</em> and <em>feature
+    creep</em> associated with trying to design for every eventuality.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1><abbr title="You Aren't Gonna Need It">YAGNI</abbr> Overload</h1>
+<ul class="incremental">
+    <li>Avoid coding something that is actually a requirement</li>
+    <li>Avoid thinking about a complex design to see if we need it</li>
+    <li>Leave out <em>convenience</em> functions</li>
+    <li><a href="http://xkcd.com/221/" target="_blank">Maybe a little too simple</a></li>
+</ul>
+<div class="handout">
+<p>Of course, there's no principle in existence that can't be taken to extremes.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Why Did These Fail?</h1>
+<p>Too much up front design fails because we can't predict the future.</p>
+<p>Too much <abbr title="You Aren't Gonna Need It">YAGNI</abbr> looks like
+    <em>head in the sand</em> code and fix</p>
+<div class="handout">
+<p>Not surprisingly, the reality is a need to think when you are doing design.
+    We need to think about what might be in the future, but code for the
+    present. Resist the urge to code for things that might happen, but actually
+    build anything that is required.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Why Do People Misapply Best Practices?</h1>
+<ul class="incremental">
+    <li>Cargo Culting</li>
+    <li>Misunderstanding</li>
+    <li>Lack of Experience</li>
+    <li>Lazy/fuzzy thinking</li>
+</ul>
+<div class="handout">
+<p>Unfortunately, two of the things that best practices should help us with are
+    the same things that cause the best practices to fail.</p>
+<ul>
+    <li>Inexperience</li>
+    <li>Lack of time/inclination to think deeply about the problem</li>
+</ul>
+</div>
+</div>
+
+<div class="slide">
+<h1></h1>
+<h2>Questions?</h2>
+<div class="handout">
+</div>
+</div>
+
+<div class="slide">
+<h1>References</h1>
+<ul>
+    <li><cite>The Pragmatic Programmer</cite> &mdash; Hunt and Thomas</li>
+    <li><cite>Design Patterns</cite> &mdash; Gamma, Helm, Johnson, and Vlissides</li>
+    <li><cite>Programming on Purpose: Essays on Software Design</cite> &mdash; P. J. Plauger</li>
+    <li><a href="http://accu.org/index.php/journals/1837" target="_blank">YAGNI-C as a Practical Application of YAGNI</a></li>
+    <li><a href="http://anomaly.org/wade/blog/best_practices_gone_bad/" target="_blank">Best
+            Practices Gone Bad</a> - Programmer Musings</li>
+</ul>
+<div class="handout">
+</div>
+</div>
+
+<div class="slide">
+<h1>Extras</h1>
+<ul>
+    <li>Feature Freeze</li>
+    <li>Continuous Release</li>
+    <li>Developer Specialization</li>
+    <li>Avoid Premature Optimization</li>
+    <li>Version Control: Feature Branches</li>
+    <li>Version Control: Integration Branches</li>
+    <li>Refactoring</li>
+</ul>
+<div class="handout">
+<p>Here are a few other best practices that I can think of that I didn't
+    have time to cover.</p>
+</div>
+</div>
+
+</div>
+
+</body>
+</html>

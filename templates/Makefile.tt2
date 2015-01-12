@@ -18,7 +18,7 @@ dirs:
 	if [ ! -d ${OUTDIR}/talks ]; then mkdir ${OUTDIR}/talks; fi
 
 base: dirs convert
-	cp -a src/* ${OUTDIR}
+	cp -a -L src/* ${OUTDIR}
 	cp -a images/feed-icon-10x10.png ${OUTDIR}
 	find ${OUTDIR} -type f -name '*.tt2' -exec rm -rf {} \; -prune
 	cp -a atom.xml ${OUTDIR}
@@ -38,10 +38,10 @@ convert:
 	ttree --define end_year=[%year%] -f _ttreerc
 
 install:
-	cp -a ${OUTDIR}/* ${INSTALLDIR}
+	cp -r -p ${OUTDIR}/* ${INSTALLDIR}
 
 publish:
-	cp -a ${OUTDIR}/* ${PUBLISHDIR}
+	cp -r -p ${OUTDIR}/* ${PUBLISHDIR}
 
 clean:
 	find . -name '*.bck' -exec rm {} \;
