@@ -1303,4 +1303,17 @@ covers a few ways that best practices have gone bad in his career.</abstract>
     </topic>
   </talk>
 
+  <talk num="1502">
+    <date>February 2015</date>
+    <topic href="/talks/2015talks/1502Talk/index.html">
+      <title>A Few Short Topics</title>
+      <presenter>Chris Mevissen</presenter>
+      <presenter>Julian Brown</presenter>
+      <abstract>This time we had a pair of short presentations. Chris Mevissen showed the
+use of bitwise operators in Perl as a followup to his previous talk on BER
+decoding. Julian Brown was up next showing how to use the D3 JavaScript
+library to generate candlestick charts in SVG.</abstract>
+    </topic>
+  </talk>
+
 </talklist>

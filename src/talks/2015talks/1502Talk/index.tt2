@@ -1,0 +1,48 @@
+[% WRAPPER writeup_wrap.tt2
+    title='Summary of February 2015 Presentation'
+    year=2015
+%]
+      <h2 class="subhead">A Few Short Topics</h2>
+      <p>The presentations actually started a little late due to a number of
+engaging conversations going around the table.</p>
+      <h3 class="subsub">Bit Manipulation in Perl</h3>
+      <p>Chris started us off with an exploration of the bit manipulation operators
+available in Perl. In his earlier presentation (<a
+href="/talks/2014talks/1408Talk/index.html">Introduction to ASN.1 BER
+Encoding</a>), Chris had learned a little about bit manipulation and this talk
+was an overview of what he has learned.</p>
+      <p>He started by showing how to extract bits ifrom a number as strings, which
+is pretty straight-forward for Perl. He then repeated the same manipulations
+using bitwise masking. He explored shifting, <code>or</code>ing, and <code>xor</code>ing.
+He also showed how to swap the bytes in an integer using bit maniplate. As
+a finale, Chris also showed an implementation of a Quick inverse square root,
+using some of these operations.</p>
+      <p>In addition to being an interesting topic that many Perl programmers never
+tackle, this talk spawned a pretty lively discussion on the representation of
+integers and floating point numbers.</p>
+      <p>The Perl code Chris used for the demonstration is <a target="_blank"
+      href="https://github.com/despertargz/perlmongers-bitwise-operators">available</a>
+on github.</p>
+      <h3 class="subsub">Financial Charts with D3.js and SVG</h3>
+      <p>Julian Brown started off by displaying a chart that displayed information about
+the Australian dollar versus the US dollar. Since this data is too complex to
+be a simple line graph, he used a candlestick chart for the open/high/low/close
+data and overlaid a line chart showing the simple moving average of the data
+and the exponential moving average as well.</p>
+      <p>Julian showed a JSON data structure that was used to supply this data to the
+page. He used jQuery and D3 to extract the data and use it to build an
+<abbr title="Scalable Vector Graphics">SVG</abbr> repesentation of the chart
+in the page. He walked through the code giving us an idea of what D3 needs to
+build the output. In the process, he also touched on some of the features of
+<abbr title="Scalable Vector Graphics">SVG</abbr> that made the charting easier.</p>
+      <p>This talk also generated quite a bit of discussion that included both the
+technology and a bit about tracking financial data.</p>
+      <p>The code for Julian's presentation is available</p>
+      <ul>
+        <li>The <a target="_blank" href="D3AndSVG/arbchart.html">chart</a></li>
+        <li>The <a target="_blank" href="D3AndSVG/chart_data.js.html">data</a></li>
+        <li>The <a target="_blank" href="D3AndSVG/charts.js.html">code</a></li>
+      </ul>
+      <p>We had 12 people attending this month. As always, we'd like to thank
+        Hostgator, LLC for providing the meeting space and food for the group.</p>
+[% END -%]

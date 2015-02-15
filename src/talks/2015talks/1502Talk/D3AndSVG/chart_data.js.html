@@ -1,0 +1,513 @@
+<div style="BORDER: #cccccc 1px dashed; PADDING: 5px; WIDTH: 95%; BACKGROUND: #f0f0f0; COLOR: #000000; FONT-SIZE: 12px; OVERFLOW: auto; height:auto"><pre>var the_data = {
+  &quot;baseTime&quot; : 86400,
+  &quot;period&quot; : 1440,
+  &quot;title_ele&quot; : &quot;arb_chart_title&quot;,
+  &quot;svg_ele&quot; : &quot;arb_chart_svg&quot;,
+  &quot;chart_name&quot; : &quot;AUDUSD_daily&quot;,
+  &quot;chart_data&quot; : [
+	 {
+		&quot;Close&quot; : &quot;0.8803&quot;,
+		&quot;Date&quot; : &quot;2010-02-03 00:00:00&quot;,
+		&quot;High&quot; : &quot;0.8914&quot;,
+		&quot;ema&quot; : &quot;0.889005913504896&quot;,
+		&quot;Low&quot; : &quot;0.8771&quot;,
+		&quot;Time&quot; : &quot;1265176800000&quot;,
+		&quot;Open&quot; : &quot;0.8847&quot;,
+		&quot;ma&quot; : &quot;0.89096&quot;
+	 },
+	 {
+		&quot;Time&quot; : &quot;1265263200000&quot;,
+		&quot;ma&quot; : &quot;0.88701&quot;,
+		&quot;Open&quot; : &quot;0.8804&quot;,
+		&quot;Date&quot; : &quot;2010-02-04 00:00:00&quot;,
+		&quot;ema&quot; : &quot;0.884624730803917&quot;,
+		&quot;High&quot; : &quot;0.8818&quot;,
+		&quot;Close&quot; : &quot;0.8671&quot;,
+		&quot;Low&quot; : &quot;0.8605&quot;
+	 },
+	 {
+		&quot;Open&quot; : &quot;0.8673&quot;,
+		&quot;ma&quot; : &quot;0.88403&quot;,
+		&quot;Time&quot; : &quot;1265349600000&quot;,
+		&quot;Low&quot; : &quot;0.8576&quot;,
+		&quot;Close&quot; : &quot;0.8682&quot;,
+		&quot;Date&quot; : &quot;2010-02-05 00:00:00&quot;,
+		&quot;ema&quot; : &quot;0.881339784643134&quot;,
+		&quot;High&quot; : &quot;0.8718&quot;
+	 },
+	 {
+		&quot;High&quot; : &quot;0.8683&quot;,
+		&quot;ema&quot; : &quot;0.878271827714507&quot;,
+		&quot;Date&quot; : &quot;2010-02-07 00:00:00&quot;,
+		&quot;Close&quot; : &quot;0.866&quot;,
+		&quot;Low&quot; : &quot;0.8641&quot;,
+		&quot;Time&quot; : &quot;1265522400000&quot;,
+		&quot;ma&quot; : &quot;0.88044&quot;,
+		&quot;Open&quot; : &quot;0.8674&quot;
+	 },
+	 {
+		&quot;Time&quot; : &quot;1265608800000&quot;,
+		&quot;Open&quot; : &quot;0.8661&quot;,
+		&quot;ma&quot; : &quot;0.87711&quot;,
+		&quot;Close&quot; : &quot;0.8676&quot;,
+		&quot;Date&quot; : &quot;2010-02-08 00:00:00&quot;,
+		&quot;ema&quot; : &quot;0.876137462171606&quot;,
+		&quot;High&quot; : &quot;0.8708&quot;,
+		&quot;Low&quot; : &quot;0.8612&quot;
+	 },
+	 {
+		&quot;Time&quot; : &quot;1265695200000&quot;,
+		&quot;Open&quot; : &quot;0.8676&quot;,
+		&quot;ma&quot; : &quot;0.87553&quot;,
+		&quot;Close&quot; : &quot;0.8749&quot;,
+		&quot;Date&quot; : &quot;2010-02-09 00:00:00&quot;,
+		&quot;High&quot; : &quot;0.8796&quot;,
+		&quot;ema&quot; : &quot;0.875889969737285&quot;,
+		&quot;Low&quot; : &quot;0.8674&quot;
+	 },
+	 {
+		&quot;Date&quot; : &quot;2010-02-10 00:00:00&quot;,
+		&quot;High&quot; : &quot;0.889&quot;,
+		&quot;ema&quot; : &quot;0.878411975789828&quot;,
+		&quot;Close&quot; : &quot;0.8885&quot;,
+		&quot;Low&quot; : &quot;0.8708&quot;,
+		&quot;Time&quot; : &quot;1265781600000&quot;,
+		&quot;ma&quot; : &quot;0.87603&quot;,
+		&quot;Open&quot; : &quot;0.8749&quot;
+	 },
+	 {
+		&quot;ma&quot; : &quot;0.87661&quot;,
+		&quot;Open&quot; : &quot;0.8884&quot;,
+		&quot;Time&quot; : &quot;1265868000000&quot;,
+		&quot;Low&quot; : &quot;0.8835&quot;,
+		&quot;ema&quot; : &quot;0.880469580631862&quot;,
+		&quot;High&quot; : &quot;0.8919&quot;,
+		&quot;Date&quot; : &quot;2010-02-11 00:00:00&quot;,
+		&quot;Close&quot; : &quot;0.8887&quot;
+	 },
+	 {
+		&quot;Open&quot; : &quot;0.8888&quot;,
+		&quot;ma&quot; : &quot;0.87734&quot;,
+		&quot;Time&quot; : &quot;1265954400000&quot;,
+		&quot;Low&quot; : &quot;0.8784&quot;,
+		&quot;Close&quot; : &quot;0.8874&quot;,
+		&quot;Date&quot; : &quot;2010-02-12 00:00:00&quot;,
+		&quot;ema&quot; : &quot;0.88185566450549&quot;,
+		&quot;High&quot; : &quot;0.8912&quot;
+	 },
+	 {
+		&quot;Close&quot; : &quot;0.8874&quot;,
+		&quot;ema&quot; : &quot;0.882964531604392&quot;,
+		&quot;High&quot; : &quot;0.8885&quot;,
+		&quot;Date&quot; : &quot;2010-02-14 00:00:00&quot;,
+		&quot;Low&quot; : &quot;0.8862&quot;,
+		&quot;Time&quot; : &quot;1266127200000&quot;,
+		&quot;Open&quot; : &quot;0.8882&quot;,
+		&quot;ma&quot; : &quot;0.87761&quot;
+	 },
+	 {
+		&quot;Close&quot; : &quot;0.8934&quot;,
+		&quot;Date&quot; : &quot;2010-02-15 00:00:00&quot;,
+		&quot;High&quot; : &quot;0.8942&quot;,
+		&quot;ema&quot; : &quot;0.885051625283513&quot;,
+		&quot;Low&quot; : &quot;0.8847&quot;,
+		&quot;Time&quot; : &quot;1266213600000&quot;,
+		&quot;Open&quot; : &quot;0.8873&quot;,
+		&quot;ma&quot; : &quot;0.87892&quot;
+	 },
+	 {
+		&quot;ma&quot; : &quot;0.88235&quot;,
+		&quot;Open&quot; : &quot;0.8935&quot;,
+		&quot;Time&quot; : &quot;1266300000000&quot;,
+		&quot;Low&quot; : &quot;0.8925&quot;,
+		&quot;ema&quot; : &quot;0.888321300226811&quot;,
+		&quot;High&quot; : &quot;0.9026&quot;,
+		&quot;Date&quot; : &quot;2010-02-16 00:00:00&quot;,
+		&quot;Close&quot; : &quot;0.9014&quot;
+	 },
+	 {
+		&quot;Close&quot; : &quot;0.8953&quot;,
+		&quot;Date&quot; : &quot;2010-02-17 00:00:00&quot;,
+		&quot;ema&quot; : &quot;0.889717040181449&quot;,
+		&quot;High&quot; : &quot;0.9035&quot;,
+		&quot;Low&quot; : &quot;0.8943&quot;,
+		&quot;Time&quot; : &quot;1266386400000&quot;,
+		&quot;Open&quot; : &quot;0.9015&quot;,
+		&quot;ma&quot; : &quot;0.88506&quot;
+	 },
+	 {
+		&quot;Low&quot; : &quot;0.8886&quot;,
+		&quot;ema&quot; : &quot;0.889913632145159&quot;,
+		&quot;High&quot; : &quot;0.9025&quot;,
+		&quot;Date&quot; : &quot;2010-02-18 00:00:00&quot;,
+		&quot;Close&quot; : &quot;0.8907&quot;,
+		&quot;ma&quot; : &quot;0.88753&quot;,
+		&quot;Open&quot; : &quot;0.8953&quot;,
+		&quot;Time&quot; : &quot;1266472800000&quot;
+	 },
+	 {
+		&quot;Time&quot; : &quot;1266559200000&quot;,
+		&quot;Open&quot; : &quot;0.8907&quot;,
+		&quot;ma&quot; : &quot;0.89063&quot;,
+		&quot;Close&quot; : &quot;0.8986&quot;,
+		&quot;ema&quot; : &quot;0.891650905716127&quot;,
+		&quot;High&quot; : &quot;0.8988&quot;,
+		&quot;Date&quot; : &quot;2010-02-19 00:00:00&quot;,
+		&quot;Low&quot; : &quot;0.8878&quot;
+	 },
+	 {
+		&quot;Low&quot; : &quot;0.8985&quot;,
+		&quot;Close&quot; : &quot;0.9009&quot;,
+		&quot;ema&quot; : &quot;0.893500724572902&quot;,
+		&quot;High&quot; : &quot;0.9023&quot;,
+		&quot;Date&quot; : &quot;2010-02-21 00:00:00&quot;,
+		&quot;Open&quot; : &quot;0.9011&quot;,
+		&quot;ma&quot; : &quot;0.89323&quot;,
+		&quot;Time&quot; : &quot;1266732000000&quot;
+	 },
+	 {
+		&quot;Low&quot; : &quot;0.8972&quot;,
+		&quot;Date&quot; : &quot;2010-02-22 00:00:00&quot;,
+		&quot;High&quot; : &quot;0.9016&quot;,
+		&quot;ema&quot; : &quot;0.894980579658322&quot;,
+		&quot;Close&quot; : &quot;0.9009&quot;,
+		&quot;ma&quot; : &quot;0.89447&quot;,
+		&quot;Open&quot; : &quot;0.901&quot;,
+		&quot;Time&quot; : &quot;1266818400000&quot;
+	 },
+	 {
+		&quot;ma&quot; : &quot;0.89488&quot;,
+		&quot;Open&quot; : &quot;0.901&quot;,
+		&quot;Time&quot; : &quot;1266904800000&quot;,
+		&quot;Low&quot; : &quot;0.8877&quot;,
+		&quot;Date&quot; : &quot;2010-02-23 00:00:00&quot;,
+		&quot;ema&quot; : &quot;0.894544463726657&quot;,
+		&quot;High&quot; : &quot;0.907&quot;,
+		&quot;Close&quot; : &quot;0.8928&quot;
+	 },
+	 {
+		&quot;Low&quot; : &quot;0.8856&quot;,
+		&quot;Close&quot; : &quot;0.8881&quot;,
+		&quot;ema&quot; : &quot;0.893255570981326&quot;,
+		&quot;High&quot; : &quot;0.8955&quot;,
+		&quot;Date&quot; : &quot;2010-02-24 00:00:00&quot;,
+		&quot;Open&quot; : &quot;0.8928&quot;,
+		&quot;ma&quot; : &quot;0.89495&quot;,
+		&quot;Time&quot; : &quot;1266991200000&quot;
+	 },
+	 {
+		&quot;ma&quot; : &quot;0.89517&quot;,
+		&quot;Open&quot; : &quot;0.8883&quot;,
+		&quot;Time&quot; : &quot;1267077600000&quot;,
+		&quot;Low&quot; : &quot;0.88&quot;,
+		&quot;High&quot; : &quot;0.8913&quot;,
+		&quot;ema&quot; : &quot;0.892524456785061&quot;,
+		&quot;Date&quot; : &quot;2010-02-25 00:00:00&quot;,
+		&quot;Close&quot; : &quot;0.8896&quot;
+	 },
+	 {
+		&quot;Time&quot; : &quot;1267164000000&quot;,
+		&quot;Open&quot; : &quot;0.8897&quot;,
+		&quot;ma&quot; : &quot;0.89534&quot;,
+		&quot;Close&quot; : &quot;0.8951&quot;,
+		&quot;ema&quot; : &quot;0.893039565428049&quot;,
+		&quot;High&quot; : &quot;0.8978&quot;,
+		&quot;Date&quot; : &quot;2010-02-26 00:00:00&quot;,
+		&quot;Low&quot; : &quot;0.8869&quot;
+	 },
+	 {
+		&quot;ma&quot; : &quot;0.89493&quot;,
+		&quot;Open&quot; : &quot;0.896&quot;,
+		&quot;Time&quot; : &quot;1267336800000&quot;,
+		&quot;Low&quot; : &quot;0.8954&quot;,
+		&quot;Date&quot; : &quot;2010-02-28 00:00:00&quot;,
+		&quot;ema&quot; : &quot;0.893891652342439&quot;,
+		&quot;High&quot; : &quot;0.9007&quot;,
+		&quot;Close&quot; : &quot;0.8973&quot;
+	 },
+	 {
+		&quot;Time&quot; : &quot;1267423200000&quot;,
+		&quot;Open&quot; : &quot;0.8973&quot;,
+		&quot;ma&quot; : &quot;0.89527&quot;,
+		&quot;Close&quot; : &quot;0.8987&quot;,
+		&quot;Date&quot; : &quot;2010-03-01 00:00:00&quot;,
+		&quot;High&quot; : &quot;0.9015&quot;,
+		&quot;ema&quot; : &quot;0.894853321873951&quot;,
+		&quot;Low&quot; : &quot;0.8933&quot;
+	 },
+	 {
+		&quot;Low&quot; : &quot;0.8965&quot;,
+		&quot;Close&quot; : &quot;0.9048&quot;,
+		&quot;Date&quot; : &quot;2010-03-02 00:00:00&quot;,
+		&quot;High&quot; : &quot;0.9063&quot;,
+		&quot;ema&quot; : &quot;0.896842657499161&quot;,
+		&quot;Open&quot; : &quot;0.8988&quot;,
+		&quot;ma&quot; : &quot;0.89668&quot;,
+		&quot;Time&quot; : &quot;1267509600000&quot;
+	 },
+	 {
+		&quot;Close&quot; : &quot;0.902&quot;,
+		&quot;Date&quot; : &quot;2010-03-03 00:00:00&quot;,
+		&quot;ema&quot; : &quot;0.897874125999329&quot;,
+		&quot;High&quot; : &quot;0.9084&quot;,
+		&quot;Low&quot; : &quot;0.9006&quot;,
+		&quot;Time&quot; : &quot;1267596000000&quot;,
+		&quot;Open&quot; : &quot;0.9048&quot;,
+		&quot;ma&quot; : &quot;0.89702&quot;
+	 },
+	 {
+		&quot;High&quot; : &quot;0.9038&quot;,
+		&quot;ema&quot; : &quot;0.898399300799463&quot;,
+		&quot;Date&quot; : &quot;2010-03-04 00:00:00&quot;,
+		&quot;Close&quot; : &quot;0.9005&quot;,
+		&quot;Low&quot; : &quot;0.8977&quot;,
+		&quot;Time&quot; : &quot;1267682400000&quot;,
+		&quot;ma&quot; : &quot;0.89698&quot;,
+		&quot;Open&quot; : &quot;0.9019&quot;
+	 },
+	 {
+		&quot;ma&quot; : &quot;0.89764&quot;,
+		&quot;Open&quot; : &quot;0.9004&quot;,
+		&quot;Time&quot; : &quot;1267768800000&quot;,
+		&quot;Low&quot; : &quot;0.8994&quot;,
+		&quot;Date&quot; : &quot;2010-03-05 00:00:00&quot;,
+		&quot;High&quot; : &quot;0.9092&quot;,
+		&quot;ema&quot; : &quot;0.900219440639571&quot;,
+		&quot;Close&quot; : &quot;0.9075&quot;
+	 },
+	 {
+		&quot;Time&quot; : &quot;1267941600000&quot;,
+		&quot;ma&quot; : &quot;0.89947&quot;,
+		&quot;Open&quot; : &quot;0.9083&quot;,
+		&quot;High&quot; : &quot;0.9115&quot;,
+		&quot;ema&quot; : &quot;0.902395552511657&quot;,
+		&quot;Date&quot; : &quot;2010-03-07 00:00:00&quot;,
+		&quot;Close&quot; : &quot;0.9111&quot;,
+		&quot;Low&quot; : &quot;0.9078&quot;
+	 },
+	 {
+		&quot;Close&quot; : &quot;0.9093&quot;,
+		&quot;ema&quot; : &quot;0.903776442009325&quot;,
+		&quot;High&quot; : &quot;0.9132&quot;,
+		&quot;Date&quot; : &quot;2010-03-08 00:00:00&quot;,
+		&quot;Low&quot; : &quot;0.9073&quot;,
+		&quot;Time&quot; : &quot;1268028000000&quot;,
+		&quot;Open&quot; : &quot;0.9112&quot;,
+		&quot;ma&quot; : &quot;0.90159&quot;
+	 },
+	 {
+		&quot;Low&quot; : &quot;0.9054&quot;,
+		&quot;Close&quot; : &quot;0.9156&quot;,
+		&quot;ema&quot; : &quot;0.90614115360746&quot;,
+		&quot;High&quot; : &quot;0.9162&quot;,
+		&quot;Date&quot; : &quot;2010-03-09 00:00:00&quot;,
+		&quot;Open&quot; : &quot;0.9092&quot;,
+		&quot;ma&quot; : &quot;0.90419&quot;,
+		&quot;Time&quot; : &quot;1268114400000&quot;
+	 },
+	 {
+		&quot;Close&quot; : &quot;0.9142&quot;,
+		&quot;Date&quot; : &quot;2010-03-10 00:00:00&quot;,
+		&quot;ema&quot; : &quot;0.907752922885968&quot;,
+		&quot;High&quot; : &quot;0.9192&quot;,
+		&quot;Low&quot; : &quot;0.9112&quot;,
+		&quot;Time&quot; : &quot;1268200800000&quot;,
+		&quot;Open&quot; : &quot;0.9157&quot;,
+		&quot;ma&quot; : &quot;0.9061&quot;
+	 },
+	 {
+		&quot;Date&quot; : &quot;2010-03-11 00:00:00&quot;,
+		&quot;ema&quot; : &quot;0.909302338308775&quot;,
+		&quot;High&quot; : &quot;0.9169&quot;,
+		&quot;Close&quot; : &quot;0.9155&quot;,
+		&quot;Low&quot; : &quot;0.911&quot;,
+		&quot;Time&quot; : &quot;1268287200000&quot;,
+		&quot;ma&quot; : &quot;0.90792&quot;,
+		&quot;Open&quot; : &quot;0.9142&quot;
+	 },
+	 {
+		&quot;Close&quot; : &quot;0.9149&quot;,
+		&quot;Date&quot; : &quot;2010-03-12 00:00:00&quot;,
+		&quot;High&quot; : &quot;0.9193&quot;,
+		&quot;ema&quot; : &quot;0.91042187064702&quot;,
+		&quot;Low&quot; : &quot;0.914&quot;,
+		&quot;Time&quot; : &quot;1268373600000&quot;,
+		&quot;Open&quot; : &quot;0.9155&quot;,
+		&quot;ma&quot; : &quot;0.90954&quot;
+	 },
+	 {
+		&quot;Time&quot; : &quot;1268546400000&quot;,
+		&quot;Open&quot; : &quot;0.918&quot;,
+		&quot;ma&quot; : &quot;0.91042&quot;,
+		&quot;Close&quot; : &quot;0.9136&quot;,
+		&quot;ema&quot; : &quot;0.911057496517616&quot;,
+		&quot;High&quot; : &quot;0.9181&quot;,
+		&quot;Date&quot; : &quot;2010-03-14 00:00:00&quot;,
+		&quot;Low&quot; : &quot;0.9127&quot;
+	 },
+	 {
+		&quot;Time&quot; : &quot;1268629200000&quot;,
+		&quot;Open&quot; : &quot;0.9136&quot;,
+		&quot;ma&quot; : &quot;0.9117&quot;,
+		&quot;Close&quot; : &quot;0.9148&quot;,
+		&quot;ema&quot; : &quot;0.911805997214093&quot;,
+		&quot;High&quot; : &quot;0.916&quot;,
+		&quot;Date&quot; : &quot;2010-03-15 00:00:00&quot;,
+		&quot;Low&quot; : &quot;0.9094&quot;
+	 },
+	 {
+		&quot;ma&quot; : &quot;0.91352&quot;,
+		&quot;Open&quot; : &quot;0.9147&quot;,
+		&quot;Time&quot; : &quot;1268715600000&quot;,
+		&quot;Low&quot; : &quot;0.9122&quot;,
+		&quot;Date&quot; : &quot;2010-03-16 00:00:00&quot;,
+		&quot;High&quot; : &quot;0.9216&quot;,
+		&quot;ema&quot; : &quot;0.913184797771274&quot;,
+		&quot;Close&quot; : &quot;0.9187&quot;
+	 },
+	 {
+		&quot;Low&quot; : &quot;0.9177&quot;,
+		&quot;Date&quot; : &quot;2010-03-17 00:00:00&quot;,
+		&quot;High&quot; : &quot;0.9251&quot;,
+		&quot;ema&quot; : &quot;0.915007838217019&quot;,
+		&quot;Close&quot; : &quot;0.9223&quot;,
+		&quot;ma&quot; : &quot;0.915&quot;,
+		&quot;Open&quot; : &quot;0.9186&quot;,
+		&quot;Time&quot; : &quot;1268802000000&quot;
+	 },
+	 {
+		&quot;Open&quot; : &quot;0.9223&quot;,
+		&quot;ma&quot; : &quot;0.91605&quot;,
+		&quot;Time&quot; : &quot;1268888400000&quot;,
+		&quot;Low&quot; : &quot;0.9179&quot;,
+		&quot;Close&quot; : &quot;0.9216&quot;,
+		&quot;ema&quot; : &quot;0.916326270573616&quot;,
+		&quot;High&quot; : &quot;0.9232&quot;,
+		&quot;Date&quot; : &quot;2010-03-18 00:00:00&quot;
+	 },
+	 {
+		&quot;Time&quot; : &quot;1268974800000&quot;,
+		&quot;ma&quot; : &quot;0.91664&quot;,
+		&quot;Open&quot; : &quot;0.9216&quot;,
+		&quot;ema&quot; : &quot;0.916101016458893&quot;,
+		&quot;High&quot; : &quot;0.9223&quot;,
+		&quot;Date&quot; : &quot;2010-03-19 00:00:00&quot;,
+		&quot;Close&quot; : &quot;0.9152&quot;,
+		&quot;Low&quot; : &quot;0.9127&quot;
+	 },
+	 {
+		&quot;ma&quot; : &quot;0.91644&quot;,
+		&quot;Open&quot; : &quot;0.9154&quot;,
+		&quot;Time&quot; : &quot;1269147600000&quot;,
+		&quot;Low&quot; : &quot;0.9124&quot;,
+		&quot;ema&quot; : &quot;0.915600813167114&quot;,
+		&quot;High&quot; : &quot;0.9155&quot;,
+		&quot;Date&quot; : &quot;2010-03-21 00:00:00&quot;,
+		&quot;Close&quot; : &quot;0.9136&quot;
+	 },
+	 {
+		&quot;Low&quot; : &quot;0.9084&quot;,
+		&quot;High&quot; : &quot;0.9186&quot;,
+		&quot;ema&quot; : &quot;0.915900650533691&quot;,
+		&quot;Date&quot; : &quot;2010-03-22 00:00:00&quot;,
+		&quot;Close&quot; : &quot;0.9171&quot;,
+		&quot;ma&quot; : &quot;0.91673&quot;,
+		&quot;Open&quot; : &quot;0.9135&quot;,
+		&quot;Time&quot; : &quot;1269234000000&quot;
+	 },
+	 {
+		&quot;ema&quot; : &quot;0.916100520426953&quot;,
+		&quot;High&quot; : &quot;0.9197&quot;,
+		&quot;Date&quot; : &quot;2010-03-23 00:00:00&quot;,
+		&quot;Close&quot; : &quot;0.9169&quot;,
+		&quot;Low&quot; : &quot;0.9135&quot;,
+		&quot;Time&quot; : &quot;1269320400000&quot;,
+		&quot;ma&quot; : &quot;0.91687&quot;,
+		&quot;Open&quot; : &quot;0.9171&quot;
+	 },
+	 {
+		&quot;ema&quot; : &quot;0.915100416341563&quot;,
+		&quot;High&quot; : &quot;0.9178&quot;,
+		&quot;Date&quot; : &quot;2010-03-24 00:00:00&quot;,
+		&quot;Close&quot; : &quot;0.9111&quot;,
+		&quot;Low&quot; : &quot;0.9065&quot;,
+		&quot;Time&quot; : &quot;1269406800000&quot;,
+		&quot;ma&quot; : &quot;0.91649&quot;,
+		&quot;Open&quot; : &quot;0.9169&quot;
+	 },
+	 {
+		&quot;Date&quot; : &quot;2010-03-25 00:00:00&quot;,
+		&quot;ema&quot; : &quot;0.91388033307325&quot;,
+		&quot;High&quot; : &quot;0.9139&quot;,
+		&quot;Close&quot; : &quot;0.909&quot;,
+		&quot;Low&quot; : &quot;0.9062&quot;,
+		&quot;Time&quot; : &quot;1269493200000&quot;,
+		&quot;ma&quot; : &quot;0.91603&quot;,
+		&quot;Open&quot; : &quot;0.9111&quot;
+	 },
+	 {
+		&quot;ma&quot; : &quot;0.91492&quot;,
+		&quot;Open&quot; : &quot;0.9091&quot;,
+		&quot;Time&quot; : &quot;1269579600000&quot;,
+		&quot;Low&quot; : &quot;0.9&quot;,
+		&quot;High&quot; : &quot;0.9116&quot;,
+		&quot;ema&quot; : &quot;0.9118442664586&quot;,
+		&quot;Date&quot; : &quot;2010-03-26 00:00:00&quot;,
+		&quot;Close&quot; : &quot;0.9037&quot;
+	 },
+	 {
+		&quot;Time&quot; : &quot;1269752400000&quot;,
+		&quot;ma&quot; : &quot;0.91387&quot;,
+		&quot;Open&quot; : &quot;0.9052&quot;,
+		&quot;Date&quot; : &quot;2010-03-28 00:00:00&quot;,
+		&quot;ema&quot; : &quot;0.91111541316688&quot;,
+		&quot;High&quot; : &quot;0.9083&quot;,
+		&quot;Close&quot; : &quot;0.9082&quot;,
+		&quot;Low&quot; : &quot;0.9032&quot;
+	 },
+	 {
+		&quot;Time&quot; : &quot;1269838800000&quot;,
+		&quot;Open&quot; : &quot;0.9082&quot;,
+		&quot;ma&quot; : &quot;0.91352&quot;,
+		&quot;Close&quot; : &quot;0.9188&quot;,
+		&quot;Date&quot; : &quot;2010-03-29 00:00:00&quot;,
+		&quot;High&quot; : &quot;0.9191&quot;,
+		&quot;ema&quot; : &quot;0.912652330533504&quot;,
+		&quot;Low&quot; : &quot;0.9076&quot;
+	 },
+	 {
+		&quot;Low&quot; : &quot;0.9143&quot;,
+		&quot;Close&quot; : &quot;0.9147&quot;,
+		&quot;Date&quot; : &quot;2010-03-30 00:00:00&quot;,
+		&quot;ema&quot; : &quot;0.913061864426803&quot;,
+		&quot;High&quot; : &quot;0.9215&quot;,
+		&quot;Open&quot; : &quot;0.9187&quot;,
+		&quot;ma&quot; : &quot;0.91283&quot;,
+		&quot;Time&quot; : &quot;1269925200000&quot;
+	 },
+	 {
+		&quot;Date&quot; : &quot;2010-03-31 00:00:00&quot;,
+		&quot;ema&quot; : &quot;0.913769491541443&quot;,
+		&quot;High&quot; : &quot;0.9186&quot;,
+		&quot;Close&quot; : &quot;0.9166&quot;,
+		&quot;Low&quot; : &quot;0.913&quot;,
+		&quot;Time&quot; : &quot;1270011600000&quot;,
+		&quot;ma&quot; : &quot;0.91297&quot;,
+		&quot;Open&quot; : &quot;0.9146&quot;
+	 },
+	 {
+		&quot;Open&quot; : &quot;0.9165&quot;,
+		&quot;ma&quot; : &quot;0.91354&quot;,
+		&quot;Time&quot; : &quot;1270098000000&quot;,
+		&quot;Low&quot; : &quot;0.9155&quot;,
+		&quot;Close&quot; : &quot;0.9193&quot;,
+		&quot;High&quot; : &quot;0.9216&quot;,
+		&quot;ema&quot; : &quot;0.914875593233154&quot;,
+		&quot;Date&quot; : &quot;2010-04-01 00:00:00&quot;
+	 }
+  ],
+  &quot;name&quot; : &quot;AUDUSD_daily From 2010-02-03 00:00:00 To 2010-04-01 00:00:00&quot;
+};
+
+
+</pre></div>

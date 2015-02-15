@@ -20,13 +20,13 @@
     <h2 class="subhead">Upcoming Meetings</h2>
 
     <dl>
-        <dt>February 12, 2015</dt>
-        <dd>A Few Short Topics with Chris Mevissen and Julian Brown</dd>
-
         <dt>March 12, 2015</dt>
         <dd>TBD at cPanel</dd>
 
         <dt>April 9, 2015</dt>
         <dd>TBD at Hostgator</dd>
+
+        <dt>May 14, 2015</dt>
+        <dd>TBD at cPanel</dd>
     </dl>
 [% END -%]

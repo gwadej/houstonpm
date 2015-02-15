@@ -1,0 +1,343 @@
+<div style="BORDER: #cccccc 1px dashed; PADDING: 5px; WIDTH: 95%; BACKGROUND: #f0f0f0; COLOR: #000000; FONT-SIZE: 12px; OVERFLOW: auto; height:auto"><pre>
+function load_chart (raw_data)
+{
+	var data = raw_data.chart_data;
+
+	var title_ele = &quot;#my_chart_title&quot;;
+	var svg_ele   = &quot;#my_svg&quot;;
+
+	if (&quot;title_ele&quot; in raw_data)
+	{
+		title_ele = &quot;#&quot; + raw_data.title_ele;
+	}
+
+	if (&quot;svg_ele&quot; in raw_data)
+	{
+		svg_ele = &quot;#&quot; + raw_data.svg_ele;
+	}
+
+	$(title_ele).html (&quot;&lt;H3&gt;&quot; + raw_data.name + &quot;&lt;/H3&gt;&quot;);
+
+	var base_width = 1200;
+	var base_height = 700;
+
+	var x_min;
+	var x_max;
+	var y_min;
+	var y_max;
+
+	var x_date_min;
+	var x_date_max;
+
+	var bar;
+	var barWidth;
+	var candleWidth;
+
+	var xAxis;
+	var yAxis;
+
+	var i;
+
+	var margin = {top: 10, right: 20, bottom: 50, left: 50};
+
+    width = base_width - margin.left - margin.right,
+    height = base_height - margin.top - margin.bottom;
+
+	var ys = d3.scale.linear ().range ([height, 0]);
+	var xs = d3.time.scale ().range ([0, width]);
+
+	var svg = d3.select (svg_ele).append (&quot;svg&quot;)
+		.attr (&quot;width&quot;, width + margin.left + margin.right)
+		.attr (&quot;height&quot;, height + margin.top + margin.bottom)
+		.style (&quot;background-color&quot;, &quot;black&quot;)
+		.append (&quot;g&quot;)
+			.attr (&quot;transform&quot;, &quot;translate(&quot; + margin.left + &quot;,&quot; + margin.top + &quot;)&quot;);
+
+	xAxis = d3.svg.axis()
+    	.scale(xs)
+    	.orient(&quot;bottom&quot;);
+
+	yAxis = d3.svg.axis()
+    	.scale(ys)
+    	.orient(&quot;left&quot;);
+
+	xAxis.tickFormat (d3.time.format (&quot;%b %d %Y&quot;));
+
+	function getYLow (d)
+	{
+		return ys (d.Low);
+	}
+
+	function getYHigh (d)
+	{
+		return ys (d.High);
+	}
+
+	function getYOC (d)
+	{
+		var yOpen = ys (d.Open);
+		var yClose = ys (d.Close);
+
+		if (yOpen &lt; yClose)
+		{
+			return yOpen;
+		}
+
+		return yClose;
+	}
+
+	function getYHeight (d)
+	{
+		var yHeight = ys (d.Open) - ys (d.Close);
+		if (yHeight &lt; 0)
+		{
+			yHeight *= -1;
+		}
+
+		if (yHeight &lt; 1)
+		{
+			yHeight = 1;
+		}
+
+		return yHeight;
+	}
+
+	function getXCandle (d)
+	{
+		var x = xs (d.Time) + (barWidth * bMargin);
+
+		return x;
+	}
+
+	function getXHighLow (d)
+	{
+		var x = xs (d.Time) + (barWidth / 2.0);
+
+		return x;
+	}
+
+	function getColor (d)
+	{
+		if (d.Close &gt; d.Open)
+			return &quot;green&quot;;
+
+		return &quot;red&quot;;
+	}
+
+	var numPerTick = 10;
+	if (raw_data.period == 1 ) { numPerTick = 7200; }
+	if (raw_data.period == 60 ) { numPerTick = 48; }
+	if (raw_data.period == 120) { numPerTick = 24; }
+	if (raw_data.period == 240) { numPerTick = 24; }
+	if (raw_data.period == 720) { numPerTick = 20; }
+	if (raw_data.period == 1440) { numPerTick = 10; }
+	if (raw_data.period == 10080 ) { numPerTick = 5; }
+	if (raw_data.period == 43200 ) { numPerTick = 5; }
+
+	numTicks = data.length / numPerTick;
+	if (numTicks &lt; 5)
+	{
+		numTicks = 5;
+	}
+
+	if (numTicks &gt; 10)
+	{
+		numTicks = 10;
+	}
+
+	xAxis.ticks (numTicks);
+
+	y_min = data [0].Low;
+	y_max = data [0].High;
+
+	if (&quot;ema&quot; in data [0])
+	{
+		y_min = Math.min (y_min, data [0].ema);
+		y_max = Math.max (y_max, data [0].ema);
+	}
+
+	if (&#39;ma&#39; in data [0])
+	{
+		y_min = Math.min (y_min, data [0].ma);
+		y_max = Math.max (y_max, data [0].ma);
+	}
+
+	for (i = 1; i &lt; data.length; ++i)
+	{
+		y_min = Math.min (y_min, data [i].Low);
+		y_max = Math.max (y_max, data [i].High);
+
+		if (&#39;ma&#39; in data [i])
+		{
+			y_min = Math.min (y_min, data [i].ma);
+			y_max = Math.max (y_max, data [i].ma);
+		}
+
+		if (&#39;ema&#39; in data [i])
+		{
+			y_min = Math.min (y_min, data [i].ema);
+			y_max = Math.max (y_max, data [i].ema);
+		}
+	}
+
+	x_min = data [0].Time;
+	x_max = data [data.length - 1].Time;
+
+	x_min = +x_min - (raw_data.period * 60 * 1000);
+	x_max = +x_max + (raw_data.period * 60 * 1000);
+
+	ys.domain ([y_min, y_max]);
+	xs.domain ([x_min, x_max]);
+
+	var bMargin = 0.125;
+
+	barWidth = xs (+x_min + (raw_data.period * 60 * 1000)) - xs (+x_min);
+	if (barWidth &lt; 1) { barWidth = 1; }
+	candleWidth = barWidth * (1.0 - (2.0 * bMargin));
+	if (candleWidth &lt; 1) { candleWidth = 1; }
+
+	svg.append(&quot;g&quot;)
+		.attr(&quot;class&quot;, &quot;x axis&quot;)
+		.attr(&quot;transform&quot;, &quot;translate(0,&quot; + height + &quot;)&quot;)
+		.attr(&quot;stroke&quot;, &quot;white&quot;)
+		.call(xAxis);
+
+	svg.append(&quot;g&quot;)
+		.attr(&quot;class&quot;, &quot;y axis&quot;)
+		.attr(&quot;stroke&quot;, &quot;white&quot;)
+		.call(yAxis);
+
+	svg.selectAll (&quot;.candle_bar&quot;)
+		.data (data)
+		.enter ().append (&quot;rect&quot;)
+			  .attr (&quot;class&quot;,  &quot;candle_bar&quot;)
+			  .attr (&quot;x&quot;,      getXCandle)
+			  .attr (&quot;y&quot;,      getYOC)
+			  .attr (&quot;height&quot;, getYHeight)
+			  .attr (&quot;width&quot;,  candleWidth)
+			  .attr (&quot;fill&quot;,   getColor);
+
+	svg.selectAll (&quot;candle_hl&quot;)
+		.data (data)
+		.enter ().append (&quot;svg:line&quot;)
+			.attr (&quot;x1&quot;,       getXHighLow)
+			.attr (&quot;y1&quot;,       getYLow)
+			.attr (&quot;x2&quot;,       getXHighLow)
+			.attr (&quot;y2&quot;,       getYHigh)
+			.style (&quot;stroke&quot;,  getColor);
+
+	var data_sma = new Array ();
+	var data_ema = new Array ();
+
+	for (i = 0; i &lt; data.length; ++i)
+	{
+		if (&#39;ma&#39; in data [i])
+		{
+			data_sma.push (data [i]);
+		}
+
+		if (&#39;ema&#39; in data [i])
+		{
+			data_ema.push (data [i]);
+		}
+	}
+
+	var line_sma = d3.svg.line ().x (function (d, i) { return xs (d.Time); })
+		.y (function (d, i) { return ys (d.ma); });
+
+	svg.append (&quot;path&quot;)
+		.attr (&quot;d&quot;, line_sma (data_sma))
+		.attr (&quot;stroke&quot;, &quot;white&quot;)
+		.attr (&quot;fill&quot;, &quot;none&quot;);
+
+	var line_ema = d3.svg.line ().x (function (d, i) { return xs (d.Time); })
+		.y (function (d, i) { return ys (d.ema); });
+
+	svg.append (&quot;path&quot;)
+		.attr (&quot;d&quot;, line_ema (data_ema))
+		.attr (&quot;stroke&quot;, &quot;orange&quot;)
+		.attr (&quot;fill&quot;, &quot;none&quot;);
+}
+
+var pointRadius = 5;
+
+function drawPoint (svg, x, y, color, xchar)
+{
+	if (xchar == &#39;x&#39;)
+	{
+		svg.append (&quot;line&quot;)
+			.attr (&quot;x1&quot;, x - 5)
+			.attr (&quot;y1&quot;, y + 5)
+			.attr (&quot;x2&quot;, x + 5)
+			.attr (&quot;y2&quot;, y - 5)
+			.attr (&quot;stroke&quot;, color);
+
+		svg.append (&quot;line&quot;)
+			.attr (&quot;x1&quot;, x - 5)
+			.attr (&quot;y1&quot;, y - 5)
+			.attr (&quot;x2&quot;, x + 5)
+			.attr (&quot;y2&quot;, y + 5)
+			.attr (&quot;stroke&quot;, color);
+	}
+	else if (xchar == &#39;+&#39;)
+	{
+		svg.append (&quot;line&quot;)
+			.attr (&quot;x1&quot;, x)
+			.attr (&quot;y1&quot;, y + 5)
+			.attr (&quot;x2&quot;, x)
+			.attr (&quot;y2&quot;, y - 5)
+			.attr (&quot;stroke&quot;, color);
+
+		svg.append (&quot;line&quot;)
+			.attr (&quot;x1&quot;, x - 5)
+			.attr (&quot;y1&quot;, y)
+			.attr (&quot;x2&quot;, x + 5)
+			.attr (&quot;y2&quot;, y)
+			.attr (&quot;stroke&quot;, color);
+	}
+	else if (xchar == &#39;*&#39;)
+	{
+		svg.append (&quot;line&quot;)
+			.attr (&quot;x1&quot;, x - 5)
+			.attr (&quot;y1&quot;, y + 5)
+			.attr (&quot;x2&quot;, x + 5)
+			.attr (&quot;y2&quot;, y - 5)
+			.attr (&quot;stroke&quot;, color);
+
+		svg.append (&quot;line&quot;)
+			.attr (&quot;x1&quot;, x - 5)
+			.attr (&quot;y1&quot;, y - 5)
+			.attr (&quot;x2&quot;, x + 5)
+			.attr (&quot;y2&quot;, y + 5)
+			.attr (&quot;stroke&quot;, color);
+
+		svg.append (&quot;line&quot;)
+			.attr (&quot;x1&quot;, x)
+			.attr (&quot;y1&quot;, y + 5)
+			.attr (&quot;x2&quot;, x)
+			.attr (&quot;y2&quot;, y - 5)
+			.attr (&quot;stroke&quot;, color);
+
+		svg.append (&quot;line&quot;)
+			.attr (&quot;x1&quot;, x - 5)
+			.attr (&quot;y1&quot;, y)
+			.attr (&quot;x2&quot;, x + 5)
+			.attr (&quot;y2&quot;, y)
+			.attr (&quot;stroke&quot;, color);
+	}
+}
+
+function type (d) 
+{
+	d.Time = +d.Time;
+	d.Open = +d.Open;
+	d.High = +d.High;
+	d.Low = +d.Low;
+	d.Close = +d.Close;
+	d.ma= +d.ma;
+	d.ema = +d.ema;
+
+	return d;
+}
+
+</pre></div>
