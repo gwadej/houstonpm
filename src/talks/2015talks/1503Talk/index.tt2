@@ -1,0 +1,20 @@
+[% WRAPPER writeup_wrap.tt2
+    title='Summary of March 2015 Presentation'
+    year=2015
+%]
+      <h2 class="subhead">How to Disagree - But Still Be Agreeable</h2>
+      <p>Robert Stone gave us an advance look at one of his talks for OpenWest 2015.
+The talk covers the differences between an argument and a healthy debate. He
+went on to cover some of the reasons why a discussion can turn into a heated
+argument and strategies for avoiding this outcome.</p>
+      <p>Robert focused only on issues that can be resolved or mitigated. He covered
+ways that a discussion can go wrong and things you should keep in mind to not
+be the one to cause the problem. He also covered strategies for bringing the
+discussion back to a healthy exchange of ideas.</p>
+      <p>The audience appeared to be quite interested in the topic and a fair amount of
+discussion ran after the main talk. Several people made suggestions that might
+improve the presentation before the actual conference.</p>
+      <p>Robert has made the <a href="how_to_disagree.pptx">slides</a> available.</p>
+      <p>We had 14 people attending this month. As always, we'd like to thank
+        cPanel, Inc. for providing the meeting space and food for the group.</p>
+[% END -%]
