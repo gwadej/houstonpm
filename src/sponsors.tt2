@@ -12,4 +12,12 @@
 
     <p>Houston.pm and the Perl community in Houston cannot really thank cPanel, Inc.
       and CEO J. Nick Koston enough for this generous support.</p>
+
+    <p>In 2014, Houston.pm gained another sponsor. <a href="http://www.hostgator.com/">HostGator</a>
+      began alternating with cPanel as our meeting place at <a href="https://maps.google.com/maps?q=HostGator,+Houston&fb=1&gl=us&hq=HostGator,&hnear=0x8640b8b4488d8501:0xca0d02def365053b,Houston,+TX&cid=2141572779937723859&t=h&z=16&iwloc=A">5005 Mitchelldale</a>,
+      providing internet access, a projector, and free food.</p>
+
+    <p>Houston.pm and the Perl community in Houston cannot really thank HostGator
+      enough for this generous support.</p>
+
 [% END -%]
