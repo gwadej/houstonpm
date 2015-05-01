@@ -1,0 +1,20 @@
+[% WRAPPER writeup_wrap.tt2
+    title='Summary of April 2015 Presentation'
+    year=2015
+%]
+      <h2 class="subhead">Weaponizing Perl Serialization Flaws with Metasploit</h2>
+      <p>This was definitely not your average talk for Houston.pm. John Lightsey
+described a few flaws in Perl serialization frameworks. Then, he explained
+how one of these flaws is actually exploitable in the MovableType blogging
+system.</p>
+      <p>He walked us through using the Metasploit framework to use this flaw to
+open a shell prompt on another machine. In this case, he was <em>attacking</em>
+a virtual machine on his own laptop, but the implication was clear.</p>
+      <p>The talk is <a href="https://www.youtube.com/watch?v=Gzx6KlqiIZE&feature=youtu.be"
+      target="_blank">available</a>
+on-line. This is not a talk for the faint of heart, but you'll learn quite a
+lot. The <a href="https://github.com/lightsey/cve-2015-1592" target="_blank">code</a> iss
+available as well.</p>
+      <p>We had 12 people attending this month. As always, we'd like to thank
+        Hostgator, LLC for providing the meeting space and food for the group.</p>
+[% END -%]

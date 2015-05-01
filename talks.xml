@@ -1327,4 +1327,16 @@ strategies for you to avoid being part of the problem.</abstract>
     </topic>
   </talk>
 
+  <talk num="1504">
+    <date>April 2015</date>
+    <topic href="/talks/2015talks/1504Talk/index.html">
+      <title>Weaponizing Perl Serialization Flaws with Metasploit</title>
+      <presenter>John Lightsey</presenter>
+      <abstract>In recent years, there have been a few potential security flaws relating
+to serialization libraries for dynamic languages. This presentation
+introduces a few of these flaws and shows how they can be turned into
+actual attacks using Metasploit.</abstract>
+    </topic>
+  </talk>
+
 </talklist>

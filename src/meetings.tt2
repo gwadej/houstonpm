@@ -18,13 +18,13 @@
     <h2 class="subhead">Upcoming Meetings</h2>
 
     <dl>
-        <dt>April 9, 2015</dt>
-        <dd><em>Weaponizing Serialization flaws in Perl webapps with Metasploit</em> with John Lightsey at Hostgator</dd>
-
         <dt>May 14, 2015</dt>
         <dd>TBD at cPanel</dd>
 
         <dt>June 11, 2015</dt>
         <dd>TBD at Hostgator</dd>
+
+        <dt>July 9, 2015</dt>
+        <dd>TBD at cPanel</dd>
     </dl>
 [% END -%]
