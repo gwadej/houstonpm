@@ -7,7 +7,7 @@
       <h1 class="heading">Next Meeting</h1>
         <dl>
             <dt>May 14, 2015</dt>
-            <dd>TBD at cPanel</dd>
+            <dd>Hooking up your distribution to TravisCI and Coveralls.io with George S. Baugh at cPanel</dd>
         </dl>
     </div>
 
