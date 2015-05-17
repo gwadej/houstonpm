@@ -1339,4 +1339,15 @@ actual attacks using Metasploit.</abstract>
     </topic>
   </talk>
 
+  <talk num="1505">
+    <date>May 2015</date>
+    <topic href="/talks/2015talks/1505Talk/index.html">
+      <title>Hooking up your distribution to TravisCI and Coveralls.io</title>
+      <presenter>George S. Baugh</presenter>
+      <abstract>Many development groups use continuous integration to generate quick feedback
+on the quality of their software. George shows how to use the TravisCI and
+Coveralls.io systems to provide equivalent functionality for your Perl Modules.</abstract>
+    </topic>
+  </talk>
+
 </talklist>

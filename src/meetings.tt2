@@ -18,13 +18,13 @@
     <h2 class="subhead">Upcoming Meetings</h2>
 
     <dl>
-        <dt>May 14, 2015</dt>
-        <dd>Hooking up your distribution to TravisCI and Coveralls.io with George S. Baugh at cPanel</dd>
-
         <dt>June 11, 2015</dt>
         <dd>TBD at Hostgator</dd>
 
         <dt>July 9, 2015</dt>
         <dd>TBD at cPanel</dd>
+
+        <dt>August 13, 2015</dt>
+        <dd>TBD at Hostgator</dd>
     </dl>
 [% END -%]

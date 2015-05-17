@@ -1,0 +1,25 @@
+[% WRAPPER writeup_wrap.tt2
+    title='Summary of May 2015 Presentation'
+    year=2015
+%]
+      <h2 class="subhead">Hooking up your distribution to TravisCI and Coveralls.io</h2>
+      <p>George began with a quick overview of the basics of a CPAN-compatible distribution
+and then quickly dove into using TravisCI and Coveralls to provide testing for
+a CPAN distribution. Apparently, the information on doing this was not collected
+into one place. This talk fixes that lack.</p>
+      <p>George walks through the individual steps, as well as a simplified approach.
+The talk also lead to a group discussion on different tools for building
+distributions and different people's experiences in this area.</p>
+      <p>George provided several resources for his talk:</p>
+
+      <ul>
+         <li><a href="http://troglodyne.net/george/may2015-houstonpm-talk.html"
+            target="_blank">The slides in HTML</a></li>
+         <li><a href="http://troglodyne.net/george/awful.odp"
+            target="_blank">The presentation</a></li>
+         <li><a href="https://github.com/uber/uberalls" target="_blank">A
+            coveralls clone for Jenkins</a></li>
+      </ul>
+      <p>We had 10 people attending this month. As always, we'd like to thank
+        cPanel, Inc. for providing the meeting space and food for the group.</p>
+[% END -%]
