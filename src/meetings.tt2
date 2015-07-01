@@ -18,13 +18,14 @@
     <h2 class="subhead">Upcoming Meetings</h2>
 
     <dl>
-        <dt>June 11, 2015</dt>
-        <dd>TBD at Hostgator</dd>
-
         <dt>July 9, 2015</dt>
-        <dd>TBD at cPanel</dd>
+        <dd><em>A Metasploit module for Locale::Maketext format string attack</em>
+            and <em>Perl List Operations</em> at cPanel</dd>
 
         <dt>August 13, 2015</dt>
         <dd>TBD at Hostgator</dd>
+
+        <dt>September 10, 2015</dt>
+        <dd>TBD at cPanel</dd>
     </dl>
 [% END -%]

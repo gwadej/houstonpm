@@ -6,8 +6,9 @@
       <p>May meeting notes are on-line.</p>
       <h1 class="heading">Next Meeting</h1>
         <dl>
-            <dt>June 11, 2015</dt>
-            <dd>TBD at Hostgator</dd>
+            <dt>July 9, 2015</dt>
+            <dd><em>A Metasploit module for Locale::Maketext format string attack</em>
+              and <em>Perl List Operations</em> at cPanel</dd>
         </dl>
     </div>
 
