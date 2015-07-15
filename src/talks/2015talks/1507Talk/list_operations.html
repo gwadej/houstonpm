@@ -200,7 +200,7 @@ to read the perldoc page and experiment with it to understand.</p>
     <li>Efficiently counts matches if used in scalar context</li>
 </ul>
 <pre><code>
-    my @long = grep { length &gt; 30 ) } @names;
+    my @long = grep { length &gt; 30 } @names;
     my @old  = grep { $_ &lt; time } @times;
     die "No files found.\n"
         unless grep { -f $_ } @files;
@@ -272,7 +272,7 @@ sets.</p>
 
 <div class="slide">
 <h1>List::Util Example 1</h1>
-<p>Let's look at an <a href="examples/missing_benchmark.pl.txt" target="_blank">example</a> of checking for required parameters.</p>
+<p>Let's look at an <a href="examples/missing_benchmark.pl" target="_blank">example</a> of checking for required parameters.</p>
 <div class="handout">
 <p>Open examples/missing_benchmark.pl in editor.</p>
 <p>Although you might get excited about the factor of two difference in
@@ -282,7 +282,7 @@ sets.</p>
 
 <div class="slide">
 <h1>List::Util Example 2</h1>
-<p>Let's look at an <a href="examples/maxstr_benchmark.pl.txt" target="_blank">example</a> of finding the maximum string in a set.</p>
+<p>Let's look at an <a href="examples/maxstr_benchmark.pl" target="_blank">example</a> of finding the maximum string in a set.</p>
 </code></pre>
 <div class="handout">
 <p>Open examples/maxstr_benchmark.pl in editor.</p>
@@ -326,7 +326,7 @@ inefficiency?</p>
 
 <div class="slide">
 <h1>List::MoreUtils Example 1</h1>
-<p>Let's look at an <a href="examples/sort_by_benchmark.pl.txt" target="_blank">example</a> of sorting by a key.</p>
+<p>Let's look at an <a href="examples/sort_by_benchmark.pl" target="_blank">example</a> of sorting by a key.</p>
 </code></pre>
 <div class="handout">
 <p>Open examples/sort_by_benchmark.pl in editor.</p>
