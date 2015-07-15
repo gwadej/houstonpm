@@ -3,12 +3,12 @@
 
     <div id="sidebar">
         <h1 class="heading">What's New <a href="atom.xml"><img style="border:0;float:right;" src="feed-icon-10x10.png" /></a></h1>
-      <p>May meeting notes are on-line.</p>
+      <p>July meeting notes are on-line.</p>
       <h1 class="heading">Next Meeting</h1>
         <dl>
-            <dt>July 9, 2015</dt>
-            <dd><em>A Metasploit module for Locale::Maketext format string attack</em>
-              and <em>Perl List Operations</em> at cPanel</dd>
+            <dt>August 13, 2015</dt>
+            <dd>Possible: <em>A Metasploit module for Locale::Maketext format string attack</em>
+                at Hostgator</dd>
         </dl>
     </div>
 

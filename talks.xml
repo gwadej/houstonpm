@@ -1350,4 +1350,17 @@ Coveralls.io systems to provide equivalent functionality for your Perl Modules.<
     </topic>
   </talk>
 
+  <talk num="1507">
+    <date>July 2015</date>
+    <topic href="/talks/2015talks/1507Talk/index.html">
+      <title>Perl List Operations</title>
+      <presenter>G. Wade Johnson</presenter>
+      <abstract>Lists are a fundamental data type in Perl, unfortunately people do not
+make as good a use of them as they could. In this presentation, Wade gives
+an overview of lists and arrays and the operations that apply to each. He
+then went over the modules <code>List::Util</code> and <code>List::MoreUtils</code>
+for more advanced list operations.</abstract>
+    </topic>
+  </talk>
+
 </talklist>

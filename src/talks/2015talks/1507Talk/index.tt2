@@ -1,0 +1,28 @@
+[% WRAPPER writeup_wrap.tt2
+    title='Summary of July 2015 Presentation'
+    year=2015
+%]
+      <h2 class="subhead">Perl List Operations</h2>
+      <p>This was intended to be a pretty quick presentation, but Wade obviously hit
+a nerve. The talk was often stopped as the audience asked questions and started
+pretty solid discussions. There may have actually been more material in the
+discussions than in the presentation.</p>
+      <p>The general progression of the talk was to cover the difference between
+lists and arrays, the Perl built-in list and array operators, and to
+finish with the <code>List::Util</code> and <code>List::MoreUtils</code>
+modules. Along the way, we would try to understand the advantages that
+list operations gives us in notations and conciseness.</p>
+      <p>The discussion actually covered everything from minor misunderstandings
+on the nature of arrays and lists, to idioms that can be quite readable
+while still being concise and powerful. Based on the level of discussion,
+this was arguably a topic of some interest.</p>
+
+      <p>The <a href="list_operations.html" target="_blank">slides</a> for the presentation are
+        available.</p>
+
+      <p>Unfortunately, the presentation and discussion ran for so long that
+        we ran out of time for JD's talk.</p>
+
+      <p>We had 7 people attending this month. As always, we'd like to thank
+        cPanel, Inc. for providing the meeting space and food for the group.</p>
+[% END -%]
