@@ -7,7 +7,7 @@
       <h1 class="heading">Next Meeting</h1>
         <dl>
             <dt>August 13, 2015</dt>
-            <dd>Possible: <em>A Metasploit module for Locale::Maketext format string attack</em>
+            <dd><em>A Metasploit module for Locale::Maketext format string attack</em>
                 at Hostgator</dd>
         </dl>
     </div>
