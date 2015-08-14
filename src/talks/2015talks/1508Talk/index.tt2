@@ -1,0 +1,26 @@
+[% WRAPPER writeup_wrap.tt2
+    title='Summary of August 2015 Presentation'
+    year=2015
+%]
+      <h2 class="subhead">A Metasploit module for Locale::Maketext format string attack</h2>
+      <p>The meeting began with some general discussion. Given the topic of the night,
+the discussion tended to focus on security issues. After swapping stories of
+computer issues and TSA security news, JD opened the actual presentation.</p>
+      <p>He began with some information about classical format string vulnerabilities
+as seen in the C <code>printf</code> function. He pointed out that Perl's
+<code>printf</code> doesn't have all of the problems of the C implementation,
+but it is still not perfect.</p>
+      <p>Then, he moved on to describing the problems with the format string in used in
+<code>Locale::Maketext</code>. He shows how the format string can be used to
+execute any method on the locale object, that may be a subclass of
+<code>Locale::Maketext</code>. With a small amount of effort this can turn
+into a straight-forward remote-code exploit.</p>
+      <p>He goes on to show how Moveable Type's combination of
+<code>Template::Toolkit</code> and <code>Locale::Maketext</code> in two
+separate passes makes for a quick exploit.</p>
+      <p>After the main presentation, the discussion wandered over a number of
+programming topics, including observations and commentary on problems that
+some were having with code.</p>
+      <p>We had 7 people attending this month. As always, we'd like to thank
+        Hostgator, LLC for providing the meeting space and food for the group.</p>
+[% END -%]

@@ -1363,4 +1363,18 @@ for more advanced list operations.</abstract>
     </topic>
   </talk>
 
+  <talk num="1508">
+    <date>August 2015</date>
+    <topic href="/talks/2015talks/1508Talk/index.html">
+      <title>A Metasploit module for Locale::Maketext format string attack</title>
+      <presenter>John Lightsey</presenter>
+      <abstract>This was the second in a series that JD has done on Metasploit modules attacking
+vulnerabilities in Perl code. This presentation focused on problems with the
+Locale::Maketext module.
+
+JD shows background on the flaw, how it manifests in Locale::Maketext, and
+the module he built to perform the exploit.</abstract>
+    </topic>
+  </talk>
+
 </talklist>
