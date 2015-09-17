@@ -18,14 +18,13 @@
     <h2 class="subhead">Upcoming Meetings</h2>
 
     <dl>
-        <dt>September 10, 2015</dt>
-        <dd><em>Time Progressions with strings and DateTime</em> and
-            <em>From YAPC::EU@Houston.pm</em> at cPanel</dd>
-
         <dt>October 8, 2015</dt>
         <dd>TBD at Hostgator</dd>
 
         <dt>November 12, 2015</dt>
         <dd>TBD at cPanel</dd>
+
+        <dt>December 10, 2015</dt>
+        <dd>TBD at Hostgator</dd>
     </dl>
 [% END -%]

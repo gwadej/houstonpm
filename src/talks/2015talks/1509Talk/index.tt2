@@ -1,0 +1,28 @@
+[% WRAPPER writeup_wrap.tt2
+    title='Summary of September 2015 Presentation'
+    year=2015
+%]
+      <h2 class="subhead"><a name="timeseries">Time Progressions</a> with string and DateTime</h2>
+      <p>Julian started us off by showing some of the Forex data that he retrieves
+as a <abbr title="Comma Separated Values">CSV</abbr> file. The data shows
+trades at a one minute resolution. He summarizes the data in multiple
+groupings: by hour, by day, etc.</p>
+      <p>He does much of the processing with strings and epoch seconds. Other
+processing uses the <code>DateTime</code> module. Each grouping results
+in data that is summarized as an set of open, high, low, and close prices.</p>
+      <p>Many people had questions, that Julian fielded pretty easily.</p>
+
+      <p>Julian has made the <a href="DateTimeTalk.tar.gz" target="_blank">code
+      snippets</a> he displayed available for download.</p>
+
+      <h2>From <a name="yapc">YAPC::EU@Houston.pm</a></h2>
+      <p>Next, Nicolas attempted to summarize all that he saw during this year's
+<abbr title="Yet Another Perl Conference::Europe">YAPC::EU</abbr>. The
+impression was a whirlwind tour of many different modules and topics.</p>
+
+      <p>Nicolas's <a href="yapc-eu-2015.pdf" target="_blank">slides</a> are
+      also available.</p>
+
+      <p>We had 11 people attending this month. As always, we'd like to thank
+        cPanel, Inc. for providing the meeting space and food for the group.</p>
+[% END -%]

@@ -3,12 +3,11 @@
 
     <div id="sidebar">
         <h1 class="heading">What's New <a href="atom.xml"><img style="border:0;float:right;" src="feed-icon-10x10.png" /></a></h1>
-      <p>July meeting notes are on-line.</p>
+      <p>September meeting notes are on-line.</p>
       <h1 class="heading">Next Meeting</h1>
         <dl>
-            <dt>September 10, 2015</dt>
-            <dd><em>Time Progressions with strings and DateTime</em> and
-                <em>From YAPC::EU@Houston.pm</em> at cPanel</dd>
+            <dt>October 8, 2015</dt>
+            <dd>TBD at Hostgator</dd>
         </dl>
     </div>
 

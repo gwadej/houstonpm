@@ -1377,4 +1377,22 @@ the module he built to perform the exploit.</abstract>
     </topic>
   </talk>
 
+  <talk num="1509">
+    <date>September 2015</date>
+    <topic href="/talks/2015talks/1509Talk/index.html#timeseries">
+      <title>Time Progressions with string and DateTime</title>
+      <presenter>Julian Brown</presenter>
+      <abstract> Julian Brown showed how he summarizes currency trades from a delayed
+Forex feed into different groupings. His method involves both string
+manipulation and use of the DateTime module.</abstract>
+    </topic>
+    <topic href="/talks/2015talks/1509Talk/index.html#yapc">
+      <title>From YAPC::EU@Houston.pm</title>
+      <presenter>Nicolas Rochelemagne</presenter>
+      <abstract> Nicolas Rochelemagne summarized the presentations he saw at this
+year's YAPC::EU. The talks spanned a fairly large spectrum of
+topics.</abstract>
+    </topic>
+  </talk>
+
 </talklist>
