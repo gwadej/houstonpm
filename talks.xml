@@ -1395,4 +1395,17 @@ topics.</abstract>
     </topic>
   </talk>
 
+  <talk num="1510">
+    <date>October 2015</date>
+    <topic href="/talks/2015talks/1510Talk/index.html">
+      <title>"Show and Tell with Role::Tiny and CGI::Application::Dispatch" and "UTF-8 and Perl"</title>
+      <presenter>Jim Bacon and Todd Rinaldo</presenter>
+      <abstract>Jim Bacon gave a remote presentation describing how he used applied Roles to
+adapt a <code>CGI::Application</code>-based webapp to support a versioned
+<abbr title="Application Programming Interface">API</abbr>. Todd Rinaldo
+followed this with a presentation describing what Pelr programmers should
+know about UTF-8 including information about various gotchas.</abstract>
+    </topic>
+  </talk>
+
 </talklist>

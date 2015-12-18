@@ -1,0 +1,41 @@
+[% WRAPPER writeup_wrap.tt2
+    title='Summary of October 2015 Presentation'
+    year=2015
+%]
+      <h2 class="subhead">"Show and Tell with Role::Tiny and CGI::Application::Dispatch" and "UTF-8 and Perl"</h2>
+      <p>
+Jim Bacon did his presentation remotely through Google Hangouts. This worked
+somewhat better than expected. He presented a difficult problem of adapting
+an <abbr title="Application Programming Interface">API</abbr> in a system
+that was not designed for it. The constraints imposed by the original system
+made a simple solution impractical.</p>
+      <p>The requirements prevented upgrading all endpoints for each version. Getting
+access to prefix required subclassing <code>CGI::Application::Dispatch</code>.
+Additionally, the original design had embedded the authentication in a base
+class. The new API version needed a different authentication scheme.  The base
+class/authentication thing pre-dates him, so he does not know why it was done
+that way.</p>
+      <p>In order to update the authentication mechanism depending on the version and to
+prevent problems with the new API using the old endpoints, Jim had to modify
+the way the base classes worked.  Made a new base class that is not versioned.
+Applying a role on the fly, to apply the appropriate base functionality. Don't
+use <code>Role::Tiny::apply_role_to_class</code>. It will keep adding roles in
+a persistent environment.</p>
+      <p>The presentation triggered a good discussion on various implications of this
+design.</p>
+      <p>Next, Todd Rinaldo described his adventures in Unicode and UTF-8.</p>
+      <p>
+Working on the Perl compiler. B::C almost everything has a flag for utf-8
+support. Rather than adding yet another presentation on-line about the subject,
+Todd pointed to Nick Patch's <a href="http://www.slideshare.net/novapatch/fundamental-unicode-at-dcbaltimore-perl-workshop-2012">presentation</a>.
+He also referenced the Perl tutorial on utf-8 (perlunitut, etc. does a very good job of
+explaining this stuff.) Although the material is out there, sometimes it's useful
+to have someone walk through it.</p>
+      <p>He explained some of the fun of bit encodings. We had a discussion of bits and
+encodings. He pointed out a particular problem he had stumbled across using JSON.
+You must downgrade JSON strings before using them for filesystem work. Also remember
+that UTF-8 is not the only encoding. A particular nasty is UTF-7, which almost
+matches ASCII. There is such a thing as <em>utf-7 XSS attacks</em>.</p>
+      <p>We had 11 people attending this month. As always, we'd like to thank
+        Hostgator, LLC for providing the meeting space and food for the group.</p>
+[% END -%]

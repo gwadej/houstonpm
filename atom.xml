@@ -12,7 +12,11 @@ and Role::Tiny.&lt;/p&gt;
 
 &lt;p&gt;As always, we meet on the second Thursday of the month at 7pm. In
 October, we will be meeting at Hostgator, 5005 Mitchelldale.&lt;/p&gt;
-&lt;/div&gt;</content><title>A Set of Short Talks</title><id>tag:houston.pm.org.2011-03:announce-20150920-29579</id></entry><entry><id>tag:houston.pm.org,2011-03:presentation:1509</id><category term="technical meeting"/><content type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><p>Two separate talks this time.
+&lt;/div&gt;</content><title>A Set of Short Talks</title><id>tag:houston.pm.org.2011-03:announce-20150920-29579</id></entry><entry><title type="html">Notes for &#39;&#34;Show and Tell with Role::Tiny and CGI::Application::Dispatch&#34; and &#34;UTF-8 and Perl&#34;&#39; posted.</title><content type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><p>Jim Bacon gave a remote presentation describing how he used applied Roles to
++adapt a <code>CGI::Application</code>-based webapp to support a versioned
++<abbr title="Application Programming Interface">API</abbr>. Todd Rinaldo
++followed this with a presentation describing what Perl programmers should
++know about UTF-8 including information about various gotchas.</p></div></content><id>tag:houston.pm.org,2011-03:presentation:1510</id><link href="http://houston.pm.org/talks/2015talks/1510Talk/index.html"/><updated>2015-12-18T02:52:34Z</updated><published>2015-12-18T02:52:34Z</published><category term="technical meeting"/></entry><entry><id>tag:houston.pm.org,2011-03:presentation:1509</id><category term="technical meeting"/><content type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><p>Two separate talks this time.
 
 Julian Brown showed how he summarizes currency trades from a delayed
 Forex feed into different groupings. His method involves both string
