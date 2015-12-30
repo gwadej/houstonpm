@@ -1408,4 +1408,16 @@ know about UTF-8 including information about various gotchas.</abstract>
     </topic>
   </talk>
 
+  <talk num="1512">
+    <date>December 2015</date>
+    <topic href="/talks/2015talks/1512Talk/index.html">
+      <title>Tips, Tricks, and Picks</title>
+      <presenter>Various</presenter>
+      <abstract>The idea of this meeting was to have each attendee present a few tips or
+picks that they found interesting or helpful. The picks ranged from book
+recommendations and podcasts, to personal projects, to libraries and tools.
+Most picks generated questions and discussion.</abstract>
+    </topic>
+  </talk>
+
 </talklist>

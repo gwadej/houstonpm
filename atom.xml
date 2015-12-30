@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="us-ascii"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><id>tag:houston.pm.org,2011-03:news</id><title type="html">Houston.pm: What&#39;s New</title><link href="http://houston.pm.org/"/><link href="http://houston.pm.org/atom.xml" rel="self"/><updated>2015-12-02T03:04:53Z</updated><author><name>G. Wade Johnson</name></author><category term="news"/><generator uri="https://metacpan.org/pod/XML::Atom::SimpleFeed" version="0.861">XML::Atom::SimpleFeed</generator><entry><published>2015-12-02T02:59:01Z</published><updated>2015-12-02T02:59:01Z</updated><title>Tips, Tricks, and Picks</title><content type="html">&lt;div&gt;&lt;p&gt;This month is devoted to a discussion of picks and tips from members. If you
+<feed xmlns="http://www.w3.org/2005/Atom"><id>tag:houston.pm.org,2011-03:news</id><title type="html">Houston.pm: What&#39;s New</title><link href="http://houston.pm.org/"/><link href="http://houston.pm.org/atom.xml" rel="self"/><updated>2015-12-02T03:04:53Z</updated><author><name>G. Wade Johnson</name></author><category term="news"/><generator uri="https://metacpan.org/pod/XML::Atom::SimpleFeed" version="0.861">XML::Atom::SimpleFeed</generator><entry><category term="technical meeting"/><title type="html">Notes for &#39;Tips, Tricks, and Picks&#39; posted.</title><link href="http://houston.pm.org/talks/2015talks/1512Talk/index.html"/><published>2015-12-28T02:56:17Z</published><id>tag:houston.pm.org,2011-03:presentation:1512</id><updated>2015-12-28T02:56:17Z</updated><content type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><p>The idea of this meeting was to have each attendee present a few tips or
+picks that they found interesting or helpful. The picks ranged from book
+recommendations and podcasts, to personal projects, to libraries and tools.
+Most picks generated questions and discussion.</p></div></content></entry><entry><published>2015-12-02T02:59:01Z</published><updated>2015-12-02T02:59:01Z</updated><title>Tips, Tricks, and Picks</title><content type="html">&lt;div&gt;&lt;p&gt;This month is devoted to a discussion of picks and tips from members. If you
 have something you enjoy and would like others to know about let us know. We&#39;ll
 cover programming tricks, tools, favorite books, podcasts, or television shows.
 Pretty much anything that a member would like to share with the group.&lt;/p&gt;
@@ -13,10 +16,10 @@ and Role::Tiny.&lt;/p&gt;
 &lt;p&gt;As always, we meet on the second Thursday of the month at 7pm. In
 October, we will be meeting at Hostgator, 5005 Mitchelldale.&lt;/p&gt;
 &lt;/div&gt;</content><title>A Set of Short Talks</title><id>tag:houston.pm.org.2011-03:announce-20150920-29579</id></entry><entry><title type="html">Notes for &#39;&#34;Show and Tell with Role::Tiny and CGI::Application::Dispatch&#34; and &#34;UTF-8 and Perl&#34;&#39; posted.</title><content type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><p>Jim Bacon gave a remote presentation describing how he used applied Roles to
-+adapt a <code>CGI::Application</code>-based webapp to support a versioned
-+<abbr title="Application Programming Interface">API</abbr>. Todd Rinaldo
-+followed this with a presentation describing what Perl programmers should
-+know about UTF-8 including information about various gotchas.</p></div></content><id>tag:houston.pm.org,2011-03:presentation:1510</id><link href="http://houston.pm.org/talks/2015talks/1510Talk/index.html"/><updated>2015-12-18T02:52:34Z</updated><published>2015-12-18T02:52:34Z</published><category term="technical meeting"/></entry><entry><id>tag:houston.pm.org,2011-03:presentation:1509</id><category term="technical meeting"/><content type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><p>Two separate talks this time.
+adapt a <code>CGI::Application</code>-based webapp to support a versioned
+<abbr title="Application Programming Interface">API</abbr>. Todd Rinaldo
+followed this with a presentation describing what Perl programmers should
+know about UTF-8 including information about various gotchas.</p></div></content><id>tag:houston.pm.org,2011-03:presentation:1510</id><link href="http://houston.pm.org/talks/2015talks/1510Talk/index.html"/><updated>2015-12-18T02:52:34Z</updated><published>2015-12-18T02:52:34Z</published><category term="technical meeting"/></entry><entry><id>tag:houston.pm.org,2011-03:presentation:1509</id><category term="technical meeting"/><content type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><p>Two separate talks this time.
 
 Julian Brown showed how he summarizes currency trades from a delayed
 Forex feed into different groupings. His method involves both string

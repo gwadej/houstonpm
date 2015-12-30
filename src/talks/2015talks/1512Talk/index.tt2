@@ -1,0 +1,115 @@
+[% WRAPPER writeup_wrap.tt2
+    title='Summary of December 2015 Presentation'
+    year=2015
+%]
+      <h2 class="subhead">Tips, Tricks, and Picks</h2>
+
+      <p>Each of the nine attendees presented one or more items to the group. Almost
+every single pick resulted in questions and discussion. This meeting ran
+quite a bit longer than most because of the discussions.</p>
+
+      <h3>Julian Brown</h3>
+
+      <p>Julian began the meeting by recommending a pair of programming books:</p>
+
+      <ul>
+        <li><a href="http://www.amazon.com/Numerical-Recipes-Scientific-Computing-Edition/dp/0521431085/ref=pd_sim_14_3" target="_blank">Numerical
+            Recipes in C</a></br />
+            Some topics Julian researched in the book:<ul>
+            <li>Curve fitting</li>
+            <li>Pseudo-random number generators</li>
+        </ul></li>
+        <li><a href="http://www.amazon.com/Algorithms-Parts-1-4-Fundamentals-Structures/dp/0201314525/ref=sr_1_2" target="_blank">Algorithms in C</a></li>
+      </ul>
+
+      <h3>John (J.D.) Lightsey</h3>
+
+      <p>J.D. has been working in <a href="http://www.openstack.org/"
+      target="_blank">OpenStack</a> recently. He talked about OpenStack's
+      support for workflows. This lead to a discussion about parsing <abbr
+      title="YAML Ain't Markup Language">YAML</abbr> files using <abbr
+      title="Yet Another Query Language">YAQL</abbr>.</p>
+
+      <h3>Chris Mevissen</h3>
+
+      <p>Chris introduced us to the set of challenges that were presented on
+      the <a href="http://adventofcode.com/" target="_blank">Advent of Code</a>
+      site. Each day, a different programming challenge was presented for
+      people to solve. Chris spent time showing us the <a
+      href="http://adventofcode.com/day/10" target="_blank">digit counting
+      problem</a> that he was solving most recently.</p>
+
+      <p>Chris also talked about profiling work he has done recently with <a
+      href="https://metacpan.org/pod/Devel::NYTProf" target="_blank">NYTProf</a>.</p>
+
+      <p>He also picked a couple of subreddits: <a
+      href="https://www.reddit.com/r/programming"
+      target="_blank">/r/programming</a> and <a
+      href="https://www.reddit.com/r/programmerhumor"
+      target="_blank">/r/programmerhumor</a>.</p>
+
+      <h3>Austin Naremore</h3>
+
+      <p>Austin covered a variety of topics with his picks:</p>
+
+      <ul>
+        <li>TwiT.tv: the <a href="https://twit.tv/shows/floss-weekly" target="_blank">FLOSS Weekly podcast</a></li>
+        <li>As an investment, he recommended the <a href="https://www.atlassian.com/" target="_blank">Atlassian</a> IPO</li>
+        <li>Chrome: Inspector - <a href="https://developers.google.com/web/tools/chrome-devtools/iterate/device-mode/" target="_blank">emulate devices feature</a></li>
+        <li><a href="http://www.zsh.org/" target="_blank">ZSH</a> framework: <a href="http://ohmyz.sh/" target="_blank">Oh my zsh</a></li>
+      </ul>
+
+      <h3>Robert Stone</h3>
+
+      <p>Robert talked about several things he has been working on recently. He also said that he took <em>picks</em> concept
+      too seriously on his last pick.</p>
+
+      <ul>
+        <li>Chrome: <a href="https://developers.google.com/web/tools/chrome-devtools/debug/readability/pretty-print?hl=en" target="_blank">{} button</a>, de-minimizes the JavaScript</li>
+        <li><a href="http://sourceforge.net/projects/dia-installer/" target="_blank">dia</a>: (Almost <abbr title="Unified Modelling Language">UML</abbr>)</li>
+        <li>Lock picking: clear lock similar to <a href="http://www.amazon.com/KINGLAKE-Professional-Padlocks-Locksmith-Beginners/dp/B00WJAVS00/ref=sr_1_3" target="_blank">this</a></li>
+      </ul>
+
+      <h3>Brandon Husbands</h3>
+
+      <p>Middleware for Second Life he worked on: <a href="https://slgames.wordpress.com/2007/05/10/dcs2-%E2%80%93-the-dynamic-combat-system/" target="_blank">DCS2</a>. System for building games in
+Second Life back in 2006. He monetized the project by having people sell his items
+in their games.</p>
+
+      <h3>Xaxiar Steavenson</h3>
+
+      <p>Xaviar talked about his experimentation with the HoloLens.</p>
+
+      <ul>
+        <li><a href="http://www.microsoft.com/microsoft-hololens/en-us">Microsoft HoloLens</a></li>
+        <li><a href="https://www.oculus.com/en-us/blog/eve-valkyrie-open-source-hardware-and-the-best-practices-guide/" target="_blank">EVE</a> for Occulus Rift</li>
+      </ul>
+
+      <h3>Wade Johnson</h3>
+
+      <p>Wade said that he wanted to cover a range of areas with his picks.</p>
+
+      <ul>
+        <li>Podcasts: <a href="https://devchat.tv/ruby-rogues" target="_blank">Ruby Rogues</a>, <a href="https://devchat.tv/js-jabber" target="_blank"JavaScript Jabber</a></li>
+        <li><a href="http://www.vim.org/" target="_blank">vim</a> plugins: <a href="https://github.com/airblade/vim-gitgutter/" target="_blank">gitgutter</a>,
+            <a href="https://github.com/tpope/vim-surround" target="_blank">surround</a></li>
+        <li>Science Fiction: <a href="http://www.peterfhamilton.co.uk/index.php?page=bibliography" target="_blank">Peter F. Hamilton</a></li>
+        <li>Military Science Fiction: <a href="http://www.davidweber.net/books" target="_blank">Honor Harrington</a> Series</li>
+      </ul>
+
+      <h3>Trac Taylor</h3>
+
+      <p>Trac has been doing quite a bit of <code>DBI</code> work lately. He talked about some
+      of his recent work. Particular focus on the following:</p>
+
+      <ul>
+        <li><a href="https://metacpan.org/pod/DBI#execute_array" target="_blank"><code>DBI::execute_array</code></a>: Oracle</li>
+        <li>Use prepare on insert</li>
+        <li><a href="https://metacpan.org/pod/DBI" target="_blank">DBI</a> Optimization</li>
+      </ul>
+
+      <h3>Conclusion</h3>
+
+      <p>We had 9 people attending this month. As always, we'd like to thank
+        Hostgator, LLC for providing the meeting space and food for the group.</p>
+[% END -%]
