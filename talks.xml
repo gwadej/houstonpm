@@ -1432,4 +1432,15 @@ have been helpful.</abstract>
     </topic>
   </talk>
 
+  <talk num="1602">
+    <date>February 2016</date>
+    <topic href="/talks/2016talks/1602Talk/index.html">
+      <title>Solving Wordbrain</title>
+      <presenter>Robert Stone</presenter>
+      <abstract>Wordbrain is a puzzle game that involves using letters presented in a clue to
+created words. Robert Stone describes creating a solver for this game and explores
+techniques for improving the performance of the solver.</abstract>
+    </topic>
+  </talk>
+
 </talklist>

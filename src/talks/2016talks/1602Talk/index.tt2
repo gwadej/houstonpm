@@ -1,0 +1,36 @@
+[% WRAPPER writeup_wrap.tt2
+    title='Summary of February 2016 Presentation'
+    year=2016
+%]
+      <h2 class="subhead">Solving Wordbrain</h2>
+      <p>Robert Stone presented this talk as a practice run for using this presentation
+for a conference. He first described both <em>depth-first search</em> and
+<em>breadth-first search</em>. This ensured that everyone was familiar with the
+fundamentals for the solution techniques we will be exploring. </p>
+      <p>Then, he described the game WordBrain and gave examples to clarify how the game
+is played. The main points of the game are a set of letters, a given number of
+words to find, and the number of letters in each of the target words. There are
+no time limits. Hints can be requested. Unfortnately, we find that there may be
+more than one set of words that meet the criteria supplied, but only one
+answer.</p>
+      <p>Robert showed how he used a standard search technique to generate all possible
+word combinations from the gameboard. These potential solutions are filtered to
+generate only actual solutions. The resulting solutions are formatted and
+displayed to simplify testing the potential answers by entering them into the
+program.</p>
+      <p>He showed the code and explored many of the design decisions that he had made.
+Since the code had run slower than he expected, he had turned to
+<code>Devel::NYTProf</code> to determine the bottlenecks in the code. These
+measurements lead to potential optimizations, which he discussed.</p>
+      <p>The meeting quickly turned into a discussion of his coding decisions with different
+suggestions on speed improvements. We discussed different approaches to limit the
+depth of recursion and ways to more quickly recognize dead-ends. The group was
+quite engaged in suggestions to help with performance.</p>
+      <p>Robert has provided his materials for others to study, including
+<ul>
+  <li>the <a href="Solving_WordBrain.pptx">PowerPoint Slides</a></li>
+  <li>the <a href="wordbrain.tar.gz">source code</a> for the solver</li>
+</ul></p>
+      <p>We had 11 people attending this month. As always, we'd like to thank
+        Hostgator, LLC for providing the meeting space and food for the group.</p>
+[% END -%]
