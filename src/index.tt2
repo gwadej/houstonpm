@@ -3,12 +3,11 @@
 
     <div id="sidebar">
         <h1 class="heading">What's New <a href="atom.xml"><img style="border:0;float:right;" src="feed-icon-10x10.png" /></a></h1>
-      <p>December meeting notes are on-line.</p>
-      <p>October meeting notes are on-line.</p>
+      <p>January meeting notes are on-line.</p>
       <h1 class="heading">Next Meeting</h1>
         <dl>
-            <dt>January 14, 2016</dt>
-            <dd><em>Adding Forks to Your Perly Tableware</em> with Julian Brown at cPanel</dd>
+            <dt>February 11, 2016</dt>
+            <dd><em>Solving WordBrain</em> with Robert Stone at Hostgator</dd>
         </dl>
     </div>
 

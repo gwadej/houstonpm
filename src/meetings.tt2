@@ -18,13 +18,13 @@
     <h2 class="subhead">Upcoming Meetings</h2>
 
     <dl>
-        <dt>January 14, 2016</dt>
-        <dd><em>Adding Forks to Your Perly Tableware</em> with Julian Brown at cPanel</dd>
-
         <dt>February 11, 2016</dt>
         <dd><em>Solving WordBrain</em> with Robert Stone at Hostgator</dd>
 
         <dt>March 10, 2016</dt>
         <dd>TBD at cPanel</dd>
+
+        <dt>April 14, 2016</dt>
+        <dd>TBD at Hostgator</dd>
     </dl>
 [% END -%]

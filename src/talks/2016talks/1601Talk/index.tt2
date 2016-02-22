@@ -1,0 +1,31 @@
+[% WRAPPER writeup_wrap.tt2
+    title='Summary of January 2016 Presentation'
+    year=2016
+%]
+      <h2 class="subhead">Adding Forks to Your Perly Tableware</h2>
+      <p>Julian Brown used Steven Lembark's talk <em>Adding Forks to Your Perly
+Tableware</em> as a jumping off point for a discussion of processing
+fixed-length data in Perl. He intended the presentation to spark a discussion
+among the group on the techniques and approach.</p>
+      <p>Julian had been working on a problem that had become increasingly slow over
+time. To solve this problem, Julian re-wrote some of the core work in C,
+believing that Perl inefficiencies were much of the problem. He then described
+running across Lembark's presentation and realizing that this solution would
+have been easier to implement and gave speed improvements within a factor of
+two of the C rewrite. He had already realized that much of his problem was
+algorithmic and that changing languages was not really necessary to improving
+that kind of performance problem.</p>
+      <p>We discussed the use of <code>unpack</code> instead of other methods for making
+sense of fixed-length data. Several people in the group were not familiar with
+<em>unpack</em> and even the one's with experience learned from our discussion
+and experimentation. We also talked about reads and interrupts and how
+<code>sysread</code> would react with multiple processes reading from the same
+filehandle. We also spent a small amount of time discussing the difference
+between threads and processes.</p>
+      <p>The format of a discussion guided by a presentation worked much better than I
+might have predicted. Most of the group was engaged through the entire meeting.</p>
+      <p>The <a href="http://www.slideshare.net/lembark/perly-parallel-processing-of-fixed-width-data-records"
+target="_blank">presentation</a> is available on-line for your reading pleasure.</p>
+      <p>We had 9 people attending this month. As always, we'd like to thank
+        cPanel, Inc. for providing the meeting space and food for the group.</p>
+[% END -%]

@@ -1420,4 +1420,16 @@ Most picks generated questions and discussion.</abstract>
     </topic>
   </talk>
 
+  <talk num="1601">
+    <date>January 2016</date>
+    <topic href="/talks/2016talks/1601Talk/index.html">
+      <title>Adding Forks to Your Perly Tableware</title>
+      <presenter>Julian Brown</presenter>
+      <abstract>Julian Brown used a presentation written by Steven Lembark. The presentation
+covered <code>unpack</code> and forking in Perl. Julian described a problem
+that he had been trying to solve and how the information in this talk would
+have been helpful.</abstract>
+    </topic>
+  </talk>
+
 </talklist>
