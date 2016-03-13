@@ -1,0 +1,23 @@
+[% WRAPPER writeup_wrap.tt2
+    title='Summary of March 2016 Presentation'
+    year=2016
+%]
+      <h2 class="subhead">Algorithmic Complexity Made Simple</h2>
+      <p>G. Wade Johnson started by talking about premature optimization and profiling
+to recognize hotspots. From there, he explores the idea that algorithm change
+is more useful than micro-optimizations. He introduced major orders of complexity.</p>
+      <p>Next, we did some example tests of some simple code to recognize the order of
+complexity. The audience seemed to really enjoy this exercise. People were also
+surprised by some of the results.</p>
+      <p>This presentation is by no mean equivalent to a computer science class on the
+subject. The idea presented was that even a little bit of understanding of
+algorithmic complexity, can be helpful in making code trade-offs.</p>
+      <p>Materials for the presentation are available:</p>
+      <ul>
+        <li><a href="algo_complexity.html" target="_blank">Slides</a></li>
+        <li><a href="examples/lookup_benchmark.pl" target="_blank">benchmark code for hash lookup example</a></li>
+        <li><a href="examples/bad_fib.pl" target="_blank">Fibonacci sequence code examples</a></li>
+      </ul>
+      <p>We had 7 people attending this month. As always, we'd like to thank
+        cPanel, Inc. for providing the meeting space and food for the group.</p>
+[% END -%]

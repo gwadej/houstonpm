@@ -1,0 +1,508 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>Algorihmic Complexity Made Simple</title>
+<!-- metadata -->
+<meta name="generator" content="S5" />
+<meta name="version" content="S5 1.1" />
+<meta name="presdate" content="20160310" />
+<meta name="author" content="G. Wade Johnson" />
+<meta name="company" content="Campbell Johnson" />
+<!-- configuration parameters -->
+<meta name="defaultView" content="slideshow" />
+<meta name="controlVis" content="hidden" />
+<!-- style sheet links -->
+<link rel="stylesheet" href="ui/houstonpm/slides.css" type="text/css" media="projection" id="slideProj" />
+<link rel="stylesheet" href="ui/houstonpm/outline.css" type="text/css" media="screen" id="outlineStyle" />
+<link rel="stylesheet" href="ui/default/print.css" type="text/css" media="print" id="slidePrint" />
+<link rel="stylesheet" href="ui/default/opera.css" type="text/css" media="projection" id="operaFix" />
+<!-- S5 JS -->
+<script src="ui/default/slides.js" type="text/javascript"></script>
+<style type="text/css">
+    .centered { text-align: center; }
+    .left { float: left; }
+    .right { float: right; }
+    h1 + blockquote, h1 + q { margin-top: 2em; }
+    td, th {
+        border: 1px solid black; text-align: right;
+        padding-left: 1ex; padding-right: 0.5ex;
+    }
+    .synAlert { color: #0000ff; }
+    .synBaseN { color: #007f00; }
+    .synBString { color: #c9a7ff; }
+    .synChar { color: #ff00ff; }
+    .synComment { color: #7f7f7f; font-style: italic; }
+    .synDataType { color:#0000ff; }
+    .synDecVal { color:#00007f; }
+    .synError { color:#ff0000; font-style: italic; font-weight: bold; }
+    .synFloat { color:#00007f; }
+    .synFunction { color:#007f00; }
+    .synIString { color:#ff0000; }
+    .synKeyword { font-weight: bold; }
+    .synOperator { color:#ffa500; }
+    .synOthers { color:#b03060; }
+    .synRegionMarker { color:#96b9ff; font-style: italic; }
+    .synReserved { color:#9b30ff; font-weight: bold; }
+    .synString { color:#ff0000\; }
+    .synVariable { color:#0000ff; font-weight: bold; }
+    .synWarning { color:#0000ff; font-style: italic; font-weight: bold; }
+ </style>
+</head>
+<body>
+
+<div class="layout">
+<div id="controls"><!-- DO NOT EDIT --></div>
+<div id="currentSlide"><!-- DO NOT EDIT --></div>
+<div id="header"></div>
+<div id="footer">
+<h1>Houston.pm</h1>
+<h2>February 12, 2015</h2>
+</div>
+
+</div>
+
+<div class="presentation">
+
+<div class="slide">
+<h1>Algorithmic Complexity Made Simple</h1>
+<h2></h2>
+<h3>G. Wade Johnson</h3>
+<h4>Campbell Johnson</h4>
+</div>
+
+
+<div class="slide">
+<h1>What is Algorithmic Complexity?</h1>
+<p>A way of reasoning about algorithm performance.</p>
+<div class="handout">
+<p>When trying to find bottlenecks in code, profiling is the way to go.
+Sometimes, it's not obvious why code is slow when profiling a small example.
+You also can't profile code that has not been written. How do you compare
+algorithms before you have an implementation?</p>
+<p>The study of algorithmic complexity provides the tools needed to reason
+about algorithms when measurement is not enough or is not possible.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Premature optimization</h1>
+<blockquote>Premature optimization is the root of all evil.</blockquote>
+<div class="right">Donald Knuth</div>
+<div class="handout">
+<p>Sometimes also referred to as a violation of <abbr title="You Aren't gonna need it">YAGNI</abbr>.
+The general idea is that you should not waste time optimizing code if you
+don't know whether it matters.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Premature pessimization</h1>
+<blockquote>Premature pessimization is the root of some evil.</blockquote>
+<div class="handout">
+<p>Just because you shouldn't optimize prematurely, does not mean that you
+should write obviously bad code either.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Algorithms not micro-optimizations</h1>
+<p>Micro-optimizations often give 2-10% improvements.</p>
+<p>Algorithm changes can give a factor of 2-10 improvement.</p>
+<div class="handout">
+<p>Although a series of micro-optimizations can actually add up to more,
+it's usually at a large cost in redability. Algorithmic changes can be
+less under some circumstances, but once in a while it can be orders of
+magnitude better performance. Surprisingly an algorithm with much better
+performance is often not any less readable.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Big O notation</h1>
+<p>Describes the worst-case behavior of an algorithm.</p>
+<p>Highest order term in a mathematical description of the algorithm.</p>
+<div class="handout">
+<p>There are other similar ways of talking about algorithms, but Big-O is the
+most common. If you were to write an equation describing the performance of an
+algorithm in terms of the size of the input, you will find that the highest
+order term dominates as the input size becomes large.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Orders of Algorithms</h1>
+<img src="images/sublinear.png" style="float: right"/>
+<ul>
+    <li>Constant: <code>O(1)</code></li>
+    <li>Sub-linear: <code>O(lg n)</code></li>
+    <li>Linear: <code>O(n)</code></li>
+    <li>Supralinear: <code>O(n lg n)</code></li>
+</ul>
+<div class="handout">
+<p>Constant means that the algorithm is independent of input size (say
+indexing into an array). Algorithms that repeated divide their input
+in half generate a logarithmic order. Examples include binary search,
+and tree search algorithms. A linear algorithm is one that performs a
+constant amount of work for each item in the input.</p>
+<p>The most familiar <code>O(n log n)</code> algorithms are sort
+algorithms like quicksort, heapsort, or merge sort.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Orders of Algorithms, supralinear</h1>
+<img src="images/supralinear.png" style="float: right"/>
+<ul>
+    <li><code>O(n<sup>2</sup>)</code></li>
+    <li><code>O(n<sup>c</sup>)</code> <em>where c &gt; 1</em></li>
+    <li><code>O(c<sup>n</sup>)</code></li>
+    <li><code>O(n!)</code></li>
+</ul>
+<div class="handout">
+<p>All of the <code>O(n<sup>c</sup>)</code> algorithms are pretty easy to
+recognize. Look for nested loops over the input.</p>
+<p>The <code>O(c<sup>n</sup>)</code> are most often found in public
+key cryptography. Any time you need to work on permutations of a data
+set, you get into the realm of <code>O(n!)</code>. These more complex
+algorithms are things that you really want to avoid for large data
+sets.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>The Math</h1>
+<ul>
+  <li>Count/measure the cycles/instructions executed for an implementation.</li>
+  <li>Work out the parts of the measurements that are related to input size.</li>
+  <li>Develop an equation describing the work done.</li>
+  <li>Analyze equation to recognize the important features.</li>
+</ul>
+<div class="handout">
+<p>Who cares? In reality, no one actually does this outside of people working on
+microcode.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>The Reality</h1>
+<ul>
+  <li>Apply rules of thumb to recognize important features of an algorithm.</li>
+  <li>Pick most prominent term.</li>
+  <li>Change or accept algorithm.</li>
+</ul>
+<div class="handout">
+<p>In reality, you look to see if you are heading in the right direction or are
+going to fall into a big hole. Based on that, you get back to delivering value.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Test 1</h1>
+<code><pre>
+<span class="synKeyword">for</span> <span class="synKeyword">my</span> <span class="synDataType">$i</span> (<span class="synVariable">@ARGV</span>)
+{
+    <span class="synKeyword">for</span> <span class="synKeyword">my</span> <span class="synDataType">$j</span> (<span class="synVariable">@ARGV</span>)
+    {
+        ...;
+    }
+}
+</pre></code>
+<div class="handout">
+<p>This is the classic case of an O(n<sup>2</sup>) algorithm.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Test 2</h1>
+<code><pre>
+<span class="synKeyword">for</span> <span class="synKeyword">my</span> <span class="synDataType">$i</span> (<span class="synVariable">@ARGV</span>)
+{
+    <span class="synDataType">$x</span> += <span class="synFunction">grep</span> { ... } <span class="synVariable">@ARGV</span>;
+}
+</pre></code>
+<div class="handout">
+<p>Slightly less obvious, but still O(n<sup>2</sup>).</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Test 3</h1>
+<code><pre>
+<span class="synKeyword">my</span> <span class="synDataType">@out</span> = <span class="synFunction">map</span> { ... }
+          <span class="synFunction">grep</span> { ... }
+          <span class="synDataType">@in</span>;
+</pre></code>
+<div class="handout">
+<p>Don't let the double loop fool you, this is a linear algorithm (O(n)).
+We do two loops, one after the other. It's only quadratic if it were
+one inside the other.</p>
+<p>Several people wondered if the number of items returned by the <code>grep</code>.
+The first thing to remember is that big-O value is related to the worst-case. The
+second thing is that this algorithm is linear not quadratic, so the order does not
+actually depend on the number of items returned by <code>grep</code>.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Test 4</h1>
+<code><pre>
+<span class="synKeyword">sub </span><span class="synFunction">foo</span>
+{
+    <span class="synKeyword">return</span> <span class="synDataType">@_</span>[0] <span class="synKeyword">if</span> <span class="synDataType">@_</span> &lt; <span class="synFloat">2</span>;
+    foo( <span class="synDataType">@_</span>[0 .. (<span class="synDataType">@_</span>/<span class="synFloat">2</span>)] );
+}
+</pre></code>
+<div class="handout">
+<p>This is an O(lg n) algorithm. Each time foo is called, it has half the input
+that it had the previous time.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>War Story: Questions and Answers</h1>
+<ul class="incremental">
+<li><code>qset</code>: List of questions and answers</li>
+<li><code>find_questions</code>: Return the list of questions</li>
+<li><code>find_answer</code>: Return the list of answers given question name</li>
+<li><code>find_all_answers</code>: Loop over output of <code>find_questions</code> applying <code>find_answer</code></li>
+<li><code>O(n<sup>2</sup>)</code></li>
+</ul>
+<div class="handout">
+<p>Imagine a set of questions and answers. For historical reasons, the
+question set is represented as a list of structures. Each structure
+represents a question, the question structure contains a name, text of
+the question, validation information, and the answer. In the code is a
+method that finds an answer to a question, given the name of the
+question.</p>
+<p>Elsewhere in the system was a method that generated a list of
+answers from the question set. It did that by walking the list of
+questions, and extracting the names. For each question name, we look
+up the answer.</p>
+<p>Obviously, listing the questions is an <code>O(n)</code> operation.
+Unfortunately, the answer finding method is also an <code>O(n)</code>
+operation. The overall effect is to make an
+<code>O(n<sup>2</sup>)</code>.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>War Story: One-Shot Lookup Hash</h1>
+<code><pre>
+<span class="synKeyword">my</span> <span class="synDataType">@names</span> = <span class="synOperator">qw/</span>david connie kirsten mark<span class="synOperator">/</span>;
+
+<span class="synKeyword">sub </span><span class="synFunction">is_member_h</span> {
+  <span class="synKeyword">my</span> (<span class="synDataType">$try</span>) = <span class="synDataType">@_</span>;
+  <span class="synKeyword">my</span> <span class="synDataType">%names</span> = <span class="synFunction">map</span> { <span class="synVariable">$_</span> =&gt; <span class="synFloat">1</span> } <span class="synDataType">@names</span>;
+  <span class="synKeyword">return</span> <span class="synDataType">$names</span>{<span class="synDataType">$try</span>};
+}
+
+<span class="synKeyword">sub </span><span class="synFunction">is_member_g</span> {
+  <span class="synKeyword">my</span> (<span class="synDataType">$try</span>) = <span class="synDataType">@_</span>;
+  <span class="synKeyword">return</span> <span class="synFunction">scalar</span> <span class="synFunction">grep</span> { <span class="synDataType">$try</span> <span class="synOperator">eq</span> <span class="synVariable">$_</span> } <span class="synDataType">@names</span>;
+}
+</pre></code>
+<div class="handout">
+<p>This is a problem I've seen in multiple code bases. We all know that hash
+lookup is faster than searching a list, right? Look at the benchmark. Why?</p>
+<p>The key is in looking at the whole algorithm. Building the hash is also linear
+and more expensive than searching the list. So the constant time lookup is
+swamped by the setup cost.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Lookup Benchmark</h1>
+<p>Quick benchmark</p>
+<table cellspacing="0">
+<tr>
+  <th></th><th>Rate</th><th>find_h</th><th>miss_h</th><th>find_g</th><th>miss_g</th>
+</tr>
+<tr>
+  <th>find_h</th><td>600/s</td><td>--</td><td>-2%</td><td>-68%</td><td>-68%</td>
+</tr>
+<tr>
+  <th>miss_h</th><td>610/s</td><td>2%</td><td>--</td><td>-67%</td><td>-68%</td>
+</tr>
+<tr>
+  <th>find_g</th><td>1860/s</td><td>210%</td><td>205%</td><td>--</td><td>-2%</td>
+</tr>
+<tr>
+  <th>miss_g</th><td>1903/s</td><td>217%</td><td>212%</td><td>2%</td><td>--</td>
+</tr>
+</table>
+<div class="handout">
+</div>
+</div>
+<div class="slide">
+<h1>Example: Schwartzian Transform</h1>
+<code><pre>
+<span class="synKeyword">my</span> <span class="synDataType">@slow_sorted</span> = <span class="synFunction">sort</span> { expensive( <span class="synDataType">$a</span> ) &lt;=&gt; expensive( <span class="synDataType">$b</span> )
+                  <span class="synDataType">@unsorted</span>;
+
+<span class="synKeyword">my</span> <span class="synDataType">@sorted</span> = <span class="synFunction">map</span> { <span class="synVariable">$_</span>-&gt;[0] }
+             <span class="synFunction">sort</span> { <span class="synDataType">$a</span>-&gt;[<span class="synFloat">1</span>] &lt;=&gt; <span class="synDataType">$b</span>-&gt;[<span class="synFloat">1</span>] }
+             <span class="synFunction">map</span> { [ <span class="synDataType">$_</span>, expensive( <span class="synVariable">$_</span> ) ] }
+             <span class="synDataType">@unsorted</span>;
+</pre></code>
+<div class="handout">
+<p>Every Perl programmer should be aware of the Schwartzian Transform. But do you
+know why it works?</p>
+<p>Let's say that expensive runs in 0.01 seconds. Given 128 items, we would expect the
+ST version to run in about 1.3 seconds. The slow version would take approximately 17.9
+seconds. Given 1024 items, the ST version would take about 10.3 seconds. The slow version
+would take 204.8 seconds.</p>
+<p>Can anyone guess why?</p>
+<p>What is the order of the sort? How many times is expensive called?</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Example: Fibonacci Numbers 1</h1>
+<p>The classic bad example of recursion</p>
+<code><pre>
+<span class="synKeyword">sub </span><span class="synFunction">fib</span>
+{
+    <span class="synKeyword">my</span> (<span class="synDataType">$num</span>) = <span class="synDataType">@_</span>;
+    <span class="synKeyword">return</span> <span class="synFloat">1</span> <span class="synKeyword">if</span> <span class="synDataType">$num</span> &gt; <span class="synFloat">2</span>;
+    <span class="synKeyword">return</span> fib(<span class="synDataType">$num</span>-<span class="synFloat">2</span>) + fib(<span class="synDataType">$num</span>-<span class="synFloat">1</span>);
+}
+</pre></code>
+<div class="handout">
+<p>I've seen this code used over and over as an example of recursion. It is also
+used as an example of the expense of recursion.</p>
+<p>The problem is, that no one who wasn't trying to show recursion would use this
+solution.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Example: Fibonacci Numbers 2</h1>
+<p>Better solution for any non-academic considering this.</p>
+<code><pre>
+<span class="synKeyword">sub </span><span class="synFunction">fib</span>
+{
+    <span class="synKeyword">my</span> (<span class="synDataType">$num</span>) = <span class="synDataType">@_</span>;
+    <span class="synKeyword">return</span> <span class="synFloat">1</span> <span class="synKeyword">if</span> <span class="synDataType">$num</span> &gt; <span class="synFloat">2</span>;
+    <span class="synKeyword">my</span> (<span class="synDataType">$prev</span>, <span class="synDataType">$curr</span>) = (<span class="synFloat">1</span>,<span class="synFloat">1</span>);
+
+    <span class="synKeyword">for</span> ( <span class="synFloat">2</span> .. <span class="synDataType">$num</span>)
+    {
+        (<span class="synDataType">$prev</span>, <span class="synDataType">$curr</span>) = (<span class="synDataType">$curr</span>, <span class="synDataType">$prev</span>+<span class="synDataType">$curr</span>);
+    }
+    <span class="synKeyword">return</span> <span class="synDataType">$curr</span>;
+}
+</pre></code>
+<div class="handout">
+<p>A more obvious solution loops until we reach the right number holding on to
+the previous number to be used in the next calculation.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Example: Fibonacci Numbers: Analysis</h1>
+<p>First approach seems to be somewhere around <code>O(1.65<sup>n</sup>)</code></p>
+<p>Second approach is <code>O(n)</code></p>
+<div class="handout">
+<p>To make matters worse, the first approach also takes a significant amount of
+memory on the stack. If you use memoization to reduce the run-time, you still take
+<code>O(n)</code> memory. The second approach is linear in time with a constant
+memory footprint. Memoizing the second approach turns it from linear in time to
+linear in space.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Summary</h1>
+<ul class="incremental">
+  <li>If input size is small, algorithm normally doesn't matter much.</li>
+  <li>If the code is only run once, algorithm usually doesn't matter.</li>
+  <li>Profile if possible to gain understanding and find bottlenecks.</li>
+  <li>Change in algorithm can still be readable, unlike micro-optimizations.</li>
+</ul>
+<div class="handout">
+<p>In a particular piece of code, if you have a linear piece, followed
+by a quadratic piece, the quadratic piece dominates for large inputs.
+The higher order piece always dominates. Nested levels multiply.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Summary, 2</h1>
+<ul class="incremental">
+  <li>Use analysis if profiling is impractical.</li>
+  <li>Use analysis for easy wins.</li>
+  <li>Use analysis to check your assumptions.</li>
+  <li>Don't try to analyze really complicated algorithms.</li>
+  <li> ... but divide and conquer may help here as well.</li>
+</ul>
+<div class="handout">
+<p>Use analysis to reduce your work. Check intuition about code with simple
+analysis. Use the analysis to explain results of profiling.  If the algorithm
+is really complicated, measure rather than analyze.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Wikipedia References</h1>
+<ul>
+  <li><a href="https://en.wikipedia.org/wiki/Time_complexity" target="_blank">Time complexity - Wikipedia, the free encyclopedia</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/Analysis_of_algorithms" target="_blank">Analysis of algorithms - Wikipedia, the free encyclopedia</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/Big_O_notation" target="_blank">Big O notation - Wikipedia, the free encyclopedia</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/Best,_worst_and_average_case" target="_blank">Best, worst and average case - Wikipedia, the free encyclopedia</a></li>
+</ul>
+<div class="handout">
+</div>
+</div>
+
+<div class="slide">
+<h1>Other References</h1>
+<ul>
+  <li><a href="https://www.cs.cmu.edu/~adamchik/15-121/lectures/Algorithmic%20Complexity/complexity.html" target="_blank">Complexity</a></li>
+  <li><a href="http://www.dcs.gla.ac.uk/~pat/52233/complexity.html" target="_blank">Complexity of an Algorithm</a></li>
+  <li><a href="http://bigocheatsheet.com/" target="_blank">Big-O Algorithm Complexity Cheat Sheet</a></li>
+  <li><a href="http://discrete.gr/complexity/" target="_blank">A Gentle Introduction to Algorithm Complexity Analysis</a></li>
+  <li><a href="http://lcm.csa.iisc.ernet.in/dsa/node4.html" target="_blank">1.2 Complexity of Algorithms</a></li>
+</ul>
+<div class="handout">
+</div>
+</div>
+
+<div class="slide">
+<p class="centered" style="font-size: 200%;"><strong>Questions?</strong></p>
+<div class="handout">
+</div>
+</div>
+
+<div class="slide">
+<h1>Details of Fibonnaci Example</h1>
+<div>
+<img src="images/fibonacci.png" style="float: right; max-width: 48%"/>
+<div style="max-width: 45%">
+<table cellspacing="0">
+    <tr><th>n</th><th>bad</th><th>good</th><th>O(n<sup>2</sup>)</th><th>O(1.64<sup>n</sup>)</tr>
+    <tr><td>2</td><td>3</td><td>2</td><td>4</td><td>3</td></tr>
+    <tr><td>3</td><td>5</td><td>3</td><td>9</td><td>4</td></tr>
+    <tr><td>4</td><td>9</td><td>3</td><td>16</td><td>7</td></tr>
+    <tr><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td></tr>
+    <tr><td>10</td><td>177</td><td>10</td><td>100</td><td>141</td></tr>
+    <tr><td>11</td><td>287</td><td>11</td><td>121</td><td>231</td></tr>
+    <tr><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td></tr>
+    <tr><td>20</td><td>21,891</td><td>20</td><td>400</td><td>19,810</td></tr>
+    <tr><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td></tr>
+    <tr><td>31</td><td>4,356,617</td><td>31</td><td>961</td><td>4,572,559</td></tr>
+    <tr><td>32</td><td>7,049,155</td><td>32</td><td>1,024</td><td>7,498,996</td></tr>
+</table>
+</div>
+</div>
+<div class="handout">
+<p>This shows some of the measurements I used to work out the order of the
+fibonacci algorithm. I mostly played around with numbers and eyeballed the
+curve fit.</p>
+</div>
+</div>
+
+</body>
+</html>

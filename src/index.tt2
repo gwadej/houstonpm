@@ -3,12 +3,11 @@
 
     <div id="sidebar">
         <h1 class="heading">What's New <a href="atom.xml"><img style="border:0;float:right;" src="feed-icon-10x10.png" /></a></h1>
-      <p>February meeting notes are on-line.</p>
+      <p>March meeting notes are on-line.</p>
       <h1 class="heading">Next Meeting</h1>
         <dl>
-            <dt>March 10, 2016</dt>
-            <dd><em>Algorithmic Complexity Made Simple</em> with G. Wade Johnson
-              at cPanel</dd>
+            <dt>April 14, 2016</dt>
+            <dd>TBD at Hostgator</dd>
         </dl>
     </div>
 
@@ -30,10 +29,7 @@
     <p>For other technical meetings, we meet in the lobby of
       <a href="https://maps.google.com/maps?q=HostGator,+Houston&fb=1&gl=us&hq=HostGator,&hnear=0x8640b8b4488d8501:0xca0d02def365053b,Houston,+TX&cid=2141572779937723859&t=h&z=16&iwloc=A">5005 Mitchelldale St #100</a>,
       starting sometime between 6:30pm and 7pm. Once everyone arrives, we
-      head inside for the meeting. Parking is available in the lot shown
-      by the red square below.</p>
-
-   <div><img src="images/HostGatorParking.png" alt="HostGator Parking" /></div>
+      head inside for the meeting.</p>
 
     <p>We also have social meetings at some nearby restaurant or pub in some
       months if there is no topic for a technical meeting.</p>
