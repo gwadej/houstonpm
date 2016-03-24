@@ -366,7 +366,7 @@ would take 204.8 seconds.</p>
 <span class="synKeyword">sub </span><span class="synFunction">fib</span>
 {
     <span class="synKeyword">my</span> (<span class="synDataType">$num</span>) = <span class="synDataType">@_</span>;
-    <span class="synKeyword">return</span> <span class="synFloat">1</span> <span class="synKeyword">if</span> <span class="synDataType">$num</span> &gt; <span class="synFloat">2</span>;
+    <span class="synKeyword">return</span> <span class="synFloat">1</span> <span class="synKeyword">if</span> <span class="synDataType">$num</span> &lt; <span class="synFloat">2</span>;
     <span class="synKeyword">return</span> fib(<span class="synDataType">$num</span>-<span class="synFloat">2</span>) + fib(<span class="synDataType">$num</span>-<span class="synFloat">1</span>);
 }
 </pre></code>
@@ -385,7 +385,7 @@ solution.</p>
 <span class="synKeyword">sub </span><span class="synFunction">fib</span>
 {
     <span class="synKeyword">my</span> (<span class="synDataType">$num</span>) = <span class="synDataType">@_</span>;
-    <span class="synKeyword">return</span> <span class="synFloat">1</span> <span class="synKeyword">if</span> <span class="synDataType">$num</span> &gt; <span class="synFloat">2</span>;
+    <span class="synKeyword">return</span> <span class="synFloat">1</span> <span class="synKeyword">if</span> <span class="synDataType">$num</span> &lt; <span class="synFloat">2</span>;
     <span class="synKeyword">my</span> (<span class="synDataType">$prev</span>, <span class="synDataType">$curr</span>) = (<span class="synFloat">1</span>,<span class="synFloat">1</span>);
 
     <span class="synKeyword">for</span> ( <span class="synFloat">2</span> .. <span class="synDataType">$num</span>)
