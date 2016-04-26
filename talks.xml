@@ -1454,4 +1454,16 @@ analysis for quick wins.</abstract>
     </topic>
   </talk>
 
+  <talk num="1604">
+    <date>April 2016</date>
+    <topic href="/talks/2016talks/1604Talk/index.html">
+      <title>FlexSC: Exception-Less System Calls</title>
+      <presenter>Julian Brown</presenter>
+      <abstract>Julian Brown covered a presentation describing a method for doing system
+calls while reducing context switching overhead. The paper the presentation
+was based on covered an academic project to implement this method and the
+research showing its effectiveness.</abstract>
+    </topic>
+  </talk>
+
 </talklist>

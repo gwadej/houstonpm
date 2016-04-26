@@ -1,0 +1,25 @@
+[% WRAPPER writeup_wrap.tt2
+    title='Summary of April 2016 Presentation'
+    year=2016
+%]
+      <h2 class="subhead">FlexSC: Exception-Less System Calls</h2>
+      <p>Julian Brown did a presentation based on slides and a paper he found. The
+presentation covered a project developed at the University of Toronto. The
+presentation describes the performance disadvantages of the context switch from
+user mode to kernel mode when making a system call (which the authors call
+an <em>exception</em>). The presentation proceeds to describe a system for
+reducing this ooverhead.</p>
+      <p>Julian researched the topic ahead of time to be able to explain the technique
+in paper. Despite the low-level nature of the talk, the audience was very
+much engaged the whole time. The topic generated a lot of discussion almost
+from the very beginning. Julian was able to fill in many of the gaps from the
+presentation from his reading of the paper.</p>
+      <p>The topic is available in several forms:</p>
+      <p><ul>
+   <li>The <a href="http://www.slideshare.net/liviosoares/flexsc-exceptionless-system-calls-presented-osdi-2010">slides</a></li>
+   <li>The <a href="https://www.usenix.org/legacy/events/osdi10/tech/full_papers/Soares.pdf">paper</a></li>
+   <li>The video</li>
+</ul></p>
+      <p>We had 8 people attending this month. As always, we'd like to thank
+        Hostgator, LLC for providing the meeting space and food for the group.</p>
+[% END -%]
