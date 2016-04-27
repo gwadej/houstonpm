@@ -8,7 +8,7 @@ presentation covered a project developed at the University of Toronto. The
 presentation describes the performance disadvantages of the context switch from
 user mode to kernel mode when making a system call (which the authors call
 an <em>exception</em>). The presentation proceeds to describe a system for
-reducing this ooverhead.</p>
+reducing this overhead.</p>
       <p>Julian researched the topic ahead of time to be able to explain the technique
 in paper. Despite the low-level nature of the talk, the audience was very
 much engaged the whole time. The topic generated a lot of discussion almost
