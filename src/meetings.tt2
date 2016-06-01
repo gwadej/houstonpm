@@ -18,13 +18,13 @@
     <h2 class="subhead">Upcoming Meetings</h2>
 
     <dl>
-        <dt>May 12, 2016</dt>
-        <dd><em>Techniques for Serializing Binary Trees</em> by Chris Mevissen at cPanel</dd>
-
         <dt>June 9, 2016</dt>
-        <dd>TBD at Hostgator</dd>
+        <dd><em>Reconstructing an SQL injection from its fix</em> by John Lightsey at Hostgator</dd>
 
         <dt>July 14, 2016</dt>
         <dd>TBD at cPanel</dd>
+
+        <dt>August 11, 2016</dt>
+        <dd>TBD at Hostgator</dd>
     </dl>
 [% END -%]
