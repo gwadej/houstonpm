@@ -1,0 +1,24 @@
+[% WRAPPER writeup_wrap.tt2
+    title='Summary of May 2016 Presentation'
+    year=2016
+%]
+      <h2 class="subhead">Binary Tree Serialization Techniques</h2>
+      <p>Chris Mevissen gave a report on the research he has been doing on serializable binary
+trees.</p>
+      <p>Although Perl's hash is any many ways faster than a binary tree, it does require
+more memory. At the end of the April meeting, we were discussing ways to reduce
+the memory footprint of a relatively large hash. We also discussed ways to only
+load a subset of the data into memory.</p>
+      <p>Chris decided to take some of the ideas we had discussed and explore them on
+his own. This presentation covers his findings, so far. He began by describing
+the basics of binary tree data structures and descibes a basic implementation
+in Perl. He works his way through showing how a binary tree can be serialized
+in a form that can be easily reloaded.</p>
+      <p>Chris walked us through his implementation and what he learned in tweaking the
+design and testing serializing and deserializing various binary trees.</p>
+      <p>The code from his project is <a
+href="https://github.com/despertargz/tree-binary-search-file/blob/master/lib/Tree/Binary/Search/File.pm"
+target="_blank">available</a> on github.</p>
+      <p>We had 9 people attending this month. As always, we'd like to thank
+        cPanel, Inc. for providing the meeting space and food for the group.</p>
+[% END -%]

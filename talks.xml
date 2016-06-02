@@ -1466,4 +1466,16 @@ research showing its effectiveness.</abstract>
     </topic>
   </talk>
 
+  <talk num="1605">
+    <date>May 2016</date>
+    <topic href="/talks/2016talks/1605Talk/index.html">
+      <title>Binary Tree Serialization Techniques</title>
+      <presenter>Chris Mevissen</presenter>
+      <abstract>Chris Mevissen gave a report on the research he has been doing on serializable binary
+trees. He describes the basics of binary tree data structures and descibes a basic
+implementation in Perl. He works his way through showing how a binary tree can be
+serialized in a form that can be easily reloaded.</abstract>
+    </topic>
+  </talk>
+
 </talklist>
