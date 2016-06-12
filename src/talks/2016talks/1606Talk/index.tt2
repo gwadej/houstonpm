@@ -1,0 +1,36 @@
+[% WRAPPER writeup_wrap.tt2
+    title='Summary of June 2016 Presentation'
+    year=2016
+%]
+      <h2 class="subhead">Reconstructing an SQL injection from its fix</h2>
+      <p>John Lightsey gives another of his security-related talks. In this instance, he
+walks through a security fix on the Movable Type software. After demonstrating
+the problematic code and showing how it can be exploited to answer arbitrary
+yes/no questions about data in the database, he uses <code>sqlmap</code> to
+automate actual effective attacks on a server he controls.</p>
+      <p>We all know that SQL injection attacks are dangerous, but I think most of us
+had a very simplistic view of what was possible. John showed how a relatively
+small leak of information through a SQL injection could be used to query
+information about the database and extract valuable information in an automated
+fashion.</p>
+      <p>He pointed out that the <code>sqlmap</code> software is easily installable on
+Debian. It can be used both to exploit a particular vulnerability or as a fuzzer
+to find vulnerabilities.</p>
+      <p>After the main demonstration, John gave a set of other resources in the same
+area.</p>
+      <p><ul>
+  <li><a href="http://overthewire.org/wargames/"
+  target="_blank">OverTheWire</a> - Practice scenarios for leveraging various
+  types of security defects.</li>
+  <li>The phineas fisher <a href="https://vimeo.com/167598485"
+  target="_blank">video</a> that demonstrates using sqlmap to take down a
+  website.</li>
+  <li>The Perl Jam 2 <a href="https://www.youtube.com/watch?v=eH_u3C2WwQ0" target="_blank">video</a> that talks
+about the same type of SQL injection issue in Bugzilla.</li>
+  <li>The original Perl Jam <a href="https://www.youtube.com/watch?v=gweDBQ-9LuQ" target="_blank">video</a>.
+Primarily about return context issues.</li>
+</ul>
+</p>
+      <p>We had 9 people attending this month. As always, we'd like to thank
+        Hostgator, LLC for providing the meeting space and food for the group.</p>
+[% END -%]

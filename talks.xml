@@ -1478,4 +1478,15 @@ serialized in a form that can be easily reloaded.</abstract>
     </topic>
   </talk>
 
+  <talk num="1606">
+    <date>June 2016</date>
+    <topic href="/talks/2016talks/1606Talk/index.html">
+      <title>Reconstructing an SQL injection from its fix</title>
+      <presenter>John Lightsey</presenter>
+      <abstract>John Lightsey shows how to use a diff of changes made to fix an SQL injection
+attack to create an attack against the unpatched code. He shows the use of
+the <code>sqlmap</code> tool to automatically generate useful attacks.</abstract>
+    </topic>
+  </talk>
+
 </talklist>
