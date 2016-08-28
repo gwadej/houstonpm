@@ -1489,4 +1489,18 @@ the <code>sqlmap</code> tool to automatically generate useful attacks.</abstract
     </topic>
   </talk>
 
+  <talk num="1608">
+    <date>August 2016</date>
+    <topic href="/talks/2016talks/1608Talk/index.html">
+      <title>A Set of Short Talks</title>
+      <presenter>Various</presenter>
+      <abstract>This month's meeting features a group of 4 short talks by some of our
+long-time members. Robert Stone discusses connecting objects by reference
+versus indirectly by some ID. Julian Brown talked about lock-free architectures.
+J. D. Lightsey demonstrated another SQL injection attack using <code>sqlmap</code>.
+And, Todd Rinaldo rounds out the talks with a discussion of a Perl vulnerability
+related to <code>@INC</code>.</abstract>
+    </topic>
+  </talk>
+
 </talklist>

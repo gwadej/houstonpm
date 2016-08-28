@@ -1,0 +1,61 @@
+[% WRAPPER writeup_wrap.tt2
+    title='Summary of August 2016 Presentation'
+    year=2016
+%]
+      <h2 class="subhead">A Set of Short Talks</h2>
+      <p>In this month's meeting, we had 4 members give short presentations on different
+topics of interest to them. Because of the number of topics and the discussions
+each triggered, this meeting actually ran to almost a full two hours.</p>
+      <h3>Object vs Data Driven References</h3>
+      <p>Robert Stone began the discussion by asking for the group's opinion on two
+different approaches to referencing one object from another. One approach
+references the object directly, the other stores an ID that is used to look up
+the dependent object separately. From the beginning of the presentation, most
+of the group seemed quite comfortable with direct reference, since this is how
+objects are traditionally handled. Many of us struggled to understand why one
+would use the new ID-based approach that Robert was proposing.</p>
+      <p>Eventually, Robert explained that he had always used the latter approach based
+on his database-heavy background. He was trying to understand the advantages
+that the rest of us saw in the Object approach.</p>
+      <p>As usual, challenging long-held beliefs one the way the world works is a great
+way to force you to re-consider what is <em>obvious</em>. This was quite a
+thought-provoking discussion.</p>
+
+      <h3>Lock-Free Architectures</h3>
+      <p>Julian Brown moved us from the high level of Object Design down to the level of
+<abbr title="Operating System">OS</abbr> algorithms by talking about blocking
+and non-blocking algorithms and data structures. In particular, he talked about
+a set of lock-free structures that he has been studying lately, endeavoring to
+help us understand how these structures work.</p>
+      <p>He showed how many of these structures depend on <em>Compare and Swap</em>
+(CAS) instructions that can be guaranteed to be atomic by the <abbr
+title="Central Processing Unit">CPU</abbr>.  He also touched on <em>Read Copy
+Update</em> algorithms, which he hopes to explore at another time.</p>
+      <p>Julian's <a href="NonBlocking.pdf">presentation</a> is available.</p>
+
+      <h3>More Movable Type SQL Injections</h3>
+      <p>John "JD" Lightsey performed another entertaining dive into the Moveable Type
+source to show another SQL injection. This time the flaw was in the <abbr
+title="eXtensible Markup Language">XML</abbr><abbr title="Remote Procedure
+Call">RPC</abbr> code.  In particular, the code uses the symbol tables of
+various modules as dispatch tables for execution of code supplied in input
+requests. JD showed how there was no protection for private functions of these
+module, and fun ensues.</p>
+      <p>Once again, JD showed the power and ease of use of the sqlmap program for
+exploiting these SQL injections on his own servers to give and idea of how
+powerful they could be.</p>
+
+      <h3>Long-time Perl Vulnerability</h3>
+      <p>Todd Rinaldo discussed a theoretical vulnerability in the way the default Perl
+build sets up the <code>@INC</code> search path. To be precise, the search path
+contains the current directory as the last place to search for a module.
+Although this has been known as a theoretical problem for quite some time, the
+maintainers of Perl have not been willing to change that because it might break
+code that relies on this behavior.</p>
+      <p>In recent months, the team at cPanel and others have shown ways to exploit this
+vulnerability in a production system. The details are not being released until
+appropriate action has been taken. Todd walked through how this exploit would
+work and what could actually be done about it.</p>
+      <p>We had 13 people attending this month. As always, we'd like to thank
+        Hostgator, LLC for providing the meeting space and food for the group.</p>
+[% END -%]
