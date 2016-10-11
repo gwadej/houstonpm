@@ -18,13 +18,13 @@
     <h2 class="subhead">Upcoming Meetings</h2>
 
     <dl>
-        <dt>September 8, 2016</dt>
-        <dd><em>The Read Copy Update Pattern in the Linux Kernel</em> with Julian Brown at cPanel</dd>
-
         <dt>October 13, 2016</dt>
         <dd><em>How Functional Programming Made Me Better at Perl</em> with Mark Allen at Hostgator</dd>
 
         <dt>November 10, 2016</dt>
         <dd>TBD at cPanel</dd>
+
+        <dt>December 8, 2016</dt>
+        <dd>TBD at Hostgator</dd>
     </dl>
 [% END -%]
