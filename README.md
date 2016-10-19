@@ -14,7 +14,7 @@ of the site.
 `make help` for more info.
 * talks.xml: This XML file serves as a simple database of all of the talks. It
 is used to define the overall directory structure and layout of the navigation.
-* nostrecent.xsl: Builds the file that redirects to the most recent talk link.
+* mostrecent.xsl: Builds the file that redirects to the most recent talk link.
 * recenttalks.xsl: Builds the navigation page listing the most recent talks.
 * talks2html.xsl: Library of template snippets that help building HTML out of the
 talks.xml file.
@@ -33,4 +33,3 @@ building the atom feed.
 * images: Icon files for the site
 * src: the Actual source for the site
 * templates: TT templates used in creation of the site.
-
