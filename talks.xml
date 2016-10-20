@@ -1503,4 +1503,14 @@ related to <code>@INC</code>.</abstract>
     </topic>
   </talk>
 
+  <talk num="1609">
+    <date>September 2016</date>
+    <topic href="/talks/2016talks/1609Talk/index.html">
+      <title>The Read Copy Update Pattern in the Linux Kernel</title>
+      <presenter>Julian Brown</presenter>
+      <abstract>Continuing with the lock-free architecture topic Julian introduced at an earlier
+meeting, he covered the <em>Read-Copy-Update</em> strategy.</abstract>
+    </topic>
+  </talk>
+
 </talklist>

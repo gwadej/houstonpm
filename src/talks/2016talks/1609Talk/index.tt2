@@ -1,0 +1,45 @@
+[% WRAPPER writeup_wrap.tt2
+    title='Summary of September 2016 Presentation'
+    year=2016
+%]
+      <h2 class="subhead">The Read Copy Update Pattern in the Linux Kernel</h2>
+      <p>In the <a href="/talks/2016talks/1608Talk/index.html" target="_blank">August</a>
+meeting, Julian Brown gave a short talk introducing Lock-Free Architectures. In
+this presentation, he continued the theme by looking somewhat more deeply at the
+<em>Read, Copy, Update</em> strategy. This approach is used in the Linux kernel
+and other places to allow manipulation of important data structures in a multi-threaded
+system, without the need for locks.</p>
+      <p>This strategy is built on top of some of the primitives Julian introduced last time
+(like <abbr title="Compare And Swap">CAS</abbr>).</p>
+      <p>Some of the most important features of this strategy are that readers can continue
+to access the data structure even while it is being updated. Just as importantly,
+updates using this strategy do not force the readers to fail and retry.</p>
+      <p>Julian's <a href="RCU.pdf" target="_blank">presentation</a> is available.</p>
+
+      <h2 class="subhead">Two Color 3D Printing with Perl</h2>
+      <p>Since there was quite a bit of extra time after Julian's talk, G. Wade Johnson
+      did the presentation that he had scheduled for last month. As a hobby,
+      Wade has been doing 3D printing for a while. Most common desktop <abbr title="Fused Deposition Manufacturing">FDM</abbr>
+      printers are limited to one material/color at a time. There are a few technical
+      solutions, but they are much more expensive and finicky.</p>
+      <p>As part of a project, Wade needed to be able to change colors on a print after
+      a certain height. The design was a flat plate with a raised brim and text.</p>
+        <img alt="Name Plate" src="nameplate.png"/>
+      <p>He develops most of his designs using <a href="http://www.openscad.org/"
+      target="_blank">OpenSCAD</a>. That program converts a text description of
+      the design into an <abbr title="STereoLithography">STL</abbr> file. Another
+      program, <a href="http://slic3r.org/" target="_blank">Slic3r</a> converts that
+      format into the G-code file that drives the printer.</p>
+      <p>Since G-code is a text format, it is pretty easy to use Perl to find the
+      point where we want to separate the design. His <a href="split.pl.txt"
+      target="_blank">program</a> separates the design into two parts. The base of
+      the design is written to one file, along with some housekeeping code that
+      moves the nozzle out of the way to allow changing the filament to a new
+      color. A second file contains a small amount of code to restore the printer
+      to the state where it can print again and then contains the rest of the
+      design.</p>
+      <p>Much discussion ensued regarding the details and realities of 3D printing.</p>
+
+      <p>We had 9 people attending this month. As always, we'd like to thank
+        cPanel, Inc. for providing the meeting space and food for the group.</p>
+[% END -%]

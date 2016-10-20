@@ -1,0 +1,60 @@
+#!/usr/bin/env perl
+
+use strict;
+use warnings;
+use 5.018;
+use autodie;
+
+my $cut = '2.4';
+my $top_offset = $cut . '8';
+my $z_offset = '-0.17';
+
+die "'$ARGV[0]' doesn't exist\n" unless -f $ARGV[0];
+my $base_file = $ARGV[0] =~ s/\.gcode/-base.gcode/r;
+my $top_file = $ARGV[0] =~ s/\.gcode/-top.gcode/r;
+
+my $last_move = '';
+my $first_comment;
+
+my @commands = (
+    [ qr/\A;/, sub { $first_comment = $_; } ],
+    [ qr/\AM82/, sub { } ], # wait after absolute distance mark
+    [ qr/\AG92 E0/, sub { $_ .= "G92 Z$z_offset ; Z offset\n"; } ],
+    [ qr/\AG1 Z$cut/, \&split_file ],
+);
+
+my $restart = <<EOF;
+G21 ; set units to millimeters
+G92 E0
+G1 F1800.000 E20
+G28 X0 ; Home X
+G1 X10.00 ; Move off blob
+G28 Z0 ; Home Z
+;G92 Z$z_offset
+G1 Z${top_offset} ; Restore height
+M92 110
+G92 E2.0
+G1 F1800.000 E0.00000
+EOF
+
+open my $out, '>', $base_file;
+
+while(<>)
+{
+    $last_move = $_ if /\AG1 [XY]/;
+    if(@commands and $_ =~ $commands[0]->[0])
+    {
+        $commands[0]->[1]->();
+        shift @commands;
+    }
+    print {$out} $_;
+}
+
+sub split_file
+{
+    print {$out} $_, "G28 X0\nG1 Z20 ; space for extruding\n";
+    open $out, '>', $top_file;
+    print {$out} $first_comment, "\n", $restart;
+    $_ .= $last_move =~ s/ E\d+\.\d+//r;
+    return;
+}
