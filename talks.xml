@@ -1513,4 +1513,15 @@ meeting, he covered the <em>Read-Copy-Update</em> strategy.</abstract>
     </topic>
   </talk>
 
+  <talk num="1610">
+    <date>October 2016</date>
+    <topic href="/talks/2016talks/1610Talk/index.html">
+      <title>How Functional Programming Made Me Better at Perl</title>
+      <presenter>Mark Allen</presenter>
+      <abstract>Mark Allen discusses the way doing functional programming in Erlang
+has changed how he approaches problems. He then introduced how to
+use some of this insight in Perl.</abstract>
+    </topic>
+  </talk>
+
 </talklist>

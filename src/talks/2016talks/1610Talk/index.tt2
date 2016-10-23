@@ -1,0 +1,31 @@
+[% WRAPPER writeup_wrap.tt2
+    title='Summary of October 2016 Presentation'
+    year=2016
+%]
+      <h2 class="subhead">How Functional Programming Made Me Better at Perl</h2>
+      <p>Mark Allen has been doing quite a bit of Erlang programming lately. This change
+in language has caused him to become much more familiar with functional
+programming topics. He contends (and proceeds to show) that learning functional
+programming makes you a better programmer.</p>
+      <p>Mark begins by mentioning some of the hallmark features of functional
+programming, including:</p>
+
+      <ul>
+  <li>No side effects</li>
+  <li>Explicit mutation of state</li>
+  <li>Deterministic functions</li>
+</ul>
+
+      <p>Mark talks a bit about pure functions and describes how in a truly functional
+program the order of operations does not matter.</p>
+      <p>Mark goes on to demonstrate multiple concepts and standard functional operations
+using examples from Erlang and OCaml.</p>
+      <p>Once he has established these fundamentals, he spends some time showing some
+equivalent functionality in Perl.</p>
+      <p>Mark's <a href="https://speakerdeck.com/mrallen1/functional-programming-made-me-a-better-perl-developer"
+target="_blank">slides</a> are available on Speaker Deck. A recording of the
+<a href="https://1drv.ms/v/s!AkuFmdw34K2Hhgp0ixcXIGEcOjhb" target="_blank">presentation</a>
+is also available.</p>
+      <p>We had 12 people attending this month. As always, we'd like to thank
+        Hostgator, LLC for providing the meeting space and food for the group.</p>
+[% END -%]
