@@ -18,13 +18,13 @@
     <h2 class="subhead">Upcoming Meetings</h2>
 
     <dl>
-        <dt>November 10, 2016</dt>
-        <dd><em>Pragmatic Functional Programming in Perl</em> at cPanel</dd>
-
         <dt>December 8, 2016</dt>
         <dd>TBD at Hostgator</dd>
 
         <dt>January 12, 2016</dt>
         <dd>TBD at cPanel</dd>
+
+        <dt>February 9, 2016</dt>
+        <dd>TBD at Hostgator</dd>
     </dl>
 [% END -%]

@@ -1,0 +1,33 @@
+[% WRAPPER writeup_wrap.tt2
+    title='Summary of November 2016 Presentation'
+    year=2016
+%]
+      <h2 class="subhead">Pragmatic Functional Programming in Perl</h2>
+      <p>Last month's presentation by Mark Allen introduced many functional programming
+topics and showed how they could be applied to solving problems. He showed many
+of these techniques using functional programming languages that specialize in
+these techniques.</p>
+      <p>This month, G. Wade Johnson reviewed some of these concepts and then applied
+them directly to Perl code. He showed how these techniques are already
+available to you, once you realize how they apply. The audience asked lots of
+really good questions and seemed to be understanding how these techniques used
+the concepts from last month in code that they knew how to use.</p>
+      <p>The discussion was quite lively and caused an already long presentation to run
+longer. Overall, the attendees seemed to enjoy the talk.</p>
+
+    <p>The presentation and example code used in the presentation are available below</p>
+    <ul>
+        <li><a href="talk.html" target="_blank">Presentation</a></li>
+        <li>examples/<ul>
+          <li><a href="examples/second.pm.txt" target="_blank">second.pm</a></li>
+          <li><a href="examples/ret_func.pl.txt" target="_blank">ret_func.pl</a></li>
+          <li>log/<ul>
+            <li><a href="examples/non_func.pl.txt" target="_blank">non_func.pl</a> - mostly procedural</li>
+            <li><a href="examples/half_func.pl.txt" target="_blank">half_func.pl</a> - partially functional</li>
+            <li><a href="examples/very_func.pl.txt" target="_blank">very_func.pl</a> - very functional</li>
+          </ul></li>
+        </ul></li>
+    </ul>
+      <p>We had 9 people attending this month. As always, we'd like to thank
+        cPanel, Inc. for providing the meeting space and food for the group.</p>
+[% END -%]

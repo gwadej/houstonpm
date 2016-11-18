@@ -1524,4 +1524,15 @@ use some of this insight in Perl.</abstract>
     </topic>
   </talk>
 
+  <talk num="1611">
+    <date>November 2016</date>
+    <topic href="/talks/2016talks/1611Talk/index.html">
+      <title>Pragmatic Functional Programming in Perl</title>
+      <presenter>G. Wade Johnson</presenter>
+      <abstract>Last month's talk covered a bit of functional programming theory and why it
+teaches you more about programming. This month Wade focuses on the aspects of
+functional programming you can apply today in your own Perl code.</abstract>
+    </topic>
+  </talk>
+
 </talklist>

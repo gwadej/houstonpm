@@ -1,0 +1,410 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>Pragmatic Functional Programming in Perl</title>
+<!-- metadata -->
+<meta name="generator" content="S5" />
+<meta name="version" content="S5 1.1" />
+<meta name="presdate" content="20161110" />
+<meta name="author" content="G. Wade Johnson" />
+<meta name="company" content="Houston.pm" />
+<!-- configuration parameters -->
+<meta name="defaultView" content="slideshow" />
+<meta name="controlVis" content="hidden" />
+<!-- style sheet links -->
+<link rel="stylesheet" href="ui/houstonpm/slides.css" type="text/css" media="projection" id="slideProj" />
+<link rel="stylesheet" href="ui/houstonpm/outline.css" type="text/css" media="screen" id="outlineStyle" />
+<link rel="stylesheet" href="ui/default/print.css" type="text/css" media="print" id="slidePrint" />
+<link rel="stylesheet" href="ui/default/opera.css" type="text/css" media="projection" id="operaFix" />
+<!-- S5 JS -->
+<script src="ui/default/slides.js" type="text/javascript"></script>
+<style type="text/css">
+    .centered { text-align: center; }
+    .left { float: left; }
+    .right { float: right; }
+    h1 + blockquote, h1 + q { margin-top: 2em; }
+    td, th {
+        border: 1px solid black; text-align: right;
+        padding-left: 1ex; padding-right: 0.5ex;
+    }
+    .synAlert { color: #0000ff; }
+    .synBaseN { color: #007f00; }
+    .synBString { color: #c9a7ff; }
+    .synChar { color: #ff00ff; }
+    .synComment { color: #7f7f7f; font-style: italic; }
+    .synDataType { color:#0000ff; }
+    .synDecVal { color:#00007f; }
+    .synError { color:#ff0000; font-style: italic; font-weight: bold; }
+    .synFloat { color:#00007f; }
+    .synFunction { color:#007f00; }
+    .synIString { color:#ff0000; }
+    .synKeyword { font-weight: bold; }
+    .synOperator { color:#ffa500; }
+    .synOthers { color:#b03060; }
+    .synRegionMarker { color:#96b9ff; font-style: italic; }
+    .synReserved { color:#9b30ff; font-weight: bold; }
+    .synString { color:#ff0000; }
+    .synVariable { color:#0000ff; font-weight: bold; }
+    .synWarning { color:#0000ff; font-style: italic; font-weight: bold; }
+ </style>
+</head>
+<body>
+
+<div class="layout">
+<div id="controls"><!-- DO NOT EDIT --></div>
+<div id="currentSlide"><!-- DO NOT EDIT --></div>
+<div id="header"></div>
+<div id="footer">
+<h1>Houston.pm</h1>
+<h2>November 10, 2016</h2>
+</div>
+
+</div>
+
+<div class="presentation">
+
+<div class="slide">
+<h1>Pragmatic Functional Programming in Perl</h1>
+<h2></h2>
+<h3>G. Wade Johnson</h3>
+<h4>Houston.pm</h4>
+</div>
+
+<div class="slide">
+<h1>What is Functional Programming?</h1>
+<p>Functional programming is a programming paradigm that treats computation as
+the evaluation of mathematical functions and avoids state and mutable data.</p>
+<p>A programming paradigm is an approach to thinking about and organizing problems
+and solutions.</p>
+<div class="handout">
+    <p>I promise there won't be too many other definitions in this talk.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Major Principles of Functional Programming</h1>
+<ul>
+    <li>Immutable data</li>
+    <li><em>Pure</em> functions</li>
+    <li>Functions as first-class <em>objects</em></li>
+    <li>Higher order functions</li>
+</ul>
+<div class="handout">
+<p>Immutable data is not really a requirement, but most functional langauges do tend
+to use that approach.</p>
+<p>In this case, <em>pure</em> means that the output of the function only depends on
+it's inputs. People also tend to add the constraint that they have no side effects.</p>
+<p>In this case, I don't mean that functions are objects in the <abbr title="Object Oriented
+    Programming">OOP</abbr> sense. I just mean that functions can be used in much the same
+way as integers, floats, and strings.</p>
+<p>Higher order functions are functions that apply to functions. They can either take
+functions as parameters, return functions, or both.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Immutable Data</h1>
+<ul>
+    <li>Hard to really do in Perl</li>
+    <li>Easier to follow the principle</li>
+</ul>
+<div class="handout">
+<p>Perl doesn't directly support immutable data, or even constants really. There
+are a few modules that retrofit constant or read-only semantics onto Perl.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1><code>map</code>/<code>grep</code>/<code>sort</code></h1>
+<ul>
+    <li>Transform a list into a new list with (possibly) different elements</li>
+    <li>Spirit of immutable data</li>
+    <li>These transformations can be chained</li>
+</ul>
+<div class="handout">
+<p>Although it is possible to modify the original array through <code>map</code>
+and <code>grep</code>, following the principle of immutable data, we should not.</p>
+<p>Code using <code>map</code> and <code>grep</code> is easier to reason about if
+you don't mutate the input.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Examples</h1>
+<pre><code>
+  <span class="synKeyword">my</span> <span class="synDataType">@minutes</span> <span class="synOperator">=</span> <span class="synFunction">map</span> { <span class="synVariable">$_</span> <span class="synOperator">/</span> <span class="synFloat">60</span> } <span class="synDataType">@times</span>;
+
+  <span class="synKeyword">my</span> <span class="synDataType">@odd</span> <span class="synOperator">=</span> <span class="synFunction">grep</span> { <span class="synVariable">$_</span> <span class="synOperator">%</span> <span class="synFloat">2</span> <span class="synOperator">==</span> <span class="synFloat">1</span> } <span class="synDataType">@values</span>;
+
+  <span class="synKeyword">my</span> <span class="synDataType">@sorted</span> <span class="synOperator">=</span> <span class="synFunction">sort</span> { <span class="synDataType">$a</span>-&gt;{<span class="synString">name</span>} <span class="synOperator">cmp</span> <span class="synDataType">$b</span>-&gt;{<span class="synString">name</span>} } <span class="synDataType">@unsorted</span>;
+</code></pre>
+<div class="handout">
+<p>Some really simple uses of these builtins. It's often handy to think of this as modifying
+the list instead of thinking about the individual elements. This helps the idioms to become
+more familiar. This is similar to thinking of <code>4 * 5</code> as <em>four times five</em>
+rather than <em>four added to itself five times</em>.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Data Pipelines</h1>
+<ul>
+    <li>Take a list of data and perform a series of transformations on the list to create a new list</li>
+    <li>Think about transforming the list instead of the elements</li>
+    <li>Built in Perl tools: <code>map</code>/<code>grep</code>/<code>sort</code></li>
+    <li>Libraries: <code>List::Util</code>, <code>List::MoreUtils</code></li>
+</ul>
+<div class="handout">
+<p>Since most of these operations take a list as an argument and return a list, it's easy to
+chain them to perform more complicated operations. The only downside is you have to read the
+chain from right to left.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Schwartzian Transform</h1>
+<p>Take an expensive sort, transform into a list that's quicker to sort, then transform
+back into the sorted list.</p>
+<pre><code>
+  <span class="synKeyword">my</span> <span class="synDataType">@sorted</span> <span class="synOperator">=</span> <span class="synFunction">map</span>  { <span class="synVariable">$_</span>-&gt;[<span class="synFloat">1</span>] }
+               <span class="synFunction">sort</span> { <span class="synDataType">$a</span>-&gt;[<span class="synFloat">0</span>] <span class="synOperator">&lt;=&gt;</span> <span class="synDataType">$b</span>-&gt;[<span class="synFloat">0</span>] }
+               <span class="synFunction">map</span>  { [ expensive_operation( <span class="synVariable">$_</span> ), <span class="synVariable">$_</span> ] }
+               <span class="synDataType">@unsorted</span>;
+</pre></code>
+<div class="handout">
+<p>If you've worked in Perl for long, you've probably run across the Schwartzian Transform. The
+speed of this comes from reducing the number of calls to the expensive functions. You can find
+a <code>sort_by</code> function in <code>List::MoreUtils</code> to wraps up some of this.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Functions as first-class objects</h1>
+<ul>
+    <li>Named functions<ul>
+        <li>You likely know <code>sub</code>s</li>
+        <li>Like named constants</li>
+    </ul></li>
+    <li>Coderefs<ul>
+        <li>A <em>coderef</em> is a reference to a <code>sub</code></li>
+        <li>variables</li>
+    </ul></li>
+    <li>Anonymous functions<ul>
+        <li>Anonymous <code>sub</code>s are just subs without a name</li>
+        <li>literals</li>
+    </ul></li>
+    <li>Closures<ul>
+        <li>Anonymous <code>sub</code>s with special abilities</li>
+    </ul></li>
+</ul>
+<div class="handout">
+<p>In languages that support functional programming, functions can be used in similar ways
+to other forms of data like integers and strings.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Perl code object examples</h1>
+<pre><code>
+  <span class="synKeyword">sub </span><span class="synFunction">foo</span> { <span class="synKeyword">return</span> <span class="synString">'string'</span>; }
+
+  <span class="synKeyword">my</span> <span class="synDataType">$proc</span> <span class="synOperator">=</span> \&amp;foo;
+
+  <span class="synKeyword">my</span> <span class="synDataType">$proc1</span> <span class="synOperator">=</span> <span class="synKeyword">sub </span>{ <span class="synKeyword">return</span> <span class="synString">'string'</span>; }
+
+  <span class="synKeyword">my</span> <span class="synDataType">$bar</span> <span class="synOperator">=</span> <span class="synFloat">0</span>;
+  <span class="synKeyword">my</span> <span class="synDataType">$counter</span> <span class="synOperator">=</span> <span class="synKeyword">sub</span> { <span class="synKeyword">return</span> <span class="synOperator">++</span><span class="synDataType">$bar</span>; }
+  <span class="synDataType">$counter</span>-&gt;();
+</code></pre>
+<div class="handout">
+<p>Here are some examples of <code>sub</code>s used in the same way as other data. It's
+important to note that <code>$proc</code> and <code>$proc1</code> do not contain <code>'string'</code>
+instead they contain references to subs that will return that string.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Higher order functions</h1>
+<ul>
+    <li>Functions that take functions as arguments or return functions</li>
+    <li>You already know some of these: <code>map</code>, <code>grep</code>, <code>reduce</code></li>
+    <li>Why might you want to make your own?</li>
+</ul>
+<div class="handout">
+<p>Obviously, if you can put a function in a variable, you should be able to pass it as a
+parameter to another subroutine, or return it.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Example: Functions in Variables</h1>
+<pre><code>
+  <span class="synKeyword">sub </span><span class="synFunction">hello</span>
+  {
+    <span class="synKeyword">my</span> (<span class="synDataType">$target</span>) <span class="synOperator">=</span> <span class="synDataType">@_</span>;
+    <span class="synFunction">print</span> <span class="synString">"Hello, </span><span class="synDataType">$target</span><span class="synString">\n"</span>;
+  }
+
+  <span class="synKeyword">my</span> <span class="synDataType">$proc</span> <span class="synOperator">=</span> \&amp;hello;
+
+  hello(<span class="synString">'world'</span>);
+  <span class="synDataType">$proc</span>-&gt;(<span class="synString">'world'</span>);
+</code></pre>
+<div class="handout">
+<p>In this example, <code>$proc</code> contains a reference to the <code>hello</code>
+subroutine. In the last line, we execute that subroutine through the reference. This
+is exactly the same as executing it directly.</p>
+</div>
+</div>
+
+
+<div class="slide">
+<h1>Example: Functions as Arguments</h1>
+<pre><code>
+  <span class="synKeyword">sub </span><span class="synFunction">second</span> (&amp;<span class="synDataType">@</span>)
+  {
+      <span class="synKeyword">my</span> <span class="synDataType">$pred</span> <span class="synOperator">=</span> <span class="synFunction">shift</span>;
+      <span class="synKeyword">my</span> <span class="synDataType">$matches</span> <span class="synOperator">=</span> <span class="synFloat">0</span>;
+      <span class="synKeyword">foreach</span> (<span class="synDataType">@_</span>)
+      {
+          <span class="synKeyword">if</span>(<span class="synDataType">$pred</span>-&gt;())
+          {
+              <span class="synKeyword">return</span> <span class="synVariable">$_</span> <span class="synKeyword">if</span> <span class="synDataType">$matches</span>;
+              <span class="synOperator">++</span><span class="synDataType">$matches</span>;
+          }
+      }
+      <span class="synKeyword">return</span>;
+  }
+</pre></code>
+<div class="handout">
+<p>The signature allow us to leave off the <code>sub</code> keyword when passing an anonymous
+sub as an argument. This sub expects a coderef that will be used as a <em>predicate</em> (it
+should return <code>true</code> or <code>false</code>) and a list of values. It will return the
+second item from the list that causes the predicate to evaluate to true. Otherwise it returns
+<code>undef</code>.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Example: Returning Functions</h1>
+<pre><code>
+  <span class="synKeyword">sub </span><span class="synFunction">d6</span>
+  {
+      <span class="synKeyword">return</span> <span class="synKeyword">sub </span>{ <span class="synKeyword">return</span> <span class="synFloat">1</span> <span class="synOperator">+</span> <span class="synFunction">int</span>( <span class="synFunction">rand</span> <span class="synFloat">6</span> ); };
+  }
+
+  <span class="synKeyword">sub </span><span class="synFunction">counter_by</span>
+  {
+     <span class="synKeyword">my</span> (<span class="synDataType">$inc</span>) <span class="synOperator">=</span> <span class="synDataType">@_</span>;
+     <span class="synDataType">$inc</span> <span class="synOperator">||=</span> <span class="synFloat">1</span>;
+     <span class="synKeyword">my</span> <span class="synDataType">$count</span> <span class="synOperator">=</span> <span class="synFloat">0</span>;
+     <span class="synKeyword">return</span> <span class="synKeyword">sub </span>{ <span class="synKeyword">return</span> <span class="synDataType">$count</span> <span class="synOperator">+=</span> <span class="synDataType">$inc</span>; }
+  }
+</code></pre>
+<div class="handout">
+<p>These are examples of subroutines that return subroutines. In both cases, we create an
+anonymous sub that is returned. The first example returns an identical sub each time. The
+second has the special property that it remembers the increment that you supplied to it and
+a counter that it will increment each time it is called. This memory of variables defined
+outside the function is what makes the anonymous function a closure.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Example: Currying</h1>
+<pre><code>
+  <span class="synKeyword">sub </span><span class="synFunction">bind_first</span>
+  {
+      <span class="synKeyword">my</span> (<span class="synDataType">$proc</span>, <span class="synDataType">$arg</span>) <span class="synOperator">=</span> <span class="synDataType">@_</span>;
+      <span class="synKeyword">return</span> <span class="synKeyword">sub </span>{ <span class="synKeyword">return</span> <span class="synDataType">$proc</span>-&gt;( <span class="synDataType">$arg</span>, <span class="synDataType">@_</span> ); }
+  }
+</code></pre>
+<div class="handout">
+<p>The term <em>currying</em> refers to a technique where we take a function with one or more
+parameters and generate a new function that is the original function with one of its parameters
+<em>bound</em> to a particular value.</p>
+<p>Honestly, I don't use this technique very often. I did use it quite a bit in C++ when using
+the <abbr title="Standard Template Library">STL</abbr> (when it was still called that).</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Case Study: Process a Log File</h1>
+<ul>
+    <li>Stream the log, one line at a time</li>
+    <li>Filter out lines we don't care about</li>
+    <li>Extract data from lines we do care about</li>
+    <li>Transform the extracted data into a more useful form</li>
+    <li>Output the final list</li>
+</ul>
+<div class="handout">
+<p>Look at the code in the <em>examples/log</em> directory for some examples of code that
+does some log processing with different levels of functional design.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>No need to go all the way</h1>
+<p>You can use functional techniques embedded in your standard Perl.</p>
+<pre><code>
+  <span class="synKeyword">foreach</span> <span class="synKeyword">my</span> <span class="synDataType">$k</span> (<span class="synFunction">sort</span> <span class="synFunction">keys</span> <span class="synDataType">%hash</span>)
+  { ... }
+
+  <span class="synKeyword">foreach</span> <span class="synKeyword">my</span> <span class="synDataType">$el</span> (<span class="synFunction">sort</span> { <span class="synDataType">$hash</span>{<span class="synDataType">$b</span>} <span class="synOperator">&lt;=&gt;</span> <span class="synDataType">$hash</span>{<span class="synDataType">$a</span>} } <span class="synFunction">keys</span> <span class="synDataType">%hash</span>)
+  { ... }
+
+  <span class="synKeyword">foreach</span> <span class="synKeyword">my</span> <span class="synDataType">$el</span> (<span class="synFunction">grep</span> { <span class="synFunction">defined</span> <span class="synVariable">$_</span> } <span class="synDataType">@input</span>)
+  { ... }
+
+  <span class="synKeyword">my</span> <span class="synDataType">$num_capped</span> <span class="synOperator">=</span> <span class="synFunction">grep</span> { <span class="synOperator">/</span><span class="synChar">\A[</span><span class="synBaseN">A-Z</span><span class="synChar">]</span><span class="synOperator">/</span> } <span class="synDataType">@input</span>;
+</code></pre>
+<div class="handout">
+<p>Since Perl is not just a functional programming language, we are free to use as
+much or as little of the functional paradigm as needed to solve our problems. I often
+find it useful to do a small amount of list processing before doing the bulk of the work
+in a more procedural style.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1><code>File::Find</code></h1>
+<pre><code>
+   <span class="synKeyword">my</span> <span class="synDataType">$ONE_MEG</span> <span class="synOperator">=</span> <span class="synFloat">10</span> <span class="synOperator">*</span> <span class="synFloat">1024</span> <span class="synOperator">*</span> <span class="synFloat">1024</span>;
+   <span class="synKeyword">my</span> <span class="synDataType">@large_files</span>;
+   <span class="synKeyword">sub </span><span class="synFunction">save_large</span>
+   {
+      <span class="synFunction">push</span> <span class="synDataType">@large_files</span>, <span class="synVariable">$_</span> <span class="synKeyword">if</span> <span class="synOperator">-s</span> <span class="synVariable">$_</span> &gt; <span class="synDataType">$TEN_MEG</span>;
+   }
+   <span class="synFunction">File::Find</span>::<span class="synFunction">find</span>({ wanted =&gt; \&amp;save_large,
+                      no_chdir =&gt; <span class="synFloat">1</span>
+                    },
+                    <span class="synString">'.'</span>);
+</code></pre>
+<div class="handout">
+<p>The <code>find</code> function expects to take a function that will be executed on every
+file and directory that is found while traversing a directory structure.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Dispatch Table</h1>
+<pre><code>
+  <span class="synKeyword">my</span> <span class="synDataType">%commands</span> <span class="synOperator">=</span> (
+    <span class="synString">'+'</span>     =&gt; <span class="synKeyword">sub </span>{ <span class="synVariable">$_</span>[<span class="synFloat">0</span>] <span class="synOperator">+</span> <span class="synVariable">$_</span>[<span class="synFloat">1</span>] },
+    <span class="synString">'-'</span>     =&gt; <span class="synKeyword">sub </span>{ <span class="synVariable">$_</span>[<span class="synFloat">0</span>] <span class="synOperator">-</span> <span class="synVariable">$_</span>[<span class="synFloat">1</span>] },
+    <span class="synString">'*'</span>     =&gt; <span class="synKeyword">sub </span>{ <span class="synVariable">$_</span>[<span class="synFloat">0</span>] <span class="synOperator">*</span> <span class="synVariable">$_</span>[<span class="synFloat">1</span>] },
+    <span class="synString">'/'</span>     =&gt; <span class="synKeyword">sub </span>{ <span class="synVariable">$_</span>[<span class="synFloat">0</span>] <span class="synOperator">/</span> <span class="synVariable">$_</span>[<span class="synFloat">1</span>] },
+    <span class="synString">'print'</span> =&gt; sub { print <span class="synVariable">$_</span>[<span class="synFloat">0</span>] },
+  );
+</code></pre>
+<div class="handout">
+<p>This is one of my favorite techniques. Very useful for converting a <abbr title="Domain Specific Language">DSL</abbr>
+or commannd line arguments into actual code.</p>
+</div>
+</div>
+
+</body>
+</html>

@@ -157,6 +157,7 @@ sub add_feed_entry
         category => 'presentation',
         category => 'technical meeting',
     };
+    $entries = [ @{$entries}[0..19] ];
     write_file( $file, encode_json $entries );
 
     my $feed = XML::Atom::SimpleFeed->new(
