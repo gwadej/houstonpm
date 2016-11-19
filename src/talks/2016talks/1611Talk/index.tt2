@@ -19,12 +19,12 @@ longer. Overall, the attendees seemed to enjoy the talk.</p>
     <ul>
         <li><a href="talk.html" target="_blank">Presentation</a></li>
         <li>examples/<ul>
-          <li><a href="examples/second.pm.txt" target="_blank">second.pm</a></li>
-          <li><a href="examples/ret_func.pl.txt" target="_blank">ret_func.pl</a></li>
+          <li><a href="examples/second.pm" target="_blank">second.pm</a></li>
+          <li><a href="examples/ret_func.pl" target="_blank">ret_func.pl</a></li>
           <li>log/<ul>
-            <li><a href="examples/non_func.pl.txt" target="_blank">non_func.pl</a> - mostly procedural</li>
-            <li><a href="examples/half_func.pl.txt" target="_blank">half_func.pl</a> - partially functional</li>
-            <li><a href="examples/very_func.pl.txt" target="_blank">very_func.pl</a> - very functional</li>
+            <li><a href="examples/non_func.pl" target="_blank">non_func.pl</a> - mostly procedural</li>
+            <li><a href="examples/half_func.pl" target="_blank">half_func.pl</a> - partially functional</li>
+            <li><a href="examples/very_func.pl" target="_blank">very_func.pl</a> - very functional</li>
           </ul></li>
         </ul></li>
     </ul>
