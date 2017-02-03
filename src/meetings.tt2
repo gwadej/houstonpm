@@ -18,16 +18,16 @@
     <h2 class="subhead">Upcoming Meetings</h2>
 
     <dl>
-        <dt>January 12, 2016</dt>
-        <dd>Lightning/short talks at cPanel</dd>
-
         <dt>February 9, 2016</dt>
-        <dd>TBD at Hostgator</dd>
+        <dd><em>Homophonic Substitution Ciphers - Cracking The Code of a Killer</em> with Robert Stone at Hostgator</dd>
 
         <dt>March 9, 2016</dt>
         <dd>TBD at cPanel</dd>
 
         <dt>April 13, 2016</dt>
         <dd>TBD at Hostgator</dd>
+
+        <dt>May 11, 2016</dt>
+        <dd>TBD at cPanel</dd>
     </dl>
 [% END -%]
