@@ -1,0 +1,49 @@
+[% WRAPPER writeup_wrap.tt2
+    title='Summary of January 2017 Presentation'
+    year=2017
+%]
+      <h2 class="subhead">Lightning Talks</h2>
+      <p>Instead of having one large presentation this month, we decided to have
+several people give shorter presentations.</p>
+      <h3>TDD Done Correctly - Robert Stone</h3>
+      <p>Robert made the assertion that TDD is a very good approach to writing
+software and suggested that people who don't like TDD aren't doing it
+properly. He walked through an example of some code he wanted to
+develop, showing how to use TDD from the beginning. In the interest of
+time, he showed the begining of the development real-time and finished
+with some of the code and the tests that he had developed along side.</p>
+      <p>The audience ended up asking a lot of questions around the periphery of
+his main topic. There were questions about the use of <code>make_immutable</code>,
+some of the vim features he used, as well as the trade-offs of using
+<code>cmp_ok</code> versus <code>is</code> from <code>Test::More</code>.</p>
+      <p>Robert also showed an interesting technique for creating a test class
+using <code>Moose::Meta::Class</code>, with an attached role in order
+to test the role in isolation.</p>
+      <h3>Radix Sort - Julian Brown</h3>
+      <p>Julian presented some research that he had been doing on a sort that
+was claimed to be even faster that the standard Perl sort. The inventor
+describes it as a kind of general purpose radix or counting sort. This
+generated quite a bit of discussion about radix sorts and this algorithm
+in particular.</p>
+      <h3>Sessions - Jocelyn Kirby</h3>
+      <p>Jocelyn described some of the history of maintaining session information
+for a web application, starting from the early days with only cookies
+and progressing to the present with modern session object techniques.</p>
+      <p><h3><code>vim</code> tips - G. Wade Johnson</h3></p>
+      <p>Wade followed up some with a set of vim tips to expand on what Robert had
+mentioned. He showed a one line command that provides a way to load a
+beginning template when creating a new file based on the extension:
+<pre><code>
+    autocmd BufNewFile * silent!    0r ~/.vim/templates/%:e.template
+</code></pre>
+He said he doesn't remember where he saw it, but it is quite effective
+for filling in initial boilerplate for new files. He also showed a number
+of key commands that are useful for intermediate level vim editing and 
+talked about a couple of plugins.</p>
+      <h3>Some of My Modules - Michael R. Davis</h3>
+      <p>Michael showed his list of his CPAN modules (ID: MRDVT). The modules
+he highlighted ran the gamut from modules that provided a single function
+to a plugin-based library for GoogleEarth.</p>
+      <p>We had 7 people attending this month. As always, we'd like to thank
+        cPanel, Inc. for providing the meeting space and food for the group.</p>
+[% END -%]

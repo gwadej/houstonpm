@@ -1535,4 +1535,19 @@ functional programming you can apply today in your own Perl code.</abstract>
     </topic>
   </talk>
 
+  <talk num="1701">
+    <date>January 2017</date>
+    <topic href="/talks/2017talks/1701Talk/index.html">
+      <title>Lightning Talks</title>
+      <presenter>Various</presenter>
+      <abstract>Tonight's meeting featured a set of short talks on various topics.
+Robert Stone did a talk on TDD. Julian Brown presented a kind of
+radix sort that the inventer claims is faster than the standard Perl
+sort. Jocelyn Kirby presented about Sessions in web applications.
+G. Wade Johnson presented some vim tips. And, Michael R. Davis
+finished the presentations with an introduction to some of his
+CPAN modules.</abstract>
+    </topic>
+  </talk>
+
 </talklist>
