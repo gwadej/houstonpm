@@ -6,12 +6,14 @@
       <p>Instead of having one large presentation this month, we decided to have
 several people give shorter presentations.</p>
 
-      <h3>TDD Done Correctly - Robert Stone</h3>
-      <p>Robert made the assertion that TDD is a very good approach to writing
-software and suggested that people who don't like TDD aren't doing it
+      <h3><abbr title="Test Driven Development">TDD</abbr> Done Correctly - Robert Stone</h3>
+      <p>Robert made the assertion that <abbr title="Test Driven Development">TDD</abbr> is a very good approach to writing
+software and suggested that people who don't like <abbr title="Test Driven Development">TDD</abbr> aren't doing it
 properly. He walked through an example of some code he wanted to
-develop, showing how to use TDD from the beginning. In the interest of
-time, he showed the begining of the development real-time and finished
+develop, showing how to use <abbr title="Test Driven Development">TDD</abbr> from the beginning.</p>
+    <img src="person.png" alt="UML class diagram of Person class and Exercise Role" width="588" height="171" />
+    <p>Starting with the UML diagram above, Robert wanted to show <abbr title="Test Driven Development">TDD</abbr> in the best
+light. In the interest of time, he showed the begining of the development real-time and finished
 with some of the code and the tests that he had developed along side.</p>
       <p>The audience ended up asking a lot of questions around the periphery of
 his main topic. There were questions about the use of <code>make_immutable</code>,
@@ -20,6 +22,8 @@ some of the vim features he used, as well as the trade-offs of using
       <p>Robert also showed an interesting technique for creating a test class
 using <code>Moose::Meta::Class</code>, with an attached role in order
 to test the role in isolation.</p>
+      <p>The code for the talk is available as a <a href="tdd.tar.gz" target="_blank">tarball</a>
+for download.</p>
 
       <h3>Radix Sort - Julian Brown</h3>
       <p>Julian presented some research that he had been doing on a sort that
@@ -43,8 +47,8 @@ beginning template when creating a new file based on the extension:
     autocmd BufNewFile * silent!    0r ~/.vim/templates/%:e.template
 </code></pre>
 He said he doesn't remember where he saw it, but it is quite effective
-for filling in initial boilerplate for new files. He also showed a number
-of key commands that are useful for intermediate level vim editing and 
+for filling in initial boilerplate for new files. He also showed uses of the
+block seletion, and text objects that are useful for intermediate level vim editing and 
 talked about a couple of plugins.</p>
 
       <h3>Some of My Modules - Michael R. Davis</h3>
