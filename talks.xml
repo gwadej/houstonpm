@@ -1550,4 +1550,14 @@ CPAN modules.</abstract>
     </topic>
   </talk>
 
+  <talk num="170126">
+    <date>January 26, 2017</date>
+    <topic href="/talks/2017talks/170126Talk/index.html">
+      <title>cperl</title>
+      <presenter>Reini Urban</presenter>
+      <abstract>Reini Urban gave a presentation highlighting several of the features of the
+cperl fork of the perl programming language.</abstract>
+    </topic>
+  </talk>
+
 </talklist>

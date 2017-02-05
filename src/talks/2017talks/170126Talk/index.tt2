@@ -1,0 +1,64 @@
+[% WRAPPER writeup_wrap.tt2
+    title='Summary of February 2017 Presentation'
+    year=2017
+%]
+      <h2 class="subhead">cperl</h2>
+      <p>Reini Urban volunteered to show the features of the <code>cperl</code> fork of
+the Perl language. He began the presentation talking about the problems with
+Perl 5, which spawned the Perl 6 project.</p>
+      <p>He stated that cperl is one of implementations of what's being called <em>perl11</em>.
+This is a movement to rewrite Perl 5 with some of the features developed for Perl 6.</p>
+      <p>The features that Reini demonstrated included:</p>
+<ol>
+    <li>Shaped arrays
+        <p>Declare an array with a fixed size. Access it normally, but builtins that
+          change the size of the array (<code>push</code>, <code>shift</code>, etc.)
+          don't work. Allows removal of automatic bounds checking in some instances.
+          Works with types to make more efficient implementations in some cases.</p></li>
+    <li>Fast overflow detection
+      <p>Perl's numeric scalars automatically switch between integer and floating
+        point representations internally as needed in some cases. This change can be
+        triggered when an integer increases to larger than can be represented by the
+        internal integer representation. This change makes detection of that overflow
+        more efficient.</p></li>
+    <li>Signatures
+       <p>Support type checks at compile-type or run-time, whichever is possible.
+         Evaluation of parameters is guaranteed to be left to right.
+         Current implementation only understands core types. The return type is
+         declared as an attribute of the <code>sub</code> and supports both
+         core and user-defined types.</p></li>
+    <li>Attributes for optimizing function calls</li>
+    <li>Static loop optimizations for shaped arrays
+      <p>Since the size of a shaped array is known at compile-time, some optimizations
+      are available that cannot apply to traditional Perl arrays.</li>
+    <li>Remove bounds checking inside loops</li>
+    <li>Convert static methods to <code>sub</code>s
+      <p>Under some circumstances, a method can be promoted to a method on a
+      subclass early instead of walking the inheritance tree to find it.</p></li>
+    <li><code>Config</code> is built-in and written in XS
+      <p>The data in the <code>Config</code> hash is knoow at installation time, so
+      he generates a constant, perfect hash that is just loaded into memory instead
+      of building a traditional hash dynamically.</li>
+    <li>Unicode optimizations for size</li>
+    <li>Hash improvements
+      <p>Reini has done some extensive research into hash functions and believes he
+        knows them better than almost anyone else. He compared the hashing technniques
+        used by a number of other languages and has identified FNV1A as ideal for his
+        purposes. It's very fast, but not secure against collisions. He argues that the
+        secure property is not useful in hashing functions used for hashes.</p>
+      <p>He described different techniques for dealing with hash table collisions.
+        He also discussed the rate at which the hash table fills, and different
+        approaches for growing the vector containing the table.</p>
+      <p>As part of his research, he has apparently taken over maintainership of the
+        SMHasher and perl-hash-stats projects.</li>
+</ol>
+
+      <p>As usual, Reini's presentation was heavy on implementation and design details.
+      If you are not the kind of person who enjoys data structures, the hashing section
+      would probably make your eyes glaze over. Fortunately, the audience had quite a
+      few data structure wonks this time. The audience asked some pretty insightful
+      questions and pushed Reini on the explanations, until we understood his trade-offs.</p>
+
+      <p>We had 7 people attending this month. As always, we'd like to thank
+        cPanel, Inc. for providing the meeting space and food for the group.</p>
+[% END -%]
