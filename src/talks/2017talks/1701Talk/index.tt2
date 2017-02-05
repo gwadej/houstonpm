@@ -52,7 +52,8 @@ block seletion, and text objects that are useful for intermediate level vim edit
 talked about a couple of plugins.</p>
 
       <h3>Some of My Modules - Michael R. Davis</h3>
-      <p>Michael showed his list of his CPAN modules (ID: MRDVT). The modules
+      <p>Michael showed his list of his CPAN modules (ID: <a href="https://metacpan.org/author/MRDVT"
+      target="_blank">MRDVT</a>). The modules
 he highlighted ran the gamut from modules that provided a single function
 to a plugin-based library for GoogleEarth.</p>
       <p>We had 7 people attending this month. As always, we'd like to thank
