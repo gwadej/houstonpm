@@ -11,7 +11,7 @@ This is a movement to rewrite Perl 5 with some of the features developed for Per
       <p>The features that Reini demonstrated included:</p>
 <ol>
     <li>Shaped arrays
-        <p>Declare an array with a fixed size. Access it normally, but builtins that
+        <p>Declare an array with a fixed size. Access it normally, but built-ins that
           change the size of the array (<code>push</code>, <code>shift</code>, etc.)
           don't work. Allows removal of automatic bounds checking in some instances.
           Works with types to make more efficient implementations in some cases.</p></li>
@@ -42,15 +42,18 @@ This is a movement to rewrite Perl 5 with some of the features developed for Per
     <li>Unicode optimizations for size</li>
     <li>Hash improvements
       <p>Reini has done some extensive research into hash functions and believes he
-        knows them better than almost anyone else. He compared the hashing technniques
+        knows them better than almost anyone else. He compared the hashing techniques
         used by a number of other languages and has identified FNV1A as ideal for his
         purposes. It's very fast, but not secure against collisions. He argues that the
         secure property is not useful in hashing functions used for hashes.</p>
       <p>He described different techniques for dealing with hash table collisions.
         He also discussed the rate at which the hash table fills, and different
         approaches for growing the vector containing the table.</p>
-      <p>As part of his research, he has apparently taken over maintainership of the
-        SMHasher and perl-hash-stats projects.</li>
+      <p>As part of his research, he has apparently <a href="https://github.com/rurban/smhasher"
+        target="_blank">forked</a> the <a href="https://github.com/aappleby/smhasher"
+        target="_blank">SMHasher</a> test suite to
+        extend testing as he saw fit. He also maintains the <a href="https://github.com/rurban/perl-hash-stats"
+        target="_blank">perl-hash-stats</a> project.</li>
 </ol>
 
       <p>As usual, Reini's presentation was heavy on implementation and design details.
