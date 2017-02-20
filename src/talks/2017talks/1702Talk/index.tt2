@@ -1,0 +1,27 @@
+[% WRAPPER writeup_wrap.tt2
+    title='Summary of February 2017 Presentation'
+    year=2017
+%]
+      <h2 class="subhead">Homophonic Substitution Cipher: Cracking the Code of a Killer</h2>
+      <p>Robert Stone began the presentation by demonstrating the mechanics of
+a substitution cipher. He walked through the details carefully and
+in detail, making certain that everyone understands the mechanics. From
+there, he moves forward to discuss the vulnerabilities of the basic
+subbstitution cipher.</p>
+      <p>Next, Robert moves into the homophonic substitution cipher and how it
+reduces the weaknesses of the standard substitution cipher. He worked
+through an example to show how the system works. The group spent quite
+a bit of time discussing the implications of these changes.</p>
+      <p>Finally, Robert went on to describe the circumstances of the three letters
+that the Zodiac killer sent to different newspapers. He described the
+letters and what the killer sent with them. He, then, walked through the
+exercise of attempting to crack the cipher, following in the footsteps
+of those who solved the cipher.</p>
+      <p>Unlike many technical talks, this one covered technical details, theory,
+and real life. The lively conversation during and after the presentation
+showed how it was enjoyed.</p>
+      <p>The <a href="homophonic_substitition_cipher.pptx" target="_blank">presentation</a>
+      is available on-line.</p>
+      <p>We had 10 people attending this month. As always, we'd like to thank
+        Hostgator, LLC for providing the meeting space and food for the group.</p>
+[% END -%]

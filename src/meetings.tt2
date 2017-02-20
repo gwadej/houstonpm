@@ -18,9 +18,6 @@
     <h2 class="subhead">Upcoming Meetings</h2>
 
     <dl>
-        <dt>February 9, 2016</dt>
-        <dd><em>Homophonic Substitution Ciphers - Cracking The Code of a Killer</em> with Robert Stone at Hostgator</dd>
-
         <dt>March 9, 2016</dt>
         <dd>TBD at cPanel</dd>
 
@@ -29,5 +26,8 @@
 
         <dt>May 11, 2016</dt>
         <dd>TBD at cPanel</dd>
+
+        <dt>June 8, 2016</dt>
+        <dd>TBD at Hostgator</dd>
     </dl>
 [% END -%]

@@ -1560,4 +1560,16 @@ cperl fork of the perl programming language.</abstract>
     </topic>
   </talk>
 
+  <talk num="1702">
+    <date>February 2017</date>
+    <topic href="/talks/2017talks/1702Talk/index.html">
+      <title>Homophonic Substitution Cipher: Cracking the Code of a Killer</title>
+      <presenter>Robert Stone</presenter>
+      <abstract>Robert Stone delves into the cipher used by the Zodiac Killer in his
+newspaper announcements. He describes substitution ciphers and then
+shows how a homophonic substitution cipher fixes many of its problems.
+He ends by describing how the Zodiac Killer's cipher was solved.</abstract>
+    </topic>
+  </talk>
+
 </talklist>
