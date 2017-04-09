@@ -18,16 +18,16 @@
     <h2 class="subhead">Upcoming Meetings</h2>
 
     <dl>
-        <dt>March 9, 2016</dt>
-        <dd><em>Maintaining Developer Mental and Physical Health</em> at cPanel</dd>
+        <dt>April 13, 2017</dt>
+        <dd><em>A Discussion About p5hack</em> with Todd Rinaldo at Hostgator</dd>
 
-        <dt>April 13, 2016</dt>
-        <dd>TBD at Hostgator</dd>
-
-        <dt>May 11, 2016</dt>
+        <dt>May 11, 2017</dt>
         <dd>TBD at cPanel</dd>
 
-        <dt>June 8, 2016</dt>
+        <dt>June 8, 2017</dt>
         <dd>TBD at Hostgator</dd>
+
+        <dt>July 13, 2017</dt>
+        <dd>TBD at cPanel</dd>
     </dl>
 [% END -%]
