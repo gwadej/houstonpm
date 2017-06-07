@@ -18,16 +18,16 @@
     <h2 class="subhead">Upcoming Meetings</h2>
 
     <dl>
-        <dt>May 11, 2017</dt>
-        <dd><em>Live Code Reviews</em> at cPanel</dd>
-
         <dt>June 8, 2017</dt>
-        <dd>TBD at Hostgator</dd>
+        <dd><em><a href="http://oc.pm.org/may_challenge.html">Coding Challenge</a></em> at Hostgator</dd>
 
         <dt>July 13, 2017</dt>
         <dd>TBD at cPanel</dd>
 
         <dt>August 10, 2017</dt>
         <dd>TBD at Hostgator</dd>
+
+        <dt>September 14, 2017</dt>
+        <dd>TBD at cPanel</dd>
     </dl>
 [% END -%]
