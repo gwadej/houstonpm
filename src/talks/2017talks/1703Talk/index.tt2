@@ -1,0 +1,43 @@
+[% WRAPPER writeup_wrap.tt2
+    title='Summary of March 2017 Presentation'
+    year=2017
+%]
+      <h2 class="subhead">Maintaining Developer Mental and Physical Health</h2>
+      <p>We had three presentations relating to developer health.</p>
+      <h2>Smoking Meat</h2>
+      <p>First, Jim Bacon gave a remote presentation on smoking meats. He focused on the
+healthy aspects of smoking versus frying or other ways of preparing meats. He
+did point out that it was important to avoid sodium in any rubs applied to the
+meat (for those people affected by higher sodium). As an example, he pointed out
+that pork tenderloin, properly smoked, is healthier than chicken.</p>
+      <h2>Living Forever: Ketogenic Diet and Stronglifts 5x5</h2>
+      <p>Robert Stone gave a presentation on the health regimen that he has adopted. He
+advocates a ketogenic diet for reducing weight and a exercise program for
+improving strength. He reports that he feels better and has lost weight on this
+program.</p>
+      <p>Robert's <a href="Living_Forever.pptx" target="_blank">presentation</a> is available.</p>
+      <h2>Social Group Interactions</h2>
+      <p>Jocelyn Kirby gave a talk about some of the research into the interactions among
+social groups. She explained five levels of social interaction:</p>
+    <ul>
+        <li>Stranger</li>
+        <li>Acquaintance</li>
+        <li>Casual Friend</li>
+        <li>Good Friend</li>
+        <li>Best Friend</li>
+    </ul>
+      <p>Afterward, she discussed some of the differences in interaction you might have
+with people at each level, pointing out the interactions are driven by different
+levels of trust or comfort. She then extended this model for work interactions:</p>
+    <ul>
+        <li>Stranger</li>
+        <li>New Hire</li>
+        <li>Co-worker</li>
+        <li>Teammate</li>
+        <li>Well oiled machine</li>
+    </ul>
+
+      <h2>Summary</h2>
+      <p>We had 6 people attending this month. As always, we'd like to thank
+        cPanel, Inc. for providing the meeting space and food for the group.</p>
+[% END -%]
