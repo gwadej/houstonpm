@@ -1,0 +1,26 @@
+[% WRAPPER writeup_wrap.tt2
+    title='Summary of April 2017 Presentation'
+    year=2017
+%]
+      <h2 class="subhead">p5hack</h2>
+      <p>Todd Rinaldo talked about the p5hack meeting last year in Amsterdam. He began
+with some history leading up to the meeting.</p>
+      <p>Some of the initial plans were to have a (relatively) small number of people
+to be able to make decisions, to include contributors to the p5p group and to
+have a plan beforehand to make certain something is accomplished. The meeting
+was hosted by Booking.com at the Amsterdam headquarters starting on Nov. 11, 2016.</p>
+      <p>A full <a href="http://news.perlfoundation.org/2017/02/2016-p5h-report.html"
+target="_blank">report</a> on the meeting can be found Perl Foundation news site.</p>
+      <p>Todd and JD described some of the major topics, including:</p>
+      <ul>
+        <li>finalizing a real deprecation policy including dates for removal of deprecated features</li>
+        <li>Stevan Little's research into a protocol for objects in Perl</li>
+        <li>Changes to <code>B::C</code>
+        <li>Removing <code>.</code> from <code>@INC</code>
+        <li>Changing the <code>O</code> module to not load modules it doesn't need</li>
+        <li>Removal of 2-arg <code>open</code>s throughout code modules</li>
+      </ul>
+      <p>He also discussed some other smaller topics. See the full report for all topics.</p>
+      <p>We had 12 people attending this month. As always, we'd like to thank
+        Hostgator, LLC for providing the meeting space and food for the group.</p>
+[% END -%]

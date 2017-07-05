@@ -1582,4 +1582,15 @@ topics that can apply to developers.</abstract>
     </topic>
   </talk>
 
+  <talk num="1704">
+    <date>April 2017</date>
+    <topic href="/talks/2017talks/1704Talk/index.html">
+      <title>p5hack</title>
+      <presenter>Todd Rinaldo</presenter>
+      <abstract>Todd Rinaldo discussed the p5hack hack-a-thon this year in Amsterdam. He
+described the purpose of the meeting and some of the decisions that came
+out of the meeting.</abstract>
+    </topic>
+  </talk>
+
 </talklist>
