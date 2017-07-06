@@ -1,0 +1,27 @@
+[% WRAPPER writeup_wrap.tt2
+    title='Summary of May 2017 Presentation'
+    year=2017
+%]
+      <h2 class="subhead">Live Code Reviews</h2>
+      <p>G. Wade Johnson lead the group, but he mostly asked for opinions and directed
+the review process. Several people had volunteered to have their code reviewed.
+Unfortunately, we were not able to get the review working for Jim Bacon due to
+technical difficulties with the remote connection.</p>
+      <p>Robert Stone volunteered his <code>DBIx::Class::InflateColumn::Math::Currency</code>
+module for review. Much of the review involved the group learning about the
+<code>DBIx::Class::InflateColumn</code> infrastructure and reviewing design
+decisions. Overall, there were no major issues that anyone found in looking
+through the module.</p>
+      <p>The final module we discussed was Wade Johnson's <code>SVG::Sparkline</code>
+module. Since there was more code in this module, and it was a bit older, we
+thought there was a fair chance that we would find more to abuse. The group
+agreed that the interface was a bit surprising. Wade admitted that he was
+experimenting with an idea at the time, and a different approach might have
+been better. He spent some time describing the concept of Sparklines and
+explaining the interface. During this time, JD noticed that there was a
+<abbr title="Common Gateway Interface">CGI</abbr> script in the module. This
+immediately tickled his security interest, which lead him to find an injection
+flaw pretty quickly. The group discussed changes broke up for the night.</p>
+      <p>We had 8 people attending this month. As always, we'd like to thank
+        cPanel, Inc. for providing the meeting space and food for the group.</p>
+[% END -%]

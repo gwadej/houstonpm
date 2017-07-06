@@ -1593,4 +1593,14 @@ out of the meeting.</abstract>
     </topic>
   </talk>
 
+  <talk num="1705">
+    <date>May 2017</date>
+    <topic href="/talks/2017talks/1705Talk/index.html">
+      <title>Live Code Reviews</title>
+      <presenter>Various</presenter>
+      <abstract>The goal this meeting was to do some code reviews as a group. The idea was that
+we would learn from each other's techniques and knowledge.</abstract>
+    </topic>
+  </talk>
+
 </talklist>
