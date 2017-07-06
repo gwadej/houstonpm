@@ -1,0 +1,31 @@
+[% WRAPPER writeup_wrap.tt2
+    title='Summary of June 2017 Presentation'
+    year=2017
+%]
+      <h2 class="subhead">OC.pm Coding challenge</h2>
+      <p>The topic this month was the <a href="http://oc.pm.org/may_challenge.html"
+      target="_blank">coding challenge</a> supplied by <a href="http://oc.pm.org/"
+      target="_blank">OC.pm</a> for their May 2017 meeting.</p>
+      <p>Two members of the group provided solutions to the problem. Julian Brown
+presented his solution in person. JD Lightsey was unable to make it to the
+meeting, but he sent his solution through G. Wade Johnson.</p>
+      <p>Julian started the meeting by explaining the challenge. He then showed the
+two scripts that he built to solve the problem. The first decoded the barcode
+data into the data needed to construct the image. The second script took the
+data, generated an image from that and attempted to decode the Morse code
+message. He reported that he did not finish the code needed to produce the
+final message.</p>
+      <p>Wade presented JD's <a href="JD_solution.tar.gz" target=_blank">solution</a>
+      to the problem. JD coded his solution as a single
+script. He also managed to complete the decoding of the Morse code and provide
+the output message.</p>
+      <p>We observed that these two senior developers approached the problem slightly
+differently. Comparing their solutions showed differences in the way they
+approach problem solving. There was one very interesting point that the two
+solutions had in common. They were simple exploration scripts solving the
+problem. There was no frameworks, large amounts of object oriented code, or
+test suites. Both developers showed that a simple solution was better for a
+throw-away script intended to solve a problem.</p>
+      <p>We had 7 people attending this month. As always, we'd like to thank
+        Hostgator, LLC for providing the meeting space and food for the group.</p>
+[% END -%]

@@ -1603,4 +1603,15 @@ we would learn from each other's techniques and knowledge.</abstract>
     </topic>
   </talk>
 
+  <talk num="1706">
+    <date>June 2017</date>
+    <topic href="/talks/2017talks/1706Talk/index.html">
+      <title>OC.pm Coding challenge</title>
+      <presenter>Various</presenter>
+      <abstract>JD Lightsey suggested that the group make an attempt at the Perl Programming
+challenge that OC.pm proposed for their May 2017 meeting. Eveyone was suggested
+to make an attempt.</abstract>
+    </topic>
+  </talk>
+
 </talklist>
