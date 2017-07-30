@@ -1,0 +1,36 @@
+[% WRAPPER writeup_wrap.tt2
+    title='Summary of July 2017 Presentation'
+    year=2017
+%]
+      <h2 class="subhead">Getting gutsy with perl5</h2>
+      <p>Todd Rinaldo has been working on the guts of Perl recently as part of the Perl
+compiler project at cPanel. He began with some of the pre-requisites needed to
+understand the presentation, including a basic understanding of C:</p>
+<ul>
+    <li>structures</li>
+    <li>unions</li>
+    <li>arrays</li>
+    <li>typedefs</li>
+    <li>#define</li>
+</ul>
+      <p>He showed Nicolas Rochelemagne's talk <a href="https://www.youtube.com/watch?v=zNsew4U-quM"
+target="blank">Introduction to Perl Internals</a> to give some background. Nicolas
+covered some of the basics of Perl internal data structures and some information
+about how perl handles memory.</p>
+      <p>After the video, Todd explained the <code>B::C</code> module and some of its
+siblings.  He explained the difference between a stash and a pad, and talked
+about how new pads are added each time you add a scope. Todd spent a little
+more time discussing the internal data structures, mostly focusing on how they
+relate to stashes and pads.</p>
+      <p>Next, he discussed how the parser doesn't actually generate an op-tree, as you might
+guess from an study of compilers. Instead, it generates several op-trees, that are
+linked together by entries in the stashes. He recommended spending time studying
+Reini Urban's <a href="https://github.com/rurban/illguts" target="_blank">Ill Guts</a>
+if you are going to spend any time understanding this stuff.</p>
+      <p>He spent some time discussing some of what cPanel is using the compiler for and what
+they hoped to accomplish. He discussed some ideas about optimizing op-trees.</p>
+      <p>The talk generated several interesting discussions, that branched off the main topic
+at times.</p>
+      <p>We had 13 people attending this month. As always, we'd like to thank
+        cPanel, Inc. for providing the meeting space and food for the group.</p>
+[% END -%]
