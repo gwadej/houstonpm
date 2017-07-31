@@ -1620,39 +1620,8 @@ to make an attempt.</abstract>
       <title>Getting gutsy with perl5</title>
       <presenter>Todd Rinaldo</presenter>
       <abstract>Todd Rinaldo has been working on the guts of Perl recently as part of the Perl
-compiler project at cPanel. He began with some of the pre-requisites needed to
-understand the presentation, including a basic understanding of C:
-
-<ul>
-    <li>structures</li>
-    <li>unions</li>
-    <li>arrays</li>
-    <li>typedefs</li>
-    <li>#define</li>
-</ul>
-
-He showed Nicolas Rochelemagne's talk <a href="https://www.youtube.com/watch?v=zNsew4U-quM"
-target="blank">Introduction to Perl Internals</a> to give some background. Nicolas
-covered some of the basics of Perl internal data structures and some information
-about how perl handles memory.
-
-After the video, Todd explained the <code>B::C</code> module and some of its
-siblings.  He explained the difference between a stash and a pad, and talked
-about how new pads are added each time you add a scope. Todd spent a little
-more time discussing the internal data structures, mostly focusing on how they
-relate to stashes and pads.
-
-Next, he discussed how the parser doesn't actually generate an op-tree, as you might
-guess from an study of compilers. Instead, it generates several op-trees, that are
-linked together by entries in the stashes. He recommended spending time studying
-Reini Urban's <a href="https://github.com/rurban/illguts" target="_blank">Ill Guts</a>
-if you are going to spend any time understanding this stuff.
-
-He spent some time discussing some of what cPanel is using the compiler for and what
-they hoped to accomplish. He discussed some ideas about optimizing op-trees.
-
-The talk generated several interesting discussions, that branched off the main topic
-at times.</abstract>
+          compiler project at cPanel. This talk covers some of what he has learned about working with the
+          internals of perl.</abstract>
     </topic>
   </talk>
 
