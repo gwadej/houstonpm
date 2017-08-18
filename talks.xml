@@ -1625,4 +1625,15 @@ to make an attempt.</abstract>
     </topic>
   </talk>
 
+  <talk num="1708">
+    <date>August 2017</date>
+    <topic href="/talks/2017talks/1708Talk/index.html">
+      <title>Gray-ish Hat Adventures In Automating Mobile Game Play: Why Tap When You Could Automate?</title>
+      <presenter>Robert Stone</presenter>
+      <abstract>Robert Stone describes the troubleshooting techniques he used to reverse
+engineer a game to see if he could automate some of the boring parts of the
+game.</abstract>
+    </topic>
+  </talk>
+
 </talklist>

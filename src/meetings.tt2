@@ -18,10 +18,6 @@
     <h2 class="subhead">Upcoming Meetings</h2>
 
     <dl>
-        <dt>August 10, 2017</dt>
-        <dd><em>Gray-ish Hat Adventures In Automating Mobile Game Play: Why Tap When You
-Could Automate?</em> with Robert Stone at Hostgator</dd>
-
         <dt>September 14, 2017</dt>
         <dd>TBD at cPanel</dd>
 
@@ -30,5 +26,8 @@ Could Automate?</em> with Robert Stone at Hostgator</dd>
 
         <dt>November 9, 2017</dt>
         <dd>TBD at cPanel</dd>
+
+        <dt>December 14, 2017</dt>
+        <dd>TBD at Hostgator</dd>
     </dl>
 [% END -%]

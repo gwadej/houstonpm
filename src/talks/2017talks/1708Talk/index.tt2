@@ -1,0 +1,23 @@
+[% WRAPPER writeup_wrap.tt2
+    title='Summary of August 2017 Presentation'
+    year=2017
+%]
+      <h2 class="subhead">Gray-ish Hat Adventures In Automating Mobile Game Play: Why Tap When You Could Automate?</h2>
+      <p>Robert began with a demo of the game, followed by a brief discussion about
+the structure of apk packages used to install games on Android.  After this
+we searched the apk for specific strings such as "login" in order to find
+where the interesting parts were and used dotPeek to decompile them.  This
+showed us that the game was using websockets for communication,
+specifically socket.io.</p>
+      <p>Armed with the mechanism of communication, Robert showed how we could use
+Charles Proxy and Proxycap to man in the the middle the game's network
+traffic.  Once the structure of the communications was uncovered we had a
+brief discussion of the format of the data as well as some key assumptions
+the game makes which makes it less then secure at times.</p>
+      <p>We wrapped up with a demonstration of the game being played by the scripts
+in real time, a discussion of the advantages of using Moo over Moose at
+times, and then a group discussion about how the automation could be
+expanded.</p>
+      <p>We had 8 people attending this month. As always, we'd like to thank
+        Hostgator, LLC for providing the meeting space and food for the group.</p>
+[% END -%]
