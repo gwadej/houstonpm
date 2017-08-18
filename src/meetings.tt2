@@ -18,9 +18,6 @@
     <h2 class="subhead">Upcoming Meetings</h2>
 
     <dl>
-        <dt>August 10, 2017</dt>
-        <dd>TBD at Hostgator</dd>
-
         <dt>September 14, 2017</dt>
         <dd>TBD at cPanel</dd>
 
@@ -29,5 +26,8 @@
 
         <dt>November 9, 2017</dt>
         <dd>TBD at cPanel</dd>
+
+        <dt>December 14, 2017</dt>
+        <dd>TBD at Hostgator</dd>
     </dl>
 [% END -%]
