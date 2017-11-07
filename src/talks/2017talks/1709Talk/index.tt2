@@ -1,0 +1,24 @@
+[% WRAPPER writeup_wrap.tt2
+    title='Summary of September 2017 Presentation'
+    year=2017
+%]
+      <h2 class="subhead">Web Framework Comparisons</h2>
+      <p>The first three presentations compared different ways of developing web applications.</p>
+      <p>First, Mark Gardner demonstrated a relatively simple note-taking app developed with the
+Dancer web framework. He showed how Dancer simplifies making <abbr title="Create/Read/Update/Delete">CRUD</abbr>
+apps. He used Plackup to be the server that hosted the app. Although Dancer supports a number of
+different plugins, Mark only used <code>Dancer::Plugin::DBIC</code>. The result was quite
+functional.</p>
+      <p>Next, Julian Brown explored the advantages of developing on <code>mod_perl2</code>. The
+main thing to remember about developing with mod_perl is the matter of trade-offs. Mod_perl
+has much lower overhead than most other frameworks. He showed the different ways that
+mod_perl-based applications can be launched.</p>
+      <p>For the final web development talk, Wade Johnson showed how a simple CGI script can work
+effectively when the volume of requests and simple behavior. This script was quite old and
+has a few security flaws, even though they could not have been exploited without detection.</p>
+      <p>Next, JD Lightsey described a security hack against the old suid feature of Perl.</p>
+      <p>Finally, Todd Rinaldo described some research into replacing Perl's hash algorithm with
+a Minimum Perfect Hash.</p>
+      <p>We had 9 people attending this month. As always, we'd like to thank
+        cPanel, Inc. for providing the meeting space and food for the group.</p>
+[% END -%]

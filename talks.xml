@@ -1636,4 +1636,17 @@ game.</abstract>
     </topic>
   </talk>
 
+  <talk num="1709">
+    <date>September 2017</date>
+    <topic href="/talks/2017talks/1709Talk/index.html">
+      <title>Web Framework Comparisons</title>
+      <presenter>Various</presenter>
+      <abstract>Three different people demonstrated different approaches to developing a web application.
+One showed a Dancer-based note taking app. Another showed how mod_perl has different
+trade-offs than a framework. The last showed a simple single page CGI script. Then, we
+saw info about an attack on suid. The final presentation talked about Perl's minimum
+perfect hashes.</abstract>
+    </topic>
+  </talk>
+
 </talklist>
