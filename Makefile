@@ -3,6 +3,9 @@
 OUTDIR=out
 INSTALLDIR=/var/www-vhost/houstonpm/
 PUBLISHDIR=/mnt/houstonpm/
+# Set ssh config to map this host correctly
+SERVER=houstonpm
+TARGETDIR=public_html/houston.pm.org/
 
 TALKSUMMARIES=${OUTDIR}/talks/mostrecent.html \
               ${OUTDIR}/talks/index.html \
@@ -93,7 +96,7 @@ install:
 	cp -r -p ${OUTDIR}/* ${INSTALLDIR}
 
 publish:
-	cp -r -p ${OUTDIR}/* ${PUBLISHDIR}
+	rsync -rptvz ${OUTDIR}/ ${SERVER}:${TARGETDIR}
 
 clean:
 	find . -name '*.bck' -exec rm {} \;
