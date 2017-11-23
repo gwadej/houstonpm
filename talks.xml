@@ -1649,4 +1649,15 @@ perfect hashes.</abstract>
     </topic>
   </talk>
 
+  <talk num="1710">
+    <date>October 2017</date>
+    <topic href="/talks/2017talks/1710Talk/index.html">
+      <title>Design Hack</title>
+      <presenter>Julian Brown</presenter>
+      <abstract>Julian Brown ran a session where the attendees worked on the initial design
+brainstorming for a project. We started with an idea proposed by Michael Davis
+for a PSGI package that would set up a web service with minimal configuration.</abstract>
+    </topic>
+  </talk>
+
 </talklist>

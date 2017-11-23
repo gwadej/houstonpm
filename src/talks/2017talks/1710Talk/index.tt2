@@ -1,0 +1,83 @@
+[% WRAPPER writeup_wrap.tt2
+    title='Summary of October 2017 Presentation'
+    year=2017
+%]
+      <h2 class="subhead">Design Hack</h2>
+      <p>Julian Brown ran the Design Hack session. He was willing to take on the 
+<em>herding of the cats</em> and scribe what the group discussed.</p>
+      <p>We used the suggestion made by Michael R. Davis, even though he was not available.</p>
+      <p><blockquote>I'm big on packaging. I would love to see a PSGI Web server package for centos
+that literally all you have to do is add an INI file to a /etc/psgi.d folder
+and it's running. I cannot imagine how hard it is to get a plack app running
+in an enterprise manner.</blockquote></p>
+      <p>Since we did not have access to the <em>customer</em>, the team had to use only
+this text as our target. Much of the design discussion revolved around simplifying
+our ideas by stripping out pieces that were not required to meet the stated
+goal. In some ways, this worked better than it might have if we had a customer
+to talk into more complicated ideas.</p>
+      <p>One decision we made early on was to specify a target audience for the final tool:</p>
+<ul>
+    <li>A programmer who is not skilled in setting up a webserver, but is savvy
+otherwise.</li>
+    <li>erformance is not crucial to this, if it were they would have hand
+configured it themselves.</li>
+</ul>
+
+      <p>The group consisted of people with wide-ranging experience. We had people with
+many years of experience and only a few. The people with testing experience provided
+some unique insight into our discussion, that balanced out the developer-heavy
+discussions.</p>
+      <p>We made quite a few simplifying assumptions (only centos, only Apache support, etc.)
+to define an <abbr title="Minimum Viable Product">MVP</abbr>. Each time we moved
+away from the simple design, someone would point out that we could always make
+the change configurable in the next pass. Surprisingly, we managed not to
+over-engineer the design very much during the session.</p>
+      <p>In the end, we had a fairly reasonable set of requirements, that should have
+met the goals described. While we were finalizing the design, one of the attendees
+made a proof-of-concept that matched our design goals and actually appeared to
+to work.</p>
+      <p>The general consensus seemed to be that the session went well. The discussion was
+pretty constant (and civil), involving everyone in the room.</p>
+
+      <h2>Final Product</h2>
+
+      <p>Julian documented the results of the session.</p>
+<ul>
+  <li>The final product would be a "script" that would read your INI file.</li>
+  <li>We only would support, in the first iteration of the script, CentOS 7.</li>
+  <li>The script would do a <code>"use 5.14"</code> just to make sure we were not on some ancient system.</li>
+  <li>CentOS 7 comes with 5.16 out of the box so that should not be an issue.</li>
+  <li>The first thing the script would do is run a set of yum commands to make sure all the packages we need would be on the system.</li>
+  <li>Then it would install a bunch of <abbr title="Comprehensive Perl Archive Network">CPAN</abbr> modules that we need.</li>
+  <li>The script would then configure an Apache vhost (based on port in INI) for this app.</li>
+  <li>It would be configured with fastcgi.</li>
+  <li>It would then have a "base" <code>dispatch.fcgi</code>.</li>
+  <li>The base <code>dispatch.fcgi</code> would read the INI file on every request and determine routing from the INI to your target app (psgi, dancer).</li>
+  <li>The INI file can support multiple routes.</li>
+  <li>This would allow the INI file to be modified real time.</li>
+  <li>Apache would only need to be bounced if you modified the port number.</li>
+</ul>
+
+      <h2>Lesson's learned</h2>
+
+<ul>
+  <li>Julian conducted this as an open discussion.</li>
+  <li>There were many questions about the "Acceptance Criteria".</li>
+  <li>So if we choose to do this again we would:<ul>
+    <li>Appoint a PO/Stakeholder who would need to be present so we could ask appropriate questions to clarify what the goal was.</li>
+    <li>During the meeting the PO would prepare the Acceptance Criteria, hopefully early in the meeting so that we could get on with it.</li>
+    </ul></li>
+</ul>
+
+      <h2>Conclusion</h2>
+
+      <p>Everyone seemed to agree that this was a good exercise for a meeting. We 
+would definitely be interested in doing it again, but not too often. We agreed
+that it was a fun exercise, but very tiring.
+ 
+Special thanks to Julian Brown for keeping the group on track and documenting
+the whole process. Also thanks to Michael R. Davis for providing the initial design
+idea.</p>
+      <p>We had 9 people attending this month. As always, we'd like to thank
+        Hostgator, LLC for providing the meeting space and food for the group.</p>
+[% END -%]
