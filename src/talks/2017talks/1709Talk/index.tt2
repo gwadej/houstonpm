@@ -13,6 +13,7 @@ functional.</p>
 main thing to remember about developing with mod_perl is the matter of trade-offs. Mod_perl
 has much lower overhead than most other frameworks. He showed the different ways that
 mod_perl-based applications can be launched.</p>
+      <p>Julian's <a href="JuliansModPerlTalk.pdf" target="_blank">presentation</a> is available.</p>
       <p>For the final web development talk, Wade Johnson showed how a simple CGI script can work
 effectively when the volume of requests and simple behavior. This script was quite old and
 has a few security flaws, even though they could not have been exploited without detection.</p>
