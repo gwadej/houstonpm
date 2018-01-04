@@ -18,16 +18,17 @@
     <h2 class="subhead">Upcoming Meetings</h2>
 
     <dl>
-        <dt>November 9, 2017</dt>
-        <dd>Hacking Perl Source at cPanel</dd>
-
-        <dt>December 14, 2017</dt>
-        <dd>TBD at Hostgator</dd>
-
         <dt>January 11, 2018</dt>
-        <dd>TBD at cPanel</dd>
+        <dd><em>A Look at Bedrock, a Distributed SQLite DB</em> with Julian Brown at cPanel</dd>
 
         <dt>February 8, 2018</dt>
         <dd>TBD at Hostgator</dd>
+
+        <dt>March 8, 2018</dt>
+        <dd>TBD at cPanel</dd>
+
+        <dt>April 12, 2018</dt>
+        <dd>TBD at Hostgator</dd>
+
     </dl>
 [% END -%]

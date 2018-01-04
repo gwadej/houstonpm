@@ -6,10 +6,10 @@
       <p>October meeting notes are on-line.</p>
       <p>September meeting notes are on-line.</p>
       <h1 class="heading">Next Meeting</h1>
-        <dl>
-            <dt>November 9, 2017</dt>
-            <dd>Hacking Perl Source at cPanel</dd>
-        </dl>
+      <dl>
+        <dt>January 11, 2018</dt>
+        <dd><em>A Look at Bedrock, a Distributed SQLite DB</em> with Julian Brown at cPanel</dd>
+      </dl>
     </div>
 
     <p>This is the branch of the <a href="http://www.pm.org/">Perl Mongers</a>
