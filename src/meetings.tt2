@@ -18,17 +18,17 @@
     <h2 class="subhead">Upcoming Meetings</h2>
 
     <dl>
-        <dt>January 11, 2018</dt>
-        <dd><em>A Look at Bedrock, a Distributed SQLite DB</em> with Julian Brown at cPanel</dd>
-
         <dt>February 8, 2018</dt>
-        <dd>TBD at Hostgator</dd>
+        <dd><em>Ruby Programming from a Perl Programmer's Point of View</em> with G. Wade Johnson at Hostgator</dd>
 
         <dt>March 8, 2018</dt>
-        <dd>TBD at cPanel</dd>
+        <dd><em>AWStats Flaws</em> with JD Lightsey at cPanel (tentative)</dd>
 
         <dt>April 12, 2018</dt>
-        <dd>TBD at Hostgator</dd>
+        <dd><em>Rails vs. Dancer/Mojolicious</em> with G. Wade Johnson at Hostgator (tentative)</dd>
+
+        <dt>May 10, 2018</dt>
+        <dd>TBD at cPanel</dd>
 
     </dl>
 [% END -%]
