@@ -18,17 +18,18 @@
     <h2 class="subhead">Upcoming Meetings</h2>
 
     <dl>
-        <dt>February 8, 2018</dt>
-        <dd><em>Ruby Programming from a Perl Programmer's Point of View</em> with G. Wade Johnson at Hostgator</dd>
-
         <dt>March 8, 2018</dt>
-        <dd><em>AWStats Flaws</em> with JD Lightsey at cPanel (tentative)</dd>
+        <dd><em>AWStats Flaws</em> with JD Lightsey and
+            <em>Making a Cute Robot with Perl and Raspberry Pi</em> with Mark Gardner at cPanel</dd>
 
         <dt>April 12, 2018</dt>
         <dd><em>Rails vs. Dancer/Mojolicious</em> with G. Wade Johnson at Hostgator (tentative)</dd>
 
         <dt>May 10, 2018</dt>
         <dd>TBD at cPanel</dd>
+
+        <dt>June 14, 2018</dt>
+        <dd>TBD at Hostgator</dd>
 
     </dl>
 [% END -%]
