@@ -90,7 +90,7 @@ ${OUTDIR}/talks/2017talks/index.html: talks.xml yeartalks.xsl templates/yeartalk
 	bin/talks.pl --style=yeartalks.xsl --template=yeartalks.tt2 --define year=2017 talks.xml > $@
 
 convert:
-	ttree --define end_year=2017 -f _ttreerc
+	ttree --define end_year=`date +%Y` -f _ttreerc
 
 install:
 	cp -r -p ${OUTDIR}/* ${INSTALLDIR}
