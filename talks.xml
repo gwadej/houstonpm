@@ -1660,4 +1660,14 @@ for a PSGI package that would set up a web service with minimal configuration.</
     </topic>
   </talk>
 
+  <talk num="1711">
+    <date>November 2017</date>
+    <topic href="/talks/2017talks/1711Talk/index.html">
+      <title>Perl Source Hack</title>
+      <presenter>Todd Rinaldo</presenter>
+      <abstract>Todd leads a session to hack on Perl code from the RT queue. The idea is
+to find and fix at least one bug as a team.</abstract>
+    </topic>
+  </talk>
+
 </talklist>

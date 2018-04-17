@@ -1,0 +1,41 @@
+[% WRAPPER writeup_wrap.tt2
+    title='Summary of November 2017 Presentation'
+    year=2017
+%]
+      <h2 class="subhead">Perl Source Hack</h2>
+      <p>Todd Rinaldo lead the hacking session, mostly by driving our walk through
+the <a href="https://rt.perl.org/" target="_blank" rel="noopener">Perl RT
+queue</a>. We looked at a few bugs to decide:</p>
+
+<ul>
+    <li>Were they still open?</li>
+    <li>Did we understand the problem?</li>
+    <li>Could we reproduce it?</li>
+    <li>DId we think we could fix it in the time we had?</li>
+</ul>
+
+      <p>We looked at a Here doc issue in a regex <code>?{}</code> expression
+that seems to have been fixed with Perl version 5.22.</p>
+      <p>Next, we looked at a <code>Data::Dumper</code> problem that seemed to
+be caused by round-tripping some cross-referenced structures. After looking
+at it for a little while, we could see the poster's point, but really weren't
+completely sure he was right. Even if he was, we could not see any way to
+solve it in a reasonable period of time.</p>
+      <p>Then, we looked at a reported strangeness with the <code>tr///</code> operator
+when <code>'</code> is used as the delimiter. A small amount of looking
+convinced us that we were probably not up to the challenge of debugging this
+in the time we were meeting.</p>
+      <p>Finally, we found a reported problem with <code>perlbug</code> where the
+<code>--help</code> option returned a surprising message. After a bit of
+digging we found that <code>Getopt::Std</code> actually captures and handles
+a couple of options directly: <code>--help</code> and <code>--version</code>.
+The module does provide a way to override it's behavior. We modified <code>perlbug</code>
+to use this feature and call it's own help messaging.</p>
+      <p>After testing, Todd submitted the code fix to the RT queue, referencing
+Houston.pm.</p>
+      <p>All in all, it was an interesting and fun exercise. The group as a whole
+provided some interesting commentary and got some insight into how we
+might be able to help improve Perl directly.</p>
+      <p>We had 7 people attending this month. As always, we'd like to thank
+        cPanel, Inc. for providing the meeting space and food for the group.</p>
+[% END -%]
