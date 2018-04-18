@@ -1,0 +1,45 @@
+[% WRAPPER writeup_wrap.tt2
+    title='Summary of January 2018 Presentation'
+    year=2018
+%]
+      <h2 class="subhead">A Look at Bedrock, a Distributed SQLite DB</h2>
+      <p>Julian Brown was introduced to the <a href="http://bedrockdb.com/" target="_blank"
+rel="noopener">Bedrock</a> project on an episode of the <a href="https://twit.tv/shows/floss-weekly"
+target="_blank" rel="noopener">FLOSS Weekly podcast. He became intrigued
+enough to look into it a bit further.</p>
+      <p>Bedrock builds a distributed database layer on top of <a href="https://sqlite.org/index.html"
+target="_blank" rel="noopener">SQLite3</a>. In the podcast, the argument had been
+that SQLite was plenty fast and robust enough to be the backend for a single node, and that Bedrock
+could supply the rest of what you need for distributing the database. Bedrock's main features revolve
+around replicating the data to all of the nodes, self-healing, and consistency. The system uses
+master-master replication and is supposed to be fast. Changes to one of the nodes are made as log
+entries which are automatically shipped to the other nodes and applied. Supposedly, as soon as a new
+node comes up, it begins to replicate from the other nodes.</p>
+      <p>In addition to the replication, Bedrock supports a plugin system for extensions. The original story
+suggested that SQLite has become more powerful in recent years, so it's up to the challenge. Bedrock
+uses an Interface using <abbr title="HyperText Transfer Protocol">HTTP</abbr> to provide the SQL
+interface, or supports an <code>nc</code>-based interface as well.</p>
+      <p>Julian also pointed out some of the weaknesses of the system that were identified in the podcast
+and in his research. Since SQLite is designed to be local to a process, there is not really any security.
+The Bedrock developer kind of hand-waved this as something you would need to provide and it would be
+protected by your firewall, so it wasn't a big deal. Due to the distributed nature of the system and
+the fact that SQLite itself supports no low-level coordination between nodes, numeric primary keys
+are not possible. The authors recommend using UUIDs instead, (which has other benefits).</p>
+      <p>One interesting point is that it seems to be the backend for Expensify. There did not seem to
+be any indication that anyone else was using it.</p>
+      <p>Julian's presentation started out as a pretty straight-forward description of the project. He was
+not advocating its use, just presenting on the tech. There were several people in the group with
+knowledge of distributed databases, and also of SQLite. This resulted in a spirited discussion
+about the viability of the project and whether their claims were reasonable. Those with security
+backgrounds had questions about protection of access and if there were any features supported to
+help. The ones with SQLite expertise asked questions about how known deficiencies in SQLite were
+handled. And pretty much everyone was interested in how edge cases were handled and how far the
+system had been <em>pushed</em>.</p>
+      <p>Given that he had not spent a large amount of time trying to do more than get a basic understanding
+of the technology, Julian was able to answer some questions and direct the rest to the project.
+The discussion could have been intimidating, but he handled it with grace. And the audience usually
+realized when they were asking things that only the authors or a search of the code could answer.</p>
+      <p>It was definitely a lively discussion.</p>
+      <p>We had 7 people attending this month. As always, we'd like to thank
+        cPanel, Inc. for providing the meeting space and food for the group.</p>
+[% END -%]

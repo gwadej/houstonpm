@@ -1670,4 +1670,14 @@ to find and fix at least one bug as a team.</abstract>
     </topic>
   </talk>
 
+  <talk num="1801">
+    <date>January 2018</date>
+    <topic href="/talks/2018talks/1801Talk/index.html">
+      <title>A Look at Bedrock, a Distributed SQLite DB</title>
+      <presenter>Julian Brown</presenter>
+      <abstract>Julian Brown presented the results of his look into the Bedrock project. This project builds a distributed
+database on top of SQLite.</abstract>
+    </topic>
+  </talk>
+
 </talklist>

@@ -3,6 +3,7 @@
 
     <div id="sidebar">
         <h1 class="heading">What's New <a href="atom.xml"><img style="border:0;float:right;" src="feed-icon-10x10.png" /></a></h1>
+      <p>January meeting notes are on-line.</p>
       <p>November meeting notes are on-line.</p>
       <h1 class="heading">Next Meeting</h1>
       <dl>
