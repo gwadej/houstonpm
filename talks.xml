@@ -1660,4 +1660,35 @@ for a PSGI package that would set up a web service with minimal configuration.</
     </topic>
   </talk>
 
+  <talk num="1711">
+    <date>November 2017</date>
+    <topic href="/talks/2017talks/1711Talk/index.html">
+      <title>Perl Source Hack</title>
+      <presenter>Todd Rinaldo</presenter>
+      <abstract>Todd leads a session to hack on Perl code from the RT queue. The idea is
+to find and fix at least one bug as a team.</abstract>
+    </topic>
+  </talk>
+
+  <talk num="1801">
+    <date>January 2018</date>
+    <topic href="/talks/2018talks/1801Talk/index.html">
+      <title>A Look at Bedrock, a Distributed SQLite DB</title>
+      <presenter>Julian Brown</presenter>
+      <abstract>Julian Brown presented the results of his look into the Bedrock project. This project builds a distributed
+database on top of SQLite.</abstract>
+    </topic>
+  </talk>
+
+  <talk num="1802">
+    <date>February 2018</date>
+    <topic href="/talks/2018talks/1802Talk/index.html">
+      <title>Ruby for Perl Programmers</title>
+      <presenter>G. Wade Johnson</presenter>
+      <abstract>G. Wade Johnson presented his impressions about being a professional
+Ruby programmer for the last 2.5 years, contrasted with his experience
+as a Perl programmer.</abstract>
+    </topic>
+  </talk>
+
 </talklist>

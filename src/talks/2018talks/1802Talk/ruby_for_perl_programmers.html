@@ -1,0 +1,393 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>Ruby for Perl Programmers</title>
+<!-- metadata -->
+<meta name="generator" content="S5" />
+<meta name="version" content="S5 1.1" />
+<meta name="presdate" content="201800208" />
+<meta name="author" content="G. Wade Johnson" />
+<meta name="company" content="Houston.pm" />
+<!-- configuration parameters -->
+<meta name="defaultView" content="slideshow" />
+<meta name="controlVis" content="hidden" />
+<!-- style sheet links -->
+<link rel="stylesheet" href="ui/houstonpm/slides.css" type="text/css" media="projection" id="slideProj" />
+<link rel="stylesheet" href="ui/houstonpm/outline.css" type="text/css" media="screen" id="outlineStyle" />
+<link rel="stylesheet" href="ui/default/print.css" type="text/css" media="print" id="slidePrint" />
+<link rel="stylesheet" href="ui/default/opera.css" type="text/css" media="projection" id="operaFix" />
+<!-- S5 JS -->
+<script src="ui/default/slides.js" type="text/javascript"></script>
+<style type="text/css">
+    .centered { text-align: center; }
+    .left { float: left; }
+    .right { float: right; }
+    h1 + blockquote, h1 + q { margin-top: 2em; }
+    td, th {
+        border: 1px solid black; text-align: right;
+        padding-left: 1ex; padding-right: 0.5ex;
+    }
+    .synAlert { color: #0000ff; }
+    .synBaseN { color: #007f00; }
+    .synBString { color: #c9a7ff; }
+    .synChar { color: #ff00ff; }
+    .synComment { color: #7f7f7f; font-style: italic; }
+    .synDataType { color:#0000ff; }
+    .synDecVal { color:#00007f; }
+    .synError { color:#ff0000; font-style: italic; font-weight: bold; }
+    .synFloat { color:#00007f; }
+    .synFunction { color:#007f00; }
+    .synIString { color:#ff0000; }
+    .synKeyword { font-weight: bold; }
+    .synOperator { color:#ffa500; }
+    .synOthers { color:#b03060; }
+    .synRegionMarker { color:#96b9ff; font-style: italic; }
+    .synReserved { color:#9b30ff; font-weight: bold; }
+    .synString { color:#ff0000; }
+    .synVariable { color:#0000ff; font-weight: bold; }
+    .synWarning { color:#0000ff; font-style: italic; font-weight: bold; }
+ </style>
+</head>
+<body>
+
+<div class="layout">
+<div id="controls"><!-- DO NOT EDIT --></div>
+<div id="currentSlide"><!-- DO NOT EDIT --></div>
+<div id="header"></div>
+<div id="footer">
+<h1>Houston.pm</h1>
+<h2>February 08, 2018</h2>
+</div>
+
+</div>
+
+<div class="presentation">
+
+<div class="slide">
+<h1>Ruby for Perl Programmers</h1>
+<h2></h2>
+<h3>G. Wade Johnson</h3>
+</div>
+
+<div class="slide">
+<h1>My Ruby Experience</h1>
+<p>Dabbled with Ruby a couple of times.</p>
+<p>Hired to be a Ruby programmer almost 2.5 years ago.</p>
+<div class="handout">
+    notes
+</div>
+</div>
+
+<div class="slide">
+<h1>Differences in Two Acts</h1>
+<ul>
+    <li>Language/Syntax Differences</li>
+    <li>Culture/Mindset Differences</li>
+</ul>
+<div class="handout">
+    notes
+</div>
+</div>
+
+<div class="slide">
+<h1>Everything is an Object</h1>
+<ul class="incremental">
+    <li>Even integers:<ul>
+        <li><code>1.upto 5</code></li>
+        <li><code>4.odd?</code></li>
+    </ul></li>
+    <li>Even strings:<ul>
+        <li><code>"WADE".downcase</code></li>
+        <li><code>"hello".include? "lo"</code></li>
+    </ul></li>
+    <li>Even <code>nil</code><ul>
+        <li><code>nil.nil?</code>
+        <li><code>nil.to_i</code></li>
+    </ul></li>
+</ul>
+<div class="handout">
+    notes
+</div>
+</div>
+
+
+<div class="slide">
+<h1>Simple/Obvious Differences</h1>
+<ul>
+    <li>Methods can end in <code>?</code>, <code>!</code>, or <code>=</code></li>
+    <li>Either <code>false</code> or <code>nil</code> is falsey.</li>
+    <li>Variables outside a function are not visible inside.</li>
+    <li>Any capitalized identifier is a constant.</li>
+    <li>Atoms start with <code>:</code> and are collapsed into one instance.</li>
+</ul>
+<div class="handout">
+    notes
+</div>
+</div>
+
+<div class="slide">
+<h1>Structure</h1>
+<p>Use <code>begin</code>/<code>end</code> or <code>do</code>/<code>end</code> instead of
+<code>{</code>/<code>}</code>.<p>
+<p>Most of the time.<p>
+<div class="handout">
+    notes
+</div>
+</div>
+
+<div class="slide">
+<h1>Classes</h1>
+<ul>
+    <li>Defined with a <code>class</code>/<code>end</code> block</li>
+    <li>Constructor is named <code>initialize</code></li>
+    <li>Instance variables are spelled <code>@variable</code></li>
+    <li>Define getter/setter methods with <code>attr_accessor</code>, <code>attr_reader</code>, <code>attr_writer</code></li>
+    <li>Methods are defined using <code>def</code></li>
+    <li>Classes are <em>open</em>, or subject to modification</li>
+</ul>
+<div class="handout">
+    notes
+</div>
+</div>
+
+<div class="slide">
+<h1>Modules</h1>
+<ul>
+    <li>Group of methods or namespace for modules and classes</li>
+    <li>Including a module adds its methods to the class as instance methods</li>
+    <li>Extending a module adds its methods to the class as class methods</li>
+</ul>
+<div class="handout">
+    notes
+</div>
+</div>
+
+<div class="slide">
+<h1>Class Example</h1>
+<p>Open example.rb</p>
+<div class="handout">
+    notes
+</div>
+</div>
+
+
+
+<div class="slide">
+<h1>Blocks are Major Feature</h1>
+<ul>
+    <li>Lots of methods use blocks</li>
+    <li>Like a closure</li>
+    <li>Specify arguments as part of declaration</li>
+    <li>Similar to <code>map</code> or <code>sort</code> in Perl</li>
+    <li>Used to wrap functionality to be applied by the function</li>
+    <li>Sometimes just for the sake of using a block<ul>
+        <li>Initialization</li>
+        <li><code>tap</code></li>
+    </ul></li>
+</ul>
+<div class="handout">
+    notes
+</div>
+</div>
+
+<div class="slide">
+<h1>Containers</h1>
+<p>Rich set of methods for dealing with each kind of container.</p>
+<dl>
+    <dt>arrays</dt>
+    <dd><code>+</code>, <code>-</code>, <code>[]</code>, <code>[]=</code>,
+        <code>any?</code>, <code>bsearch</code>, <code>collect</code>,
+        <code>collect!</code>, <code>count</code>, <code>each</code>, <code>first</code>,
+        <code>grep</code>, <code>grep_v</code>,
+        <code>include?</code>, <code>last</code>, <code>map</code>, etc.</dd>
+
+    <dt>hashes</dt>
+    <dd><code>[]</code>, <code>[]=</code>, <code>any?</code>, <code>default</code>,
+        <code>dig</code>, <code>each_key</code>, <code>each_pair</code>, <code>each_value</code>,
+        <code>empty?</code>, <code>has_key?</code>, <code>has_value?</code>, etc.</dd>
+
+    <dt>enumerables</dt>
+    <dd><code>all?</code>, <code>any?</code>, <code>chunk</code>, <code>count</code>,
+        <code>each_entry</code>, <code>each_with_index</code>, <code>find</code>,
+        <code>include?</code>, <code>member?</code>, etc.
+    </dd>
+</dl>
+<div class="handout">
+    notes
+</div>
+</div>
+
+<div class="slide">
+<h1>Example Code</h1>
+<p>Open blocks.rb</p>
+<div class="handout">
+    notes
+</div>
+</div>
+
+<div class="slide">
+<h1>Metaprogramming</h1>
+<ul>
+    <li>Used a lot by libraries/frameworks</li>
+    <li>Used to create <abbr title="Domain Specific Language">DSL</abbr>s</li>
+    <li>Used to do some impressive magic (think <code>Devel::Declare</code>)</li>
+    <li>Beginning to see some push-back</li>
+</ul>
+<div class="handout">
+    notes
+</div>
+</div>
+
+<div class="slide">
+<h1>Gems</h1>
+<ul>
+    <li>Their modules are called gems.</li>
+    <li>Major tools are <code>gem</code> and <code>bundle</code></li>
+    <li>bundle supports installing multiple versions of a gem on the same system</li>
+</ul>
+<div class="handout">
+    notes
+</div>
+</div>
+
+<div class="slide">
+<h1>Building Projects</h1>
+<ul>
+    <li><code>rake</code> instead of <code>make</code></li>
+    <li>Rakefiles contain Ruby code (sometimes in the <code>rake</code> DSL)</li>
+</ul>
+<div class="handout">
+    notes
+</div>
+</div>
+
+<div class="slide">
+<h1>Culture/Mindset</h1>
+<p><em>Optimize for programmer happiness.</em> is one of their mottos.</p>
+<p>I don't find myself particularly happier working in Ruby.</p>
+<ul>
+    <li>Some playful methods/names.</li>
+    <li>Less ceremony than some languages.</li>
+    <li>Power tools</li>
+</ul>
+<div class="handout">
+    notes
+</div>
+</div>
+
+<div class="slide">
+<h1>Ruby on Rails</h1>
+<p>Most seem to program in <em>Ruby on Rails</em> not in Ruby.</p>
+<p>They also don't seem to recognize that fact.</p>
+<p>Rails (libraries) extend Ruby in a lot of ways; often by monkey-patching standard classes.</p>
+<div class="handout">
+    notes
+</div>
+</div>
+
+<div class="slide">
+<h1>Speed</h1>
+<p>They realize that Ruby is not the fastest runtime around and are mostly okay with it.</p>
+<div class="handout">
+    notes
+</div>
+</div>
+
+<div class="slide">
+<h1>Neophiles</h1>
+<p>Many in the Ruby community seem attracted to new stuff.</p>
+<ul>
+    <li>New JavaScript libraries.</li>
+    <li>New JavaScript transpiler languages.</li>
+    <li>Elixir</li>
+</ul>
+<div class="handout">
+    notes
+</div>
+</div>
+
+<div class="slide">
+<h1>Reminds Me of Perl From a Few Years Ago</h1>
+<ul>
+    <li>Ruby programmers sometimes act like they have invented tested code.</li>
+    <li>Some gems are almost completely undocumented.</li>
+    <li>Ruby programmers talk quite a bit about meta-programming and open classes.</li>
+    <li>Lots of excitement for clever solutions.</li>
+</ul>
+<div class="handout">
+    notes
+</div>
+</div>
+
+<div class="slide">
+<h1>Two main figures in the community.</h1>
+<ul>
+    <li>Matz (Yukihiro Matsumoto) - Ruby</li>
+    <li>DHH (David Heinemeier Hansson) - Rails</li>
+</ul>
+<div class="handout">
+    notes
+</div>
+</div>
+
+<div class="slide">
+<h1>Comparison to Perl</h1>
+<p>In many ways, they look down on Perl, while realizing that Ruby was influenced by Perl.</p>
+<p>Mostly not as hostile as the Java community.</p>
+<div class="handout">
+    notes
+</div>
+</div>
+
+<div class="slide">
+<h1>Some Really Bright People</h1>
+<ul>
+    <li>Doing language/design/community work with Ruby.</li>
+    <li>Pushing good design principles that are new-ish.</li>
+    <li>Some (re)discovery of ideas that are already in other languages.</li>
+    <li>Some <em>discovery</em> of ideas that have been around for years.</li>
+</ul>
+<div class="handout">
+    notes
+</div>
+</div>
+
+<div class="slide">
+<h1>Best Practices?</h1>
+<ul>
+    <li>Small methods</li>
+    <li>Small classes</li>
+    <li>Seem to avoid local variables</li>
+</ul>
+<div class="handout">
+    notes
+</div>
+</div>
+
+<div class="slide">
+<h1>Convention over Configuration</h1>
+<ul>
+    <li>Strong Rails influence</li>
+    <li>Works pretty well, except when it doesn't</li>
+    <li>They are willing to override the preference when necessary</li>
+    <li>Can be a problem when the convention changes.</li>
+</ul>
+<div class="handout">
+    notes
+</div>
+</div>
+
+<div class="slide">
+<h1>Questions?</h1>
+<div class="handout">
+    notes
+</div>
+</div>
+
+</div>
+
+</body>
+</html>

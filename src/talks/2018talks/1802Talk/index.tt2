@@ -1,0 +1,30 @@
+[% WRAPPER writeup_wrap.tt2
+    title='Summary of February 2018 Presentation'
+    year=2018
+%]
+      <h2 class="subhead">Ruby for Perl Programmers</h2>
+      <p>About 2 and a half years ago, G. Wade Johnson began working at CoverMyMeds
+as a full-time Ruby programmer. During this time, he has observed both this
+company's Ruby developers and some of the wider Ruby community.</p>
+      <p>The linked <a href="ruby_for_perl_programmers.html" target="_blank" rel="noopener">presentation</a>
+covers the conclusions he planned to talk about. He expected to have about
+an hour's worth of presentation. However, the subject apparently touched a
+nerve or something, because the audience asked enough questions to almost
+double the expected length of the presentation.</p>
+      <p>Most of the questions dug into the same topics a bit further (or jumped ahead
+a bit). After the presentation had ended, the general discussion went for
+another hour.</p>
+      <p>Overall, Wade described a community that is very similar to the Perl community
+at the point of the <em>Enlightened Perl</em> movement. They are very enthusiastic,
+proud of their language and convinced they are doing software right. On the
+other and, they are <em>discovering</em> principles and practices that the Perl
+community embraced several years back. They push some practices that many in
+the Perl community have learned cause long-term maintenance problems, after we
+embraced them back in the day.</p>
+      <p>One attendee asked Wade if writing Ruby <em>made him happy</em> as is one of the
+stated goals of the Ruby community. Wade said it was a good language that he could
+do good work in. But, it doesn't make him happier than any other language. Given
+no other constraints on a problem, he would still be more likely to reach for Perl.</p>
+      <p>We had 10 people attending this month. As always, we'd like to thank
+        Hostgator, LLC for providing the meeting space and food for the group.</p>
+[% END -%]

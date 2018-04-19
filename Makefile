@@ -3,9 +3,6 @@
 OUTDIR=out
 INSTALLDIR=/var/www-vhost/houstonpm/
 PUBLISHDIR=/mnt/houstonpm/
-# Set ssh config to map this host correctly
-SERVER=houstonpm
-TARGETDIR=public_html/houston.pm.org/
 
 TALKSUMMARIES=${OUTDIR}/talks/mostrecent.html \
               ${OUTDIR}/talks/index.html \
@@ -23,7 +20,8 @@ TALKSUMMARIES=${OUTDIR}/talks/mostrecent.html \
               ${OUTDIR}/talks/2014talks/index.html \
               ${OUTDIR}/talks/2015talks/index.html \
               ${OUTDIR}/talks/2016talks/index.html \
-              ${OUTDIR}/talks/2017talks/index.html
+              ${OUTDIR}/talks/2017talks/index.html \
+              ${OUTDIR}/talks/2018talks/index.html
 
 
 site: base ${TALKSUMMARIES}
@@ -35,7 +33,7 @@ dirs:
 base: dirs convert
 	cp -a -L src/* ${OUTDIR}
 	cp -a images/feed-icon-10x10.png ${OUTDIR}
-	-find ${OUTDIR} -type f -name '*.tt2' -exec rm -rf {} \; -prune
+	find ${OUTDIR} -type f -name '*.tt2' -exec rm -rf {} \; -prune
 	cp -a atom.xml ${OUTDIR}
 
 ${OUTDIR}/talks/mostrecent.html: talks.xml mostrecent.xsl templates/mostrecent.tt2
@@ -89,14 +87,17 @@ ${OUTDIR}/talks/2016talks/index.html: talks.xml yeartalks.xsl templates/yeartalk
 ${OUTDIR}/talks/2017talks/index.html: talks.xml yeartalks.xsl templates/yeartalks.tt2
 	bin/talks.pl --style=yeartalks.xsl --template=yeartalks.tt2 --define year=2017 talks.xml > $@
 
+${OUTDIR}/talks/2018talks/index.html: talks.xml yeartalks.xsl templates/yeartalks.tt2
+	bin/talks.pl --style=yeartalks.xsl --template=yeartalks.tt2 --define year=2018 talks.xml > $@
+
 convert:
-	ttree --define end_year=`date +%Y` -f _ttreerc
+	ttree --define end_year=2018 -f _ttreerc
 
 install:
 	cp -r -p ${OUTDIR}/* ${INSTALLDIR}
 
 publish:
-	rsync -rptvz ${OUTDIR}/ ${SERVER}:${TARGETDIR}
+	cp -r -p ${OUTDIR}/* ${PUBLISHDIR}
 
 clean:
 	find . -name '*.bck' -exec rm {} \;
