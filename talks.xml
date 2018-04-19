@@ -1680,4 +1680,15 @@ database on top of SQLite.</abstract>
     </topic>
   </talk>
 
+  <talk num="1802">
+    <date>February 2018</date>
+    <topic href="/talks/2018talks/1802Talk/index.html">
+      <title>Ruby for Perl Programmers</title>
+      <presenter>G. Wade Johnson</presenter>
+      <abstract>G. Wade Johnson presented his impressions about being a professional
+Ruby programmer for the last 2.5 years, contrasted with his experience
+as a Perl programmer.</abstract>
+    </topic>
+  </talk>
+
 </talklist>
