@@ -5,11 +5,10 @@
         <h1 class="heading">What's New <a href="atom.xml"><img style="border:0;float:right;" src="feed-icon-10x10.png" /></a></h1>
       <p>February meeting notes are on-line.</p>
       <p>January meeting notes are on-line.</p>
-      <p>November meeting notes are on-line.</p>
       <h1 class="heading">Next Meeting</h1>
       <dl>
-        <dt>May 10, 2018</dt>
-        <dd><em>Threat Modeling</em> with J.D. Lightsey at cPanel</dd>
+        <dt>June 14, 2018</dt>
+        <dd><em>Floccus, an adventure in Ecmascript 8</em> with Julian Brown at Hostgator</dd>
       </dl>
     </div>
 

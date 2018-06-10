@@ -18,14 +18,14 @@
     <h2 class="subhead">Upcoming Meetings</h2>
 
     <dl>
-        <dt>May 10, 2018</dt>
-        <dd><em>Threat Modeling</em> with J.D. Lightsey at cPanel</dd>
-
         <dt>June 14, 2018</dt>
-        <dd>TBD at Hostgator</dd>
+        <dd><em>Floccus, an adventure in Ecmascript 8</em> with Julian Brown at Hostgator</dd>
 
         <dt>July 12, 2018</dt>
         <dd>TBD at cPanel</dd>
+
+        <dt>August 9, 2018</dt>
+        <dd>TBD at Hostgator</dd>
 
     </dl>
 [% END -%]
