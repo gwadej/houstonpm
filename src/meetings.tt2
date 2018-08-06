@@ -18,11 +18,8 @@
     <h2 class="subhead">Upcoming Meetings</h2>
 
     <dl>
-        <dt>July 12, 2018</dt>
-        <dd><em>Using Perl to Learn a Foreign Language</em> with Mark Allen at cPanel</dd>
-
         <dt>August 9, 2018</dt>
-        <dd>TBD at Hostgator</dd>
+        <dd><em>Julian in the land of NoSQL</em> with Julian Brown at Hostgator</dd>
 
         <dt>September 13, 2018</dt>
         <dd>TBD at cPanel</dd>
@@ -30,5 +27,7 @@
         <dt>October 11, 2018</dt>
         <dd>TBD at Hostgator</dd>
 
+        <dt>November 8, 2018</dt>
+        <dd>TBD at cPanel</dd>
     </dl>
 [% END -%]
