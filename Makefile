@@ -33,7 +33,7 @@ dirs:
 base: dirs convert
 	cp -a -L src/* ${OUTDIR}
 	cp -a images/feed-icon-10x10.png ${OUTDIR}
-	find ${OUTDIR} -type f -name '*.tt2' -exec rm -rf {} \; -prune
+	find ${OUTDIR} -type f -name '*.tt2' -exec rm -rf {} \;
 	cp -a atom.xml ${OUTDIR}
 
 ${OUTDIR}/talks/mostrecent.html: talks.xml mostrecent.xsl templates/mostrecent.tt2

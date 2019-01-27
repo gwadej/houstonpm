@@ -1711,4 +1711,13 @@ flaws in the AWStats program.</abstract>
     </topic>
   </talk>
 
+  <talk num="1805">
+    <date>May 2018</date>
+    <topic href="/talks/2018talks/1805Talk/index.html">
+      <title>Threat Modeling</title>
+      <presenter>J. D. Lightsey</presenter>
+      <abstract>J. D. Lightsey gave a quick overview of the concept of Threat Modeling and demonstrated approaches for doing threat modeling.</abstract>
+    </topic>
+  </talk>
+
 </talklist>
