@@ -1702,4 +1702,13 @@ flaws in the AWStats program.</abstract>
     </topic>
   </talk>
 
+  <talk num="1804">
+    <date>April 2018</date>
+    <topic href="/talks/2018talks/1804Talk/index.html">
+      <title>Comparison of Rails and Dancer2</title>
+      <presenter>G. Wade Johnson</presenter>
+      <abstract>G. Wade Johnson demonstrates a simple web application built in both Ruby on Rails and Dancer2 on Perl.</abstract>
+    </topic>
+  </talk>
+
 </talklist>

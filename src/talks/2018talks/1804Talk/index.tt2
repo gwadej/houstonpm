@@ -1,0 +1,286 @@
+[% WRAPPER writeup_wrap.tt2
+    title='Summary of April 2018 Presentation'
+    year=2018
+%]
+      <h2 class="subhead">Comparison of Rails and Dancer2</h2>
+
+      <h3>Background</h3>
+
+      <p>The goal is to provide a somewhat useful comparison between the two frameworks and librariesr.
+G. Wade Johnson picked a relatively simple application (a blog), but decided not to build the simplest implementation.
+The presentation would walk through most of the steps of construction somewhat live, to give a feel for the tooling.
+The changes are in a git repo, so we don't need to write all of the code live.</p>
+      <p>Rails has a little advantage in both the type of project and the tooling, since a blog is on of the standard Raisl apps.
+By working for a solution that is not quite the obvious one, we get a better comparison.
+Use plugins as possible to simplify implementation (which is also what you would do if you were actually solving this problem).
+This serves to compare the plugin features of the two frameworks.</p>
+      <p>We will use a single SQLite3 database for both applications.
+This forces the models to be the same.
+It also means we don't need to do database design and creation twice, since the database is not what we are focusing on.</p>
+      <h4>Data Model</h4>
+      <ul>
+        <li>User: id, userid, name, passwordhash, zero or more blogs</li>
+        <li>Blog: id, title, description, owner, zero or more posts</li>
+        <li>Post: id, title, content, many-to-many tags</li>
+        <li>Tag: id, name</li>
+      </ul>
+      <h4>Will Provide</h4>
+      <p>The goal is to be complicated enough to be interesting, but not so complication that we can't finish.
+We also want to make the project a little different than the default Rails app, to make the comparison somewhat realistic.</p>
+
+    <ul>
+        <li>Informaiton in database</li>
+        <li>Multiple blogs (per owner)</li>
+        <li>Posts are attached to a blog</li>
+        <li>Owner has create/edit privileges<ul>
+            <li>One owner cannot change another's posts</li>
+        </ul></li>
+        <li>Create text in markdown</li>
+        <li>Tags (attached to a blog)<ul>
+            <li>List interface</li>
+            <li>Select posts matching a tag?</li>
+        </ul></li>
+        <li>Test with two users</li>
+    </ul>
+
+      <h4>Will Not Provide</h4>
+
+      <p>There were a lot of features that could make this more like a real <abbr title="Content Management System">CMS</abbr>.
+More features were unnecessary for the goal of comparing the two frameworks.</p>
+
+    <ul>
+        <li>No non-owner login or role-based access</li>
+        <li>No password changing or recovery code</li>
+        <li>No backup support</li>
+        <li>No import/export support</li>
+        <li>No changing of themes</li>
+        <li>No <abbr title="Application Programming Interface">API</abbr> access</li>
+        <li>No fancy JavaScript interface</li>
+        <li>No pagination</li>
+        <li>No way to create or edit users</li>
+    </ul>
+
+      <h3>Rails Implementation</h3>
+
+      <p>The <a href="https://github.com/gwadej/comparison_rails_blog" target="_blank" rel="noopener">repo</a> for this project is available.</p>
+
+      <p>We will use the rails tool to construct pieces of the application.
+In particular, we use the rails tool to build tables.
+We'll rely on a small number of gems (libraries) for some needed functionality.</p>
+
+    <ul>
+        <li>Authorization: Devise</li>
+        <li>Database: SQLite3</li>
+        <li>Markdown Handling: Redcarpet</li>
+        <li>Templating: ERB</li>
+    </ul>
+
+      <h4>Steps in the exercise</h4>
+
+      <ol>
+        <li>Create the project:<br />
+            <code>rails new --skip-keeps --skip-puma --skip-coffee {app_name}</code>
+            <ul>
+                <li>Add to Gemfile in :development<ul>
+                    <li>rspec</li>
+                    <li>rspec-rails</li>
+                    <li>pry-byebug</li>
+                </ul></li>
+                <li><code>bundle install</code></li>
+                <li>Remove test directory</li>
+            </ul></li>
+        <li>Create User model:<br />
+            <code>rails g model user uuid:string:uniq userid:string:uniq name:string password:digest</code></li>
+        <li>Create Blog model:<br />
+            <code>rails g model blog uuid:string:uniq title:string description:string user:references</code></li>
+        <li>Creare Post model:<br />
+            <code>rails g model post uuid:string:uniq title:string content:string blog:references</code></li>
+        <li>Update models<ul>
+            <li>Blog: add <code>has_many :posts</code></li>
+            <li>User add <code>has_many :blogs</code></li>
+        </ul></li>
+        <li>Add tag models<ul>
+            <li><code>rails g model tag name:string</code></li>
+            <li><code>rails g model post_tag post:references tag:references</code></li>
+        </ul></li>
+        <li>Actually generate tables:<br />
+            <code>rake db:migrate</code></li>
+        <li>Add to Gemfile<ul>
+            <li>Uncomment bcrypt</li>
+        </ul></li>
+        <li>Update dependencies:<br />
+            <code>bundle update</code></li>
+        <li>Set up use of rspec test system:<br />
+            <code>rails g rspec:install</code></li>
+        <li>Add User definitions to db/seeds.db file<ul>
+            <li>Modify models to auto set uuid</li>
+        </ul></li>
+        <li>Build model tests</li>
+        <li>Remove coffee-rails from Gemfile:<br />
+            <code>bundle update</code></li>
+        <li>Create main controller:<br />
+            <code>rails g controller Blogs</code><ul>
+            <li>Update config/routes.rb</li>
+            <li><code>rake routes</code></li>
+        </ul></li>
+        <li>Create a view: app/views/blogs/index.erb<ul>
+            <li>Fill it out</li>
+            <li>Update Blog#index with list of blogs</li>
+        </ul></li>
+        <li>needed show.erb, new.erb, and create.erb as well<ul>
+            <li>Update controller methods to support</li>
+        </ul></li>
+        <li><code>rails server</code> - to demonstrate</li>
+        <li>Add devise gem to do authentication<ul>
+            <li>Update Gemfile:<br />
+                <code>bundle update</code><br />
+                <code>rails g devise:install</code></li>
+            <li>modify app/views/layouts/application.html.erb<br />
+                <code>rails g devise user</code><br />
+                <code>rails db:migrate</code></li>
+            <li>Deleted database because of constraint fail.</li>
+            <li>Updated seed file<br />
+                <code>rails db:migrate</code></li>
+            <li>Remove the `has_secure_password` item in user model<br />
+                <code>rails db:seed</code></li>
+            <li>Tear out old auth setup</li>
+            <li>Finish connecting in devise</li>
+            <li>Disconnect authentication from index and show</li>
+            <li>Add blog editing<ul>
+                <li>Create edit form</li>
+                <li>Update blog actions for edit and update</li>
+                <li>cleanup</li>
+                <li>Update blog controller specs</li>
+            </ul></li>
+            <li>Add posts<ul>
+                <li><code>rails g controller posts</code></li>
+                <li>Build templates</li>
+                <li>Update controller methods</li>
+                <li>Add edit icon and deal with asset/public issue</li>
+            </ul></li>
+            <li>Add markdown support<ul>
+            <li>Filter any HTML to make it safe</li>
+            <li>Convert markdown into the correct form.</li>
+        </ul></li>
+        <li>Attempted to protect the edit button on show blog or post<ul>
+            <li>Only check owner if we have a current_user</li>
+            <li>current_user is only set if we authenticate</li>
+            <li>if we authenticate, must be logged in to see post/blog</li>
+            <li>Suggestion on line was to use guest user<ul>
+                <li>Page of new code to create/maintain guest users</li>
+                <li>Guest users live in user table.</li>
+                <li>Requires patching session code</li>
+            </ul></li>
+        </ul></li>
+        <li>Use bootstrap to improve styling</li>
+        <li>Fix the show issue</li>
+      </ol>
+
+      <p>To complete the project, I would want to work out how to make the asset pipeline work correctly.
+That is supposed generate, minimize, etc. static files.
+I also need to expand the testing dramatically.</p>
+
+      <h3>Dancer2 Implementation</h3>
+
+      <p>The <a href="https://github.com/gwadej/comparison_dancer_blog" target="_blank" rel="noopener">repo</a> for this project is available.</p>
+
+      <p>Database models will need to be built by hand.
+If we were generating tables, they would be done manually.
+We'll rely on a small number of modules (libraries) for some needed functionality.</p>
+
+    <ul>
+        <li>Authorization: Dancer2::Plugin::Auth::Extendible</li>
+        <li>Database: DBIx::Class and SQLite3</li>
+        <li>Markdown Handling: Text::MultiMarkdown</li>
+        <li>Templating: Template Toolkit</li>
+    </ul>
+
+      <h4>Steps in the exercise</h4>
+
+      <ol>
+        <li>Create project:<br />
+            <code>dancer2 gen -a dancer_blog</code></li>
+        <li>Add dependencies to Makefile.PL<ul>
+            <li>Dancer2::Plugin::Auth::Extensible</li>
+            <li>DBIx::Class</li>
+            <li>Template::Toolkit</li>
+            <li>DBD::SQLite</li>
+            <li>Text::MultiMarkdown</li>
+            <li>Plack</li>
+            <li>Plack::Middleware::Deflater</li>
+        </ul></li>
+        <li>Update configuration<ul>
+            <li>config.yml<ul>
+                <li>enable template_toolkit template engine</li>
+                <li>enable Simple session engine</li>
+            </ul></li>
+            <li>environments/development.yml<ul>
+                <li>set logger to file</li>
+                <li>turn off errors</li>
+            </ul></li>
+        </ul></li>
+        <li>Make database models<ul>
+            <li>Blog</li>
+            <li>Post</li>
+            <li>User</li>
+        </ul></li>
+        <li>Add blog controller<ul>
+            <li>Add index and show routes</li>
+            <li>Create templates for index and show</li>
+            <li>Build controller actions for index and show</li>
+            <li>Create Paths file for DRY path definitions</li>
+            <li>Add new/create routes, template, and actions</li>
+            <li>Add edit/update routes, template, and actions</li>
+        </ul></li>
+        <li>Add authentication support<ul>
+            <li>Login/logout</li>
+            <li>Restrict access to create/edit blog capabilities</li>
+            <li>No login requirement for show or index<ul>
+                <li>Check logged in user on show to decide whether edit allowed</li>
+            </ul></li>
+        </ul></li>
+        <li>Add post controller<ul>
+            <li>Add show route, template, and controller action</li>
+            <li>Add new/create routes, template, and controller actions</li>
+            <li>Correct blog code pointing to posts</li>
+            <li>Add edit/update routes, template, and actions</li>
+        </ul></li>
+        <li>Markdown functionality<ul>
+            <li>Markdown on output</li>
+            <li>Scrub HTML before saving to database and after</li>
+        </ul></li>
+        <li>Add bootstrap<ul>
+            <li>Add bootstrap library</li>
+            <li>Reformat templates to use bootstrap</li>
+            <li>Modify style.css to tweak look.</li>
+        </ul></li>
+        <li>Fix login redirect<ul>
+            <li>Display the user name if logged in</li>
+            <li>Pass the login url to each template instance</li>
+            <li>Modify the login url with the return_url if supplied</li>
+        </ul></li>
+        <li>Make CSRF protection work<ul>
+            <li>Replace broken plugin with new code</li>
+            <li>Incorporate new code</li>
+        </ul></li>
+      </ol>
+
+      <p>To complete the project, I would modify for https and secure cookie support.
+I would add full validation to all parameters.
+I would also add much more testing code.</p>
+
+      <h3>Differences</h3>
+
+      <ul>
+        <li>Rails code generation works well for the easy cases</li>
+        <li>Setting up DBIC is more difficult</li>
+        <li>Devise assumptions made it harder to make the optionally logged in pieces</li>
+        <li>Dancer2 CSRF plugin is broken</li>
+        <li>The two frameworks themselves are mostly equal</li>
+        <li>The audience pointed out that Dancer does not give as much structure in the beginning.
+        Wade agreed that he hadn't noticed that since the initial design was kind of driven by the Rails implementation.</li>
+      </ul>
+
+      <p>We had 9 people attending this month. As always, we'd like to thank
+        Hostgator, LLC for providing the meeting space and food for the group.</p>
+[% END -%]
