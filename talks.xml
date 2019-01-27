@@ -1691,4 +1691,15 @@ as a Perl programmer.</abstract>
     </topic>
   </talk>
 
+  <talk num="1803">
+    <date>March 2018</date>
+    <topic href="/talks/2018talks/1803Talk/index.html">
+      <title>AWStats Flaws and Making a Cute Robot with Perl</title>
+      <presenter>JD Lightsey and Mark Gardner</presenter>
+      <abstract>This month was a pair of presentations. Mark Gardner described building a robot
+project for a GEMS conference. JD Lightsey followed up with a dive into security
+flaws in the AWStats program.</abstract>
+    </topic>
+  </talk>
+
 </talklist>

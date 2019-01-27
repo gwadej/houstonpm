@@ -1,63 +1,65 @@
 <?xml version="1.0" encoding="us-ascii"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><id>tag:houston.pm.org,2011-03:news</id><title type="html">Houston.pm: What&#39;s New</title><link href="http://houston.pm.org/"/><link href="http://houston.pm.org/atom.xml" rel="self"/><updated>2018-11-01T03:09:04Z</updated><author><name>G. Wade Johnson</name></author><category term="news"/><generator uri="https://metacpan.org/pod/XML::Atom::SimpleFeed" version="0.861">XML::Atom::SimpleFeed</generator><entry><content type="html">&lt;div&gt;&lt;p&gt;Todd Rinaldo will present a &lt;abbr title=&#34;Comprehensive Perl Archive Network&#34;&gt;CPAN&lt;/abbr&gt; module
+<feed xmlns="http://www.w3.org/2005/Atom"><id>tag:houston.pm.org,2011-03:news</id><title type="html">Houston.pm: What&#39;s New</title><link href="http://houston.pm.org/"/><link href="http://houston.pm.org/atom.xml" rel="self"/><updated>2019-01-27T17:27:36Z</updated><author><name>G. Wade Johnson</name></author><category term="news"/><generator uri="https://metacpan.org/pod/XML::Atom::SimpleFeed" version="0.900">XML::Atom::SimpleFeed</generator><entry><content type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><p>This month was a pair of presentations. Mark Gardner described building a robot
+project for a GEMS conference. JD Lightsey followed up with a dive into security
+flaws in the AWStats program.</p></div></content><published>2019-01-27T17:27:36Z</published><updated>2019-01-27T17:27:36Z</updated><id>tag:houston.pm.org,2011-03:presentation:1803</id><category term="technical meeting"/><title type="html">Notes for &#39;AWStats Flaws and Making a Cute Robot with Perl&#39; posted.</title><link href="http://houston.pm.org/talks/2018talks/1803Talk/index.html"/></entry><entry><published>2018-11-01T03:01:06Z</published><content type="html">&lt;div&gt;&lt;p&gt;Todd Rinaldo will present a &lt;abbr title=&#34;Comprehensive Perl Archive Network&#34;&gt;CPAN&lt;/abbr&gt; module
 that he and Nicolas Rochelemagne have been working on.&lt;/p&gt;
-&lt;/div&gt;</content><title>Testing the untestable with Test::MockFile</title><id>tag:houston.pm.org.2011-03:announce-20181031-27158</id><updated>2018-11-01T03:01:06Z</updated><published>2018-11-01T03:01:06Z</published></entry><entry><id>tag:houston.pm.org.2011-03:announce-20181007-10123</id><published>2018-10-08T02:41:21Z</published><updated>2018-10-08T02:41:21Z</updated><title>Monolithic vs Microservice, Can Davids Really Take Down Goliath?</title><content type="html">&lt;div&gt;This month, Robert Stone will preview his presentation comparing Monolithic versus Microservice-based
+&lt;/div&gt;</content><updated>2018-11-01T03:01:06Z</updated><id>tag:houston.pm.org.2011-03:announce-20181031-27158</id><title>Testing the untestable with Test::MockFile</title></entry><entry><title>Monolithic vs Microservice, Can Davids Really Take Down Goliath?</title><id>tag:houston.pm.org.2011-03:announce-20181007-10123</id><updated>2018-10-08T02:41:21Z</updated><content type="html">&lt;div&gt;This month, Robert Stone will preview his presentation comparing Monolithic versus Microservice-based
 architectures. It focuses on the challenges and disadvantages of monoliths and how Microservices
 address these limitations.
-&lt;/div&gt;</content></entry><entry><id>tag:houston.pm.org.2011-03:announce-20180909-14952</id><updated>2018-09-10T00:21:16Z</updated><published>2018-09-10T00:21:16Z</published><content type="html">&lt;div&gt;&lt;p&gt;The September Houston.pm technical meeting will be held at cPanel, on Thursday, September 13.
+&lt;/div&gt;</content><published>2018-10-08T02:41:21Z</published></entry><entry><title>Performance of Parsing Short Strings</title><id>tag:houston.pm.org.2011-03:announce-20180909-14952</id><updated>2018-09-10T00:21:16Z</updated><content type="html">&lt;div&gt;&lt;p&gt;The September Houston.pm technical meeting will be held at cPanel, on Thursday, September 13.
 As usual, we will meet in the lobby between 6:30 and 7pm, and go up to the meeting at 7pm.&lt;/p&gt;
 
 &lt;p&gt;G. Wade Johnson is working on a tool for querying or editing gcode files. He will present an exploration
 of the performance of simple short-string recognition/parsing techniques.&lt;/p&gt;
 
 &lt;p&gt;Afterward, Todd Rinaldo will do a short presentation of new features for Perl 5.28.&lt;/p&gt;
-&lt;/div&gt;</content><title>Performance of Parsing Short Strings</title></entry><entry><content type="html">&lt;div&gt;This month, Julian Brown will be exploring the usage of the Arangodb NoSQL
+&lt;/div&gt;</content><published>2018-09-10T00:21:16Z</published></entry><entry><content type="html">&lt;div&gt;This month, Julian Brown will be exploring the usage of the Arangodb NoSQL
 database as used a website he&#39;s working on.
-&lt;/div&gt;</content><title>Julian in the land of NoSQL</title><updated>2018-08-06T21:52:22Z</updated><published>2018-08-06T21:52:22Z</published><id>tag:houston.pm.org.2011-03:announce-20180806-9770</id></entry><entry><id>tag:houston.pm.org.2011-03:announce-20180626-15042</id><updated>2018-06-26T11:58:54Z</updated><published>2018-06-26T11:58:54Z</published><content type="html">&lt;div&gt;&lt;p&gt;Mark Allen began learning Russian about six months ago. In this talk,
+&lt;/div&gt;</content><published>2018-08-06T21:52:22Z</published><updated>2018-08-06T21:52:22Z</updated><id>tag:houston.pm.org.2011-03:announce-20180806-9770</id><title>Julian in the land of NoSQL</title></entry><entry><published>2018-06-26T11:58:54Z</published><content type="html">&lt;div&gt;&lt;p&gt;Mark Allen began learning Russian about six months ago. In this talk,
 he explains how he used Perl to create tools to help him and other people
 learn grammatically correct Russian.&lt;/p&gt;
 
 &lt;p&gt;As usual, we will meet in the lobby at cPanel, &lt;a href=&#34;https://www.google.com/maps/place/2550+N+Loop+W,+Houston,+TX+77092/@29.8081429,-95.4459714,17z/data=!3m1!4b1!4m2!3m1!1s0x8640c6fa4d91297b:0x988e2dedf77ce147&#34;&gt;2550 North Loop West&lt;/a&gt;,
 between 6:30 and 7pm on Thursday, July 12. We&#39;ll go up to the meeting
 room at 7.&lt;/p&gt;
-&lt;/div&gt;</content><title>Using Perl to Learn a Foreign Language</title></entry><entry><updated>2018-06-10T15:13:45Z</updated><published>2018-06-10T15:13:45Z</published><id>tag:houston.pm.org.2011-03:announce-20180610-30860</id><content type="html">&lt;div&gt;Julian Brown has been looking at Floccus, an open source browser bookmark
+&lt;/div&gt;</content><title>Using Perl to Learn a Foreign Language</title><updated>2018-06-26T11:58:54Z</updated><id>tag:houston.pm.org.2011-03:announce-20180626-15042</id></entry><entry><updated>2018-06-10T15:13:45Z</updated><id>tag:houston.pm.org.2011-03:announce-20180610-30860</id><title>Floccus, an adventure in Ecmascript 8</title><published>2018-06-10T15:13:45Z</published><content type="html">&lt;div&gt;Julian Brown has been looking at Floccus, an open source browser bookmark
 syncing extension. He will be covering some of what he has learned about
 changes to Javascript.
-&lt;/div&gt;</content><title>Floccus, an adventure in Ecmascript 8</title></entry><entry><updated>2018-04-27T04:21:05Z</updated><published>2018-04-27T04:21:05Z</published><id>tag:houston.pm.org.2011-03:announce-20180426-5758</id><content type="html">&lt;div&gt;&lt;div&gt;At the May 10 Houston.pm meeting, JD Lightsey will do a presentation
+&lt;/div&gt;</content></entry><entry><title>Threat Modeling</title><updated>2018-04-27T04:21:05Z</updated><id>tag:houston.pm.org.2011-03:announce-20180426-5758</id><published>2018-04-27T04:21:05Z</published><content type="html">&lt;div&gt;&lt;div&gt;At the May 10 Houston.pm meeting, JD Lightsey will do a presentation
 explaining threat modeling. He will continue with a game that helps the
 audience exercise their new threat modeling knowledge. We will meet at
 cPanel at 7pm.&lt;/div&gt;
-&lt;/div&gt;</content><title>Threat Modeling</title></entry><entry><title type="html">Notes for &#39;Ruby for Perl Programmers&#39; posted.</title><content type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><p>G. Wade Johnson presented his impressions about being a professional
+&lt;/div&gt;</content></entry><entry><content type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><p>G. Wade Johnson presented his impressions about being a professional
 Ruby programmer for the last 2.5 years, contrasted with his experience
-as a Perl programmer.</p></div></content><id>tag:houston.pm.org,2011-03:presentation:1802</id><category term="technical meeting"/><published>2018-04-19T11:28:03Z</published><link href="http://houston.pm.org/talks/2018talks/1802Talk/index.html"/><updated>2018-04-19T11:28:03Z</updated></entry><entry><published>2018-04-18T11:44:34Z</published><link href="http://houston.pm.org/talks/2018talks/1801Talk/index.html"/><updated>2018-04-18T11:44:34Z</updated><id>tag:houston.pm.org,2011-03:presentation:1801</id><category term="technical meeting"/><title type="html">Notes for &#39;A Look at Bedrock, a Distributed SQLite DB&#39; posted.</title><content type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><p>Julian Brown presented the results of his look into the Bedrock project. This project builds a distributed
-database on top of SQLite.</p></div></content></entry><entry><title type="html">Notes for &#39;Perl Source Hack&#39; posted.</title><content type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><p>Todd leads a session to hack on Perl code from the RT queue. The idea is
-to find and fix at least one bug as a team.</p></div></content><id>tag:houston.pm.org,2011-03:presentation:1711</id><category term="technical meeting"/><published>2018-04-17T11:37:58Z</published><link href="http://houston.pm.org/talks/2017talks/1711Talk/index.html"/><updated>2018-04-17T11:37:58Z</updated></entry><entry><updated>2018-04-05T12:16:08Z</updated><published>2018-04-05T12:16:08Z</published><id>tag:houston.pm.org.2011-03:announce-20180405-12369</id><content type="html">&lt;div&gt;&lt;div&gt;In this month&#39;s presentation, G. Wade Johnson will cover his experiment creating
+as a Perl programmer.</p></div></content><published>2018-04-19T11:28:03Z</published><category term="technical meeting"/><link href="http://houston.pm.org/talks/2018talks/1802Talk/index.html"/><title type="html">Notes for &#39;Ruby for Perl Programmers&#39; posted.</title><id>tag:houston.pm.org,2011-03:presentation:1802</id><updated>2018-04-19T11:28:03Z</updated></entry><entry><category term="technical meeting"/><link href="http://houston.pm.org/talks/2018talks/1801Talk/index.html"/><title type="html">Notes for &#39;A Look at Bedrock, a Distributed SQLite DB&#39; posted.</title><id>tag:houston.pm.org,2011-03:presentation:1801</id><updated>2018-04-18T11:44:34Z</updated><content type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><p>Julian Brown presented the results of his look into the Bedrock project. This project builds a distributed
+database on top of SQLite.</p></div></content><published>2018-04-18T11:44:34Z</published></entry><entry><updated>2018-04-17T11:37:58Z</updated><id>tag:houston.pm.org,2011-03:presentation:1711</id><category term="technical meeting"/><link href="http://houston.pm.org/talks/2017talks/1711Talk/index.html"/><title type="html">Notes for &#39;Perl Source Hack&#39; posted.</title><content type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><p>Todd leads a session to hack on Perl code from the RT queue. The idea is
+to find and fix at least one bug as a team.</p></div></content><published>2018-04-17T11:37:58Z</published></entry><entry><published>2018-04-05T12:16:08Z</published><content type="html">&lt;div&gt;&lt;div&gt;In this month&#39;s presentation, G. Wade Johnson will cover his experiment creating
 the same basic web application in Ruby on Rails and Dancer2 on Perl. Since he has not
 created many applications on either platform, this is close to a first timer experience
 for each.&lt;/div&gt;
-&lt;/div&gt;</content><title>Comparison of Rails and Dancer2</title></entry><entry><title>AWStats Flaws and Making a Cure Robot with Perl and Raspberry Pi</title><content type="html">&lt;div&gt;&lt;div&gt;This month, we have two shorter topics that we will cover. JD Lightsey
+&lt;/div&gt;</content><title>Comparison of Rails and Dancer2</title><updated>2018-04-05T12:16:08Z</updated><id>tag:houston.pm.org.2011-03:announce-20180405-12369</id></entry><entry><published>2018-03-04T05:01:38Z</published><content type="html">&lt;div&gt;&lt;div&gt;This month, we have two shorter topics that we will cover. JD Lightsey
 will cover another security topic with &lt;em&gt;AWStats Flaws&lt;/em&gt;. Mark Gardner
 will delve into robotics using Perl and a Raspberry Pi.&lt;/div&gt;
-&lt;/div&gt;</content><id>tag:houston.pm.org.2011-03:announce-20180303-22217</id><published>2018-03-04T05:01:38Z</published><updated>2018-03-04T05:01:38Z</updated></entry><entry><updated>2018-02-05T13:15:50Z</updated><published>2018-02-05T13:15:50Z</published><id>tag:houston.pm.org.2011-03:announce-20180205-28222</id><content type="html">&lt;div&gt;&lt;p&gt;G. Wade Johnson presents some comparisons between Ruby and Perl from the
+&lt;/div&gt;</content><title>AWStats Flaws and Making a Cure Robot with Perl and Raspberry Pi</title><id>tag:houston.pm.org.2011-03:announce-20180303-22217</id><updated>2018-03-04T05:01:38Z</updated></entry><entry><title type="html">Ruby Programming from a Perl Programmer&#39;s Point of View</title><id>tag:houston.pm.org.2011-03:announce-20180205-28222</id><updated>2018-02-05T13:15:50Z</updated><published>2018-02-05T13:15:50Z</published><content type="html">&lt;div&gt;&lt;p&gt;G. Wade Johnson presents some comparisons between Ruby and Perl from the
 point of view of a long-time Perl programmer working on a Ruby on Rails shop
 for the last couple of years.&lt;/p&gt;
-&lt;/div&gt;</content><title type="html">Ruby Programming from a Perl Programmer&#39;s Point of View</title></entry><entry><content type="html">&lt;div&gt;&lt;div&gt;Julian Brown has been looking at the Bedrock distributed database front end
+&lt;/div&gt;</content></entry><entry><id>tag:houston.pm.org.2011-03:announce-20180104-12293</id><updated>2018-01-04T13:09:57Z</updated><title>A look at Bedrock, a distributed SQLite DB</title><content type="html">&lt;div&gt;&lt;div&gt;Julian Brown has been looking at the Bedrock distributed database front end
 for SQLite. He has a short presentation to present what he has found.&lt;/div&gt;
 
 &lt;div&gt;If time permits, G. Wade Johnson will give a report on Ruby on Rails as
 seen by a long-time Perl programmer.&lt;/div&gt;
-&lt;/div&gt;</content><title>A look at Bedrock, a distributed SQLite DB</title><updated>2018-01-04T13:09:57Z</updated><published>2018-01-04T13:09:57Z</published><id>tag:houston.pm.org.2011-03:announce-20180104-12293</id></entry><entry><title type="html">Notes for &#39;Design Hack&#39; posted.</title><content type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><p>Julian Brown ran a session where the attendees worked on the initial design
+&lt;/div&gt;</content><published>2018-01-04T13:09:57Z</published></entry><entry><published>2017-11-23T16:16:37Z</published><content type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><p>Julian Brown ran a session where the attendees worked on the initial design
 brainstorming for a project. We started with an idea proposed by Michael Davis
-for a PSGI package that would set up a web service with minimal configuration.</p></div></content><category term="technical meeting"/><id>tag:houston.pm.org,2011-03:presentation:1710</id><published>2017-11-23T16:16:37Z</published><link href="http://houston.pm.org/talks/2017talks/1710Talk/index.html"/><updated>2017-11-23T16:16:37Z</updated></entry><entry><published>2017-11-07T04:47:57Z</published><updated>2017-11-07T04:47:57Z</updated><link href="http://houston.pm.org/talks/2017talks/1709Talk/index.html"/><category term="technical meeting"/><id>tag:houston.pm.org,2011-03:presentation:1709</id><title type="html">Notes for &#39;Web Framework Comparisons&#39; posted.</title><content type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><p>Three different people demonstrated different approaches to developing a web application.
+for a PSGI package that would set up a web service with minimal configuration.</p></div></content><link href="http://houston.pm.org/talks/2017talks/1710Talk/index.html"/><title type="html">Notes for &#39;Design Hack&#39; posted.</title><category term="technical meeting"/><updated>2017-11-23T16:16:37Z</updated><id>tag:houston.pm.org,2011-03:presentation:1710</id></entry><entry><content type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><p>Three different people demonstrated different approaches to developing a web application.
 One showed a Dancer-based note taking app. Another showed how mod_perl has different
 trade-offs than a framework. The last showed a simple single page CGI script. Then, we
 saw info about an attack on suid. The final presentation talked about Perl's minimum
-perfect hashes.</p></div></content></entry><entry><content type="html">&lt;div&gt;&lt;p&gt;Following on last month&#39;s design hack, we&#39;re going to attempt to
+perfect hashes.</p></div></content><published>2017-11-07T04:47:57Z</published><category term="technical meeting"/><link href="http://houston.pm.org/talks/2017talks/1709Talk/index.html"/><title type="html">Notes for &#39;Web Framework Comparisons&#39; posted.</title><updated>2017-11-07T04:47:57Z</updated><id>tag:houston.pm.org,2011-03:presentation:1709</id></entry><entry><content type="html">&lt;div&gt;&lt;p&gt;Following on last month&#39;s design hack, we&#39;re going to attempt to
 actually troubleshoot and hack the Perl source for this month&#39;s meeting.&lt;/p&gt;
 &lt;p&gt;We&#39;ll find a ticket in RT or a new bug in Perl and as a group, we&#39;ll provide
 a fix to upstream. This gives us an opportunity to help the Perl community and
 learn about the inner workings of Perl at the same time.&lt;/p&gt;
-&lt;/div&gt;</content><title>Hacking Perl Source</title><id>tag:houston.pm.org.2011-03:announce-20171105-32084</id><updated>2017-11-06T02:14:07Z</updated><published>2017-11-06T02:14:07Z</published></entry><entry><content type="html">&lt;div&gt;&lt;div&gt;&lt;p&gt;This month we&#39;re going to try to do a group design hack. We will start
+&lt;/div&gt;</content><published>2017-11-06T02:14:07Z</published><title>Hacking Perl Source</title><id>tag:houston.pm.org.2011-03:announce-20171105-32084</id><updated>2017-11-06T02:14:07Z</updated></entry><entry><published>2017-10-09T02:16:21Z</published><content type="html">&lt;div&gt;&lt;div&gt;&lt;p&gt;This month we&#39;re going to try to do a group design hack. We will start
 with a problem the group has agreed on and work through the process of coming
 up with an initial design.&lt;/p&gt;
 &lt;p&gt;The initial proposal is a PSGI Web server package that only requires a single
@@ -65,84 +67,6 @@ configuration file to have a web server up and running.&lt;/p&gt;
 &lt;p&gt;We do not expect to finish coding this at the meeting, but we would like to
 have an initial design before the end of the evening.&lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</content><title>Design Hack</title><id>tag:houston.pm.org.2011-03:announce-20171008-21100</id><updated>2017-10-09T02:16:21Z</updated><published>2017-10-09T02:16:21Z</published></entry><entry><link href="http://houston.pm.org/talks/2017talks/1708Talk/index.html"/><updated>2017-08-18T03:50:20Z</updated><published>2017-08-18T03:50:20Z</published><category term="technical meeting"/><id>tag:houston.pm.org,2011-03:presentation:1708</id><content type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><p>Robert Stone describes the troubleshooting techniques he used to reverse
+&lt;/div&gt;</content><title>Design Hack</title><id>tag:houston.pm.org.2011-03:announce-20171008-21100</id><updated>2017-10-09T02:16:21Z</updated></entry><entry><category term="technical meeting"/><link href="http://houston.pm.org/talks/2017talks/1708Talk/index.html"/><title type="html">Notes for &#39;Gray-ish Hat Adventures In Automating Mobile Game Play: Why Tap When You Could Automate?&#39; posted.</title><id>tag:houston.pm.org,2011-03:presentation:1708</id><updated>2017-08-18T03:50:20Z</updated><content type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><p>Robert Stone describes the troubleshooting techniques he used to reverse
 engineer a game to see if he could automate some of the boring parts of the
-game.</p></div></content><title type="html">Notes for &#39;Gray-ish Hat Adventures In Automating Mobile Game Play: Why Tap When You Could Automate?&#39; posted.</title></entry><entry><content type="html">&lt;div&gt;&lt;p&gt;Most mobile games are highly repetitive and require hours of &#34;Grinding&#34;
-which is the boring part of the game you have to do (or pay to bypass) in
-order to get stronger.  In fact, this is the entire freemium business model
-and I&#39;m willing to bet you have more then a few of these games installed on
-your phone.&lt;/p&gt;
-
-&lt;p&gt;Wouldn&#39;t it be great if you could figure out what the game was doing with
-each of these taps and automate it?  Why stop there, you could create your
-own army and dominate the virtual landscape finally putting that college
-education to use!&lt;/p&gt;
-
-&lt;p&gt;Join us as we walk through just this process for a very popular mobile game
-that shall remain nameless (because I like the game and don&#39;t want to get
-banned!) but all shall be revealed at our next meeting.  There will be a
-real-time walk through of:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Demo of the Game&lt;/li&gt;
-  &lt;li&gt;Decompiling the app using JADX and JetBrains.dotPeek&lt;/li&gt;
-  &lt;li&gt;Reverse engineering the API the game uses by way of BlueStacks, Charles,
-and ProxyCap.&lt;/li&gt;
-  &lt;li&gt;Creating a WebSocket client ( using Moo as a change of pace from Moose )
-to simulate what the app does, automating the boring grind-y parts of the
-game&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;If time permits a discussion on Moo versus Moose thoughts will be
-provided.  Bring your mobile phones and your perlbrew, for we shall tear
-those meddling do-gooders asunder.  Mwwwwwwhahahahaa!&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;</content><title>Gray-ish Hat Adventures In Automating Mobile Game Play: Why Tap When You Could Automate?</title><updated>2017-08-08T23:14:09Z</updated><published>2017-08-08T23:14:09Z</published><id>tag:houston.pm.org.2011-03:announce-20170808-19574</id></entry><entry><published>2017-07-30T05:00:17Z</published><updated>2017-07-30T05:00:17Z</updated><link href="http://houston.pm.org/talks/2017talks/1707Talk/index.html"/><id>tag:houston.pm.org,2011-03:presentation:1707</id><category term="technical meeting"/><title type="html">Notes for &#39;Getting gutsy with perl5&#39; posted.</title><content type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><p>Todd Rinaldo has been working on the guts of Perl recently as part of the Perl
-compiler project at cPanel. He began with some of the pre-requisites needed to
-understand the presentation, including a basic understanding of C:
-
-<ul>
-    <li>structures</li>
-    <li>unions</li>
-    <li>arrays</li>
-    <li>typedefs</li>
-    <li>#define</li>
-</ul>
-
-He showed Nicolas Rochelemagne's talk <a href="https://www.youtube.com/watch?v=zNsew4U-quM"
-target="blank">Introduction to Perl Internals</a> to give some background. Nicolas
-covered some of the basics of Perl internal data structures and some information
-about how perl handles memory.
-
-After the video, Todd explained the <code>B::C</code> module and some of its
-siblings.  He explained the difference between a stash and a pad, and talked
-about how new pads are added each time you add a scope. Todd spent a little
-more time discussing the internal data structures, mostly focusing on how they
-relate to stashes and pads.
-
-Next, he discussed how the parser doesn't actually generate an op-tree, as you might
-guess from an study of compilers. Instead, it generates several op-trees, that are
-linked together by entries in the stashes. He recommended spending time studying
-Reini Urban's <a href="https://github.com/rurban/illguts" target="_blank">Ill Guts</a>
-if you are going to spend any time understanding this stuff.
-
-He spent some time discussing some of what cPanel is using the compiler for and what
-they hoped to accomplish. He discussed some ideas about optimizing op-trees.
-
-The talk generated several interesting discussions, that branched off the main topic
-at times.</p></div></content></entry><entry><id>tag:houston.pm.org.2011-03:announce-20170706-23755</id><published>2017-07-06T21:24:26Z</published><updated>2017-07-06T21:24:26Z</updated><title>Getting gutsy with perl5</title><content type="html">&lt;div&gt;&lt;p&gt;Todd Rinaldo wikk dive into the basics of how Perl data structures work under the hood.&lt;/p&gt;
-&lt;/div&gt;</content></entry><entry><title type="html">Notes for &#39;OC.pm Coding challenge&#39; posted.</title><content type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><p>JD Lightsey suggested that the group make an attempt at the Perl Programming
-challenge that OC.pm proposed for their May 2017 meeting. Eveyone was suggested
-to make an attempt.</p></div></content><category term="technical meeting"/><id>tag:houston.pm.org,2011-03:presentation:1706</id><published>2017-07-06T04:34:04Z</published><link href="http://houston.pm.org/talks/2017talks/1706Talk/index.html"/><updated>2017-07-06T04:34:04Z</updated></entry><entry><updated>2017-07-06T03:21:24Z</updated><link href="http://houston.pm.org/talks/2017talks/1705Talk/index.html"/><published>2017-07-06T03:21:24Z</published><category term="technical meeting"/><id>tag:houston.pm.org,2011-03:presentation:1705</id><content type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><p>The goal this meeting was to do some code reviews as a group. The idea was that
-we would learn from each other's techniques and knowledge.</p></div></content><title type="html">Notes for &#39;Live Code Reviews&#39; posted.</title></entry><entry><category term="technical meeting"/><id>tag:houston.pm.org,2011-03:presentation:1704</id><published>2017-07-05T03:45:34Z</published><link href="http://houston.pm.org/talks/2017talks/1704Talk/index.html"/><updated>2017-07-05T03:45:34Z</updated><title type="html">Notes for &#39;p5hack&#39; posted.</title><content type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><p>Todd Rinaldo discussed the p5hack hack-a-thon this year in Amsterdam. He
-described the purpose of the meeting and some of the decisions that came
-out of the meeting.</p></div></content></entry><entry><title type="html">Notes for &#39;Maintaining Developer Mental and Physical Health&#39; posted.</title><content type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><p>Jim Bacon, Robert Stone, and Jocelyn Kirby gave short presentations on health
-topics that can apply to developers.</p></div></content><category term="technical meeting"/><id>tag:houston.pm.org,2011-03:presentation:1703</id><published>2017-07-05T03:14:09Z</published><link href="http://houston.pm.org/talks/2017talks/1703Talk/index.html"/><updated>2017-07-05T03:14:09Z</updated></entry><entry><id>tag:houston.pm.org.2011-03:announce-20170605-11184</id><updated>2017-06-05T12:30:59Z</updated><published>2017-06-05T12:30:59Z</published><content type="html">&lt;div&gt;&lt;p&gt;Our June meeting is this Thursday (June 8), at the Hostgator offices
-(5005 Mitchelldale St, Ste. 100), starting at 7pm.&lt;/p&gt;
-&lt;p&gt;We will be trying something different again this month. Several members of
-the group have agreed to attempt the &lt;a href=&#34;http://oc.pm.org/may_challenge.html&#34;&gt;Orange
-County PM coding challenge&lt;/a&gt; this month. The idea is that we should all make
-an attempt to solve the challenge and anyone who wishes can demonstrate their
-attempt at this Thursday&#39;s meeting. At a minimum, we should get to see how other
-people approached an interesting coding challenge.&lt;/p&gt;
-&lt;/div&gt;</content><title>June Houston.pm meeting: Coding Challenge</title></entry></feed>
+game.</p></div></content><published>2017-08-18T03:50:20Z</published></entry></feed>
