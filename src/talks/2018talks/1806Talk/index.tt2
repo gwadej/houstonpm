@@ -1,0 +1,27 @@
+[% WRAPPER writeup_wrap.tt2
+    title='Summary of June 2018 Presentation'
+    year=2018
+%]
+      <h2 class="subhead">Floccus, an adventure in Ecmascript 8</h2>
+      <p>Julian Brown described a cloud service he had been using to sync bookmarks.
+On May 1st, the service closed down.
+After some searching, he found the <a href="https://github.com/marcelklehr/floccus" target="_blank" rel="noopener">Floccus</a> project.
+This tool supported most of what he needed.
+It connects to an external NextCloud server, allowing you to share bookmarks between different browsers.</p>
+      <p>Unfortunately, the bookmarks do not retain the ordering that you set up.
+Julian decided to add a WebDAV backend as a new feature.
+He was surprised to ind that it is written in the new ECMAScript 8 standard.</p>
+      <p>Some of the changes he found working with ECMAScript 8 included missing semi-colons, actual classes and inheritance, static methods, and a <code>constructor()</code>.
+Apparently, this version can run as a web extension on Chromium.
+Unlike previous versions of JavaScript, <code>let</code> defines actual locally scoped variables.
+The language also support cleaner concurrency using <code>async</code>/<code>await</code> keywords and <code>Promise</code>s.
+Any <code>async</code> function always returns a <code>Promise</code>.</p>
+      <p>Julian also talked about a different syntax for lambdas/closures <code>param => statement_or_block</code>.
+The tool runs as a node.js program.
+An important concept in the implementation is the Adapter pattern, so Julian implemented a WebDavAdapter to add the functionality he wanted.
+The final implementation detail he discussed was the fact that all of the bookmarks are stored in <abbr title="XML Bookmark Exchange Language">XBEL</abbr>.
+This is an <abbr title="eXtensible Markup Language">XML</abbr> application for working with lists of bookmarks.</p>
+      <p>The group had a few questions about the project, and showed some interest in the directions that ECMAScript has headed.</p>
+      <p>We had 8 people attending this month. As always, we'd like to thank
+        Hostgator, LLC for providing the meeting space and food for the group.</p>
+[% END -%]

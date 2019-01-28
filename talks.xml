@@ -1720,4 +1720,14 @@ flaws in the AWStats program.</abstract>
     </topic>
   </talk>
 
+  <talk num="1806">
+    <date>June 2018</date>
+    <topic href="/talks/2018talks/1806Talk/index.html">
+      <title>Floccus, an adventure in Ecmascript 8</title>
+      <presenter>Julian Brown</presenter>
+      <abstract>Julian Brown described attempting to add a feature to a tool for synchronizing bookmarks.
+In the process, he learned about ECMAScript 8. This presentation explores what he learned.</abstract>
+    </topic>
+  </talk>
+
 </talklist>
