@@ -18,16 +18,17 @@
     <h2 class="subhead">Upcoming Meetings</h2>
 
     <dl>
-        <dt>November 8, 2018</dt>
-        <dd><em>Testing the untestable with Test::MockFile</em> with Todd Rinaldo at cPanel</dd>
+        <dt>January 28, 2019</dt>
+        <dd><em>Looking back to 2018, what I learnt from XS and Dist::Zilla</em>
+           with Nicolas Rochelemagne at cPanel</dd>
 
-        <dt>December 13, 2018</dt>
+        <dt>February 14, 2019</dt>
         <dd>TBD at Hostgator</dd>
 
-        <dt>January 10, 2019</dt>
+        <dt>March 14, 2019</dt>
         <dd>TBD at cPanel</dd>
 
-        <dt>February 14, 2018</dt>
+        <dt>April 11, 2019</dt>
         <dd>TBD at Hostgator</dd>
     </dl>
 [% END -%]
