@@ -3,8 +3,9 @@
     year=2018
 %]
       <h2>Making a Cute Robot with Perl</h2>
+
       <p>Mark Gardner started the evening describing a project for a <abbr title="Girls in Engineering, Math, and Science">GEMS</abbr> conference.
-The girls on the team came up with an idea for making a robot controlled doll.
+The girls on the team came up with an idea for making a robot-controlled doll.
 Mark agreed to help with the software and some of the hardware work.</p>
       <p>The end result was a robot Pooh Bear, driven by an XBox controller.
 The left and right joysticks controlled the arms, and the keypad controlled the head.
@@ -22,16 +23,16 @@ Determining thresholds to keep the sensitivity reasonable was a challenge.</p>
       <p>The girls originally wanted to control a Barbie, but given the size of the hardware, they moved to a baby doll, and eventually the bear.
 The girls did the presenting and some of the hardware work.
 Mark did the programming.
-In the end, the girls were interested int the code and got printouts, so that they could learn from it.</p>
+In the end, the girls were interested in the code and got printouts, so that they could learn from it.</p>
       <p>Mark's demonstration of the functioning bear-robot was fun.
 The group had a few questions, but the results were mostly a hit.</p>
 
       <h2>AWStats Flaws</h2>
-      <p>For the next in his series of security presentations, JD delved into some of the problems with AWStats.
+      <p>For the next in his series of security presentations, J.D. delved into some of the problems with AWStats.
 He began with a quick explanation of the AWStats program.</p>
       <p>The first thing he decided to try was looking for the pipe symbol in the language file.
 This might point to potential 2 argument open injections.</p>
-      <p>Then, JD spent some time describing some of the characteristics of the program that made it a good choice to look for exploits.
+      <p>Then, J.D. spent some time describing some of the characteristics of the program that made it a good choice to look for exploits.
 Some things that imply potential problems included:</p>
 
     <ul>
@@ -45,16 +46,16 @@ Some things that imply potential problems included:</p>
     </ul>
 
       <p>While none of these are guaranteed to be a problem, they do point to potential issues.</p>
-      <p>After some examination, he determined that one of the potential parameters is a configuuration file.
+      <p>After some examination, he determined that one of the potential parameters is a configuration file.
 Since the program reads the configuration file from the server, the exploit would require getting a file onto the server.
 Next, he explored the possibility of using <code>/dev/stdin</code> as the file.</p>
       <p>The program does do a file test, which limits some kinds of exploits.
 Apparently, the config files support including other config files, and that logic does not include the file test.
 A little more exploration showed that he could use <code>/proc/self/environ</code> as a file to read.
-This is particularly interesting since CGI files end up loading information from the caller into the environment.
+This is particularly interesting since <abbr title="Common Gateway Interface">CGI</abbr> files end up loading information from the caller into the environment.
 He pointed out that <code>/dev/stdin</code> was not actually necessary to any exploit, it was just the vector he began with.</p>
       <p>After reporting an exploit generated from the above, he did not report an obvious second version of a path traversal bug in the migrate code.</p>
-      <p>As usual, JD's explanation was clear and in-depth.</p>
+      <p>As usual, J.D.'s explanation was clear and in-depth.</p>
       <p>We had 9 people attending this month. As always, we'd like to thank
         cPanel, Inc. for providing the meeting space and food for the group.</p>
 [% END -%]

@@ -6,30 +6,34 @@
 
       <h3>Background</h3>
 
-      <p>The goal is to provide a somewhat useful comparison between the two frameworks and librariesr.
+      <p>The goal is to provide a somewhat useful comparison between the two frameworks and languages.
 G. Wade Johnson picked a relatively simple application (a blog), but decided not to build the simplest implementation.
 The presentation would walk through most of the steps of construction somewhat live, to give a feel for the tooling.
 The changes are in a git repo, so we don't need to write all of the code live.</p>
-      <p>Rails has a little advantage in both the type of project and the tooling, since a blog is on of the standard Raisl apps.
+      <p>Rails has a little advantage in both the type of project and the tooling, since a blog is one of the standard Rails apps.
 By working for a solution that is not quite the obvious one, we get a better comparison.
 Use plugins as possible to simplify implementation (which is also what you would do if you were actually solving this problem).
 This serves to compare the plugin features of the two frameworks.</p>
       <p>We will use a single SQLite3 database for both applications.
 This forces the models to be the same.
 It also means we don't need to do database design and creation twice, since the database is not what we are focusing on.</p>
+
       <h4>Data Model</h4>
+
       <ul>
         <li>User: id, userid, name, passwordhash, zero or more blogs</li>
         <li>Blog: id, title, description, owner, zero or more posts</li>
         <li>Post: id, title, content, many-to-many tags</li>
         <li>Tag: id, name</li>
       </ul>
+
       <h4>Will Provide</h4>
+
       <p>The goal is to be complicated enough to be interesting, but not so complication that we can't finish.
 We also want to make the project a little different than the default Rails app, to make the comparison somewhat realistic.</p>
 
     <ul>
-        <li>Informaiton in database</li>
+        <li>Information in database</li>
         <li>Multiple blogs (per owner)</li>
         <li>Posts are attached to a blog</li>
         <li>Owner has create/edit privileges<ul>
@@ -54,6 +58,7 @@ More features were unnecessary for the goal of comparing the two frameworks.</p>
         <li>No backup support</li>
         <li>No import/export support</li>
         <li>No changing of themes</li>
+        <li>No comment support</li>
         <li>No <abbr title="Application Programming Interface">API</abbr> access</li>
         <li>No fancy JavaScript interface</li>
         <li>No pagination</li>
@@ -64,8 +69,8 @@ More features were unnecessary for the goal of comparing the two frameworks.</p>
 
       <p>The <a href="https://github.com/gwadej/comparison_rails_blog" target="_blank" rel="noopener">repo</a> for this project is available.</p>
 
-      <p>We will use the rails tool to construct pieces of the application.
-In particular, we use the rails tool to build tables.
+      <p>We will use the <code>rails</code> tool to construct pieces of the application.
+In particular, we use the <code>rails</code> tool to build tables.
 We'll rely on a small number of gems (libraries) for some needed functionality.</p>
 
     <ul>
@@ -189,9 +194,9 @@ If we were generating tables, they would be done manually.
 We'll rely on a small number of modules (libraries) for some needed functionality.</p>
 
     <ul>
-        <li>Authorization: Dancer2::Plugin::Auth::Extendible</li>
-        <li>Database: DBIx::Class and SQLite3</li>
-        <li>Markdown Handling: Text::MultiMarkdown</li>
+        <li>Authorization: <code>Dancer2::Plugin::Auth::Extendible</code></li>
+        <li>Database: <code>DBIx::Class</code> and SQLite3</li>
+        <li>Markdown Handling: <code>Text::MultiMarkdown</code></li>
         <li>Templating: Template Toolkit</li>
     </ul>
 
@@ -201,13 +206,13 @@ We'll rely on a small number of modules (libraries) for some needed functionalit
         <li>Create project:<br />
             <code>dancer2 gen -a dancer_blog</code></li>
         <li>Add dependencies to Makefile.PL<ul>
-            <li>Dancer2::Plugin::Auth::Extensible</li>
-            <li>DBIx::Class</li>
-            <li>Template::Toolkit</li>
-            <li>DBD::SQLite</li>
-            <li>Text::MultiMarkdown</li>
-            <li>Plack</li>
-            <li>Plack::Middleware::Deflater</li>
+            <li><code>Dancer2::Plugin::Auth::Extensible</code></li>
+            <li><code>DBIx::Class</code></li>
+            <li><code>Template::Toolkit</code></li>
+            <li><code>DBD::SQLite</code></li>
+            <li><code>Text::MultiMarkdown</code></li>
+            <li><code>Plack</code></li>
+            <li><code>Plack::Middleware::Deflater</code></li>
         </ul></li>
         <li>Update configuration<ul>
             <li>config.yml<ul>

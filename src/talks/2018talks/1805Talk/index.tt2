@@ -3,6 +3,7 @@
     year=2018
 %]
       <h2 class="subhead">Threat Modeling</h2>
+
       <p>J. D. began the presentation by describing some of the purposes of a threat model.
 Some approaches use a visual representation, but all simplify system requirements to help identify potential threats.
 The resulting threat model is a list of threats to the system being analyzed.
@@ -15,47 +16,60 @@ Boundaries determine the interfaces between different security assumptions in a 
 This could be inside/outside the firewall, a system requiring admin privileges, or system that handles billing.
 When crossing one of these boundaries, different rules apply.
 The parts of the system on either side of a threat boundard determine what threats apply.</p>
-      <p><dl>
-    <dt>Vulnerability</dt>
-    <dd>A vulnerability refers to a known weakness of an asset (resource) that can be exploited by one or more attackers.</dd></p>
-      <p>    <dt>Exploit</dt>
-    <dd>An exploit is a process or software designed to take advantge of a vulnerability.</dd></p>
-      <p>    <dt>Threat</dt>
-    <dd>A risk in the design that might lead to a vulnerability.</dd></p>
-      <p>    <dt>Mitigation</dt>
-    <dd>Functionality to address risks</dd>
-</dl></p>
-      <p><h3>Classifying Threats</h3></p>
+
+    <dl>
+        <dt>Vulnerability</dt>
+        <dd>A vulnerability refers to a known weakness of an asset (resource) that can be exploited by one or more attackers.</dd>
+
+        <dt>Exploit</dt>
+        <dd>An exploit is a process or software designed to take advantge of a vulnerability.</dd>
+
+        <dt>Threat</dt>
+        <dd>A risk in the design that might lead to a vulnerability.</dd>
+
+        <dt>Mitigation</dt>
+        <dd>Functionality to address risks</dd>
+    </dl>
+
+      <h3>Classifying Threats</h3>
+
       <p>Several groups have developed systems or frameworks for defining and classifying threats.
 Some of the well-known ones include:</p>
-      <p><ul>
-    <li><abbr title="Spoofing/Tampering/Repudiation/Information Disclosure/Denial of Service/Elevation of Privilege">STRIDE</abbr> used by Microsoft</li>
-    <li><abbr title="Damage/Reproducability/Exploitability/Affected users/Discoverability">DREAD</abbr> used by OpenStack</li>
-    <li><abbr title="Common Weakness Enumeration">CWE</abbr> used by MITRE</li>
-    <li>Top 10/100 lists published by <abbr title="Open Web Application Security Project">OWASP</abbr></li>
-</ul></p>
-      <p><h3>STRIDE</h3></p>
+
+    <ul>
+        <li><abbr title="Spoofing/Tampering/Repudiation/Information Disclosure/Denial of Service/Elevation of Privilege">STRIDE</abbr> used by Microsoft</li>
+        <li><abbr title="Damage/Reproducability/Exploitability/Affected users/Discoverability">DREAD</abbr> used by OpenStack</li>
+        <li><abbr title="Common Weakness Enumeration">CWE</abbr> used by MITRE</li>
+        <li>Top 10/100 lists published by <abbr title="Open Web Application Security Project">OWASP</abbr></li>
+    </ul>
+
+      <h3>STRIDE</h3>
+
       <p>The STRIDE risk assessment divides threats into 6 different kinds:</p>
-      <p><ul>
-    <li>Spoofing Identity</li>
-    <li>Tampering with data</li>
-    <li>Repudiation</li>
-    <li>Information Disclosure</li>
-    <li>Denial of Service</li>
-    <li>Elevation of Privilege</li>
-</ul></p>
+
+      <ul>
+        <li>Spoofing Identity</li>
+        <li>Tampering with data</li>
+        <li>Repudiation</li>
+        <li>Information Disclosure</li>
+        <li>Denial of Service</li>
+        <li>Elevation of Privilege</li>
+      </ul>
+
       <p>Although fairly effective, STRIDE does have a few problems.
 It does not take into account privacy concerns.
-Some threats can also fit into multiple buckets, making overcounting or missing threats possible.</p>
+Some threats can also fit into multiple buckets, making over counting or missing threats possible.</p>
       <p>The goal of a risk assessment is to find actionable threats.
 You might want to think of them as <em>Abuse Cases</em> instead of the <em>Use Cases</em> we normally consider.
 A good list of threats can help to guide further work.</p>
-      <p><ul>
-   <li>Guide development of mitigations</li>
-   <li>Guide review of design</li>
-   <li>Guide QA testing</li>
-   <li>Guide security review/testing</li>
-</ul></p>
+
+    <ul>
+        <li>Guide development of mitigations</li>
+        <li>Guide review of design</li>
+        <li>Guide QA testing</li>
+        <li>Guide security review/testing</li>
+    </ul>
+
       <p>Enumerating all of the threats to a system requires going through STRIDE exhaustively for each item in a system.
 You should mostly ignore externalities without stifling discussion that might lead to important threats.
 A good approach is to document everything as you go, and throw out duplicates at the end.</p>
@@ -63,10 +77,14 @@ A good approach is to document everything as you go, and throw out duplicates at
 They do an initial threat model when the project is first planned.
 At each cycle through the development, the threat model should be refined given the better understanding of the system.
 This simplifies the application of security <em>gates</em> in the development process.</p>
-      <p><h3>Tools</h3></p>
+      
+      <h3>Tools</h3>
+
       <p>J. D. tried using OWASP's Threat Dragon tool and Microsoft's Threat Modeling Tool.
 He found the Microsoft tool to be more useable.</p>
-      <p><h3>Card Game</h3></p>
+
+      <h3>Card Game</h3>
+
       <p>Microsoft has provided a card game based on the STRIDE model called <em>Elevation of Privilege</em>.
 It's available for <a href="https://www.thegamecrafter.com/games/elevation-of-privilege" target="_blank" rel="noopener">sale</a> or as a free <a href="https://www.microsoft.com/en-us/download/details.aspx?id=20303" target="_blank" rel="noopener">PDF</a>.</p>
       <p>At the end of the talk, J. D. introduced the game and we broke into groups to play and learn more about potential threats.

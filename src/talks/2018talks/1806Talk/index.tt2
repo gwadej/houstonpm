@@ -3,6 +3,7 @@
     year=2018
 %]
       <h2 class="subhead">Floccus, an adventure in Ecmascript 8</h2>
+
       <p>Julian Brown described a cloud service he had been using to sync bookmarks.
 On May 1st, the service closed down.
 After some searching, he found the <a href="https://github.com/marcelklehr/floccus" target="_blank" rel="noopener">Floccus</a> project.
