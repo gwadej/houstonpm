@@ -1730,4 +1730,15 @@ In the process, he learned about ECMAScript 8. This presentation explores what h
     </topic>
   </talk>
 
+  <talk num="1807">
+    <date>July 2018</date>
+    <topic href="/talks/2018talks/1807Talk/index.html">
+      <title>Using Perl to Learn a Foreign Language</title>
+      <presenter>Mark Allen</presenter>
+      <abstract>Mark Allen decided to cut back on his Twitter use. Since he now needed a new smartphone activity,
+he turned to DuoLingo and began studying Russian. This lead to the construction of a Perl
+module to handle declining Russian pronouns, adjectives, and nouns.</abstract>
+    </topic>
+  </talk>
+
 </talklist>

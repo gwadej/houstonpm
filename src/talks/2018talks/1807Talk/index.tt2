@@ -1,0 +1,34 @@
+[% WRAPPER writeup_wrap.tt2
+    title='Summary of July 2018 Presentation'
+    year=2018
+%]
+      <h2 class="subhead">Using Perl to Learn a Foreign Language</h2>
+      <p>Mark Allen found himself trying to pull back from Twitter and needed to do something with his smartphone.
+He had some experience with Russian in the past, so he began using DuoLingo to really learn the language.</p>
+
+      <h3>Quick Intro to Russian</h3>
+
+      <p>Russian is spoken by around 150 million people world-wide. It is a Slavic language, with gendered nouns, that have singular and plural forms.
+Pronouns, nouns, and adjectives decline in six grammatical cases. The declinations result in changes in the endings of related words.
+There are differences between animate and inanimate nouns.</p>
+
+      <h3>Perl Enters the Picture</h3>
+
+      <p>In his learning, he ran across a YouTube video of a person creating sentences with all the cases to simplify remembering the endings.
+Mark decided he wanted to be able to create his own sentences.
+The obvious solution is to write a program to generate these sentences.
+He chose Perl for its UTF-8 support, <abbr title="Comma Separated Values">CSV</abbr> libraries, and ease of extension.</p>
+      <p>Mark wrote <a href="https://metacpan.org/pod/Lingua::RU::Declension" target="_blank" rel="noopener">Lingua::RU::Declension</a> as a prototype in a couple of hours. It targets Perl 5.14 and later.
+It uses the utf8 pragma to allow using Russian characters in the source.
+It doesn't decline arbitrary words, working only with nouns and adjectives that are built-in.
+The library also does not support parsing arbitrary Russian language.
+He has learned quite a bit about the edges of his understanding of the grammar based on corrections from Russian-speakers on-line.</p>
+      <p>Once he had a way to decline Russian, Mark found the <a href="https://apps.ankiweb.net/" target="_blank" rel="noopener">Anki</a> flashcard software.
+This software can be driven by <abbr title="Comma Separated Values">CSV</abbr> data as input.
+He used <a href="http://forvo.com" target="_blank" rel="noopener">Forvo</a> for pronunciation by native speakers.
+Using these pieces, he was able to create a <code>mkflash.pl</code> script to build flashcards.</p>
+      <p>Mark's slides are <a href="https://1drv.ms/b/s!AkuFmdw34K2HgqUeb9GMmb2oqcKKWA" target="_blank" rel="noopener">available</a> on OneDrive.
+His <a href="https://github.com/mrallen1/Lingua-RU-Declension" target="_blank" rel="noopener">code</a> is available on github.</p>
+      <p>We had 10 people attending this month. As always, we'd like to thank
+        cPanel, Inc. for providing the meeting space and food for the group.</p>
+[% END -%]
