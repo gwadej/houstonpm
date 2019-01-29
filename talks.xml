@@ -1741,4 +1741,13 @@ module to handle declining Russian pronouns, adjectives, and nouns.</abstract>
     </topic>
   </talk>
 
+  <talk num="1808">
+    <date>August 2018</date>
+    <topic href="/talks/2018talks/1808Talk/index.html">
+      <title>Julian in the land of NoSQL</title>
+      <presenter>Julian Brown</presenter>
+      <abstract>Julian Brown explores the usage of the Arangodb NoSQL database as used a website he's working on.</abstract>
+    </topic>
+  </talk>
+
 </talklist>

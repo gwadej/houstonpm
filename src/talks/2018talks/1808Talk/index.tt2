@@ -1,0 +1,26 @@
+[% WRAPPER writeup_wrap.tt2
+    title='Summary of August 2018 Presentation'
+    year=2018
+%]
+      <h2 class="subhead">Julian in the land of NoSQL</h2>
+
+      <p>Julian Brown had a web project he was working on that manipulated a list
+of <em>recipes</em>. Where each recipe has a description and a list of steps.
+The front-end was to be implemented in Angular. That part handles the routing,
+templating and such.
+The original version used a SQLite backend, and rendered using Perl CGI.</p>
+      <p>A later version was construccted in C++, using the jsoncpp library for the
+<abbr title="JavaScript Object Notation">JSON</abbr> part of the application.
+The libcurl library was used for network access. The final piece of the puzzle
+was replacing SQLite with the ArangoDB NoSQL database.</p>
+      <p>The code for the project was written in C++ 11. It used <abbr title="ArangoDB Query Language">AQL</abbr>
+to access the database. Authorization was handled through a session ID and
+secret. ArangoDB uses the concept of <em>collections</em> instead of tables.
+<abbr title="ArangoDB Query Language">AQL</abbr> supports bind parameters, which
+helps to avoid injection. The server did seem very sensitve to available RAM.</p>
+      <p>Julian did point out that he did learn about some drawbacks of JSON-encoded
+NoSQL. The biggest one seemed to be duplication of the data.</p>
+      <p>This was an interesting talk that generated several questions from the audience.</p>
+      <p>We had 9 people attending this month. As always, we'd like to thank
+        Hostgator, LLC for providing the meeting space and food for the group.</p>
+[% END -%]
