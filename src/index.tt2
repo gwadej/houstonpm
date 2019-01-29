@@ -3,7 +3,7 @@
 
     <div id="sidebar">
         <h1 class="heading">What's New <a href="atom.xml"><img style="border:0;float:right;" src="feed-icon-10x10.png" /></a></h1>
-      <p>Meeting notes through July are on-line.</p>
+      <p>Meeting notes through August are on-line.</p>
       <h1 class="heading">Next Meeting</h1>
       <dl>
         <dt>January 28, 2019</dt>
@@ -12,9 +12,9 @@
       </dl>
     </div>
 
-    <p>This month we are doing something different. Instead of the second Thursday of January,
-    our meeting will be on Monday, January 28. By popular demand, we are also
-    going to start this meeting at 6pm, instead of 7pm.</p>
+    <p>For February, we are doing something different. Instead of the second Thursday of the month,
+    our meeting will be on Thursday, February 21 (instead of Valentine's Day).
+    By popular demand, we are also going to start the meeting at 6pm, instead of 7pm.</p>
 
     <p>This is the branch of the <a href="http://www.pm.org/">Perl Mongers</a>
     meeting in Houston, Texas. Perl Mongers is a loose association of
