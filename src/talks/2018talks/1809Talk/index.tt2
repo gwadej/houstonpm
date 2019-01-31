@@ -2,23 +2,6 @@
     title='Summary of September 2018 Presentation'
     year=2018
 %]
-<style type="text/css">
-    table {
-        border-collapse: collapse;
-        margin: 1em 0;
-    }
-    td, th {
-        border: 1px solid #999;
-        padding: 0.5rem;
-        text-align: left;
-    }
-    caption {
-        margin-bottom: 0.5ex;
-        font-weight: bold;
-        text-align: left;
-        font-size: 125%;
-    }
-</style>
       <h2 class="subhead">Performance of Parsing Short Strings</h2>
 
       <p>G. Wade Johnson has a 3D Printing hobby. For the beginning of the talk he introduced the
@@ -70,65 +53,9 @@ tests is:</p>
 
       <h3>Results</h3>
 
-      <p>These results are based on a particular run from his laptop. The absolute numbers are less important
+      <p>The <a href="https://github.com/gwadej/gcode-parse_speed/tree/master/results" target="_blank" rel="noopener">results</a>
+      are based on a particular run from his laptop. The absolute numbers are less important
 than the insights gained from them.</p>
-
-      <table>
-        <caption>bm-zero_extruder</caption>
-        <tr><th>&nbsp;</th><th>Rate</th> <th>comp_regex</th>    <th>index</th>  <th>substr</th> <th>non-greedy</th>  <th>greedy</th>   <th>naive</th>   <th>exact</th></tr>
-        <tr><th>comp_regex<br />Compiled Regex</th> <td>14.1/s</td>         <td>--</td>     <td>-61%</td>    <td>-68%</td>       <td>-77%</td>    <td>-77%</td>    <td>-78%</td>    <td>-85%</td></tr>
-        <tr><th>index<br />index()-based</th>      <td>36.2/s</td>       <td>158%</td>       <td>--</td>    <td>-17%</td>       <td>-40%</td>    <td>-41%</td>    <td>-42%</td>    <td>-61%</td></tr>
-        <tr><th>substr<br />substr() test</th>     <td>43.7/s</td>       <td>210%</td>      <td>21%</td>      <td>--</td>       <td>-28%</td>    <td>-29%</td>    <td>-31%</td>    <td>-53%</td></tr>
-        <tr><th>non-greedy<br />regex</th> <td>60.2/s</td>       <td>328%</td>      <td>66%</td>     <td>38%</td>         <td>--</td>     <td>-2%</td>     <td>-4%</td>    <td>-35%</td></tr>
-        <tr><th>greedy<br />regex</th>     <td>61.3/s</td>       <td>336%</td>      <td>69%</td>     <td>40%</td>         <td>2%</td>      <td>--</td>     <td>-2%</td>    <td>-34%</td></tr>
-        <tr><th>naive<br />regex</th>      <td>62.9/s</td>       <td>347%</td>      <td>74%</td>     <td>44%</td>         <td>4%</td>      <td>3%</td>      <td>--</td>    <td>-32%</td></tr>
-        <tr><th>exact<br />match</th>      <td>92.6/s</td>       <td>558%</td>     <td>156%</td>    <td>112%</td>        <td>54%</td>     <td>51%</td>     <td>47%</td>      <td>--</td></tr>
-      </table>
-
-      <table>
-        <caption>bm-zmove</caption>
-          <tr><th>&nbsp;</th><th>Rate</th> <th>comp_regex</th> <th>sub_greedy</th> <th>substr</th>   <th>index</th>   <th>naive</th> <th>greedy</th> <th>non-greedy</th></tr>
-          <tr><th>comp_regex<br />Compiled Regex</th> <td>16.9/s</td>         <td>--</td>        <td>-4%</td>    <td>-4%</td>     <td>-5%</td>    <td>-70%</td>   <td>-71%</td>       <td>-71%</td></tr>
-          <tr><th>sub_greedy<br />greedy regex in sub</th> <td>17.6/s</td>         <td>4%</td>         <td>--</td>    <td>-1%</td>     <td>-1%</td>    <td>-69%</td>   <td>-70%</td>       <td>-70%</td></tr>
-          <tr><th>substr<br />substr() test</th>     <td>17.7/s</td>         <td>4%</td>         <td>1%</td>     <td>--</td>     <td>-1%</td>    <td>-69%</td>   <td>-69%</td>       <td>-70%</td></tr>
-          <tr><th>index<br />index()-based</th>      <td>17.8/s</td>         <td>5%</td>         <td>1%</td>     <td>1%</td>      <td>--</td>    <td>-69%</td>   <td>-69%</td>       <td>-70%</td></tr>
-          <tr><th>naive<br />regex</th>      <td>56.5/s</td>       <td>233%</td>       <td>221%</td>   <td>220%</td>    <td>218%</td>      <td>--</td>    <td>-2%</td>        <td>-3%</td></tr>
-          <tr><th>greedy<br />regex</th>     <td>57.8/s</td>       <td>241%</td>       <td>229%</td>   <td>227%</td>    <td>225%</td>      <td>2%</td>     <td>--</td>        <td>-1%</td></tr>
-          <tr><th>non-greedy<br />regex</th> <td>58.5/s</td>       <td>245%</td>       <td>233%</td>   <td>231%</td>    <td>229%</td>      <td>4%</td>     <td>1%</td>         <td>--</td></tr>
-      </table>
-
-      <table>
-        <caption>bm-double_zmove</caption>
-        <tr><th>&nbsp;</th><th>Rate</th> <th>naive</th> <th>comp_regex</th> <th>substr</th> <th>index</th> <th>comp_staged</th> <th>staged</th> <th>sub_greedy</th> <th>scoped</th> <th>non-greedy</th> <th>greedy</th></tr>
-        <tr><th>naive<br />regex</th>       <td>84.0/s</td>    <td>--</td>        <td>-3%</td>    <td>-4%</td>   <td>-5%</td>         <td>-7%</td>    <td>-8%</td>       <td>-13%</td>   <td>-13%</td>       <td>-14%</td>   <td>-18%</td></tr>
-        <tr><th>comp_regex<br />Compiled Regex</th>  <td>87.0/s</td>    <td>3%</td>         <td>--</td>    <td>-1%</td>   <td>-2%</td>         <td>-3%</td>    <td>-5%</td>       <td>-10%</td>   <td>-10%</td>       <td>-11%</td>   <td>-16%</td></tr>
-        <tr><th>substr<br />substr() test</th>      <td>87.7/s</td>    <td>4%</td>         <td>1%</td>     <td>--</td>   <td>-1%</td>         <td>-3%</td>    <td>-4%</td>        <td>-9%</td>    <td>-9%</td>       <td>-11%</td>   <td>-15%</td></tr>
-        <tr><th>index<br />index()-based</th>       <td>88.5/s</td>    <td>5%</td>         <td>2%</td>     <td>1%</td>    <td>--</td>         <td>-2%</td>    <td>-4%</td>        <td>-8%</td>    <td>-8%</td>       <td>-10%</td>   <td>-14%</td></tr>
-        <tr><th>comp_staged<br />state machine compiled regex</th> <td>90.1/s</td>    <td>7%</td>         <td>4%</td>     <td>3%</td>    <td>2%</td>          <td>--</td>    <td>-2%</td>        <td>-6%</td>    <td>-6%</td>        <td>-8%</td>   <td>-13%</td></tr>
-        <tr><th>staged<br />small state machine</th>      <td>91.7/s</td>    <td>9%</td>         <td>6%</td>     <td>5%</td>    <td>4%</td>          <td>2%</td>     <td>--</td>        <td>-5%</td>    <td>-5%</td>        <td>-6%</td>   <td>-11%</td></tr>
-        <tr><th>sub_greedy<br />greedy regex in sub</th>  <td>96.2/s</td>   <td>14%</td>        <td>11%</td>    <td>10%</td>    <td>9%</td>          <td>7%</td>     <td>5%</td>         <td>--</td>    <td>-0%</td>        <td>-2%</td>    <td>-7%</td></tr>
-        <tr><th>scoped<br />scoping micro-test</th>      <td>96.2/s</td>   <td>14%</td>        <td>11%</td>    <td>10%</td>    <td>9%</td>          <td>7%</td>     <td>5%</td>         <td>0%</td>     <td>--</td>        <td>-2%</td>    <td>-7%</td></tr>
-        <tr><th>non-greedy<br />regex</th>  <td>98.0/s</td>   <td>17%</td>        <td>13%</td>    <td>12%</td>   <td>11%</td>          <td>9%</td>     <td>7%</td>         <td>2%</td>     <td>2%</td>         <td>--</td>    <td>-5%</td></tr>
-        <tr><th>greedy<br />regex</th>       <td>103/s</td>   <td>23%</td>        <td>19%</td>    <td>18%</td>   <td>16%</td>         <td>14%</td>    <td>12%</td>         <td>7%</td>     <td>7%</td>         <td>5%</td>     <td>--</td></tr>
-      </table>
-
-      <table>
-        <caption>bm-G1</caption>
-        <tr><th>&nbsp;</th> <th>Rate</th> <th>two regex</th> <th>comp_regex</th> <th>sub_greedy</th> <th>substr</th> <th>index</th> <th>argstr</th> <th>args</th> <th>scoped</th> <th>naive</th> <th>non-greedy</th> <th>greedy</th> <th>greedy2</th></tr>
-        <tr><th>two regex<br />two regexes anded</th>  <td>14.0/s</td>        <td>--</td>       <td>-12%</td>       <td>-17%</td>   <td>-24%</td>  <td>-28%</td>   <td>-42%</td> <td>-43%</td>   <td>-72%</td>  <td>-72%</td>       <td>-73%</td>   <td>-73%</td>    <td>-75%</td></tr>
-        <tr><th>comp_regex<br />Compiled Regex</th> <td>16.0/s</td>       <td>14%</td>         <td>--</td>        <td>-6%</td>   <td>-14%</td>  <td>-18%</td>   <td>-34%</td> <td>-35%</td>   <td>-68%</td>  <td>-68%</td>       <td>-69%</td>   <td>-69%</td>    <td>-71%</td></tr>
-        <tr><th>sub_greedy<br />greedy regex in sub</th> <td>17.0/s</td>       <td>21%</td>         <td>6%</td>         <td>--</td>    <td>-9%</td>  <td>-13%</td>   <td>-30%</td> <td>-31%</td>   <td>-66%</td>  <td>-66%</td>       <td>-67%</td>   <td>-67%</td>    <td>-69%</td></tr>
-        <tr><th>substr<br />substr() test</th>     <td>18.6/s</td>       <td>32%</td>        <td>16%</td>         <td>9%</td>     <td>--</td>   <td>-5%</td>   <td>-23%</td> <td>-24%</td>   <td>-63%</td>  <td>-63%</td>       <td>-64%</td>   <td>-64%</td>    <td>-67%</td></tr>
-        <tr><th>index<br />index()-based</th>      <td>19.5/s</td>       <td>39%</td>        <td>22%</td>        <td>15%</td>     <td>5%</td>    <td>--</td>   <td>-20%</td> <td>-21%</td>   <td>-61%</td>  <td>-61%</td>       <td>-62%</td>   <td>-63%</td>    <td>-65%</td></tr>
-        <tr><th>argstr<br />extract/test args(string)</th>     <td>24.3/s</td>       <td>73%</td>        <td>51%</td>        <td>43%</td>    <td>31%</td>   <td>25%</td>     <td>--</td>  <td>-1%</td>   <td>-52%</td>  <td>-52%</td>       <td>-53%</td>   <td>-53%</td>    <td>-56%</td></tr>
-        <tr><th>args<br />extract/test args(number)</th>       <td>24.6/s</td>       <td>75%</td>        <td>53%</td>        <td>44%</td>    <td>32%</td>   <td>26%</td>     <td>1%</td>   <td>--</td>   <td>-51%</td>  <td>-51%</td>       <td>-52%</td>   <td>-53%</td>    <td>-56%</td></tr>
-        <tr><th>scoped<br />scoping micro-test</th>     <td>50.3/s</td>      <td>258%</td>       <td>214%</td>       <td>195%</td>   <td>170%</td>  <td>158%</td>   <td>107%</td> <td>105%</td>     <td>--</td>   <td>-1%</td>        <td>-3%</td>    <td>-4%</td>    <td>-10%</td></tr>
-        <tr><th>naive<br />regex</th>      <td>50.5/s</td>      <td>260%</td>       <td>215%</td>       <td>197%</td>   <td>172%</td>  <td>159%</td>   <td>108%</td> <td>106%</td>     <td>1%</td>    <td>--</td>        <td>-2%</td>    <td>-3%</td>     <td>-9%</td></tr>
-        <tr><th>non-greedy<br />regex</th> <td>51.5/s</td>      <td>267%</td>       <td>222%</td>       <td>203%</td>   <td>177%</td>  <td>164%</td>   <td>112%</td> <td>110%</td>     <td>3%</td>    <td>2%</td>         <td>--</td>    <td>-1%</td>     <td>-7%</td></tr>
-        <tr><th>greedy<br />regex</th>     <td>52.1/s</td>      <td>271%</td>       <td>225%</td>       <td>206%</td>   <td>180%</td>  <td>167%</td>   <td>115%</td> <td>112%</td>     <td>4%</td>    <td>3%</td>         <td>1%</td>     <td>--</td>     <td>-6%</td></tr>
-        <tr><th>greedy2<br />tr/// optimization</th>    <td>55.6/s</td>      <td>296%</td>       <td>247%</td>       <td>227%</td>   <td>199%</td>  <td>185%</td>   <td>129%</td> <td>126%</td>    <td>11%</td>   <td>10%</td>         <td>8%</td>     <td>7%</td>      <td>--</td></tr>
-      </table>
-
 
       <h3>Conclusion</h3>
 
