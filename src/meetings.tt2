@@ -22,17 +22,16 @@
     <h2 class="subhead">Upcoming Meetings</h2>
 
     <dl>
-        <dt>January 28, 2019</dt>
-        <dd><em>Looking back to 2018, what I learnt from XS and Dist::Zilla</em>
-           with Nicolas Rochelemagne at cPanel</dd>
-
         <dt>February 21, 2019</dt>
-        <dd>TBD at Hostgator</dd>
+        <dd><em>Automating multiserver workflows with Ansible</em> with JD Lightsey at Hostgator</dd>
 
         <dt>March 14, 2019</dt>
         <dd><em>Fundamentals of Dancer-DBIC-TT</em> with Ruth Holloway at cPanel</dd>
 
         <dt>April 11, 2019</dt>
         <dd>TBD at Hostgator</dd>
+
+        <dt>May 9, 2019</dt>
+        <dd>TBD at cPanel</dd>
     </dl>
 [% END -%]

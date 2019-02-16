@@ -7,9 +7,8 @@
       <p>Meeting notes through September are on-line.</p>
       <h1 class="heading">Next Meeting</h1>
       <dl>
-        <dt>January 28, 2019</dt>
-        <dd><em>Looking back to 2018, what I learnt from XS and Dist::Zilla</em>
-           with Nicolas Rochelemagne at cPanel</dd>
+        <dt>February 21, 2019</dt>
+        <dd><a href="announce_meeting.html" target="_blank" rel="noopener"><em>Automating multiserver workflows with Ansible</em> with JD Lightsey at Hostgator</a></dd>
       </dl>
     </div>
 
