@@ -4,12 +4,8 @@
 %]
     <h1 class="subhead">Monthly Meetings</h1>
 
-    <p>For February, we are doing something different. Instead of the second Thursday of the month,
-    our meeting will be on Thursday, February 21 (instead of Valentine's Day).
-    By popular demand, we are also going to start the meeting at 6pm, instead of 7pm.</p>
-
-    <p>We meet the second Thursday of each month, starting around 7pm and ending
-      around 9pm. Houston.pm meetings have split into <a
+    <p>We meet the second Thursday of each month, starting around 6pm and ending
+      around 8pm. Houston.pm meetings have split into <a
       href="technical_meetings.html">technical meetings</a> and
       <a href="social_meetings.html">social meetings</a>.</p>
 
@@ -22,16 +18,16 @@
     <h2 class="subhead">Upcoming Meetings</h2>
 
     <dl>
-        <dt>February 21, 2019</dt>
-        <dd><em>Automating multiserver workflows with Ansible</em> with JD Lightsey at Hostgator</dd>
-
         <dt>March 14, 2019</dt>
-        <dd><em>Fundamentals of Dancer-DBIC-TT</em> with Ruth Holloway at cPanel</dd>
+        <dd><em>Subtle Magic: Moving to Dancer2/DBIx::Class/TT</em> with Ruth Holloway at cPanel</dd>
 
         <dt>April 11, 2019</dt>
         <dd>TBD at Hostgator</dd>
 
         <dt>May 9, 2019</dt>
         <dd>TBD at cPanel</dd>
+
+        <dt>June 13, 2019</dt>
+        <dd>TBD at Hostgator</dd>
     </dl>
 [% END -%]

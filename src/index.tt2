@@ -7,14 +7,10 @@
       <p>Meeting notes through September are on-line.</p>
       <h1 class="heading">Next Meeting</h1>
       <dl>
-        <dt>February 21, 2019</dt>
-        <dd><a href="announce_meeting.html" target="_blank" rel="noopener"><em>Automating multiserver workflows with Ansible</em> with JD Lightsey at Hostgator</a></dd>
+        <dt>March 14, 2019</dt>
+        <dd><a href="announce_meeting.html" target="_blank" rel="noopener"><em>Subtle Magic: Moving to Dancer2/DBIx::Class/TT</em> with Ruth Holloway at cPanel</a></dd>
       </dl>
     </div>
-
-    <p style="font-size: 125%">For February, we are doing something different. Instead of the second Thursday of the month,
-    our meeting will be on Thursday, February 21 (instead of Valentine's Day).
-    By popular demand, we are also going to start the meeting at 6pm, instead of 7pm.</p>
 
     <p>This is the branch of the <a href="http://www.pm.org/">Perl Mongers</a>
     meeting in Houston, Texas. Perl Mongers is a loose association of
@@ -22,18 +18,18 @@
     programming language, as well as projects and modules written in Perl.</p>
 
     <p>We normally meet on the second Thursday of each month. The meeting officially
-      starts at 7pm and runs until around 9pm. Meetings are open to the public.
+      starts at 6pm and runs until around 8pm. Meetings are open to the public.
       We don't have any dues, <em>official</em> membership, or anything like
       that. If you are interested in Perl, you are welcome to come.</p>
 
     <p>For some technical meetings, we meet in the lobby of
       <a href="https://www.google.com/maps/place/2550+N+Loop+W,+Houston,+TX+77092/@29.8081429,-95.4459714,17z/data=!3m1!4b1!4m2!3m1!1s0x8640c6fa4d91297b:0x988e2dedf77ce147">2550 North Loop West, Suite 4006, Houston, Texas 77092</a>,
-      starting sometime between 6:30pm and 7pm. Once everyone arrives, we
+      starting sometime between 5:30pm and 6pm. Once everyone arrives, we
       head upstairs to a conference room for the meeting.</p>
 
     <p>For other technical meetings, we meet in the lobby of
       <a href="https://maps.google.com/maps?q=HostGator,+Houston&fb=1&gl=us&hq=HostGator,&hnear=0x8640b8b4488d8501:0xca0d02def365053b,Houston,+TX&cid=2141572779937723859&t=h&z=16&iwloc=A">5005 Mitchelldale St #100</a>,
-      starting sometime between 6:30pm and 7pm. Once everyone arrives, we
+      starting sometime between 5:30pm and 6pm. Once everyone arrives, we
       head inside for the meeting.</p>
 
     <p>We also have social meetings at some nearby restaurant or pub in some

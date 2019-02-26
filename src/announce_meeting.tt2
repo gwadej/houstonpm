@@ -4,17 +4,22 @@
 %]
     <h1 class="subhead">Next Meeting</h1>
 
-[% INCLUDE hostgator month="February" date="February 21" %]
+[% INCLUDE cpanel month="March" date="March 14" %]
 
-    <p>This month, J.D. Lightsey will present <em>Automating multiserver
-    workflows with Ansible</em>.</p>
+    <p>This month, Ruth Holloway will present <em>Subtle Magic: Moving to Dancer2/DBIx::Class/TT</em>.</p>
 
-    <p>This talk will discuss using Ansible as a
-    multiserver workflow automation system. He'll explain why he chose Ansible
-    for this purpose and compare its strengths and weaknesses with some of the
-    alternatives. We'll walk through several Ansible playbooks to show how
-    complex build- test-deploy workflows can be iteratively constructed from
-    much simpler parts.</p>
+<p>"Read the documentation", we're told…but there's always more to learn. 
+When I started working with Dancer2, DBIx::Class, and Template Toolkit 
+last fall, I'd seen the basics, but I found out /very/ quickly that 
+there's much more to learn. The capabilities of this stack can influence 
+application design from the ground up–database tables, all the way to 
+the final frameworks you might choose to use on the frontend, and not 
+all of those repercussions are immediately clear from merely reading the 
+documentation!</p>
+
+<p>In this talk, we'll learn about some of the strengths of these modules 
+and demonstrate how their capabilities can be leveraged to help you work 
+faster and write great web-based applications.</p>
 [% END -%]
 
 [% BLOCK gather %]
