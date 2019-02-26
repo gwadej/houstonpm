@@ -12,6 +12,7 @@ use JSON::XS;
 use XML::Atom::SimpleFeed;
 use File::Slurp;
 use POSIX qw(strftime);
+use Text::MultiMarkdown;
 
 my @months = ( '', 'January', 'February', 'March', 'April', 'May', 'June',
     'July', 'August', 'September', 'October', 'November', 'December' );
@@ -46,7 +47,7 @@ my %vars = (
     attendees => $attendees+0,
     abstract => $abstract.'',
     sponsor => $sponsor.'',
-    writeup => [ split /\n\n/, $write_up ],
+    writeup => $write_up,
 );
 
 write_file( $savefile, encode_json \%vars );
@@ -115,6 +116,12 @@ sub make_talk_dir
     my $dir = "$talksdir/$vars->{year}talks/$vars->{yr}$vars->{mon}Talk";
     die "Talk directory already exists.\n" if -e $dir;
 
+    my $m = Text::MultiMarkdown->new(
+        use_metadata => 1,
+        document_format => '',
+        use_wikilinks => 0,
+    );
+
     mkpath( $dir );
     open my $fh, '>', "$dir/index.tt2" or die "Unable to create new talk writeup.\n";
     print {$fh} <<"EOF";
@@ -124,12 +131,9 @@ sub make_talk_dir
 %]
       <h2 class="subhead">$vars->{title}</h2>
 EOF
-    foreach my $p (@{$vars->{writeup}})
-    {
-        print {$fh} <<"EOP";
-      <p>$p</p>
-EOP
-    }
+
+    print {$fh} $m->markdown( $vars->{writeup} );
+
     print {$fh} <<"EOT";
       <p>We had $vars->{attendees} people attending this month. As always, we'd like to thank
         $vars->{sponsor} for providing the meeting space and food for the group.</p>
