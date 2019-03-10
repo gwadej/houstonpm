@@ -1780,4 +1780,14 @@ He describes the testing and a new module to solve this problem.</abstract>
     </topic>
   </talk>
 
+  <talk num="1901">
+    <date>January 2019</date>
+    <topic href="/talks/2019talks/1901Talk/index.html">
+      <title>Looking back to 2018, what I learnt from XS and Dist::Zilla</title>
+      <presenter>Nicolas Rochelemagne</presenter>
+      <abstract>Nicolas Rochelemagne gave a little retrospective of 2018.
+He included a best of section and some lessons he learned concerning DistZilla and XS.</abstract>
+    </topic>
+  </talk>
+
 </talklist>

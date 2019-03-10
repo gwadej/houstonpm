@@ -1,0 +1,102 @@
+[% WRAPPER writeup_wrap.tt2
+    title='Summary of January 2019 Presentation'
+    year=2019
+%]
+      <h1>Looking back to 2018, what I learnt from XS and Dist::Zilla</h1>
+<p>Nicolas Rochelemagne was in town this month and presented some of the lessons he learned last year.
+He also gave some context, by covering some <em>best of 2018</em> topics.</p>
+
+<h2 id="travisci">Travis CI</h2>
+
+<p>Nicolas started by talking about the Travis <abbr title="Continuous Integration">CI</abbr> server.
+He has been using it to run tests on multiple Perl versions to verify modules he is working on.
+Travis is driven by a configuration in the file <code>.travis.yml</code> in a module's repository.
+In this configuration, you can exclude branches while you work on them, and only build the main branches.
+You can also set environment variables to drive particular behavior in the test.
+One powerful feature that Nicolas made use of was specifying the Perl versions he wanted to test.
+This allowed him to ensure that the modules under test continued to work on older Perls.
+There is also an ability to run a script for the build, which allows you to use arbitrary functionality for your test.</p>
+
+<p>He did run into a problem with <code>Dist::Zilla</code>.
+It has a large dependency list that was installed for each test.
+Rather continue to running the tests incredibly slowly, he modified the <code>dist.ini</code> file to keep the <code>Makefile.PL</code> file around.
+That required copying the file out of the build directory after a build, and to commit that file as part of the change.
+It also meant that using the module did not require the use of <code>dzil</code>, you could install as a regular Perl module.
+This took the builds from 4 minutes per Perl version down to 30 seconds per.</p>
+
+<h2 id="dist::zilla">Dist::Zilla</h2>
+
+<p>Nicolas talked about 3 <code>Dist::Zilla</code> features that people may not be aware of.</p>
+
+<dl>
+<dt><code>[ReadmeAnyPod]</code></dt>
+<dd>
+Causes DistZilla to extract the <code>README</code> file from <abbr title="Plain Old Documentation">POD</abbr> in modules.
+</dd>
+<dt><code>[Test::Synopsis]</code></dt>
+<dd>
+Extract the synopsis code from the <abbr title="Plain Old Documentation">POD</abbr> docs and execute it.
+</dd>
+<dt><code>[InsertExample]</code></dt>
+<dd>
+Copies example code from a specified file into the <abbr title="Plain Old Documentation">POD</abbr> docs.
+</dd>
+</dl>
+
+<h2 id="bestof2018">Best of 2018</h2>
+
+<p>Nicolas went over the NICEPERL list of modules chosen as the best of 2018.</p>
+
+<ol start="10" reversed>
+<li><code>Mojolicious::Plugin::JSONAPI</code> - Generates Rails-like routes.</li>
+<li><code>HTML:::Dom</code></li>
+<li><code>Dist::Zilla::Plugoing::ContriutorCovent</code></li>
+<li><code>Data::Password::zxcvbn</code> - Dropbox's password strength estimator</li>
+<li><code>CPAN::Audit</code> - audits for known vulnerabilities (kritika.io)</li>
+<li><code>Variable::Declaration</code> - Declare with type constraints</li>
+<li><code>URI::Fast</code></li>
+<li><code>Mojolicious::Plugin::Status</code> - Get a status UI for your servers</li>
+<li><code>Firefox::Marionette</code> - Automate Firefox using the Marionette protocol</li>
+<li><code>Perl::LanguageServer</code></li>
+</ol>
+
+<p>Some of the most voted distributions of the year:</p>
+
+<ul>
+<li><a href="https://metacpan.org/pod/Coro" target="_blank" rel="noopener"><code>Coro</code></a></li>
+<li><a href="https://metacpan.org/pod/Moo" target="_blank" rel="noopener"><code>Moo</code></a></li>
+<li><a href="https://metacpan.org/pod/Yancy" target="_blank" rel="noopener"><code>Yancy</code></a></li>
+<li><a href="https://metacpan.org/pod/Minion" target="_blank" rel="noopener"><code>Minion</code></a></li>
+<li><a href="https://metacpan.org/pod/Path::Tiny" target="_blank" rel="noopener"><code>Path::Tiny</code></a></li>
+<li><a href="https://metacpan.org/pod/DBIx::Class" target="_blank" rel="noopener"><code>DBIx::Class</code></a></li>
+<li><a href="https://metacpan.org/pod/Task::Kensho" target="_blank" rel="noopener"><code>Task::Kensho</code></a></li>
+<li><a href="https://metacpan.org/pod/Moose" target="_blank" rel="noopener"><code>Moose</code></a></li>
+<li>perl (5.28)</li>
+<li><a href="https://metacpan.org/pod/Mojolicious" target="_blank" rel="noopener"><code>Mojolicious</code></a></li>
+</ul>
+
+<h2 id="xstricks">XS Tricks</h2>
+
+<p>Nicolas showed a few XS tricks from some of the code he has been working on lately.</p>
+
+<ul>
+<li><code>newCONSTSUB(stash, "NAME", value);</code>
+<ul>
+<li>to define a constant</li>
+</ul></li>
+<li><code>gv_stashpvn(Module, modulename_len, TRUE)</code>
+<ul>
+<li>retrieve a pointer to a stash for a module</li>
+</ul></li>
+<li>The <code>BOOT:</code> section is run at load time</li>
+<li>You can create aliases for a C function created with XS
+<ul>
+<li>Each alias has its own index, so you can tell which Perl name called the XS code</li>
+<li>The index is available through the ix variable</li>
+</ul></li>
+</ul>
+
+<p>If you are going to work in XS, make certain that you are very familiar with C macros.</p>
+      <p>We had 6 people attending this month. As always, we'd like to thank
+        cPanel, Inc. for providing the meeting space and food for the group.</p>
+[% END -%]
