@@ -9,6 +9,7 @@ use Template;
 use IO::Prompter;
 use JSON::XS;
 use XML::Atom::SimpleFeed;
+use XML::LibXML;
 use File::Slurp;
 use POSIX qw(strftime);
 
@@ -35,6 +36,11 @@ foreach my $entry ( @{$entries} )
     $feed->add_entry( %{ $entry } );
 }
 
-write_file( 'atom.xml', $feed->as_string );
+write_file( 'atom.xml', pretty_xml( $feed->as_string ));
 exit;
 
+sub pretty_xml
+{
+    my ($xml) = @_;
+    return XML::LibXML->load_xml( string => $xml )->toString(1);
+}
