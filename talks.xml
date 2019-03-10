@@ -1760,4 +1760,14 @@ short text strings.</abstract>
     </topic>
   </talk>
 
+  <talk num="1810">
+    <date>October 2018</date>
+    <topic href="/talks/2018talks/1810Talk/index.html">
+      <title>Monolithic vs Microservice: Can Davids Really Take Down Goliath?</title>
+      <presenter>Robert Stone</presenter>
+      <abstract>Robert Stone presented a comparison between the monolithic style of architecture and a microservices style.
+He highlighted the benefits of the microservices style to show the advantages of a change.</abstract>
+    </topic>
+  </talk>
+
 </talklist>
