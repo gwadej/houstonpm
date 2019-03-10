@@ -194,10 +194,10 @@ BEGIN {
         my $output;
         do {
             my $tmpfile = get_tempfile_name( $count++ );
-            write_file( $tmpfile, "# $prompt" ) unless -f $tmpfile;
+            write_file( $tmpfile, "<!-- $prompt -->" ) unless -f $tmpfile;
             system 'vim', '-i', 'NONE', $tmpfile;
             $output = read_file( $tmpfile ) if -s $tmpfile ne 2+length $prompt;
-            $output =~ s/^#[^\n]*\n//smg;
+            $output =~ s{^<!--.*?-->\n}{}smg;
         } while( (0 == length $output) && prompt 'Content is empty, retry?', '-y' );
 
         return $output;
