@@ -9,6 +9,7 @@ use Template;
 use IO::Prompter;
 use JSON::XS;
 use XML::Atom::SimpleFeed;
+use XML::LibXML;
 use File::Slurp;
 use POSIX qw(strftime);
 
@@ -18,7 +19,7 @@ my ($day, $mon, $yr) = (localtime)[3,4,5];
 $yr += 1900;
 
 my $entries = [];
-$entries = decode_json scalar read_file $savefile if -f $savefile;
+$entries = JSON::XS->new->decode( scalar read_file $savefile ) if -f $savefile;
 
 my $now = strftime( '%Y-%m-%dT%H:%M:%SZ', gmtime );
 my $new_entry = {
@@ -32,7 +33,7 @@ my $new_entry = {
 
 unshift @{$entries}, $new_entry;
 
-write_file( $savefile, encode_json $entries );
+write_file( $savefile, JSON::XS->new->pretty(1)->encode( $entries ));
 
 my $feed = XML::Atom::SimpleFeed->new(
     id => qq[tag:houston.pm.org,2011-03:news],
@@ -49,10 +50,16 @@ foreach my $entry ( @{$entries} )
     $feed->add_entry( %{ $entry } );
 }
 
-write_file( 'atom.xml', $feed->as_string );
+write_file( 'atom.xml', pretty_xml( $feed->as_string ));
 remove_tempfiles();
 exit;
 
+
+sub pretty_xml
+{
+    my ($xml) = @_;
+    return XML::LibXML->load_xml( string => $xml )->toString(1);
+}
 
 sub get_categories {
     return
