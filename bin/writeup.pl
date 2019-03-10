@@ -130,7 +130,7 @@ sub make_talk_dir
     title='Summary of $vars->{monthname} $vars->{year} Presentation'
     year=$vars->{year}
 %]
-      <h2 class="subhead">$vars->{title}</h2>
+      <h1>$vars->{title}</h1>
 EOF
 
     print {$fh} $m->markdown( $vars->{writeup} );
