@@ -10,6 +10,7 @@ use Template;
 use IO::Prompter;
 use JSON::XS;
 use XML::Atom::SimpleFeed;
+use XML::LibXML;
 use File::Slurp;
 use POSIX qw(strftime);
 use Text::MultiMarkdown;
@@ -150,7 +151,7 @@ sub add_feed_entry
     my ($vars) = @_;
     my $entries = [];
     my $file = 'atom_entries.json';
-    $entries = decode_json scalar read_file $file if -f $file;
+    $entries = JSON::XS->new->decode( scalar read_file $file ) if -f $file;
     unshift @{$entries}, {
         title => qq[Notes for '$vars->{title}' posted.],
         link => qq[http://houston.pm.org/talks/$vars->{year}talks/$vars->{yr}$vars->{mon}Talk/index.html],
@@ -162,8 +163,7 @@ sub add_feed_entry
         category => 'technical meeting',
     };
     $entries = [ @{$entries}[0..19] ];
-    write_file( $file, encode_json $entries );
-
+    write_file( $file, JSON::XS->new->pretty(1)->encode( $entries ));
     my $feed = XML::Atom::SimpleFeed->new(
         id => qq[tag:houston.pm.org,2011-03:news],
         title => qq[Houston.pm: What's New],
@@ -179,8 +179,14 @@ sub add_feed_entry
         $feed->add_entry( %{ $entry } );
     }
 
-    write_file( 'atom.xml', $feed->as_string );
+    write_file( 'atom.xml', pretty_xml( $feed->as_string ) );
     return;
+}
+
+sub pretty_xml
+{
+    my ($xml) = @_;
+    return XML::LibXML->load_xml( string => $xml )->toString(1);
 }
 
 BEGIN {
