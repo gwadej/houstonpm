@@ -1770,4 +1770,14 @@ He highlighted the benefits of the microservices style to show the advantages of
     </topic>
   </talk>
 
+  <talk num="1811">
+    <date>November 2018</date>
+    <topic href="/talks/2018talks/1811Talk/index.html">
+      <title>Testing the untestable with Test::MockFile</title>
+      <presenter>Todd Rinaldo</presenter>
+      <abstract>Todd Rinaldo described the difficulty with testing file-level checks on a system administration tool.
+He describes the testing and a new module to solve this problem.</abstract>
+    </topic>
+  </talk>
+
 </talklist>

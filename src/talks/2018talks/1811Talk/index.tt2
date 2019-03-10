@@ -1,0 +1,61 @@
+[% WRAPPER writeup_wrap.tt2
+    title='Summary of November 2018 Presentation'
+    year=2018
+%]
+      <h1>Testing the untestable with Test::MockFile</h1>
+<p>Todd Rinaldo described one of the problems with testing cPanel's software.
+Unlike the projects most of us work on, cPanel is more a system administration tool.
+This means that it does more <abbr title="Operating System">OS</abbr>-level work than most people are used to.</p>
+
+<p>He began with a reference to the book <a href="https://www.amazon.com/Google-Tests-Software-James-Whittaker/dp/0321803027" target="_blank" rel="noopener">How Google Tests Software</a>
+He followed that up with an example of how you might mock <code>opendir</code>.
+He also showed another module that was close to what they needed: <code>Overload::FileCheck</code>.</p>
+
+<p>Eventually, they createdd <a href="https://metacpan.org/pod/Test::MockFile" target="_blank" rel="noopener">Test::MockFile</a>
+This module uses filehandles <em>tied</em> on the mocked file.
+In the process of working on the module, they found that tie is not as well-documented as one might hope.
+It turned out that mocking files was pretty easy, but directories were harder.</p>
+
+<p>When mocking low-level Perl functionality, there are two namespaces you should be aware of: <code>CORE</code> and <code>CORE::GLOBAL</code>.
+It turns out that you cannot override methods in the <code>CORE</code> namespace, but you can override the equivalent in <code>CORE::GLOBAL</code>.
+Also, because of the nature of these methods, you must do the redefinition in a <code>BEGIN</code> block.
+You must also take into account the prototype when doing the redefinition.</p>
+
+<p>As an example,</p>
+
+<pre><code>open( my $fh, '&gt;', 'foo' );
+
+BEGIN {
+    *CORE::GLOBL::open (*;$@) = sub {
+        die;
+    }
+}
+
+open( my $fh, '&gt;', 'bar' );
+
+exit;
+</code></pre>
+
+<p>If you want to transfer control to the old routine without a new stackframe, remember to use <code>goto \&amp;CORE::open;</code> (naming the old method).
+Interestingly, this did not work in Perl 5.14 or older.
+The only choice was to call the old routine.</p>
+
+<p>The hardest part of this exercise was dealing with edge cases.</p>
+
+<h2 id="alternativeapproaches">Alternative Approaches</h2>
+
+<p>Todd also suggested a few alternative approaches, that might work in some situations.</p>
+
+<ul>
+<li><code>Overload::FileCheck</code> - If all you need is mocking file checks</li>
+<li><code>tempdir()</code>, remake all necessary files and directories relative to there</li>
+<li>JD suggested <em>bindmounting</em> for mount namespacing</li>
+</ul>
+
+<h2 id="othersuggestions">Other Suggestions</h2>
+
+<p>Todd recommended <code>Devel::Trace</code> to understanding how Perl is seeing your code.
+He also recommended <code>Test::Spec</code> for a declarative style of test writing.</p>
+      <p>We had 8 people attending this month. As always, we'd like to thank
+        cPanel, Inc. for providing the meeting space and food for the group.</p>
+[% END -%]
