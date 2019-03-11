@@ -21,7 +21,8 @@ TALKSUMMARIES=${OUTDIR}/talks/mostrecent.html \
               ${OUTDIR}/talks/2015talks/index.html \
               ${OUTDIR}/talks/2016talks/index.html \
               ${OUTDIR}/talks/2017talks/index.html \
-              ${OUTDIR}/talks/2018talks/index.html
+              ${OUTDIR}/talks/2018talks/index.html \
+              ${OUTDIR}/talks/2019talks/index.html
 
 
 site: base ${TALKSUMMARIES}
@@ -89,6 +90,9 @@ ${OUTDIR}/talks/2017talks/index.html: talks.xml yeartalks.xsl templates/yeartalk
 
 ${OUTDIR}/talks/2018talks/index.html: talks.xml yeartalks.xsl templates/yeartalks.tt2
 	bin/talks.pl --style=yeartalks.xsl --template=yeartalks.tt2 --define year=2018 talks.xml > $@
+
+${OUTDIR}/talks/2019talks/index.html: talks.xml yeartalks.xsl templates/yeartalks.tt2
+	bin/talks.pl --style=yeartalks.xsl --template=yeartalks.tt2 --define year=2019 talks.xml > $@
 
 convert:
 	ttree --define end_year=2018 -f _ttreerc
