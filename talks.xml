@@ -1790,4 +1790,13 @@ He included a best of section and some lessons he learned concerning DistZilla a
     </topic>
   </talk>
 
+  <talk num="1902">
+    <date>February 2019</date>
+    <topic href="/talks/2019talks/1902Talk/index.html">
+      <title>Automating multi-server workflows with Ansible</title>
+      <presenter>J. D. Lightsey</presenter>
+      <abstract>J. D. Lightsey describes how he has used Ansible as a workflow system to automate processes for some personal servers.</abstract>
+    </topic>
+  </talk>
+
 </talklist>

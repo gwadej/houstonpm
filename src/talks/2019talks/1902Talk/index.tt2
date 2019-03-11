@@ -1,0 +1,115 @@
+[% WRAPPER writeup_wrap.tt2
+    title='Summary of February 2019 Presentation'
+    year=2019
+%]
+      <h1>Automating multi-server workflows with Ansible</h1>
+<p>J. D. Lightsey was looking for a workflow system to perform a set of tasks on different servers.
+In the process, he found that actual workflow systems required extra servers or features that he did not need.</p>
+
+<p>There are a number of configuration management tools that can perform a similar set of tasks.
+The long-standing tools in this space include CFEngine, Chef, and Puppet.
+Ansible is another similar tool.</p>
+
+<p>He showed an example of a Puppet configuration.
+He also showed a Chef recipe, which is designed with a more programmatic structure.</p>
+
+<p>The general approach involves having the tool collect a set of <em>facts</em>.
+The tool then checks all of the managed servers and makes changes if the definition doesn't match the determined facts.
+Both Puppet and Chef depend on a central server to control the process and runs an agent on each server to manage it.
+Ansible does not have a central server and only requires <abbr title="Secure SHell">SSH</abbr> and a Python interpreter on the target.</p>
+
+<h2 id="workflowsystem">Workflow System</h2>
+
+<p>He uses Ansible scripts running in Jenkins in order to simulate the workflow system he actually wanted.</p>
+
+<p><abbr title="Amazon Web Services">AWS</abbr> has a simple workflow service.
+OpenStack supports a system called Mistral which would also work.
+Mistral is the least well-developed part of OpenStack at the moment.
+It is configured with an <abbr title="YAML Ain't Markup Language">YAML</abbr> syntax.
+Unfortunately, it can't be set up client side.
+It requires all of OpenStack in order to run.
+In his work environment, no OpenStack services had it installed.</p>
+
+<h2 id="ansible">Ansible</h2>
+
+<p>Ansible configurations are called <em>playbooks</em>.
+A playbook is a <abbr title="YAML Ain't Markup Language">YAML</abbr> file.
+Each playbook contains <em>plays</em> that are attached to <em>hosts</em>.</p>
+
+<p>Individual actions don't have to reach out to a machine.
+An action can do a calculation or set traits.</p>
+
+<p>If the action will affect a host, it goes to the machine to get facts/traits from the server.
+A response of <em>ok</em> means that that machine was already in the correct state for that action.
+If it was not in the correct state, the response will be <em>changed</em>.
+You can tell the tool to run a particular play from a playbook.</p>
+
+<p>The Ansible docs do a good job of describing what tasks do and explaining their arguments.
+The docs almost never describe what comes back from the task.
+Most of the time, the output appears to be a little information from Ansible and then a dump of the output from whatever command was run.</p>
+
+<p>The plays support register variables that can capture the output of commands run by the tasks.
+You can extract data from the variable and write it to help debug.</p>
+
+<p>The whole system is Python under the covers.
+But, Ansible uses their own templating language (Jinja) for scripts.
+This supports breaking data down into variables that using a filter expression.
+Since Python is a little more typed than other dynamic languages, it may be necessary to explicitly concert strings to numbers in some cases.
+Jinja templating can also be used to write <abbr title="YAML Ain't Markup Language">YAML</abbr> directly into the configuration.
+This means you need to be careful, because you can break the playbook itself if you write out invalid <abbr title="YAML Ain't Markup Language">YAML</abbr>.</p>
+
+<h3 id="organizingplaybooks">Organizing Playbooks</h3>
+
+<p>There is a <code>no_log</code> option that reduces noise dramatically, but it also prevents reporting of errors.
+The variables are transient state, so you can do a lot of cleanup by breaking output into intermediate variables.
+Facts are more persistent than variables, because they are attached to the host.
+Some facts have important meanings, so you should be aware of what facts you are changing.</p>
+
+<p>A <em>Role</em> describes the role that a particular server is supposed to play in the system.
+It turns out that roles can contain functionality as well, so some people use them sort of like modules.
+Most of the work is done by tasks or handlers.
+A handler is executed with state of a host changes.</p>
+
+<p>It is useful to <em>chunk</em> machines that all act similarly.
+This allows affecting similar machines as a group.
+You can add host variables to override certain facts.</p>
+
+<p>Loops in the system are implemented with a list of tasks.
+There is a batch concept, but it is different than the loop.</p>
+
+<h2 id="atwork">At Work</h2>
+
+<p>J. D. used this system to set up sandboxes at work.
+He has a playbook for creating a sandbox.
+He includes separate task lists as a way to factor the work into smaller pieces.
+The <code>add_host</code> command can add a new host to Ansible's list.
+If it exists it will update to match the configuration in Ansible.</p>
+
+<p>He pointed out that the <code>debian-minimal</code> distribution does not contain Python.
+You need to install that separately before you can use Ansible.</p>
+
+<p>For performance, it is useful to make long-running asynchronous tasks that can run in parallel.
+You can wait for them to complete later in the playbook.</p>
+
+<p>He set up Jenkins to run the scripts to build <abbr title="Virtual Machine">VM</abbr>s.
+Jenkins does have an AnsiblePlaybook module, but the default installation had an out-of-date Ansible.</p>
+
+<h3 id="asynchronoustasks">Asynchronous Tasks</h3>
+
+<p>It's important to modify the sudoers configuration on the targets not to require tty if you want a pipeline to run.
+Setting <code>ansible_ssh_pipeline</code> to <code>True</code> will allow a Python process on the other side to run a task asynchronously.
+All commands are run through an SSH tunnel to the target machine.
+You should start an long running stuff as early as you can in the play.
+At the end of the play, you then wait for those tasks to complete.</p>
+
+<p>Ansible's error handling is a bit odd.</p>
+
+<h3 id="exampleplaybooks">Example Playbooks</h3>
+
+<p>After the explanation, J. D. walked through a number of Ansible playbooks to show how they work.
+None of these playbooks were designed to do anything complicated, they were designed to show individual pieces of functionality.</p>
+
+<p>The option <code>gather_facts</code> can be set to <code>False</code> to make the play run, regardless of the state of the host.</p>
+      <p>We had 10 people attending this month. As always, we'd like to thank
+        Hostgator, LLC for providing the meeting space and food for the group.</p>
+[% END -%]
