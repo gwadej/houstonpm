@@ -19,7 +19,6 @@
      <li class="head">External Resources</li>
      <li><a href="http://padre.perlide.org/" title="perl editor">Perl IDE</a></li>
      <li><a href="http://blogs.perl.org/">Perl Blogs</a></li>
-     <li><a href="http://ironman.enlightenedperl.org/">Planet Perl Iron Man</a></li>
      <li><a href="http://www.perl.com/pub/2000/01/10PerlMyths.html">Ten Perl
             Myths</a></li>
      <li><a href="http://www.perlmonks.org/">The Perl Monastery</a></li>
@@ -28,11 +27,8 @@
      <li><a href="http://www.perl.org/">The Perl Directory</a></li>
      <li><a href="http://www.perl.com/">Perl.com</a></li>
      <li><a href="http://perlmaven.com/">Perl Maven</a></li>
-     <li><a href="http://theperlhub.com/">The Perl Hub</a></li>
      <li class="head">News</li>
      <li><a href="http://perlbuzz.com/">Perl Buzz</a></li>
-     <li><a href="http://perlbuzz.com/mechanix/">Mechanix</a></li>
-     <li><a href="http://perlnews.org/">Perl News</a></li>
      <li><a href="http://perlsphere.net/">Perlsphere Aggregated Perl news</a></li>
      <li><a href="http://perlweekly.com/">Perl Weekly news</a></li>
      <li class="head">Tutorials</li>
