@@ -19,7 +19,7 @@
 
     <dl>
         <dt>March 14, 2019</dt>
-        <dd>TBD at cPanel</dd>
+        <dd><code>make</code><em>-ing a Static Website</em> with G. Wade Johnson at cPanel</dd>
 
         <dt>April 11, 2019</dt>
         <dd><em>Subtle Magic: Moving to Dancer2/DBIx::Class/TT</em> with Ruth Holloway at Hostgator</dd>
