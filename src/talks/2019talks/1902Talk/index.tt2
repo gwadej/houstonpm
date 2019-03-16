@@ -111,5 +111,5 @@ None of these playbooks were designed to do anything complicated, they were desi
 
 <p>The option <code>gather_facts</code> can be set to <code>False</code> to make the play run, regardless of the state of the host.</p>
       <p>We had 10 people attending this month. As always, we'd like to thank
-        Hostgator, LLC for providing the meeting space and food for the group.</p>
+        HostGator, LLC for providing the meeting space and food for the group.</p>
 [% END -%]

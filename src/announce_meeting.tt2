@@ -28,7 +28,7 @@ faster and write great web-based applications.</p>
 [% END %]
 
 [% BLOCK hostgator %]
-    <p>The [% month %] meeting will be held at Hostgator, at 
+    <p>The [% month %] meeting will be held at HostGator, at 
       <a href="https://maps.google.com/maps?q=HostGator,+Houston&fb=1&gl=us&hq=HostGator,&hnear=0x8640b8b4488d8501:0xca0d02def365053b,Houston,+TX&cid=2141572779937723859&t=h&z=16&iwloc=A">5005 Mitchelldale St #100</a>,
       on [% date %]. [% INCLUDE gather %]
     </p>

@@ -37,5 +37,5 @@ You must downgrade JSON strings before using them for filesystem work. Also reme
 that UTF-8 is not the only encoding. A particular nasty is UTF-7, which almost
 matches ASCII. There is such a thing as <em>utf-7 XSS attacks</em>.</p>
       <p>We had 11 people attending this month. As always, we'd like to thank
-        Hostgator, LLC for providing the meeting space and food for the group.</p>
+        HostGator, LLC for providing the meeting space and food for the group.</p>
 [% END -%]

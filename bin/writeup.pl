@@ -31,7 +31,7 @@ my $title  = prompt( "Title:" );
 my $attendees = prompt( -integer => sub { 0 < $_ }, "How many attendees? " );
 my $abstract = prompt_long_text( 'Enter an abstract for the presentation (no <p/> needed):' );
 my $write_up = prompt_long_text( 'Enter a review of the meeting (no <p/> needed):' );
-my $sponsor  = prompt( "Sponsor:", -1, -menu => [ 'cPanel, Inc.', 'Hostgator, LLC' ] );
+my $sponsor  = prompt( "Sponsor:", -1, -menu => [ 'cPanel, L.L.C.', 'HostGator, LLC' ] );
 chomp( $abstract, $write_up );
 
 die "Missing required parameter.\n"

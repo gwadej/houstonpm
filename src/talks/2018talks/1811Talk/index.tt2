@@ -57,5 +57,5 @@ The only choice was to call the old routine.</p>
 <p>Todd recommended <code>Devel::Trace</code> to understanding how Perl is seeing your code.
 He also recommended <code>Test::Spec</code> for a declarative style of test writing.</p>
       <p>We had 8 people attending this month. As always, we'd like to thank
-        cPanel, Inc. for providing the meeting space and food for the group.</p>
+        cPanel, L.L.C. for providing the meeting space and food for the group.</p>
 [% END -%]
