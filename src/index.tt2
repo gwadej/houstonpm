@@ -7,8 +7,8 @@
       <p>Meeting notes through February are on-line.</p>
       <h1 class="heading">Next Meeting</h1>
       <dl>
-        <dt>March 14, 2019</dt>
-        <dd><code>make</code><em>-ing a Static Website</em> with G. Wade Johnson at cPanel</dd>
+        <dt>April 11, 2019</dt>
+        <dd><a href="announce_meeting.html" target="_bank" rel="noopener"><em>Subtle Magic: Moving to Dancer2/DBIx::Class/TT</em></a> with Ruth Holloway at HostGator</dd>
       </dl>
     </div>
 

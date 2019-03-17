@@ -18,9 +18,6 @@
     <h2 class="subhead">Upcoming Meetings</h2>
 
     <dl>
-        <dt>March 14, 2019</dt>
-        <dd><code>make</code><em>-ing a Static Website</em> with G. Wade Johnson at cPanel</dd>
-
         <dt>April 11, 2019</dt>
         <dd><em>Subtle Magic: Moving to Dancer2/DBIx::Class/TT</em> with Ruth Holloway at HostGator</dd>
 
@@ -29,5 +26,8 @@
 
         <dt>June 13, 2019</dt>
         <dd>TBD at HostGator</dd>
+
+        <dt>July 11, 2019</dt>
+        <dd>TBD at cPanel</dd>
     </dl>
 [% END -%]
