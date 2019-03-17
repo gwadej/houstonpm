@@ -8,11 +8,11 @@
 
     <p>This month, Ruth Holloway will present <em>Subtle Magic: Moving to Dancer2/DBIx::Class/TT</em>.</p>
 
-<p>"Read the documentation", we're told…but there's always more to learn. 
+<p>"Read the documentation", we're told&hellip;but there's always more to learn. 
 When I started working with Dancer2, DBIx::Class, and Template Toolkit 
-last fall, I'd seen the basics, but I found out /very/ quickly that 
+last fall, I'd seen the basics, but I found out <em>very</em> quickly that 
 there's much more to learn. The capabilities of this stack can influence 
-application design from the ground up–database tables, all the way to 
+application design from the ground up-database tables, all the way to 
 the final frameworks you might choose to use on the frontend, and not 
 all of those repercussions are immediately clear from merely reading the 
 documentation!</p>
