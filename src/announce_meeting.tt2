@@ -4,7 +4,7 @@
 %]
     <h1 class="subhead">Next Meeting</h1>
 
-[% INCLUDE cpanel month="March" date="March 14" %]
+[% INCLUDE hostgator month="April" date="April 11" %]
 
     <p>This month, Ruth Holloway will present <em>Subtle Magic: Moving to Dancer2/DBIx::Class/TT</em>.</p>
 
