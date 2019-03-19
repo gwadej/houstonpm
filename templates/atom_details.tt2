@@ -1,0 +1,3 @@
+<p>For the [% month %] Houston.pm meeting, [% presenter | html %] presents <em>[% title | html %]</em>.
+The meeting begins on [% date %] at 6pm in the [% sponsor.familiar | html %] offices at [% sponsor.address | html %].
+We gather in the lobby 30 minutes before.</p>

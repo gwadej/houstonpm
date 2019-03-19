@@ -839,6 +839,7 @@
          experience and skills of the group to solving a problem presented by one
          of the attendees.</abstract>
     </topic>
+    <attendees>8</attendees>
   </talk>
 
   <talk num="1011">
@@ -849,6 +850,7 @@
       <abstract>Erin describes the new Filesys::POSIX module that provides a POSIX-compliant
 virtual file system in Perl.</abstract>
     </topic>
+    <attendees>10</attendees>
   </talk>
 
   <talk num="1103">
@@ -860,6 +862,7 @@ virtual file system in Perl.</abstract>
 optimize Perl code. He explored some of the reasons that Perl code can be slow,
 and how to fix it.</abstract>
     </topic>
+    <attendees>20</attendees>
   </talk>
 
   <talk num="1104">
@@ -871,6 +874,7 @@ and how to fix it.</abstract>
 using Selenium to test applications by automating different browsers to
 actually execute the web application.</abstract>
     </topic>
+    <attendees>18</attendees>
   </talk>
 
   <talk num="1105">
@@ -883,6 +887,7 @@ knowledge of the Perl testing culture. The purpose of the presentation is
 not to make you an expert tester, but to introduce the concepts, tools, and
 reasoning behind automated testing in Perl.</abstract>
     </topic>
+    <attendees>18</attendees>
   </talk>
 
   <talk num="1107">
@@ -893,6 +898,7 @@ reasoning behind automated testing in Perl.</abstract>
       <abstract>Gordon Child presented the Cobbler installation system. It supports rapid deployment
 and configuration of servers via a network boot.</abstract>
     </topic>
+    <attendees>12</attendees>
   </talk>
 
   <talk num="1108">
@@ -902,6 +908,7 @@ and configuration of servers via a network boot.</abstract>
       <presenter>Mark Allen</presenter>
       <abstract>Mark Allen will be presenting the "Intro to Dancer" talk he gave at OSCON 2011. If he has time, Mark has also offered to give a quick overview of some of the Perl information he learned at OSCON.</abstract>
     </topic>
+    <attendees>23</attendees>
   </talk>
 
   <talk num="1109">
@@ -923,6 +930,7 @@ more low-level than most presentations.</p>
 <p>Finally, we had a series of lightning talks that covered several different
 topics.</p></abstract>
     </topic>
+    <attendees>19</attendees>
   </talk>
 
   <talk num="1110">
@@ -936,6 +944,7 @@ program that could compile as Perl script into a standalone executable. In this
 talk, Reini Urban describes the Perl compiler and some of the issues with
 updating this program to modern Perl versions.</abstract>
     </topic>
+    <attendees>19</attendees>
   </talk>
 
   <talk num="1111">
@@ -947,6 +956,7 @@ updating this program to modern Perl versions.</abstract>
 he found during an examination of some of his code. This presentation
 was originally presented at <acronym title="Yet Another Perl Conference">YAPC</acronym>::Brasil.</abstract>
     </topic>
+    <attendees>30</attendees>
   </talk>
 
   <talk num="1201">
@@ -958,6 +968,7 @@ was originally presented at <acronym title="Yet Another Perl Conference">YAPC</a
 covering the basics, he surveyed the different Perl modules that provide
 support for OO in Perl.</abstract>
     </topic>
+    <attendees>18</attendees>
   </talk>
 
   <talk num="1202">
@@ -967,6 +978,7 @@ support for OO in Perl.</abstract>
       <presenter>Mark Allen</presenter>
       <abstract>Mark Allen introduced the Dist::Zilla distribution building module from the point of view of someone who is new to the module.</abstract>
     </topic>
+    <attendees>17</attendees>
   </talk>
 
   <talk num="1203">
@@ -986,6 +998,7 @@ support for OO in Perl.</abstract>
           his history and how he came to be the developer and author he is
           today.</abstract>
     </topic>
+    <attendees>14</attendees>
   </talk>
 
   <talk num="1204">
@@ -995,6 +1008,7 @@ support for OO in Perl.</abstract>
       <presenter>Reini Urban</presenter>
       <abstract>Reini describes a script he uses to test a large number of Perl versions as part of the development of the Perl compiler.</abstract>
     </topic>
+    <attendees>10</attendees>
   </talk>
 
   <talk num="1205">
@@ -1004,6 +1018,7 @@ support for OO in Perl.</abstract>
       <presenter>Mark Allen</presenter>
       <abstract>Mark indulged his curiosity about which Platform as a Service providers do a good job of supporting Perl.</abstract>
     </topic>
+    <attendees>10</attendees>
   </talk>
 
   <talk num="1206">
@@ -1015,6 +1030,7 @@ support for OO in Perl.</abstract>
 rather than the normal <em>introduction to Perl unit testing</em> which
 we have done in the past.</abstract>
     </topic>
+    <attendees>9</attendees>
   </talk>
 
   <talk num="1207">
@@ -1029,6 +1045,7 @@ improve the talk. The audience was a good mix of people with little or no git
 experience as well as old-hands. The audience appeared to enjoy the talk and
 enjoyed helping in the improvements.</abstract>
     </topic>
+    <attendees>11</attendees>
   </talk>
 
   <talk num="1209">
@@ -1040,6 +1057,7 @@ enjoyed helping in the improvements.</abstract>
 businesses providing CAM services. In this talk, he presents some details
 on the Perl code that drives the system.</abstract>
     </topic>
+    <attendees>7</attendees>
   </talk>
 
   <talk num="1210">
@@ -1050,6 +1068,7 @@ on the Perl code that drives the system.</abstract>
       <abstract>Many people use Perl for manipulating text files. Erin explains several of her
 favorite small techniques in this area.</abstract>
     </topic>
+    <attendees>14</attendees>
   </talk>
 
   <talk num="1211">
@@ -1060,6 +1079,7 @@ favorite small techniques in this area.</abstract>
       <abstract>This month's meeting was mostly a discussion of small scripts and techniques
 that different people use for getting work done in their day.</abstract>
     </topic>
+    <attendees>5</attendees>
   </talk>
 
   <talk num="1301">
@@ -1073,6 +1093,7 @@ system he uses at work. Although the original system allowed people to enter
 all of the information needed to track issues, the query interface was not
 powerful enough for some needs.</abstract>
     </topic>
+    <attendees>11</attendees>
   </talk>
 
   <talk num="1302">
@@ -1084,6 +1105,7 @@ powerful enough for some needs.</abstract>
 He covers both techniques for simple security audits and the process of responsible
 disclosure of those vulnerabilities to the author.</abstract>
     </topic>
+    <attendees>13</attendees>
   </talk>
 
   <talk num="1303">
@@ -1095,6 +1117,7 @@ disclosure of those vulnerabilities to the author.</abstract>
 creating bindings to the library easier. He also discusses some current Perl
 bindings to the library, as well as future directions for this work.</abstract>
     </topic>
+    <attendees>10</attendees>
   </talk>
 
   <talk num="1306">
@@ -1105,6 +1128,7 @@ bindings to the library, as well as future directions for this work.</abstract>
       <abstract>Reini Urban covered some of the background and low-level details of one of the
 efforts to modernize the compiler and run-time for Perl 5.</abstract>
     </topic>
+    <attendees>11</attendees>
   </talk>
 
   <talk num="1307">
@@ -1116,6 +1140,7 @@ efforts to modernize the compiler and run-time for Perl 5.</abstract>
 others as a Hack-a-thon. Unlike the previous attempt, no <em>official</em>
 project was specified that we would work on.</abstract>
     </topic>
+    <attendees>10</attendees>
   </talk>
 
   <talk num="1308">
@@ -1126,6 +1151,7 @@ project was specified that we would work on.</abstract>
       <abstract>Brett explains how to use the Redis data store as a work queue. Many of the
 features of Redis support producer-consumer queuing.</abstract>
     </topic>
+    <attendees>6</attendees>
   </talk>
 
   <talk num="1309">
@@ -1137,6 +1163,7 @@ features of Redis support producer-consumer queuing.</abstract>
 projects to work on. For those relatively new to Perl, Wade was going to run a
 help session to answer questions and go over Perl basics.</abstract>
     </topic>
+    <attendees>6</attendees>
   </talk>
 
   <talk num="1310">
@@ -1147,6 +1174,7 @@ help session to answer questions and go over Perl basics.</abstract>
       <abstract>brian d foy explains some of Perl's more powerful regular expression features using
 a regex written by Randal Schwartz to parse JSON.</abstract>
     </topic>
+    <attendees>14</attendees>
   </talk>
 
   <talk num="1311">
@@ -1160,6 +1188,7 @@ cryptography. JD gives a high level explanation of how bitcoins work and how
 they are used. Unlike most information you see on-line, JD also covers some of
 the attacks that are possible against bitcoin.</abstract>
     </topic>
+    <attendees>11</attendees>
   </talk>
 
   <talk num="1401">
@@ -1172,6 +1201,7 @@ Ruth gives an overview of Library information systems and the work she did in mi
 from various systems to the open source Koha system. Perl's abilities to manipulate text-based
 data efficiently was critical to this work.</abstract>
     </topic>
+    <attendees>13</attendees>
   </talk>
 
   <talk num="1402">
@@ -1187,6 +1217,7 @@ Generators.  He also discusses some of the ways this can go wrong, including
 examples from recent security news. He finishes up with information about Perl
 modules that can be used for generating Pseudo-Random Number Sequences.</abstract>
     </topic>
+    <attendees>17</attendees>
   </talk>
 
   <talk num="1403">
@@ -1199,6 +1230,7 @@ Erlang up to the point of having written a simple Erlang program in one hour.
 Although it took a little longer than that, the audience got some pretty good
 insight into this fascinating language.</abstract>
     </topic>
+    <attendees>15</attendees>
   </talk>
 
   <talk num="1404">
@@ -1209,6 +1241,7 @@ insight into this fascinating language.</abstract>
       <abstract>Daniel gives a presentation describing Moose from the point of view of a
 beginner.</abstract>
     </topic>
+    <attendees>10</attendees>
   </talk>
 
   <talk num="1405">
@@ -1221,6 +1254,7 @@ Brett introduced the Sphinx indexing/search system and showed how to use it
 from Perl. This system allows queries to be made against a local set of
 data.</abstract>
     </topic>
+    <attendees>13</attendees>
   </talk>
 
   <talk num="1406">
@@ -1232,6 +1266,7 @@ data.</abstract>
 data. Daniel Culver introduced the group to subject and a set of challenges
 for anyone wishing to try their hand at the field.</abstract>
     </topic>
+    <attendees>10</attendees>
   </talk>
 
   <talk num="1407">
@@ -1243,6 +1278,7 @@ for anyone wishing to try their hand at the field.</abstract>
 focs of the talk were on Perl code smells, since they are not documented
 elsewhere.</abstract>
     </topic>
+    <attendees>13</attendees>
   </talk>
 
   <talk num="140731">
@@ -1254,6 +1290,7 @@ elsewhere.</abstract>
 your first Perl module to CPAN. The workshop also shows how to use github as
 the repository for your module.</abstract>
     </topic>
+    <attendees>about 16</attendees>
   </talk>
 
   <talk num="1408">
@@ -1266,6 +1303,7 @@ the repository for your module.</abstract>
 code and decoding examples to introduce this notation that underlies several
 technologies we use every day.</abstract>
     </topic>
+    <attendees>8</attendees>
   </talk>
 
   <talk num="1410">
@@ -1278,6 +1316,7 @@ order to fully understand the algorithm. He presents his findings, with code.
 This helps others to understand this algorithm that has become critical to
 modern cryptography.</abstract>
     </topic>
+    <attendees>18</attendees>
   </talk>
 
   <talk num="1411">
@@ -1289,6 +1328,7 @@ modern cryptography.</abstract>
 single topic time limited to no more than 5 minutes. Talks ranged from Perl
 builtins to using other languages in Perl.</abstract>
     </topic>
+    <attendees>17</attendees>
   </talk>
 
   <talk num="1501">
@@ -1301,6 +1341,7 @@ programming practices. Unfortunately, there are many ways that people can
 misuse any given best practice to generate a bad result. G. Wade Johnson
 covers a few ways that best practices have gone bad in his career.</abstract>
     </topic>
+    <attendees>8</attendees>
   </talk>
 
   <talk num="1502">
@@ -1314,6 +1355,7 @@ use of bitwise operators in Perl as a followup to his previous talk on BER
 decoding. Julian Brown was up next showing how to use the D3 JavaScript
 library to generate candlestick charts in SVG.</abstract>
     </topic>
+    <attendees>12</attendees>
   </talk>
 
   <talk num="1503">
@@ -1325,6 +1367,7 @@ library to generate candlestick charts in SVG.</abstract>
 unpleasant. Robert Stone discusses how disagreements become disagreeable and
 strategies for you to avoid being part of the problem.</abstract>
     </topic>
+    <attendees>14</attendees>
   </talk>
 
   <talk num="1504">
@@ -1337,6 +1380,7 @@ to serialization libraries for dynamic languages. This presentation
 introduces a few of these flaws and shows how they can be turned into
 actual attacks using Metasploit.</abstract>
     </topic>
+    <attendees>12</attendees>
   </talk>
 
   <talk num="1505">
@@ -1348,6 +1392,7 @@ actual attacks using Metasploit.</abstract>
 on the quality of their software. George shows how to use the TravisCI and
 Coveralls.io systems to provide equivalent functionality for your Perl Modules.</abstract>
     </topic>
+    <attendees>10</attendees>
   </talk>
 
   <talk num="1507">
@@ -1361,6 +1406,7 @@ an overview of lists and arrays and the operations that apply to each. He
 then went over the modules <code>List::Util</code> and <code>List::MoreUtils</code>
 for more advanced list operations.</abstract>
     </topic>
+    <attendees>7</attendees>
   </talk>
 
   <talk num="1508">
@@ -1375,6 +1421,7 @@ Locale::Maketext module.
 JD shows background on the flaw, how it manifests in Locale::Maketext, and
 the module he built to perform the exploit.</abstract>
     </topic>
+    <attendees>7</attendees>
   </talk>
 
   <talk num="1509">
@@ -1393,6 +1440,7 @@ manipulation and use of the DateTime module.</abstract>
 year's YAPC::EU. The talks spanned a fairly large spectrum of
 topics.</abstract>
     </topic>
+    <attendees>11</attendees>
   </talk>
 
   <talk num="1510">
@@ -1406,6 +1454,7 @@ adapt a <code>CGI::Application</code>-based webapp to support a versioned
 followed this with a presentation describing what Pelr programmers should
 know about UTF-8 including information about various gotchas.</abstract>
     </topic>
+    <attendees>11</attendees>
   </talk>
 
   <talk num="1512">
@@ -1418,6 +1467,7 @@ picks that they found interesting or helpful. The picks ranged from book
 recommendations and podcasts, to personal projects, to libraries and tools.
 Most picks generated questions and discussion.</abstract>
     </topic>
+    <attendees>9</attendees>
   </talk>
 
   <talk num="1601">
@@ -1430,6 +1480,7 @@ covered <code>unpack</code> and forking in Perl. Julian described a problem
 that he had been trying to solve and how the information in this talk would
 have been helpful.</abstract>
     </topic>
+    <attendees>9</attendees>
   </talk>
 
   <talk num="1602">
@@ -1441,6 +1492,7 @@ have been helpful.</abstract>
 created words. Robert Stone describes creating a solver for this game and explores
 techniques for improving the performance of the solver.</abstract>
     </topic>
+    <attendees>11</attendees>
   </talk>
 
   <talk num="1603">
@@ -1452,6 +1504,7 @@ techniques for improving the performance of the solver.</abstract>
 is more than just an academic exercise. He shows how to do relatively simple
 analysis for quick wins.</abstract>
     </topic>
+    <attendees>7</attendees>
   </talk>
 
   <talk num="1604">
@@ -1464,6 +1517,7 @@ calls while reducing context switching overhead. The paper the presentation
 was based on covered an academic project to implement this method and the
 research showing its effectiveness.</abstract>
     </topic>
+    <attendees>8</attendees>
   </talk>
 
   <talk num="1605">
@@ -1476,6 +1530,7 @@ trees. He describes the basics of binary tree data structures and descibes a bas
 implementation in Perl. He works his way through showing how a binary tree can be
 serialized in a form that can be easily reloaded.</abstract>
     </topic>
+    <attendees>9</attendees>
   </talk>
 
   <talk num="1606">
@@ -1487,6 +1542,7 @@ serialized in a form that can be easily reloaded.</abstract>
 attack to create an attack against the unpatched code. He shows the use of
 the <code>sqlmap</code> tool to automatically generate useful attacks.</abstract>
     </topic>
+    <attendees>9</attendees>
   </talk>
 
   <talk num="1608">
@@ -1501,6 +1557,7 @@ J. D. Lightsey demonstrated another SQL injection attack using <code>sqlmap</cod
 And, Todd Rinaldo rounds out the talks with a discussion of a Perl vulnerability
 related to <code>@INC</code>.</abstract>
     </topic>
+    <attendees>13</attendees>
   </talk>
 
   <talk num="1609">
@@ -1511,6 +1568,7 @@ related to <code>@INC</code>.</abstract>
       <abstract>Continuing with the lock-free architecture topic Julian introduced at an earlier
 meeting, he covered the <em>Read-Copy-Update</em> strategy.</abstract>
     </topic>
+    <attendees>9</attendees>
   </talk>
 
   <talk num="1610">
@@ -1522,6 +1580,7 @@ meeting, he covered the <em>Read-Copy-Update</em> strategy.</abstract>
 has changed how he approaches problems. He then introduced how to
 use some of this insight in Perl.</abstract>
     </topic>
+    <attendees>12</attendees>
   </talk>
 
   <talk num="1611">
@@ -1533,6 +1592,7 @@ use some of this insight in Perl.</abstract>
 teaches you more about programming. This month Wade focuses on the aspects of
 functional programming you can apply today in your own Perl code.</abstract>
     </topic>
+    <attendees>9</attendees>
   </talk>
 
   <talk num="1701">
@@ -1548,6 +1608,7 @@ G. Wade Johnson presented some vim tips. And, Michael R. Davis
 finished the presentations with an introduction to some of his
 CPAN modules.</abstract>
     </topic>
+    <attendees>7</attendees>
   </talk>
 
   <talk num="170126">
@@ -1558,6 +1619,7 @@ CPAN modules.</abstract>
       <abstract>Reini Urban gave a presentation highlighting several of the features of the
 cperl fork of the perl programming language.</abstract>
     </topic>
+    <attendees>7</attendees>
   </talk>
 
   <talk num="1702">
@@ -1570,6 +1632,7 @@ newspaper announcements. He describes substitution ciphers and then
 shows how a homophonic substitution cipher fixes many of its problems.
 He ends by describing how the Zodiac Killer's cipher was solved.</abstract>
     </topic>
+    <attendees>10</attendees>
   </talk>
 
   <talk num="1703">
@@ -1580,6 +1643,7 @@ He ends by describing how the Zodiac Killer's cipher was solved.</abstract>
       <abstract>Jim Bacon, Robert Stone, and Jocelyn Kirby gave short presentations on health
 topics that can apply to developers.</abstract>
     </topic>
+    <attendees>6</attendees>
   </talk>
 
   <talk num="1704">
@@ -1591,6 +1655,7 @@ topics that can apply to developers.</abstract>
 described the purpose of the meeting and some of the decisions that came
 out of the meeting.</abstract>
     </topic>
+    <attendees>12</attendees>
   </talk>
 
   <talk num="1705">
@@ -1601,6 +1666,7 @@ out of the meeting.</abstract>
       <abstract>The goal this meeting was to do some code reviews as a group. The idea was that
 we would learn from each other's techniques and knowledge.</abstract>
     </topic>
+    <attendees>8</attendees>
   </talk>
 
   <talk num="1706">
@@ -1612,6 +1678,7 @@ we would learn from each other's techniques and knowledge.</abstract>
 challenge that OC.pm proposed for their May 2017 meeting. Eveyone was suggested
 to make an attempt.</abstract>
     </topic>
+    <attendees>7</attendees>
   </talk>
 
   <talk num="1707">
@@ -1623,6 +1690,7 @@ to make an attempt.</abstract>
           compiler project at cPanel. This talk covers some of what he has learned about working with the
           internals of perl.</abstract>
     </topic>
+    <attendees>13</attendees>
   </talk>
 
   <talk num="1708">
@@ -1634,6 +1702,7 @@ to make an attempt.</abstract>
 engineer a game to see if he could automate some of the boring parts of the
 game.</abstract>
     </topic>
+    <attendees>8</attendees>
   </talk>
 
   <talk num="1709">
@@ -1647,6 +1716,7 @@ trade-offs than a framework. The last showed a simple single page CGI script. Th
 saw info about an attack on suid. The final presentation talked about Perl's minimum
 perfect hashes.</abstract>
     </topic>
+    <attendees>9</attendees>
   </talk>
 
   <talk num="1710">
@@ -1658,6 +1728,7 @@ perfect hashes.</abstract>
 brainstorming for a project. We started with an idea proposed by Michael Davis
 for a PSGI package that would set up a web service with minimal configuration.</abstract>
     </topic>
+    <attendees>9</attendees>
   </talk>
 
   <talk num="1711">
@@ -1668,6 +1739,7 @@ for a PSGI package that would set up a web service with minimal configuration.</
       <abstract>Todd leads a session to hack on Perl code from the RT queue. The idea is
 to find and fix at least one bug as a team.</abstract>
     </topic>
+    <attendees>7</attendees>
   </talk>
 
   <talk num="1801">
@@ -1678,6 +1750,7 @@ to find and fix at least one bug as a team.</abstract>
       <abstract>Julian Brown presented the results of his look into the Bedrock project. This project builds a distributed
 database on top of SQLite.</abstract>
     </topic>
+    <attendees>7</attendees>
   </talk>
 
   <talk num="1802">
@@ -1689,6 +1762,7 @@ database on top of SQLite.</abstract>
 Ruby programmer for the last 2.5 years, contrasted with his experience
 as a Perl programmer.</abstract>
     </topic>
+    <attendees>10</attendees>
   </talk>
 
   <talk num="1803">
@@ -1700,6 +1774,7 @@ as a Perl programmer.</abstract>
 project for a GEMS conference. JD Lightsey followed up with a dive into security
 flaws in the AWStats program.</abstract>
     </topic>
+    <attendees>9</attendees>
   </talk>
 
   <talk num="1804">
@@ -1709,6 +1784,7 @@ flaws in the AWStats program.</abstract>
       <presenter>G. Wade Johnson</presenter>
       <abstract>G. Wade Johnson demonstrates a simple web application built in both Ruby on Rails and Dancer2 on Perl.</abstract>
     </topic>
+    <attendees>9</attendees>
   </talk>
 
   <talk num="1805">
@@ -1718,6 +1794,7 @@ flaws in the AWStats program.</abstract>
       <presenter>J. D. Lightsey</presenter>
       <abstract>J. D. Lightsey gave a quick overview of the concept of Threat Modeling and demonstrated approaches for doing threat modeling.</abstract>
     </topic>
+    <attendees>10</attendees>
   </talk>
 
   <talk num="1806">
@@ -1728,6 +1805,7 @@ flaws in the AWStats program.</abstract>
       <abstract>Julian Brown described attempting to add a feature to a tool for synchronizing bookmarks.
 In the process, he learned about ECMAScript 8. This presentation explores what he learned.</abstract>
     </topic>
+    <attendees>8</attendees>
   </talk>
 
   <talk num="1807">
@@ -1739,6 +1817,7 @@ In the process, he learned about ECMAScript 8. This presentation explores what h
 he turned to DuoLingo and began studying Russian. This lead to the construction of a Perl
 module to handle declining Russian pronouns, adjectives, and nouns.</abstract>
     </topic>
+    <attendees>10</attendees>
   </talk>
 
   <talk num="1808">
@@ -1748,6 +1827,7 @@ module to handle declining Russian pronouns, adjectives, and nouns.</abstract>
       <presenter>Julian Brown</presenter>
       <abstract>Julian Brown explores the usage of the Arangodb NoSQL database as used a website he's working on.</abstract>
     </topic>
+    <attendees>9</attendees>
   </talk>
 
   <talk num="1809">
@@ -1758,6 +1838,7 @@ module to handle declining Russian pronouns, adjectives, and nouns.</abstract>
       <abstract>G. Wade Johnson presents the results of some benchmarking of different approaches to parsing
 short text strings.</abstract>
     </topic>
+    <attendees>8</attendees>
   </talk>
 
   <talk num="1810">
@@ -1768,6 +1849,7 @@ short text strings.</abstract>
       <abstract>Robert Stone presented a comparison between the monolithic style of architecture and a microservices style.
 He highlighted the benefits of the microservices style to show the advantages of a change.</abstract>
     </topic>
+    <attendees>9</attendees>
   </talk>
 
   <talk num="1811">
@@ -1778,6 +1860,7 @@ He highlighted the benefits of the microservices style to show the advantages of
       <abstract>Todd Rinaldo described the difficulty with testing file-level checks on a system administration tool.
 He describes the testing and a new module to solve this problem.</abstract>
     </topic>
+    <attendees>8</attendees>
   </talk>
 
   <talk num="1901">
@@ -1788,6 +1871,7 @@ He describes the testing and a new module to solve this problem.</abstract>
       <abstract>Nicolas Rochelemagne gave a little retrospective of 2018.
 He included a best of section and some lessons he learned concerning DistZilla and XS.</abstract>
     </topic>
+    <attendees>6</attendees>
   </talk>
 
   <talk num="1902">
@@ -1797,6 +1881,7 @@ He included a best of section and some lessons he learned concerning DistZilla a
       <presenter>J. D. Lightsey</presenter>
       <abstract>J. D. Lightsey describes how he has used Ansible as a workflow system to automate processes for some personal servers.</abstract>
     </topic>
+    <attendees>10</attendees>
   </talk>
 
 </talklist>

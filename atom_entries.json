@@ -64,20 +64,6 @@
       "published" : "2019-03-10T16:57:25Z"
    },
    {
-      "content" : "<div><p>The March meeting will be held at cPanel, at \n2550 North Loop West, Suite 4006, Houston, Texas 77092, on March 14. We will\nmeet in the lobby between 5:30pm and 6. Once everyone arrives, we head inside\nfor the meeting at 6pm.</p>\n\n<p>This month, Ruth Holloway will present <em>Subtle Magic: Moving to\nDancer2/DBIx::Class/TT</em>.</p>\n\n<p>\"Read the documentation\", we're toldâ¦but there's always more to learn. When\nI started working with Dancer2, DBIx::Class, and Template Toolkit last fall,\nI'd seen the basics, but I found out /very/ quickly that there's much more to\nlearn. The capabilities of this stack can influence application design from the\nground upâdatabase tables, all the way to the final frameworks you might choose\nto use on the frontend, and not all of those repercussions are immediately\nclear from merely reading the documentation!</p>\n\n<p>In this talk, we'll learn about some of the strengths of these modules and\ndemonstrate how their capabilities can be leveraged to help you work faster and\nwrite great web-based applications.</p>\n</div>",
-      "id" : "tag:houston.pm.org.2011-03:announce-20190226-14982",
-      "updated" : "2019-02-26T13:07:25Z",
-      "published" : "2019-02-26T13:07:25Z",
-      "title" : "Subtle Magic: Moving to Dancer2/DBIx::Class/TT"
-   },
-   {
-      "updated" : "2019-02-16T15:01:49Z",
-      "content" : "<div><p>This talk will discuss using Ansible as a multiserver workflow\nautomation system. I'll explain why I chose Ansible for this purpose\nand compare its strengths and weaknesses with some of the alternatives.\nWe'll walk through several Ansible playbooks to show how complex build-\ntest-deploy workflows can be iteratively constructed from much simpler\nparts.</p>\n</div>",
-      "id" : "tag:houston.pm.org.2011-03:announce-20190216-17840",
-      "published" : "2019-02-16T15:01:49Z",
-      "title" : "Automating multiserver workflows with Ansible"
-   },
-   {
       "title" : "Notes for 'Performance of Parsing Short Strings' posted.",
       "link" : "http://houston.pm.org/talks/2018talks/1809Talk/index.html",
       "published" : "2019-01-30T04:38:24Z",

@@ -5,71 +5,118 @@ use warnings;
 use 5.010;
 
 use autodie;
+use lib 'lib';
 use Template;
 use IO::Prompter;
-use JSON::XS;
-use XML::Atom::SimpleFeed;
-use XML::LibXML;
+use HPM::Atom;
+use HPM::Date;
+use HPM::Sponsors;
 use File::Slurp;
-use POSIX qw(strftime);
 
-my $savefile = 'atom_entries.json';
-my ($day, $mon, $yr) = (localtime)[3,4,5];
-++$mon;
-$yr += 1900;
+my $tt = Template->new( INCLUDE_PATH => 'templates', TRIM => 1 )
+    or die Template->error(), "\n";
 
-my $entries = [];
-$entries = JSON::XS->new->decode( scalar read_file $savefile ) if -f $savefile;
+my $atom = HPM::Atom->load_entries(  'atom_entries.json' );
 
-my $now = strftime( '%Y-%m-%dT%H:%M:%SZ', gmtime );
-my $new_entry = {
-    title => ''.scalar prompt( 'Entry Title: '),
-    id => 'tag:houston.pm.org.2011-03:'.scalar prompt( -def => sprintf('announce-%04d%02d%02d-%d',$yr,$mon,$day,$$), 'Sub-ID: [enter for default]', ),
-    content => '<div>'.prompt_long_text( 'Enter msg in valid xhtml:' ).'</div>',
-    published => $now,
-    updated => $now,
-    get_categories(),
-};
+my $vars = query_user();
 
-unshift @{$entries}, $new_entry;
+my $details;
+$tt->process( 'atom_details.tt2', $vars, \$details )
+    or die $tt->error(), "\n";
 
-write_file( $savefile, JSON::XS->new->pretty(1)->encode( $entries ));
+$details = prompt_long_text( 'Update the meeting details in valid xhtml:', $details );
+my $abstract = prompt_long_text( 'Enter meeting abstract in valid xhtml:' );
+$atom->new_entry({
+    title      => $vars->{title},
+    id         => "tag:houston.pm.org.2011-03:$vars->{subid}",
+    content    => join( "\n", grep { $_ } $details, $abstract ),
+    categories => $vars->{categories},
+});
 
-my $feed = XML::Atom::SimpleFeed->new(
-    id => qq[tag:houston.pm.org,2011-03:news],
-    title => qq[Houston.pm: What's New],
-    link => 'http://houston.pm.org/',
-    link => { rel => 'self', href => 'http://houston.pm.org/atom.xml' },
-    updated => strftime( '%Y-%m-%dT%H:%M:%SZ', gmtime ),
-    author => 'G. Wade Johnson',
-    category => 'news',
-);
+$atom->save_entries();
+$atom->write_atom( 'atom.xml' );
 
-foreach my $entry ( @{$entries} )
-{
-    $feed->add_entry( %{ $entry } );
-}
+twitter_announce( $vars );
 
-write_file( 'atom.xml', pretty_xml( $feed->as_string ));
 remove_tempfiles();
 exit;
 
-
-sub pretty_xml
+sub twitter_announce
 {
-    my ($xml) = @_;
-    return XML::LibXML->load_xml( string => $xml )->toString(1);
+    my ($vars) = @_;
+
+    my $tweet;
+    $tt->process( 'tweet.tt2', $vars, \$tweet )
+        or die $tt->error(), "\n";
+    $tweet = prompt_long_text( 'Modify tweet:', $tweet );
+    if(length $tweet == 0)
+    {
+        print "Not sending empty tweet\n";
+        return;
+    }
+    $tweet =~ tr/\n/ /s;
+    send_tweet( $tweet );
+
+    return;
 }
 
-sub get_categories {
+sub send_tweet
+{
+    my ($tweet) = @_;
+
+    my $err = system 'twurl', '-d', "status=$tweet", '/1.1/statuses/update.json';
+    return unless $err;
+    die "failed to execute 'twurl': $!\n" if $? == -1;
+    if ($? & 127)
+    {
+        die sprintf "'twurl' died with signal %d, %s coredump\n",
+            ($? & 127),  ($? & 128) ? 'with' : 'without';
+    }
+    die sprintf "'twurl' exited with value %d\n", $? >> 8;
+}
+
+sub get_categories
+{
     return
-        grep { /\S/ } map { s/\s*#.*//; s/^\s+//; s/\s+$//; }
+        grep { /\S/ } map { s/\s*#.*//; s/^\s+//; s/\s+$//; $_ }
         split /\n/, prompt_long_text( <<"EOM" );
 Enter categories, one per line. Or uncomment ones you wish to use.
-#meeting
 #technical
 #social
+meeting
 EOM
+}
+
+sub process_to_str
+{
+    my ($tt, $template, $vars) = @_;
+
+}
+
+sub query_user
+{
+    my ($yr, $mon, $day) = HPM::Date::today_parts();
+
+    # Identity transforms below to remove IO::Prompter special objects.
+    my $subid = prompt( -def => sprintf('announce-%04d%02d%02d-%d',$yr,$mon,$day,$$), 'Sub-ID: [enter for default]', );
+    my $title = prompt( 'Entry Title: ');
+    my $presenter = prompt( 'Presenter: ' );
+    $mon = prompt( -integer => sub { 1 <= $_ && $_ <= 12 }, -def => $mon, "Month [$mon]:" );
+    $day = HPM::Date::meeting_day( $mon );
+    $day = prompt( -integer => sub { 1 <= $_ && $_ <= 31 }, -def => $day, "Day [$day]:" );
+    my $sponsor = prompt( "Sponsor:", -1, -menu => [ HPM::Sponsors::list() ] );
+
+    my $month = HPM::Date::month_name( $mon );
+    return {
+        subid => '' . $subid,
+        title => '' . $title,
+        presenter => '' . $presenter,
+        mon => 0 + $mon,
+        month => $month,
+        date => "$month $day",
+        sponsor => HPM::Sponsors::lookup( '' . $sponsor ),
+        categories => [get_categories()],
+    };
 }
 
 BEGIN {
@@ -79,21 +126,22 @@ BEGIN {
     }
     sub prompt_long_text
     {
-        my ($prompt) = @_;
+        my ($prompt, $default) = @_;
+        $default = $default ? "\n$default" : '';
         my $output;
         do {
             my $tmpfile = get_tempfile_name( $count++ );
-            write_file( $tmpfile, "# $prompt" ) unless -f $tmpfile;
+            write_file( $tmpfile, "# $prompt$default" ) unless -f $tmpfile;
             system 'vim', '-i', 'NONE', $tmpfile;
-            $output = read_file( $tmpfile ) if -s $tmpfile ne 2+length $prompt;
-            $output =~ s/^#.*?\n//smg;
+            $output = read_file( $tmpfile );
+            $output =~ s/^#.*?\n//sg;
         } while( 0 == length $output && prompt 'Content is empty, retry?', '-y' );
 
         return $output;
     }
 
     sub remove_tempfiles {
-        unlink grep { -f $_ } map { get_tempfile_name( $_ ) } 0 .. $count-1;
+        return unlink grep { -f $_ } map { get_tempfile_name( $_ ) } 0 .. $count-1;
     }
 }
 
