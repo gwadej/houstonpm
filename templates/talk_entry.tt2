@@ -2,8 +2,11 @@
     <date>[%monthname%] [%year%]</date>
     <topic href="/talks/[%year%]talks/[%yr%][%mon%]Talk/index.html">
       <title>[%title%]</title>
-      <presenter>[%author%]</presenter>
-      <abstract>[%abstract%]</abstract>
+      <presenter>[%author | xml%]</presenter>
+      <abstract>[%abstract | xml%]</abstract>
     </topic>
+    <attendees>[% attendees %]</attendees>
+    [%- IF sponsor %]
+    <sponsor>[% sponsor.full_name | xml %]</sponsor>
+    [%- END %]
   </talk>
-
