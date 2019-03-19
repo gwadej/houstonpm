@@ -1,0 +1,146 @@
+[% WRAPPER writeup_wrap.tt2
+    title='Summary of March 2019 Presentation'
+    year=2019
+%]
+      <h1>[% "make-ing a Static Website" | html %]</h1>
+<p>G. Wade Johnson has been maintaining the <a href="http://houston.pm.org/">Houston.pm website</a> for years.
+The original hosting for the site was located at pm.org and was maintained by volunteers.
+To reduce their work, they required all hosted sites to be static.</p>
+
+<p>Wade had experience a couple of decades back generating static shells for small amounts of
+dynamic content.
+He applied similar techniques to the Houston.pm website to make it easier to maintain.</p>
+
+<h2 id="alittlehistory">A Little History</h2>
+
+<ul>
+<li>He took over maintenance in December 2004</li>
+<li>Originally hosted on the pm.org servers</li>
+<li>The pm.org servers only supported static content</li>
+<li>Recently began hosting it on servers he controlled</li>
+<li>Nov 2002 - mostly empty placeholder</li>
+<li>Aug 2003 - meeting schedule announced</li>
+<li>Dec 2005 - the first generated version</li>
+</ul>
+
+<p>The site was maintained manually between December 2004 and December 2005.</p>
+
+<h2 id="whyastaticsite">Why a Static Site?</h2>
+
+<p>Many people have asked why the site is maintained as static HTML, instead of using a more modern framework or tool.</p>
+
+<p>When he first took over the site maintenace, he did not know how long it would last.
+He did not want to start paying for hosting on something that he might not maintain for long.
+He figured it would pass to someone else after a few years.
+Additionally, the site itself had no compelling need for dynamic features.
+He also was only willing to spend a limited amount of time maintaining it.</p>
+
+<p>At different times in the past, people have recommended converting to a <abbr title="Content Management System">CMS</abbr>
+or Wiki to maintain the site. Both of these approaches would require work to convert the content that
+currently exists and on-going maintenance and security monitoring to keep them functional.
+Wade is not really interested in generating extra work for himself for dubious benefits.</p>
+
+<h2 id="whygenerateastaticsite">Why Generate a Static Site</h2>
+
+<p>The first major rewrite of the site (2005) moved to the first version of the generating code.</p>
+
+<p>The main reasons for generating the site are:</p>
+
+<ul>
+<li>Consistent look/style (such as it is)</li>
+<li>Code for creating new pages</li>
+<li>Site is under <a href="http://github.com/gwadej/houstonpm/">version control</a></li>
+<li>Based loosely on the results of his Masters Thesis</li>
+</ul>
+
+<p>Since all of the generating code is in relatively straight-forward Perl 5 code, it should be easy for another maintainer to pick up.
+If anyone wants to make changes, they are free to send a pull request on github.
+If a change does not make his life harder, Wade says he will probably accept it.</p>
+
+<h2 id="thecode">The Code</h2>
+
+<p>At this point, Wade went to the source on GitHub and began walking through some of the core features.</p>
+
+<p>There are a number generic templates in the <a href="https://github.com/gwadej/houstonpm/tree/master/templates">templates/</a> directory.
+Some of these are fragments used by other templates.
+Others are more or less standalone templates.
+A number of templates are wrappers defining the general structure of certain pages:</p>
+
+<dl>
+<dt>templates/index_wrap.tt2</dt>
+<dd>
+the main index page of the site
+</dd>
+<dt>templates/main_wrap.tt2</dt>
+<dd>
+any main page besides the index
+</dd>
+<dt>templates/talks_wrap.tt2</dt>
+<dd>
+the recent talks and year talks pages
+</dd>
+<dt>templates/writeup_wrap.tt2</dt>
+<dd>
+the talk write-up pages
+</dd>
+
+</dl>
+
+<p>Other core templates include:</p>
+
+<dl>
+<dt>templates/copyright.tt2</dt>
+<dd>
+specifies the copyright notice on each page, handling appropriate year information and licensing
+</dd>
+<dt>templates/main_menu.tt2</dt>
+<dd>
+specifies the left-hand menu for the site
+</dd>
+<dt>templates/recenttalks.tt2</dt>
+<dd>
+page listing the most recent talks
+</dd>
+<dt>templates/yeartalks.tt2</dt>
+<dd>
+page listing all of the talks for a given year
+</dd>
+
+</dl>
+
+<p>The whole system is driven by a <a href="https://github.com/gwadej/houstonpm/blob/master/Makefile">Makefile</a>.
+The Makefile contains quite a bit of redundant information.
+This turns out not to be a big maintenance problem, because the Makefile is generated from a template (<a href="https://github.com/gwadej/houstonpm/blob/master/templates/Makefile.tt2">templates/Makefile.tt2</a>).</p>
+
+<h2 id="scripts">Scripts</h2>
+
+<p>In the <a href="https://github.com/gwadej/houstonpm/blob/master/bin/">bin/</a> directory are a set of scripts that Wade uses to build the site.
+The <code>bin/talks.pl</code> script is used to convert the information from the <code>talks.xml</code> document into all of the yearly and recent pages.
+The <code>bin/announce.pl</code> script updates the <code>atom.xml</code> file which supports feed readers (if anyone still uses them).
+It also provides the message used to update the mailing list and such when announcing a new meeting.
+The <code>bin/writeup.pl</code> script helps in the construction of the write-ups for each meeting.
+Among other things, it</p>
+
+<ul>
+<li>asks the maintainer for information about the talk</li>
+<li>creates the appropriate directory structure</li>
+<li>leads through writing up the talk</li>
+<li>builds a <abbr title="Template Toolkit">TT</abbr> file for the write-up</li>
+</ul>
+
+<h2 id="legacies">Legacies</h2>
+
+<p>Wade explained that there are some legacy bits due to the length of time this project has run.
+The <code>talks.xml</code> document is basically a database of the talks through time.
+Since the information is basically a series of short documents, it hasn't been worth any effort to turn it into a more traditional database.
+Some of the transformation work done to extract data from the talks file is performed through <abbr title="eXtensible Stylesheet Language">XSL</abbr> files.
+This approach has mostly been abandoned, but was a viable system at the turn of the century.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>The audience had a number of questions about particular design decisions.
+Some of the comments made valid suggestions of other design trade-offs.
+In the end, many of the decisions made on this system were simply what was easiest at the time.</p>
+      <p>We had 7 people attending this month. As always, we'd like to thank
+        cPanel, L.L.C for providing the meeting space and food for the group.</p>
+[% END -%]

@@ -1,199 +1,207 @@
 [
    {
-      "title" : "Subtle Magic: Moving to Dancer2/DBIx::Class/TT",
+      "published" : "2019-03-19T19:26:19Z",
+      "title" : "Notes for 'make-ing a Static Website' posted.",
+      "id" : "tag:houston.pm.org,2011-03:presentation:1903",
+      "categories" : [
+         "presentation",
+         "technical meeting"
+      ],
+      "content" : {
+         "type" : "xhtml",
+         "content" : "<p>G. Wade Johnson has been maintaining the [Houston.pm website](http://houston.pm.org/) for years.\nThe original hosting for the site was located at pm.org and was maintained by volunteers.\nTo reduce their work, they required all hosted sites to be static.\n\nWade had experience a couple of decades back generating static shells for small amounts of\ndynamic content.\nHe applied similar techniques to the Houston.pm website to make it easier to maintain.\n\n## A Little History\n\n   * He took over maintenance in December 2004\n   * Originally hosted on the pm.org servers\n   * The pm.org servers only supported static content\n   * Recently began hosting it on servers he controlled\n   * Nov 2002 - mostly empty placeholder\n   * Aug 2003 - meeting schedule announced\n   * Dec 2005 - the first generated version\n\nThe site was maintained manually between December 2004 and December 2005.\n\n## Why a Static Site?\n\nMany people have asked why the site is maintained as static HTML, instead of using a more modern framework or tool.\n\nWhen he first took over the site maintenace, he did not know how long it would last.\nHe did not want to start paying for hosting on something that he might not maintain for long.\nHe figured it would pass to someone else after a few years.\nAdditionally, the site itself had no compelling need for dynamic features.\nHe also was only willing to spend a limited amount of time maintaining it.\n\nAt different times in the past, people have recommended converting to a <abbr title=\"Content Management System\">CMS</abbr>\nor Wiki to maintain the site. Both of these approaches would require work to convert the content that\ncurrently exists and on-going maintenance and security monitoring to keep them functional.\nWade is not really interested in generating extra work for himself for dubious benefits.\n\n## Why Generate a Static Site\n\nThe first major rewrite of the site (2005) moved to the first version of the generating code.\n\nThe main reasons for generating the site are:\n\n   * Consistent look/style (such as it is)\n   * Code for creating new pages\n   * Site is under [version control](http://github.com/gwadej/houstonpm/)\n   * Based loosely on the results of his Masters Thesis\n\nSince all of the generating code is in relatively straight-forward Perl 5 code, it should be easy for another maintainer to pick up.\nIf anyone wants to make changes, they are free to send a pull request on github.\nIf a change does not make his life harder, Wade says he will probably accept it.\n\n## The Code\n\nAt this point, Wade went to the source on GitHub and began walking through some of the core features.\n\nThere are a number generic templates in the [templates/](https://github.com/gwadej/houstonpm/tree/master/templates) directory.\nSome of these are fragments used by other templates.\nOthers are more or less standalone templates.\nA number of templates are wrappers defining the general structure of certain pages:\n\ntemplates/index_wrap.tt2\n:  the main index page of the site\ntemplates/main_wrap.tt2\n:  any main page besides the index\ntemplates/talks_wrap.tt2\n:  the recent talks and year talks pages\ntemplates/writeup_wrap.tt2\n:  the talk write-up pages\n\nOther core templates include:\n\ntemplates/copyright.tt2\n:  specifies the copyright notice on each page, handling appropriate year information and licensing\ntemplates/main_menu.tt2\n:  specifies the left-hand menu for the site\ntemplates/recenttalks.tt2\n:  page listing the most recent talks\ntemplates/yeartalks.tt2\n:  page listing all of the talks for a given year\n\nThe whole system is driven by a [Makefile](https://github.com/gwadej/houstonpm/blob/master/Makefile).\nThe Makefile contains quite a bit of redundant information.\nThis turns out not to be a big maintenance problem, because the Makefile is generated from a template ([templates/Makefile.tt2](https://github.com/gwadej/houstonpm/blob/master/templates/Makefile.tt2)).\n\n## Scripts\n\nIn the [bin/](https://github.com/gwadej/houstonpm/blob/master/bin/) directory are a set of scripts that Wade uses to build the site.\nThe `bin/talks.pl` script is used to convert the information from the `talks.xml` document into all of the yearly and recent pages.\nThe `bin/announce.pl` script updates the `atom.xml` file which supports feed readers (if anyone still uses them).\nIt also provides the message used to update the mailing list and such when announcing a new meeting.\nThe `bin/writeup.pl` script helps in the construction of the write-ups for each meeting.\nAmong other things, it\n\n   * asks the maintainer for information about the talk\n   * creates the appropriate directory structure\n   * leads through writing up the talk\n   * builds a <abbr title=\"Template Toolkit\">TT</abbr> file for the write-up\n\n## Legacies\n\nWade explained that there are some legacy bits due to the length of time this project has run.\nThe `talks.xml` document is basically a database of the talks through time.\nSince the information is basically a series of short documents, it hasn't been worth any effort to turn it into a more traditional database.\nSome of the transformation work done to extract data from the talks file is performed through <abbr title=\"eXtensible Stylesheet Language\">XSL</abbr> files.\nThis approach has mostly been abandoned, but was a viable system at the turn of the century.\n\n## Conclusion\n\nThe audience had a number of questions about particular design decisions.\nSome of the comments made valid suggestions of other design trade-offs.\nIn the end, many of the decisions made on this system were simply what was easiest at the time.</p>"
+      },
+      "updated" : "2019-03-19T19:26:19Z",
+      "link" : "http://houston.pm.org/talks/2019talks/1903Talk/index.html"
+   },
+   {
       "category" : "technical meeting",
-      "published" : "2019-03-17T04:03:47Z",
+      "content" : "<div><div><p>The April meeting will be held at HostGator, at \n5005 Mitchelldale, Suite #100, Houston, Texas, on April 11. We will\nmeet in the lobby between 5:30pm and 6. Once everyone arrives, we head inside\nfor the meeting at 6pm.</p>\n\n<p>This month, Ruth Holloway will present <em>Subtle Magic: Moving to Dancer2/DBIx::Class/TT</em>.</p>\n\n<p>\"Read the documentation\", we're told, but there's always more to learn. When\nI started working with Dancer2, DBIx::Class, and Template Toolkit last fall,\nI'd seen the basics, but I found out <em>very</em> quickly that there's much more to\nlearn. The capabilities of this stack can influence application design from the\nground up database tables, all the way to the final frameworks you might choose\nto use on the frontend, and not all of those repercussions are immediately\nclear from merely reading the documentation!</p>\n\n<p>In this talk, we'll learn about some of the strengths of these modules and\ndemonstrate how their capabilities can be leveraged to help you work faster and\nwrite great web-based applications.</p>\n</div>\n\n</div>",
       "updated" : "2019-03-17T04:03:47Z",
+      "title" : "Subtle Magic: Moving to Dancer2/DBIx::Class/TT",
       "id" : "tag:houston.pm.org.2011-03:announce-20190316-6823",
-      "content" : "<div><div><p>The April meeting will be held at HostGator, at \n5005 Mitchelldale, Suite #100, Houston, Texas, on April 11. We will\nmeet in the lobby between 5:30pm and 6. Once everyone arrives, we head inside\nfor the meeting at 6pm.</p>\n\n<p>This month, Ruth Holloway will present <em>Subtle Magic: Moving to Dancer2/DBIx::Class/TT</em>.</p>\n\n<p>\"Read the documentation\", we're told, but there's always more to learn. When\nI started working with Dancer2, DBIx::Class, and Template Toolkit last fall,\nI'd seen the basics, but I found out <em>very</em> quickly that there's much more to\nlearn. The capabilities of this stack can influence application design from the\nground up database tables, all the way to the final frameworks you might choose\nto use on the frontend, and not all of those repercussions are immediately\nclear from merely reading the documentation!</p>\n\n<p>In this talk, we'll learn about some of the strengths of these modules and\ndemonstrate how their capabilities can be leveraged to help you work faster and\nwrite great web-based applications.</p>\n</div>\n\n</div>"
+      "published" : "2019-03-17T04:03:47Z"
    },
    {
       "published" : "2019-03-13T23:26:32Z",
-      "content" : "<div><p>Remember static websites? Back when the web was new?</p>\n<p>This month, G. Wade Johnson will present how he generates the static website houston.pm.org and why.\nThere will be Perl. There will be Template Toolkit. There will be markdown.</p>\n<p>As usual, we will meet in the lobby at cPanel, Inc. starting at 5:30pm on Thursday, March 14.\nAt 6pm, we will go up to the meeting.</p>\n</div>",
-      "category" : "technical meeting",
+      "title" : "make-ing a Static Website",
       "id" : "tag:houston.pm.org.2011-03:announce-20190313-12399",
+      "content" : "<div><p>Remember static websites? Back when the web was new?</p>\n<p>This month, G. Wade Johnson will present how he generates the static website houston.pm.org and why.\nThere will be Perl. There will be Template Toolkit. There will be markdown.</p>\n<p>As usual, we will meet in the lobby at cPanel, Inc. starting at 5:30pm on Thursday, March 14.\nAt 6pm, we will go up to the meeting.</p>\n</div>",
       "updated" : "2019-03-13T23:26:32Z",
-      "title" : "make-ing a Static Website"
+      "category" : "technical meeting"
    },
    {
-      "published" : "2019-03-11T00:36:30Z",
-      "content" : {
-         "content" : "<p>J. D. Lightsey describes how he has used Ansible as a workflow system to automate processes for some personal servers.</p>",
-         "type" : "xhtml"
-      },
-      "id" : "tag:houston.pm.org,2011-03:presentation:1902",
-      "category" : "technical meeting",
       "updated" : "2019-03-11T00:36:30Z",
-      "title" : "Notes for 'Automating multi-server workflows with Ansible' posted.",
-      "link" : "http://houston.pm.org/talks/2019talks/1902Talk/index.html"
+      "content" : {
+         "type" : "xhtml",
+         "content" : "<p>J. D. Lightsey describes how he has used Ansible as a workflow system to automate processes for some personal servers.</p>"
+      },
+      "category" : "technical meeting",
+      "link" : "http://houston.pm.org/talks/2019talks/1902Talk/index.html",
+      "published" : "2019-03-11T00:36:30Z",
+      "id" : "tag:houston.pm.org,2011-03:presentation:1902",
+      "title" : "Notes for 'Automating multi-server workflows with Ansible' posted."
    },
    {
+      "title" : "Notes for 'Looking back to 2018, what I learnt from XS and Dist::Zilla' posted.",
+      "id" : "tag:houston.pm.org,2011-03:presentation:1901",
       "published" : "2019-03-10T20:22:02Z",
-      "updated" : "2019-03-10T20:22:02Z",
+      "link" : "http://houston.pm.org/talks/2019talks/1901Talk/index.html",
+      "category" : "technical meeting",
       "content" : {
          "content" : "<p>Nicolas Rochelemagne gave a little retrospective of 2018.\nHe included a best of section and some lessons he learned concerning DistZilla and XS.</p>",
          "type" : "xhtml"
       },
-      "id" : "tag:houston.pm.org,2011-03:presentation:1901",
-      "category" : "technical meeting",
-      "link" : "http://houston.pm.org/talks/2019talks/1901Talk/index.html",
-      "title" : "Notes for 'Looking back to 2018, what I learnt from XS and Dist::Zilla' posted."
+      "updated" : "2019-03-10T20:22:02Z"
    },
    {
-      "link" : "http://houston.pm.org/talks/2018talks/1811Talk/index.html",
-      "title" : "Notes for 'Testing the untestable with Test::MockFile' posted.",
-      "published" : "2019-03-10T18:30:25Z",
       "updated" : "2019-03-10T18:30:25Z",
-      "category" : "technical meeting",
-      "id" : "tag:houston.pm.org,2011-03:presentation:1811",
       "content" : {
          "type" : "xhtml",
          "content" : "<p>Todd Rinaldo described the difficulty with testing file-level checks on a system administration tool.\nHe describes the testing and a new module to solve this problem.</p>"
-      }
+      },
+      "category" : "technical meeting",
+      "link" : "http://houston.pm.org/talks/2018talks/1811Talk/index.html",
+      "published" : "2019-03-10T18:30:25Z",
+      "title" : "Notes for 'Testing the untestable with Test::MockFile' posted.",
+      "id" : "tag:houston.pm.org,2011-03:presentation:1811"
    },
    {
-      "link" : "http://houston.pm.org/talks/2018talks/1810Talk/index.html",
-      "title" : "Notes for 'Monolithic vs Microservice: Can Davids Really Take Down Goliath?' posted.",
+      "content" : {
+         "type" : "xhtml",
+         "content" : "<p>Robert Stone presented a comparison between the monolithic style of architecture and a microservices style.\nHe highlighted the benefits of the microservices style to show the advantages of a change.</p>"
+      },
       "updated" : "2019-03-10T16:57:25Z",
-      "id" : "tag:houston.pm.org,2011-03:presentation:1810",
       "category" : "technical meeting",
-      "content" : {
-         "content" : "<p>Robert Stone presented a comparison between the monolithic style of architecture and a microservices style.\nHe highlighted the benefits of the microservices style to show the advantages of a change.</p>",
-         "type" : "xhtml"
-      },
-      "published" : "2019-03-10T16:57:25Z"
+      "link" : "http://houston.pm.org/talks/2018talks/1810Talk/index.html",
+      "published" : "2019-03-10T16:57:25Z",
+      "title" : "Notes for 'Monolithic vs Microservice: Can Davids Really Take Down Goliath?' posted.",
+      "id" : "tag:houston.pm.org,2011-03:presentation:1810"
    },
    {
-      "title" : "Notes for 'Performance of Parsing Short Strings' posted.",
       "link" : "http://houston.pm.org/talks/2018talks/1809Talk/index.html",
-      "published" : "2019-01-30T04:38:24Z",
       "content" : {
-         "content" : "<p>G. Wade Johnson presents the results of some benchmarking of different approaches to parsing\nshort text strings.</p>",
-         "type" : "xhtml"
+         "type" : "xhtml",
+         "content" : "<p>G. Wade Johnson presents the results of some benchmarking of different approaches to parsing\nshort text strings.</p>"
       },
-      "id" : "tag:houston.pm.org,2011-03:presentation:1809",
+      "updated" : "2019-01-30T04:38:24Z",
       "category" : "technical meeting",
-      "updated" : "2019-01-30T04:38:24Z"
+      "id" : "tag:houston.pm.org,2011-03:presentation:1809",
+      "title" : "Notes for 'Performance of Parsing Short Strings' posted.",
+      "published" : "2019-01-30T04:38:24Z"
    },
    {
       "link" : "http://houston.pm.org/talks/2018talks/1808Talk/index.html",
-      "title" : "Notes for 'Julian in the land of NoSQL' posted.",
-      "published" : "2019-01-29T03:38:41Z",
-      "updated" : "2019-01-29T03:38:41Z",
       "category" : "technical meeting",
-      "id" : "tag:houston.pm.org,2011-03:presentation:1808",
       "content" : {
-         "type" : "xhtml",
-         "content" : "<p>Julian Brown explores the usage of the Arangodb NoSQL database as used a website he's working on.</p>"
-      }
-   },
-   {
-      "category" : "technical meeting",
-      "id" : "tag:houston.pm.org,2011-03:presentation:1807",
-      "content" : {
-         "content" : "<p>Mark Allen decided to cut back on his Twitter use. Since he now needed a new smartphone activity,\nhe turned to DuoLingo and began studying Russian. This lead to the construction of a Perl\nmodule to handle declining Russian pronouns, adjectives, and nouns.</p>",
+         "content" : "<p>Julian Brown explores the usage of the Arangodb NoSQL database as used a website he's working on.</p>",
          "type" : "xhtml"
       },
-      "updated" : "2019-01-28T03:40:02Z",
-      "published" : "2019-01-28T03:40:02Z",
-      "title" : "Notes for 'Using Perl to Learn a Foreign Language' posted.",
-      "link" : "http://houston.pm.org/talks/2018talks/1807Talk/index.html"
+      "updated" : "2019-01-29T03:38:41Z",
+      "id" : "tag:houston.pm.org,2011-03:presentation:1808",
+      "title" : "Notes for 'Julian in the land of NoSQL' posted.",
+      "published" : "2019-01-29T03:38:41Z"
    },
    {
-      "id" : "tag:houston.pm.org,2011-03:presentation:1806",
+      "link" : "http://houston.pm.org/talks/2018talks/1807Talk/index.html",
       "category" : "technical meeting",
+      "updated" : "2019-01-28T03:40:02Z",
+      "content" : {
+         "type" : "xhtml",
+         "content" : "<p>Mark Allen decided to cut back on his Twitter use. Since he now needed a new smartphone activity,\nhe turned to DuoLingo and began studying Russian. This lead to the construction of a Perl\nmodule to handle declining Russian pronouns, adjectives, and nouns.</p>"
+      },
+      "title" : "Notes for 'Using Perl to Learn a Foreign Language' posted.",
+      "id" : "tag:houston.pm.org,2011-03:presentation:1807",
+      "published" : "2019-01-28T03:40:02Z"
+   },
+   {
+      "link" : "http://houston.pm.org/talks/2018talks/1806Talk/index.html",
+      "updated" : "2019-01-28T01:30:53Z",
       "content" : {
          "content" : "<p>Julian Brown described attempting to add a feature to a tool for synchronizing bookmarks.\nIn the process, he learned about ECMAScript 8. This presentation explores what he learned.</p>",
          "type" : "xhtml"
       },
-      "updated" : "2019-01-28T01:30:53Z",
-      "published" : "2019-01-28T01:30:53Z",
+      "category" : "technical meeting",
       "title" : "Notes for 'Floccus, an adventure in Ecmascript 8' posted.",
-      "link" : "http://houston.pm.org/talks/2018talks/1806Talk/index.html"
+      "id" : "tag:houston.pm.org,2011-03:presentation:1806",
+      "published" : "2019-01-28T01:30:53Z"
    },
    {
       "published" : "2019-01-27T22:45:57Z",
+      "title" : "Notes for 'Threat Modeling' posted.",
       "id" : "tag:houston.pm.org,2011-03:presentation:1805",
+      "category" : "technical meeting",
+      "updated" : "2019-01-27T22:45:57Z",
       "content" : {
          "content" : "<p>J. D. Lightsey gave a quick overview of the concept of Threat Modeling and demonstrated approaches for doing threat modeling.</p>",
          "type" : "xhtml"
       },
-      "category" : "technical meeting",
-      "updated" : "2019-01-27T22:45:57Z",
-      "title" : "Notes for 'Threat Modeling' posted.",
       "link" : "http://houston.pm.org/talks/2018talks/1805Talk/index.html"
    },
    {
       "published" : "2019-01-27T20:12:35Z",
+      "title" : "Notes for 'Comparison of Rails and Dancer2' posted.",
+      "id" : "tag:houston.pm.org,2011-03:presentation:1804",
+      "updated" : "2019-01-27T20:12:35Z",
       "category" : "technical meeting",
       "content" : {
          "type" : "xhtml",
          "content" : "<p>G. Wade Johnson demonstrates a simple web application built in both Ruby on Rails and Dancer2 on Perl.</p>"
       },
-      "id" : "tag:houston.pm.org,2011-03:presentation:1804",
-      "updated" : "2019-01-27T20:12:35Z",
-      "title" : "Notes for 'Comparison of Rails and Dancer2' posted.",
       "link" : "http://houston.pm.org/talks/2018talks/1804Talk/index.html"
    },
    {
-      "id" : "tag:houston.pm.org,2011-03:presentation:1803",
-      "category" : "technical meeting",
+      "link" : "http://houston.pm.org/talks/2018talks/1803Talk/index.html",
       "content" : {
-         "type" : "xhtml",
-         "content" : "<p>This month was a pair of presentations. Mark Gardner described building a robot\nproject for a GEMS conference. JD Lightsey followed up with a dive into security\nflaws in the AWStats program.</p>"
+         "content" : "<p>This month was a pair of presentations. Mark Gardner described building a robot\nproject for a GEMS conference. JD Lightsey followed up with a dive into security\nflaws in the AWStats program.</p>",
+         "type" : "xhtml"
       },
       "updated" : "2019-01-27T17:27:36Z",
-      "published" : "2019-01-27T17:27:36Z",
+      "category" : "technical meeting",
+      "id" : "tag:houston.pm.org,2011-03:presentation:1803",
       "title" : "Notes for 'AWStats Flaws and Making a Cute Robot with Perl' posted.",
-      "link" : "http://houston.pm.org/talks/2018talks/1803Talk/index.html"
+      "published" : "2019-01-27T17:27:36Z"
    },
    {
-      "title" : "\"Looking back to 2018, what I learnt from XS and Dist::Zilla\" with Nicolas Rochelemagne",
       "published" : "2019-01-08T04:22:09Z",
-      "updated" : "2019-01-08T04:22:09Z",
       "id" : "tag:houston.pm.org.2011-03:announce-20190107-7443",
-      "content" : "<div><p>This month, we will be trying a couple of things different with our\nmonthly meeting. First, we are going to be meeting on a different day:</p>\n\n<p>Monday, January 28 at cPanel (2550 North Loop West, Suite 4006,\n  Houston, Texas 77092).</p>\n\n<p>We'll also be holding the meeting at a different time. The meeting will\nstart an hour earlier, at 6pm. So meet in the lobby between 5:30 and 6.</p>\n\n<p>This month, Nicolas Rochelemagne will present some of what he has\nlearned over the past year.</p>\n\n<p>I look forward to seeing you all there, in three weeks.</p>\n</div>"
+      "title" : "\"Looking back to 2018, what I learnt from XS and Dist::Zilla\" with Nicolas Rochelemagne",
+      "content" : "<div><p>This month, we will be trying a couple of things different with our\nmonthly meeting. First, we are going to be meeting on a different day:</p>\n\n<p>Monday, January 28 at cPanel (2550 North Loop West, Suite 4006,\n  Houston, Texas 77092).</p>\n\n<p>We'll also be holding the meeting at a different time. The meeting will\nstart an hour earlier, at 6pm. So meet in the lobby between 5:30 and 6.</p>\n\n<p>This month, Nicolas Rochelemagne will present some of what he has\nlearned over the past year.</p>\n\n<p>I look forward to seeing you all there, in three weeks.</p>\n</div>",
+      "updated" : "2019-01-08T04:22:09Z"
    },
    {
-      "title" : "Testing the untestable with Test::MockFile",
-      "published" : "2018-11-01T03:01:06Z",
-      "updated" : "2018-11-01T03:01:06Z",
       "content" : "<div><p>Todd Rinaldo will present a <abbr title=\"Comprehensive Perl Archive Network\">CPAN</abbr> module\nthat he and Nicolas Rochelemagne have been working on.</p>\n</div>",
-      "id" : "tag:houston.pm.org.2011-03:announce-20181031-27158"
+      "updated" : "2018-11-01T03:01:06Z",
+      "published" : "2018-11-01T03:01:06Z",
+      "id" : "tag:houston.pm.org.2011-03:announce-20181031-27158",
+      "title" : "Testing the untestable with Test::MockFile"
    },
    {
-      "title" : "Monolithic vs Microservice, Can Davids Really Take Down Goliath?",
-      "published" : "2018-10-08T02:41:21Z",
-      "id" : "tag:houston.pm.org.2011-03:announce-20181007-10123",
       "content" : "<div>This month, Robert Stone will preview his presentation comparing Monolithic versus Microservice-based\narchitectures. It focuses on the challenges and disadvantages of monoliths and how Microservices\naddress these limitations.\n</div>",
-      "updated" : "2018-10-08T02:41:21Z"
+      "updated" : "2018-10-08T02:41:21Z",
+      "published" : "2018-10-08T02:41:21Z",
+      "title" : "Monolithic vs Microservice, Can Davids Really Take Down Goliath?",
+      "id" : "tag:houston.pm.org.2011-03:announce-20181007-10123"
    },
    {
-      "title" : "Performance of Parsing Short Strings",
       "content" : "<div><p>The September Houston.pm technical meeting will be held at cPanel, on Thursday, September 13.\nAs usual, we will meet in the lobby between 6:30 and 7pm, and go up to the meeting at 7pm.</p>\n\n<p>G. Wade Johnson is working on a tool for querying or editing gcode files. He will present an exploration\nof the performance of simple short-string recognition/parsing techniques.</p>\n\n<p>Afterward, Todd Rinaldo will do a short presentation of new features for Perl 5.28.</p>\n</div>",
-      "id" : "tag:houston.pm.org.2011-03:announce-20180909-14952",
       "updated" : "2018-09-10T00:21:16Z",
+      "id" : "tag:houston.pm.org.2011-03:announce-20180909-14952",
+      "title" : "Performance of Parsing Short Strings",
       "published" : "2018-09-10T00:21:16Z"
    },
    {
-      "title" : "Julian in the land of NoSQL",
       "updated" : "2018-08-06T21:52:22Z",
       "content" : "<div>This month, Julian Brown will be exploring the usage of the Arangodb NoSQL\ndatabase as used a website he's working on.\n</div>",
+      "published" : "2018-08-06T21:52:22Z",
       "id" : "tag:houston.pm.org.2011-03:announce-20180806-9770",
-      "published" : "2018-08-06T21:52:22Z"
+      "title" : "Julian in the land of NoSQL"
    },
    {
-      "title" : "Using Perl to Learn a Foreign Language",
+      "content" : "<div><p>Mark Allen began learning Russian about six months ago. In this talk,\nhe explains how he used Perl to create tools to help him and other people\nlearn grammatically correct Russian.</p>\n\n<p>As usual, we will meet in the lobby at cPanel, <a href=\"https://www.google.com/maps/place/2550+N+Loop+W,+Houston,+TX+77092/@29.8081429,-95.4459714,17z/data=!3m1!4b1!4m2!3m1!1s0x8640c6fa4d91297b:0x988e2dedf77ce147\">2550 North Loop West</a>,\nbetween 6:30 and 7pm on Thursday, July 12. We'll go up to the meeting\nroom at 7.</p>\n</div>",
+      "updated" : "2018-06-26T11:58:54Z",
       "published" : "2018-06-26T11:58:54Z",
       "id" : "tag:houston.pm.org.2011-03:announce-20180626-15042",
-      "content" : "<div><p>Mark Allen began learning Russian about six months ago. In this talk,\nhe explains how he used Perl to create tools to help him and other people\nlearn grammatically correct Russian.</p>\n\n<p>As usual, we will meet in the lobby at cPanel, <a href=\"https://www.google.com/maps/place/2550+N+Loop+W,+Houston,+TX+77092/@29.8081429,-95.4459714,17z/data=!3m1!4b1!4m2!3m1!1s0x8640c6fa4d91297b:0x988e2dedf77ce147\">2550 North Loop West</a>,\nbetween 6:30 and 7pm on Thursday, July 12. We'll go up to the meeting\nroom at 7.</p>\n</div>",
-      "updated" : "2018-06-26T11:58:54Z"
-   },
-   {
-      "id" : "tag:houston.pm.org.2011-03:announce-20180610-30860",
-      "content" : "<div>Julian Brown has been looking at Floccus, an open source browser bookmark\nsyncing extension. He will be covering some of what he has learned about\nchanges to Javascript.\n</div>",
-      "updated" : "2018-06-10T15:13:45Z",
-      "published" : "2018-06-10T15:13:45Z",
-      "title" : "Floccus, an adventure in Ecmascript 8"
+      "title" : "Using Perl to Learn a Foreign Language"
    }
 ]

@@ -4,25 +4,21 @@ use strict;
 use warnings;
 use 5.010;
 
-use File::Path qw(mkpath);
 use autodie;
+use lib 'lib';
+use File::Path qw(mkpath);
 use Template;
 use IO::Prompter;
+use HPM::Atom;
+use HPM::Date;
+use HPM::Sponsors;
 use JSON::XS;
-use XML::Atom::SimpleFeed;
-use XML::LibXML;
 use File::Slurp;
-use POSIX qw(strftime);
 use Text::MultiMarkdown;
 
-my @months = ( '', 'January', 'February', 'March', 'April', 'May', 'June',
-    'July', 'August', 'September', 'October', 'November', 'December' );
 my $talksdir = 'src/talks';
-my $savefile = 'writeup.json';
 
-my ($mon, $year) = (localtime)[4,5];
-++$mon;
-$year += 1900;
+my ($year, $mon, undef) = HPM::Date::today_parts();
 
 $mon = prompt( -integer => sub { 1 <= $_ && $_ <= 12 }, -def => $mon, "Month [$mon]:" );
 $year = prompt( -integer => sub { 2010 <= $_ && $_ <= $year }, -def => $year, "Year [$year]:" );
@@ -31,7 +27,7 @@ my $title  = prompt( "Title:" );
 my $attendees = prompt( -integer => sub { 0 < $_ }, "How many attendees? " );
 my $abstract = prompt_long_text( 'Enter an abstract for the presentation (no <p/> needed):' );
 my $write_up = prompt_long_text( 'Enter a review of the meeting (no <p/> needed):' );
-my $sponsor  = prompt( "Sponsor:", -1, -menu => [ 'cPanel, L.L.C.', 'HostGator, LLC' ] );
+my $sponsor  = prompt( "Sponsor:", -1, -menu => [ HPM::Sponsors::list() ] );
 chomp( $abstract, $write_up );
 
 die "Missing required parameter.\n"
@@ -40,18 +36,18 @@ die "Missing required parameter.\n"
 # Identity transforms below to remove IO::Prompter special objects.
 my %vars = (
     mon => sprintf( '%02d', $mon ),
-    monthname => $months[$mon],
+    monthname => HPM::Date::month_name( $mon ),
     year => $year+0,
     yr => substr( $year, 2 ),
     author => $author.'',
     title => $title.'',
     attendees => $attendees+0,
     abstract => $abstract.'',
-    sponsor => $sponsor.'',
+    sponsor => HPM::Sponsors::lookup( $sponsor.'' ),
     writeup => $write_up,
 );
 
-write_file( $savefile, encode_json \%vars );
+#write_file( $savefile, encode_json \%vars );
 
 add_talk_entry( \%vars );
 make_talk_dir( \%vars );
@@ -67,7 +63,7 @@ Don't forget:
  * remove entry from upcoming meetings page
 EOM
 
-unlink $savefile;
+#unlink $savefile;
 remove_tempfiles();
 exit;
 
@@ -130,14 +126,14 @@ sub make_talk_dir
     title='Summary of $vars->{monthname} $vars->{year} Presentation'
     year=$vars->{year}
 %]
-      <h1>$vars->{title}</h1>
+      <h1>[% "$vars->{title}" | html %]</h1>
 EOF
 
     print {$fh} $m->markdown( $vars->{writeup} );
 
     print {$fh} <<"EOT";
       <p>We had $vars->{attendees} people attending this month. As always, we'd like to thank
-        $vars->{sponsor} for providing the meeting space and food for the group.</p>
+        $vars->{sponsor}->{full_name} for providing the meeting space and food for the group.</p>
 [% END -%]
 EOT
     close $fh or die "Unable to close index.tt2\n";
@@ -149,44 +145,17 @@ EOT
 sub add_feed_entry
 {
     my ($vars) = @_;
-    my $entries = [];
-    my $file = 'atom_entries.json';
-    $entries = JSON::XS->new->decode( scalar read_file $file ) if -f $file;
-    unshift @{$entries}, {
+    my $atom = HPM::Atom->load_entries( 'atom_entries.json' );
+    $atom->new_entry({
         title => qq[Notes for '$vars->{title}' posted.],
         link => qq[http://houston.pm.org/talks/$vars->{year}talks/$vars->{yr}$vars->{mon}Talk/index.html],
         id => qq[tag:houston.pm.org,2011-03:presentation:$vars->{yr}$vars->{mon}],
         content => { type => 'xhtml', content => qq[<p>$vars->{abstract}</p>] },
-        published => strftime( '%Y-%m-%dT%H:%M:%SZ', gmtime ),
-        updated => strftime( '%Y-%m-%dT%H:%M:%SZ', gmtime ),
-        category => 'presentation',
-        category => 'technical meeting',
-    };
-    $entries = [ @{$entries}[0..19] ];
-    write_file( $file, JSON::XS->new->pretty(1)->encode( $entries ));
-    my $feed = XML::Atom::SimpleFeed->new(
-        id => qq[tag:houston.pm.org,2011-03:news],
-        title => qq[Houston.pm: What's New],
-        link => 'http://houston.pm.org/',
-        link => { rel => 'self', href => 'http://houston.pm.org/atom.xml' },
-        updated => strftime( '%Y-%m-%dT%H:%M:%SZ', gmtime ),
-        author => 'G. Wade Johnson',
-        category => 'news',
-    );
-
-    foreach my $entry ( @{$entries} )
-    {
-        $feed->add_entry( %{ $entry } );
-    }
-
-    write_file( 'atom.xml', pretty_xml( $feed->as_string ) );
+        categories => ['presentation', 'technical meeting'],
+    });
+    $atom->save_entries();
+    $atom->write_atom( 'atom.xml' );
     return;
-}
-
-sub pretty_xml
-{
-    my ($xml) = @_;
-    return XML::LibXML->load_xml( string => $xml )->toString(1);
 }
 
 BEGIN {
