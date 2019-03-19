@@ -10,61 +10,50 @@ use Template;
 use IO::Prompter;
 use HPM::Atom;
 use HPM::Date;
+use HPM::Sponsors;
 use File::Slurp;
+
+my $tt = Template->new( INCLUDE_PATH => 'templates', TRIM => 1 )
+    or die Template->error(), "\n";
 
 my $atom = HPM::Atom->load_entries(  'atom_entries.json' );
 
-my ($yr, $mon, $day) = HPM::Date::today_parts();
+my $vars = query_user();
 
-# Identity transforms below to remove IO::Prompter special objects.
-my $subid = ''. prompt( -def => sprintf('announce-%04d%02d%02d-%d',$yr,$mon,$day,$$), 'Sub-ID: [enter for default]', );
-my $title = ''. prompt( 'Entry Title: ');
-my $presenter = ''. prompt( 'Presenter: ' );
-$mon = prompt( -integer => sub { 1 <= $_ && $_ <= 12 }, -def => $mon, "Month [$mon]:" );
-$day = HPM::Date::meeting_day( $mon );
-$day = prompt( -integer => sub { 1 <= $_ && $_ <= 31 }, -def => $day, "Day [$day]:" );
-my $sponsor  = prompt( "Sponsor:", -1, -menu => [ 'cPanel, L.L.C.', 'HostGator, LLC' ] );
+my $details;
+$tt->process( 'atom_details.tt2', $vars, \$details )
+    or die $tt->error(), "\n";
 
-my $month = HPM::Date::month_name( $mon );
-my $date = "$month $day";
-my $content = <<"EOM";
-<p>For the $month Houston.pm meeting, $presenter will present <em>$title</em>.
-The meeting will start at 6pm on $date at the $sponsor offices.
-We begin collecting in the lobby 30 minutes before.</p>
-EOM
-
-$content = ''. prompt_long_text( 'Enter msg in valid xhtml:', $content );
+$details = prompt_long_text( 'Update the meeting details in valid xhtml:', $details );
+my $abstract = prompt_long_text( 'Enter meeting abstract in valid xhtml:' );
 $atom->new_entry({
-    title      => $title,
-    id         => "tag:houston.pm.org.2011-03:$subid",
-    content    => $content,
-    categories => [get_categories()],
+    title      => $vars->{title},
+    id         => "tag:houston.pm.org.2011-03:$vars->{subid}",
+    content    => join( "\n", grep { $_ } $details, $abstract ),
+    categories => $vars->{categories},
 });
 
 $atom->save_entries();
 $atom->write_atom( 'atom.xml' );
 
-twitter_announce(
-    month => $month,
-    date => $date,
-    title => $title,
-    presenter => $presenter,
-    sponsor => $sponsor,
-);
+twitter_announce( $vars );
 
 remove_tempfiles();
 exit;
 
 sub twitter_announce
 {
-    my %vars = @_;
+    my ($vars) = @_;
 
-    my $tweet = <<"EOT";
-For the $vars{month} #Houston.pm meeting, $vars{presenter} will present '$vars{title}'.
-The meeting will start at 6pm on $vars{date} at the #$vars{sponsor} offices.
-We begin collecting in the lobby 30 minutes before.
-Check http://houston.pm.org/ for more details.
-EOT
+    my $tweet;
+    $tt->process( 'tweet.tt2', $vars, \$tweet )
+        or die $tt->error(), "\n";
+    $tweet = prompt_long_text( 'Modify tweet:', $tweet );
+    if(length $tweet == 0)
+    {
+        print "Not sending empty tweet\n";
+        return;
+    }
     $tweet =~ tr/\n/ /s;
     send_tweet( $tweet );
 
@@ -74,6 +63,7 @@ EOT
 sub send_tweet
 {
     my ($tweet) = @_;
+
     my $err = system 'twurl', '-d', "status=$tweet", '/1.1/statuses/update.json';
     return unless $err;
     die "failed to execute 'twurl': $!\n" if $? == -1;
@@ -85,15 +75,48 @@ sub send_tweet
     die sprintf "'twurl' exited with value %d\n", $? >> 8;
 }
 
-sub get_categories {
+sub get_categories
+{
     return
         grep { /\S/ } map { s/\s*#.*//; s/^\s+//; s/\s+$//; $_ }
         split /\n/, prompt_long_text( <<"EOM" );
 Enter categories, one per line. Or uncomment ones you wish to use.
-#meeting
 #technical
 #social
+meeting
 EOM
+}
+
+sub process_to_str
+{
+    my ($tt, $template, $vars) = @_;
+
+}
+
+sub query_user
+{
+    my ($yr, $mon, $day) = HPM::Date::today_parts();
+
+    # Identity transforms below to remove IO::Prompter special objects.
+    my $subid = prompt( -def => sprintf('announce-%04d%02d%02d-%d',$yr,$mon,$day,$$), 'Sub-ID: [enter for default]', );
+    my $title = prompt( 'Entry Title: ');
+    my $presenter = prompt( 'Presenter: ' );
+    $mon = prompt( -integer => sub { 1 <= $_ && $_ <= 12 }, -def => $mon, "Month [$mon]:" );
+    $day = HPM::Date::meeting_day( $mon );
+    $day = prompt( -integer => sub { 1 <= $_ && $_ <= 31 }, -def => $day, "Day [$day]:" );
+    my $sponsor = prompt( "Sponsor:", -1, -menu => [ HPM::Sponsors::list() ] );
+
+    my $month = HPM::Date::month_name( $mon );
+    return {
+        subid => '' . $subid,
+        title => '' . $title,
+        presenter => '' . $presenter,
+        mon => 0 + $mon,
+        month => $month,
+        date => "$month $day",
+        sponsor => HPM::Sponsors::lookup( '' . $sponsor ),
+        categories => [get_categories()],
+    };
 }
 
 BEGIN {

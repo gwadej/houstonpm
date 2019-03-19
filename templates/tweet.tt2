@@ -1,0 +1,3 @@
+The [% month %] #HoustonPM meeting features [% presenter %] presenting '[% title %]'.
+Meeting begins [% date %] at 6pm in the #[% sponsor.familiar %] offices.
+We gather in the lobby 30 minutes before. http://houston.pm.org/ for details.
