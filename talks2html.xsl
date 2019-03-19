@@ -39,4 +39,7 @@
 <!-- already processed -->
 <xsl:template match="title"/>
 
+<!-- don't processed -->
+<xsl:template match="attendees|sponsor"/>
+
 </xsl:stylesheet>
