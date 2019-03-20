@@ -7,7 +7,7 @@
       <p>March meeting notes are on-line.</p>
       <h1 class="heading">Next Meeting</h1>
       <dl>
-        <dt>April 11, 2019</dt>
+        <dt><time datetime="2019-04-11">April 11, 2019</time></dt>
         <dd><a href="announce_meeting.html" target="_blank" rel="noopener"><em>Subtle Magic: Moving to Dancer2/DBIx::Class/TT</em></a> with Ruth Holloway at HostGator</dd>
       </dl>
     </div>
@@ -18,18 +18,19 @@
     programming language, as well as projects and modules written in Perl.</p>
 
     <p>We normally meet on the second Thursday of each month. The meeting officially
-      starts at 6pm and runs until around 8pm. Meetings are open to the public.
+      starts at <time datetime="18:00">6pm</time> and runs until around <time datetime="20:00">8pm</time>.
+      Meetings are open to the public.
       We don't have any dues, <em>official</em> membership, or anything like
       that. If you are interested in Perl, you are welcome to come.</p>
 
     <p>For some technical meetings, we meet in the lobby of the cPanel offices at
       <a href="https://www.google.com/maps/place/2550+N+Loop+W,+Houston,+TX+77092/@29.8081429,-95.4459714,17z/data=!3m1!4b1!4m2!3m1!1s0x8640c6fa4d91297b:0x988e2dedf77ce147">2550 North Loop West, Suite 4006, Houston, Texas 77092</a>,
-      starting sometime between 5:30pm and 6pm. Once everyone arrives, we
+      starting sometime between <time datetime="17:30">5:30pm</time> and <time datetime="18:00">6pm</time>. Once everyone arrives, we
       head upstairs to a conference room for the meeting.</p>
 
     <p>For other technical meetings, we meet in the lobby of the HostGator offices at
       <a href="https://maps.google.com/maps?q=HostGator,+Houston&fb=1&gl=us&hq=HostGator,&hnear=0x8640b8b4488d8501:0xca0d02def365053b,Houston,+TX&cid=2141572779937723859&t=h&z=16&iwloc=A">5005 Mitchelldale St #100</a>,
-      starting sometime between 5:30pm and 6pm. Once everyone arrives, we
+      starting sometime between <time datetime="17:30">5:30pm</time> and <time datetime="18:00">6pm</time>. Once everyone arrives, we
       head inside for the meeting.</p>
 
     <p>We also have social meetings at some nearby restaurant or pub in some
@@ -48,8 +49,6 @@
       List</a> page.</p>
 
     <p>For those who don't follow mailing lists, we also make meeting
-      announcements on the <a href="https://plus.google.com/104331489743076486517" rel="publisher">Houston.pm
-      Google+</a> page.
-
-    <p>There is also a Houston.pm <a href="https://twitter.com/houstonpm">Twitter account</a>.
+      announcements on the <a
+      href="https://twitter.com/houstonpm">Houston.pm twitter account</a>.</p>
 [% END %]
