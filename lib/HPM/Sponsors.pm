@@ -34,6 +34,13 @@ sub lookup
     return { %{$sp} };
 }
 
+sub by_month
+{
+    my ($mon) = @_;
+    return if !defined $mon || $mon < 1 || 12 < $mon;
+    return ($SPONSORS[($mon - 1) & 1]->{familiar});
+}
+
 1;
 __END__
 

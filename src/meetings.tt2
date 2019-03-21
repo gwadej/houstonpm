@@ -9,25 +9,13 @@
       href="technical_meetings.html">technical meetings</a> and
       <a href="social_meetings.html">social meetings</a>.</p>
 
-    <p>The meetings are announced on the Houston.pm mailing list, on the <a
-      href="https://plus.google.com/b/104331489743076486517/104331489743076486517/posts">Houston.pm
-      Google+</a> page and in our <a href="http://houston.pm.home/atom.xml">Atom
-      feed</a>. We try to announce the meetings at least a few weeks in
+    <p>The meetings are announced on the Houston.pm mailing list, on <a
+      href="https://twitter.com/houstonpm">Houston.pm twitter account</a>
+      and in our <a href="http://houston.pm.home/atom.xml">Atom
+      feed</a>. We try to announce the meetings at least a couple of weeks in
       advance, but that is not guaranteed.</p>
 
     <h2 class="subhead">Upcoming Meetings</h2>
 
-    <dl>
-        <dt>April 11, 2019</dt>
-        <dd><em>Subtle Magic: Moving to Dancer2/DBIx::Class/TT</em> with Ruth Holloway at HostGator</dd>
-
-        <dt>May 9, 2019</dt>
-        <dd>TBD at cPanel</dd>
-
-        <dt>June 13, 2019</dt>
-        <dd>TBD at HostGator</dd>
-
-        <dt>July 11, 2019</dt>
-        <dd>TBD at cPanel</dd>
-    </dl>
+[% INCLUDE 'upcoming.tt2' %]
 [% END -%]

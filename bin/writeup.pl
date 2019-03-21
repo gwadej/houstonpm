@@ -2,15 +2,15 @@
 
 use strict;
 use warnings;
-use 5.010;
+use 5.018;
 
 use autodie;
 use lib 'lib';
 use File::Path qw(mkpath);
 use Template;
 use IO::Prompter;
+use DateTime;
 use HPM::Atom;
-use HPM::Date;
 use HPM::Sponsors;
 use JSON::XS;
 use File::Slurp;
@@ -18,10 +18,12 @@ use Text::MultiMarkdown;
 
 my $talksdir = 'src/talks';
 
-my ($year, $mon, undef) = HPM::Date::today_parts();
+my $dt = DateTime->new( time_zone => 'local' );
 
-$mon = prompt( -integer => sub { 1 <= $_ && $_ <= 12 }, -def => $mon, "Month [$mon]:" );
-$year = prompt( -integer => sub { 2010 <= $_ && $_ <= $year }, -def => $year, "Year [$year]:" );
+my $mon = $dt->month();
+$dt->set_month( 0+prompt( -integer => sub { 1 <= $_ && $_ <= 12 }, -def => $mon, "Month [$mon]:" ) );
+my $year = $dt->year();
+$dt->set_year( 0+prompt( -integer => sub { 2010 <= $_ && $_ <= $year }, -def => $year, "Year [$year]:" ) );
 my $author = prompt( "Author:" );
 my $title  = prompt( "Title:" );
 my $attendees = prompt( -integer => sub { 0 < $_ }, "How many attendees? " );
@@ -36,9 +38,9 @@ die "Missing required parameter.\n"
 # Identity transforms below to remove IO::Prompter special objects.
 my %vars = (
     mon => sprintf( '%02d', $mon ),
-    monthname => HPM::Date::month_name( $mon ),
-    year => $year+0,
-    yr => substr( $year, 2 ),
+    monthname => $dt->month_name(),
+    year => $dt->year(),
+    yr => $dt->year() % 100,
     author => $author.'',
     title => $title.'',
     attendees => $attendees+0,
