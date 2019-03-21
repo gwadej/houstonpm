@@ -6,10 +6,7 @@
       <p>A <a href="https://www.surveymonkey.com/r/9YQYWTT" target="_blank" rel="noopener">survey</a> about group communications</p>
       <p>March meeting notes are on-line.</p>
       <h1 class="heading">Next Meeting</h1>
-      <dl>
-        <dt><time datetime="2019-04-11">April 11, 2019</time></dt>
-        <dd><a href="announce_meeting.html" target="_blank" rel="noopener"><em>Subtle Magic: Moving to Dancer2/DBIx::Class/TT</em></a> with Ruth Holloway at HostGator</dd>
-      </dl>
+[% INCLUDE 'next_meeting.tt2' %]
     </div>
 
     <p>This is the branch of the <a href="http://www.pm.org/">Perl Mongers</a>

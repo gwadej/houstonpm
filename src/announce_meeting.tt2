@@ -3,40 +3,26 @@
     curr_page='meetings'
 %]
     <h1 class="subhead">Next Meeting</h1>
+[% INCLUDE 'announce.tt2' -%]
+[%- END -%]
 
-[% INCLUDE hostgator month="April" date="April 11" datetime="2019-04-11" %]
-
-    <p>This month, Ruth Holloway will present <em>Subtle Magic: Moving to Dancer2/DBIx::Class/TT</em>.</p>
-
-<p>"Read the documentation", we're told&hellip;but there's always more to learn. 
-When I started working with Dancer2, DBIx::Class, and Template Toolkit 
-last fall, I'd seen the basics, but I found out <em>very</em> quickly that 
-there's much more to learn. The capabilities of this stack can influence 
-application design from the ground up-database tables, all the way to 
-the final frameworks you might choose to use on the frontend, and not 
-all of those repercussions are immediately clear from merely reading the 
-documentation!</p>
-
-<p>In this talk, we'll learn about some of the strengths of these modules 
-and demonstrate how their capabilities can be leveraged to help you work 
-faster and write great web-based applications.</p>
+[%- BLOCK gather %]
+      We will meet in the lobby between <time datetime="17:30">5:30pm</time> and <time datetime="18:00">6</time>.
+      Once everyone arrives, we head inside for the meeting at <time datetime="18:00">6pm</time>.
 [% END -%]
 
-[% BLOCK gather %]
-      We will meet in the lobby between <time datetime="17:30">5:30pm</time> and <time datetime="18:00">6</time>.
-      Once everyone arrives, we head inside for the meeting at 6pm.
-[% END %]
-
-[% BLOCK hostgator %]
-    <p>The [% month %] meeting will be held at HostGator, at 
+[%- BLOCK HostGator %]
+    <p>The [% month %] meeting will be held at HostGator, at
       <a href="https://maps.google.com/maps?q=HostGator,+Houston&fb=1&gl=us&hq=HostGator,&hnear=0x8640b8b4488d8501:0xca0d02def365053b,Houston,+TX&cid=2141572779937723859&t=h&z=16&iwloc=A">5005 Mitchelldale St #100</a>,
-      on <time datetime="[% datetime %]">[% date %]</time>. [% INCLUDE gather %]
+      on <time datetime="[% datetime %]">[% date %]</time>.
+[% INCLUDE gather -%]
     </p>
-[% END %]
+[% END -%]
 
-[% BLOCK cpanel %]
-    <p>The [% month %] meeting will be held at cPanel, at 
+[%- BLOCK cPanel %]
+    <p>The [% month %] meeting will be held at cPanel, at
       <a href="https://www.google.com/maps/place/2550+N+Loop+W,+Houston,+TX+77092/@29.8081429,-95.4459714,17z/data=!3m1!4b1!4m2!3m1!1s0x8640c6fa4d91297b:0x988e2dedf77ce147">2550 North Loop West, Suite 4006, Houston, Texas 77092</a>,
-      on <time datetime="[% datetime %]">[% date %]</time>. [% INCLUDE gather %]
+      on <time datetime="[% datetime %]">[% date %]</time>.
+[% INCLUDE gather -%]
     </p>
-[% END %]
+[% END -%]

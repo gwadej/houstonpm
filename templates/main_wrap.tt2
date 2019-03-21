@@ -22,8 +22,6 @@
 
 </div>
 <div id="footer">
-<p class="copyright">
-<!-- Creative Commons License -->
 [% INCLUDE copyright.tt2 %]
 <p>The use of the camel image in association with the Perl programming
 language is a trademark of O'Reilly &amp; Associates, Inc. Used with permission.</p>

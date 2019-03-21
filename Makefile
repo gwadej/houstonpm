@@ -1,6 +1,7 @@
 # Makefile for the Houston.pm website
 
 OUTDIR=out
+GENERATED_DIR=generated
 INSTALLDIR=/var/www-vhost/houstonpm/
 PUBLISHDIR=/mnt/houstonpm/
 
@@ -25,19 +26,24 @@ TALKSUMMARIES=${OUTDIR}/talks/mostrecent.html \
               ${OUTDIR}/talks/2019talks/index.html
 
 
+GEN_FRAGMENTS=${GENERATED_DIR}/upcoming.tt2 \
+              ${GENERATED_DIR}/next_meeting.tt2 \
+              ${GENERATED_DIR}/announce.tt2
+
 site: base ${TALKSUMMARIES}
 
 dirs:
+	if [ ! -d ${GENERATED_DIR} ]; then mkdir ${GENERATED_DIR}; fi
 	if [ ! -d ${OUTDIR} ]; then mkdir ${OUTDIR}; fi
 	if [ ! -d ${OUTDIR}/talks ]; then mkdir ${OUTDIR}/talks; fi
 
-base: dirs templates/upcoming.tt2 convert
+base: dirs ${GEN_FRAGMENTS} convert
 	cp -a -L src/* ${OUTDIR}
 	cp -a images/feed-icon-10x10.png ${OUTDIR}
 	find ${OUTDIR} -type f -name '*.tt2' -exec rm -rf {} \;
 	cp -a atom.xml ${OUTDIR}
 
-templates/upcoming.tt2: upcoming_talks.json
+${GEN_FRAGMENTS}: upcoming_talks.json
 	bin/upcoming.pl template
 
 ${OUTDIR}/talks/mostrecent.html: talks.xml mostrecent.xsl templates/mostrecent.tt2
@@ -100,17 +106,11 @@ ${OUTDIR}/talks/2019talks/index.html: talks.xml yeartalks.xsl templates/yeartalk
 convert:
 	ttree --define end_year=2019 -f _ttreerc
 
-install:
-	cp -r -p ${OUTDIR}/* ${INSTALLDIR}
-
-publish:
-	cp -r -p ${OUTDIR}/* ${PUBLISHDIR}
-
 clean:
 	find . -name '*.bck' -exec rm {} \;
 
 clobber: clean
-	rm -rf ${OUTDIR}/* templates/upcoming.tt2
+	rm -rf ${OUTDIR}/* ${GENERATED_DIR}/*
 
 makefile: templates/Makefile.tt2
 	tpage --define year=`perl -e"print 1900+((localtime)[5])"` templates/Makefile.tt2 > Makefile
@@ -120,7 +120,6 @@ help:
 	@echo The targets of interest in the Makefile:
 	@echo
 	@echo "site:     Create the website in the ./out subdirectory. Default target."
-	@echo "install:  Copies the website to a docroot on local machine to use for testing."
-	@echo "publish:  Copies the website to the webdav directory representing the real site."
+	@echo "clean:    Wipe out backup files"
 	@echo "clobber:  Wipe the output directory."
 	@echo "makefile: Recreate the Makefile to deal with a new year."

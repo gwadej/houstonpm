@@ -116,6 +116,7 @@ sub _entry_for_template
     return {
         date => $entry->{date},
         human_date => $meeting->strftime('%B %e, %Y'),
+        human_day => $meeting->strftime('%B %e'),
         datetime => $meeting->ymd(),
         month => $meeting->month_name(),
         title => $entry->{title},

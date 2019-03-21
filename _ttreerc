@@ -4,20 +4,20 @@
 # This file originally written to /home/gwadej/.ttreerc
 #
 # For more information on the contents of this configuration file, see
-# 
+#
 #     perldoc ttree
 #     ttree -h
 #
 #------------------------------------------------------------------------
 
-# The most flexible way to use ttree is to create a separate directory 
+# The most flexible way to use ttree is to create a separate directory
 # for configuration files and simply use the .ttreerc to tell ttree where
-# it is.  
+# it is.
 #
 #     cfg = /path/to/ttree/config/directory
 
-# print summary of what's going on 
-verbose 
+# print summary of what's going on
+verbose
 
 # recurse into any sub-directories and process files
 recurse
@@ -72,18 +72,20 @@ suffix tt2=html
 #    depend *=header,footer,menu
 #    depend index.html=mainpage,sidebar
 #    depend menu=menuitem,menubar
-# 
+#
 depend *=main_wrap,main_menu,copyright
-depend index.html=index_wrap,main_menu,copyright
+depend index.html=index_wrap,main_menu,copyright,next_meeting
+depend meetings.html=main_wrap,main_menu,copyright,upcoming
+depend announce_meeting.html=main_wrap,main_menu,copyright,announce
 
 #------------------------------------------------------------------------
-# The following options usually relate to a particular project so 
-# you'll probably want to put them in a separate configuration file 
-# in the directory specified by the 'cfg' option and then invoke tree 
+# The following options usually relate to a particular project so
+# you'll probably want to put them in a separate configuration file
+# in the directory specified by the 'cfg' option and then invoke tree
 # using '-f' to tell it which configuration you want to use.
 # However, there's nothing to stop you from adding default 'src',
 # 'dest' or 'lib' options in the .ttreerc.  The 'src' and 'dest' options
-# can be re-defined in another configuration file, but be aware that 'lib' 
+# can be re-defined in another configuration file, but be aware that 'lib'
 # options accumulate so any 'lib' options defined in the .ttreerc will
 # be applied every time you run ttree.
 #------------------------------------------------------------------------
@@ -97,4 +99,5 @@ dest = ./out
 # # additional directories of library templates
 # lib = /first/path/to/your/library/templates
 # lib = /second/path/to/your/library/templates
+lib = ./generated
 lib = ./templates

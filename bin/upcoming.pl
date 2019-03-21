@@ -21,9 +21,14 @@ my $command = shift;
 my $file = 'upcoming_talks.json';
 my $upc = HPM::Upcoming->load( $file );
 
+my $tt = Template->new( INCLUDE_PATH => 'generated:templates' )
+    or die Template->error(), "\n";
+
 if($command eq 'template')
 {
-    generate_upcoming_list( $upc );
+    generate_upcoming_list( $tt, $upc );
+    generate_next_meeting( $tt, $upc );
+    generate_announce( $tt, $upc );
 }
 else
 {
@@ -34,9 +39,7 @@ $upc->save();
 
 sub generate_upcoming_list
 {
-    my ($upc) = @_;
-    my $tt = Template->new( INCLUDE_PATH => 'templates' )
-        or die Template->error(), "\n";
+    my ($tt, $upc) = @_;
     my $template = <<"EOT";
     <dl>
 [%- FOREACH entry IN entries %]
@@ -50,7 +53,45 @@ sub generate_upcoming_list
     </dl>
 EOT
     my $entries = $upc->for_template();
-    $tt->process( \$template, { entries => $entries }, 'templates/upcoming.tt2' )
+    $tt->process( \$template, { entries => $entries }, 'generated/upcoming.tt2' )
+        or die $tt->error(), "\n";
+    return;
+}
+
+sub generate_next_meeting
+{
+    my ($tt, $upc) = @_;
+    my $template = <<"EOT";
+      <dl>
+[% entry = entries.0 -%]
+        <dt><time datetime="[% entry.datetime %]">[% entry.human_date %]</time></dt>
+[%- IF entry.abstract %]
+        <dd><a href="announce_meeting.html" target="_blank" rel="noopener"><em>[% entry.title %]</em></a> with [% entry.presenter %] at [% entry.location %]</dd>
+[%- ELSIF entry.title %]
+        <dd><em>[% entry.title %]</em> with [% entry.presenter %] at [% entry.location %]</dd>
+[%- ELSE %]
+        <dd>TBD at [% entry.location %]</dd>
+[%- END %]
+      </dl>
+EOT
+    my $entries = $upc->for_template();
+    $tt->process( \$template, { entries => $entries }, 'generated/next_meeting.tt2' )
+        or die $tt->error(), "\n";
+    return;
+}
+
+sub generate_announce
+{
+    my ($tt, $upc) = @_;
+    my $template = <<"EOT";
+[%- entry = entries.0 -%]
+[% "[" _ "% INCLUDE " %][% entry.location %] month="[%entry.month%]" date="[%entry.human_day%]" datetime="[%entry.datetime%]" [% "%" _ "]" %]
+    <p>This month, [% entry.presenter %] will present <em>[% entry.title %]</em>.</p>
+
+[% entry.abstract -%]
+EOT
+    my $entries = $upc->for_template();
+    $tt->process( \$template, { entries => $entries }, 'generated/announce.tt2' )
         or die $tt->error(), "\n";
     return;
 }
