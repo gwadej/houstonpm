@@ -17,17 +17,5 @@
 
     <h2 class="subhead">Upcoming Meetings</h2>
 
-    <dl>
-        <dt><time datetime="2019-04-11">April 11, 2019</time></dt>
-        <dd><em>Subtle Magic: Moving to Dancer2/DBIx::Class/TT</em> with Ruth Holloway at HostGator</dd>
-
-        <dt><time datetime="2019-05-09">May 9, 2019</time></dt>
-        <dd>TBD at cPanel</dd>
-
-        <dt><time datetime="2019-06-13">June 13, 20191</time></dt>
-        <dd>TBD at HostGator</dd>
-
-        <dt><time datetime="2019-07-11">July 11, 2019</time></dt>
-        <dd>TBD at cPanel</dd>
-    </dl>
+[% INCLUDE 'upcoming.tt2' %]
 [% END -%]

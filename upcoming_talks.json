@@ -1,0 +1,30 @@
+[
+   {
+      "abstract" : null,
+      "date" : "20190411",
+      "location" : "HostGator",
+      "presenter" : "Ruth Holloway",
+      "title" : "Subtle Magic: Moving to Dancer2/DBIx::Class/TT"
+   },
+   {
+      "abstract" : null,
+      "date" : "20190509",
+      "location" : "cPanel",
+      "presenter" : null,
+      "title" : null
+   },
+   {
+      "abstract" : null,
+      "date" : "20190613",
+      "location" : "HostGator",
+      "presenter" : null,
+      "title" : null
+   },
+   {
+      "abstract" : null,
+      "date" : "20190711",
+      "location" : "cPanel",
+      "presenter" : null,
+      "title" : null
+   }
+]

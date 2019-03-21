@@ -1,29 +1,27 @@
-package HPM::Atom;
+package HPM::Upcoming;
 
 use warnings;
 use strict;
-use 5.010;
-
-use autodie;
-use File::Slurp;
-use JSON::XS;
-use POSIX qw(strftime);
-use XML::Atom::SimpleFeed;
-use XML::LibXML;
+use 5.018;
 
 our $VERSION = '0.10';
 
-my @RECOGNIZED = qw/title id content link category categories/;
-my @REQUIRED = qw/title id content/;
+use DateTime;
+use File::Slurp;
+use HPM::Date;
+use HPM::Sponsors;
+use JSON::XS;
 
-sub load_entries
+my @ALLOWED = qw/date title presenter abstract location/;
+
+sub load
 {
     my ($class, $file) = @_;
-    $file ||= 'atom_entries.json';
+    $file //= 'upcoming_talks.json';
 
-    my $entries =
-        -f $file ? JSON::XS->new->decode( scalar read_file $file )
-                 : [];
+    my $entries = -f $file
+        ? JSON::XS->new->decode( scalar read_file $file )
+        : _init_entries();
 
     return bless {
         filename => $file,
@@ -31,7 +29,7 @@ sub load_entries
     }, $class;
 }
 
-sub save_entries
+sub save
 {
     my ($self) = @_;
     write_file(
@@ -41,67 +39,90 @@ sub save_entries
     return;
 }
 
-sub new_entry
+sub update
 {
-    my ($self, $entry) = @_;
-    foreach my $field (keys %{$entry})
-    {
-        die "'$field' is not a recognized field\n" unless grep { $_ eq $field } @RECOGNIZED;
-    }
-    foreach my $field (@REQUIRED)
-    {
-        die "Missing required '$field' field\n" unless defined $entry->{$field};
-    }
+    my ($self, %vars) = @_;
+    my $entry = _create_entry( %vars );
+    my $date = $entry->{date};
 
-    my $now = strftime( '%Y-%m-%dT%H:%M:%SZ', gmtime );
-    unshift @{$self->{entries}}, {
-        %{$entry},
-        published => $now,
-        updated => $now,
+    my @entries = grep { $_->{date} ne $date } @{$self->{entries}};
+    @entries = ($entry, sort { $a->{date} <=> $b->{date} } @entries);
+    $self->{entries} = [ @entries[0..3] ];
+
+    return;
+}
+
+sub remove
+{
+    my ($self) = @_;
+    my $entries = $self->{entries};
+    shift @{$entries};
+    if(@{$entries} < 4)
+    {
+        my $date = $entries->[-1]->{date};
+        $self->update( HPM::Date::next_meeting( $date ) );
+    }
+    return;
+}
+
+sub _init_entries
+{
+    my $meeting = HPM::Date::dt_meeting_day( DateTime->today( time_zone => 'local' ) );
+    $meeting = $meeting > DateTime->today( time_zone => 'local' )
+                ? $meeting
+                : HPM::Date::next_meeting_dt( $meeting );
+    my @events;
+    foreach (0..3)
+    {
+        push @events, _create_entry( date => $meeting->ymd( '' ) );
+        $meeting = HPM::Date::next_meeting_dt( $meeting );
+    }
+    return \@events;
+}
+
+sub _create_entry
+{
+    my (%vars) = @_;
+    foreach my $f (keys %vars)
+    {
+        die "Unexpected field '$f'\n" unless grep { $f eq $_ } @ALLOWED;
+    }
+    die "Missing required date field\n" unless defined $vars{date};
+    die "Must have both a title and a presenter or neither\n"
+        if($vars{title} xor $vars{presenter});
+    die "Abstract only allowed if title is supplied\n"
+        if($vars{abstract} and !$vars{title});
+
+    my $mon = substr($vars{date}, 4, 2);
+    return {
+        date => $vars{date},
+        title => $vars{title},
+        presenter => $vars{presenter},
+        abstract => $vars{abstract},
+        location => $vars{location} // HPM::Sponsors::by_month($mon),
     };
-    $self->{entries} = [ @{$self->{entries}}[0..19] ];
-    return;
 }
 
-sub write_atom
+sub for_template
 {
-    my ($self, $file) = @_;
-    $file ||= 'atom.xml';
-
-    my $feed = XML::Atom::SimpleFeed->new(
-        id => qq[tag:houston.pm.org,2011-03:news],
-        title => qq[Houston.pm: What's New],
-        link => 'http://houston.pm.org/',
-        link => { rel => 'self', href => 'http://houston.pm.org/atom.xml' },
-        updated => strftime( '%Y-%m-%dT%H:%M:%SZ', gmtime ),
-        author => 'G. Wade Johnson',
-        category => 'news',
-    );
-
-    foreach my $entry ( @{$self->{entries}} )
-    {
-        $feed->add_entry( _entry_to_atom( $entry ) );
-    }
-
-    write_file( $file, pretty_xml( $feed->as_string ));
-    return;
+    my ($self) = @_;
+    return [ map { _entry_for_template( $_ ) } @{$self->{entries}} ];
 }
 
-sub pretty_xml
-{
-    my ($xml) = @_;
-    return XML::LibXML->load_xml( string => $xml )->toString(1);
-}
-
-sub _entry_to_atom
+sub _entry_for_template
 {
     my ($entry) = @_;
-
-    my @atom_entry = map { $_ => $entry->{$_} } (@REQUIRED, qw/updated published/);
-    push @atom_entry, category => $entry->{category} if defined $entry->{category};
-    push @atom_entry, link => $entry->{link} if defined $entry->{link};
-    push @atom_entry, (map { (category => $_) } @{$entry->{categories} || []});
-    return @atom_entry;
+    my $meeting = HPM::Date::datetime_from( $entry->{date} );
+    return {
+        date => $entry->{date},
+        human_date => $meeting->strftime('%B %e, %Y'),
+        datetime => $meeting->ymd(),
+        month => $meeting->month_name(),
+        title => $entry->{title},
+        presenter => $entry->{presenter},
+        abstract => $entry->{abstract},
+        location => $entry->{location},
+    };
 }
 
 1;
@@ -109,16 +130,16 @@ __END__
 
 =head1 NAME
 
-HPM::Atom - [One line description of module's purpose here]
+HPM::Upcoming - [One line description of module's purpose here]
 
 
 =head1 VERSION
 
-This document describes HPM::Atom version 0.10
+This document describes HPM::Upcoming version 0.10
 
 =head1 SYNOPSIS
 
-    use HPM::Atom;
+    use HPM::Upcoming;
 
 =for author to fill in:
     Brief code example(s) here showing commonest usage(s).
@@ -141,7 +162,7 @@ This document describes HPM::Atom version 0.10
 
 =head1 CONFIGURATION AND ENVIRONMENT
 
-HPM::Atom requires no configuration files or environment variables.
+HPM::Upcoming requires no configuration files or environment variables.
 
 =head1 DEPENDENCIES
 

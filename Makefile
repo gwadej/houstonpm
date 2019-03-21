@@ -31,11 +31,14 @@ dirs:
 	if [ ! -d ${OUTDIR} ]; then mkdir ${OUTDIR}; fi
 	if [ ! -d ${OUTDIR}/talks ]; then mkdir ${OUTDIR}/talks; fi
 
-base: dirs convert
+base: dirs templates/upcoming.tt2 convert
 	cp -a -L src/* ${OUTDIR}
 	cp -a images/feed-icon-10x10.png ${OUTDIR}
 	find ${OUTDIR} -type f -name '*.tt2' -exec rm -rf {} \;
 	cp -a atom.xml ${OUTDIR}
+
+templates/upcoming.tt2: upcoming_talks.json
+	bin/upcoming.pl template
 
 ${OUTDIR}/talks/mostrecent.html: talks.xml mostrecent.xsl templates/mostrecent.tt2
 	bin/talks.pl --style=mostrecent.xsl --template=mostrecent.tt2 talks.xml > $@
@@ -107,7 +110,7 @@ clean:
 	find . -name '*.bck' -exec rm {} \;
 
 clobber: clean
-	rm -rf ${OUTDIR}/*
+	rm -rf ${OUTDIR}/* templates/upcoming.tt2
 
 makefile: templates/Makefile.tt2
 	tpage --define year=`perl -e"print 1900+((localtime)[5])"` templates/Makefile.tt2 > Makefile

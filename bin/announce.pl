@@ -2,10 +2,11 @@
 
 use strict;
 use warnings;
-use 5.010;
+use 5.018;
 
 use autodie;
-use lib 'lib';
+use FindBin;
+use lib "$FindBin::Bin/../lib";
 use Template;
 use IO::Prompter;
 use HPM::Atom;
@@ -81,39 +82,35 @@ sub get_categories
         grep { /\S/ } map { s/\s*#.*//; s/^\s+//; s/\s+$//; $_ }
         split /\n/, prompt_long_text( <<"EOM" );
 Enter categories, one per line. Or uncomment ones you wish to use.
-#technical
-#social
-meeting
+#technical meeting
+#social meeting
 EOM
-}
-
-sub process_to_str
-{
-    my ($tt, $template, $vars) = @_;
-
 }
 
 sub query_user
 {
-    my ($yr, $mon, $day) = HPM::Date::today_parts();
+    my $dt = DateTime->today( time_zone => 'local' );
 
     # Identity transforms below to remove IO::Prompter special objects.
-    my $subid = prompt( -def => sprintf('announce-%04d%02d%02d-%d',$yr,$mon,$day,$$), 'Sub-ID: [enter for default]', );
+    my $subid = prompt( -def => sprintf('announce-%is-%d', $dt->ymd( '' ), $$), 'Sub-ID: [enter for default]', );
     my $title = prompt( 'Entry Title: ');
     my $presenter = prompt( 'Presenter: ' );
-    $mon = prompt( -integer => sub { 1 <= $_ && $_ <= 12 }, -def => $mon, "Month [$mon]:" );
-    $day = HPM::Date::meeting_day( $mon );
-    $day = prompt( -integer => sub { 1 <= $_ && $_ <= 31 }, -def => $day, "Day [$day]:" );
+
+    my $mon = $dt->month();
+    $dt->set_month( 0+prompt( -integer => sub { 1 <= $_ && $_ <= 12 }, -def => $mon, "Month [$mon]:" ) );
+    $dt = HPM::Date::dt_meeting_day( $dt );
+    my $day = $dt->day();
+    $dt->set_day( 0+prompt( -integer => sub { 1 <= $_ && $_ <= 31 }, -def => $day, "Day [$day]:" ) );
     my $sponsor = prompt( "Sponsor:", -1, -menu => [ HPM::Sponsors::list() ] );
 
-    my $month = HPM::Date::month_name( $mon );
+    my $month = $dt->month_name();
     return {
         subid => '' . $subid,
         title => '' . $title,
         presenter => '' . $presenter,
-        mon => 0 + $mon,
+        mon => $dt->month(),
         month => $month,
-        date => "$month $day",
+        date => $month . ' ' . $dt->day(),
         sponsor => HPM::Sponsors::lookup( '' . $sponsor ),
         categories => [get_categories()],
     };

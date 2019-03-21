@@ -5,40 +5,46 @@ use strict;
 use 5.010;
 
 use Time::Local qw/timelocal/;
+use DateTime;
 
 our $VERSION = '0.10';
-
-my @MONTHNAMES = ( '', 'January', 'February', 'March', 'April', 'May', 'June',
-    'July', 'August', 'September', 'October', 'November', 'December' );
-
-sub today_parts
-{
-    my ($day, $mon, $yr) = (localtime)[3,4,5];
-    ++$mon;
-    $yr += 1900;
-    return ($yr, $mon, $day);
-}
-
-sub next_month
-{
-    my ($mon) = @_;
-    return ($mon % 12) + 1;
-}
-
-sub month_name
-{
-    my ($mon) = @_;
-    return $MONTHNAMES[$mon];
-}
 
 # Find the second Thursday of the specified month
 sub meeting_day
 {
     my ($mon, $year) = @_;
-    my $wday = (localtime(timelocal( 0, 0, 12, 8, $mon-1, $year )))[6];
-    $wday = 11 - $wday;
-    $wday %= 7;
-    return $wday+8;
+    my $dt = DateTime->new( year => $year, month => $mon, day => 8, time_zone => 'local' );
+    return dt_meeting_day( $dt )->day();
+}
+
+sub dt_meeting_day
+{
+    my ($dt) = @_;
+    $dt->set_day( 8 );
+    my $wday = $dt->day_of_week();
+    $wday = (11 - $wday) % 7;  # Find offset to Thursday after the 8th
+    return $dt->add( days => $wday );
+}
+
+sub next_meeting
+{
+    my ($date) = @_;
+    die "Missing required date field\n" unless defined $date;
+    my $dt = datetime_from( $date );
+    return next_meeting_dt( $dt )->ymd( '' );
+}
+
+sub next_meeting_dt
+{
+    my ($dt) = @_;
+    return $dt->add( months => 1 )->set_day( meeting_day( $dt->month(), $dt->year() ) );
+}
+
+sub datetime_from
+{
+    my ($date) = @_;
+    my ($y, $m, $d) = $date =~ /\A(\d\d\d\d)(\d\d)(\d\d)\z/;
+    return DateTime->new( year => $y, month => $m, day => $d, time_zone => 'local' );
 }
 
 1;
