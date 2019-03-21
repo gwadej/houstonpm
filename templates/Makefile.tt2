@@ -31,6 +31,7 @@ base: dirs ${GEN_FRAGMENTS} convert
 
 ${GEN_FRAGMENTS}: upcoming_talks.json
 	bin/upcoming.pl template
+	- rm out/index.html out/meetings.html out/announce_meeting.html
 
 ${OUTDIR}/talks/mostrecent.html: talks.xml mostrecent.xsl templates/mostrecent.tt2
 	bin/talks.pl --style=mostrecent.xsl --template=mostrecent.tt2 talks.xml > $@
