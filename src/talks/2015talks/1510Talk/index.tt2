@@ -2,7 +2,7 @@
     title='Summary of October 2015 Presentation'
     year=2015
 %]
-      <h2 class="subhead">"Show and Tell with Role::Tiny and CGI::Application::Dispatch" and "UTF-8 and Perl"</h2>
+      <h2 class="subhead"><a name="dispatch">Show and Tell with Role::Tiny and CGI::Application::Dispatch</a></h2>
       <p>
 Jim Bacon did his presentation remotely through Google Hangouts. This worked
 somewhat better than expected. He presented a difficult problem of adapting
@@ -23,6 +23,7 @@ use <code>Role::Tiny::apply_role_to_class</code>. It will keep adding roles in
 a persistent environment.</p>
       <p>The presentation triggered a good discussion on various implications of this
 design.</p>
+   <h2 class="subhead"><a name="utf8">UTF-8 and Perl</a></h2>
       <p>Next, Todd Rinaldo described his adventures in Unicode and UTF-8.</p>
       <p>
 Working on the Perl compiler. B::C almost everything has a flag for utf-8
