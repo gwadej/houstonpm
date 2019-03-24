@@ -2,7 +2,7 @@
 
 OUTDIR=out
 GENERATED_DIR=generated
-INSTALLDIR=/var/www-vhost/houstonpm/
+INSTALLDIR=/var/www/hpm/
 PUBLISHDIR=/mnt/houstonpm/
 
 TALKSUMMARIES=${OUTDIR}/talks/mostrecent.html \
@@ -107,6 +107,9 @@ ${OUTDIR}/talks/2019talks/index.html: talks.xml yeartalks.xsl templates/yeartalk
 convert:
 	ttree --define end_year=2019 -f _ttreerc
 
+install:
+	cp -r -p ${OUTDIR}/* ${INSTALLDIR}
+
 clean:
 	find . -name '*.bck' -exec rm {} \;
 
@@ -121,6 +124,7 @@ help:
 	@echo The targets of interest in the Makefile:
 	@echo
 	@echo "site:     Create the website in the ./out subdirectory. Default target."
+	@echo "install:  Copies the website to a docroot on local machine to use for testing."
 	@echo "clean:    Wipe out backup files"
 	@echo "clobber:  Wipe the output directory."
 	@echo "makefile: Recreate the Makefile to deal with a new year."
