@@ -20,6 +20,7 @@ my $command = shift;
 
 my $file = 'upcoming_talks.json';
 my $upc = HPM::Upcoming->load( $file );
+$upc->normalize();
 
 my $tt = Template->new( INCLUDE_PATH => 'generated:templates' )
     or die Template->error(), "\n";

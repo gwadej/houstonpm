@@ -9,6 +9,11 @@ use DateTime;
 
 our $VERSION = '0.10';
 
+sub today
+{
+    return DateTime->today( timezone => 'local' )->ymd( '' );
+}
+
 # Find the second Thursday of the specified month
 sub meeting_day
 {

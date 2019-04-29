@@ -13,6 +13,8 @@ use HPM::Sponsors;
 use JSON::XS;
 
 my @ALLOWED = qw/date title presenter abstract location/;
+my $COUNT_ENTRIES = 4;
+my $LAST_ENTRY = $COUNT_ENTRIES - 1;
 
 sub load
 {
@@ -39,6 +41,17 @@ sub save
     return;
 }
 
+sub normalize
+{
+    my ($self) = @_;
+    my $today = HPM::Date::today();
+    if(grep { $today <= $_->{date} && $_->{title} } @{$self->{entries}})
+    {
+        $self->{entries} = [ grep { $today <= $_->{date} } @{$self->{entries}} ];
+        $self->_fill_entries();
+    }
+}
+
 sub update
 {
     my ($self, %vars) = @_;
@@ -47,21 +60,33 @@ sub update
 
     my @entries = grep { $_->{date} ne $date } @{$self->{entries}};
     @entries = ($entry, sort { $a->{date} <=> $b->{date} } @entries);
-    $self->{entries} = [ @entries[0..3] ];
+    $self->{entries} = [ @entries[0..$LAST_ENTRY] ];
 
+    return;
+}
+
+sub _last_entry
+{
+    my ($self) = @_;
+    return $self->{entries}->[-1];
+}
+
+sub _fill_entries
+{
+    my ($self) = @_;
+    while( @{$self->{entries}} < $COUNT_ENTRIES )
+    {
+        my $date = $self->_last_entry->{date};
+        $self->update( HPM::Date::next_meeting( $date ) );
+    }
     return;
 }
 
 sub remove
 {
     my ($self) = @_;
-    my $entries = $self->{entries};
-    shift @{$entries};
-    if(@{$entries} < 4)
-    {
-        my $date = $entries->[-1]->{date};
-        $self->update( HPM::Date::next_meeting( $date ) );
-    }
+    shift @{$self->{entries}};
+    $self->_fill_entries();
     return;
 }
 
@@ -72,7 +97,7 @@ sub _init_entries
                 ? $meeting
                 : HPM::Date::next_meeting_dt( $meeting );
     my @events;
-    foreach (0..3)
+    foreach (0..$LAST_ENTRY)
     {
         push @events, _create_entry( date => $meeting->ymd( '' ) );
         $meeting = HPM::Date::next_meeting_dt( $meeting );
@@ -106,7 +131,7 @@ sub _create_entry
 sub for_template
 {
     my ($self) = @_;
-    return [ map { _entry_for_template( $_ ) } @{$self->{entries}} ];
+    return [ map { _entry_for_template( $_ ) } @{$self->{entries}}[0..3] ];
 }
 
 sub _entry_for_template

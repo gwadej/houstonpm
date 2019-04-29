@@ -12,6 +12,7 @@ use IO::Prompter;
 use HPM::Atom;
 use HPM::Date;
 use HPM::Sponsors;
+use HPM::Upcoming;
 use File::Slurp;
 
 my $tt = Template->new( INCLUDE_PATH => 'templates', TRIM => 1 )
@@ -39,8 +40,43 @@ $atom->write_atom( 'atom.xml' );
 
 twitter_announce( $vars );
 
+$vars = { %{$vars}, abstract => $abstract };
+update_upcoming( $vars );
+display_email( $vars );
+
 remove_tempfiles();
 exit;
+
+sub display_email
+{
+    my ($vars) = @_;
+
+    my $email;
+    $tt->process( 'email.tt2', $vars, \$email )
+        or die $tt->error(), "\n";
+    say $email;
+
+    return;
+}
+
+sub update_upcoming
+{
+    my ($vars) = @_;
+    my $file = 'upcoming_talks.json';
+    my $upc = HPM::Upcoming->load( $file );
+    $upc->normalize();
+
+    my %entry = {
+        date      => $vars->{datestamp},
+        title     => $vars->{title},
+        presenter => $vars->{presenter},
+        abstract  => $vars->{abstract},
+    };
+
+    $upc->update( %entry );
+    $upc->save();
+    return;
+}
 
 sub twitter_announce
 {
@@ -111,6 +147,7 @@ sub query_user
         mon => $dt->month(),
         month => $month,
         date => $month . ' ' . $dt->day(),
+        datestamp => $dt->ymd( '' ),
         sponsor => HPM::Sponsors::lookup( '' . $sponsor ),
         categories => [get_categories()],
     };
