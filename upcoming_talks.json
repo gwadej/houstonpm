@@ -1,17 +1,10 @@
 [
    {
-      "abstract" : "<p><em>Read the documentation</em>, we're told&hellip;but there's always more to learn.\nWhen I started working with Dancer2, DBIx::Class, and Template Toolkit\nlast fall, I'd seen the basics, but I found out <em>very</em> quickly that\nthere's much more to learn. The capabilities of this stack can influence\napplication design from the ground up-database tables, all the way to\nthe final frameworks you might choose to use on the frontend, and not\nall of those repercussions are immediately clear from merely reading the\ndocumentation!</p>\n\n<p>In this talk, we'll learn about some of the strengths of these modules\nand demonstrate how their capabilities can be leveraged to help you work\nfaster and write great web-based applications.</p>",
-      "date" : "20190411",
-      "location" : "HostGator",
-      "presenter" : "Ruth Holloway",
-      "title" : "Subtle Magic: Moving to Dancer2/DBIx::Class/TT"
-   },
-   {
-      "abstract" : null,
+      "abstract" : "Robert will do a demo of OpenShift, showing some of the high points of functionality.",
       "date" : "20190509",
       "location" : "cPanel",
-      "presenter" : null,
-      "title" : null
+      "presenter" : "Robert Stone",
+      "title" : "Getting Started With OpenShift - Using Containers for SysOps and Engineering"
    },
    {
       "abstract" : null,
@@ -24,6 +17,13 @@
       "abstract" : null,
       "date" : "20190711",
       "location" : "cPanel",
+      "presenter" : null,
+      "title" : null
+   },
+   {
+      "abstract" : null,
+      "date" : "20190808",
+      "location" : "HostGator",
       "presenter" : null,
       "title" : null
    }

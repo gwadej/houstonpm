@@ -4,12 +4,25 @@
   <title type="html">Houston.pm: What's New</title>
   <link href="http://houston.pm.org/"/>
   <link href="http://houston.pm.org/atom.xml" rel="self"/>
-  <updated>2019-03-19T19:26:19Z</updated>
+  <updated>2019-04-28T23:43:57Z</updated>
   <author>
     <name>G. Wade Johnson</name>
   </author>
   <category term="news"/>
   <generator uri="https://metacpan.org/pod/XML::Atom::SimpleFeed" version="0.902">XML::Atom::SimpleFeed</generator>
+  <entry>
+    <title>Getting Started With OpenShift - Using Containers for SysOps and Engineering</title>
+    <id>tag:houston.pm.org.2011-03:announce-20190428s-26836</id>
+    <content type="html">&lt;p&gt;For the May Houston.pm meeting, Robert Stone presents &lt;em&gt;Getting Started With OpenShift - Using Containers for SysOps and Engineering&lt;/em&gt;.
+The meeting begins on May 9 at 6pm in the cPanel offices at 2550 North Loop West, Suite 4006.
+We gather in the lobby 30 minutes before.&lt;/p&gt;
+&lt;p&gt;Robert will do a demo of OpenShift, showing some of the high points of functionality.&lt;/p&gt;
+</content>
+    <updated>2019-04-28T23:43:57Z</updated>
+    <published>2019-04-28T23:43:57Z</published>
+    <category term="technical meeting"/>
+    <category term="OpenShift"/>
+  </entry>
   <entry>
     <title type="html">Notes for 'make-ing a Static Website' posted.</title>
     <id>tag:houston.pm.org,2011-03:presentation:1903</id>
@@ -127,10 +140,11 @@ Some of the comments made valid suggestions of other design trade-offs.
 In the end, many of the decisions made on this system were simply what was easiest at the time.</p>
       </div>
     </content>
+    <updated>2019-03-19T19:26:19Z</updated>
+    <published>2019-03-19T19:26:19Z</published>
     <link href="http://houston.pm.org/talks/2019talks/1903Talk/index.html"/>
     <category term="presentation"/>
     <category term="technical meeting"/>
-    <updated>2019-03-19T19:26:19Z</updated>
   </entry>
   <entry>
     <title>Subtle Magic: Moving to Dancer2/DBIx::Class/TT</title>
@@ -156,8 +170,9 @@ write great web-based applications.&lt;/p&gt;
 &lt;/div&gt;
 
 &lt;/div&gt;</content>
+    <updated>2019-03-17T04:03:47Z</updated>
+    <published>2019-03-17T04:03:47Z</published>
     <category term="technical meeting"/>
-    <updated>2019-03-19T19:26:19Z</updated>
   </entry>
   <entry>
     <title>make-ing a Static Website</title>
@@ -168,8 +183,9 @@ There will be Perl. There will be Template Toolkit. There will be markdown.&lt;/
 &lt;p&gt;As usual, we will meet in the lobby at cPanel, Inc. starting at 5:30pm on Thursday, March 14.
 At 6pm, we will go up to the meeting.&lt;/p&gt;
 &lt;/div&gt;</content>
+    <updated>2019-03-13T23:26:32Z</updated>
+    <published>2019-03-13T23:26:32Z</published>
     <category term="technical meeting"/>
-    <updated>2019-03-19T19:26:19Z</updated>
   </entry>
   <entry>
     <title type="html">Notes for 'Automating multi-server workflows with Ansible' posted.</title>
@@ -179,9 +195,10 @@ At 6pm, we will go up to the meeting.&lt;/p&gt;
         <p>J. D. Lightsey describes how he has used Ansible as a workflow system to automate processes for some personal servers.</p>
       </div>
     </content>
+    <updated>2019-03-11T00:36:30Z</updated>
+    <published>2019-03-11T00:36:30Z</published>
     <category term="technical meeting"/>
     <link href="http://houston.pm.org/talks/2019talks/1902Talk/index.html"/>
-    <updated>2019-03-19T19:26:19Z</updated>
   </entry>
   <entry>
     <title type="html">Notes for 'Looking back to 2018, what I learnt from XS and Dist::Zilla' posted.</title>
@@ -192,9 +209,10 @@ At 6pm, we will go up to the meeting.&lt;/p&gt;
 He included a best of section and some lessons he learned concerning DistZilla and XS.</p>
       </div>
     </content>
+    <updated>2019-03-10T20:22:02Z</updated>
+    <published>2019-03-10T20:22:02Z</published>
     <category term="technical meeting"/>
     <link href="http://houston.pm.org/talks/2019talks/1901Talk/index.html"/>
-    <updated>2019-03-19T19:26:19Z</updated>
   </entry>
   <entry>
     <title type="html">Notes for 'Testing the untestable with Test::MockFile' posted.</title>
@@ -205,9 +223,10 @@ He included a best of section and some lessons he learned concerning DistZilla a
 He describes the testing and a new module to solve this problem.</p>
       </div>
     </content>
+    <updated>2019-03-10T18:30:25Z</updated>
+    <published>2019-03-10T18:30:25Z</published>
     <category term="technical meeting"/>
     <link href="http://houston.pm.org/talks/2018talks/1811Talk/index.html"/>
-    <updated>2019-03-19T19:26:19Z</updated>
   </entry>
   <entry>
     <title type="html">Notes for 'Monolithic vs Microservice: Can Davids Really Take Down Goliath?' posted.</title>
@@ -218,9 +237,10 @@ He describes the testing and a new module to solve this problem.</p>
 He highlighted the benefits of the microservices style to show the advantages of a change.</p>
       </div>
     </content>
+    <updated>2019-03-10T16:57:25Z</updated>
+    <published>2019-03-10T16:57:25Z</published>
     <category term="technical meeting"/>
     <link href="http://houston.pm.org/talks/2018talks/1810Talk/index.html"/>
-    <updated>2019-03-19T19:26:19Z</updated>
   </entry>
   <entry>
     <title type="html">Notes for 'Performance of Parsing Short Strings' posted.</title>
@@ -231,9 +251,10 @@ He highlighted the benefits of the microservices style to show the advantages of
 short text strings.</p>
       </div>
     </content>
+    <updated>2019-01-30T04:38:24Z</updated>
+    <published>2019-01-30T04:38:24Z</published>
     <category term="technical meeting"/>
     <link href="http://houston.pm.org/talks/2018talks/1809Talk/index.html"/>
-    <updated>2019-03-19T19:26:19Z</updated>
   </entry>
   <entry>
     <title type="html">Notes for 'Julian in the land of NoSQL' posted.</title>
@@ -243,9 +264,10 @@ short text strings.</p>
         <p>Julian Brown explores the usage of the Arangodb NoSQL database as used a website he's working on.</p>
       </div>
     </content>
+    <updated>2019-01-29T03:38:41Z</updated>
+    <published>2019-01-29T03:38:41Z</published>
     <category term="technical meeting"/>
     <link href="http://houston.pm.org/talks/2018talks/1808Talk/index.html"/>
-    <updated>2019-03-19T19:26:19Z</updated>
   </entry>
   <entry>
     <title type="html">Notes for 'Using Perl to Learn a Foreign Language' posted.</title>
@@ -257,9 +279,10 @@ he turned to DuoLingo and began studying Russian. This lead to the construction 
 module to handle declining Russian pronouns, adjectives, and nouns.</p>
       </div>
     </content>
+    <updated>2019-01-28T03:40:02Z</updated>
+    <published>2019-01-28T03:40:02Z</published>
     <category term="technical meeting"/>
     <link href="http://houston.pm.org/talks/2018talks/1807Talk/index.html"/>
-    <updated>2019-03-19T19:26:19Z</updated>
   </entry>
   <entry>
     <title type="html">Notes for 'Floccus, an adventure in Ecmascript 8' posted.</title>
@@ -270,9 +293,10 @@ module to handle declining Russian pronouns, adjectives, and nouns.</p>
 In the process, he learned about ECMAScript 8. This presentation explores what he learned.</p>
       </div>
     </content>
+    <updated>2019-01-28T01:30:53Z</updated>
+    <published>2019-01-28T01:30:53Z</published>
     <category term="technical meeting"/>
     <link href="http://houston.pm.org/talks/2018talks/1806Talk/index.html"/>
-    <updated>2019-03-19T19:26:19Z</updated>
   </entry>
   <entry>
     <title type="html">Notes for 'Threat Modeling' posted.</title>
@@ -282,9 +306,10 @@ In the process, he learned about ECMAScript 8. This presentation explores what h
         <p>J. D. Lightsey gave a quick overview of the concept of Threat Modeling and demonstrated approaches for doing threat modeling.</p>
       </div>
     </content>
+    <updated>2019-01-27T22:45:57Z</updated>
+    <published>2019-01-27T22:45:57Z</published>
     <category term="technical meeting"/>
     <link href="http://houston.pm.org/talks/2018talks/1805Talk/index.html"/>
-    <updated>2019-03-19T19:26:19Z</updated>
   </entry>
   <entry>
     <title type="html">Notes for 'Comparison of Rails and Dancer2' posted.</title>
@@ -294,9 +319,10 @@ In the process, he learned about ECMAScript 8. This presentation explores what h
         <p>G. Wade Johnson demonstrates a simple web application built in both Ruby on Rails and Dancer2 on Perl.</p>
       </div>
     </content>
+    <updated>2019-01-27T20:12:35Z</updated>
+    <published>2019-01-27T20:12:35Z</published>
     <category term="technical meeting"/>
     <link href="http://houston.pm.org/talks/2018talks/1804Talk/index.html"/>
-    <updated>2019-03-19T19:26:19Z</updated>
   </entry>
   <entry>
     <title type="html">Notes for 'AWStats Flaws and Making a Cute Robot with Perl' posted.</title>
@@ -308,9 +334,10 @@ project for a GEMS conference. JD Lightsey followed up with a dive into security
 flaws in the AWStats program.</p>
       </div>
     </content>
+    <updated>2019-01-27T17:27:36Z</updated>
+    <published>2019-01-27T17:27:36Z</published>
     <category term="technical meeting"/>
     <link href="http://houston.pm.org/talks/2018talks/1803Talk/index.html"/>
-    <updated>2019-03-19T19:26:19Z</updated>
   </entry>
   <entry>
     <title type="html">"Looking back to 2018, what I learnt from XS and Dist::Zilla" with Nicolas Rochelemagne</title>
@@ -329,7 +356,8 @@ learned over the past year.&lt;/p&gt;
 
 &lt;p&gt;I look forward to seeing you all there, in three weeks.&lt;/p&gt;
 &lt;/div&gt;</content>
-    <updated>2019-03-19T19:26:19Z</updated>
+    <updated>2019-01-08T04:22:09Z</updated>
+    <published>2019-01-08T04:22:09Z</published>
   </entry>
   <entry>
     <title>Testing the untestable with Test::MockFile</title>
@@ -337,7 +365,8 @@ learned over the past year.&lt;/p&gt;
     <content type="html">&lt;div&gt;&lt;p&gt;Todd Rinaldo will present a &lt;abbr title="Comprehensive Perl Archive Network"&gt;CPAN&lt;/abbr&gt; module
 that he and Nicolas Rochelemagne have been working on.&lt;/p&gt;
 &lt;/div&gt;</content>
-    <updated>2019-03-19T19:26:19Z</updated>
+    <updated>2018-11-01T03:01:06Z</updated>
+    <published>2018-11-01T03:01:06Z</published>
   </entry>
   <entry>
     <title>Monolithic vs Microservice, Can Davids Really Take Down Goliath?</title>
@@ -346,7 +375,8 @@ that he and Nicolas Rochelemagne have been working on.&lt;/p&gt;
 architectures. It focuses on the challenges and disadvantages of monoliths and how Microservices
 address these limitations.
 &lt;/div&gt;</content>
-    <updated>2019-03-19T19:26:19Z</updated>
+    <updated>2018-10-08T02:41:21Z</updated>
+    <published>2018-10-08T02:41:21Z</published>
   </entry>
   <entry>
     <title>Performance of Parsing Short Strings</title>
@@ -359,7 +389,8 @@ of the performance of simple short-string recognition/parsing techniques.&lt;/p&
 
 &lt;p&gt;Afterward, Todd Rinaldo will do a short presentation of new features for Perl 5.28.&lt;/p&gt;
 &lt;/div&gt;</content>
-    <updated>2019-03-19T19:26:19Z</updated>
+    <updated>2018-09-10T00:21:16Z</updated>
+    <published>2018-09-10T00:21:16Z</published>
   </entry>
   <entry>
     <title>Julian in the land of NoSQL</title>
@@ -367,19 +398,7 @@ of the performance of simple short-string recognition/parsing techniques.&lt;/p&
     <content type="html">&lt;div&gt;This month, Julian Brown will be exploring the usage of the Arangodb NoSQL
 database as used a website he's working on.
 &lt;/div&gt;</content>
-    <updated>2019-03-19T19:26:19Z</updated>
-  </entry>
-  <entry>
-    <title>Using Perl to Learn a Foreign Language</title>
-    <id>tag:houston.pm.org.2011-03:announce-20180626-15042</id>
-    <content type="html">&lt;div&gt;&lt;p&gt;Mark Allen began learning Russian about six months ago. In this talk,
-he explains how he used Perl to create tools to help him and other people
-learn grammatically correct Russian.&lt;/p&gt;
-
-&lt;p&gt;As usual, we will meet in the lobby at cPanel, &lt;a href="https://www.google.com/maps/place/2550+N+Loop+W,+Houston,+TX+77092/@29.8081429,-95.4459714,17z/data=!3m1!4b1!4m2!3m1!1s0x8640c6fa4d91297b:0x988e2dedf77ce147"&gt;2550 North Loop West&lt;/a&gt;,
-between 6:30 and 7pm on Thursday, July 12. We'll go up to the meeting
-room at 7.&lt;/p&gt;
-&lt;/div&gt;</content>
-    <updated>2019-03-19T19:26:19Z</updated>
+    <updated>2018-08-06T21:52:22Z</updated>
+    <published>2018-08-06T21:52:22Z</published>
   </entry>
 </feed>

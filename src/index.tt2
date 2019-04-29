@@ -3,7 +3,6 @@
 
     <div id="sidebar">
         <h1 class="heading">What's New <a href="atom.xml"><img style="border:0;float:right;" src="feed-icon-10x10.png" /></a></h1>
-      <p>A <a href="https://www.surveymonkey.com/r/9YQYWTT" target="_blank" rel="noopener">survey</a> about group communications</p>
       <p>March meeting notes are on-line.</p>
       <h1 class="heading">Next Meeting</h1>
 [% INCLUDE 'next_meeting.tt2' %]
