@@ -11,7 +11,7 @@ our $VERSION = '0.10';
 
 sub today
 {
-    return DateTime->today( timezone => 'local' )->ymd( '' );
+    return DateTime->today( time_zone => 'local' )->ymd( '' );
 }
 
 # Find the second Thursday of the specified month

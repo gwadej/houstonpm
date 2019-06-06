@@ -59,7 +59,7 @@ sub update
     my $date = $entry->{date};
 
     my @entries = grep { $_->{date} ne $date } @{$self->{entries}};
-    @entries = ($entry, sort { $a->{date} <=> $b->{date} } @entries);
+    @entries = sort { $a->{date} <=> $b->{date} } @entries, $entry;
     $self->{entries} = [ @entries[0..$LAST_ENTRY] ];
 
     return;
@@ -77,7 +77,7 @@ sub _fill_entries
     while( @{$self->{entries}} < $COUNT_ENTRIES )
     {
         my $date = $self->_last_entry->{date};
-        $self->update( HPM::Date::next_meeting( $date ) );
+        $self->update( date => HPM::Date::next_meeting( $date ) );
     }
     return;
 }

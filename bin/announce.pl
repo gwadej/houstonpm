@@ -66,12 +66,12 @@ sub update_upcoming
     my $upc = HPM::Upcoming->load( $file );
     $upc->normalize();
 
-    my %entry = {
+    my %entry = (
         date      => $vars->{datestamp},
         title     => $vars->{title},
         presenter => $vars->{presenter},
         abstract  => $vars->{abstract},
-    };
+    );
 
     $upc->update( %entry );
     $upc->save();

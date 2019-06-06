@@ -4,12 +4,46 @@
   <title type="html">Houston.pm: What's New</title>
   <link href="http://houston.pm.org/"/>
   <link href="http://houston.pm.org/atom.xml" rel="self"/>
-  <updated>2019-04-28T23:43:57Z</updated>
+  <updated>2019-06-06T02:04:24Z</updated>
   <author>
     <name>G. Wade Johnson</name>
   </author>
   <category term="news"/>
   <generator uri="https://metacpan.org/pod/XML::Atom::SimpleFeed" version="0.902">XML::Atom::SimpleFeed</generator>
+  <entry>
+    <title>Moving my website toward production</title>
+    <id>tag:houston.pm.org.2011-03:announce-20190605s-13192</id>
+    <content type="html">&lt;p&gt;For the June Houston.pm meeting, Julian Brown presents &lt;em&gt;Moving my website toward production&lt;/em&gt;.
+The meeting begins on June 13 at 6pm in the HostGator offices at 5005 Mitchelldale St., Suite 100.
+We gather in the lobby 30 minutes before.&lt;/p&gt;
+&lt;p&gt;Julian will spend a few minutes on the state of his current website project, and where he intends
+to take it. He will elicit input from the attendees.&lt;/p&gt;
+
+&lt;p&gt;Julian Brown will spend some time showing and explaining the state of his
+current website project, and cover where he intends to take it next&lt;/p&gt;
+</content>
+    <updated>2019-06-06T02:04:24Z</updated>
+    <published>2019-06-06T02:04:24Z</published>
+    <category term="technical meeting"/>
+    <category term="web development"/>
+  </entry>
+  <entry>
+    <title>Moving my website toward production</title>
+    <id>tag:houston.pm.org.2011-03:announce-20190605s-10603</id>
+    <content type="html">&lt;p&gt;For the June Houston.pm meeting, Julian Brown presents &lt;em&gt;Moving my website toward production&lt;/em&gt;.
+The meeting begins on June 13 at 6pm in the HostGator offices at 5005 Mitchelldale St., Suite 100.
+We gather in the lobby 30 minutes before.&lt;/p&gt;
+&lt;p&gt;Julian will spend a few minutes on the state of his current website project, and where he intends
+to take it. He will elicit input from the attendees.&lt;/p&gt;
+
+&lt;p&gt;Julian Brown will spend some time showing and explaining the state of his
+current website project, and cover where he intends to take it next&lt;/p&gt;
+</content>
+    <updated>2019-06-06T02:00:47Z</updated>
+    <published>2019-06-06T02:00:47Z</published>
+    <category term="technical meeting"/>
+    <category term="web development"/>
+  </entry>
   <entry>
     <title>Getting Started With OpenShift - Using Containers for SysOps and Engineering</title>
     <id>tag:houston.pm.org.2011-03:announce-20190428s-26836</id>
@@ -377,28 +411,5 @@ address these limitations.
 &lt;/div&gt;</content>
     <updated>2018-10-08T02:41:21Z</updated>
     <published>2018-10-08T02:41:21Z</published>
-  </entry>
-  <entry>
-    <title>Performance of Parsing Short Strings</title>
-    <id>tag:houston.pm.org.2011-03:announce-20180909-14952</id>
-    <content type="html">&lt;div&gt;&lt;p&gt;The September Houston.pm technical meeting will be held at cPanel, on Thursday, September 13.
-As usual, we will meet in the lobby between 6:30 and 7pm, and go up to the meeting at 7pm.&lt;/p&gt;
-
-&lt;p&gt;G. Wade Johnson is working on a tool for querying or editing gcode files. He will present an exploration
-of the performance of simple short-string recognition/parsing techniques.&lt;/p&gt;
-
-&lt;p&gt;Afterward, Todd Rinaldo will do a short presentation of new features for Perl 5.28.&lt;/p&gt;
-&lt;/div&gt;</content>
-    <updated>2018-09-10T00:21:16Z</updated>
-    <published>2018-09-10T00:21:16Z</published>
-  </entry>
-  <entry>
-    <title>Julian in the land of NoSQL</title>
-    <id>tag:houston.pm.org.2011-03:announce-20180806-9770</id>
-    <content type="html">&lt;div&gt;This month, Julian Brown will be exploring the usage of the Arangodb NoSQL
-database as used a website he's working on.
-&lt;/div&gt;</content>
-    <updated>2018-08-06T21:52:22Z</updated>
-    <published>2018-08-06T21:52:22Z</published>
   </entry>
 </feed>
