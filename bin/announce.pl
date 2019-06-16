@@ -92,7 +92,7 @@ sub twitter_announce
         return;
     }
     $tweet =~ tr/\n/ /s;
-    send_tweet( $tweet );
+    send_tweet( $tweet ) if prompt( 'Send the tweet?: ', -yes );
 
     return;
 }
