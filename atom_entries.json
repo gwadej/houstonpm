@@ -2,6 +2,17 @@
    {
       "categories" : [
          "technical meeting",
+         "testing"
+      ],
+      "content" : "<p>For the July Houston.pm meeting, Julian Brown presents <em>Test::Spec, test using a declarative testing framework</em>.\nThe meeting begins on July 11 at 6pm in the cPanel offices at 2550 North Loop West, Suite 4006.\nWe gather in the lobby 30 minutes before.</p>\nJulian presents a Perl test module modeled after the Ruby RSpec testing framework.",
+      "id" : "tag:houston.pm.org.2011-03:announce-20190628s-12863",
+      "published" : "2019-06-28T20:30:53Z",
+      "title" : "Test::Spec, test using a declarative testing framework",
+      "updated" : "2019-06-28T20:30:53Z"
+   },
+   {
+      "categories" : [
+         "technical meeting",
          "web development"
       ],
       "content" : "<p>For the June Houston.pm meeting, Julian Brown presents <em>Moving my website toward production</em>.\nThe meeting begins on June 13 at 6pm in the HostGator offices at 5005 Mitchelldale St., Suite 100.\nWe gather in the lobby 30 minutes before.</p>\n<p>Julian will spend a few minutes on the state of his current website project, and where he intends\nto take it. He will elicit input from the attendees.</p>\n\n<p>Julian Brown will spend some time showing and explaining the state of his\ncurrent website project, and cover where he intends to take it next</p>\n",
@@ -208,12 +219,5 @@
       "published" : "2018-11-01T03:01:06Z",
       "title" : "Testing the untestable with Test::MockFile",
       "updated" : "2018-11-01T03:01:06Z"
-   },
-   {
-      "content" : "<div>This month, Robert Stone will preview his presentation comparing Monolithic versus Microservice-based\narchitectures. It focuses on the challenges and disadvantages of monoliths and how Microservices\naddress these limitations.\n</div>",
-      "id" : "tag:houston.pm.org.2011-03:announce-20181007-10123",
-      "published" : "2018-10-08T02:41:21Z",
-      "title" : "Monolithic vs Microservice, Can Davids Really Take Down Goliath?",
-      "updated" : "2018-10-08T02:41:21Z"
    }
 ]

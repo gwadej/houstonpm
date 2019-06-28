@@ -4,12 +4,24 @@
   <title type="html">Houston.pm: What's New</title>
   <link href="http://houston.pm.org/"/>
   <link href="http://houston.pm.org/atom.xml" rel="self"/>
-  <updated>2019-06-06T02:04:24Z</updated>
+  <updated>2019-06-28T20:30:53Z</updated>
   <author>
     <name>G. Wade Johnson</name>
   </author>
   <category term="news"/>
   <generator uri="https://metacpan.org/pod/XML::Atom::SimpleFeed" version="0.902">XML::Atom::SimpleFeed</generator>
+  <entry>
+    <title>Test::Spec, test using a declarative testing framework</title>
+    <id>tag:houston.pm.org.2011-03:announce-20190628s-12863</id>
+    <content type="html">&lt;p&gt;For the July Houston.pm meeting, Julian Brown presents &lt;em&gt;Test::Spec, test using a declarative testing framework&lt;/em&gt;.
+The meeting begins on July 11 at 6pm in the cPanel offices at 2550 North Loop West, Suite 4006.
+We gather in the lobby 30 minutes before.&lt;/p&gt;
+Julian presents a Perl test module modeled after the Ruby RSpec testing framework.</content>
+    <updated>2019-06-28T20:30:53Z</updated>
+    <published>2019-06-28T20:30:53Z</published>
+    <category term="technical meeting"/>
+    <category term="testing"/>
+  </entry>
   <entry>
     <title>Moving my website toward production</title>
     <id>tag:houston.pm.org.2011-03:announce-20190605s-13192</id>
@@ -401,15 +413,5 @@ that he and Nicolas Rochelemagne have been working on.&lt;/p&gt;
 &lt;/div&gt;</content>
     <updated>2018-11-01T03:01:06Z</updated>
     <published>2018-11-01T03:01:06Z</published>
-  </entry>
-  <entry>
-    <title>Monolithic vs Microservice, Can Davids Really Take Down Goliath?</title>
-    <id>tag:houston.pm.org.2011-03:announce-20181007-10123</id>
-    <content type="html">&lt;div&gt;This month, Robert Stone will preview his presentation comparing Monolithic versus Microservice-based
-architectures. It focuses on the challenges and disadvantages of monoliths and how Microservices
-address these limitations.
-&lt;/div&gt;</content>
-    <updated>2018-10-08T02:41:21Z</updated>
-    <published>2018-10-08T02:41:21Z</published>
   </entry>
 </feed>
