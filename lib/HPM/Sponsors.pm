@@ -14,10 +14,10 @@ my @SPONSORS = (
         map => 'https://www.google.com/maps/place/2550+N+Loop+W,+Houston,+TX+77092/@29.8081429,-95.4459714,17z/data=!3m1!4b1!4m2!3m1!1s0x8640c6fa4d91297b:0x988e2dedf77ce147',
     },
     {
-        familiar => 'HostGator',
-        full_name => 'HostGator, LLC',
+        familiar => 'Hostgator',
+        full_name => 'Hostgator, LLC',
         address => '5005 Mitchelldale St., Suite 100',
-        map => 'https://maps.google.com/maps?q=HostGator,+Houston&fb=1&gl=us&hq=HostGator,&hnear=0x8640b8b4488d8501:0xca0d02def365053b,Houston,+TX&cid=2141572779937723859&t=h&z=16&iwloc=A',
+        map => 'https://maps.google.com/maps?q=Hostgator,+Houston&fb=1&gl=us&hq=HostGator,&hnear=0x8640b8b4488d8501:0xca0d02def365053b,Houston,+TX&cid=2141572779937723859&t=h&z=16&iwloc=A',
     },
 );
 

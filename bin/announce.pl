@@ -27,7 +27,8 @@ $tt->process( 'atom_details.tt2', $vars, \$details )
     or die $tt->error(), "\n";
 
 $details = prompt_long_text( 'Update the meeting details in valid xhtml:', $details );
-my $abstract = prompt_long_text( 'Enter meeting abstract in valid xhtml:' );
+my $abstract = $vars->{abstract};
+$abstract = prompt_long_text( 'Enter meeting abstract in valid xhtml:', $abstract );
 $atom->new_entry({
     title      => $vars->{title},
     id         => "tag:houston.pm.org.2011-03:$vars->{subid}",
@@ -129,15 +130,22 @@ sub query_user
 
     # Identity transforms below to remove IO::Prompter special objects.
     my $subid = prompt( -def => sprintf('announce-%is-%d', $dt->ymd( '' ), $$), 'Sub-ID: [enter for default]', );
-    my $title = prompt( 'Entry Title: ');
-    my $presenter = prompt( 'Presenter: ' );
-
     my $mon = $dt->month();
     $dt->set_month( 0+prompt( -integer => sub { 1 <= $_ && $_ <= 12 }, -def => $mon, "Month [$mon]:" ) );
     $dt = HPM::Date::dt_meeting_day( $dt );
     my $day = $dt->day();
     $dt->set_day( 0+prompt( -integer => sub { 1 <= $_ && $_ <= 31 }, -def => $day, "Day [$day]:" ) );
-    my $sponsor = prompt( "Sponsor:", -1, -menu => [ HPM::Sponsors::list() ] );
+    my $datestamp = $dt->ymd( '' );
+
+    my $file = 'upcoming_talks.json';
+    my $upc = HPM::Upcoming->load( $file )->by_date( $datestamp );
+
+    say "[$upc->{title}]" if $upc->{title};
+    my $title = prompt( 'Entry Title: ', -def => $upc->{title});
+    say "[$upc->{presenter}]" if $upc->{presenter};
+    my $presenter = prompt( 'Presenter: ', -def => $upc->{presenter} );
+
+    my $sponsor = $upc->{location} || prompt( "Sponsor:", -1, -menu => [ HPM::Sponsors::list() ] );
 
     my $month = $dt->month_name();
     return {
@@ -147,9 +155,10 @@ sub query_user
         mon => $dt->month(),
         month => $month,
         date => $month . ' ' . $dt->day(),
-        datestamp => $dt->ymd( '' ),
+        datestamp => $datestamp,
         sponsor => HPM::Sponsors::lookup( '' . $sponsor ),
         categories => [get_categories()],
+        abstract => $upc->{abstract},
     };
 }
 

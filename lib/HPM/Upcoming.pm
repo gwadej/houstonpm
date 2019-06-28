@@ -65,6 +65,14 @@ sub update
     return;
 }
 
+sub by_date
+{
+    my ($self, $date) = @_;
+    my ($entry) = grep { $_->{date} eq $date } @{$self->{entries}};
+    # clone
+    return { %{$entry} };
+}
+
 sub _last_entry
 {
     my ($self) = @_;
