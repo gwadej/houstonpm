@@ -1,17 +1,10 @@
 [
    {
-      "abstract" : "Julian presents a Perl test module modeled after the Ruby RSpec testing framework.",
-      "date" : "20190711",
-      "location" : "cPanel",
-      "presenter" : "Julian Brown",
-      "title" : "Test::Spec, test using a declarative testing framework"
-   },
-   {
-      "abstract" : null,
+      "abstract" : "<p>Wade starts with some unit testing basics, introduces some of the Perl unit test frameworks,\nand then focuses on concepts and tricks to help you get more from your unit tests. While not\nattempting to cover the whole subject of unit testing, there should be something here for most.</p>\n",
       "date" : "20190808",
       "location" : "Hostgator",
-      "presenter" : null,
-      "title" : null
+      "presenter" : "G. Wade Johnson",
+      "title" : "Basic Unit Testing Concepts in Perl"
    },
    {
       "abstract" : null,
@@ -24,6 +17,13 @@
       "abstract" : null,
       "date" : "20191010",
       "location" : "Hostgator",
+      "presenter" : null,
+      "title" : null
+   },
+   {
+      "abstract" : null,
+      "date" : "20191114",
+      "location" : "cPanel",
       "presenter" : null,
       "title" : null
    }

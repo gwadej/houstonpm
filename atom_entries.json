@@ -2,6 +2,20 @@
    {
       "categories" : [
          "technical meeting",
+         "unit testing",
+         "documentation",
+         "design",
+         "codecraft"
+      ],
+      "content" : "<p>For the August Houston.pm meeting, G. Wade Johnson presents <em>Basic Unit Testing Concepts in Perl</em>.\nThe meeting begins on August 8 at 6pm in the Hostgator offices at 5005 Mitchelldale St., Suite 100.\nWe gather in the lobby 30 minutes before.</p>\n\n<p>Wade starts with some unit testing basics, introduces some of the Perl unit test frameworks,\nand then focuses on concepts and tricks to help you get more from your unit tests. While not\nattempting to cover the whole subject of unit testing, there should be something here for most.</p>\n",
+      "id" : "tag:houston.pm.org.2011-03:announce-20190730s-418",
+      "published" : "2019-07-30T23:09:21Z",
+      "title" : "Basic Unit Testing Concepts in Perl",
+      "updated" : "2019-07-30T23:09:21Z"
+   },
+   {
+      "categories" : [
+         "technical meeting",
          "testing"
       ],
       "content" : "<p>For the July Houston.pm meeting, Julian Brown presents <em>Test::Spec, test using a declarative testing framework</em>.\nThe meeting begins on July 11 at 6pm in the cPanel offices at 2550 North Loop West, Suite 4006.\nWe gather in the lobby 30 minutes before.</p>\nJulian presents a Perl test module modeled after the Ruby RSpec testing framework.",
@@ -212,12 +226,5 @@
       "published" : "2019-01-08T04:22:09Z",
       "title" : "\"Looking back to 2018, what I learnt from XS and Dist::Zilla\" with Nicolas Rochelemagne",
       "updated" : "2019-01-08T04:22:09Z"
-   },
-   {
-      "content" : "<div><p>Todd Rinaldo will present a <abbr title=\"Comprehensive Perl Archive Network\">CPAN</abbr> module\nthat he and Nicolas Rochelemagne have been working on.</p>\n</div>",
-      "id" : "tag:houston.pm.org.2011-03:announce-20181031-27158",
-      "published" : "2018-11-01T03:01:06Z",
-      "title" : "Testing the untestable with Test::MockFile",
-      "updated" : "2018-11-01T03:01:06Z"
    }
 ]

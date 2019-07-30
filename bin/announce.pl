@@ -124,6 +124,18 @@ Enter categories, one per line. Or uncomment ones you wish to use.
 EOM
 }
 
+sub prompt_opt
+{
+    my ($prompt, $def) = @_;
+
+    if($def)
+    {
+        say "[$def]";
+        return prompt( $prompt, -def => $def );
+    }
+    return prompt( $prompt );
+}
+
 sub query_user
 {
     my $dt = DateTime->today( time_zone => 'local' );
@@ -140,10 +152,8 @@ sub query_user
     my $file = 'upcoming_talks.json';
     my $upc = HPM::Upcoming->load( $file )->by_date( $datestamp );
 
-    say "[$upc->{title}]" if $upc->{title};
-    my $title = prompt( 'Entry Title: ', -def => $upc->{title});
-    say "[$upc->{presenter}]" if $upc->{presenter};
-    my $presenter = prompt( 'Presenter: ', -def => $upc->{presenter} );
+    my $title = prompt_opt( 'Entry Title: ', $upc->{title} );
+    my $presenter = prompt_opt( 'Presenter: ', $upc->{presenter} );
 
     my $sponsor = $upc->{location} || prompt( "Sponsor:", -1, -menu => [ HPM::Sponsors::list() ] );
 

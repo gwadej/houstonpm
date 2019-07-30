@@ -4,12 +4,31 @@
   <title type="html">Houston.pm: What's New</title>
   <link href="http://houston.pm.org/"/>
   <link href="http://houston.pm.org/atom.xml" rel="self"/>
-  <updated>2019-06-28T20:30:53Z</updated>
+  <updated>2019-07-30T23:09:21Z</updated>
   <author>
     <name>G. Wade Johnson</name>
   </author>
   <category term="news"/>
   <generator uri="https://metacpan.org/pod/XML::Atom::SimpleFeed" version="0.902">XML::Atom::SimpleFeed</generator>
+  <entry>
+    <title>Basic Unit Testing Concepts in Perl</title>
+    <id>tag:houston.pm.org.2011-03:announce-20190730s-418</id>
+    <content type="html">&lt;p&gt;For the August Houston.pm meeting, G. Wade Johnson presents &lt;em&gt;Basic Unit Testing Concepts in Perl&lt;/em&gt;.
+The meeting begins on August 8 at 6pm in the Hostgator offices at 5005 Mitchelldale St., Suite 100.
+We gather in the lobby 30 minutes before.&lt;/p&gt;
+
+&lt;p&gt;Wade starts with some unit testing basics, introduces some of the Perl unit test frameworks,
+and then focuses on concepts and tricks to help you get more from your unit tests. While not
+attempting to cover the whole subject of unit testing, there should be something here for most.&lt;/p&gt;
+</content>
+    <updated>2019-07-30T23:09:21Z</updated>
+    <published>2019-07-30T23:09:21Z</published>
+    <category term="technical meeting"/>
+    <category term="unit testing"/>
+    <category term="documentation"/>
+    <category term="design"/>
+    <category term="codecraft"/>
+  </entry>
   <entry>
     <title>Test::Spec, test using a declarative testing framework</title>
     <id>tag:houston.pm.org.2011-03:announce-20190628s-12863</id>
@@ -404,14 +423,5 @@ learned over the past year.&lt;/p&gt;
 &lt;/div&gt;</content>
     <updated>2019-01-08T04:22:09Z</updated>
     <published>2019-01-08T04:22:09Z</published>
-  </entry>
-  <entry>
-    <title>Testing the untestable with Test::MockFile</title>
-    <id>tag:houston.pm.org.2011-03:announce-20181031-27158</id>
-    <content type="html">&lt;div&gt;&lt;p&gt;Todd Rinaldo will present a &lt;abbr title="Comprehensive Perl Archive Network"&gt;CPAN&lt;/abbr&gt; module
-that he and Nicolas Rochelemagne have been working on.&lt;/p&gt;
-&lt;/div&gt;</content>
-    <updated>2018-11-01T03:01:06Z</updated>
-    <published>2018-11-01T03:01:06Z</published>
   </entry>
 </feed>
