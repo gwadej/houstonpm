@@ -1,17 +1,10 @@
 [
    {
-      "abstract" : "<p>Wade starts with some unit testing basics, introduces some of the Perl unit test frameworks,\nand then focuses on concepts and tricks to help you get more from your unit tests. While not\nattempting to cover the whole subject of unit testing, there should be something here for most.</p>\n",
-      "date" : "20190808",
-      "location" : "Hostgator",
-      "presenter" : "G. Wade Johnson",
-      "title" : "Basic Unit Testing Concepts in Perl"
-   },
-   {
-      "abstract" : null,
+      "abstract" : "<p>This panel discussion covers the basics of Object Oriented Programming. Although OO has been the\ndominant paradigm for the last couple of decades, there are still a number of concepts that\npeople seem to misunderstand. Julian will attempt to wrangle a number of members with many different\nlevels of experience to discuss OO. The goal is to help all of us come to a mutual understanding\nof various aspects of OO.</p>\n",
       "date" : "20190912",
       "location" : "cPanel",
-      "presenter" : null,
-      "title" : null
+      "presenter" : "Julian Brown",
+      "title" : "Panel Discussion on Object Oriented Programming"
    },
    {
       "abstract" : null,
@@ -24,6 +17,13 @@
       "abstract" : null,
       "date" : "20191114",
       "location" : "cPanel",
+      "presenter" : null,
+      "title" : null
+   },
+   {
+      "abstract" : null,
+      "date" : "20191212",
+      "location" : "Hostgator",
       "presenter" : null,
       "title" : null
    }

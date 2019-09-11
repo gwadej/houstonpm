@@ -2,6 +2,18 @@
    {
       "categories" : [
          "technical meeting",
+         "panel discussion",
+         "fundamentals"
+      ],
+      "content" : "<p>For the September Houston.pm meeting, Julian Brown chairs a <em>Panel Discussion on Object Oriented Programming</em>.\nThe meeting begins on September 12 at 6pm in the cPanel offices at 2550 North Loop West, Suite 4006.\nWe gather in the lobby 30 minutes before.</p>\n\n<p>This panel discussion covers the basics of Object Oriented Programming. Although OO has been the\ndominant paradigm for the last couple of decades, there are still a number of concepts that\npeople seem to misunderstand. Julian will attempt to wrangle a number of members with many different\nlevels of experience to discuss OO. The goal is to help all of us come to a mutual understanding\nof various aspects of OO.</p>\n",
+      "id" : "tag:houston.pm.org.2011-03:announce-20190911s-1260",
+      "published" : "2019-09-11T12:32:28Z",
+      "title" : "Panel Discussion on Object Oriented Programming",
+      "updated" : "2019-09-11T12:32:28Z"
+   },
+   {
+      "categories" : [
+         "technical meeting",
          "unit testing",
          "documentation",
          "design",
@@ -219,12 +231,5 @@
       "published" : "2019-01-27T17:27:36Z",
       "title" : "Notes for 'AWStats Flaws and Making a Cute Robot with Perl' posted.",
       "updated" : "2019-01-27T17:27:36Z"
-   },
-   {
-      "content" : "<div><p>This month, we will be trying a couple of things different with our\nmonthly meeting. First, we are going to be meeting on a different day:</p>\n\n<p>Monday, January 28 at cPanel (2550 North Loop West, Suite 4006,\n  Houston, Texas 77092).</p>\n\n<p>We'll also be holding the meeting at a different time. The meeting will\nstart an hour earlier, at 6pm. So meet in the lobby between 5:30 and 6.</p>\n\n<p>This month, Nicolas Rochelemagne will present some of what he has\nlearned over the past year.</p>\n\n<p>I look forward to seeing you all there, in three weeks.</p>\n</div>",
-      "id" : "tag:houston.pm.org.2011-03:announce-20190107-7443",
-      "published" : "2019-01-08T04:22:09Z",
-      "title" : "\"Looking back to 2018, what I learnt from XS and Dist::Zilla\" with Nicolas Rochelemagne",
-      "updated" : "2019-01-08T04:22:09Z"
    }
 ]

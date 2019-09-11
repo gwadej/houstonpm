@@ -4,12 +4,31 @@
   <title type="html">Houston.pm: What's New</title>
   <link href="http://houston.pm.org/"/>
   <link href="http://houston.pm.org/atom.xml" rel="self"/>
-  <updated>2019-07-30T23:09:21Z</updated>
+  <updated>2019-09-11T12:32:28Z</updated>
   <author>
     <name>G. Wade Johnson</name>
   </author>
   <category term="news"/>
   <generator uri="https://metacpan.org/pod/XML::Atom::SimpleFeed" version="0.902">XML::Atom::SimpleFeed</generator>
+  <entry>
+    <title>Panel Discussion on Object Oriented Programming</title>
+    <id>tag:houston.pm.org.2011-03:announce-20190911s-1260</id>
+    <content type="html">&lt;p&gt;For the September Houston.pm meeting, Julian Brown chairs a &lt;em&gt;Panel Discussion on Object Oriented Programming&lt;/em&gt;.
+The meeting begins on September 12 at 6pm in the cPanel offices at 2550 North Loop West, Suite 4006.
+We gather in the lobby 30 minutes before.&lt;/p&gt;
+
+&lt;p&gt;This panel discussion covers the basics of Object Oriented Programming. Although OO has been the
+dominant paradigm for the last couple of decades, there are still a number of concepts that
+people seem to misunderstand. Julian will attempt to wrangle a number of members with many different
+levels of experience to discuss OO. The goal is to help all of us come to a mutual understanding
+of various aspects of OO.&lt;/p&gt;
+</content>
+    <updated>2019-09-11T12:32:28Z</updated>
+    <published>2019-09-11T12:32:28Z</published>
+    <category term="technical meeting"/>
+    <category term="panel discussion"/>
+    <category term="fundamentals"/>
+  </entry>
   <entry>
     <title>Basic Unit Testing Concepts in Perl</title>
     <id>tag:houston.pm.org.2011-03:announce-20190730s-418</id>
@@ -403,25 +422,5 @@ flaws in the AWStats program.</p>
     <published>2019-01-27T17:27:36Z</published>
     <category term="technical meeting"/>
     <link href="http://houston.pm.org/talks/2018talks/1803Talk/index.html"/>
-  </entry>
-  <entry>
-    <title type="html">"Looking back to 2018, what I learnt from XS and Dist::Zilla" with Nicolas Rochelemagne</title>
-    <id>tag:houston.pm.org.2011-03:announce-20190107-7443</id>
-    <content type="html">&lt;div&gt;&lt;p&gt;This month, we will be trying a couple of things different with our
-monthly meeting. First, we are going to be meeting on a different day:&lt;/p&gt;
-
-&lt;p&gt;Monday, January 28 at cPanel (2550 North Loop West, Suite 4006,
-  Houston, Texas 77092).&lt;/p&gt;
-
-&lt;p&gt;We'll also be holding the meeting at a different time. The meeting will
-start an hour earlier, at 6pm. So meet in the lobby between 5:30 and 6.&lt;/p&gt;
-
-&lt;p&gt;This month, Nicolas Rochelemagne will present some of what he has
-learned over the past year.&lt;/p&gt;
-
-&lt;p&gt;I look forward to seeing you all there, in three weeks.&lt;/p&gt;
-&lt;/div&gt;</content>
-    <updated>2019-01-08T04:22:09Z</updated>
-    <published>2019-01-08T04:22:09Z</published>
   </entry>
 </feed>
