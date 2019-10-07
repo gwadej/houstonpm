@@ -4,12 +4,30 @@
   <title type="html">Houston.pm: What's New</title>
   <link href="http://houston.pm.org/"/>
   <link href="http://houston.pm.org/atom.xml" rel="self"/>
-  <updated>2019-09-11T12:32:28Z</updated>
+  <updated>2019-10-07T01:52:40Z</updated>
   <author>
     <name>G. Wade Johnson</name>
   </author>
   <category term="news"/>
   <generator uri="https://metacpan.org/pod/XML::Atom::SimpleFeed" version="0.902">XML::Atom::SimpleFeed</generator>
+  <entry>
+    <title>Cross-language Object-Oriented Mechanics</title>
+    <id>tag:houston.pm.org.2011-03:announce-20191006s-12043</id>
+    <content type="html">&lt;p&gt;For the October Houston.pm meeting, Evan Carroll presents &lt;em&gt;Cross-language Object-Oriented Mechanics&lt;/em&gt;.
+The meeting begins on October 10 at 6pm in the Hostgator offices at 5005 Mitchelldale St., Suite 100.
+We gather in the lobby 30 minutes before.&lt;/p&gt;
+
+&lt;p&gt;Evan Carroll will cover some of the reasons for using an Object Oriented paradigm when
+programming. He will show how Perl and a few other languages implement the appropriate
+concepts.&lt;/p&gt;
+</content>
+    <updated>2019-10-07T01:52:40Z</updated>
+    <published>2019-10-07T01:52:40Z</published>
+    <category term="technical meeting"/>
+    <category term="fundamentals"/>
+    <category term="cross-language"/>
+    <category term="OO"/>
+  </entry>
   <entry>
     <title>Panel Discussion on Object Oriented Programming</title>
     <id>tag:houston.pm.org.2011-03:announce-20190911s-1260</id>
@@ -407,20 +425,5 @@ In the process, he learned about ECMAScript 8. This presentation explores what h
     <published>2019-01-27T20:12:35Z</published>
     <category term="technical meeting"/>
     <link href="http://houston.pm.org/talks/2018talks/1804Talk/index.html"/>
-  </entry>
-  <entry>
-    <title type="html">Notes for 'AWStats Flaws and Making a Cute Robot with Perl' posted.</title>
-    <id>tag:houston.pm.org,2011-03:presentation:1803</id>
-    <content type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml">
-        <p>This month was a pair of presentations. Mark Gardner described building a robot
-project for a GEMS conference. JD Lightsey followed up with a dive into security
-flaws in the AWStats program.</p>
-      </div>
-    </content>
-    <updated>2019-01-27T17:27:36Z</updated>
-    <published>2019-01-27T17:27:36Z</published>
-    <category term="technical meeting"/>
-    <link href="http://houston.pm.org/talks/2018talks/1803Talk/index.html"/>
   </entry>
 </feed>

@@ -1,17 +1,10 @@
 [
    {
-      "abstract" : "<p>This panel discussion covers the basics of Object Oriented Programming. Although OO has been the\ndominant paradigm for the last couple of decades, there are still a number of concepts that\npeople seem to misunderstand. Julian will attempt to wrangle a number of members with many different\nlevels of experience to discuss OO. The goal is to help all of us come to a mutual understanding\nof various aspects of OO.</p>\n",
-      "date" : "20190912",
-      "location" : "cPanel",
-      "presenter" : "Julian Brown",
-      "title" : "Panel Discussion on Object Oriented Programming"
-   },
-   {
-      "abstract" : null,
+      "abstract" : "<p>Evan Carroll will cover some of the reasons for using an Object Oriented paradigm when\nprogramming. He will show how Perl and a few other languages implement the appropriate\nconcepts.</p>\n",
       "date" : "20191010",
       "location" : "Hostgator",
-      "presenter" : null,
-      "title" : null
+      "presenter" : "Evan Carroll",
+      "title" : "Cross-language Object-Oriented Mechanics"
    },
    {
       "abstract" : null,
@@ -24,6 +17,13 @@
       "abstract" : null,
       "date" : "20191212",
       "location" : "Hostgator",
+      "presenter" : null,
+      "title" : null
+   },
+   {
+      "abstract" : null,
+      "date" : "20200109",
+      "location" : "cPanel",
       "presenter" : null,
       "title" : null
    }

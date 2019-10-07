@@ -2,6 +2,19 @@
    {
       "categories" : [
          "technical meeting",
+         "fundamentals",
+         "cross-language",
+         "OO"
+      ],
+      "content" : "<p>For the October Houston.pm meeting, Evan Carroll presents <em>Cross-language Object-Oriented Mechanics</em>.\nThe meeting begins on October 10 at 6pm in the Hostgator offices at 5005 Mitchelldale St., Suite 100.\nWe gather in the lobby 30 minutes before.</p>\n\n<p>Evan Carroll will cover some of the reasons for using an Object Oriented paradigm when\nprogramming. He will show how Perl and a few other languages implement the appropriate\nconcepts.</p>\n",
+      "id" : "tag:houston.pm.org.2011-03:announce-20191006s-12043",
+      "published" : "2019-10-07T01:52:40Z",
+      "title" : "Cross-language Object-Oriented Mechanics",
+      "updated" : "2019-10-07T01:52:40Z"
+   },
+   {
+      "categories" : [
+         "technical meeting",
          "panel discussion",
          "fundamentals"
       ],
@@ -219,17 +232,5 @@
       "published" : "2019-01-27T20:12:35Z",
       "title" : "Notes for 'Comparison of Rails and Dancer2' posted.",
       "updated" : "2019-01-27T20:12:35Z"
-   },
-   {
-      "category" : "technical meeting",
-      "content" : {
-         "content" : "<p>This month was a pair of presentations. Mark Gardner described building a robot\nproject for a GEMS conference. JD Lightsey followed up with a dive into security\nflaws in the AWStats program.</p>",
-         "type" : "xhtml"
-      },
-      "id" : "tag:houston.pm.org,2011-03:presentation:1803",
-      "link" : "http://houston.pm.org/talks/2018talks/1803Talk/index.html",
-      "published" : "2019-01-27T17:27:36Z",
-      "title" : "Notes for 'AWStats Flaws and Making a Cute Robot with Perl' posted.",
-      "updated" : "2019-01-27T17:27:36Z"
    }
 ]
