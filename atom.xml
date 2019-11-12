@@ -4,12 +4,31 @@
   <title type="html">Houston.pm: What's New</title>
   <link href="http://houston.pm.org/"/>
   <link href="http://houston.pm.org/atom.xml" rel="self"/>
-  <updated>2019-10-07T01:52:40Z</updated>
+  <updated>2019-11-12T04:36:18Z</updated>
   <author>
     <name>G. Wade Johnson</name>
   </author>
   <category term="news"/>
   <generator uri="https://metacpan.org/pod/XML::Atom::SimpleFeed" version="0.902">XML::Atom::SimpleFeed</generator>
+  <entry>
+    <title type="html">"Constants: what they provide, and how to mock them." and "Using Regular Expressions"</title>
+    <id>tag:houston.pm.org.2011-03:announce-20191111s-16823</id>
+    <content type="html">&lt;p&gt;For the November Houston.pm meeting, Evan Carroll presents &lt;em&gt;Constants: what they provide, and how
+to mock them&lt;/em&gt; and G. Wade Johnson presents &lt;em&gt;Using Regular Expressions&lt;/em&gt;.
+The meeting begins on November 14 at 6pm in the cPanel offices at 2550 North Loop West, Suite 4006.
+We gather in the lobby 30 minutes before.&lt;/p&gt;
+
+&lt;p&gt;The November meeting will include two presentations. Evan Carroll will cover another aspect of
+testing in Perl with &lt;em&gt;Constants: what they provide, and how to mock them&lt;/em&gt;. Afterward, G. Wade Johnson
+will present another fundamentals topic: &lt;em&gt;Using Regular Expressions&lt;/em&gt;.&lt;/p&gt;
+</content>
+    <updated>2019-11-12T04:36:18Z</updated>
+    <published>2019-11-12T04:36:18Z</published>
+    <category term="technical meeting"/>
+    <category term="testing"/>
+    <category term="fundamentals"/>
+    <category term="regular expressions"/>
+  </entry>
   <entry>
     <title>Cross-language Object-Oriented Mechanics</title>
     <id>tag:houston.pm.org.2011-03:announce-20191006s-12043</id>
@@ -412,18 +431,5 @@ In the process, he learned about ECMAScript 8. This presentation explores what h
     <published>2019-01-27T22:45:57Z</published>
     <category term="technical meeting"/>
     <link href="http://houston.pm.org/talks/2018talks/1805Talk/index.html"/>
-  </entry>
-  <entry>
-    <title type="html">Notes for 'Comparison of Rails and Dancer2' posted.</title>
-    <id>tag:houston.pm.org,2011-03:presentation:1804</id>
-    <content type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml">
-        <p>G. Wade Johnson demonstrates a simple web application built in both Ruby on Rails and Dancer2 on Perl.</p>
-      </div>
-    </content>
-    <updated>2019-01-27T20:12:35Z</updated>
-    <published>2019-01-27T20:12:35Z</published>
-    <category term="technical meeting"/>
-    <link href="http://houston.pm.org/talks/2018talks/1804Talk/index.html"/>
   </entry>
 </feed>

@@ -2,6 +2,19 @@
    {
       "categories" : [
          "technical meeting",
+         "testing",
+         "fundamentals",
+         "regular expressions"
+      ],
+      "content" : "<p>For the November Houston.pm meeting, Evan Carroll presents <em>Constants: what they provide, and how\nto mock them</em> and G. Wade Johnson presents <em>Using Regular Expressions</em>.\nThe meeting begins on November 14 at 6pm in the cPanel offices at 2550 North Loop West, Suite 4006.\nWe gather in the lobby 30 minutes before.</p>\n\n<p>The November meeting will include two presentations. Evan Carroll will cover another aspect of\ntesting in Perl with <em>Constants: what they provide, and how to mock them</em>. Afterward, G. Wade Johnson\nwill present another fundamentals topic: <em>Using Regular Expressions</em>.</p>\n",
+      "id" : "tag:houston.pm.org.2011-03:announce-20191111s-16823",
+      "published" : "2019-11-12T04:36:18Z",
+      "title" : "\"Constants: what they provide, and how to mock them.\" and \"Using Regular Expressions\"",
+      "updated" : "2019-11-12T04:36:18Z"
+   },
+   {
+      "categories" : [
+         "technical meeting",
          "fundamentals",
          "cross-language",
          "OO"
@@ -220,17 +233,5 @@
       "published" : "2019-01-27T22:45:57Z",
       "title" : "Notes for 'Threat Modeling' posted.",
       "updated" : "2019-01-27T22:45:57Z"
-   },
-   {
-      "category" : "technical meeting",
-      "content" : {
-         "content" : "<p>G. Wade Johnson demonstrates a simple web application built in both Ruby on Rails and Dancer2 on Perl.</p>",
-         "type" : "xhtml"
-      },
-      "id" : "tag:houston.pm.org,2011-03:presentation:1804",
-      "link" : "http://houston.pm.org/talks/2018talks/1804Talk/index.html",
-      "published" : "2019-01-27T20:12:35Z",
-      "title" : "Notes for 'Comparison of Rails and Dancer2' posted.",
-      "updated" : "2019-01-27T20:12:35Z"
    }
 ]

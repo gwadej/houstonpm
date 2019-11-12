@@ -1,17 +1,10 @@
 [
    {
-      "abstract" : "<p>Evan Carroll will cover some of the reasons for using an Object Oriented paradigm when\nprogramming. He will show how Perl and a few other languages implement the appropriate\nconcepts.</p>\n",
-      "date" : "20191010",
-      "location" : "Hostgator",
-      "presenter" : "Evan Carroll",
-      "title" : "Cross-language Object-Oriented Mechanics"
-   },
-   {
-      "abstract" : null,
+      "abstract" : "<p>The November meeting will include two presentations. Evan Carroll will cover another aspect of\ntesting in Perl with <em>Constants: what they provide, and how to mock them</em>. Afterward, G. Wade Johnson\nwill present another fundamentals topic: <em>Using Regular Expressions</em>.</p>\n",
       "date" : "20191114",
       "location" : "cPanel",
-      "presenter" : null,
-      "title" : null
+      "presenter" : "Evan Carroll and G. Wade Johnson",
+      "title" : "\"Constants: what they provide, and how to mock them.\" and \"Using Regular Expressions\""
    },
    {
       "abstract" : null,
@@ -24,6 +17,13 @@
       "abstract" : null,
       "date" : "20200109",
       "location" : "cPanel",
+      "presenter" : null,
+      "title" : null
+   },
+   {
+      "abstract" : null,
+      "date" : "20200213",
+      "location" : "Hostgator",
       "presenter" : null,
       "title" : null
    }
