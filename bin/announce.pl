@@ -101,6 +101,7 @@ sub twitter_announce
 sub send_tweet
 {
     my ($tweet) = @_;
+    # TODO: Need handling for tweets that are too long
 
     my $err = system 'twurl', '-d', "status=$tweet", '/1.1/statuses/update.json';
     return unless $err;

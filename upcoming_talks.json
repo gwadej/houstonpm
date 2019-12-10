@@ -1,17 +1,10 @@
 [
    {
-      "abstract" : "<p>The November meeting will include two presentations. Evan Carroll will cover another aspect of\ntesting in Perl with <em>Constants: what they provide, and how to mock them</em>. Afterward, G. Wade Johnson\nwill present another fundamentals topic: <em>Using Regular Expressions</em>.</p>\n",
-      "date" : "20191114",
-      "location" : "cPanel",
-      "presenter" : "Evan Carroll and G. Wade Johnson",
-      "title" : "\"Constants: what they provide, and how to mock them.\" and \"Using Regular Expressions\""
-   },
-   {
-      "abstract" : null,
+      "abstract" : "<p>Do the children in your life have access to computer science education?\nWhat does that even mean, and why should you care?</p>\n\n<p>Come find out at HostGator on Thursday, December 12, 6 pm to 8 pm. No\nprior computer science skills are necessary, and there will be pizza.</p>\n\n<p>You'll experience a nationally vetted K-12 program that's offered in\n180 of the United States' largest school districts, as well as private,\nparochial, and home schools. Did we mention that it's offered at no\ncost, thanks to generous donors like Microsoft, Amazon, Facebook, and\nmore?</p>\n\n<p>At the least, you'll leave with ideas to entertain holiday visitors of\nall ages.</p>\n\n<p>About the Presenter - Debbie Campbell, B.S.E.E., M.R.S., is the Rice\nUniversity School Mathematics Project Code.org program manager. She is\nalso awfully fond of G. Wade Johnson.</p>\n",
       "date" : "20191212",
       "location" : "Hostgator",
-      "presenter" : null,
-      "title" : null
+      "presenter" : "Debbie Campbell",
+      "title" : "Code.org"
    },
    {
       "abstract" : null,
@@ -24,6 +17,13 @@
       "abstract" : null,
       "date" : "20200213",
       "location" : "Hostgator",
+      "presenter" : null,
+      "title" : null
+   },
+   {
+      "abstract" : null,
+      "date" : "20200312",
+      "location" : "cPanel",
       "presenter" : null,
       "title" : null
    }
