@@ -4,12 +4,28 @@
   <title type="html">Houston.pm: What's New</title>
   <link href="http://houston.pm.org/"/>
   <link href="http://houston.pm.org/atom.xml" rel="self"/>
-  <updated>2019-12-09T13:45:17Z</updated>
+  <updated>2020-01-07T13:26:54Z</updated>
   <author>
     <name>G. Wade Johnson</name>
   </author>
   <category term="news"/>
   <generator uri="https://metacpan.org/pod/XML::Atom::SimpleFeed" version="0.902">XML::Atom::SimpleFeed</generator>
+  <entry>
+    <title>Deploying Perl Applications</title>
+    <id>tag:houston.pm.org.2011-03:announce-20200107s-6465</id>
+    <content type="html">&lt;p&gt;For the January Houston.pm meeting, Julian Brown leads a discussion on &lt;em&gt;Deploying Perl Applications&lt;/em&gt;.
+The meeting begins on January 9 at 6pm in the cPanel offices at 2550 North Loop West, Suite 4006.
+We gather in the lobby 30 minutes before.&lt;/p&gt;
+
+&lt;p&gt;Except in the case of simple standalone scripts, Perl applications usually consist
+of multiple modules and the &lt;code&gt;perl&lt;/code&gt; executable. In this discussion, we want
+to cover some of the ways you can deploy a Perl application to any environment.&lt;/p&gt;
+</content>
+    <updated>2020-01-07T13:26:54Z</updated>
+    <published>2020-01-07T13:26:54Z</published>
+    <category term="technical meeting"/>
+    <category term="panel discussion"/>
+  </entry>
   <entry>
     <title>Code.org</title>
     <id>tag:houston.pm.org.2011-03:announce-20191209s-23837</id>
@@ -433,19 +449,5 @@ module to handle declining Russian pronouns, adjectives, and nouns.</p>
     <published>2019-01-28T03:40:02Z</published>
     <category term="technical meeting"/>
     <link href="http://houston.pm.org/talks/2018talks/1807Talk/index.html"/>
-  </entry>
-  <entry>
-    <title type="html">Notes for 'Floccus, an adventure in Ecmascript 8' posted.</title>
-    <id>tag:houston.pm.org,2011-03:presentation:1806</id>
-    <content type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml">
-        <p>Julian Brown described attempting to add a feature to a tool for synchronizing bookmarks.
-In the process, he learned about ECMAScript 8. This presentation explores what he learned.</p>
-      </div>
-    </content>
-    <updated>2019-01-28T01:30:53Z</updated>
-    <published>2019-01-28T01:30:53Z</published>
-    <category term="technical meeting"/>
-    <link href="http://houston.pm.org/talks/2018talks/1806Talk/index.html"/>
   </entry>
 </feed>
