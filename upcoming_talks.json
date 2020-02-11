@@ -1,17 +1,10 @@
 [
    {
-      "abstract" : "<p>Except in the case of simple standalone scripts, Perl applications usually consist\nof multiple modules and the <code>perl</code> executable. In this discussion, we want\nto cover some of the ways you can deploy a Perl application to any environment.</p>\n",
-      "date" : "20200109",
-      "location" : "cPanel",
-      "presenter" : "Julian Brown",
-      "title" : "Deploying Perl Applications"
-   },
-   {
-      "abstract" : null,
+      "abstract" : "<p>John Lightsey will present an early version of a talk he has scheduled for The Perl and Raku\nConference this year. The talk will cover using fuzzing in analysis of the Perl interpreter. If\nyou have interest in security, Perl, or fuzz testing, this will be the talk for you.</p>\n",
       "date" : "20200213",
       "location" : "Hostgator",
-      "presenter" : null,
-      "title" : null
+      "presenter" : "John Lightsey",
+      "title" : "Coverage guided fuzzing the Perl interpreter"
    },
    {
       "abstract" : null,
@@ -24,6 +17,13 @@
       "abstract" : null,
       "date" : "20200409",
       "location" : "Hostgator",
+      "presenter" : null,
+      "title" : null
+   },
+   {
+      "abstract" : null,
+      "date" : "20200514",
+      "location" : "cPanel",
       "presenter" : null,
       "title" : null
    }

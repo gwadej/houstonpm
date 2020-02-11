@@ -1,6 +1,16 @@
 [
    {
       "categories" : [
+         "technical meeting"
+      ],
+      "content" : "<p>For the February Houston.pm meeting, John Lightsey presents <em>Coverage guided fuzzing the Perl interpreter</em>.\nThe meeting begins on February 13 at 6pm in the Hostgator offices at 5005 Mitchelldale St., Suite 100.\nWe gather in the lobby 30 minutes before.</p>\n<p>John Lightsey will present an early version of a talk he has scheduled for The Perl and Raku\nConference this year. The talk will cover using fuzzing in analysis of the Perl interpreter. If\nyou have interest in security, Perl, or fuzz testing, this will be the talk for you.</p>\n",
+      "id" : "tag:houston.pm.org.2011-03:announce-20200209s-26176",
+      "published" : "2020-02-10T04:28:25Z",
+      "title" : "Coverage guided fuzzing the Perl interpreter",
+      "updated" : "2020-02-10T04:28:25Z"
+   },
+   {
+      "categories" : [
          "technical meeting",
          "panel discussion"
       ],
@@ -218,17 +228,5 @@
       "published" : "2019-01-29T03:38:41Z",
       "title" : "Notes for 'Julian in the land of NoSQL' posted.",
       "updated" : "2019-01-29T03:38:41Z"
-   },
-   {
-      "category" : "technical meeting",
-      "content" : {
-         "content" : "<p>Mark Allen decided to cut back on his Twitter use. Since he now needed a new smartphone activity,\nhe turned to DuoLingo and began studying Russian. This lead to the construction of a Perl\nmodule to handle declining Russian pronouns, adjectives, and nouns.</p>",
-         "type" : "xhtml"
-      },
-      "id" : "tag:houston.pm.org,2011-03:presentation:1807",
-      "link" : "http://houston.pm.org/talks/2018talks/1807Talk/index.html",
-      "published" : "2019-01-28T03:40:02Z",
-      "title" : "Notes for 'Using Perl to Learn a Foreign Language' posted.",
-      "updated" : "2019-01-28T03:40:02Z"
    }
 ]
