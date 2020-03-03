@@ -4,12 +4,28 @@
   <title type="html">Houston.pm: What's New</title>
   <link href="http://houston.pm.org/"/>
   <link href="http://houston.pm.org/atom.xml" rel="self"/>
-  <updated>2020-02-10T04:28:25Z</updated>
+  <updated>2020-03-03T13:31:48Z</updated>
   <author>
     <name>G. Wade Johnson</name>
   </author>
   <category term="news"/>
   <generator uri="https://metacpan.org/pod/XML::Atom::SimpleFeed" version="0.902">XML::Atom::SimpleFeed</generator>
+  <entry>
+    <title>Perl Data Structures: Tips, Tricks, and Traps</title>
+    <id>tag:houston.pm.org.2011-03:announce-20200303s-20105</id>
+    <content type="html">&lt;p&gt;For the March Houston.pm meeting, G. Wade Johnson presents &lt;em&gt;Perl Data Structures: Tips, Tricks, and Traps&lt;/em&gt;.
+The meeting begins on March 12 at 6pm in the cPanel offices at 2550 North Loop West, Suite 4006.
+We gather in the lobby 30 minutes before.&lt;/p&gt;
+&lt;p&gt;Making the best use of Perl includes understanding and using its data structures.
+G. Wade Johnson will present the major Perl data structures, dipping slightly into
+implementation, but focusing mostly on the effective use of those structures.&lt;/p&gt;
+</content>
+    <updated>2020-03-03T13:31:48Z</updated>
+    <published>2020-03-03T13:31:48Z</published>
+    <category term="technical meeting"/>
+    <category term="fundamentals"/>
+    <category term="data structures"/>
+  </entry>
   <entry>
     <title>Coverage guided fuzzing the Perl interpreter</title>
     <id>tag:houston.pm.org.2011-03:announce-20200209s-26176</id>
@@ -435,18 +451,5 @@ short text strings.</p>
     <published>2019-01-30T04:38:24Z</published>
     <category term="technical meeting"/>
     <link href="http://houston.pm.org/talks/2018talks/1809Talk/index.html"/>
-  </entry>
-  <entry>
-    <title type="html">Notes for 'Julian in the land of NoSQL' posted.</title>
-    <id>tag:houston.pm.org,2011-03:presentation:1808</id>
-    <content type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml">
-        <p>Julian Brown explores the usage of the Arangodb NoSQL database as used a website he's working on.</p>
-      </div>
-    </content>
-    <updated>2019-01-29T03:38:41Z</updated>
-    <published>2019-01-29T03:38:41Z</published>
-    <category term="technical meeting"/>
-    <link href="http://houston.pm.org/talks/2018talks/1808Talk/index.html"/>
   </entry>
 </feed>

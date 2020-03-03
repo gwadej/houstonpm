@@ -1,6 +1,18 @@
 [
    {
       "categories" : [
+         "technical meeting",
+         "fundamentals",
+         "data structures"
+      ],
+      "content" : "<p>For the March Houston.pm meeting, G. Wade Johnson presents <em>Perl Data Structures: Tips, Tricks, and Traps</em>.\nThe meeting begins on March 12 at 6pm in the cPanel offices at 2550 North Loop West, Suite 4006.\nWe gather in the lobby 30 minutes before.</p>\n<p>Making the best use of Perl includes understanding and using its data structures.\nG. Wade Johnson will present the major Perl data structures, dipping slightly into\nimplementation, but focusing mostly on the effective use of those structures.</p>\n",
+      "id" : "tag:houston.pm.org.2011-03:announce-20200303s-20105",
+      "published" : "2020-03-03T13:31:48Z",
+      "title" : "Perl Data Structures: Tips, Tricks, and Traps",
+      "updated" : "2020-03-03T13:31:48Z"
+   },
+   {
+      "categories" : [
          "technical meeting"
       ],
       "content" : "<p>For the February Houston.pm meeting, John Lightsey presents <em>Coverage guided fuzzing the Perl interpreter</em>.\nThe meeting begins on February 13 at 6pm in the Hostgator offices at 5005 Mitchelldale St., Suite 100.\nWe gather in the lobby 30 minutes before.</p>\n<p>John Lightsey will present an early version of a talk he has scheduled for The Perl and Raku\nConference this year. The talk will cover using fuzzing in analysis of the Perl interpreter. If\nyou have interest in security, Perl, or fuzz testing, this will be the talk for you.</p>\n",
@@ -216,17 +228,5 @@
       "published" : "2019-01-30T04:38:24Z",
       "title" : "Notes for 'Performance of Parsing Short Strings' posted.",
       "updated" : "2019-01-30T04:38:24Z"
-   },
-   {
-      "category" : "technical meeting",
-      "content" : {
-         "content" : "<p>Julian Brown explores the usage of the Arangodb NoSQL database as used a website he's working on.</p>",
-         "type" : "xhtml"
-      },
-      "id" : "tag:houston.pm.org,2011-03:presentation:1808",
-      "link" : "http://houston.pm.org/talks/2018talks/1808Talk/index.html",
-      "published" : "2019-01-29T03:38:41Z",
-      "title" : "Notes for 'Julian in the land of NoSQL' posted.",
-      "updated" : "2019-01-29T03:38:41Z"
    }
 ]

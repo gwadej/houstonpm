@@ -1,17 +1,10 @@
 [
    {
-      "abstract" : "<p>John Lightsey will present an early version of a talk he has scheduled for The Perl and Raku\nConference this year. The talk will cover using fuzzing in analysis of the Perl interpreter. If\nyou have interest in security, Perl, or fuzz testing, this will be the talk for you.</p>\n",
-      "date" : "20200213",
-      "location" : "Hostgator",
-      "presenter" : "John Lightsey",
-      "title" : "Coverage guided fuzzing the Perl interpreter"
-   },
-   {
-      "abstract" : null,
+      "abstract" : "<p>Making the best use of Perl includes understanding and using its data structures.\nG. Wade Johnson will present the major Perl data structures, dipping slightly into\nimplementation, but focusing mostly on the effective use of those structures.</p>\n",
       "date" : "20200312",
       "location" : "cPanel",
-      "presenter" : null,
-      "title" : null
+      "presenter" : "G. Wade Johnson",
+      "title" : "Perl Data Structures: Tips, Tricks, and Traps"
    },
    {
       "abstract" : null,
@@ -24,6 +17,13 @@
       "abstract" : null,
       "date" : "20200514",
       "location" : "cPanel",
+      "presenter" : null,
+      "title" : null
+   },
+   {
+      "abstract" : null,
+      "date" : "20200611",
+      "location" : "Hostgator",
       "presenter" : null,
       "title" : null
    }
