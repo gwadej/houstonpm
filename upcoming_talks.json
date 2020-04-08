@@ -1,17 +1,10 @@
 [
    {
-      "abstract" : "<p>Making the best use of Perl includes understanding and using its data structures.\nG. Wade Johnson will present the major Perl data structures, dipping slightly into\nimplementation, but focusing mostly on the effective use of those structures.</p>\n",
-      "date" : "20200312",
-      "location" : "cPanel",
-      "presenter" : "G. Wade Johnson",
-      "title" : "Perl Data Structures: Tips, Tricks, and Traps"
-   },
-   {
-      "abstract" : null,
+      "abstract" : "<p>Julian Brown covers the basics of SQL in this fundamentals talk.</p>\n",
       "date" : "20200409",
       "location" : "Hostgator",
-      "presenter" : null,
-      "title" : null
+      "presenter" : "Julian Brown",
+      "title" : "SQL 101"
    },
    {
       "abstract" : null,
@@ -24,6 +17,13 @@
       "abstract" : null,
       "date" : "20200611",
       "location" : "Hostgator",
+      "presenter" : null,
+      "title" : null
+   },
+   {
+      "abstract" : null,
+      "date" : "20200709",
+      "location" : "cPanel",
       "presenter" : null,
       "title" : null
    }

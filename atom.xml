@@ -4,12 +4,28 @@
   <title type="html">Houston.pm: What's New</title>
   <link href="http://houston.pm.org/"/>
   <link href="http://houston.pm.org/atom.xml" rel="self"/>
-  <updated>2020-03-03T13:31:48Z</updated>
+  <updated>2020-04-08T03:49:28Z</updated>
   <author>
     <name>G. Wade Johnson</name>
   </author>
   <category term="news"/>
   <generator uri="https://metacpan.org/pod/XML::Atom::SimpleFeed" version="0.902">XML::Atom::SimpleFeed</generator>
+  <entry>
+    <title>SQL 101</title>
+    <id>tag:houston.pm.org.2011-03:announce-20200407s-2236</id>
+    <content type="html">&lt;p&gt;For the April Houston.pm meeting, Julian Brown presents &lt;em&gt;SQL 101&lt;/em&gt;.
+The meeting begins on April 9 at 6pm. We are going to try for a remote meeting
+this time. Keep an eye on the mailing list for further details.&lt;/p&gt;
+
+&lt;p&gt;Julian Brown covers the basics of SQL in this fundamentals talk.&lt;/p&gt;
+</content>
+    <updated>2020-04-08T03:49:28Z</updated>
+    <published>2020-04-08T03:49:28Z</published>
+    <category term="technical meeting"/>
+    <category term="remote meeting"/>
+    <category term="fundamentals"/>
+    <category term="SQL"/>
+  </entry>
   <entry>
     <title>Perl Data Structures: Tips, Tricks, and Traps</title>
     <id>tag:houston.pm.org.2011-03:announce-20200303s-20105</id>
@@ -437,19 +453,5 @@ He highlighted the benefits of the microservices style to show the advantages of
     <published>2019-03-10T16:57:25Z</published>
     <category term="technical meeting"/>
     <link href="http://houston.pm.org/talks/2018talks/1810Talk/index.html"/>
-  </entry>
-  <entry>
-    <title type="html">Notes for 'Performance of Parsing Short Strings' posted.</title>
-    <id>tag:houston.pm.org,2011-03:presentation:1809</id>
-    <content type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml">
-        <p>G. Wade Johnson presents the results of some benchmarking of different approaches to parsing
-short text strings.</p>
-      </div>
-    </content>
-    <updated>2019-01-30T04:38:24Z</updated>
-    <published>2019-01-30T04:38:24Z</published>
-    <category term="technical meeting"/>
-    <link href="http://houston.pm.org/talks/2018talks/1809Talk/index.html"/>
   </entry>
 </feed>

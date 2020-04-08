@@ -2,6 +2,19 @@
    {
       "categories" : [
          "technical meeting",
+         "remote meeting",
+         "fundamentals",
+         "SQL"
+      ],
+      "content" : "<p>For the April Houston.pm meeting, Julian Brown presents <em>SQL 101</em>.\nThe meeting begins on April 9 at 6pm. We are going to try for a remote meeting\nthis time. Keep an eye on the mailing list for further details.</p>\n\n<p>Julian Brown covers the basics of SQL in this fundamentals talk.</p>\n",
+      "id" : "tag:houston.pm.org.2011-03:announce-20200407s-2236",
+      "published" : "2020-04-08T03:49:28Z",
+      "title" : "SQL 101",
+      "updated" : "2020-04-08T03:49:28Z"
+   },
+   {
+      "categories" : [
+         "technical meeting",
          "fundamentals",
          "data structures"
       ],
@@ -216,17 +229,5 @@
       "published" : "2019-03-10T16:57:25Z",
       "title" : "Notes for 'Monolithic vs Microservice: Can Davids Really Take Down Goliath?' posted.",
       "updated" : "2019-03-10T16:57:25Z"
-   },
-   {
-      "category" : "technical meeting",
-      "content" : {
-         "content" : "<p>G. Wade Johnson presents the results of some benchmarking of different approaches to parsing\nshort text strings.</p>",
-         "type" : "xhtml"
-      },
-      "id" : "tag:houston.pm.org,2011-03:presentation:1809",
-      "link" : "http://houston.pm.org/talks/2018talks/1809Talk/index.html",
-      "published" : "2019-01-30T04:38:24Z",
-      "title" : "Notes for 'Performance of Parsing Short Strings' posted.",
-      "updated" : "2019-01-30T04:38:24Z"
    }
 ]
