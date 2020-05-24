@@ -4,12 +4,28 @@
   <title type="html">Houston.pm: What's New</title>
   <link href="http://houston.pm.org/"/>
   <link href="http://houston.pm.org/atom.xml" rel="self"/>
-  <updated>2020-04-08T03:49:28Z</updated>
+  <updated>2020-05-14T12:20:54Z</updated>
   <author>
     <name>G. Wade Johnson</name>
   </author>
   <category term="news"/>
   <generator uri="https://metacpan.org/pod/XML::Atom::SimpleFeed" version="0.902">XML::Atom::SimpleFeed</generator>
+  <entry>
+    <title>Remote May Houston.pm Meeting</title>
+    <id>tag:houston.pm.org.2011-03:announce-20200514s-26683</id>
+    <content type="html">&lt;p&gt;For the May Houston.pm meeting, We'll be meeting on Zoom (Check the mailing list.)
+We'll hear from Evan Carroll about a project he's working on, and any other subjects
+we think to discuss. We'll start at 6pm.&lt;/p&gt;
+
+&lt;p&gt;For the May Houston.pm meeting, We'll be meeting on Zoom (Check the mailing list.)
+We'll hear from Evan Carroll about a project he's working on, and any other subjects
+we think to discuss. We'll start at 6pm.&lt;/p&gt;
+</content>
+    <updated>2020-05-14T12:20:54Z</updated>
+    <published>2020-05-14T12:20:54Z</published>
+    <category term="technical meeting"/>
+    <category term="remote meeting"/>
+  </entry>
   <entry>
     <title>SQL 101</title>
     <id>tag:houston.pm.org.2011-03:announce-20200407s-2236</id>
@@ -439,19 +455,5 @@ He describes the testing and a new module to solve this problem.</p>
     <published>2019-03-10T18:30:25Z</published>
     <category term="technical meeting"/>
     <link href="http://houston.pm.org/talks/2018talks/1811Talk/index.html"/>
-  </entry>
-  <entry>
-    <title type="html">Notes for 'Monolithic vs Microservice: Can Davids Really Take Down Goliath?' posted.</title>
-    <id>tag:houston.pm.org,2011-03:presentation:1810</id>
-    <content type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml">
-        <p>Robert Stone presented a comparison between the monolithic style of architecture and a microservices style.
-He highlighted the benefits of the microservices style to show the advantages of a change.</p>
-      </div>
-    </content>
-    <updated>2019-03-10T16:57:25Z</updated>
-    <published>2019-03-10T16:57:25Z</published>
-    <category term="technical meeting"/>
-    <link href="http://houston.pm.org/talks/2018talks/1810Talk/index.html"/>
   </entry>
 </feed>

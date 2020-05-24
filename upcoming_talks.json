@@ -1,17 +1,10 @@
 [
    {
-      "abstract" : "<p>Julian Brown covers the basics of SQL in this fundamentals talk.</p>\n",
-      "date" : "20200409",
-      "location" : "Hostgator",
-      "presenter" : "Julian Brown",
-      "title" : "SQL 101"
-   },
-   {
-      "abstract" : null,
+      "abstract" : "<p>For the May Houston.pm meeting, We'll be meeting on Zoom (Check the mailing list.)\nWe'll hear from Evan Carroll about a project he's working on, and any other subjects\nwe think to discuss. We'll start at 6pm.</p>\n",
       "date" : "20200514",
       "location" : "cPanel",
-      "presenter" : null,
-      "title" : null
+      "presenter" : "Various",
+      "title" : "Remote May Houston.pm Meeting"
    },
    {
       "abstract" : null,
@@ -24,6 +17,13 @@
       "abstract" : null,
       "date" : "20200709",
       "location" : "cPanel",
+      "presenter" : null,
+      "title" : null
+   },
+   {
+      "abstract" : null,
+      "date" : "20200813",
+      "location" : "Hostgator",
       "presenter" : null,
       "title" : null
    }

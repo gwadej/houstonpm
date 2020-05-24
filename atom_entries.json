@@ -2,6 +2,17 @@
    {
       "categories" : [
          "technical meeting",
+         "remote meeting"
+      ],
+      "content" : "<p>For the May Houston.pm meeting, We'll be meeting on Zoom (Check the mailing list.)\nWe'll hear from Evan Carroll about a project he's working on, and any other subjects\nwe think to discuss. We'll start at 6pm.</p>\n\n<p>For the May Houston.pm meeting, We'll be meeting on Zoom (Check the mailing list.)\nWe'll hear from Evan Carroll about a project he's working on, and any other subjects\nwe think to discuss. We'll start at 6pm.</p>\n",
+      "id" : "tag:houston.pm.org.2011-03:announce-20200514s-26683",
+      "published" : "2020-05-14T12:20:54Z",
+      "title" : "Remote May Houston.pm Meeting",
+      "updated" : "2020-05-14T12:20:54Z"
+   },
+   {
+      "categories" : [
+         "technical meeting",
          "remote meeting",
          "fundamentals",
          "SQL"
@@ -217,17 +228,5 @@
       "published" : "2019-03-10T18:30:25Z",
       "title" : "Notes for 'Testing the untestable with Test::MockFile' posted.",
       "updated" : "2019-03-10T18:30:25Z"
-   },
-   {
-      "category" : "technical meeting",
-      "content" : {
-         "content" : "<p>Robert Stone presented a comparison between the monolithic style of architecture and a microservices style.\nHe highlighted the benefits of the microservices style to show the advantages of a change.</p>",
-         "type" : "xhtml"
-      },
-      "id" : "tag:houston.pm.org,2011-03:presentation:1810",
-      "link" : "http://houston.pm.org/talks/2018talks/1810Talk/index.html",
-      "published" : "2019-03-10T16:57:25Z",
-      "title" : "Notes for 'Monolithic vs Microservice: Can Davids Really Take Down Goliath?' posted.",
-      "updated" : "2019-03-10T16:57:25Z"
    }
 ]
