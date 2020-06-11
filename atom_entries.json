@@ -1,6 +1,16 @@
 [
    {
       "categories" : [
+         "social meeting"
+      ],
+      "content" : "<p>The June Houston.pm meeting will be a remote social meeting.\nThe meeting begins on June 11 at 6pm over Zoom. The meeting invite is available\non the mailing list. Instead of a presentation, we will mostly socialize and\ntalk about whatever seems interesting.</p>\n\n<p>The June Houston.pm social meeting will be held over Zoom.\nBring your curiosity and interest in finding out what your fellow\nPerl Mongers have been up to.</p>\n",
+      "id" : "tag:houston.pm.org.2011-03:announce-20200610s-17580",
+      "published" : "2020-06-11T01:11:02Z",
+      "title" : "June Remote Social Meeting",
+      "updated" : "2020-06-11T01:11:02Z"
+   },
+   {
+      "categories" : [
          "technical meeting",
          "remote meeting"
       ],
@@ -216,17 +226,5 @@
       "published" : "2019-03-10T20:22:02Z",
       "title" : "Notes for 'Looking back to 2018, what I learnt from XS and Dist::Zilla' posted.",
       "updated" : "2019-03-10T20:22:02Z"
-   },
-   {
-      "category" : "technical meeting",
-      "content" : {
-         "content" : "<p>Todd Rinaldo described the difficulty with testing file-level checks on a system administration tool.\nHe describes the testing and a new module to solve this problem.</p>",
-         "type" : "xhtml"
-      },
-      "id" : "tag:houston.pm.org,2011-03:presentation:1811",
-      "link" : "http://houston.pm.org/talks/2018talks/1811Talk/index.html",
-      "published" : "2019-03-10T18:30:25Z",
-      "title" : "Notes for 'Testing the untestable with Test::MockFile' posted.",
-      "updated" : "2019-03-10T18:30:25Z"
    }
 ]

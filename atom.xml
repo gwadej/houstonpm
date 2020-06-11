@@ -4,12 +4,28 @@
   <title type="html">Houston.pm: What's New</title>
   <link href="http://houston.pm.org/"/>
   <link href="http://houston.pm.org/atom.xml" rel="self"/>
-  <updated>2020-05-14T12:20:54Z</updated>
+  <updated>2020-06-11T01:11:02Z</updated>
   <author>
     <name>G. Wade Johnson</name>
   </author>
   <category term="news"/>
   <generator uri="https://metacpan.org/pod/XML::Atom::SimpleFeed" version="0.902">XML::Atom::SimpleFeed</generator>
+  <entry>
+    <title>June Remote Social Meeting</title>
+    <id>tag:houston.pm.org.2011-03:announce-20200610s-17580</id>
+    <content type="html">&lt;p&gt;The June Houston.pm meeting will be a remote social meeting.
+The meeting begins on June 11 at 6pm over Zoom. The meeting invite is available
+on the mailing list. Instead of a presentation, we will mostly socialize and
+talk about whatever seems interesting.&lt;/p&gt;
+
+&lt;p&gt;The June Houston.pm social meeting will be held over Zoom.
+Bring your curiosity and interest in finding out what your fellow
+Perl Mongers have been up to.&lt;/p&gt;
+</content>
+    <updated>2020-06-11T01:11:02Z</updated>
+    <published>2020-06-11T01:11:02Z</published>
+    <category term="social meeting"/>
+  </entry>
   <entry>
     <title>Remote May Houston.pm Meeting</title>
     <id>tag:houston.pm.org.2011-03:announce-20200514s-26683</id>
@@ -441,19 +457,5 @@ He included a best of section and some lessons he learned concerning DistZilla a
     <published>2019-03-10T20:22:02Z</published>
     <category term="technical meeting"/>
     <link href="http://houston.pm.org/talks/2019talks/1901Talk/index.html"/>
-  </entry>
-  <entry>
-    <title type="html">Notes for 'Testing the untestable with Test::MockFile' posted.</title>
-    <id>tag:houston.pm.org,2011-03:presentation:1811</id>
-    <content type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml">
-        <p>Todd Rinaldo described the difficulty with testing file-level checks on a system administration tool.
-He describes the testing and a new module to solve this problem.</p>
-      </div>
-    </content>
-    <updated>2019-03-10T18:30:25Z</updated>
-    <published>2019-03-10T18:30:25Z</published>
-    <category term="technical meeting"/>
-    <link href="http://houston.pm.org/talks/2018talks/1811Talk/index.html"/>
   </entry>
 </feed>

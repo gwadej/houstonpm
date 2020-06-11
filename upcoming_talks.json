@@ -1,17 +1,10 @@
 [
    {
-      "abstract" : "<p>For the May Houston.pm meeting, We'll be meeting on Zoom (Check the mailing list.)\nWe'll hear from Evan Carroll about a project he's working on, and any other subjects\nwe think to discuss. We'll start at 6pm.</p>\n",
-      "date" : "20200514",
-      "location" : "cPanel",
-      "presenter" : "Various",
-      "title" : "Remote May Houston.pm Meeting"
-   },
-   {
-      "abstract" : null,
+      "abstract" : "<p>The June Houston.pm social meeting will be held over Zoom.\nBring your curiosity and interest in finding out what your fellow\nPerl Mongers have been up to.</p>\n",
       "date" : "20200611",
       "location" : "Hostgator",
-      "presenter" : null,
-      "title" : null
+      "presenter" : "None",
+      "title" : "June Remote Social Meeting"
    },
    {
       "abstract" : null,
@@ -24,6 +17,13 @@
       "abstract" : null,
       "date" : "20200813",
       "location" : "Hostgator",
+      "presenter" : null,
+      "title" : null
+   },
+   {
+      "abstract" : null,
+      "date" : "20200910",
+      "location" : "cPanel",
       "presenter" : null,
       "title" : null
    }
