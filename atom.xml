@@ -4,12 +4,26 @@
   <title type="html">Houston.pm: What's New</title>
   <link href="http://houston.pm.org/"/>
   <link href="http://houston.pm.org/atom.xml" rel="self"/>
-  <updated>2020-06-11T01:11:02Z</updated>
+  <updated>2020-07-09T01:01:57Z</updated>
   <author>
     <name>G. Wade Johnson</name>
   </author>
   <category term="news"/>
   <generator uri="https://metacpan.org/pod/XML::Atom::SimpleFeed" version="0.902">XML::Atom::SimpleFeed</generator>
+  <entry>
+    <title>Update on TPCiC, Perl 7, and discussion</title>
+    <id>tag:houston.pm.org.2011-03:announce-20200708s-9109</id>
+    <content type="html">&lt;p&gt;For the July Houston.pm meeting, Todd Rinaldo presents &lt;em&gt;Update on TPCiC, Perl 7, and discussion&lt;/em&gt;.
+The meeting begins on July 9 at 6pm on Zoom. See the mailing list for details.&lt;/p&gt;
+
+&lt;p&gt;For this month's remote meeting, Todd Rinaldo will give a summary of where Perl stands today.
+We'll go on from there to a more general discussion among the teams.&lt;/p&gt;
+</content>
+    <updated>2020-07-09T01:01:57Z</updated>
+    <published>2020-07-09T01:01:57Z</published>
+    <category term="technical meeting"/>
+    <category term="remote"/>
+  </entry>
   <entry>
     <title>June Remote Social Meeting</title>
     <id>tag:houston.pm.org.2011-03:announce-20200610s-17580</id>
@@ -443,19 +457,5 @@ At 6pm, we will go up to the meeting.&lt;/p&gt;
     <published>2019-03-11T00:36:30Z</published>
     <category term="technical meeting"/>
     <link href="http://houston.pm.org/talks/2019talks/1902Talk/index.html"/>
-  </entry>
-  <entry>
-    <title type="html">Notes for 'Looking back to 2018, what I learnt from XS and Dist::Zilla' posted.</title>
-    <id>tag:houston.pm.org,2011-03:presentation:1901</id>
-    <content type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml">
-        <p>Nicolas Rochelemagne gave a little retrospective of 2018.
-He included a best of section and some lessons he learned concerning DistZilla and XS.</p>
-      </div>
-    </content>
-    <updated>2019-03-10T20:22:02Z</updated>
-    <published>2019-03-10T20:22:02Z</published>
-    <category term="technical meeting"/>
-    <link href="http://houston.pm.org/talks/2019talks/1901Talk/index.html"/>
   </entry>
 </feed>

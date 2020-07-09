@@ -1,17 +1,10 @@
 [
    {
-      "abstract" : "<p>The June Houston.pm social meeting will be held over Zoom.\nBring your curiosity and interest in finding out what your fellow\nPerl Mongers have been up to.</p>\n",
-      "date" : "20200611",
-      "location" : "Hostgator",
-      "presenter" : "None",
-      "title" : "June Remote Social Meeting"
-   },
-   {
-      "abstract" : null,
+      "abstract" : "<p>For this month's remote meeting, Todd Rinaldo will give a summary of where Perl stands today.\nWe'll go on from there to a more general discussion among the teams.</p>\n",
       "date" : "20200709",
       "location" : "cPanel",
-      "presenter" : null,
-      "title" : null
+      "presenter" : "Todd Rinaldo",
+      "title" : "Update on TPCiC, Perl 7, and discussion"
    },
    {
       "abstract" : null,
@@ -24,6 +17,13 @@
       "abstract" : null,
       "date" : "20200910",
       "location" : "cPanel",
+      "presenter" : null,
+      "title" : null
+   },
+   {
+      "abstract" : null,
+      "date" : "20201008",
+      "location" : "Hostgator",
       "presenter" : null,
       "title" : null
    }

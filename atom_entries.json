@@ -1,6 +1,17 @@
 [
    {
       "categories" : [
+         "technical meeting",
+         "remote"
+      ],
+      "content" : "<p>For the July Houston.pm meeting, Todd Rinaldo presents <em>Update on TPCiC, Perl 7, and discussion</em>.\nThe meeting begins on July 9 at 6pm on Zoom. See the mailing list for details.</p>\n\n<p>For this month's remote meeting, Todd Rinaldo will give a summary of where Perl stands today.\nWe'll go on from there to a more general discussion among the teams.</p>\n",
+      "id" : "tag:houston.pm.org.2011-03:announce-20200708s-9109",
+      "published" : "2020-07-09T01:01:57Z",
+      "title" : "Update on TPCiC, Perl 7, and discussion",
+      "updated" : "2020-07-09T01:01:57Z"
+   },
+   {
+      "categories" : [
          "social meeting"
       ],
       "content" : "<p>The June Houston.pm meeting will be a remote social meeting.\nThe meeting begins on June 11 at 6pm over Zoom. The meeting invite is available\non the mailing list. Instead of a presentation, we will mostly socialize and\ntalk about whatever seems interesting.</p>\n\n<p>The June Houston.pm social meeting will be held over Zoom.\nBring your curiosity and interest in finding out what your fellow\nPerl Mongers have been up to.</p>\n",
@@ -214,17 +225,5 @@
       "published" : "2019-03-11T00:36:30Z",
       "title" : "Notes for 'Automating multi-server workflows with Ansible' posted.",
       "updated" : "2019-03-11T00:36:30Z"
-   },
-   {
-      "category" : "technical meeting",
-      "content" : {
-         "content" : "<p>Nicolas Rochelemagne gave a little retrospective of 2018.\nHe included a best of section and some lessons he learned concerning DistZilla and XS.</p>",
-         "type" : "xhtml"
-      },
-      "id" : "tag:houston.pm.org,2011-03:presentation:1901",
-      "link" : "http://houston.pm.org/talks/2019talks/1901Talk/index.html",
-      "published" : "2019-03-10T20:22:02Z",
-      "title" : "Notes for 'Looking back to 2018, what I learnt from XS and Dist::Zilla' posted.",
-      "updated" : "2019-03-10T20:22:02Z"
    }
 ]
