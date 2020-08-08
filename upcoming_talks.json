@@ -1,17 +1,10 @@
 [
    {
-      "abstract" : "<p>For this month's remote meeting, Todd Rinaldo will give a summary of where Perl stands today.\nWe'll go on from there to a more general discussion among the teams.</p>\n",
-      "date" : "20200709",
-      "location" : "cPanel",
-      "presenter" : "Todd Rinaldo",
-      "title" : "Update on TPCiC, Perl 7, and discussion"
-   },
-   {
-      "abstract" : null,
+      "abstract" : "<p>James Keenan gives an introduction to the upcoming Perl 7 release.\nThis is a chance to continue evolving Perl into the future, while providing\na point to disconnect from some legacy behavior.</p>\n",
       "date" : "20200813",
       "location" : "Hostgator",
-      "presenter" : null,
-      "title" : null
+      "presenter" : "James Keenan",
+      "title" : "Perl 7: An Opinionated Introduction"
    },
    {
       "abstract" : null,
@@ -24,6 +17,13 @@
       "abstract" : null,
       "date" : "20201008",
       "location" : "Hostgator",
+      "presenter" : null,
+      "title" : null
+   },
+   {
+      "abstract" : null,
+      "date" : "20201112",
+      "location" : "cPanel",
       "presenter" : null,
       "title" : null
    }

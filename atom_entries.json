@@ -2,6 +2,18 @@
    {
       "categories" : [
          "technical meeting",
+         "remote meeting",
+         "perl7"
+      ],
+      "content" : "<p>For the August Houston.pm meeting, James Keenan presents <em>Perl 7: An Opinionated Introduction</em>.\nThe meeting begins on August 13 at 6pm on Zoom. Meeting information can be\nfound at <a href=\"http://houston.pm.org/announce_meeting.html\" target=\"_blank\">meeting\nannouncement</a>.</p>\n\n<p>James Keenan gives an introduction to the upcoming Perl 7 release.\nThis is a chance to continue evolving Perl into the future, while providing\na point to disconnect from some legacy behavior.</p>\n",
+      "id" : "tag:houston.pm.org.2011-03:announce-20200807s-26275",
+      "published" : "2020-08-07T12:29:50Z",
+      "title" : "Perl 7: An Opinionated Introduction",
+      "updated" : "2020-08-07T12:29:50Z"
+   },
+   {
+      "categories" : [
+         "technical meeting",
          "remote"
       ],
       "content" : "<p>For the July Houston.pm meeting, Todd Rinaldo presents <em>Update on TPCiC, Perl 7, and discussion</em>.\nThe meeting begins on July 9 at 6pm on Zoom. See the mailing list for details.</p>\n\n<p>For this month's remote meeting, Todd Rinaldo will give a summary of where Perl stands today.\nWe'll go on from there to a more general discussion among the teams.</p>\n",
@@ -213,17 +225,5 @@
       "published" : "2019-03-13T23:26:32Z",
       "title" : "make-ing a Static Website",
       "updated" : "2019-03-13T23:26:32Z"
-   },
-   {
-      "category" : "technical meeting",
-      "content" : {
-         "content" : "<p>J. D. Lightsey describes how he has used Ansible as a workflow system to automate processes for some personal servers.</p>",
-         "type" : "xhtml"
-      },
-      "id" : "tag:houston.pm.org,2011-03:presentation:1902",
-      "link" : "http://houston.pm.org/talks/2019talks/1902Talk/index.html",
-      "published" : "2019-03-11T00:36:30Z",
-      "title" : "Notes for 'Automating multi-server workflows with Ansible' posted.",
-      "updated" : "2019-03-11T00:36:30Z"
    }
 ]

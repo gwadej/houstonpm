@@ -4,12 +4,30 @@
   <title type="html">Houston.pm: What's New</title>
   <link href="http://houston.pm.org/"/>
   <link href="http://houston.pm.org/atom.xml" rel="self"/>
-  <updated>2020-07-09T01:01:57Z</updated>
+  <updated>2020-08-07T12:29:50Z</updated>
   <author>
     <name>G. Wade Johnson</name>
   </author>
   <category term="news"/>
   <generator uri="https://metacpan.org/pod/XML::Atom::SimpleFeed" version="0.902">XML::Atom::SimpleFeed</generator>
+  <entry>
+    <title>Perl 7: An Opinionated Introduction</title>
+    <id>tag:houston.pm.org.2011-03:announce-20200807s-26275</id>
+    <content type="html">&lt;p&gt;For the August Houston.pm meeting, James Keenan presents &lt;em&gt;Perl 7: An Opinionated Introduction&lt;/em&gt;.
+The meeting begins on August 13 at 6pm on Zoom. Meeting information can be
+found at &lt;a href="http://houston.pm.org/announce_meeting.html" target="_blank"&gt;meeting
+announcement&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;James Keenan gives an introduction to the upcoming Perl 7 release.
+This is a chance to continue evolving Perl into the future, while providing
+a point to disconnect from some legacy behavior.&lt;/p&gt;
+</content>
+    <updated>2020-08-07T12:29:50Z</updated>
+    <published>2020-08-07T12:29:50Z</published>
+    <category term="technical meeting"/>
+    <category term="remote meeting"/>
+    <category term="perl7"/>
+  </entry>
   <entry>
     <title>Update on TPCiC, Perl 7, and discussion</title>
     <id>tag:houston.pm.org.2011-03:announce-20200708s-9109</id>
@@ -444,18 +462,5 @@ At 6pm, we will go up to the meeting.&lt;/p&gt;
     <updated>2019-03-13T23:26:32Z</updated>
     <published>2019-03-13T23:26:32Z</published>
     <category term="technical meeting"/>
-  </entry>
-  <entry>
-    <title type="html">Notes for 'Automating multi-server workflows with Ansible' posted.</title>
-    <id>tag:houston.pm.org,2011-03:presentation:1902</id>
-    <content type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml">
-        <p>J. D. Lightsey describes how he has used Ansible as a workflow system to automate processes for some personal servers.</p>
-      </div>
-    </content>
-    <updated>2019-03-11T00:36:30Z</updated>
-    <published>2019-03-11T00:36:30Z</published>
-    <category term="technical meeting"/>
-    <link href="http://houston.pm.org/talks/2019talks/1902Talk/index.html"/>
   </entry>
 </feed>
