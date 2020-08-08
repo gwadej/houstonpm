@@ -46,9 +46,9 @@ sub generate_upcoming_list
 [%- FOREACH entry IN entries %]
         <dt><time datetime="[% entry.datetime %]">[% entry.human_date %]</time></dt>
     [%- IF entry.title %]
-        <dd><em>[% entry.title %]</em> with [% entry.presenter %] at [% entry.location %]</dd>
+        <dd><em>[% entry.title %]</em> with [% entry.presenter %] [% IF entry.is_remote %] on Zoom [% ELSE %] at [% entry.location %] [% END %]</dd>
     [%- ELSE %]
-        <dd>TBD at [% entry.location %]</dd>
+        <dd>TBD [% IF entry.is_remote %] on Zoom [% ELSE %] at [% entry.location %] [% END %]</dd>
     [%- END %]
 [% END %]
     </dl>
@@ -67,9 +67,9 @@ sub generate_next_meeting
 [% entry = entries.0 -%]
         <dt><time datetime="[% entry.datetime %]">[% entry.human_date %]</time></dt>
 [%- IF entry.abstract %]
-        <dd><a href="announce_meeting.html" target="_blank" rel="noopener"><em>[% entry.title %]</em></a> with [% entry.presenter %] at [% entry.location %]</dd>
+        <dd><a href="announce_meeting.html" target="_blank" rel="noopener"><em>[% entry.title %]</em></a> with [% entry.presenter %] [% IF entry.is_remote %]on Zoom[% ELSE %]at [% entry.location %][% END %]</dd>
 [%- ELSIF entry.title %]
-        <dd><em>[% entry.title %]</em> with [% entry.presenter %] at [% entry.location %]</dd>
+        <dd><em>[% entry.title %]</em> with [% entry.presenter %] [% IF entry.is_remote %]on Zoom[% ELSE %]at [% entry.location %][% END %]</dd>
 [%- ELSE %]
         <dd>TBD at [% entry.location %]</dd>
 [%- END %]

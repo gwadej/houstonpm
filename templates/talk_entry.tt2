@@ -6,7 +6,7 @@
       <abstract>[%abstract | xml%]</abstract>
     </topic>
     <attendees>[% attendees %]</attendees>
-    [%- IF sponsor %]
+    [%- IF sponsor && !sponsor.is_remote %]
     <sponsor>[% sponsor.full_name | xml %]</sponsor>
     [%- END %]
   </talk>

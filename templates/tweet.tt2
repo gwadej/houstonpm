@@ -1,3 +1,8 @@
 The [% month %] #HoustonPM meeting features [% presenter %] presenting '[% title %]'.
+[%- IF sponsor.is_remote %]
+Meeting begins [% date %] at 6pm on [% sponsor.full_name %].
+See http://houston.pm.org/announce_meeting.html for connection details.
+[%- ELSE %]
 Meeting begins [% date %] at 6pm in the #[% sponsor.familiar %] offices.
 We gather in the lobby 30 minutes before. http://houston.pm.org/ for details.
+[%- END %]

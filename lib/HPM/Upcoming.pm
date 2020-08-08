@@ -156,6 +156,7 @@ sub _entry_for_template
         presenter => $entry->{presenter},
         abstract => $entry->{abstract},
         location => $entry->{location},
+        is_remote => ($entry->{location} eq 'Remote'),
     };
 }
 

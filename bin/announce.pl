@@ -122,6 +122,7 @@ sub get_categories
 Enter categories, one per line. Or uncomment ones you wish to use.
 #technical meeting
 #social meeting
+#remote meeting
 EOM
 }
 

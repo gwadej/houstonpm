@@ -26,3 +26,7 @@
 [% INCLUDE gather -%]
     </p>
 [% END -%]
+
+[%- BLOCK Remote %]
+    <p>The [% month %] meeting will be held on Zoom.</p>
+[% END -%]

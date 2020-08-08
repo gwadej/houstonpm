@@ -4,7 +4,14 @@ Subject: [% month %] Houston.pm Meeting: [% title %]
 The [% month %] Houston.pm meeting features [% presenter %] presenting '[% title %]'.
 [% abstract %]
 
+[% IF sponsor.is_remote %]
+Meeting begins [% date %] at 6pm on [% sponsor.full_name %].
+
+Connection details:
+
+[% ELSE %]
 Meeting begins [% date %] at 6pm in the [% sponsor.familiar %] offices at
 [% sponsor.address %] ([% sponsor.map %]).
 
 We gather in the lobby 30 minutes before. http://houston.pm.org/ for details.
+[% END %]
