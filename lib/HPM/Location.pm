@@ -1,42 +1,55 @@
-package HPM::Sponsors;
+package HPM::Locaton;
 
 use warnings;
 use strict;
-use 5.010;
-
-use HPM::Location;
+use 5.018;
 
 our $VERSION = '0.10';
 
-my @SPONSORS = (
+my @LOCATIONS = (
     {
         familiar => 'cPanel',
-        full_name => 'cPanel, L.L.C',
+        is_remote => undef,
+        address => '2550 North Loop West, Suite 4006',
+        map => 'https://www.google.com/maps/place/2550+N+Loop+W,+Houston,+TX+77092/@29.8081429,-95.4459714,17z/data=!3m1!4b1!4m2!3m1!1s0x8640c6fa4d91297b:0x988e2dedf77ce147',
     },
     {
         familiar => 'Hostgator',
-        full_name => 'Hostgator, LLC',
+        is_remote => undef,
+        address => '5005 Mitchelldale St., Suite 100',
+        map => 'https://maps.google.com/maps?q=Hostgator,+Houston&fb=1&gl=us&hq=HostGator,&hnear=0x8640b8b4488d8501:0xca0d02def365053b,Houston,+TX&cid=2141572779937723859&t=h&z=16&iwloc=A',
+    },
+    {
+        familiar => 'Zoom',
+        is_remote => 1,
     },
 );
 
 sub list
 {
-    return map { $_->{familiar} } @SPONSORS;
+    return map { $_->{familiar} } @LOCATIONS;
+}
+
+sub _find
+{
+    my ($key) = @_;
+    my ($loc) = grep { $_->{familiar} eq $key } @LOCATIONS;
+    return $loc;
 }
 
 sub lookup
 {
     my ($key) = @_;
-    my ($sp) = grep { $_->{familiar} eq $key } @SPONSORS;
-    return unless $sp;
-    return { %{$sp}, HPM::Location->lookup($key) };
+    my $loc = _find( $key );
+    return $loc ? { %{$loc} } : undef;
 }
 
-sub by_month
+sub is_remote
 {
-    my ($mon) = @_;
-    return if !defined $mon || $mon < 1 || 12 < $mon;
-    return ($SPONSORS[($mon - 1) & 1]->{familiar});
+    my ($key) = @_;
+    my $loc = _find( $key );
+    return unless $loc;
+    return $loc ? $loc->{is_remote} : undef;
 }
 
 1;
@@ -44,16 +57,15 @@ __END__
 
 =head1 NAME
 
-HPM::Sponsors - [One line description of module's purpose here]
-
+HPM::Location - [One line description of module's purpose here]
 
 =head1 VERSION
 
-This document describes HPM::Sponsors version 0.10
+This document describes <ModName> version 0.10
 
 =head1 SYNOPSIS
 
-    use HPM::Sponsors;
+    use <ModName>;
 
 =for author to fill in:
     Brief code example(s) here showing commonest usage(s).
@@ -76,7 +88,7 @@ This document describes HPM::Sponsors version 0.10
 
 =head1 CONFIGURATION AND ENVIRONMENT
 
-HPM::Sponsors requires no configuration files or environment variables.
+<ModName> requires no configuration files or environment variables.
 
 =head1 DEPENDENCIES
 

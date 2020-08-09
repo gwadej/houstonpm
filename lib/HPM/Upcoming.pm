@@ -10,6 +10,7 @@ use DateTime;
 use File::Slurp;
 use HPM::Date;
 use HPM::Sponsors;
+use HPM::Location;
 use JSON::XS;
 
 my @ALLOWED = qw/date title presenter abstract location/;
@@ -157,7 +158,7 @@ sub _entry_for_template
         presenter => $entry->{presenter},
         abstract => $entry->{abstract},
         location => $entry->{location},
-        is_remote => ($entry->{location} eq 'Zoom'),
+        is_remote => HPM::Location::is_remote($entry->{location}),
     };
 }
 
