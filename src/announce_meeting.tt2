@@ -27,6 +27,6 @@
     </p>
 [% END -%]
 
-[%- BLOCK Remote %]
+[%- BLOCK Zoom %]
     <p>The [% month %] meeting will be held on Zoom.</p>
 [% END -%]

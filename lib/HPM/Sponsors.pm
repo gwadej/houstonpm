@@ -20,7 +20,7 @@ my @SPONSORS = (
         map => 'https://maps.google.com/maps?q=Hostgator,+Houston&fb=1&gl=us&hq=HostGator,&hnear=0x8640b8b4488d8501:0xca0d02def365053b,Houston,+TX&cid=2141572779937723859&t=h&z=16&iwloc=A',
     },
     {
-        familiar => 'Remote',
+        familiar => 'Zoom',
         full_name => 'Zoom',
         is_remote => 1,
     },
