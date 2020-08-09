@@ -1,4 +1,4 @@
-package HPM::Locaton;
+package HPM::Location;
 
 use warnings;
 use strict;
@@ -48,7 +48,6 @@ sub is_remote
 {
     my ($key) = @_;
     my $loc = _find( $key );
-    return unless $loc;
     return $loc ? $loc->{is_remote} : undef;
 }
 
