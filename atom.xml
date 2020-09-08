@@ -4,12 +4,29 @@
   <title type="html">Houston.pm: What's New</title>
   <link href="http://houston.pm.org/"/>
   <link href="http://houston.pm.org/atom.xml" rel="self"/>
-  <updated>2020-08-07T12:29:50Z</updated>
+  <updated>2020-09-08T12:18:31Z</updated>
   <author>
     <name>G. Wade Johnson</name>
   </author>
   <category term="news"/>
   <generator uri="https://metacpan.org/pod/XML::Atom::SimpleFeed" version="0.902">XML::Atom::SimpleFeed</generator>
+  <entry>
+    <title>2001: How our Grandfathers wrote OO Perl</title>
+    <id>tag:houston.pm.org.2011-03:announce-20200908s-5716</id>
+    <content type="html">&lt;p&gt;For the September Houston.pm meeting, Brett Estrade presents &lt;em&gt;2001: How our Grandfathers wrote OO Perl&lt;/em&gt;.
+
+The meeting begins on September 10 at 6pm on Zoom. Invite information will be forthcoming at
+&lt;a href="http://houston.pm.org/announce_meeting.html"&gt;Houston.pm&lt;/a&gt;.
+&lt;/p&gt;
+
+&lt;p&gt;Brett Estrade will tour the book &lt;cite&gt;Object Oriented Perl: A Comprehensive Guide to Concepts and Programming Techniques&lt;/cite&gt;
+by Damien Conway. The book shows the old approach to OO in Perl.&lt;/p&gt;
+</content>
+    <updated>2020-09-08T12:18:31Z</updated>
+    <published>2020-09-08T12:18:31Z</published>
+    <category term="technical meeting"/>
+    <category term="remote meeting"/>
+  </entry>
   <entry>
     <title>Perl 7: An Opinionated Introduction</title>
     <id>tag:houston.pm.org.2011-03:announce-20200807s-26275</id>
@@ -448,19 +465,6 @@ write great web-based applications.&lt;/p&gt;
 &lt;/div&gt;</content>
     <updated>2019-03-17T04:03:47Z</updated>
     <published>2019-03-17T04:03:47Z</published>
-    <category term="technical meeting"/>
-  </entry>
-  <entry>
-    <title>make-ing a Static Website</title>
-    <id>tag:houston.pm.org.2011-03:announce-20190313-12399</id>
-    <content type="html">&lt;div&gt;&lt;p&gt;Remember static websites? Back when the web was new?&lt;/p&gt;
-&lt;p&gt;This month, G. Wade Johnson will present how he generates the static website houston.pm.org and why.
-There will be Perl. There will be Template Toolkit. There will be markdown.&lt;/p&gt;
-&lt;p&gt;As usual, we will meet in the lobby at cPanel, Inc. starting at 5:30pm on Thursday, March 14.
-At 6pm, we will go up to the meeting.&lt;/p&gt;
-&lt;/div&gt;</content>
-    <updated>2019-03-13T23:26:32Z</updated>
-    <published>2019-03-13T23:26:32Z</published>
     <category term="technical meeting"/>
   </entry>
 </feed>

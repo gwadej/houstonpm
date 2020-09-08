@@ -29,4 +29,20 @@
 
 [%- BLOCK Zoom %]
     <p>The [% month %] meeting will be held on Zoom.</p>
+
+    <ul style="list-style-type: none">
+        <li>Time:</li>
+        <li>Join Zoom Meeting <em>Coming soon</em></li>
+        <li>Meeting ID: </li>
+        <li>Find your local number:</li>
+    </ul>
+
+    <p>The passcode is available by executing the following Perl code:</p>
+
+    <pre><code>
+    </code></pre>
+
+    <p>the result will be your 6 digit passcode.</p>
+
+    <p>The idea for Perl code to generate the passcode was stolen from example for SanDiego.pm meeting by $Bob: <a href="http://blogs.perl.org/users/bob/2020/07/sandiegopm-meeting-tuesday-july-14th-2020.html" target="_blank">blog post</a>.
 [% END -%]

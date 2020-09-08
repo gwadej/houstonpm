@@ -29,7 +29,7 @@ sub lookup
     my ($key) = @_;
     my ($sp) = grep { $_->{familiar} eq $key } @SPONSORS;
     return unless $sp;
-    return { %{$sp}, HPM::Location->lookup($key) };
+    return { %{$sp}, %{ HPM::Location->lookup($key) } };
 }
 
 sub by_month

@@ -1,17 +1,10 @@
 [
    {
-      "abstract" : "<p>James Keenan gives an introduction to the upcoming Perl 7 release.\nThis is a chance to continue evolving Perl into the future, while providing\na point to disconnect from some legacy behavior.</p>\n",
-      "date" : "20200813",
-      "location" : "Zoom",
-      "presenter" : "James Keenan",
-      "title" : "Perl 7: An Opinionated Introduction"
-   },
-   {
-      "abstract" : null,
+      "abstract" : "<p>Brett Estrade will tour the book <cite>Object Oriented Perl: A Comprehensive Guide to Concepts and Programming Techniques</cite>\nby Damien Conway. The book shows the old approach to OO in Perl.</p>\n",
       "date" : "20200910",
-      "location" : "cPanel",
-      "presenter" : null,
-      "title" : null
+      "location" : "Zoom",
+      "presenter" : "Brett Estrade",
+      "title" : "2001: How our Grandfathers wrote OO Perl"
    },
    {
       "abstract" : null,
@@ -24,6 +17,13 @@
       "abstract" : null,
       "date" : "20201112",
       "location" : "cPanel",
+      "presenter" : null,
+      "title" : null
+   },
+   {
+      "abstract" : null,
+      "date" : "20201210",
+      "location" : "Hostgator",
       "presenter" : null,
       "title" : null
    }

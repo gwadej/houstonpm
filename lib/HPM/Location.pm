@@ -41,7 +41,7 @@ sub lookup
 {
     my ($key) = @_;
     my $loc = _find( $key );
-    return $loc ? { %{$loc} } : undef;
+    return $loc ? { %{$loc} } : {};
 }
 
 sub is_remote
