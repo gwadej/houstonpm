@@ -4,12 +4,29 @@
   <title type="html">Houston.pm: What's New</title>
   <link href="http://houston.pm.org/"/>
   <link href="http://houston.pm.org/atom.xml" rel="self"/>
-  <updated>2020-09-08T12:18:31Z</updated>
+  <updated>2020-10-01T01:49:19Z</updated>
   <author>
     <name>G. Wade Johnson</name>
   </author>
   <category term="news"/>
   <generator uri="https://metacpan.org/pod/XML::Atom::SimpleFeed" version="0.902">XML::Atom::SimpleFeed</generator>
+  <entry>
+    <title>A /usr/bin/sendmail like perl script that uses SendGrid email delivery service</title>
+    <id>tag:houston.pm.org.2011-03:announce-20200930s-29689</id>
+    <content type="html">&lt;p&gt;For the October Houston.pm meeting, Julian Brown presents &lt;em&gt;A /usr/bin/sendmail like perl script that uses SendGrid email delivery service&lt;/em&gt;.
+
+The meeting begins on October 8 at 6pm on Zoom.
+Check &lt;a href="http://houston.pm.org/announce_meeting.html"&gt;the website&lt;/a&gt; for connection details
+&lt;/p&gt;
+
+&lt;div&gt;Julian Brown will describe a perl script he wrote that uses SendGrid to handle outgoing server email.
+He'll cover the process, the script, and some DNS configuration.&lt;/div&gt;
+</content>
+    <updated>2020-10-01T01:49:19Z</updated>
+    <published>2020-10-01T01:49:19Z</published>
+    <category term="technical meeting"/>
+    <category term="remote meeting"/>
+  </entry>
   <entry>
     <title>2001: How our Grandfathers wrote OO Perl</title>
     <id>tag:houston.pm.org.2011-03:announce-20200908s-5716</id>
@@ -437,34 +454,6 @@ In the end, many of the decisions made on this system were simply what was easie
     <published>2019-03-19T19:26:19Z</published>
     <link href="http://houston.pm.org/talks/2019talks/1903Talk/index.html"/>
     <category term="presentation"/>
-    <category term="technical meeting"/>
-  </entry>
-  <entry>
-    <title>Subtle Magic: Moving to Dancer2/DBIx::Class/TT</title>
-    <id>tag:houston.pm.org.2011-03:announce-20190316-6823</id>
-    <content type="html">&lt;div&gt;&lt;div&gt;&lt;p&gt;The April meeting will be held at HostGator, at 
-5005 Mitchelldale, Suite #100, Houston, Texas, on April 11. We will
-meet in the lobby between 5:30pm and 6. Once everyone arrives, we head inside
-for the meeting at 6pm.&lt;/p&gt;
-
-&lt;p&gt;This month, Ruth Holloway will present &lt;em&gt;Subtle Magic: Moving to Dancer2/DBIx::Class/TT&lt;/em&gt;.&lt;/p&gt;
-
-&lt;p&gt;"Read the documentation", we're told, but there's always more to learn. When
-I started working with Dancer2, DBIx::Class, and Template Toolkit last fall,
-I'd seen the basics, but I found out &lt;em&gt;very&lt;/em&gt; quickly that there's much more to
-learn. The capabilities of this stack can influence application design from the
-ground up database tables, all the way to the final frameworks you might choose
-to use on the frontend, and not all of those repercussions are immediately
-clear from merely reading the documentation!&lt;/p&gt;
-
-&lt;p&gt;In this talk, we'll learn about some of the strengths of these modules and
-demonstrate how their capabilities can be leveraged to help you work faster and
-write great web-based applications.&lt;/p&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;</content>
-    <updated>2019-03-17T04:03:47Z</updated>
-    <published>2019-03-17T04:03:47Z</published>
     <category term="technical meeting"/>
   </entry>
 </feed>

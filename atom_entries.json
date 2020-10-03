@@ -4,6 +4,17 @@
          "technical meeting",
          "remote meeting"
       ],
+      "content" : "<p>For the October Houston.pm meeting, Julian Brown presents <em>A /usr/bin/sendmail like perl script that uses SendGrid email delivery service</em>.\n\nThe meeting begins on October 8 at 6pm on Zoom.\nCheck <a href=\"http://houston.pm.org/announce_meeting.html\">the website</a> for connection details\n</p>\n\n<div>Julian Brown will describe a perl script he wrote that uses SendGrid to handle outgoing server email.\nHe'll cover the process, the script, and some DNS configuration.</div>\n",
+      "id" : "tag:houston.pm.org.2011-03:announce-20200930s-29689",
+      "published" : "2020-10-01T01:49:19Z",
+      "title" : "A /usr/bin/sendmail like perl script that uses SendGrid email delivery service",
+      "updated" : "2020-10-01T01:49:19Z"
+   },
+   {
+      "categories" : [
+         "technical meeting",
+         "remote meeting"
+      ],
       "content" : "<p>For the September Houston.pm meeting, Brett Estrade presents <em>2001: How our Grandfathers wrote OO Perl</em>.\n\nThe meeting begins on September 10 at 6pm on Zoom. Invite information will be forthcoming at\n<a href=\"http://houston.pm.org/announce_meeting.html\">Houston.pm</a>.\n</p>\n\n<p>Brett Estrade will tour the book <cite>Object Oriented Perl: A Comprehensive Guide to Concepts and Programming Techniques</cite>\nby Damien Conway. The book shows the old approach to OO in Perl.</p>\n",
       "id" : "tag:houston.pm.org.2011-03:announce-20200908s-5716",
       "published" : "2020-09-08T12:18:31Z",
@@ -220,13 +231,5 @@
       "published" : "2019-03-19T19:26:19Z",
       "title" : "Notes for 'make-ing a Static Website' posted.",
       "updated" : "2019-03-19T19:26:19Z"
-   },
-   {
-      "category" : "technical meeting",
-      "content" : "<div><div><p>The April meeting will be held at HostGator, at \n5005 Mitchelldale, Suite #100, Houston, Texas, on April 11. We will\nmeet in the lobby between 5:30pm and 6. Once everyone arrives, we head inside\nfor the meeting at 6pm.</p>\n\n<p>This month, Ruth Holloway will present <em>Subtle Magic: Moving to Dancer2/DBIx::Class/TT</em>.</p>\n\n<p>\"Read the documentation\", we're told, but there's always more to learn. When\nI started working with Dancer2, DBIx::Class, and Template Toolkit last fall,\nI'd seen the basics, but I found out <em>very</em> quickly that there's much more to\nlearn. The capabilities of this stack can influence application design from the\nground up database tables, all the way to the final frameworks you might choose\nto use on the frontend, and not all of those repercussions are immediately\nclear from merely reading the documentation!</p>\n\n<p>In this talk, we'll learn about some of the strengths of these modules and\ndemonstrate how their capabilities can be leveraged to help you work faster and\nwrite great web-based applications.</p>\n</div>\n\n</div>",
-      "id" : "tag:houston.pm.org.2011-03:announce-20190316-6823",
-      "published" : "2019-03-17T04:03:47Z",
-      "title" : "Subtle Magic: Moving to Dancer2/DBIx::Class/TT",
-      "updated" : "2019-03-17T04:03:47Z"
    }
 ]

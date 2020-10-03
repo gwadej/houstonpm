@@ -1,22 +1,15 @@
 [
    {
-      "abstract" : "<p>Brett Estrade will tour the book <cite>Object Oriented Perl: A Comprehensive Guide to Concepts and Programming Techniques</cite>\nby Damien Conway. The book shows the old approach to OO in Perl.</p>\n",
-      "date" : "20200910",
-      "location" : "Zoom",
-      "presenter" : "Brett Estrade",
-      "title" : "2001: How our Grandfathers wrote OO Perl"
-   },
-   {
-      "abstract" : null,
+      "abstract" : "<div>Julian Brown will describe a perl script he wrote that uses SendGrid to handle outgoing server email.\nHe'll cover the process, the script, and some DNS configuration.</div>\n",
       "date" : "20201008",
-      "location" : "Hostgator",
-      "presenter" : null,
-      "title" : null
+      "location" : "Zoom",
+      "presenter" : "Julian Brown",
+      "title" : "A /usr/bin/sendmail like perl script that uses SendGrid email delivery service"
    },
    {
       "abstract" : null,
       "date" : "20201112",
-      "location" : "cPanel",
+      "location" : "Zoom",
       "presenter" : null,
       "title" : null
    },
@@ -24,6 +17,13 @@
       "abstract" : null,
       "date" : "20201210",
       "location" : "Hostgator",
+      "presenter" : null,
+      "title" : null
+   },
+   {
+      "abstract" : null,
+      "date" : "20210114",
+      "location" : "cPanel",
       "presenter" : null,
       "title" : null
    }
