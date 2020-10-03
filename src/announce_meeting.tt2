@@ -31,7 +31,7 @@
     <p>The [% month %] meeting will be held on Zoom.</p>
 
     <ul style="list-style-type: none">
-        <li>Time: Oct 8, 2020 06:00 PM Central Time (US and Canada)</li>
+        <li>Time: [% date %], 2020 06:00 PM Central Time (US and Canada)</li>
         <li>Join Zoom Meeting <a href="https://us02web.zoom.us/j/920069702">https://us02web.zoom.us/j/920069702</a></li>
         <li>Meeting ID: 920 069 702</li>
         <li>Find your local number: <a href="https://us02web.zoom.us/u/kijzdeGpk">https://us02web.zoom.us/u/kijzdeGpk</a></li>
