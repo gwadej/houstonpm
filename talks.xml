@@ -1988,7 +1988,7 @@ He included a best of section and some lessons he learned concerning DistZilla a
     <topic href="/talks/2019talks/1903Talk/index.html">
       <title>make-ing a Static Website</title>
       <presenter>G. Wade Johnson</presenter>
-      <abstract>G. Wade Johnson has been maintaining the [Houston.pm website](http://houston.pm.org/) for years.
+      <abstract>G. Wade Johnson has been maintaining the <a href="http://houston.pm.org/" target="_blank" rel="noopener">Houston.pm website</a> for years.
 Over time, he wrote a bit of code to make maintaining the site easier.
 In this presentation, he explains that code.</abstract>
     </topic>
