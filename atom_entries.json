@@ -4,6 +4,25 @@
          "technical meeting",
          "remote meeting"
       ],
+      "content" : "<p>For the November Houston.pm meeting, Brett Estrade presents <em>Process Management Modules in Perl</em>.\n\nThe meeting begins on November 12 at 6pm on Zoom.\nSee <a href=\"http://houston.pm.org/announce_meeting.html\">the announcement</a> for details.\n</p>\n\n<p>Brett Estrade covers some process management modules in Perl,\nincluding MCE and Parallel::ForkManager::Segmented.</p>\n",
+      "id" : "tag:houston.pm.org.2011-03:announce-20201021s-7521",
+      "published" : "2020-10-21T23:10:34Z",
+      "title" : "Process Management Modules in Perl",
+      "updated" : "2020-10-21T23:10:34Z"
+   },
+   {
+      "categories" : null,
+      "content" : "<p>For the November Houston.pm meeting, Brett Estrade presents <em>Process Management Modules in Perl</em>.\n\nThe meeting begins on November 12 at 6pm on Zoom.\nSee <a href=\"http://houston.pm.org/announce_meeting.html\">the announcement</a> for details.\n</p>\n\n<p>Brett Estrade covers some process management modules in Perl,\nincluding MCE and Parallel::ForkManager::Segmented.</p>\n",
+      "id" : "tag:houston.pm.org.2011-03:announce-20201021s-5717",
+      "published" : "2020-10-21T23:06:20Z",
+      "title" : "Process Management Modules in Perl",
+      "updated" : "2020-10-21T23:06:20Z"
+   },
+   {
+      "categories" : [
+         "technical meeting",
+         "remote meeting"
+      ],
       "content" : "<p>For the October Houston.pm meeting, Julian Brown presents <em>A /usr/bin/sendmail like perl script that uses SendGrid email delivery service</em>.\n\nThe meeting begins on October 8 at 6pm on Zoom.\nCheck <a href=\"http://houston.pm.org/announce_meeting.html\">the website</a> for connection details\n</p>\n\n<div>Julian Brown will describe a perl script he wrote that uses SendGrid to handle outgoing server email.\nHe'll cover the process, the script, and some DNS configuration.</div>\n",
       "id" : "tag:houston.pm.org.2011-03:announce-20200930s-29689",
       "published" : "2020-10-01T01:49:19Z",
@@ -205,31 +224,5 @@
       "published" : "2019-06-06T02:00:47Z",
       "title" : "Moving my website toward production",
       "updated" : "2019-06-06T02:00:47Z"
-   },
-   {
-      "categories" : [
-         "technical meeting",
-         "OpenShift"
-      ],
-      "content" : "<p>For the May Houston.pm meeting, Robert Stone presents <em>Getting Started With OpenShift - Using Containers for SysOps and Engineering</em>.\nThe meeting begins on May 9 at 6pm in the cPanel offices at 2550 North Loop West, Suite 4006.\nWe gather in the lobby 30 minutes before.</p>\n<p>Robert will do a demo of OpenShift, showing some of the high points of functionality.</p>\n",
-      "id" : "tag:houston.pm.org.2011-03:announce-20190428s-26836",
-      "published" : "2019-04-28T23:43:57Z",
-      "title" : "Getting Started With OpenShift - Using Containers for SysOps and Engineering",
-      "updated" : "2019-04-28T23:43:57Z"
-   },
-   {
-      "categories" : [
-         "presentation",
-         "technical meeting"
-      ],
-      "content" : {
-         "content" : "<p>G. Wade Johnson has been maintaining the [Houston.pm website](http://houston.pm.org/) for years.\nThe original hosting for the site was located at pm.org and was maintained by volunteers.\nTo reduce their work, they required all hosted sites to be static.\n\nWade had experience a couple of decades back generating static shells for small amounts of\ndynamic content.\nHe applied similar techniques to the Houston.pm website to make it easier to maintain.\n\n## A Little History\n\n   * He took over maintenance in December 2004\n   * Originally hosted on the pm.org servers\n   * The pm.org servers only supported static content\n   * Recently began hosting it on servers he controlled\n   * Nov 2002 - mostly empty placeholder\n   * Aug 2003 - meeting schedule announced\n   * Dec 2005 - the first generated version\n\nThe site was maintained manually between December 2004 and December 2005.\n\n## Why a Static Site?\n\nMany people have asked why the site is maintained as static HTML, instead of using a more modern framework or tool.\n\nWhen he first took over the site maintenace, he did not know how long it would last.\nHe did not want to start paying for hosting on something that he might not maintain for long.\nHe figured it would pass to someone else after a few years.\nAdditionally, the site itself had no compelling need for dynamic features.\nHe also was only willing to spend a limited amount of time maintaining it.\n\nAt different times in the past, people have recommended converting to a <abbr title=\"Content Management System\">CMS</abbr>\nor Wiki to maintain the site. Both of these approaches would require work to convert the content that\ncurrently exists and on-going maintenance and security monitoring to keep them functional.\nWade is not really interested in generating extra work for himself for dubious benefits.\n\n## Why Generate a Static Site\n\nThe first major rewrite of the site (2005) moved to the first version of the generating code.\n\nThe main reasons for generating the site are:\n\n   * Consistent look/style (such as it is)\n   * Code for creating new pages\n   * Site is under [version control](http://github.com/gwadej/houstonpm/)\n   * Based loosely on the results of his Masters Thesis\n\nSince all of the generating code is in relatively straight-forward Perl 5 code, it should be easy for another maintainer to pick up.\nIf anyone wants to make changes, they are free to send a pull request on github.\nIf a change does not make his life harder, Wade says he will probably accept it.\n\n## The Code\n\nAt this point, Wade went to the source on GitHub and began walking through some of the core features.\n\nThere are a number generic templates in the [templates/](https://github.com/gwadej/houstonpm/tree/master/templates) directory.\nSome of these are fragments used by other templates.\nOthers are more or less standalone templates.\nA number of templates are wrappers defining the general structure of certain pages:\n\ntemplates/index_wrap.tt2\n:  the main index page of the site\ntemplates/main_wrap.tt2\n:  any main page besides the index\ntemplates/talks_wrap.tt2\n:  the recent talks and year talks pages\ntemplates/writeup_wrap.tt2\n:  the talk write-up pages\n\nOther core templates include:\n\ntemplates/copyright.tt2\n:  specifies the copyright notice on each page, handling appropriate year information and licensing\ntemplates/main_menu.tt2\n:  specifies the left-hand menu for the site\ntemplates/recenttalks.tt2\n:  page listing the most recent talks\ntemplates/yeartalks.tt2\n:  page listing all of the talks for a given year\n\nThe whole system is driven by a [Makefile](https://github.com/gwadej/houstonpm/blob/master/Makefile).\nThe Makefile contains quite a bit of redundant information.\nThis turns out not to be a big maintenance problem, because the Makefile is generated from a template ([templates/Makefile.tt2](https://github.com/gwadej/houstonpm/blob/master/templates/Makefile.tt2)).\n\n## Scripts\n\nIn the [bin/](https://github.com/gwadej/houstonpm/blob/master/bin/) directory are a set of scripts that Wade uses to build the site.\nThe `bin/talks.pl` script is used to convert the information from the `talks.xml` document into all of the yearly and recent pages.\nThe `bin/announce.pl` script updates the `atom.xml` file which supports feed readers (if anyone still uses them).\nIt also provides the message used to update the mailing list and such when announcing a new meeting.\nThe `bin/writeup.pl` script helps in the construction of the write-ups for each meeting.\nAmong other things, it\n\n   * asks the maintainer for information about the talk\n   * creates the appropriate directory structure\n   * leads through writing up the talk\n   * builds a <abbr title=\"Template Toolkit\">TT</abbr> file for the write-up\n\n## Legacies\n\nWade explained that there are some legacy bits due to the length of time this project has run.\nThe `talks.xml` document is basically a database of the talks through time.\nSince the information is basically a series of short documents, it hasn't been worth any effort to turn it into a more traditional database.\nSome of the transformation work done to extract data from the talks file is performed through <abbr title=\"eXtensible Stylesheet Language\">XSL</abbr> files.\nThis approach has mostly been abandoned, but was a viable system at the turn of the century.\n\n## Conclusion\n\nThe audience had a number of questions about particular design decisions.\nSome of the comments made valid suggestions of other design trade-offs.\nIn the end, many of the decisions made on this system were simply what was easiest at the time.</p>",
-         "type" : "xhtml"
-      },
-      "id" : "tag:houston.pm.org,2011-03:presentation:1903",
-      "link" : "http://houston.pm.org/talks/2019talks/1903Talk/index.html",
-      "published" : "2019-03-19T19:26:19Z",
-      "title" : "Notes for 'make-ing a Static Website' posted.",
-      "updated" : "2019-03-19T19:26:19Z"
    }
 ]

@@ -1,17 +1,10 @@
 [
    {
-      "abstract" : "<div>Julian Brown will describe a perl script he wrote that uses SendGrid to handle outgoing server email.\nHe'll cover the process, the script, and some DNS configuration.</div>\n<div>Evan Carroll will be talking about MOPs, Moo, and Moose. He aims to answer the question 'Why MOP?'</div>\n",
-      "date" : "20201008",
-      "location" : "Zoom",
-      "presenter" : "Julian Brown and Evan Carroll",
-      "title" : "'A /usr/bin/sendmail like perl script that uses SendGrid email delivery service' and 'Demystifying MOPs - a Crash Course in Metaprogramming'"
-   },
-   {
-      "abstract" : "<div>Brett will cover a couple of interesting modules for process management.</dov>",
+      "abstract" : "<p>Brett Estrade covers some process management modules in Perl,\nincluding MCE and Parallel::ForkManager::Segmented.</p>\n",
       "date" : "20201112",
       "location" : "Zoom",
       "presenter" : "Brett Estrade",
-      "title" : "TBD"
+      "title" : "Process Management Modules in Perl"
    },
    {
       "abstract" : null,
@@ -24,6 +17,13 @@
       "abstract" : null,
       "date" : "20210114",
       "location" : "cPanel",
+      "presenter" : null,
+      "title" : null
+   },
+   {
+      "abstract" : null,
+      "date" : "20210211",
+      "location" : "Hostgator",
       "presenter" : null,
       "title" : null
    }

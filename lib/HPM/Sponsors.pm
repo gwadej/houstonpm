@@ -17,6 +17,10 @@ my @SPONSORS = (
         familiar => 'Hostgator',
         full_name => 'Hostgator, LLC',
     },
+    {
+        familiar => 'Zoom',
+        full_name => 'Zoom',
+    },
 );
 
 sub list
