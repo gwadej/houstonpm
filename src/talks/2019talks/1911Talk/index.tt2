@@ -1,0 +1,35 @@
+[% WRAPPER writeup_wrap.tt2
+    title='Summary of November 2019 Presentation'
+    year=2019
+%]
+      <h1>[% "Constants: What They Provide and How to Mock Them" | html %]</h1>
+<h2 id="perl5constants">Perl 5 Constants</h2>
+
+<p>Evan begins the evening explaining how Perl handles constants.</p>
+
+<ul>
+<li>Clarity</li>
+<li>Performance and Optimazations</li>
+<li>Constant not modified by other modules or code</li>
+<li>Dead code elimnation if the condition is a constant</li>
+<li>Constant folding</li>
+<li>Mocking a constant
+<ul>
+<li>Change a testing environment</li>
+</ul></li>
+</ul>
+
+<p>The presentation in <a href="constants.odp" target="_blank" rel="noopener">available</a>.</p>
+
+<h2 id="usingregularexpressions">Using Regular Expressions</h2>
+
+<p>Next, Wade talks about using regular expressions.</p>
+
+<p>He begins with a quick overview of what regular expressions are and some of the terms and operations
+that are supported. Most of the talk is focused on 3 different uses for regular expressions and tips
+and tricks related to each.</p>
+
+<p>The presentation in <a href="regex.html" target="_blank" rel="noopener">available</a>.</p>
+      <p>We had 13 people attending this month. As always, we'd like to thank
+        cPanel, L.L.C for providing the meeting space and food for the group.</p>
+[% END -%]

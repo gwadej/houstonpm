@@ -1,0 +1,52 @@
+[% WRAPPER writeup_wrap.tt2
+    title='Summary of October 2019 Presentation'
+    year=2019
+%]
+      <h1>[% "Cross-language Object-Oriented Mechanics" | html %]</h1>
+<ul>
+    <li>Mechanics</li>
+    <li>How it works in Perl</li>
+    <li>Target audience<ul>
+        <li>Don't understand <abbr title="Object Orientation">OO</abbr></li>
+        <li>New to Perl</li>
+        <li>Engineers, not Scientists</li>
+    </ul></li>
+    <li>Ignoring some data</li>
+    <li>Basics<ul>
+        <li>State: remembered information<ul>
+            <li>Example with pure functions and mulitple args and returns</li>
+            <li>Provide the state to the constructor, and mutating that</li>
+        </ul></li>
+        <li>Perl data structures</li>
+    </ul></li>
+    <li><abbr title="Object Orientation">OO</abbr> stuff<ul>
+        <li>Used the packages example</li>
+        <li>Example with Python</li>
+        <li>Show two different intefaces to get to the hash/dict implementint class/package</li>
+    </ul></li>
+    <li>Objects and Object Orientiation<ul>
+        <li>The Lingo</li>
+        <li>Pseudo code for Perl and JavaScript<ul>
+            <li>Object.setProttypeOf( obj, class )</li>
+            <li>Python: </li>
+            <li>Perl shows <code>bless</code></li>
+        </ul></li>
+    </ul></li>
+    <li>Should not use <code>bless</code> outside classes</li>
+    <li>Scope resolution operation, method invocation operator</li>
+    <li>Inheritance</li>
+    <li>Use some approach for creating object to create superclases</li>
+    <li>Runtime typing</li>
+    <li>Moose and Moo<ul>
+        <li>Roles are composition, not inheritance</li>
+    </ul></li>
+    <li>Declarative code is has problems, but maintablility is not one</li>
+</ul>
+
+<p>Presentation is <a href="object.odp" target="_blank" rel="noopener">available</a> or from Evan's
+<a href="https://github.com/EvanCarroll/tech-presentations/tree/master/perl" target="_blank"
+rel="noopener">git repo</a>.</p>
+
+      <p>We had 13 people attending this month. As always, we'd like to thank
+        Hostgator, LLC for providing the meeting space and food for the group.</p>
+[% END -%]

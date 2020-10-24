@@ -4,12 +4,56 @@
   <title type="html">Houston.pm: What's New</title>
   <link href="http://houston.pm.org/"/>
   <link href="http://houston.pm.org/atom.xml" rel="self"/>
-  <updated>2020-10-24T10:34:02Z</updated>
+  <updated>2020-10-24T12:17:33Z</updated>
   <author>
     <name>G. Wade Johnson</name>
   </author>
   <category term="news"/>
   <generator uri="https://metacpan.org/pod/XML::Atom::SimpleFeed" version="0.902">XML::Atom::SimpleFeed</generator>
+  <entry>
+    <title type="html">Notes for 'Core.org' posted.</title>
+    <id>tag:houston.pm.org,2011-03:presentation:1912</id>
+    <content type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">
+        <p>Debbie presents a short introduction to how Core.org teaches kids of any age to think about programming.</p>
+      </div>
+    </content>
+    <updated>2020-10-24T12:17:33Z</updated>
+    <published>2020-10-24T12:17:33Z</published>
+    <link href="http://houston.pm.org/talks/2019talks/1912Talk/index.html"/>
+    <category term="presentation"/>
+    <category term="technical meeting"/>
+  </entry>
+  <entry>
+    <title type="html">Notes for 'Constants: What They Provide and How to Mock Them' posted.</title>
+    <id>tag:houston.pm.org,2011-03:presentation:1911</id>
+    <content type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">
+        <p>Evan Carroll will cover another aspect of testing in Perl by mocking constants.</p>
+      </div>
+    </content>
+    <updated>2020-10-24T11:56:34Z</updated>
+    <published>2020-10-24T11:56:34Z</published>
+    <link href="http://houston.pm.org/talks/2019talks/1911Talk/index.html"/>
+    <category term="presentation"/>
+    <category term="technical meeting"/>
+  </entry>
+  <entry>
+    <title type="html">Notes for 'Cross-language Object-Oriented Mechanics' posted.</title>
+    <id>tag:houston.pm.org,2011-03:presentation:1910</id>
+    <content type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">
+        <p>Evan Carroll covers some of the reasons for using an Object Oriented paradigm when
+programming. He shows how Perl and a few other languages implement the appropriate
+concepts.</p>
+      </div>
+    </content>
+    <updated>2020-10-24T11:04:30Z</updated>
+    <published>2020-10-24T11:04:30Z</published>
+    <link href="http://houston.pm.org/talks/2019talks/1910Talk/index.html"/>
+    <category term="presentation"/>
+    <category term="technical meeting"/>
+  </entry>
   <entry>
     <title type="html">Notes for 'Panel Discussion on Object Oriented Programming' posted.</title>
     <id>tag:houston.pm.org,2011-03:presentation:1909</id>
@@ -281,69 +325,5 @@ you have interest in security, Perl, or fuzz testing, this will be the talk for 
     <updated>2020-02-10T04:28:25Z</updated>
     <published>2020-02-10T04:28:25Z</published>
     <category term="technical meeting"/>
-  </entry>
-  <entry>
-    <title>Deploying Perl Applications</title>
-    <id>tag:houston.pm.org.2011-03:announce-20200107s-6465</id>
-    <content type="html">&lt;p&gt;For the January Houston.pm meeting, Julian Brown leads a discussion on &lt;em&gt;Deploying Perl Applications&lt;/em&gt;.
-The meeting begins on January 9 at 6pm in the cPanel offices at 2550 North Loop West, Suite 4006.
-We gather in the lobby 30 minutes before.&lt;/p&gt;
-
-&lt;p&gt;Except in the case of simple standalone scripts, Perl applications usually consist
-of multiple modules and the &lt;code&gt;perl&lt;/code&gt; executable. In this discussion, we want
-to cover some of the ways you can deploy a Perl application to any environment.&lt;/p&gt;
-</content>
-    <updated>2020-01-07T13:26:54Z</updated>
-    <published>2020-01-07T13:26:54Z</published>
-    <category term="technical meeting"/>
-    <category term="panel discussion"/>
-  </entry>
-  <entry>
-    <title>Code.org</title>
-    <id>tag:houston.pm.org.2011-03:announce-20191209s-23837</id>
-    <content type="html">&lt;p&gt;For the December Houston.pm meeting, Debbie Campbell presents &lt;em&gt;Code.org&lt;/em&gt;.
-The meeting begins on December 12 at 6pm in the Hostgator offices at 5005 Mitchelldale St., Suite 100.
-We gather in the lobby 30 minutes before.&lt;/p&gt;
-&lt;p&gt;Do the children in your life have access to computer science education?
-What does that even mean, and why should you care?&lt;/p&gt;
-
-&lt;p&gt;Come find out at HostGator on Thursday, December 12, 6 pm to 8 pm. No
-prior computer science skills are necessary, and there will be pizza.&lt;/p&gt;
-
-&lt;p&gt;You'll experience a nationally vetted K-12 program that's offered in
-180 of the United States' largest school districts, as well as private,
-parochial, and home schools. Did we mention that it's offered at no
-cost, thanks to generous donors like Microsoft, Amazon, Facebook, and
-more?&lt;/p&gt;
-
-&lt;p&gt;At the least, you'll leave with ideas to entertain holiday visitors of
-all ages.&lt;/p&gt;
-
-&lt;p&gt;About the Presenter - Debbie Campbell, B.S.E.E., M.R.S., is the Rice
-University School Mathematics Project Code.org program manager. She is
-also awfully fond of G. Wade Johnson.&lt;/p&gt;
-</content>
-    <updated>2019-12-09T13:45:17Z</updated>
-    <published>2019-12-09T13:45:17Z</published>
-    <category term="educational meeting"/>
-  </entry>
-  <entry>
-    <title type="html">"Constants: what they provide, and how to mock them." and "Using Regular Expressions"</title>
-    <id>tag:houston.pm.org.2011-03:announce-20191111s-16823</id>
-    <content type="html">&lt;p&gt;For the November Houston.pm meeting, Evan Carroll presents &lt;em&gt;Constants: what they provide, and how
-to mock them&lt;/em&gt; and G. Wade Johnson presents &lt;em&gt;Using Regular Expressions&lt;/em&gt;.
-The meeting begins on November 14 at 6pm in the cPanel offices at 2550 North Loop West, Suite 4006.
-We gather in the lobby 30 minutes before.&lt;/p&gt;
-
-&lt;p&gt;The November meeting will include two presentations. Evan Carroll will cover another aspect of
-testing in Perl with &lt;em&gt;Constants: what they provide, and how to mock them&lt;/em&gt;. Afterward, G. Wade Johnson
-will present another fundamentals topic: &lt;em&gt;Using Regular Expressions&lt;/em&gt;.&lt;/p&gt;
-</content>
-    <updated>2019-11-12T04:36:18Z</updated>
-    <published>2019-11-12T04:36:18Z</published>
-    <category term="technical meeting"/>
-    <category term="testing"/>
-    <category term="fundamentals"/>
-    <category term="regular expressions"/>
   </entry>
 </feed>

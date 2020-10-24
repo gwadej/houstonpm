@@ -1,0 +1,387 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>Using Regular Expressions</title>
+<!-- metadata -->
+<meta name="generator" content="S5" />
+<meta name="version" content="S5 1.1" />
+<meta name="presdate" content="20191114" />
+<meta name="author" content="G. Wade Johnson" />
+<meta name="company" content="Houston.pm" />
+<!-- configuration parameters -->
+<meta name="defaultView" content="slideshow" />
+<meta name="controlVis" content="hidden" />
+<!-- style sheet links -->
+<link rel="stylesheet" href="ui/houstonpm/slides.css" type="text/css" media="projection" id="slideProj" />
+<link rel="stylesheet" href="ui/houstonpm/outline.css" type="text/css" media="screen" id="outlineStyle" />
+<link rel="stylesheet" href="ui/default/print.css" type="text/css" media="print" id="slidePrint" />
+<link rel="stylesheet" href="ui/default/opera.css" type="text/css" media="projection" id="operaFix" />
+<!-- S5 JS -->
+<script src="ui/default/slides.js" type="text/javascript"></script>
+<style type="text/css">
+    .centered { text-align: center; }
+    .left { float: left; }
+    .right { float: right; }
+    h1 + blockquote, h1 + q { margin-top: 2em; }
+    td, th {
+        border: 1px solid black; text-align: right;
+        padding-left: 1ex; padding-right: 0.5ex;
+    }
+    .synAlert { color: #0000ff; }
+    .synBaseN { color: #007f00; }
+    .synBString { color: #c9a7ff; }
+    .synChar { color: #ff00ff; }
+    .synComment { color: #7f7f7f; font-style: italic; }
+    .synDataType { color:#0000ff; }
+    .synDecVal { color:#00007f; }
+    .synError { color:#ff0000; font-style: italic; font-weight: bold; }
+    .synFloat { color:#00007f; }
+    .synFunction { color:#007f00; }
+    .synIString { color:#ff0000; }
+    .synKeyword { font-weight: bold; }
+    .synOperator { color:#ffa500; }
+    .synOthers { color:#b03060; }
+    .synRegionMarker { color:#96b9ff; font-style: italic; }
+    .synReserved { color:#9b30ff; font-weight: bold; }
+    .synString { color:#ff0000\; }
+    .synVariable { color:#0000ff; font-weight: bold; }
+    .synWarning { color:#0000ff; font-style: italic; font-weight: bold; }
+ </style>
+</head>
+<body>
+
+<div class="layout">
+<div id="controls"><!-- DO NOT EDIT --></div>
+<div id="currentSlide"><!-- DO NOT EDIT --></div>
+<div id="header"></div>
+<div id="footer">
+<h1>Houston.pm</h1>
+<h2>November 14, 2019</h2>
+</div>
+
+</div>
+
+<div class="presentation">
+
+<div class="slide">
+<h1>Using Regular Expressions</h1>
+<h2></h2>
+<h3>G. Wade Johnson</h3>
+</div>
+
+<div class="slide">
+<h1>What are Regular Expressions?</h1>
+<ul>
+    <li>A family of languages for matching strings</li>
+    <li>A system for describing strings abstractly</li>
+    <li>A tool for extracting data from strings</li>
+</ul>
+<div class="handout">
+<p>There are a lot of variations of regular expression syntax and functionality.
+Be sure you know which set you are using to avoid over/under matching.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Ways to Use Regxes</h1>
+<ul>
+    <li>Matching strings</li>
+    <li>Parsing strings</li>
+    <li>Validating strings</li>
+</ul>
+<div class="handout">
+<p>Regular expressions are really good at fuzzy descriptions of strings. 
+I'm going to focus on three, broad uses of regular expressions.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Learning/Testing Tools</h1>
+<ul>
+    <li><code>rxrx</code> from <code>Regexp::Debugger</code></li>
+    <li><a href="http://www.regexpal.com/" target="_blank">RegexPal</a></li>
+    <li>Search on-line, there are a bunch</li>
+</ul>
+<div class="handout">
+<p>Hopefully, I'll get some time later to demonstrate <code>rxrx</code> from
+Perl. It's regular expressions are a little different than you will be using,
+but it's ability to show how a match happens is pretty amazing.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Terms</h1>
+<ul>
+    <li>Literals: <code>a</code>, <code>%</code>, <code>3</code>, etc.</li>
+    <li><code>\0</code>, <code>\n</code>, <code>\r</code>, <code>\t</code>, <code>\f</code>, etc.</li>
+    <li><code>.</code></li>
+    <li><code>\.</code>, <code>\*</code>, etc.</li>
+    <li>Anchors/assertions: <code>^</code>, <code>$</code>, <code>\A</code>, <code>\z</code></li>
+</ul>
+<div class="handout">
+<p>You can think of these as the fundamental terms in specifying a regular
+expression. We use these by themselves or with various operators to construct
+our regular expressions. Although it seems obvious, all but the last set match
+one character.</p>
+<p>The anchors don't actually match a character, instead they match
+a location in a string. The <code>^</code> matches at the beginning of the
+string or immediately after a newline character. The <code>$</code> matches
+at the end of a string or immediately before a newline character.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Basic Operations</h1>
+<ul>
+    <li>Concatenation: <code>abc</code></li>
+    <li>Alternation: <code>abc|def</code></li>
+    <li>Quantifiers: <code>a+</code>, <code>a*</code>, <code>a?</code></li>
+    <li>Generalized Quantifiers: <code>a{2,5}</code>, <code>a{2,}</code></li>
+</ul>
+<div class="handout">
+<p>The concatenation of a series of terms matches the first term, followed
+immediately by the second, etc.</p>
+<p>Alternation matches either the expression to its left or the expression
+to its right. It will attempt a complete match on the left one before attempting
+the right one. If the first matches, the second won't be tried. This means it
+finds the first match, not the best match.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>More Operations</h1>
+<ul>
+    <li>Bracketed Character Class: <code>[abc]</code>, <code>[^abc]</code></li>
+    <li>Character Class: <code>\d</code>, <code>\D</code>, <code>\w</code></li>
+    <li>Grouping: <code>(abc)</code>, <code>(?:abc)</code></li>
+</ul>
+<div class="handout">
+    notes
+</div>
+</div>
+
+<div class="slide">
+<h1>Matching</h1>
+<ul>
+    <li>Mostly assuming positive intent</li>
+    <li>Is there a double quoted string?</li>
+    <li>Does the anchor tag have a <em>target</em> attribute?</li>
+    <li>Any duplicated words in a sentence?</li>
+</ul>
+<div class="handout">
+<p>The regex we use in these cases can be sloppier. In most cases, a false positive
+is not really a big problem. Most of the time, this kind of match is followed by more code
+that gets more specific about the data.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Sloppier Match: Quoted String</h1>
+<ul>
+    <li>Regex: <code>/".*"/</code></li>
+    <li>String: <code>abcdef "ghi" jkl</code></li>
+</ul>
+<div class="handout">
+<p>The regex is pretty straight-forward and simple. Will match any string with at least two
+double quotes. It would also match strings with three double quotes, etc.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Sloppier Match: Mismatches</h1>
+<ul class="incremental">
+    <li><code>abc "def</code></li>
+    <li><code>abc "def" ghi "jkl" mno</code></li>
+    <li><code>abc "def\" ghi</code></li>
+    <li><code>abc "def" ghi "mno</code></li>
+    <li><code>abc 'def" ghi "jkl' mno</code></li>
+    <li><code>abc \"def" ghi</code></li>
+</ul>
+<div class="handout">
+<p></p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Parsing</h1>
+<ul>
+    <li>Stricter than matching</li>
+    <li>Find and extract particular parts of the string</li>
+    <li>Not necessarily matching the whole string</li>
+    <li>Target string may have errors, but mostly as expected</li>
+</ul>
+<div class="handout">
+    notes
+</div>
+</div>
+
+<div class="slide">
+<h1>Parsing: Quoted Strings</h1>
+<ul>
+    <li><code>/("(?:\\.|[^"\\]+)+")/</code>
+</ul>
+<div class="handout">
+<p>Extract the double-quoted string. More precise than the matching case.
+Does not fail for escaped quotes. Only matches the first quoted string and
+does not extend past the first quoted string.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Parsing: Floating Point</h1>
+<ul>
+    <li>Match: <code>/[\d.]+/</code></li>
+    <li>Parse: <code>/([0-9]+\.[0-9]*)/</code></li>
+</ul>
+<div class="handout">
+<p>So, what's different between these two?</p>
+<p>The first case matches a string of digits and decimal points.</p>
+<p>The second case matches something that can be converted into a floating point
+number.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Validation</h1>
+<ul>
+    <li>Most strict</li>
+    <li>Match the whole string</li>
+    <li>Assume any level of error</li>
+    <li>Assume malicious input</li>
+</ul>
+<div class="handout">
+<p>Unlike the previous two patterns, for validation you need to be paranoid.
+Assume that someone is retrying to slip invalid input by you. Or, possibly trying
+to get you to ignore valid input.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Validation: Floating Point Number</h1>
+<ul>
+    <li>Are integers allowed as well?</li>
+    <li>Are negative numbers allowed?</li>
+    <li>How many numbers after the decimal? 0, 1, 2, 3, <code>n</code></li>
+    <li>Are digits required before the decimal?</li>
+    <li>Are unnecessary leading zeros allowed?</li>
+    <li>Is exponential notation allowed?</li>
+    <li>Are special floating point values allowed? (NaN, Inf, -Inf, etc)</li>
+</ul>
+<div class="handout">
+<p>A large portion of validation is figuring out what is valid and what is
+invalid. Depending on the circumstance, any of the above questions could be
+answered in any variation. (There are a few combinations that I haven't
+personally needed to deal with, but I have dealt with most combinations.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Validation: Floating Point</h1>
+<p><code>/\A-?(?:0|[1-9][0-9]*)\.[0-9]{0,3}\z/</code></p>
+<ul>
+    <li>Can be negative, no leading zeros, can end in '.', up to 3 decimals</li>
+    <li>No integers allowed</li>
+    <li>No exponential notation, or special float values</li>
+</ul>
+<div class="handout">
+    notes
+</div>
+</div>
+
+<div class="slide">
+<h1>Validation: Floating Point 2</h1>
+<p><code>/\A(?:0|[1-9][0-9]*)(?:\.[0-9]{1,2})?\z/</code></p>
+<ul>
+    <li>Non-negative, no leading zeros, up to 2 decimals</li>
+    <li>Integers allowed</li>
+    <li>No exponential notation, or special float values</li>
+</ul>
+<div class="handout">
+    notes
+</div>
+</div>
+
+<div class="slide">
+<h1>Matching Tips</h1>
+<ul>
+    <li>Anchor if it helps, otherwise not</li>
+    <li>Be liberal in what you match, but not too liberal</li>
+    <li>Loose character classes can be useful</li>
+    <li>Series of simple matches may be better than one complicated match</li>
+</ul>
+<div class="handout">
+    notes
+</div>
+</div>
+
+<div class="slide">
+<h1>Parsing Tips</h1>
+<ul>
+    <li>Anchor if it helps</li>
+    <li>Match around what you want to extract.</li>
+    <li>If you know what you want to keep, regex works well</li>
+    <li>If you know what you want to remove, <code>split</code> can be better</li>
+</ul>
+<div class="handout">
+    notes
+</div>
+</div>
+
+<div class="slide">
+<h1>Validation Tips</h1>
+<ul>
+    <li>Positive match: Always anchor both ends</li>
+    <li>Use the right anchors</li>
+    <li>Be careful not to match too much<ul>
+        <li>Greedy matches</li>
+        <li>Loose character classes</li>
+        <li><code>.</code></li>
+    </ul></li>
+    <li>Try not to get too complicated/clever</li>
+    <li>Negative matches can be very effective</li>
+</ul>
+<div class="handout">
+    notes
+</div>
+</div>
+
+<div class="slide">
+<h1>General Regex Tips</h1>
+<ul>
+    <li>Character classes rather than alternates of characters:<ul>
+        <li><code>/(a|b|c)/</code></li>
+        <li><code>/[abc]/</code></li>
+    </ul></li>
+    <li>Watch anchors and alternates: <code>/\Acat|dog\z/</code></li>
+    <li>Matching <em>not this string</em> is harder than you think</li>
+    <li>Lookahead (positive and negative) can be your friend</li>
+    <li>Be careful with greedy matches</li>
+</ul>
+<div class="handout">
+    notes
+</div>
+</div>
+
+<div class="slide">
+<h1>Tricks</h1>
+<ul>
+    <li>Greedy vs Non-greedy vs Possessive<ul>
+        <li><code>/".+"/</code></li>
+        <li><code>/".+?"/</code></li>
+        <li><code>/"[^"]++"/</code></li>
+    </ul></li>
+    <li>Possessive doesn't backtrack</li>
+    <li>Watch for matchinng empty strings: <code>/ab*c/</code></li>
+    <li>Watch for nested quantifiers, with backtracking:
+        <code>/a(b*c*)*d/</li>
+</ul>
+<div class="handout">
+    notes
+</div>
+</div>
+
+</body>
+</html>

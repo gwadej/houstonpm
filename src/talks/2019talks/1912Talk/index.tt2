@@ -1,0 +1,23 @@
+[% WRAPPER writeup_wrap.tt2
+    title='Summary of December 2019 Presentation'
+    year=2019
+%]
+      <h1>[% "Core.org" | html %]</h1>
+<p>Debbie began by breaking the group into two person teams. The team had to create an algorithm for
+sorting cards. The trick is one person would follow the algorithm, the other would compare two
+cards by pointing. This forces the pair to think more like the way a computer must solve problems.</p>
+
+<p>She went on to discuss some of the differences between computer science and programming. This lead
+to an explanation about educating students on how programming works. The Code.org program is all
+about teaching teachers to teach students at different levels how to think about computation and
+eventually programming.</p>
+
+<p>She also talked about the effects of different demographics on teaching this topic.</p>
+
+<p>This is very different from our normal presentation and the audience appeared to be fascinated. Many
+questions were asked.</p>
+
+<p>If you would like to know more about the program, check out the code.org website.</p>
+      <p>We had 11 people attending this month. As always, we'd like to thank
+        Hostgator, LLC for providing the meeting space and food for the group.</p>
+[% END -%]

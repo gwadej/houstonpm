@@ -2067,4 +2067,41 @@ attempting to cover the whole subject of unit testing, there should be something
     <attendees>19</attendees>
     <sponsor>cPanel, L.L.C</sponsor>
   </talk>
+  <talk num="1910">
+    <date>October 2019</date>
+    <topic href="/talks/2019talks/1910Talk/index.html">
+      <title>Cross-language Object-Oriented Mechanics</title>
+      <presenter>Evan Carroll</presenter>
+      <abstract>Evan Carroll covers some of the reasons for using an Object Oriented paradigm when
+programming. He shows how Perl and a few other languages implement the appropriate
+concepts.</abstract>
+    </topic>
+    <attendees>13</attendees>
+    <sponsor>Hostgator, LLC</sponsor>
+  </talk>
+  <talk num="1911">
+    <date>November 2019</date>
+    <topic href="/talks/2019talks/1911Talk/index.html">
+      <title>Constants: What They Provide and How to Mock Them</title>
+      <presenter>Evan Carroll</presenter>
+      <abstract>Evan Carroll covers another aspect of testing in Perl by mocking constants.</abstract>
+    </topic>
+    <topic>
+      <title>Using Regular Expressions</title>
+      <presenter>G. Wade Johnson</presenter>
+      <abstract>Wade gives a different regular expression talk, focusing on how to use them instead of focusing on the syntax.</abstract>
+    </topic>
+    <attendees>13</attendees>
+    <sponsor>cPanel, L.L.C</sponsor>
+  </talk>
+  <talk num="1912">
+    <date>December 2019</date>
+    <topic href="/talks/2019talks/1912Talk/index.html">
+      <title>Core.org</title>
+      <presenter>Debbie Campbell</presenter>
+      <abstract>Debbie presents a short introduction to how Core.org teaches kids of any age to think about programming.</abstract>
+    </topic>
+    <attendees>11</attendees>
+    <sponsor>Hostgator, LLC</sponsor>
+  </talk>
 </talklist>
