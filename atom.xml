@@ -4,12 +4,40 @@
   <title type="html">Houston.pm: What's New</title>
   <link href="http://houston.pm.org/"/>
   <link href="http://houston.pm.org/atom.xml" rel="self"/>
-  <updated>2020-10-24T07:00:05Z</updated>
+  <updated>2020-10-24T07:52:03Z</updated>
   <author>
     <name>G. Wade Johnson</name>
   </author>
   <category term="news"/>
   <generator uri="https://metacpan.org/pod/XML::Atom::SimpleFeed" version="0.902">XML::Atom::SimpleFeed</generator>
+  <entry>
+    <title type="html">Notes for 'Test::Spec, Test Using a Declarative Testing Framework' posted.</title>
+    <id>tag:houston.pm.org,2011-03:presentation:1907</id>
+    <content type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">
+        <p>Julian Brown describes his experiences with the <code>Test::Spec</code> unit testing framework.</p>
+      </div>
+    </content>
+    <updated>2020-10-24T07:52:03Z</updated>
+    <published>2020-10-24T07:52:03Z</published>
+    <link href="http://houston.pm.org/talks/2019talks/1907Talk/index.html"/>
+    <category term="presentation"/>
+    <category term="technical meeting"/>
+  </entry>
+  <entry>
+    <title type="html">Notes for 'Julian in the Land of NoSQL' posted.</title>
+    <id>tag:houston.pm.org,2011-03:presentation:1906</id>
+    <content type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">
+        <p>Julian Brown will be exploring the usage of the Arangodb NoSQL database as used a website he's working on.</p>
+      </div>
+    </content>
+    <updated>2020-10-24T07:39:21Z</updated>
+    <published>2020-10-24T07:39:21Z</published>
+    <link href="http://houston.pm.org/talks/2019talks/1906Talk/index.html"/>
+    <category term="presentation"/>
+    <category term="technical meeting"/>
+  </entry>
   <entry>
     <title type="html">Notes for 'Getting Started With OpenShift - Using Containers for SysOps and Engineering' posted.</title>
     <id>tag:houston.pm.org,2011-03:presentation:1905</id>
@@ -324,36 +352,5 @@ of various aspects of OO.&lt;/p&gt;
     <category term="technical meeting"/>
     <category term="panel discussion"/>
     <category term="fundamentals"/>
-  </entry>
-  <entry>
-    <title>Basic Unit Testing Concepts in Perl</title>
-    <id>tag:houston.pm.org.2011-03:announce-20190730s-418</id>
-    <content type="html">&lt;p&gt;For the August Houston.pm meeting, G. Wade Johnson presents &lt;em&gt;Basic Unit Testing Concepts in Perl&lt;/em&gt;.
-The meeting begins on August 8 at 6pm in the Hostgator offices at 5005 Mitchelldale St., Suite 100.
-We gather in the lobby 30 minutes before.&lt;/p&gt;
-
-&lt;p&gt;Wade starts with some unit testing basics, introduces some of the Perl unit test frameworks,
-and then focuses on concepts and tricks to help you get more from your unit tests. While not
-attempting to cover the whole subject of unit testing, there should be something here for most.&lt;/p&gt;
-</content>
-    <updated>2019-07-30T23:09:21Z</updated>
-    <published>2019-07-30T23:09:21Z</published>
-    <category term="technical meeting"/>
-    <category term="unit testing"/>
-    <category term="documentation"/>
-    <category term="design"/>
-    <category term="codecraft"/>
-  </entry>
-  <entry>
-    <title>Test::Spec, test using a declarative testing framework</title>
-    <id>tag:houston.pm.org.2011-03:announce-20190628s-12863</id>
-    <content type="html">&lt;p&gt;For the July Houston.pm meeting, Julian Brown presents &lt;em&gt;Test::Spec, test using a declarative testing framework&lt;/em&gt;.
-The meeting begins on July 11 at 6pm in the cPanel offices at 2550 North Loop West, Suite 4006.
-We gather in the lobby 30 minutes before.&lt;/p&gt;
-Julian presents a Perl test module modeled after the Ruby RSpec testing framework.</content>
-    <updated>2019-06-28T20:30:53Z</updated>
-    <published>2019-06-28T20:30:53Z</published>
-    <category term="technical meeting"/>
-    <category term="testing"/>
   </entry>
 </feed>

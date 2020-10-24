@@ -1,0 +1,36 @@
+[% WRAPPER writeup_wrap.tt2
+    title='Summary of July 2019 Presentation'
+    year=2019
+%]
+      <h1>[% "Test::Spec, Test Using a Declarative Testing Framework" | html %]</h1>
+<h2 id="test::spec">Test::Spec</h2>
+
+<ul>
+    <li>Julian's team partner (Dan Muey) does Test::Spec a lot</li>
+    <li><code>describe</code></li>
+    <li><code>before</code>, around</li>
+    <li><code>it</code><ul>
+        <li>One assertion inside, usually</li>
+    </ul></li>
+    <li>Julian wrote tests to cover <code>File::Copy::Recursive</code><ul>
+        <li>Used an example with <code>Path::Tiny</code></li>
+        <li>Build directory tree for copies</li>
+    </ul></li>
+    <li><code>File::Copy::Recursive</code> handles permissions and such as well</li>
+    <li>share in the describe makes data available to nested pieces</li>
+    <li>Constructs the ok messages from the nested describes and its.</li>
+    <li>Need to call <code>runtests</code> to make the tests in the file run</li>
+    <li><code>shared_examples_for</code><ul>
+        <li>in spec_helpers</li>
+        <li>called by <code>it_should_behave_like</code></li>
+    </ul></li>
+    <li><code>arounds</code> match as expected</li>
+    <li>If you add a message to the assertion, it replaces the generated message</li>
+    <li>Without the sub, it shows as unimplemented</li>
+    <li><code>before each</code> and <code>after each</code></li>
+    <li><code>before all</code> and <code>after all</code></li>
+    <li>Supports <code>xit</code> (disabled test)</li>
+</ul>
+      <p>We had 7 people attending this month. As always, we'd like to thank
+        cPanel, L.L.C for providing the meeting space and food for the group.</p>
+[% END -%]

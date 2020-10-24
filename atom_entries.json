@@ -5,6 +5,36 @@
          "technical meeting"
       ],
       "content" : {
+         "content" : "<p>Julian Brown describes his experiences with the <code>Test::Spec</code> unit testing framework.</p>",
+         "type" : "xhtml"
+      },
+      "id" : "tag:houston.pm.org,2011-03:presentation:1907",
+      "link" : "http://houston.pm.org/talks/2019talks/1907Talk/index.html",
+      "published" : "2020-10-24T07:52:03Z",
+      "title" : "Notes for 'Test::Spec, Test Using a Declarative Testing Framework' posted.",
+      "updated" : "2020-10-24T07:52:03Z"
+   },
+   {
+      "categories" : [
+         "presentation",
+         "technical meeting"
+      ],
+      "content" : {
+         "content" : "<p>Julian Brown will be exploring the usage of the Arangodb NoSQL database as used a website he's working on.</p>",
+         "type" : "xhtml"
+      },
+      "id" : "tag:houston.pm.org,2011-03:presentation:1906",
+      "link" : "http://houston.pm.org/talks/2019talks/1906Talk/index.html",
+      "published" : "2020-10-24T07:39:21Z",
+      "title" : "Notes for 'Julian in the Land of NoSQL' posted.",
+      "updated" : "2020-10-24T07:39:21Z"
+   },
+   {
+      "categories" : [
+         "presentation",
+         "technical meeting"
+      ],
+      "content" : {
          "content" : "<p>Robert Stone will do a demo of OpenShift, showing some of the high points of functionality.</p>",
          "type" : "xhtml"
       },
@@ -207,30 +237,5 @@
       "published" : "2019-09-11T12:32:28Z",
       "title" : "Panel Discussion on Object Oriented Programming",
       "updated" : "2019-09-11T12:32:28Z"
-   },
-   {
-      "categories" : [
-         "technical meeting",
-         "unit testing",
-         "documentation",
-         "design",
-         "codecraft"
-      ],
-      "content" : "<p>For the August Houston.pm meeting, G. Wade Johnson presents <em>Basic Unit Testing Concepts in Perl</em>.\nThe meeting begins on August 8 at 6pm in the Hostgator offices at 5005 Mitchelldale St., Suite 100.\nWe gather in the lobby 30 minutes before.</p>\n\n<p>Wade starts with some unit testing basics, introduces some of the Perl unit test frameworks,\nand then focuses on concepts and tricks to help you get more from your unit tests. While not\nattempting to cover the whole subject of unit testing, there should be something here for most.</p>\n",
-      "id" : "tag:houston.pm.org.2011-03:announce-20190730s-418",
-      "published" : "2019-07-30T23:09:21Z",
-      "title" : "Basic Unit Testing Concepts in Perl",
-      "updated" : "2019-07-30T23:09:21Z"
-   },
-   {
-      "categories" : [
-         "technical meeting",
-         "testing"
-      ],
-      "content" : "<p>For the July Houston.pm meeting, Julian Brown presents <em>Test::Spec, test using a declarative testing framework</em>.\nThe meeting begins on July 11 at 6pm in the cPanel offices at 2550 North Loop West, Suite 4006.\nWe gather in the lobby 30 minutes before.</p>\nJulian presents a Perl test module modeled after the Ruby RSpec testing framework.",
-      "id" : "tag:houston.pm.org.2011-03:announce-20190628s-12863",
-      "published" : "2019-06-28T20:30:53Z",
-      "title" : "Test::Spec, test using a declarative testing framework",
-      "updated" : "2019-06-28T20:30:53Z"
    }
 ]

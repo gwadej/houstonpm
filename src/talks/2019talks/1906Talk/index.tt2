@@ -1,0 +1,60 @@
+[% WRAPPER writeup_wrap.tt2
+    title='Summary of June 2019 Presentation'
+    year=2019
+%]
+      <h1>[% "Julian in the Land of NoSQL" | html %]</h1>
+<p>His project with his son. Moving a website project to production.</p>
+
+<ul>
+    <li>ArangoDB (NoSQL)</li>
+    <li>Angular 7+ for front end</li>
+    <li>C++ and Perl for backend</li>
+    <li>ArangoDB has many paradigms available</li>
+    <li>JSON Store</li>
+    <li>Text Search through JSON documents</li>
+    <li>"Joins" between collections (tables)</li>
+    <li>CGI C++</li>
+    <li>JSONCPP library access to JSON<ul>
+        <li>10ms latency</li>
+    </ul></li>
+    <li>Arango is basically a webserver<ul>
+        <li>AQL params on send</li>
+        <li>Returns json</li>
+    </ul></li>
+    <li>Perl CGI for some complicated stuff<ul>
+        <li>Credit card payments, OAuth with FaceBook, Google</li>
+    </ul></li>
+    <li>Cloudinary CDN<ul>
+        <li>Host the images</li>
+        <li>Parameters to the images referencs and do resizing on the fly</li>
+        <li>Caches the transformations</li>
+    </ul></li>
+    <li>Architecture<ul>
+        <li>Nginx for load balancing</li>
+        <li>Apache with secuerity and loading</li>
+        <li>Master and slave ArnagoDB serrvers</li>
+    </ul></li>
+    <li>VPS Images<ul>
+        <li>Debian/KVM serve</li>
+    </ul></li>
+    <li>Manually build images with scripts</li>
+    <li>CPANm package load is the slowest part</li>
+    <li>{App::cpm} imstalls in parallel</li>
+    <li>Want to continue with Debian VPS</li>
+    <li>Possibly move to AWS, Google Cloud, etc. (if they support Debian)</li>
+    <li>Think to omve the CGI to plackup</li>
+    <li>learngigs.com</li>
+    <li>Arango Cluster<ul>
+        <li>master/slave</li>
+        <li>Sharding</li>
+        <li>Open Source</li>
+    </ul></li>
+    <li>Command and Control<ul>
+        <li>From JD's talk about Ansible</li>
+        <li>Spacewalk</li>
+    </ul></li>
+    <li>Business is getting towards ready to start going real</li>
+</ul>
+      <p>We had 7 people attending this month. As always, we'd like to thank
+        Hostgator, LLC for providing the meeting space and food for the group.</p>
+[% END -%]

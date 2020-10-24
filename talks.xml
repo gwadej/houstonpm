@@ -2025,4 +2025,24 @@ write great web-based applications.</abstract>
     <attendees>10</attendees>
     <sponsor>cPanel, L.L.C</sponsor>
   </talk>
+  <talk num="1906">
+    <date>June 2019</date>
+    <topic href="/talks/2019talks/1906Talk/index.html">
+      <title>Julian in the Land of NoSQL</title>
+      <presenter>Julian Brown</presenter>
+      <abstract>Julian Brown will be exploring the usage of the Arangodb NoSQL database as used a website he&apos;s working on.</abstract>
+    </topic>
+    <attendees>7</attendees>
+    <sponsor>Hostgator, LLC</sponsor>
+  </talk>
+  <talk num="1907">
+    <date>July 2019</date>
+    <topic href="/talks/2019talks/1907Talk/index.html">
+      <title>Test::Spec, Test Using a Declarative Testing Framework</title>
+      <presenter>Julian Brown</presenter>
+      <abstract>Julian Brown describes his experiences with the &lt;code&gt;Test::Spec&lt;/code&gt; unit testing framework.</abstract>
+    </topic>
+    <attendees>7</attendees>
+    <sponsor>cPanel, L.L.C</sponsor>
+  </talk>
 </talklist>
