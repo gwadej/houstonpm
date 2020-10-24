@@ -133,11 +133,22 @@ EOF
 
     print {$fh} $m->markdown( $vars->{writeup} );
 
-    print {$fh} <<"EOT";
+    if($vars->{sponsor}->{full_name} ne 'Zoom')
+    {
+        print {$fh} <<"EOT";
       <p>We had $vars->{attendees} people attending this month. As always, we'd like to thank
         $vars->{sponsor}->{full_name} for providing the meeting space and food for the group.</p>
 [% END -%]
 EOT
+    }
+    else
+    {
+        print {$fh} <<"EOT";
+      <p>We had $vars->{attendees} people attending the remote meeting this month.</p>
+[% END -%]
+EOT
+    }
+
     close $fh or die "Unable to close index.tt2\n";
 
     $vars->{indexfile} = "$dir/index.tt2";
