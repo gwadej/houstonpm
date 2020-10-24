@@ -1,0 +1,250 @@
+[% WRAPPER writeup_wrap.tt2
+    title='Summary of May 2019 Presentation'
+    year=2019
+%]
+      <h1>[% "Getting Started With OpenShift - Using Containers for SysOps and Engineering" | html %]</h1>
+<h2 id="devops:ownfromcodetoserver">Devops: Own from code to server</h2>
+
+<ul>
+    <li>Infrastructure (Ops)<ul>
+        <li>Why openShift?</li>
+        <li>Parts of OpenShift</li>
+        <li>Planning your clusert</li>
+        <li>Maintenace</li>
+        <li>Troubleshoot common problems</li>
+    </ul></li>
+    <li>OpenShift Usage (Dev)<ul>
+        <li>High level overview</li>
+        <li>Step by Step</li>
+        <li>Real world</li>
+    </ul></li>
+    <li>Why<ul>
+        <li>Get started fast<ul>
+            <li>Only as complex as you need it to be</li>
+        </ul></li>
+        <li>Kubernetes under the hood</li>
+        <li>Infrastructure as YAML/JSON</li>
+        <li>Ease of Use<ul>
+            <li>Interface</li>
+            <li>Tagging</li>
+        </ul></li>
+        <li>Containers all the way down</li>
+    </ul></li>
+    <li>Parts of OpenShift<ul>
+        <li>Master Nodes<ul>
+            <li>Manage the cluser itself</li>
+            <li>Kubernetes APIs/Scheduler</li>
+            <li>etcd</li>
+            <li>Webconsole</li>
+        </ul></li>
+        <li>Infrastructure notes<ul>
+            <li>Routers</li>
+            <li>Shared services</li>
+            <li>Monitoring, registry</li>
+        </ul></li>
+    </ul></li>
+    <li>Compute nodes<ul>
+        <li>Where your apps will go</li>
+    </ul></li>
+</ul>
+
+<h2 id="planningyour1stcluster">Planning your 1st cluster</h2>
+
+<ul>
+    <li>OpenShift 3.11 is latest stable</li>
+    <li>Operating System<ul>
+        <li>Nodes</li>
+        <li>An "Atomic Distribution"</li>
+        <li>Hypervisor</li>
+    </ul></li>
+    <li>Upfront considerations<ul>
+        <li>Consider carefully</li>
+        <li>Physical Layout</li>
+        <li>Network Plugin<ul>
+            <li>osm_cluster_network_cidr</li>
+            <li>This will cause you to run out of IPs if you don't doo this right</li>
+        </ul></li>
+        <li>Storage<ul>
+            <li>Type</li>
+            <li>Location</li>
+            <li>(Gluster (triplicates data), OpenS doubles)</li>
+        </ul></li>
+    </ul></li>
+    <li>Strict separation between nodes, so that they dev and prod can be separated</li>
+    <li>Can configure to limit who can talk to shom</li>
+</ul>
+
+<h2 id="maintenance">Maintenance</h2>
+
+<ul>
+    <li>Cleanup/Pruning<ul>
+        <li>Registry (docker)</li>
+        <li>Projects<ul>
+            <li>Can "spin down", not gone, just not running</li>
+        </ul></li>
+    </ul></li>
+    <li>Backups<ul>
+        <li>etcd node</li>
+        <li>configs</li>
+    </ul></li>
+    <li>Monitoring<ul>
+        <li>Alerts sent somewhere YOU WILL WATCH!</li>
+    </ul></li>
+    <li>Upgrading nodes<ul>
+        <li>If using ansible, git pulll branch, and run upgrade</li>
+    </ul></li>
+</ul>
+
+<h2 id="troubleshootingcommonissues">troubleshooting Common Issues</h2>
+
+<ul>
+    <li>The Events Page<ul>
+        <li>First place to look</li>
+    </ul></li>
+    <li>Cattle not pets<ul>
+        <li>All applicatins like cattle</li>
+        <li>Development environment</li>
+        <li>If you used atomic and the node is dead...</li>
+        <li>Delete the node, reload, and scale-up<ul>
+            <li>GlusterFS</li>
+        </ul></li>
+    </ul></li>
+</ul>
+
+<h2 id="developer">Developer</h2>
+
+<h3 id="highleveloverview">High Level Overview</h3>
+
+<ul>
+    <li>Docker Image<ul>
+        <li>What is it?<ul>
+            <li>The operating system</li>
+            <li>(And sometimes more!)</li>
+        </ul></li>
+        <li>Based on an Upstream Image</li>
+        <li>Why?<ul>
+            <li>Upstream updates</li>
+            <li>Security Fixes/Patches</li>
+        </ul></li>
+    </ul></li>
+    <li>Build Config<ul>
+        <li>Recipes for making an images</li>
+        <li>Docker Build<ul>
+            <li>Got root?</li>
+        </ul></li>
+        <li>Install rpms and other server applications<ul>
+            <li>Anything you need to run yout app</li>
+        </ul></li>
+        <li>Setting up the s2i Scripts</li>
+    </ul></li>
+    <li>Image Stream<ul>
+        <li>Builder<ul>
+            <li><code>git</code> for completed builds<ul>
+                <li>Collection of builds</li>
+            </ul></li>
+            <li>Tagged<ul>
+                <li>Latest</li>
+                <li>Version Numbers</li>
+            </ul></li>
+            <li>Watchable<ul>
+                <li>Trigger downstram events</li>
+            </ul></li>
+        </ul></li>
+    </ul></li>
+    <li>Source Build Config<ul>
+        <li>s21</li>
+        <li>Incorporates Source Code</li>
+        <li>Runs as unprivileged user</li>
+        <li><em>Puts stuff in the right place</em><ul>
+            <li>Produces a runnable image</li>
+        </ul></li>
+    </ul></li>
+    <li>Source Image Stream<ul>
+        <li>Deployable Image</li>
+        <li>Managed using tags<ul>
+            <li>Development<ul>
+                <li>Dev secrets</li>
+            </ul></li>
+            <li>Staging<ul>
+                <li>Prod secrets</li>
+                <li>Not customer accissible</li>
+            </ul></li>
+            <li>Production<ul>
+                <li>Prod secrets</li>
+                <li>Customer Accessible</li>
+            </ul></li>
+        </ul></li>
+    </ul></li>
+    <li>Deployment Config<ul>
+        <li>Container(s)<ul>
+            <li>s2i run</li>
+        </ul></li>
+        <li>Mounts<ul>
+            <li>Secrets<ul>
+                <li>mounted to the filesystem</li>
+            </ul></li>
+            <li>Config<ul>
+                <li>In the environment</li>
+            </ul></li>
+            <li>Volumes (data)</li>
+        </ul></li>
+        <li>Environment</li>
+        <li>POD<ul>
+            <li>Really the <em>application</em></li>
+        </ul></li>
+        <li>Resource Allocation<ul>
+            <li>CPU</li>
+            <li>Memory</li>
+        </ul></li>
+        <li>Health Checks<ul>
+            <li>Liveness Probe<ul>
+                <li>Kill and reload</li>
+            </ul></li>
+            <li>Readiness Probe<ul>
+                <li>Load balance</li>
+            </ul></li>
+        </ul></li>
+        <li>Triggerable</li>
+        <li>Versioned</li>
+    </ul></li>
+    <li>Service (Networking)<ul>
+        <li>Internal Connectivity</li>
+        <li>Internal Load Balancer</li>
+        <li>Proxy to Pods</li>
+    </ul></li>
+    <li>Route<ul>
+        <li>External Connectivity</li>
+        <li>Exposes a Service<ul>
+            <li>via a hostname</li>
+            <li>Only for somethnig that understands a hostname<ul>
+                <li>OpenShift doesn't listen on sockets, routes by hostname</li>
+            </ul></li>
+        </ul></li>
+        <li>TLS Termination</li>
+    </ul></li>
+</ul>
+
+<h2 id="learnings">Learnings</h2>
+
+<ul>
+    <li>Started at production worked backward<ul>
+        <li>May not have been the best way</li>
+        <li>Focus on how devs work and then make work production</li>
+    </ul></li>
+    <li>Resistance to moving into Dockerized approach<ul>
+        <li>Security</li>
+        <li>Engineering/Operations leadership<ul>
+            <li>Dev time</li>
+            <li>Hardware</li>
+        </ul></li>
+        <li>Engineers<ul>
+            <li>Can't work directly on prod<ul>
+                <li>Not comfortable with building the whole</li>
+            </ul></li>
+            <li>Agile</li>
+        </ul></li>
+    </ul></li>
+</ul>
+      <p>We had 10 people attending this month. As always, we'd like to thank
+        cPanel, L.L.C for providing the meeting space and food for the group.</p>
+[% END -%]

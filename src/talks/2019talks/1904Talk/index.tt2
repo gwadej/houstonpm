@@ -1,0 +1,64 @@
+[% WRAPPER writeup_wrap.tt2
+    title='Summary of April 2019 Presentation'
+    year=2019
+%]
+      <h1>[% "Subtle Magic: Moving to Dancer2/DBIx::Class/TT" | html %]</h1>
+<h2 id="herperljourney">Her Perl Journey</h2>
+
+<p>Trade organizations for small industries</p>
+
+<ul>
+    <li>Postrgresql<ul>
+        <li>Security over ease</li>
+    </ul></li>
+    <li>DBIx::Class<ul>
+        <li>ORM</li>
+        <li>Lots of relational thing</li>
+    </ul></li>
+    <li>Dancer<ul>
+        <li>Routing engine</li>
+        <li>Plugins for common tasks</li>
+    </ul></li>
+    <li>Template Toolkit<ul>
+        <li>Can use to write PDFs</li>
+        <li>Plugable, extensible</li>
+    </ul></li>
+    <li>Nginx</li>
+    <li>DevExtreme/jQuery</li>
+</ul>
+
+<p>Little demo using some of above.
+<a href="https://github.com/GeekRuthie/Subtle-Magic">Subtle Magic</a></p>
+
+<h2 id="databassedesignissues">Databasse design issues</h2>
+
+<ul>
+    <li>Don't end table names with 's' (Not real plural, just trailing s)</li>
+    <li>Use 2NF/3NF</li>
+    <li>Use snake case for multiple-word table names</li>
+    <li>DBIx::Class has an automagic tool that creates schemas</li>
+    <li>find() and search() also fetch related objects in default behavior<ul>
+        <li>Because of the schema loader tool</li>
+    </ul></li>
+    <li>Adding an s to method name to get multiple relation</li>
+    <li>DBIx::Class::Helpers</li>
+</ul>
+
+<h2 id="thatwasoldschool">That was old school</h2>
+
+<ul>
+    <li>jQuery - cleaner stuff that JavaScript already does</li>
+    <li><a href="https://js.devexpress.com/">DevExtreme</a><ul>
+        <li>Proprietary, free for OS projects</li>
+        <li>Layout and a little ajax<ul>
+            <li>DataGrid example</li>
+        </ul></li>
+    </ul></li>
+    <li>Status code returns</li>
+</ul>
+
+      <p><a href="Subtle_Magic_-_Houston_Perl_Mongers.pdf">Presentation</a></p>
+
+      <p>We had 12 people attending this month. As always, we'd like to thank
+        Hostgator, LLC for providing the meeting space and food for the group.</p>
+[% END -%]

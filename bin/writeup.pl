@@ -18,7 +18,7 @@ use Text::MultiMarkdown;
 
 my $talksdir = 'src/talks';
 
-my $dt = DateTime->new( time_zone => 'local' );
+my $dt = DateTime->today( time_zone => 'local' );
 
 my $mon = $dt->month();
 $dt->set_month( 0+prompt( -integer => sub { 1 <= $_ && $_ <= 12 }, -def => $mon, "Month [$mon]:" ) );
@@ -37,7 +37,7 @@ die "Missing required parameter.\n"
 
 # Identity transforms below to remove IO::Prompter special objects.
 my %vars = (
-    mon => sprintf( '%02d', $mon ),
+    mon => sprintf( '%02d', $dt->month() ),
     monthname => $dt->month_name(),
     year => $dt->year(),
     yr => $dt->year() % 100,

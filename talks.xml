@@ -1995,4 +1995,34 @@ In this presentation, he explains that code.</abstract>
     <attendees>7</attendees>
     <sponsor>cPanel, L.L.C</sponsor>
   </talk>
+  <talk num="1904">
+    <date>April 2019</date>
+    <topic href="/talks/2019talks/1904/index.html">
+      <title>Subtle Magic: Moving to Dancer2/DBIx::Class/TT</title>
+      <presenter>Ruth Holloway</presenter>
+      <abstract>&lt;em&gt;Read the documentation&lt;/em&gt;, we&apos;re told, but there&apos;s always more to learn. When
+I started working with Dancer2, DBIx::Class, and Template Toolkit last fall,
+I&apos;d seen the basics, but I found out &lt;em&gt;very&lt;/em&gt; quickly that there&apos;s much more to
+learn. The capabilities of this stack can influence application design from the
+ground up database tables, all the way to the final frameworks you might choose
+to use on the frontend, and not all of those repercussions are immediately
+clear from merely reading the documentation!
+
+In this talk, we&apos;ll learn about some of the strengths of these modules and
+demonstrate how their capabilities can be leveraged to help you work faster and
+write great web-based applications.</abstract>
+    </topic>
+    <attendees>12</attendees>
+    <sponsor>Hostgator, LLC</sponsor>
+  </talk>
+  <talk num="1905">
+    <date>May 2019</date>
+    <topic href="/talks/2019talks/1905Talk/index.html">
+      <title>Getting Started With OpenShift - Using Containers for SysOps and Engineering</title>
+      <presenter>Robert Stone</presenter>
+      <abstract>Robert Stone will do a demo of OpenShift, showing some of the high points of functionality.</abstract>
+    </topic>
+    <attendees>10</attendees>
+    <sponsor>cPanel, L.L.C</sponsor>
+  </talk>
 </talklist>
