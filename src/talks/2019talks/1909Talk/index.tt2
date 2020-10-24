@@ -1,0 +1,16 @@
+[% WRAPPER writeup_wrap.tt2
+    title='Summary of September 2019 Presentation'
+    year=2019
+%]
+      <h1>[% "Panel Discussion on Object Oriented Programming" | html %]</h1>
+<h2 id="oopaneldiscussion">OO panel discussion</h2>
+
+<ul>
+<li>What is an object vs a collection of data</li>
+<li>Inheritance vs composition</li>
+<li>Functional Programming vs OO</li>
+<li>What really is a Class</li>
+</ul>
+      <p>We had 19 people attending this month. As always, we'd like to thank
+        cPanel, L.L.C for providing the meeting space and food for the group.</p>
+[% END -%]

@@ -1,0 +1,16 @@
+[% WRAPPER writeup_wrap.tt2
+    title='Summary of August 2019 Presentation'
+    year=2019
+%]
+      <h1>[% "Basic Unit Testing Concepts in Perl" | html %]</h1>
+<p>Wade presented an overview of Unit Testing concepts, starting with the basic Test Anything Protocol (TAP).</p>
+
+<p>He introduced a few of the modules implementing testing frameworks on top of <abbr title="Test Anything Protocol">TAP</abbr>.</p>
+
+<p>After showing how to use the frameworks, he stepped back to some principles that help in designing good testing.
+This took up most of the time.</p>
+
+<p>The presentation is <a href="BasicUnitTestingConcepts.html" target="_blank" rel="noopener">available</a>.</p>
+      <p>We had 22 people attending this month. As always, we'd like to thank
+        Hostgator, LLC for providing the meeting space and food for the group.</p>
+[% END -%]

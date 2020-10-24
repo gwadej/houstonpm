@@ -4,12 +4,42 @@
   <title type="html">Houston.pm: What's New</title>
   <link href="http://houston.pm.org/"/>
   <link href="http://houston.pm.org/atom.xml" rel="self"/>
-  <updated>2020-10-24T07:52:03Z</updated>
+  <updated>2020-10-24T10:34:02Z</updated>
   <author>
     <name>G. Wade Johnson</name>
   </author>
   <category term="news"/>
   <generator uri="https://metacpan.org/pod/XML::Atom::SimpleFeed" version="0.902">XML::Atom::SimpleFeed</generator>
+  <entry>
+    <title type="html">Notes for 'Panel Discussion on Object Oriented Programming' posted.</title>
+    <id>tag:houston.pm.org,2011-03:presentation:1909</id>
+    <content type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">
+        <p>Instead of a presentation, this is more of a question and answer session about Object Oriented Programming.</p>
+      </div>
+    </content>
+    <updated>2020-10-24T10:34:02Z</updated>
+    <published>2020-10-24T10:34:02Z</published>
+    <link href="http://houston.pm.org/talks/2019talks/1909Talk/index.html"/>
+    <category term="presentation"/>
+    <category term="technical meeting"/>
+  </entry>
+  <entry>
+    <title type="html">Notes for 'Basic Unit Testing Concepts in Perl' posted.</title>
+    <id>tag:houston.pm.org,2011-03:presentation:1908</id>
+    <content type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">
+        <p>Wade starts with some unit testing basics, introduces some of the Perl unit test frameworks,
+and then focuses on concepts and tricks to help you get more from your unit tests. While not
+attempting to cover the whole subject of unit testing, there should be something here for most.</p>
+      </div>
+    </content>
+    <updated>2020-10-24T10:18:52Z</updated>
+    <published>2020-10-24T10:18:52Z</published>
+    <link href="http://houston.pm.org/talks/2019talks/1908Talk/index.html"/>
+    <category term="presentation"/>
+    <category term="technical meeting"/>
+  </entry>
   <entry>
     <title type="html">Notes for 'Test::Spec, Test Using a Declarative Testing Framework' posted.</title>
     <id>tag:houston.pm.org,2011-03:presentation:1907</id>
@@ -315,42 +345,5 @@ will present another fundamentals topic: &lt;em&gt;Using Regular Expressions&lt;
     <category term="testing"/>
     <category term="fundamentals"/>
     <category term="regular expressions"/>
-  </entry>
-  <entry>
-    <title>Cross-language Object-Oriented Mechanics</title>
-    <id>tag:houston.pm.org.2011-03:announce-20191006s-12043</id>
-    <content type="html">&lt;p&gt;For the October Houston.pm meeting, Evan Carroll presents &lt;em&gt;Cross-language Object-Oriented Mechanics&lt;/em&gt;.
-The meeting begins on October 10 at 6pm in the Hostgator offices at 5005 Mitchelldale St., Suite 100.
-We gather in the lobby 30 minutes before.&lt;/p&gt;
-
-&lt;p&gt;Evan Carroll will cover some of the reasons for using an Object Oriented paradigm when
-programming. He will show how Perl and a few other languages implement the appropriate
-concepts.&lt;/p&gt;
-</content>
-    <updated>2019-10-07T01:52:40Z</updated>
-    <published>2019-10-07T01:52:40Z</published>
-    <category term="technical meeting"/>
-    <category term="fundamentals"/>
-    <category term="cross-language"/>
-    <category term="OO"/>
-  </entry>
-  <entry>
-    <title>Panel Discussion on Object Oriented Programming</title>
-    <id>tag:houston.pm.org.2011-03:announce-20190911s-1260</id>
-    <content type="html">&lt;p&gt;For the September Houston.pm meeting, Julian Brown chairs a &lt;em&gt;Panel Discussion on Object Oriented Programming&lt;/em&gt;.
-The meeting begins on September 12 at 6pm in the cPanel offices at 2550 North Loop West, Suite 4006.
-We gather in the lobby 30 minutes before.&lt;/p&gt;
-
-&lt;p&gt;This panel discussion covers the basics of Object Oriented Programming. Although OO has been the
-dominant paradigm for the last couple of decades, there are still a number of concepts that
-people seem to misunderstand. Julian will attempt to wrangle a number of members with many different
-levels of experience to discuss OO. The goal is to help all of us come to a mutual understanding
-of various aspects of OO.&lt;/p&gt;
-</content>
-    <updated>2019-09-11T12:32:28Z</updated>
-    <published>2019-09-11T12:32:28Z</published>
-    <category term="technical meeting"/>
-    <category term="panel discussion"/>
-    <category term="fundamentals"/>
   </entry>
 </feed>

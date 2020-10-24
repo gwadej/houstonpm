@@ -5,6 +5,36 @@
          "technical meeting"
       ],
       "content" : {
+         "content" : "<p>Instead of a presentation, this is more of a question and answer session about Object Oriented Programming.</p>",
+         "type" : "xhtml"
+      },
+      "id" : "tag:houston.pm.org,2011-03:presentation:1909",
+      "link" : "http://houston.pm.org/talks/2019talks/1909Talk/index.html",
+      "published" : "2020-10-24T10:34:02Z",
+      "title" : "Notes for 'Panel Discussion on Object Oriented Programming' posted.",
+      "updated" : "2020-10-24T10:34:02Z"
+   },
+   {
+      "categories" : [
+         "presentation",
+         "technical meeting"
+      ],
+      "content" : {
+         "content" : "<p>Wade starts with some unit testing basics, introduces some of the Perl unit test frameworks,\nand then focuses on concepts and tricks to help you get more from your unit tests. While not\nattempting to cover the whole subject of unit testing, there should be something here for most.</p>",
+         "type" : "xhtml"
+      },
+      "id" : "tag:houston.pm.org,2011-03:presentation:1908",
+      "link" : "http://houston.pm.org/talks/2019talks/1908Talk/index.html",
+      "published" : "2020-10-24T10:18:52Z",
+      "title" : "Notes for 'Basic Unit Testing Concepts in Perl' posted.",
+      "updated" : "2020-10-24T10:18:52Z"
+   },
+   {
+      "categories" : [
+         "presentation",
+         "technical meeting"
+      ],
+      "content" : {
          "content" : "<p>Julian Brown describes his experiences with the <code>Test::Spec</code> unit testing framework.</p>",
          "type" : "xhtml"
       },
@@ -212,30 +242,5 @@
       "published" : "2019-11-12T04:36:18Z",
       "title" : "\"Constants: what they provide, and how to mock them.\" and \"Using Regular Expressions\"",
       "updated" : "2019-11-12T04:36:18Z"
-   },
-   {
-      "categories" : [
-         "technical meeting",
-         "fundamentals",
-         "cross-language",
-         "OO"
-      ],
-      "content" : "<p>For the October Houston.pm meeting, Evan Carroll presents <em>Cross-language Object-Oriented Mechanics</em>.\nThe meeting begins on October 10 at 6pm in the Hostgator offices at 5005 Mitchelldale St., Suite 100.\nWe gather in the lobby 30 minutes before.</p>\n\n<p>Evan Carroll will cover some of the reasons for using an Object Oriented paradigm when\nprogramming. He will show how Perl and a few other languages implement the appropriate\nconcepts.</p>\n",
-      "id" : "tag:houston.pm.org.2011-03:announce-20191006s-12043",
-      "published" : "2019-10-07T01:52:40Z",
-      "title" : "Cross-language Object-Oriented Mechanics",
-      "updated" : "2019-10-07T01:52:40Z"
-   },
-   {
-      "categories" : [
-         "technical meeting",
-         "panel discussion",
-         "fundamentals"
-      ],
-      "content" : "<p>For the September Houston.pm meeting, Julian Brown chairs a <em>Panel Discussion on Object Oriented Programming</em>.\nThe meeting begins on September 12 at 6pm in the cPanel offices at 2550 North Loop West, Suite 4006.\nWe gather in the lobby 30 minutes before.</p>\n\n<p>This panel discussion covers the basics of Object Oriented Programming. Although OO has been the\ndominant paradigm for the last couple of decades, there are still a number of concepts that\npeople seem to misunderstand. Julian will attempt to wrangle a number of members with many different\nlevels of experience to discuss OO. The goal is to help all of us come to a mutual understanding\nof various aspects of OO.</p>\n",
-      "id" : "tag:houston.pm.org.2011-03:announce-20190911s-1260",
-      "published" : "2019-09-11T12:32:28Z",
-      "title" : "Panel Discussion on Object Oriented Programming",
-      "updated" : "2019-09-11T12:32:28Z"
    }
 ]

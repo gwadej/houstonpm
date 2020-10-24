@@ -1,0 +1,416 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>Basic Unit Testing Concepts in Perl</title>
+<!-- metadata -->
+<meta name="generator" content="S5" />
+<meta name="version" content="S5 1.1" />
+<meta name="presdate" content="20190808" />
+<meta name="author" content="G. Wade Johnson" />
+<meta name="company" content="Houston.pm" />
+<!-- configuration parameters -->
+<meta name="defaultView" content="slideshow" />
+<meta name="controlVis" content="hidden" />
+<!-- style sheet links -->
+<link rel="stylesheet" href="ui/houstonpm/slides.css" type="text/css" media="projection" id="slideProj" />
+<link rel="stylesheet" href="ui/default/outline.css" type="text/css" media="screen" id="outlineStyle" />
+<link rel="stylesheet" href="ui/default/print.css" type="text/css" media="print" id="slidePrint" />
+<link rel="stylesheet" href="ui/default/opera.css" type="text/css" media="projection" id="operaFix" />
+<!-- S5 JS -->
+<script src="ui/default/slides.js" type="text/javascript"></script>
+<style type="text/css">
+    .centered { text-align: center; }
+    .left { float: left; }
+    .slide dt { font-weight: bold; }
+</style>
+</head>
+<body>
+
+<div class="layout">
+<div id="controls"><!-- DO NOT EDIT --></div>
+<div id="currentSlide"><!-- DO NOT EDIT --></div>
+<div id="header"></div>
+<div id="footer">
+<h1>Houston.pm</h1>
+<h2>August 8, 2019</h2>
+</div>
+
+</div>
+
+<div class="presentation">
+
+<div class="slide">
+<h1>Basic Unit Testing Concepts in Perl</h1>
+<h2></h2>
+<h3>G. Wade Johnson</h3>
+<h4><a href="http://houston.pm.org/">Houston.pm</a></h4>
+<div class="handout">
+    notes
+</div>
+</div>
+
+<div class="slide">
+<h1>Unit Test Example</h1>
+<p>Let's start with an example</p>
+<p><em>step1-frameworks: Shapes3D-Point-more.t</em></p>
+<div class="handout">
+<p>Start with some example code and unit tests to go with it.</p>
+<p>Don't focus a lot on the code. The <code>Point</code> class is mostly
+trivial, but allows for some obvious tests. The test file does pretty
+simple testing of the class.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Why Unit Test?</h1>
+<p>?</p>
+<div class="handout">
+<p>Audience participation time.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Possibilities</h1>
+<ul class="incremental">
+    <li>API design</li>
+    <li>API Testing</li>
+    <li>Functional design</li>
+    <li>Safety for refactoring</li>
+    <li>Documentation</li>
+    <li>Testing edge cases</li>
+    <li>Regression protection</li>
+    <li>Learning</li>
+</ul>
+<div class="handout">
+<p>Some of the ideas I can think of. There are more reasons, and not all
+apply to every project or team.</li>
+</div>
+</div>
+
+<div class="slide">
+<h1>Test Anything Protocol</h1>
+<pre><code>
+  1..2
+  ok 1 - successful test
+  not ok 2 - failed test
+  # comment - for diagnostics and such
+</code></pre>
+<div class="handout">
+<p>TAP: Test Anything Protocol. Simple to parse and understand.
+Trivial to generate.</p>
+<p>Designed to require minimal effort to work with. Originally pre-dated
+any of the modules that we currently use.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Perl Test Frameworks</h1>
+<ul>
+    <li><code>Test::More</code></li>
+    <li><code>Test::Class</code></li>
+    <li><code>Test::Spec</code></li>
+</ul>
+<div class="handout">
+<p>A large part of writing good tests is organizing them and making them
+easy to understand. A test that fails in a non-obvious way can be worse than
+no test at all.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1><code>Test::More</code></h1>
+<pre><code>
+use Test::More 'no_plan'; # tests =&gt; 6;
+
+ok( 1 == 1, 'Simple boolean test' );
+is( 2/2, 1, 'Are the parameters eq' );
+like( 'String', qr/ring/, 'regex match' );
+is_deeply( $hash, $expected, 'test complicated structures' );
+cmp_ok( 2/2, '==', 1, 'More precise comparison' );
+diag( 'Need to explain something' );
+note( 'Need to explain something' );
+pass( 'Unconditional success' );
+fail( 'Unconditional failure' );
+</code></pre>
+<div class="handout">
+<p>Some of the basic tools supported by <code>Test::More</code>. There
+are more. Despite that, these handle many of your necessary cases.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1><code>Test::Class</code></h1>
+<ul>
+    <li>Driven by attributes</li>
+    <li>Test, Test(2), Test(no_plan)</li>
+    <li>Test(setup)</li>
+    <li>Test(teardown)</li>
+    <li><code>Test::Class-&gt;runtests;</li>
+</ul>
+<div class="handout">
+<p>Look at Shapes3D-Point-class.t in step1.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1><code>Test::Spec</code></h1>
+<ul>
+    <li><code>describe 'name' =&gt; sub {};</code></li>
+    <li><code>context 'name' =&gt; sub {};</code></li>
+    <li><code>it 'name' =&gt; sub {};</code></li>
+    <li><code>before each =&gt; sub {};</code></li>
+    <li><code>before all =&gt; sub {};</code></li>
+    <li><code>after each =&gt; sub {};</code></li>
+    <li><code>after all =&gt; sub {};</code></li>
+</ul>
+<div class="handout">
+<p>Look at Shapes3D-Point-spec.t in step1.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Test Principles: Basics</h1>
+<ul>
+    <li>Test Independence</li>
+    <li>AAA: Arrange, Act, Assert</li>
+    <li>One assertion per test</li>
+    <li>Test all <em>happy paths</em></li>
+    <li>Be careful with setup/teardown</li>
+</ul>
+<div class="handout">
+<p>These are some useful concepts to help you decide what and how
+to test. They are definitely not enough on their own.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Helpers</h1>
+<p>Assertions are just functions that test a condition.</p>
+<div class="handout">
+<p>Remember the defintion of TAP above. Make whatever conditional logic
+you want and use <code>pass()</code> and <code>fail()</code> to report.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Helpers</h1>
+<p>Why not write our own?</p>
+<p><em>step2-helper: Shapes3D-Point-helper.t</em></p>
+<p><em>step2-better-point:</em></p>
+<div class="handout">
+<p>Here's some example code that shows a helper library and how to
+use it. Don't make your helpers too complicated. They should be mostly
+obvious to someone who knows your domain.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Test Important Error Cases</h1>
+<ul>
+    <li>Everyone remembers to test the <em>Happy Path</em></li>
+    <li>Errors can be just as important</li>
+</ul>
+<div class="handout">
+<p>Errors are usually not the normal behavior of the code. Which makes it very
+important to verify that functionality. If an error case is triggered, you really
+want your error reporting/handling to help you, not make matters worse.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Error Tests</h1>
+<ul>
+    <li>Validation</li>
+    <li>Common edge cases</li>
+    <li>Likely failure modes</li>
+    <li><em>step4-validation: Point and helper tests</em></li>
+</ul>
+<div class="handout">
+<p>It may not be reasonable to test every error condition. You should at least
+get the really important or common ones.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Data-Driven Tests</h1>
+<ul>
+    <li>Some code has lots of important subcases</li>
+    <li>Setting up usable examples is less useful for these.</li>
+    <li><em>step5-data-driven: t/Shapes3D-Point-helper.t</em></li>
+    <li><a href="https://metacpan.org/source/GWADEJ/Value-Object-0.15/t/value-validation_utils_emaillocalpart.t"
+           target="_blank"
+           rel="noopener">emaillocalpart.t</a></li>
+</ul>
+<div class="handout">
+<p>Making certain your validation works is a good use for data driven tests.
+I have also found them useful for transformations with boundary conditions.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Size of Test File</h1>
+<p>Keep the number of tests in a file reasonable.</p>
+<p>Group related tests</p>
+<div class="handout">
+<p>Your tests should be organized to help future-you (and your team) find
+problems and understand the use of your code.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Organizing Tests</h1>
+<ul>
+    <li>A file per class or module</li>
+    <li>A file per important method</li>
+    <li>A file per use case</li>
+    <li>Try to avoid unrelated tests in the same file</li>
+    <li>Good, consistent file naming</li>
+</ul>
+<div class="handout">
+<p>Choose what works. Different styles work with different projects.
+There is no <em>one, true way</em> in software.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Principles</h1>
+<ul>
+    <li>Clear is more important than DRY</li>
+    <li>Simple is better than clever</li>
+    <li>Failing tests should be obvious to understand</li>
+    <li><em>Can't fail</em> tests can save troubleshooting</li>
+</ul>
+<div class="handout">
+<p>Tests are code. So use the tools and skills your already know to write
+your tests.</p>
+<p>On the other hand, tests should be easier to understand and read than
+normal code. If you have to puzzle out how a test is working, you have already
+failed.</p>
+<p>On the gripping hand, tests are also documentation. They demonstrate how your
+code should be used. So make sure they are good exmaples.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>References</h1>
+<ul>
+    <li><em>Working Effectively with Unit Tests</em></li>
+    <li><em>Perl Testing: A Developer's Notebook</em></li>
+    <li>DAMP: Descriptive and Meaningful Phrases<ul>
+        <li><a href="http://blog.jayfields.com/2006/05/dry-code-damp-dsls.html"
+               target="_blank"
+               rel="noopener">DRY/DAMP</a></li>
+        <li><a href="https://stackoverflow.com/questions/6453235/what-does-damp-not-dry-mean-when-talking-about-unit-tests"
+               target="_blank"
+               rel="noopener">SO: DAMP/DRY</a></li></ul>
+    <li><a href="https://medium.com/@pjbgf/title-testing-code-ocd-and-the-aaa-pattern-df453975ab80"
+            target="_blank"
+            rel="noopener">Arrange, Act, Assert</a></li>
+</ul>
+<div class="handout">
+<p>Some of the references I used.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Tips and Tricks: Or Note</h1>
+<pre><code>
+is_deeply( $complex_structure, $expected, 'The foo should be constructed' )
+    or note( explain $complex_structure );
+</code></pre>
+<div class="handout">
+<p>Every assertion returns a true value on success and a false value on failure.
+This allows you to execute more code conditionally as you run the test. Used
+carefully, this can provide a lot of help to a future maintainer.</p>
+<p>The <code>explain()</code> function is like <code>Data::Dumper</code>.
+Remember <code>note()</code> only prints in verbose mode. Together, these
+pieces allow you to communicate with a future maintainer.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Tips and Tricks: Comments</h1>
+<p>Leave troubleshooting help as comments, if necessary.</p>
+<div class="handout">
+<p>In a previous life, we had a test that depended on something we did not have
+control over and failed intermittently. Until we figure out a way to make it
+work consistently. We had a comment explaining the problem and suggesting that
+the test be re-run. Most of the time, that next run would work.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Tip: One <em>Assertion</em> per Test</h1>
+<ul>
+    <li>Some frameworks stop a test on the first failed assert</li>
+    <li>TAP is not like that</li>
+    <li>Only test one <em>thing</em> per test</li>
+</ul>
+<div class="handout">
+<p>You'll need to decide what the one <em>thing</em> is.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Trick: Assert on Literals</h1>
+<p>Your <em>expected</em> value should be a literal, not calculated</p>
+<div class="handout">
+<ul>
+    <li>A calculation can be wrong</li>
+    <li>A literal is easier to troubleshoot</li>
+</ul>
+</div>
+</div>
+
+<div class="slide">
+<h1>Tip: Test Coverage</h1>
+<ul>
+    <li>Low coverage is bad</li>
+    <li>Perfect coverage is usually not required</li>
+</ul>
+<div class="handout">
+<p>Code that's not covered by tests may be untested. Tests must be maintained and could have
+bugs. There comes a point where the cost of the tests is higher than the benefit you gain by
+having them.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Tip: Remove Non-Helpful Tests</h1>
+<p>If a test is not pulling its weight, kill it.</p>
+<div class="handout">
+    notes
+</div>
+</div>
+
+
+<div class="slide">
+<h1>Tips and Tricks: TODO Tests</h1>
+<p>TODO tests allow you to prepare for code that doesn't work yet.</p>
+<div class="handout">
+<p>While this can lead to YAGNI-violations in your tests, used judiciously,
+it can help make certain you don't forget to implement something.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Tips and Tricks: SKIP</h1>
+<p>SKIP supports tests that are conditional on the environment.</p>
+<div class="handout">
+<p>I'm using <em>environment</em> very loosely here.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Questions</h1>
+<p></p>
+<div class="handout">
+    notes
+</div>
+</div>
+
+</body>
+</html>

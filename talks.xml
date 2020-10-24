@@ -2045,4 +2045,26 @@ write great web-based applications.</abstract>
     <attendees>7</attendees>
     <sponsor>cPanel, L.L.C</sponsor>
   </talk>
+  <talk num="1908">
+    <date>August 2019</date>
+    <topic href="/talks/2019talks/1908Talk/index.html">
+      <title>Basic Unit Testing Concepts in Perl</title>
+      <presenter>G. Wade Johnson</presenter>
+      <abstract>Wade starts with some unit testing basics, introduces some of the Perl unit test frameworks,
+and then focuses on concepts and tricks to help you get more from your unit tests. While not
+attempting to cover the whole subject of unit testing, there should be something here for most.</abstract>
+    </topic>
+    <attendees>22</attendees>
+    <sponsor>Hostgator, LLC</sponsor>
+  </talk>
+  <talk num="1909">
+    <date>September 2019</date>
+    <topic href="/talks/2019talks/1909Talk/index.html">
+      <title>Panel Discussion on Object Oriented Programming</title>
+      <presenter>Julian Brown</presenter>
+      <abstract>Instead of a presentation, this is more of a question and answer session about Object Oriented Programming.</abstract>
+    </topic>
+    <attendees>19</attendees>
+    <sponsor>cPanel, L.L.C</sponsor>
+  </talk>
 </talklist>
