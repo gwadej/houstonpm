@@ -245,6 +245,10 @@
         </ul></li>
     </ul></li>
 </ul>
+
+      <p>The <a href="HDOD_2019_-_From_OverTheWallOps_to_DevOps_-_Openshift.pptx" target="_blank" rel="noopener">presentation</a>
+        is available as a PowerPoint deck.</p>
+
       <p>We had 10 people attending this month. As always, we'd like to thank
         cPanel, L.L.C for providing the meeting space and food for the group.</p>
 [% END -%]
