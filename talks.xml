@@ -2000,9 +2000,9 @@ In this presentation, he explains that code.</abstract>
     <topic href="/talks/2019talks/1904/index.html">
       <title>Subtle Magic: Moving to Dancer2/DBIx::Class/TT</title>
       <presenter>Ruth Holloway</presenter>
-      <abstract>&lt;em&gt;Read the documentation&lt;/em&gt;, we&apos;re told, but there&apos;s always more to learn. When
+      <abstract><em>Read the documentation</em>, we&apos;re told, but there&apos;s always more to learn. When
 I started working with Dancer2, DBIx::Class, and Template Toolkit last fall,
-I&apos;d seen the basics, but I found out &lt;em&gt;very&lt;/em&gt; quickly that there&apos;s much more to
+I&apos;d seen the basics, but I found out <em>very</em> quickly that there&apos;s much more to
 learn. The capabilities of this stack can influence application design from the
 ground up database tables, all the way to the final frameworks you might choose
 to use on the frontend, and not all of those repercussions are immediately
@@ -2040,7 +2040,7 @@ write great web-based applications.</abstract>
     <topic href="/talks/2019talks/1907Talk/index.html">
       <title>Test::Spec, Test Using a Declarative Testing Framework</title>
       <presenter>Julian Brown</presenter>
-      <abstract>Julian Brown describes his experiences with the &lt;code&gt;Test::Spec&lt;/code&gt; unit testing framework.</abstract>
+      <abstract>Julian Brown describes his experiences with the <code>Test::Spec</code> unit testing framework.</abstract>
     </topic>
     <attendees>7</attendees>
     <sponsor>cPanel, L.L.C</sponsor>
@@ -2110,7 +2110,7 @@ concepts.</abstract>
       <title>Deploying Perl Applications</title>
       <presenter>Julian Brown</presenter>
       <abstract>Except in the case of simple standalone scripts, Perl applications usually consist
-of multiple modules and the &lt;code&gt;perl&lt;/code&gt; executable. In this discussion, we want
+of multiple modules and the <code>perl</code> executable. In this discussion, we want
 to cover some of the ways you can deploy a Perl application to any environment.</abstract>
     </topic>
     <attendees>9</attendees>
@@ -2199,8 +2199,8 @@ a point to disconnect from some legacy behavior.</abstract>
     <topic href="/talks/2020talks/2009Talk/index.html">
       <title>2001: How our Grandfathers wrote OO Perl</title>
       <presenter>Brett Estrade</presenter>
-      <abstract>Brett Estrade will tour the book &lt;cite&gt;Object Oriented Perl: A Comprehensive Guide to Concepts and Programming Techniques&lt;/cite&gt;
-by Damien Conway. The book shows the old approach to &lt;abbr title=&quot;Object Orientation&quot;&gt;OO&lt;/abbr&gt; in Perl.</abstract>
+      <abstract>Brett Estrade will tour the book <cite>Object Oriented Perl: A Comprehensive Guide to Concepts and Programming Techniques</cite>
+by Damien Conway. The book shows the old approach to <abbr title="Object Orientation">OO</abbr> in Perl.</abstract>
     </topic>
     <attendees>13</attendees>
     <sponsor>Zoom</sponsor>

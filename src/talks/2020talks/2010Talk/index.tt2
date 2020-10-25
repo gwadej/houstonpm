@@ -5,27 +5,27 @@
       <h1>[% "A /usr/bin/sendmail like perl script that uses SendGrid email delivery service" | html %]</h1>
 <h2 id="sendgrid">SendGrid</h2>
 
+<p>Julian talked about a method for sending emails.</p>
+
 <ul>
-<li>Two adult sons</li>
-<li>One is a developer for CRM
-<ul>
-<li>Expertise in delivering email</li>
-</ul></li>
-<li>SendGrid: sendgrid.com
-<ul>
-<li>Free level at &lt;100 emails a day</li>
-<li>Don't have a supported Perl library</li>
-<li>There are metacpan modules</li>
-<li>He wrote his own</li>
-<li>His script is specific to his needs, not really a sendmail replacement</li>
-<li>The API takes 5-10 seconds</li>
-</ul></li>
-<li>Don't know why the delay</li>
-<li>Batch/queue mode and send</li>
-<li>Works pretty well</li>
-<li>He has not hit the 100 limit. Get email at 75 as a warning</li>
-<li>Discussion about avoiding file collisions</li>
-<li>Real version uses database not file system</li>
+    <li>Two adult sons</li>
+    <li>One is a developer for CRM<ul>
+        <li>Expertise in delivering email</li>
+    </ul></li>
+    <li>SendGrid: sendgrid.com<ul>
+        <li>Free level at &lt;100 emails a day</li>
+        <li>Don't have a supported Perl library</li>
+        <li>There are metacpan modules</li>
+        <li>He wrote his own</li>
+        <li>His script is specific to his needs, not really a sendmail replacement</li>
+        <li>The API takes 5-10 seconds</li>
+    </ul></li>
+    <li>Don't know why the delay</li>
+    <li>Batch/queue mode and send</li>
+    <li>Works pretty well</li>
+    <li>He has not hit the 100 limit. Get email at 75 as a warning</li>
+    <li>Discussion about avoiding file collisions</li>
+    <li>Real version uses database not file system</li>
 </ul>
 
 <h2 id="demystifyingmops">Demystifying MOPs</h2>
@@ -34,15 +34,14 @@
 <abbr title="Meta-Object Protocol">MOP</abbr> simplifed a solution.</p>
 
 <ul>
-<li>MOP as a solution to real problem</li>
-<li>Testing that code matches the contract
-<ul>
-<li>is_installed, is_supported, install</li>
-<li>Trying to black-box test the interface is not viable</li>
-</ul></li>
-<li>A type definition to coerce and assert/test the type</li>
-<li>Shows how to add functions to a symbol table</li>
-<li>Using the MOP to specify attributes for types</li>
+    <li>MOP as a solution to real problem</li>
+    <li>Testing that code matches the contract<ul>
+        <li><code>is_installed</code>, <code>is_supported</code>, <code>install</code></li>
+        <li>Trying to black-box test the interface is not viable</li>
+    </ul></li>
+    <li>A type definition to coerce and assert/test the type</li>
+    <li>Shows how to add functions to a symbol table</li>
+    <li>Using the MOP to specify attributes for types</li>
 </ul>
       <p>We had 9 people attending the remote meeting on Zoom this month.</p>
 [% END -%]
