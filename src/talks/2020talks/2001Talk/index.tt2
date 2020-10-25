@@ -1,0 +1,65 @@
+[% WRAPPER writeup_wrap.tt2
+    title='Summary of January 2020 Presentation'
+    year=2020
+%]
+      <h1>[% "Deploying Perl Applications" | html %]</h1>
+<h2 id="app">App</h2>
+
+<ul>
+<li>Fresh (Code)
+<ul>
+<li>Electron
+<ul>
+<li>Standalone apps</li>
+<li>JS, HTML, CSS</li>
+<li>electronjs.org</li>
+</ul></li>
+</ul></li>
+<li>Would rather be perly than nodey</li>
+<li><code>App::FatPacker</code>
+<ul>
+<li>Analyze script and package everything together</li>
+<li>Problem with XS modules</li>
+</ul></li>
+<li><code>PAR</code>
+<ul>
+<li>Watch with portable perl executable</li>
+</ul></li>
+<li>Backend doing things that can't do (easily) in a browser
+<ul>
+<li>Database</li>
+<li>Access files</li>
+<li>Kind of like Dropbox sort of thing</li>
+</ul></li>
+<li>Strawberry Perl is really good</li>
+<li>Installing different Perls
+<ul>
+<li><a href="https://perlbrew.pl/">Perlbrew</a></li>
+<li><a href="https://github.com/dnmfarrell/berrybrew">Berry Brew</a></li>
+</ul></li>
+<li>Another Windows Option
+<ul>
+<li><a href="https://metacpan.org/pod/Win32::Packer"><code>Win32::Packer</code></a></li>
+</ul></li>
+<li><a href="https://nextcloud.com/">NextCloud</a></li>
+<li>Application
+<ul>
+<li>File syncing</li>
+<li>Knowledge base</li>
+<li>INotify</li>
+<li>Clipboard</li>
+<li>Bookmarks</li>
+</ul></li>
+<li><a href="https://syncthing.net/">Sync Thing</a></li>
+<li>docker as a possibility</li>
+<li><a href="https://zim-wiki.org/">Zim - A Desktop Wiki</a>
+<ul>
+<li>Compare to Gollum and vim-notes</li>
+</ul></li>
+<li><a href="https://hluk.github.io/CopyQ/">Copy Queue</a></li>
+<li><a href="https://github.com/brookhong/Surfingkeys">SurfingKeys</a></li>
+<li>Brave Browser</li>
+</ul>
+      <p>We had 9 people attending this month. As always, we'd like to thank
+        cPanel, L.L.C for providing the meeting space and food for the group.</p>
+[% END -%]

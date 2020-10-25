@@ -1,0 +1,714 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>Perl Data Structures: Tips, Tricks, and Traps</title>
+<!-- metadata -->
+<meta name="generator" content="S5" />
+<meta name="version" content="S5 1.1" />
+<meta name="presdate" content="20200312" />
+<meta name="author" content="G. Wade Johnson" />
+<meta name="company" content="Houston.pm" />
+<!-- configuration parameters -->
+<meta name="defaultView" content="slideshow" />
+<meta name="controlVis" content="hidden" />
+<!-- style sheet links -->
+<link rel="stylesheet" href="ui/houstonpm/slides.css" type="text/css" media="projection" id="slideProj" />
+<link rel="stylesheet" href="ui/houstonpm/outline.css" type="text/css" media="screen" id="outlineStyle" />
+<link rel="stylesheet" href="ui/default/print.css" type="text/css" media="print" id="slidePrint" />
+<link rel="stylesheet" href="ui/default/opera.css" type="text/css" media="projection" id="operaFix" />
+<!-- S5 JS -->
+<script src="ui/default/slides.js" type="text/javascript"></script>
+<style type="text/css">
+    .centered { text-align: center; }
+    .left { float: left; }
+    .right { float: right; }
+    h1 + blockquote, h1 + q { margin-top: 2em; }
+    td, th {
+        border: 1px solid black; text-align: right;
+        padding-left: 1ex; padding-right: 0.5ex;
+    }
+    .synAlert { color: #0000ff; }
+    .synBaseN { color: #007f00; }
+    .synBString { color: #c9a7ff; }
+    .synChar { color: #ff00ff; }
+    .synComment { color: #7f7f7f; font-style: italic; }
+    .synDataType { color:#0000aa; }
+    .synDecVal { color:#00287f; }
+    .synError { color:#cc0000; font-style: italic; font-weight: bold; }
+    .synFloat { color:#00287f; }
+    .synFunction { color:#007f00; }
+    .synIString { color:#cc0000; }
+    .synKeyword { font-weight: bold; }
+    .synOperator { color:#ffa500; }
+    .synOthers { color:#b03060; }
+    .synRegionMarker { color:#96b9ff; font-style: italic; }
+    .synReserved { color:#9b30ff; font-weight: bold; }
+    .synString { color:#cc0000; }
+    .synVariable { color:#0000aa; font-weight: bold; }
+    .synWarning { color:#0000ff; font-style: italic; font-weight: bold; }
+ </style>
+</head>
+<body>
+
+<div class="layout">
+<div id="controls"><!-- DO NOT EDIT --></div>
+<div id="currentSlide"><!-- DO NOT EDIT --></div>
+<div id="header"></div>
+<div id="footer">
+<h1>Houston.pm</h1>
+<h2>March 12, 2020</h2>
+</div>
+
+</div>
+
+<div class="presentation">
+
+<div class="slide">
+<h1>Perl Data Structures</h1>
+<h2>Tips, Tricks, and Traps</h2>
+<h3>G. Wade Johnson</h3>
+</div>
+
+<div class="slide">
+<h1>Perl Data Structure Basics</h1>
+<ul>
+    <li>Scalar - stores one thing</li>
+    <li>Array - an ordered group of zero or more scalars</li>
+    <li>Hash - a group of zero or more scalars, indexed by strings</li>
+</ul>
+<div class="handout">
+<p>There are 3 major types of data structures in Perl. There are a few other
+things that might count as data structures, but you may never run into them.
+We'll skip those others in this talk.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Scalar</h1>
+<ul>
+    <li>Number: integer or floating point number</li>
+    <li>String</li>
+    <li>Reference</li>
+    <li><code>undef</code></li>
+    <li>Others you probably won't use</li>
+</ul>
+<div class="handout">
+<p>A scalar can store integers or <abbr title="Institute of Electrical and Electronics
+Engineers">IEEE</abbr> floating point numbers. Scalars with numeric values act pretty
+much the way you would expect coming from any other language.</p>
+<p>A scalar can also store a string. The strings are not particularly limited
+in size by anything except available memory. Unlike some languages (Java),
+Perl strings are mutable.</p>
+<p>A Perl reference is basically a pointer or reference to a data structure
+or code. The <code>undef</code> value is a special value that means the scalar
+has not been set to anything at this time. Perl provides ways to <em>unset</em>
+a value, so <code>undef</code> is not quite the same as never used.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Scalar: Operations</h1>
+<ul>
+    <li>Arithmetic operations: <code>+</code>, <code>-</code>, <code>*</code>,
+        <code>/</code>, <code>%</code>, <code>++</code>, <code>--</code></li>
+    <li>String operations: <code>x</code>, <code>.</code></li>
+    <li>Numeric comparisons: <code>==</code>, <code>!=</code>, <code>&lt;</code>,
+        <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code></li>
+    <li>String comparisons: <code>eq</code>, <code>ne</code>, <code>lt</code>,
+        <code>gt</code>, <code>le</code>, <code>ge</code></li>
+    <li>Logical Operations: <code>!</code>, <code>&amp;&amp;</code>, <code>||</code>,
+        <code>not</code>, <code>and</code>, <code>or</code></li>
+    <li>Others...</li>
+</ul>
+<div class="handout">
+<p>Most of the scalar operations are pretty much what you would expect from any
+dynamic language.</p>
+<p>Perl supports all of the normal arithmetic operations. They work on integers
+and floats, and combinations of the two.</p>
+<p>The two string operations are <em>repeat</em> and <em>concatenate</em>. The repeat
+operator (<code>x</code>) makes a new string that consists of the left argument repeated
+the number of times supplied by the right argument. The <code>.</code> operator, on the
+other hand, makes a new string by concatenating the left argument with the right argument.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Scalar: Example</h1>
+<pre><code>
+    <span class="synKeyword">my</span> <span class="synDataType">$num</span> = <span class="synFloat">1</span>;
+    <span class="synDataType">$num</span> <span class="synOperator">+=</span> <span class="synFloat">2</span>;
+
+    <span class="synKeyword">my</span> <span class="synDataType">$str</span> = <span class="synOperator">'</span><span class="synString">hip </span><span class="synOperator">'</span> <span class="synOperator">x</span> <span class="synFloat">2</span>;
+    <span class="synDataType">$str</span> <span class="synOperator">.=</span> <span class="synOperator">'</span><span class="synString">, hooray!</span><span class="synOperator">'</span>
+</code></pre>
+<div class="handout">
+<p>This little piece of example code doesn't really do much of anything except show how
+scalar variables are set and manipulated a bit. The <code>my</code> keyword specifies a
+<em>lexical</em> variable, which is what most languages call a local variable.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Array: Zero or More Scalars</h1>
+<ul>
+    <li>They don't all have to contain the same type of data</li>
+    <li>Sparse array - some values are <code>undef</code></li>
+    <li>Array is ordered</li>
+    <li>Array is accessed by a 0-based integer</li>
+    <li>Array knows its length</li>
+    <li>Grows or shrinks as necessary</li>
+</ul>
+<div class="handout">
+<p>Arrays contain lists of scalars. They are mutable and handle memory as they
+grow and/or shrink.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Array: Operations</h1>
+<ul>
+    <li>Indexing with <code>[]</code></li>
+    <li>Add/remove from beginning of array: <code>shift</code>/<code>unshift</code></li>
+    <li>Add/remove from the end of the array: <code>push</code>/<code>pop</code></li>
+    <li>Iterate over with <code>for</code>/<code>foreach</code></li>
+</ul>
+<div class="handout">
+<p>Retrieve items from an array with the <code>$array[0]</code> syntax. Perl arrays support
+easy operators for adding/removing from the beginning/left of an array or the end/right
+end of the array. Perl automatically handles expanding or contracting the memory used.</p>
+<p>The <code>for</code> statement can be used to iterate over a list. The two names
+<code>for</code> and <code>foreach</code> are aliases. There is no functional difference
+between them.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Array: Example</h1>
+<pre><code>
+   <span class="synKeyword">my</span> <span class="synDataType">@array</span> = (<span class="synFloat">1</span>, <span class="synFloat">2</span>, <span class="synFloat">3</span>);
+   <span class="synFunction">push</span> <span class="synDataType">@array</span>, <span class="synOperator">'</span><span class="synString">a</span><span class="synOperator">'</span>;
+   <span class="synKeyword">my</span> <span class="synDataType">$one</span> = <span class="synFunction">shift</span> <span class="synDataType">@array</span>;
+   <span class="synKeyword">for</span> <span class="synKeyword">my</span> <span class="synDataType">$e</span> (<span class="synDataType">@array</span>)
+   {
+      <span class="synFunction">say</span> <span class="synDataType">$e</span>;
+   }
+</code></pre>
+<div class="handout">
+<p>Another simple example which shows some very simple code to set and manipulate arrays.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Hash</h1>
+<ul>
+    <li>Indexed by a string</li>
+    <li>Can retrieve list of keys or list of values</li>
+    <li>Order of keys is not guaranteed</li>
+</ul>
+<div class="handout">
+<p>Called different things in different languages: associative array, hash, dictionary,
+hashmap, etc. You can store 0 or more scalars in a hash, indexed or mapped, by strings.
+The key is actually a string, not a scalar.</p>
+<p>There are hash operations for returning the list of keys in a hash and the list of
+values in a hash. The order of items in either list is not guaranteed and can change over
+the life of the hash.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Hash: Operations</h1>
+<ul>
+    <li>Indexing with <code>{}</code></li>
+    <li>Automatic conversion between list and hash</li>
+    <li>Test: <code>exists</code></li>
+    <li>Remove: <code>delete</code></li>
+</ul>
+<div class="handout">
+<p>The <code>{}</code> characters mark the fact that we are indexing into a hash.</p>
+<p>If you assign a list to a hash, Perl treats the list items as alternating keys and
+values. If you use a hash in list context, Perl returns a list that alternates keys and
+values. The order of the keys is not defined, but each key is followed by its value.</p>
+<p>The <code>exists</code> operation can tell if a particular key is in the hash. The
+<code>delete</code> operation is used to remove a key/value pair from a hash (returning
+the value).</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Hash: Example</h1>
+<pre><code>
+    <span class="synKeyword">my</span> <span class="synDataType">%hash</span> = (
+        david   =&gt; <span class="synOperator">'</span><span class="synString">David Shenk</span><span class="synOperator">'</span>,
+        kirsten =&gt; <span class="synOperator">'</span><span class="synString">Kirsten Austin</span><span class="synOperator">'</span>,
+        mark    =&gt; <span class="synOperator">'</span><span class="synString">Moranderan</span><span class="synOperator">'</span>,
+        connie  =&gt; <span class="synOperator">'</span><span class="synString">Connie Ronin</span><span class="synOperator">'</span>,
+    );
+    <span class="synFunction">say</span> <span class="synVariable">$_</span> <span class="synKeyword">foreach</span> <span class="synFunction">sort</span> <span class="synFunction">keys</span> <span class="synDataType">%hash</span>;
+    <span class="synFunction">say</span> <span class="synOperator">"</span><span class="synString">David's full name is '</span><span class="synDataType">$hash</span><span class="synString">{david}'</span><span class="synOperator">"</span>;
+</code></pre>
+<div class="handout">
+<p>Another example that basically shows a little of the syntax of working with hashes.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Scalars: Implementation</h1>
+<ul>
+    <li>1-3 more pointers</li>
+    <li>reference count</li>
+    <li>some flags, etc.</li>
+    <li>optional lengths</li>
+</ul>
+<div class="handout">
+<p>Let's dig into the implementation of a scalar a little. A Perl scalar is actually a data
+structure of its own that contains several pieces. There are 1-3 pointers to underlying data.
+There is a reference count used to help with Perl's memory management. There are a handful of
+flags that tell Perl what the data in the structure means. Finally, there are a couple of
+optional lengths.</p>
+<p>Most of the time, you don't need to know anything about this internal structure. However,
+once in a great while, these internals may explain behaviors that might be confusing.</p>
+<p><em>Explore the internals a bit using <code>Devel::Peek</code> to dump scalars after
+performing various operations on them.</em></p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Scalar Tips</h1>
+<ul>
+    <li>Can store an integer or a floating point value.</li>
+    <li>Can store a string.</li>
+    <li>Can store both a number and a string at the same time.</li>
+    <li>If Perl needs to auto-convert, it keeps both forms.</li>
+</ul>
+<div class="handout">
+<p>Most of these tips just follow up on the implications of the data on the previous slide.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Scalar Tips</h1>
+<ul>
+    <li>Pre-increment (<code>++$i</code>) vs post-increment (<code>$i++</code>)</li>
+    <li>Work on integers and floats</li>
+    <li>Work on strings <code>"aA0"</code></li>
+    <li>Pre-decrement (<code>--$i</code>) vs post-decrement (<code>$i--</code>)</li>
+    <li>Only works on integers and floats</li>
+</ul>
+<div class="handout">
+<p>The difference between pre-increment(decrement) and post-increment(decrement) is that
+the <em>pre-</em>form returns the new value and the <em>post-</em>form returns the old
+value of the scalar. In both cases, the operators make the same changes to the scalar.</p>
+<p>The increment operators also work on strings. <em>Explore the behavior in the <abbr
+title="Read-Eval-Print-Loop">REPL</abbr>.</em> Part of the reason for this is that the
+increment operation is used while managing the range operator <code>..</code>.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Scalar Trap</h1>
+<ul>
+    <li>Post-increment (and post-decrement) creates a new scalar.</li>
+    <li>Not a big deal unless you are in a <strong>tight</strong> loop</li>
+</ul>
+<div class="handout">
+<p>Since post-increment(decrement) return the old value when they are updating the scalar,
+Perl must create a new scalar to hold the old value. If you are not using the old value,
+this is an unnecessary create/destroy of a temporary scalar. In most circumstances, this
+cost is so small, you don't really need to care about it. But, in a really tight loop, it
+could have an impact on running code.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Array Implementation</h1>
+<ul>
+    <li>Pointer to the array of scalars</li>
+    <li>Flags</li>
+    <li>Lengths</li>
+    <li>Optional iterator</li>
+</ul>
+<div class="handout">
+<p><em>Once again, use <code>Devel::Peek</code> to explore the internals of the array.
+Show the different pieces, but there's not as much need to describe in this case.</em></p>
+<p>Discuss the allocation strategy a bit, mostly to explain why we don't do an allocation
+on each change in the size of the array.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Array Tips</h1>
+<ul>
+    <li>Negative indices count into the array from the right</li>
+    <li>Iterate over the elements of an array rather than indexes</li>
+    <li><code>$#array</code> gives the right-most index in array</li>
+    <li>You can assign to <code>$#array</code> to change the size of the array</li>
+</ul>
+<div class="handout">
+<p>Negative indexes can be useful rather than working with the current length. Iterating
+over elements is safer than trying to walk indexes. No chance of accidentally walking off
+the end of the array (and extending it). Also anyone reading the code can tell the code
+will touch all elements, without having to read the code to figure out what is happening.</p>
+<p>Resetting the final index can be used for truncating array. It's more useful for
+pre-allocating a large array to avoid multiple re-allocations.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Array Traps</h1>
+<ul>
+    <li>Indexing off the end of an array extends it</li>
+    <li>Using a negative index off the beginning of the array is an error</li>
+    <li><code>delete</code> removes elements from the end of the array</li>
+    <li><code>delete</code> replaces elements with <code>undef</code> if not at the end</li>
+</ul>
+<div class="handout">
+<p>Cannot accidentally index off the front of the array, since that's almost never what you want.
+Indexing off the end of the array, extends, which is likely what you wanted. Once again, a
+case of Perl attempting to do what you intend, at the expense of consistency.</p>
+</div>
+
+</div>
+<div class="slide">
+<h1>Array Trick: List Assignment</h1>
+<pre><code>
+   (<span class="synDataType">$a</span>, <span class="synDataType">$b</span>, <span class="synDataType">$c</span>) = (<span class="synFloat">1</span>, <span class="synFloat">2</span>, <span class="synFloat">3</span>);
+   (<span class="synDataType">$a</span>, <span class="synFunction">undef</span>, <span class="synDataType">$c</span>) = func();
+   (<span class="synDataType">$first</span>, <span class="synDataType">$second</span>, <span class="synDataType">@rest</span>) = func();
+   <span class="synKeyword">my</span> <span class="synDataType">$count</span> = ()= func();
+</code></pre>
+<div class="handout">
+<p>If the left side of an assignment is a list of variables surrounded by parentheses, Perl assigns
+individual values from the right-hand list into the variables in the left-hand list. Entries on the
+left that are specified as <code>undef</code> are skipped from the assignment. If there are more
+items on the right than on the left, the extra values are not assigned. If an item in the left-hand
+list is an array, it takes all remaining items.</p>
+<p>One special feature of list assignment occurs if it is performed in scalar context, it returns
+the number of items from the right-hand list. This gives the somewhat odd syntax in the last item
+which executes <code>func()</code> in list context (because of the list assignment), does not save
+any of the returned values, but counts those values and assigns that count to <code>$count</code>.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Array Complexity</h1>
+<ul>
+    <li>Array access is a constant time operation</li>
+    <li>Searching an array is a linear time operation</li>
+    <li>Extending an array is an amortized constant time operation</li>
+</ul>
+<div class="handout">
+<p>A little information about the cost of using arrays.</p>
+<p>The extension complexity is caused by the way extra memory is allocated to reduce the
+cost of each new element added. The trade-off is a larger amount of memory may be allocated
+than you will need.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Hash Tips</h1>
+<ul>
+    <li><code>keys</code>, <code>values</code>, and <code>each</code> return those items out of order<ul>
+        <li>return items in an order consistent with each other</li>
+        </ul></li>
+    <li>Adding or deleting items will probably change the order</li>
+</ul>
+<div class="handout">
+<p>Wrapping your mind around the facts of the hash keys/values not being in a defined order.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Hash Tips</h1>
+<ul>
+    <li>Missing items return a value of <code>undef</code></li>
+    <li>If your hash can contain <code>undef</code>s, use <code>exists</code></li>
+</ul>
+<div class="handout">
+<p>Talk about missing items. There are times when just checking for a value to be defined
+is enough, sometimes it's not.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Hash Tricks: Sets</h1>
+<pre><code>
+   <span class="synKeyword">my</span> <span class="synDataType">%set</span> = <span class="synFunction">map</span> { <span class="synVariable">$_</span> =&gt; <span class="synFloat">1</span> }
+                 <span class="synOperator">qw(</span>Fortran C C++ Perl Forth Java
+                    JavaScript Ruby Lisp Rust<span class="synOperator">)</span>;
+   <span class="synFunction">say</span> <span class="synOperator">'</span><span class="synString">yes</span><span class="synOperator">'</span> <span class="synKeyword">if</span> <span class="synDataType">$set</span>{<span class="synOperator">'</span><span class="synString">C++</span><span class="synOperator">'</span>};
+   <span class="synFunction">say</span> <span class="synOperator">'</span><span class="synString">no</span><span class="synOperator">'</span> <span class="synKeyword">unless</span> <span class="synDataType">$set</span>{<span class="synOperator">'</span><span class="synString">C#</span><span class="synOperator">'</span>};
+</code></pre>
+<div class="handout">
+<p>An example showing the use of a hash as a set of strings. The actual values don't mean anything. We just care about
+whether or not there is a value associated with the key. Assigning a key multiple times still ends
+up with only one item, obviously, making this act as a set.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Hash Tricks: Count Words</h1>
+<pre><code>
+  <span class="synKeyword">my</span> <span class="synDataType">%words</span>;
+  <span class="synKeyword">my</span> <span class="synDataType">$line</span>;
+  <span class="synKeyword">while</span>(<span class="synDataType">$line</span> = <span class="synOperator">&lt;&lt;&gt;&gt;</span>)
+  {
+    <span class="synOperator">++</span><span class="synDataType">$words</span>{<span class="synVariable">$_</span>} <span class="synKeyword">foreach</span>(<span class="synFunction">split</span> <span class="synOperator">/</span><span class="synChar">[^</span><span class="synBaseN">A-Za-z</span><span class="synChar">]+</span><span class="synOperator">/</span>, <span class="synDataType">$line</span>);
+  }
+</code></pre>
+<div class="handout">
+<p>This example shows taking text from input (using the diamond operator). Using the increment operator
+on values, which Perl automatically handles correctly if it was unset. We key the hash with the words
+that we get from the <code>split</code>. The result is pretty concise, and not too hard to understand
+once you understand hashes and the basics.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Hash Trick: Transpose</h1>
+<pre><code>
+   <span class="synKeyword">my</span> <span class="synDataType">%sounds</span> = <span class="synOperator">qw(</span>dog bark cat meow bunny thump snake hiss<span class="synOperator">)</span>;
+   <span class="synKeyword">my</span> <span class="synDataType">%animal_makes</span> = <span class="synFunction">reverse</span> <span class="synDataType">%sounds</span>;
+</code></pre>
+<div class="handout">
+<p>One unusual side effect of the conversion between hashes and lists is the way <code>reverse</code> can
+be used to swap the keys and values in a hash. This only works well if none of the values are duplicates,
+of course.</p>
+<p>Treating the hash as a list returns a list alternating keys and values. Reversing that list converts it to a
+list alternating values and keys. Assigning to a new hash uses the old values as keys and the old keys as the
+corresponding values.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Hash Traps</h1>
+<ul>
+    <li>Hash keys are always strings</li>
+    <li>Anything else is converted into a string to be a key</li>
+</ul>
+<div class="handout">
+<p>Keys are strings, not scalars. There are a few different side-effects of that, but mostly it's just
+something to be aware of. Some side effects:</p>
+<ul>
+    <li><code>undef</code> becomes an empty string</li>
+    <li>The number <code>1</code> and the string <code>'1'</code> map to the same thing</li>
+    <li>References are converted to a string form that is not particularly useful and cannot be used to refer to the original object</li>
+</ul>
+</div>
+</div>
+
+<div class="slide">
+<h1>Hash Complexity</h1>
+<ul>
+    <li>Hash lookup is a (mostly) constant time operation</li>
+    <li>Hash element access is a (mostly) constant time operation</li>
+    <li>Hash extension is an amortized constant time operation</li>
+</ul>
+<div class="handout">
+<p>A little information about the cost of using hashes.</p>
+<p>The first two are related.</p>
+<p>The extension complexity is caused by the way extra memory is allocated to reduce the
+cost of each new element added. The trade-off is a larger amount of memory may be allocated
+than you will need.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Data Structure Complexity Trap</h1>
+<ul>
+    <li>Array and hash access are both constant time operations</li>
+    <li>Array access is faster than hash access</li>
+    <li>Each hash access<ul>
+            <li>Perform hash function on key to test.</li>
+            <li>Index into hash internals</li>
+            <li>If no match, done</li>
+            <li>If match, compare key string to (one or more) matching keys</li>
+        </ul></li>
+    <li>Hash access can be slower than searching an array, for small arrays</li>
+    <li>Most of the time, the speed difference doesn't matter</li>
+</ul>
+<div class="handout">
+<p>A lot of people have the impression that hashes are faster than arrays. That is not completely
+true. The reality is a bit more complicated. Part of what makes the hash data structure work is
+a hashing function that converts a string into an index into the underlying data structure. This
+hashing function takes a small amount of time.</p>
+<p>For really short arrays, searching the array for a string is faster than hashing a key and
+indexing. Under many circumstances the difference in time is negligible, but it certain cases it
+can make a difference. Unless you know the performance difference actually matters in your case,
+use the data structure that is the most readable.</p>
+<p>If you are doing these lookups in a tight loop, or millions of times, it might be worth
+measuring the time spent and deciding if it is worth the optimization.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Data Structure Complexity Trap</h1>
+<ul>
+    <li>Building a hash is a linear time operation</li>
+    <li>Premature pessimization<ul>
+            <li>Build a hash from a list</li>
+            <li>Look up value</li>
+            <li>Throw hash away</li>
+        </ul></li>
+    <li>Running <code>grep</code> over the list would be faster</li>
+    <li>Saving the hash is worthwhile for doing multiple lookups on a big list</li>
+</ul>
+<div class="handout">
+<p>One place where I have regularly seen people use a hash when it definitely has a
+performance impact is building a hash from a list, looking up one value, and then
+discarding the list. This is <em>never</em> a reasonable thing to do. It doesn't
+matter how big the list is, or how fast the hashing function, just searching the
+list is always faster than this.</p>
+<p>The problem is that building the hash requires walking the whole list and performing
+an operation that is likely more expensive than the comparison on every string, just to
+create the hash. Then, you do the hash lookup (which costs time). If you immediately
+throw away the hash, you have gained no benefit. Some people will tout the <em>constant-time
+lookup</em> of the hash and completely ignore the <em>linear-time construction</em> of
+the hash.</p>
+<p>If you end up using the same hash for multiple lookups, it will eventually become
+faster to have used the hash. As usual, measure to figure out which trade-off works best
+for your code.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>List Tools: map</h1>
+<p>Apply functionality to a list</p>
+<pre><code>
+  <span class="synKeyword">my</span> <span class="synDataType">@days</span> = <span class="synOperator">qw(</span>Monday Tuesday Wednesday Thursday Friday Saturday Sunday<span class="synOperator">)</span>;
+  <span class="synKeyword">my</span> <span class="synDataType">@short_days</span> = <span class="synFunction">map</span> { <span class="synFunction">substr</span>(<span class="synVariable">$_</span>, 0, <span class="synFloat">3</span>) } <span class="synDataType">@days</span>;
+</code></pre>
+<div class="handout">
+<p>The <code>map</code> modifies a list by applying a function to each element of that list,
+returning a new list of the modified values. Although the code is applied to each element, it
+is actually more useful to treat this as modifying the list.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>List Tools: grep</h1>
+<p>Filter a list</p>
+<pre><code>
+   <span class="synKeyword">my</span> <span class="synDataType">@lines</span> = <span class="synOperator">&lt;&lt;&gt;&gt;</span>;
+   <span class="synKeyword">my</span> <span class="synDataType">@long</span>  = <span class="synFunction">grep</span> { <span class="synFunction">length</span> <span class="synVariable">$_</span> <span class="synOperator">&gt;</span> <span class="synFloat">100</span> } <span class="synDataType">@lines</span>;
+</code></pre>
+<div class="handout">
+<p>The <code>grep</code> filters a list to generate a new list by executing the supplied code on
+each element. Any element that causes the code to return a true value is removed in the returned
+list.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>List Tools: sort</h1>
+<p>Order a list</p>
+<pre><code>
+   <span class="synKeyword">my</span> <span class="synDataType">@words</span> = <span class="synOperator">&lt;&lt;&gt;&gt;</span>;
+   <span class="synKeyword">my</span> <span class="synDataType">@len_sorted</span> = <span class="synFunction">sort</span> { <span class="synFunction">length</span> <span class="synDataType">$a</span> <span class="synOperator">&lt;=&gt;</span> <span class="synFunction">length</span> <span class="synDataType">$b</span> <span class="synOperator">||</span> <span class="synDataType">$a</span> <span class="synOperator">cmp</span> <span class="synDataType">$b</span> } <span class="synDataType">@words</span>;
+</code></pre>
+<div class="handout">
+<p>The <code>sort</code> function sorts the items in a list, returning the sorted list. With no supplied comparison
+code, the function sorts ASCIIbetically. If a code block is supplied the two elements to compare are aliased to the
+variables <code>$a</code> and <code>$b</code>. The code block should return a negative number if the first element
+should sort before the second, a positive number if the second should sort before the first, or 0/false if the two
+items are equivalent.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Array Trick: splice</h1>
+<ul>
+    <li>The power tool for arrays</li>
+    <li>Remove, add, replace items in an array</li>
+</ul>
+<pre><code>
+   <span class="synKeyword">my</span> <span class="synDataType">@array</span> = <span class="synOperator">qw(</span>a b c d e f g h i<span class="synOperator">)</span>;
+   <span class="synFunction">splice</span> <span class="synDataType">@array</span>, <span class="synFloat">2</span>, <span class="synFloat">3</span>, <span class="synOperator">qw(</span>C D E E1 E2<span class="synOperator">)</span>;
+</code></pre>
+<div class="handout">
+<p>The <code>splice</code> function allows you to manipulate an array in several ways. It can remove items from an
+array, insert items anywhere in an array, or combine those functions to replace items in the array with different
+items from a list. The array functions <code>push</code>, <code>pop</code>, <code>shift</code>, <code>unshift</code>
+and <code>delete</code> can all be simply implemented in terms of <code>splice</code>. But, <code>splice</code>
+is more flexible.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Modules</h1>
+<ul>
+    <li><code>Scalar::Util</code></li>
+    <li><code>List::Util</code>, <code>List::MoreUtils</code></li>
+    <li><code>Hash::Util</code></li>
+</ul>
+<div class="handout">
+<p>If you want more tools for manipulating Perl data structures, check out these modules. They
+provide further functionality for each of the data structure types.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>References</h1>
+<ul>
+    <li>perldoc perldata</li>
+    <li>perldoc perlop</li>
+</ul>
+<div class="handout">
+<p>Much of the information I covered in this talk (and quite a bit more) is available on any system that
+has Perl installed. The first command describes the Perl data structures. The second describes many Perl
+operators, including the ones I mentioned here.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Schwartzian Transform</h1>
+<pre><code>
+   <span class="synKeyword">my</span> <span class="synDataType">@files</span> = <span class="synFunction">map</span>  { <span class="synVariable">$_</span><span class="synOperator">-&gt;</span>[0] }
+               <span class="synFunction">sort</span> { <span class="synDataType">$a</span><span class="synOperator">-&gt;</span>[<span class="synFloat">1</span>] <span class="synOperator">&lt;=&gt;</span> <span class="synDataType">$b</span><span class="synOperator">-&gt;</span>[<span class="synFloat">1</span>] }
+               <span class="synFunction">map</span>  { [ <span class="synVariable">$_</span>, <span class="synOperator">-s</span> <span class="synVariable">$_</span> ] }
+               <span class="synDataType">@files</span>;
+</code></pre>
+<div class="handout">
+<p>A very useful sort optimization called the Schwartzian Transform chains the <code>sort</code> and <code>map</code>
+functions in an interesting way. The basic idea is that we want to sort a list based on some function that is
+expensive to calculate.</p>
+<p>Using the obvious approach, we will perform the expensive calculation twice for each comparison (left and
+right side of the comparison). For a list of length <code>n</code>, sort will do about <code>n * log2(n)</code>
+comparisons (for <code>log2</code> is the log base 2). In other words, for 1024 items in the list, we will do
+<code>1024 * 10</code> or 10,240 comparisons. Which means we run the expensive function 20,480 times.</p>
+<p>Sorting 1024 items compared as strings happens incredibly fast, but if the expensive function took 0.1 seconds to run,
+the sort would now take 34 minutes to run.</p>
+<p>Using the Schwartian Transform, we convert each element in the list into a pair of the element, and the calculated
+value. This means we only run the expensive function one time for each item of the list. For a list of 1024 items, that
+would take 1 minute 42 seconds. Now, the <code>sort</code> does a simple comparison all of the times it needs to and
+the top <code>map</code>, converts the pairs back into the original elements.</p>
+<p>This pattern is a little complex, but you should be able to walk through it from bottom to top and understand what
+it does. In the example on the slide, we are accessing the disk for each comparison, which is not only (relatively)
+slow, but also variable in time because of the hardware. This is a great example of a slow comparison function that
+I have seen used in real life.</p>
+</div>
+</div>
+
+<div class="slide">
+<h1>Scalar Trick: Dual Vars</h1>
+<ul>
+    <li>A scalar can contain both a string and a number</li>
+    <li>Number returned in numeric context</li>
+    <li>String in string context</li>
+    <li>Very rarely useful</li>
+</ul>
+<div class="handout">
+<p>Although not used to often, this is an interesting trick. Using the <code>dualvar</code> function in the
+<code>Scalar::Util</code> module, you can create scalars with both a string and numeric component. An example
+would be a scalar that contained both the numeric code and printable message for an HTTP response:</p>
+<pre><code>my $status = dualvar( 404, "Not Found" );</code></pre>
+<p>If you use <code>$status</code> as a number (say by adding <code>0</code> to it or comparing it to 404, it
+has the numeric value. If you were to use it as a string (say by printing or interpolating it into a string), it
+has the string value.</p>
+</div>
+</div>
+
+</body>
+</html>

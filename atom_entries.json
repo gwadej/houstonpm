@@ -5,6 +5,51 @@
          "technical meeting"
       ],
       "content" : {
+         "content" : "<p>Making the best use of Perl includes understanding and using its data structures.\nG. Wade Johnson will present the major Perl data structures, dipping slightly into\nimplementation, but focusing mostly on the effective use of those structures.</p>",
+         "type" : "xhtml"
+      },
+      "id" : "tag:houston.pm.org,2011-03:presentation:2003",
+      "link" : "http://houston.pm.org/talks/2020talks/2003Talk/index.html",
+      "published" : "2020-10-25T04:14:46Z",
+      "title" : "Notes for 'Perl Data Structures: Tips, Tricks, and Traps' posted.",
+      "updated" : "2020-10-25T04:14:46Z"
+   },
+   {
+      "categories" : [
+         "presentation",
+         "technical meeting"
+      ],
+      "content" : {
+         "content" : "<p>John Lightsey will present an early version of a talk he has scheduled for The Perl and Raku\nConference this year. The talk will cover using fuzzing in analysis of the Perl interpreter. If\nyou have interest in security, Perl, or fuzz testing, this will be the talk for you.</p>",
+         "type" : "xhtml"
+      },
+      "id" : "tag:houston.pm.org,2011-03:presentation:2002",
+      "link" : "http://houston.pm.org/talks/2020talks/2002Talk/index.html",
+      "published" : "2020-10-25T04:11:07Z",
+      "title" : "Notes for 'Coverage guided fuzzing the Perl interpreter' posted.",
+      "updated" : "2020-10-25T04:11:07Z"
+   },
+   {
+      "categories" : [
+         "presentation",
+         "technical meeting"
+      ],
+      "content" : {
+         "content" : "<p>Except in the case of simple standalone scripts, Perl applications usually consist\nof multiple modules and the <code>perl</code> executable. In this discussion, we want\nto cover some of the ways you can deploy a Perl application to any environment.</p>",
+         "type" : "xhtml"
+      },
+      "id" : "tag:houston.pm.org,2011-03:presentation:2001",
+      "link" : "http://houston.pm.org/talks/2020talks/2001Talk/index.html",
+      "published" : "2020-10-25T04:07:12Z",
+      "title" : "Notes for 'Deploying Perl Applications' posted.",
+      "updated" : "2020-10-25T04:07:12Z"
+   },
+   {
+      "categories" : [
+         "presentation",
+         "technical meeting"
+      ],
+      "content" : {
          "content" : "<p>Debbie presents a short introduction to how Core.org teaches kids of any age to think about programming.</p>",
          "type" : "xhtml"
       },
@@ -218,40 +263,5 @@
       "published" : "2020-05-14T12:20:54Z",
       "title" : "Remote May Houston.pm Meeting",
       "updated" : "2020-05-14T12:20:54Z"
-   },
-   {
-      "categories" : [
-         "technical meeting",
-         "remote meeting",
-         "fundamentals",
-         "SQL"
-      ],
-      "content" : "<p>For the April Houston.pm meeting, Julian Brown presents <em>SQL 101</em>.\nThe meeting begins on April 9 at 6pm. We are going to try for a remote meeting\nthis time. Keep an eye on the mailing list for further details.</p>\n\n<p>Julian Brown covers the basics of SQL in this fundamentals talk.</p>\n",
-      "id" : "tag:houston.pm.org.2011-03:announce-20200407s-2236",
-      "published" : "2020-04-08T03:49:28Z",
-      "title" : "SQL 101",
-      "updated" : "2020-04-08T03:49:28Z"
-   },
-   {
-      "categories" : [
-         "technical meeting",
-         "fundamentals",
-         "data structures"
-      ],
-      "content" : "<p>For the March Houston.pm meeting, G. Wade Johnson presents <em>Perl Data Structures: Tips, Tricks, and Traps</em>.\nThe meeting begins on March 12 at 6pm in the cPanel offices at 2550 North Loop West, Suite 4006.\nWe gather in the lobby 30 minutes before.</p>\n<p>Making the best use of Perl includes understanding and using its data structures.\nG. Wade Johnson will present the major Perl data structures, dipping slightly into\nimplementation, but focusing mostly on the effective use of those structures.</p>\n",
-      "id" : "tag:houston.pm.org.2011-03:announce-20200303s-20105",
-      "published" : "2020-03-03T13:31:48Z",
-      "title" : "Perl Data Structures: Tips, Tricks, and Traps",
-      "updated" : "2020-03-03T13:31:48Z"
-   },
-   {
-      "categories" : [
-         "technical meeting"
-      ],
-      "content" : "<p>For the February Houston.pm meeting, John Lightsey presents <em>Coverage guided fuzzing the Perl interpreter</em>.\nThe meeting begins on February 13 at 6pm in the Hostgator offices at 5005 Mitchelldale St., Suite 100.\nWe gather in the lobby 30 minutes before.</p>\n<p>John Lightsey will present an early version of a talk he has scheduled for The Perl and Raku\nConference this year. The talk will cover using fuzzing in analysis of the Perl interpreter. If\nyou have interest in security, Perl, or fuzz testing, this will be the talk for you.</p>\n",
-      "id" : "tag:houston.pm.org.2011-03:announce-20200209s-26176",
-      "published" : "2020-02-10T04:28:25Z",
-      "title" : "Coverage guided fuzzing the Perl interpreter",
-      "updated" : "2020-02-10T04:28:25Z"
    }
 ]

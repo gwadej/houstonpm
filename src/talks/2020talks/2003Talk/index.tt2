@@ -1,0 +1,12 @@
+[% WRAPPER writeup_wrap.tt2
+    title='Summary of March 2020 Presentation'
+    year=2020
+%]
+      <h1>[% "Perl Data Structures: Tips, Tricks, and Traps" | html %]</h1>
+<p>Good questions. Pulled off-topic many times, but they were all good topics
+related to the subject, so definitely worthwhile diversions.</p>
+
+<p>The <a href="data_structures.html" target="_blank" rel="noopener">presentation</a> is available.</p>
+      <p>We had 6 people attending this month. As always, we'd like to thank
+        cPanel, L.L.C for providing the meeting space and food for the group.</p>
+[% END -%]

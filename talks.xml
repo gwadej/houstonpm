@@ -2104,4 +2104,40 @@ concepts.</abstract>
     <attendees>11</attendees>
     <sponsor>Hostgator, LLC</sponsor>
   </talk>
+  <talk num="2001">
+    <date>January 2020</date>
+    <topic href="/talks/2020talks/2001Talk/index.html">
+      <title>Deploying Perl Applications</title>
+      <presenter>Julian Brown</presenter>
+      <abstract>Except in the case of simple standalone scripts, Perl applications usually consist
+of multiple modules and the &lt;code&gt;perl&lt;/code&gt; executable. In this discussion, we want
+to cover some of the ways you can deploy a Perl application to any environment.</abstract>
+    </topic>
+    <attendees>9</attendees>
+    <sponsor>cPanel, L.L.C</sponsor>
+  </talk>
+  <talk num="2002">
+    <date>February 2020</date>
+    <topic href="/talks/2020talks/2002Talk/index.html">
+      <title>Coverage guided fuzzing the Perl interpreter</title>
+      <presenter>John Lightsey</presenter>
+      <abstract>John Lightsey will present an early version of a talk he has scheduled for The Perl and Raku
+Conference this year. The talk will cover using fuzzing in analysis of the Perl interpreter. If
+you have interest in security, Perl, or fuzz testing, this will be the talk for you.</abstract>
+    </topic>
+    <attendees>8</attendees>
+    <sponsor>Hostgator, LLC</sponsor>
+  </talk>
+  <talk num="2003">
+    <date>March 2020</date>
+    <topic href="/talks/2020talks/2003Talk/index.html">
+      <title>Perl Data Structures: Tips, Tricks, and Traps</title>
+      <presenter>G. Wade Johnson</presenter>
+      <abstract>Making the best use of Perl includes understanding and using its data structures.
+G. Wade Johnson will present the major Perl data structures, dipping slightly into
+implementation, but focusing mostly on the effective use of those structures.</abstract>
+    </topic>
+    <attendees>6</attendees>
+    <sponsor>cPanel, L.L.C</sponsor>
+  </talk>
 </talklist>

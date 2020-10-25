@@ -23,7 +23,8 @@ TALKSUMMARIES=${OUTDIR}/talks/mostrecent.html \
               ${OUTDIR}/talks/2016talks/index.html \
               ${OUTDIR}/talks/2017talks/index.html \
               ${OUTDIR}/talks/2018talks/index.html \
-              ${OUTDIR}/talks/2019talks/index.html
+              ${OUTDIR}/talks/2019talks/index.html \
+              ${OUTDIR}/talks/2020talks/index.html
 
 
 GEN_FRAGMENTS=${GENERATED_DIR}/upcoming.tt2 \
@@ -104,8 +105,11 @@ ${OUTDIR}/talks/2018talks/index.html: talks.xml yeartalks.xsl templates/yeartalk
 ${OUTDIR}/talks/2019talks/index.html: talks.xml yeartalks.xsl templates/yeartalks.tt2
 	bin/talks.pl --style=yeartalks.xsl --template=yeartalks.tt2 --define year=2019 talks.xml > $@
 
+${OUTDIR}/talks/2020talks/index.html: talks.xml yeartalks.xsl templates/yeartalks.tt2
+	bin/talks.pl --style=yeartalks.xsl --template=yeartalks.tt2 --define year=2020 talks.xml > $@
+
 convert:
-	ttree --define end_year=2019 -f _ttreerc
+	ttree --define end_year=2020 -f _ttreerc
 
 install:
 	cp -r -p ${OUTDIR}/* ${INSTALLDIR}

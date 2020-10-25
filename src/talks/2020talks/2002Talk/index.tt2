@@ -1,0 +1,54 @@
+[% WRAPPER writeup_wrap.tt2
+    title='Summary of February 2020 Presentation'
+    year=2020
+%]
+      <h1>[% "Coverage guided fuzzing the Perl interpreter" | html %]</h1>
+<h2 id="perlfuzzing">Perl Fuzzing</h2>
+
+<p>Not a lot of slides</p>
+
+<ul>
+<li>P5P security team
+<ul>
+<li>Pulled to the P5P conference in amsterdam</li>
+<li>They wanted him there</li>
+<li>Bounty program caused people to just send stuff</li>
+</ul></li>
+<li>Fuzzing tools have gotten easy to use</li>
+<li>Perl definitions of vulnerability is a little weird
+<ul>
+<li>Parsing code failures is not considered as security flaws</li>
+<li>Regular expression parse failures are considered</li>
+</ul></li>
+<li><abbr title="American Fuzzy Lop">AFL</abbr> (fuzzer) is the canonical fuzzer</li>
+<li><abbr title="American Fuzzy Lop">AFL</abbr>++ is more updated</li>
+<li><abbr title="American Fuzzy Lop">AFL</abbr> tools are <abbr title="Command Line Interface">CLI</abbr> tools with crazy command line options</li>
+<li>Different commands for different compilers
+<ul>
+<li>clang</li>
+<li>g++</li>
+<li>cmin (identify unique)</li>
+<li>asan - address sanitizer (msan is a alternate)
+<ul>
+<li>Must compile 32-bit in order to see all of memory</li>
+</ul></li>
+<li>ubsan - undefined behavior checks</li>
+<li>mostly only recognize on crash (tools to force a crash on a problem)</li>
+</ul></li>
+<li>JD tools
+<ul>
+<li>Build scripts to build all te variations</li>
+<li>Runner scripts to start multiple processes to use the resources of the machine</li>
+</ul></li>
+<li>Mostly setting up the instrumentation in order to allow it to run on something like Google</li>
+<li>The master process grabs data from the other processes and display</li>
+<li>afl-whatsup gets the results for everything</li>
+<li>The {compiler}-fast versions gives the possibility of re-running instead of restarting each time</li>
+<li>Mutating with dictionaries to give some idea of what syntax we can change</li>
+<li>Also random mutations</li>
+<li>Difficult to make use of these, so it's hard to get them fixed</li>
+<li>Discussion of different ways to explout</li>
+</ul>
+      <p>We had 8 people attending this month. As always, we'd like to thank
+        Hostgator, LLC for providing the meeting space and food for the group.</p>
+[% END -%]
