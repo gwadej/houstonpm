@@ -1,0 +1,81 @@
+[% WRAPPER writeup_wrap.tt2
+    title='Summary of April 2020 Presentation'
+    year=2020
+%]
+      <h1>[% "SQL 101" | html %]</h1>
+<p><a href="http://jlbprof.com/sql101.tar.gz" target="_blank" rel="noopener">Tarball</a> has scripts to walk through the presentation.</p>
+
+<p><abbr title="Internet Movie DataBase">IMDB</abbr> data, messed it up to make it more inefficient.
+Available with attribution</p>
+
+<p>Walk through the data doing work as if a <abbr title="DataBase Admin">DBA</abbr></p>
+
+<p>List off some <abbr title="Relational DataBase Manager">RDBM</abbr>s.</p>
+
+<h2 id="runme">runme</h2>
+
+<p>Imported the <abbr title="Comma-Separated Value">CSV</abbr> data</p>
+
+<p>The schema that was created was the default based on the <abbr title="Comma-Separated Value">CSV</abbr> file.</p>
+
+<h2 id="section1">Section 1</h2>
+
+<p>Explaining <code>CHAR</code> vs <code>VARCHAR</code></p>
+
+<p>Convention of uppercasing the <abbr title="Structured Query Language">SQL</abbr> keywords</p>
+
+<p><code>SELECT</code> statement
+   * Basic
+   * <code>LIMIT</code>
+   * <code>GROUP BY</code>
+   * <code>COUNT()</code>
+   * <code>ORDER BY</code>
+      - specify column by number or name
+      - <code>DESC</code>/<code>ASC</code>
+   * <code>WHERE</code> clause
+   * <code>LIKE</code> comparison</p>
+
+<p><code>SELECT</code> from the results of a <code>SELECT</code> statement</p>
+
+<h2 id="section2">Section 2</h2>
+
+<p>Normalization of data</p>
+
+<p>Separate the table and normalize</p>
+
+<p>Talk about temp tables</p>
+
+<p>Trailing semicolons</p>
+
+<p><code>INSERT INTO table from SELECT</code></p>
+
+<p><code>DROP TABLE</code></p>
+
+<p><code>replace()</code></p>
+
+<p>substr(), '||' (concat operator)
+Arrays in <abbr title="Structured Query Language">SQL</abbr> are 1-based</p>
+
+<p><code>PRIMARY KEY</code></p>
+
+<p><code>INSERT</code> into a new table with primary key
+<code>CREATE INDEX</code> for some columns on table</p>
+
+<p><code>JOIN</code>s (also <code>ON</code> clause)</p>
+
+<p>AS on table name as well as columns</p>
+
+<p>Removing title by building new table</p>
+
+<p>Move person information into people table.
+Move role information
+Move show information</p>
+
+<p>Use an <code>INSERT</code> from <code>SELECT</code> with multiple joins to replace the strings
+with the appropriate ids. This is pretty complicated, but understandable.</p>
+
+<p>Foreign key logic</p>
+
+<p><code>VACUUM</code></p>
+      <p>We had 6 people attending the remote meeting (<a href="https://www.youtube.com/watch?v=_QKOUeWKo7E&list=PLA9_Hq3zhoFxcOdh4tIZaLfYkAiY_9ntd" target="_blank" rel="noopener">YouTube streaming</a>) this month.</p>
+[% END -%]

@@ -1,0 +1,34 @@
+[% WRAPPER writeup_wrap.tt2
+    title='Summary of May 2020 Presentation'
+    year=2020
+%]
+      <h1>[% "A TDD approach to learning" | html %]</h1>
+<p>Rustlings - <abbr title="Test-Driven Development">TDD</abbr> approach to learning
+Ruby Koans</p>
+
+<p>Perl 5 equivalent
+   - Watch option watches for changes
+   - Run the test every second
+   - perl-tde</p>
+
+<p>Exercism stuff</p>
+
+<p>Rust examples</p>
+
+<p>Voting system on top of Actix
+   - Spoke system (mesh network with delegation)</p>
+
+<p>Code Review Stack exchange</p>
+
+<p>zim - memmapping tool</p>
+
+<p>TUI
+   - tui-rs
+   - spotify
+   - A bunch of others
+   - Ranger
+   - radare - disassembler, rev engineering</p>
+
+<p>kitty terminal program</p>
+      <p>We had 8 people attending the remote meeting on Zoom this month.</p>
+[% END -%]

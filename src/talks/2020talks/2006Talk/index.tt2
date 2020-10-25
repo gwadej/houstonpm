@@ -1,0 +1,20 @@
+[% WRAPPER writeup_wrap.tt2
+    title='Summary of June 2020 Presentation'
+    year=2020
+%]
+      <h1>[% "June Remote Social Meeting" | html %]</h1>
+<p>Very information chat. Some of the topics we touched on were:</p>
+
+<ul>
+    <li>Perl Conference<ul>
+        <li>https://tpc20cic.sched.com/</li>
+        <li>https://perlconference.us/tpc-2020-cloud/</li>
+    </ul></li>
+    <li>MobaXterm</li>
+    <li>https://www.playonlinux.com/en/</li>
+    <li>Yew in Rust - Wasm web client</li>
+    <li>Hands-on Microserves in Rust - book Evan's reading</li>
+    <li>https://i3wm.org/ Window manager</li>
+</ul>
+      <p>We had a few people attending the remote meeting on Zoom this month.</p>
+[% END -%]

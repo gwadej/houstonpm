@@ -144,7 +144,7 @@ EOT
     else
     {
         print {$fh} <<"EOT";
-      <p>We had $vars->{attendees} people attending the remote meeting this month.</p>
+      <p>We had $vars->{attendees} people attending the remote meeting on Zoom this month.</p>
 [% END -%]
 EOT
     }

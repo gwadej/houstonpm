@@ -2140,4 +2140,35 @@ implementation, but focusing mostly on the effective use of those structures.</a
     <attendees>6</attendees>
     <sponsor>cPanel, L.L.C</sponsor>
   </talk>
+  <talk num="2004">
+    <date>April 2020</date>
+    <topic href="/talks/2020talks/2004Talk/index.html">
+      <title>SQL 101</title>
+      <presenter>Julian Brown</presenter>
+      <abstract>Julian Brown covers the basics of SQL in this fundamentals talk.</abstract>
+    </topic>
+    <attendees>6</attendees>
+    <sponsor>Zoom</sponsor>
+  </talk>
+  <talk num="2005">
+    <date>May 2020</date>
+    <topic href="/talks/2020talks/2005Talk/index.html">
+      <title>A TDD approach to learning</title>
+      <presenter>Evan Carroll</presenter>
+      <abstract>We&apos;ll hear from Evan Carroll about a project he&apos;s working on, and any other subjects
+we think to discuss.</abstract>
+    </topic>
+    <attendees>8</attendees>
+    <sponsor>Zoom</sponsor>
+  </talk>
+  <talk num="2006">
+    <date>June 2020</date>
+    <topic href="/talks/2020talks/2006Talk/index.html">
+      <title>June Remote Social Meeting</title>
+      <presenter></presenter>
+      <abstract>A group of us hang out on Zoom and talk about whatever comes to mind.</abstract>
+    </topic>
+    <attendees></attendees>
+    <sponsor>Zoom</sponsor>
+  </talk>
 </talklist>

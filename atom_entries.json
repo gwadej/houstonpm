@@ -5,6 +5,51 @@
          "technical meeting"
       ],
       "content" : {
+         "content" : "<p>A group of us hang out on Zoom and talk about whatever comes to mind.</p>",
+         "type" : "xhtml"
+      },
+      "id" : "tag:houston.pm.org,2011-03:presentation:2006",
+      "link" : "http://houston.pm.org/talks/2020talks/2006Talk/index.html",
+      "published" : "2020-10-25T11:01:33Z",
+      "title" : "Notes for 'June Remote Social Meeting' posted.",
+      "updated" : "2020-10-25T11:01:33Z"
+   },
+   {
+      "categories" : [
+         "presentation",
+         "technical meeting"
+      ],
+      "content" : {
+         "content" : "<p>We'll hear from Evan Carroll about a project he's working on, and any other subjects\nwe think to discuss.</p>",
+         "type" : "xhtml"
+      },
+      "id" : "tag:houston.pm.org,2011-03:presentation:2005",
+      "link" : "http://houston.pm.org/talks/2020talks/2005Talk/index.html",
+      "published" : "2020-10-25T10:55:26Z",
+      "title" : "Notes for 'A TDD approach to learning' posted.",
+      "updated" : "2020-10-25T10:55:26Z"
+   },
+   {
+      "categories" : [
+         "presentation",
+         "technical meeting"
+      ],
+      "content" : {
+         "content" : "<p>Julian Brown covers the basics of SQL in this fundamentals talk.</p>",
+         "type" : "xhtml"
+      },
+      "id" : "tag:houston.pm.org,2011-03:presentation:2004",
+      "link" : "http://houston.pm.org/talks/2020talks/2004Talk/index.html",
+      "published" : "2020-10-25T10:20:28Z",
+      "title" : "Notes for 'SQL 101' posted.",
+      "updated" : "2020-10-25T10:20:28Z"
+   },
+   {
+      "categories" : [
+         "presentation",
+         "technical meeting"
+      ],
+      "content" : {
          "content" : "<p>Making the best use of Perl includes understanding and using its data structures.\nG. Wade Johnson will present the major Perl data structures, dipping slightly into\nimplementation, but focusing mostly on the effective use of those structures.</p>",
          "type" : "xhtml"
       },
@@ -231,37 +276,5 @@
       "published" : "2020-08-07T12:29:50Z",
       "title" : "Perl 7: An Opinionated Introduction",
       "updated" : "2020-08-07T12:29:50Z"
-   },
-   {
-      "categories" : [
-         "technical meeting",
-         "remote"
-      ],
-      "content" : "<p>For the July Houston.pm meeting, Todd Rinaldo presents <em>Update on TPCiC, Perl 7, and discussion</em>.\nThe meeting begins on July 9 at 6pm on Zoom. See the mailing list for details.</p>\n\n<p>For this month's remote meeting, Todd Rinaldo will give a summary of where Perl stands today.\nWe'll go on from there to a more general discussion among the teams.</p>\n",
-      "id" : "tag:houston.pm.org.2011-03:announce-20200708s-9109",
-      "published" : "2020-07-09T01:01:57Z",
-      "title" : "Update on TPCiC, Perl 7, and discussion",
-      "updated" : "2020-07-09T01:01:57Z"
-   },
-   {
-      "categories" : [
-         "social meeting"
-      ],
-      "content" : "<p>The June Houston.pm meeting will be a remote social meeting.\nThe meeting begins on June 11 at 6pm over Zoom. The meeting invite is available\non the mailing list. Instead of a presentation, we will mostly socialize and\ntalk about whatever seems interesting.</p>\n\n<p>The June Houston.pm social meeting will be held over Zoom.\nBring your curiosity and interest in finding out what your fellow\nPerl Mongers have been up to.</p>\n",
-      "id" : "tag:houston.pm.org.2011-03:announce-20200610s-17580",
-      "published" : "2020-06-11T01:11:02Z",
-      "title" : "June Remote Social Meeting",
-      "updated" : "2020-06-11T01:11:02Z"
-   },
-   {
-      "categories" : [
-         "technical meeting",
-         "remote meeting"
-      ],
-      "content" : "<p>For the May Houston.pm meeting, We'll be meeting on Zoom (Check the mailing list.)\nWe'll hear from Evan Carroll about a project he's working on, and any other subjects\nwe think to discuss. We'll start at 6pm.</p>\n\n<p>For the May Houston.pm meeting, We'll be meeting on Zoom (Check the mailing list.)\nWe'll hear from Evan Carroll about a project he's working on, and any other subjects\nwe think to discuss. We'll start at 6pm.</p>\n",
-      "id" : "tag:houston.pm.org.2011-03:announce-20200514s-26683",
-      "published" : "2020-05-14T12:20:54Z",
-      "title" : "Remote May Houston.pm Meeting",
-      "updated" : "2020-05-14T12:20:54Z"
    }
 ]

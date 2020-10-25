@@ -4,12 +4,55 @@
   <title type="html">Houston.pm: What's New</title>
   <link href="http://houston.pm.org/"/>
   <link href="http://houston.pm.org/atom.xml" rel="self"/>
-  <updated>2020-10-25T04:14:46Z</updated>
+  <updated>2020-10-25T11:01:33Z</updated>
   <author>
     <name>G. Wade Johnson</name>
   </author>
   <category term="news"/>
   <generator uri="https://metacpan.org/pod/XML::Atom::SimpleFeed" version="0.902">XML::Atom::SimpleFeed</generator>
+  <entry>
+    <title type="html">Notes for 'June Remote Social Meeting' posted.</title>
+    <id>tag:houston.pm.org,2011-03:presentation:2006</id>
+    <content type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">
+        <p>A group of us hang out on Zoom and talk about whatever comes to mind.</p>
+      </div>
+    </content>
+    <updated>2020-10-25T11:01:33Z</updated>
+    <published>2020-10-25T11:01:33Z</published>
+    <link href="http://houston.pm.org/talks/2020talks/2006Talk/index.html"/>
+    <category term="presentation"/>
+    <category term="technical meeting"/>
+  </entry>
+  <entry>
+    <title type="html">Notes for 'A TDD approach to learning' posted.</title>
+    <id>tag:houston.pm.org,2011-03:presentation:2005</id>
+    <content type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">
+        <p>We'll hear from Evan Carroll about a project he's working on, and any other subjects
+we think to discuss.</p>
+      </div>
+    </content>
+    <updated>2020-10-25T10:55:26Z</updated>
+    <published>2020-10-25T10:55:26Z</published>
+    <link href="http://houston.pm.org/talks/2020talks/2005Talk/index.html"/>
+    <category term="presentation"/>
+    <category term="technical meeting"/>
+  </entry>
+  <entry>
+    <title type="html">Notes for 'SQL 101' posted.</title>
+    <id>tag:houston.pm.org,2011-03:presentation:2004</id>
+    <content type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">
+        <p>Julian Brown covers the basics of SQL in this fundamentals talk.</p>
+      </div>
+    </content>
+    <updated>2020-10-25T10:20:28Z</updated>
+    <published>2020-10-25T10:20:28Z</published>
+    <link href="http://houston.pm.org/talks/2020talks/2004Talk/index.html"/>
+    <category term="presentation"/>
+    <category term="technical meeting"/>
+  </entry>
   <entry>
     <title type="html">Notes for 'Perl Data Structures: Tips, Tricks, and Traps' posted.</title>
     <id>tag:houston.pm.org,2011-03:presentation:2003</id>
@@ -281,51 +324,5 @@ a point to disconnect from some legacy behavior.&lt;/p&gt;
     <category term="technical meeting"/>
     <category term="remote meeting"/>
     <category term="perl7"/>
-  </entry>
-  <entry>
-    <title>Update on TPCiC, Perl 7, and discussion</title>
-    <id>tag:houston.pm.org.2011-03:announce-20200708s-9109</id>
-    <content type="html">&lt;p&gt;For the July Houston.pm meeting, Todd Rinaldo presents &lt;em&gt;Update on TPCiC, Perl 7, and discussion&lt;/em&gt;.
-The meeting begins on July 9 at 6pm on Zoom. See the mailing list for details.&lt;/p&gt;
-
-&lt;p&gt;For this month's remote meeting, Todd Rinaldo will give a summary of where Perl stands today.
-We'll go on from there to a more general discussion among the teams.&lt;/p&gt;
-</content>
-    <updated>2020-07-09T01:01:57Z</updated>
-    <published>2020-07-09T01:01:57Z</published>
-    <category term="technical meeting"/>
-    <category term="remote"/>
-  </entry>
-  <entry>
-    <title>June Remote Social Meeting</title>
-    <id>tag:houston.pm.org.2011-03:announce-20200610s-17580</id>
-    <content type="html">&lt;p&gt;The June Houston.pm meeting will be a remote social meeting.
-The meeting begins on June 11 at 6pm over Zoom. The meeting invite is available
-on the mailing list. Instead of a presentation, we will mostly socialize and
-talk about whatever seems interesting.&lt;/p&gt;
-
-&lt;p&gt;The June Houston.pm social meeting will be held over Zoom.
-Bring your curiosity and interest in finding out what your fellow
-Perl Mongers have been up to.&lt;/p&gt;
-</content>
-    <updated>2020-06-11T01:11:02Z</updated>
-    <published>2020-06-11T01:11:02Z</published>
-    <category term="social meeting"/>
-  </entry>
-  <entry>
-    <title>Remote May Houston.pm Meeting</title>
-    <id>tag:houston.pm.org.2011-03:announce-20200514s-26683</id>
-    <content type="html">&lt;p&gt;For the May Houston.pm meeting, We'll be meeting on Zoom (Check the mailing list.)
-We'll hear from Evan Carroll about a project he's working on, and any other subjects
-we think to discuss. We'll start at 6pm.&lt;/p&gt;
-
-&lt;p&gt;For the May Houston.pm meeting, We'll be meeting on Zoom (Check the mailing list.)
-We'll hear from Evan Carroll about a project he's working on, and any other subjects
-we think to discuss. We'll start at 6pm.&lt;/p&gt;
-</content>
-    <updated>2020-05-14T12:20:54Z</updated>
-    <published>2020-05-14T12:20:54Z</published>
-    <category term="technical meeting"/>
-    <category term="remote meeting"/>
   </entry>
 </feed>
