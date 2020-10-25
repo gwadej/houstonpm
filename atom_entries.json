@@ -5,6 +5,21 @@
          "technical meeting"
       ],
       "content" : {
+         "content" : "<p>Julian Brown will describe a Perl script he wrote that uses SendGrid to handle outgoing server email.\nHe'll cover the process, the script, and some DNS configuration.</p>",
+         "type" : "xhtml"
+      },
+      "id" : "tag:houston.pm.org,2011-03:presentation:2010",
+      "link" : "http://houston.pm.org/talks/2020talks/2010Talk/index.html",
+      "published" : "2020-10-25T11:42:11Z",
+      "title" : "Notes for 'A /usr/bin/sendmail like perl script that uses SendGrid email delivery service' posted.",
+      "updated" : "2020-10-25T11:42:11Z"
+   },
+   {
+      "categories" : [
+         "presentation",
+         "technical meeting"
+      ],
+      "content" : {
          "content" : "<p>Brett Estrade will tour the book <cite>Object Oriented Perl: A Comprehensive Guide to Concepts and Programming Techniques</cite>\nby Damien Conway. The book shows the old approach to <abbr title=\"Object Orientation\">OO</abbr> in Perl.</p>",
          "type" : "xhtml"
       },
@@ -279,13 +294,5 @@
       "published" : "2020-10-21T23:10:34Z",
       "title" : "Process Management Modules in Perl",
       "updated" : "2020-10-21T23:10:34Z"
-   },
-   {
-      "categories" : null,
-      "content" : "<p>For the November Houston.pm meeting, Brett Estrade presents <em>Process Management Modules in Perl</em>.\n\nThe meeting begins on November 12 at 6pm on Zoom.\nSee <a href=\"http://houston.pm.org/announce_meeting.html\">the announcement</a> for details.\n</p>\n\n<p>Brett Estrade covers some process management modules in Perl,\nincluding MCE and Parallel::ForkManager::Segmented.</p>\n",
-      "id" : "tag:houston.pm.org.2011-03:announce-20201021s-5717",
-      "published" : "2020-10-21T23:06:20Z",
-      "title" : "Process Management Modules in Perl",
-      "updated" : "2020-10-21T23:06:20Z"
    }
 ]

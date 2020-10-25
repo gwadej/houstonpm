@@ -2205,4 +2205,20 @@ by Damien Conway. The book shows the old approach to &lt;abbr title=&quot;Object
     <attendees>13</attendees>
     <sponsor>Zoom</sponsor>
   </talk>
+  <talk num="2010">
+    <date>October 2020</date>
+    <topic href="/talks/2020talks/2010Talk/index.html">
+      <title>A /usr/bin/sendmail like perl script that uses SendGrid email delivery service</title>
+      <presenter>Julian Brown</presenter>
+      <abstract>Julian Brown will describe a Perl script he wrote that uses SendGrid to handle outgoing server email.
+He&apos;ll cover the process, the script, and some DNS configuration.</abstract>
+    </topic>
+    <topic>
+      <title>Demystifying MOPs - a Crash Course in Metaprogramming</title>
+      <presenter>Evan Carroll</presenter>
+      <abstract>Evan describes a real-world scenario where he used the MOP to test an interface for third-party code.</abstract>
+    </topic>
+    <attendees>9</attendees>
+    <sponsor>Zoom</sponsor>
+  </talk>
 </talklist>

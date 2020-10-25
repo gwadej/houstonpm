@@ -4,12 +4,27 @@
   <title type="html">Houston.pm: What's New</title>
   <link href="http://houston.pm.org/"/>
   <link href="http://houston.pm.org/atom.xml" rel="self"/>
-  <updated>2020-10-25T11:37:03Z</updated>
+  <updated>2020-10-25T11:42:11Z</updated>
   <author>
     <name>G. Wade Johnson</name>
   </author>
   <category term="news"/>
   <generator uri="https://metacpan.org/pod/XML::Atom::SimpleFeed" version="0.902">XML::Atom::SimpleFeed</generator>
+  <entry>
+    <title type="html">Notes for 'A /usr/bin/sendmail like perl script that uses SendGrid email delivery service' posted.</title>
+    <id>tag:houston.pm.org,2011-03:presentation:2010</id>
+    <content type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">
+        <p>Julian Brown will describe a Perl script he wrote that uses SendGrid to handle outgoing server email.
+He'll cover the process, the script, and some DNS configuration.</p>
+      </div>
+    </content>
+    <updated>2020-10-25T11:42:11Z</updated>
+    <published>2020-10-25T11:42:11Z</published>
+    <link href="http://houston.pm.org/talks/2020talks/2010Talk/index.html"/>
+    <category term="presentation"/>
+    <category term="technical meeting"/>
+  </entry>
   <entry>
     <title type="html">Notes for '2001: How our Grandfathers wrote OO Perl' posted.</title>
     <id>tag:houston.pm.org,2011-03:presentation:2009</id>
@@ -303,20 +318,5 @@ including MCE and Parallel::ForkManager::Segmented.&lt;/p&gt;
     <published>2020-10-21T23:10:34Z</published>
     <category term="technical meeting"/>
     <category term="remote meeting"/>
-  </entry>
-  <entry>
-    <title>Process Management Modules in Perl</title>
-    <id>tag:houston.pm.org.2011-03:announce-20201021s-5717</id>
-    <content type="html">&lt;p&gt;For the November Houston.pm meeting, Brett Estrade presents &lt;em&gt;Process Management Modules in Perl&lt;/em&gt;.
-
-The meeting begins on November 12 at 6pm on Zoom.
-See &lt;a href="http://houston.pm.org/announce_meeting.html"&gt;the announcement&lt;/a&gt; for details.
-&lt;/p&gt;
-
-&lt;p&gt;Brett Estrade covers some process management modules in Perl,
-including MCE and Parallel::ForkManager::Segmented.&lt;/p&gt;
-</content>
-    <updated>2020-10-21T23:06:20Z</updated>
-    <published>2020-10-21T23:06:20Z</published>
   </entry>
 </feed>
