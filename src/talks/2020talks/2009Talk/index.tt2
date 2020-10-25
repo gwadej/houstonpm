@@ -1,0 +1,46 @@
+[% WRAPPER writeup_wrap.tt2
+    title='Summary of September 2020 Presentation'
+    year=2020
+%]
+      <h1>[% "2001: How our Grandfathers wrote OO Perl" | html %]</h1>
+<p>Brett started in Perl in 2001, got Damian's <abbr title="Object Orientation">OO</abbr> book and learned from there.
+Printed right before Perl 5.6.</p>
+
+<p>This presentation is a poor substitute for the book.</p>
+
+<ul>
+<li><code>bless</code></li>
+<li><code>package</code></li>
+<li>Why is parent better than base</li>
+<li><code>new</code></li>
+<li>lexical closures for data protection</li>
+<li><code>state</code> turns your subroutine into a co-routine (?)
+<ul>
+<li>A subroutine that retains state.</li>
+</ul></li>
+<li>Accessors
+<ul>
+<li>define directly</li>
+<li><code>AUTOLOAD</code></li>
+<li>dynamically (lazy <code>AUTOLOAD</code>, <abbr title="Comprehensive Perl Archive Network">CPAN</abbr> modules)</li>
+</ul></li>
+<li><code>Object::Tiny</code> and <code>Class::Accessor</code> seem to be normal today</li>
+<li>overload.pm</li>
+<li>Exceptions</li>
+<li>Validation
+<ul>
+<li><code>Validate::Tiny</code></li>
+</ul></li>
+<li><code>tie</code></li>
+<li><code>Util::H2O</code> - check it out</li>
+</ul>
+
+<p>Discussion on <abbr title="Object Orientation">OO</abbr></p>
+
+<h2 id="datalanguage">Data Language</h2>
+
+<p>Dan Duncan explained about a data language he was working on.</p>
+
+<p>https://metacpan.org/pod/distribution/Set-Relation/lib/Set/Relation.pod</p>
+      <p>We had 13 people attending the remote meeting on Zoom this month.</p>
+[% END -%]

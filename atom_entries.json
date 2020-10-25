@@ -5,6 +5,51 @@
          "technical meeting"
       ],
       "content" : {
+         "content" : "<p>Brett Estrade will tour the book <cite>Object Oriented Perl: A Comprehensive Guide to Concepts and Programming Techniques</cite>\nby Damien Conway. The book shows the old approach to <abbr title=\"Object Orientation\">OO</abbr> in Perl.</p>",
+         "type" : "xhtml"
+      },
+      "id" : "tag:houston.pm.org,2011-03:presentation:2009",
+      "link" : "http://houston.pm.org/talks/2020talks/2009Talk/index.html",
+      "published" : "2020-10-25T11:37:03Z",
+      "title" : "Notes for '2001: How our Grandfathers wrote OO Perl' posted.",
+      "updated" : "2020-10-25T11:37:03Z"
+   },
+   {
+      "categories" : [
+         "presentation",
+         "technical meeting"
+      ],
+      "content" : {
+         "content" : "<p>James Keenan gives an introduction to the upcoming Perl 7 release.\nThis is a chance to continue evolving Perl into the future, while providing\na point to disconnect from some legacy behavior.</p>",
+         "type" : "xhtml"
+      },
+      "id" : "tag:houston.pm.org,2011-03:presentation:2008",
+      "link" : "http://houston.pm.org/talks/2020talks/2008Talk/index.html",
+      "published" : "2020-10-25T11:31:05Z",
+      "title" : "Notes for 'Perl 7: An Opinionated Introduction' posted.",
+      "updated" : "2020-10-25T11:31:05Z"
+   },
+   {
+      "categories" : [
+         "presentation",
+         "technical meeting"
+      ],
+      "content" : {
+         "content" : "<p>For this month's remote meeting, Todd Rinaldo will give a summary of where Perl stands today.\nWe'll go on from there to a more general discussion among the teams.</p>",
+         "type" : "xhtml"
+      },
+      "id" : "tag:houston.pm.org,2011-03:presentation:2007",
+      "link" : "http://houston.pm.org/talks/2020talks/2007Talk/index.html",
+      "published" : "2020-10-25T11:16:34Z",
+      "title" : "Notes for 'Update on TPCiC and Perl 7, plus discussion' posted.",
+      "updated" : "2020-10-25T11:16:34Z"
+   },
+   {
+      "categories" : [
+         "presentation",
+         "technical meeting"
+      ],
+      "content" : {
          "content" : "<p>A group of us hang out on Zoom and talk about whatever comes to mind.</p>",
          "type" : "xhtml"
       },
@@ -242,39 +287,5 @@
       "published" : "2020-10-21T23:06:20Z",
       "title" : "Process Management Modules in Perl",
       "updated" : "2020-10-21T23:06:20Z"
-   },
-   {
-      "categories" : [
-         "technical meeting",
-         "remote meeting"
-      ],
-      "content" : "<p>For the October Houston.pm meeting, Julian Brown presents <em>A /usr/bin/sendmail like perl script that uses SendGrid email delivery service</em>.\n\nThe meeting begins on October 8 at 6pm on Zoom.\nCheck <a href=\"http://houston.pm.org/announce_meeting.html\">the website</a> for connection details\n</p>\n\n<div>Julian Brown will describe a perl script he wrote that uses SendGrid to handle outgoing server email.\nHe'll cover the process, the script, and some DNS configuration.</div>\n",
-      "id" : "tag:houston.pm.org.2011-03:announce-20200930s-29689",
-      "published" : "2020-10-01T01:49:19Z",
-      "title" : "A /usr/bin/sendmail like perl script that uses SendGrid email delivery service",
-      "updated" : "2020-10-01T01:49:19Z"
-   },
-   {
-      "categories" : [
-         "technical meeting",
-         "remote meeting"
-      ],
-      "content" : "<p>For the September Houston.pm meeting, Brett Estrade presents <em>2001: How our Grandfathers wrote OO Perl</em>.\n\nThe meeting begins on September 10 at 6pm on Zoom. Invite information will be forthcoming at\n<a href=\"http://houston.pm.org/announce_meeting.html\">Houston.pm</a>.\n</p>\n\n<p>Brett Estrade will tour the book <cite>Object Oriented Perl: A Comprehensive Guide to Concepts and Programming Techniques</cite>\nby Damien Conway. The book shows the old approach to OO in Perl.</p>\n",
-      "id" : "tag:houston.pm.org.2011-03:announce-20200908s-5716",
-      "published" : "2020-09-08T12:18:31Z",
-      "title" : "2001: How our Grandfathers wrote OO Perl",
-      "updated" : "2020-09-08T12:18:31Z"
-   },
-   {
-      "categories" : [
-         "technical meeting",
-         "remote meeting",
-         "perl7"
-      ],
-      "content" : "<p>For the August Houston.pm meeting, James Keenan presents <em>Perl 7: An Opinionated Introduction</em>.\nThe meeting begins on August 13 at 6pm on Zoom. Meeting information can be\nfound at <a href=\"http://houston.pm.org/announce_meeting.html\" target=\"_blank\">meeting\nannouncement</a>.</p>\n\n<p>James Keenan gives an introduction to the upcoming Perl 7 release.\nThis is a chance to continue evolving Perl into the future, while providing\na point to disconnect from some legacy behavior.</p>\n",
-      "id" : "tag:houston.pm.org.2011-03:announce-20200807s-26275",
-      "published" : "2020-08-07T12:29:50Z",
-      "title" : "Perl 7: An Opinionated Introduction",
-      "updated" : "2020-08-07T12:29:50Z"
    }
 ]

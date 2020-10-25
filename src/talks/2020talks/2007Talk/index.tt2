@@ -1,0 +1,35 @@
+[% WRAPPER writeup_wrap.tt2
+    title='Summary of July 2020 Presentation'
+    year=2020
+%]
+      <h1>[% "Update on TPCiC and Perl 7, plus discussion" | html %]</h1>
+<h2 id="randomdiscussion:">Random discussion:</h2>
+
+<ul>
+<li>https://webassembly.org/ </li>
+<li>https://en.wikipedia.org/wiki/WebAssembly</li>
+<li>https://unix.bpowers.net/</li>
+<li>https://browsix.org/</li>
+<li>https://emscripten.org/docs/tools_reference/emcc.html</li>
+<li>https://emscripten.org/docs/api_reference/index.html</li>
+</ul>
+
+<h2 id="scalinggovernerforthekernel">Scaling governer for the kernel</h2>
+
+<ul>
+<li>https://wiki.archlinux.org/index.php/CPU_frequency_scaling#Disabling_Turbo_Boost</li>
+</ul>
+
+<h2 id="other">Other</h2>
+
+<p>Discussion about system updates
+Discussion about virtualization and containers</p>
+
+<ul>
+<li>https://github.com/WAVM/WAVM </li>
+<li>what about using overclocking software? wouldn't those tools maintain temp control?</li>
+<li>https://en.wikipedia.org/wiki/AMPRNet : 44.0.0.0/8 </li>
+<li>https://freshcode.club/</li>
+</ul>
+      <p>We had 5 people attending the remote meeting on Zoom this month.</p>
+[% END -%]

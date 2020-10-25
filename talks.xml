@@ -2171,4 +2171,38 @@ we think to discuss.</abstract>
     <attendees></attendees>
     <sponsor>Zoom</sponsor>
   </talk>
+  <talk num="2007">
+    <date>July 2020</date>
+    <topic href="/talks/2020talks/2007Talk/index.html">
+      <title>Update on TPCiC and Perl 7, plus discussion</title>
+      <presenter>Todd Rinaldo</presenter>
+      <abstract>For this month&apos;s remote meeting, Todd Rinaldo will give a summary of where Perl stands today.
+We&apos;ll go on from there to a more general discussion among the teams.</abstract>
+    </topic>
+    <attendees>5</attendees>
+    <sponsor>Zoom</sponsor>
+  </talk>
+  <talk num="2008">
+    <date>August 2020</date>
+    <topic href="/talks/2020talks/2008Talk/index.html">
+      <title>Perl 7: An Opinionated Introduction</title>
+      <presenter>James Keenan</presenter>
+      <abstract>James Keenan gives an introduction to the upcoming Perl 7 release.
+This is a chance to continue evolving Perl into the future, while providing
+a point to disconnect from some legacy behavior.</abstract>
+    </topic>
+    <attendees>20</attendees>
+    <sponsor>Zoom</sponsor>
+  </talk>
+  <talk num="2009">
+    <date>September 2020</date>
+    <topic href="/talks/2020talks/2009Talk/index.html">
+      <title>2001: How our Grandfathers wrote OO Perl</title>
+      <presenter>Brett Estrade</presenter>
+      <abstract>Brett Estrade will tour the book &lt;cite&gt;Object Oriented Perl: A Comprehensive Guide to Concepts and Programming Techniques&lt;/cite&gt;
+by Damien Conway. The book shows the old approach to &lt;abbr title=&quot;Object Orientation&quot;&gt;OO&lt;/abbr&gt; in Perl.</abstract>
+    </topic>
+    <attendees>13</attendees>
+    <sponsor>Zoom</sponsor>
+  </talk>
 </talklist>

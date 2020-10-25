@@ -1,0 +1,24 @@
+[% WRAPPER writeup_wrap.tt2
+    title='Summary of August 2020 Presentation'
+    year=2020
+%]
+      <h1>[% "Perl 7: An Opinionated Introduction" | html %]</h1>
+<p>Jim Keenan from NY.pm group. Introduced himself wearing the 2007 <abbr title="Yet Another Perl Conference:>YAPC</abbr>::<abbr title="North America">NA</abbr> (Houston) t-shirt.
+He specifically asked that the meeting not be recorded. He made the argument that the talk really should be <em>in the moment</em> and not live forever.</p>
+
+<p>Jim talked about the history of Perl development, including covering the <em>Era of the Pumpking</em>. Basically, one person as a release manager, driving to the next version release.</p>
+
+<p>Jim then covered a new movement to develop a Perl 7 version. Perl 7 would contain all of the features of Perl 5.32, but would give us a place to break backwards compatibility.
+In particular, we would be able to change the Perl default behavior, for example</p>
+
+<pre><code>* strict and warnings by default
+* bring in most of the optional features from the last 12 years
+</code></pre>
+
+<p>Importantly, having a Perl 7 means there will be a Perl 8. This means that we can deprecate behavior that
+does not match where the community wants to go with Perl.</p>
+
+<p>The Perl 7 <a href="https://github.com/atoomic/perl" target="_blank" rel="noopener">repo</a> is available on Github.
+Email jkeenan at pobox.com to get started with the volunteer process.</p>
+      <p>We had 20 people attending the remote meeting on Zoom this month.</p>
+[% END -%]
