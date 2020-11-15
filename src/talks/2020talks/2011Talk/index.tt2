@@ -1,0 +1,27 @@
+[% WRAPPER writeup_wrap.tt2
+    title='Summary of November 2020 Presentation'
+    year=2020
+%]
+      <h1>[% "Process Management Modules in Perl" | html %]</h1>
+<p>Brett Estrade gave a solid overview of process management in Perl.</p>
+
+<p>He started with some definitions and specified that he would not cover
+much about <abbr title="Inter-Process Communication">IPC</abbr>, general
+asynchronous work, and ithreads.</p>
+
+<p>Brett spent a bit of time with process management in bash. This established
+a baseline of potential easy functionality. The he moved on to the basics
+in Perl.</p>
+
+<p>The presentaion finished up with an introduction to <code>Parallel:ForkManager</code>,
+<code>Parallel::ForkManager::Segmented</code>, and <code>MCE</code>.</p>
+
+<p>The group had a quite a few questions and comments. It made for a lively
+discussion as part of the presentation.</p>
+
+<p>George Baugh followed up with some examples working around the Playwright tool.</p>
+
+<p>The <a href="houston-pm-processes.pdf" target="_blank" rel="noopener">presentation</a>
+is available.</p>
+      <p>We had 12 people attending the remote meeting on Zoom this month.</p>
+[% END -%]

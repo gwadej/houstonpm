@@ -2221,4 +2221,15 @@ He&apos;ll cover the process, the script, and some DNS configuration.</abstract>
     <attendees>9</attendees>
     <sponsor>Zoom</sponsor>
   </talk>
+  <talk num="2011">
+    <date>November 2020</date>
+    <topic href="/talks/2020talks/2011Talk/index.html">
+      <title>Process Management Modules in Perl</title>
+      <presenter>Brett Estrade</presenter>
+      <abstract>Brett covers some process management in Perl, including &lt;code&gt;MCE&lt;/code&gt; and
+&lt;code&gt;Parallel::ForkManager::Segmented&lt;/code&gt;.</abstract>
+    </topic>
+    <attendees>12</attendees>
+    <sponsor>Zoom</sponsor>
+  </talk>
 </talklist>

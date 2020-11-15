@@ -5,6 +5,21 @@
          "technical meeting"
       ],
       "content" : {
+         "content" : "<p>Brett covers some process management in Perl, including <code>MCE</code> and\n<code>Parallel::ForkManager::Segmented</code>.</p>",
+         "type" : "xhtml"
+      },
+      "id" : "tag:houston.pm.org,2011-03:presentation:2011",
+      "link" : "http://houston.pm.org/talks/2020talks/2011Talk/index.html",
+      "published" : "2020-11-15T06:03:12Z",
+      "title" : "Notes for 'Process Management Modules in Perl' posted.",
+      "updated" : "2020-11-15T06:03:12Z"
+   },
+   {
+      "categories" : [
+         "presentation",
+         "technical meeting"
+      ],
+      "content" : {
          "content" : "<p>Julian Brown will describe a Perl script he wrote that uses SendGrid to handle outgoing server email.\nHe'll cover the process, the script, and some DNS configuration.</p>",
          "type" : "xhtml"
       },
@@ -268,31 +283,5 @@
       "published" : "2020-10-24T07:00:05Z",
       "title" : "Notes for 'Getting Started With OpenShift - Using Containers for SysOps and Engineering' posted.",
       "updated" : "2020-10-24T07:00:05Z"
-   },
-   {
-      "categories" : [
-         "presentation",
-         "technical meeting"
-      ],
-      "content" : {
-         "content" : "<p><em>Read the documentation</em>, we're told, but there's always more to learn. When\nI started working with Dancer2, DBIx::Class, and Template Toolkit last fall,\nI'd seen the basics, but I found out <em>very</em> quickly that there's much more to\nlearn. The capabilities of this stack can influence application design from the\nground up database tables, all the way to the final frameworks you might choose\nto use on the frontend, and not all of those repercussions are immediately\nclear from merely reading the documentation!\n\nIn this talk, we'll learn about some of the strengths of these modules and\ndemonstrate how their capabilities can be leveraged to help you work faster and\nwrite great web-based applications.</p>",
-         "type" : "xhtml"
-      },
-      "id" : "tag:houston.pm.org,2011-03:presentation:1910",
-      "link" : "http://houston.pm.org/talks/2019talks/1910Talk/index.html",
-      "published" : "2020-10-24T06:46:01Z",
-      "title" : "Notes for 'Subtle Magic: Moving to Dancer2/DBIx::Class/TT' posted.",
-      "updated" : "2020-10-24T06:46:01Z"
-   },
-   {
-      "categories" : [
-         "technical meeting",
-         "remote meeting"
-      ],
-      "content" : "<p>For the November Houston.pm meeting, Brett Estrade presents <em>Process Management Modules in Perl</em>.\n\nThe meeting begins on November 12 at 6pm on Zoom.\nSee <a href=\"http://houston.pm.org/announce_meeting.html\">the announcement</a> for details.\n</p>\n\n<p>Brett Estrade covers some process management modules in Perl,\nincluding MCE and Parallel::ForkManager::Segmented.</p>\n",
-      "id" : "tag:houston.pm.org.2011-03:announce-20201021s-7521",
-      "published" : "2020-10-21T23:10:34Z",
-      "title" : "Process Management Modules in Perl",
-      "updated" : "2020-10-21T23:10:34Z"
    }
 ]

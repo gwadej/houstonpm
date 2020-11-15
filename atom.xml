@@ -4,12 +4,27 @@
   <title type="html">Houston.pm: What's New</title>
   <link href="http://houston.pm.org/"/>
   <link href="http://houston.pm.org/atom.xml" rel="self"/>
-  <updated>2020-10-25T11:42:11Z</updated>
+  <updated>2020-11-15T06:03:12Z</updated>
   <author>
     <name>G. Wade Johnson</name>
   </author>
   <category term="news"/>
   <generator uri="https://metacpan.org/pod/XML::Atom::SimpleFeed" version="0.902">XML::Atom::SimpleFeed</generator>
+  <entry>
+    <title type="html">Notes for 'Process Management Modules in Perl' posted.</title>
+    <id>tag:houston.pm.org,2011-03:presentation:2011</id>
+    <content type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">
+        <p>Brett covers some process management in Perl, including <code>MCE</code> and
+<code>Parallel::ForkManager::Segmented</code>.</p>
+      </div>
+    </content>
+    <updated>2020-11-15T06:03:12Z</updated>
+    <published>2020-11-15T06:03:12Z</published>
+    <link href="http://houston.pm.org/talks/2020talks/2011Talk/index.html"/>
+    <category term="presentation"/>
+    <category term="technical meeting"/>
+  </entry>
   <entry>
     <title type="html">Notes for 'A /usr/bin/sendmail like perl script that uses SendGrid email delivery service' posted.</title>
     <id>tag:houston.pm.org,2011-03:presentation:2010</id>
@@ -277,46 +292,5 @@ attempting to cover the whole subject of unit testing, there should be something
     <link href="http://houston.pm.org/talks/2019talks/1905Talk/index.html"/>
     <category term="presentation"/>
     <category term="technical meeting"/>
-  </entry>
-  <entry>
-    <title type="html">Notes for 'Subtle Magic: Moving to Dancer2/DBIx::Class/TT' posted.</title>
-    <id>tag:houston.pm.org,2011-03:presentation:1910</id>
-    <content type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml">
-        <p><em>Read the documentation</em>, we're told, but there's always more to learn. When
-I started working with Dancer2, DBIx::Class, and Template Toolkit last fall,
-I'd seen the basics, but I found out <em>very</em> quickly that there's much more to
-learn. The capabilities of this stack can influence application design from the
-ground up database tables, all the way to the final frameworks you might choose
-to use on the frontend, and not all of those repercussions are immediately
-clear from merely reading the documentation!
-
-In this talk, we'll learn about some of the strengths of these modules and
-demonstrate how their capabilities can be leveraged to help you work faster and
-write great web-based applications.</p>
-      </div>
-    </content>
-    <updated>2020-10-24T06:46:01Z</updated>
-    <published>2020-10-24T06:46:01Z</published>
-    <link href="http://houston.pm.org/talks/2019talks/1910Talk/index.html"/>
-    <category term="presentation"/>
-    <category term="technical meeting"/>
-  </entry>
-  <entry>
-    <title>Process Management Modules in Perl</title>
-    <id>tag:houston.pm.org.2011-03:announce-20201021s-7521</id>
-    <content type="html">&lt;p&gt;For the November Houston.pm meeting, Brett Estrade presents &lt;em&gt;Process Management Modules in Perl&lt;/em&gt;.
-
-The meeting begins on November 12 at 6pm on Zoom.
-See &lt;a href="http://houston.pm.org/announce_meeting.html"&gt;the announcement&lt;/a&gt; for details.
-&lt;/p&gt;
-
-&lt;p&gt;Brett Estrade covers some process management modules in Perl,
-including MCE and Parallel::ForkManager::Segmented.&lt;/p&gt;
-</content>
-    <updated>2020-10-21T23:10:34Z</updated>
-    <published>2020-10-21T23:10:34Z</published>
-    <category term="technical meeting"/>
-    <category term="remote meeting"/>
   </entry>
 </feed>
