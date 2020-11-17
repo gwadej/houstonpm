@@ -1,6 +1,17 @@
 [
    {
       "categories" : [
+         "technical meeting",
+         "remote meeting"
+      ],
+      "content" : "<p>For the December Houston.pm meeting, George S. Baugh presents <em>tCMS : yet another CMS written in Perl</em>.\n\nThe meeting begins on December 10 at 6pm on Zoom.\nSee <a href=\"http://houston.pm.org/announce_meeting.html\">here</a> for meeting details.\n</p>\n\n<p>George S. Baugh (TEODESIAN on CPAN) explores a CMS he wrote in Perl.\nSpecifically, <q>Why I did it and what I learned?</q></p>\n",
+      "id" : "tag:houston.pm.org.2011-03:announce-20201117s-13082",
+      "published" : "2020-11-17T22:33:04Z",
+      "title" : "tCMS : yet another CMS written in Perl",
+      "updated" : "2020-11-17T22:33:04Z"
+   },
+   {
+      "categories" : [
          "presentation",
          "technical meeting"
       ],

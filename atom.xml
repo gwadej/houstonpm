@@ -4,12 +4,29 @@
   <title type="html">Houston.pm: What's New</title>
   <link href="http://houston.pm.org/"/>
   <link href="http://houston.pm.org/atom.xml" rel="self"/>
-  <updated>2020-11-15T06:03:12Z</updated>
+  <updated>2020-11-17T22:33:04Z</updated>
   <author>
     <name>G. Wade Johnson</name>
   </author>
   <category term="news"/>
   <generator uri="https://metacpan.org/pod/XML::Atom::SimpleFeed" version="0.902">XML::Atom::SimpleFeed</generator>
+  <entry>
+    <title>tCMS : yet another CMS written in Perl</title>
+    <id>tag:houston.pm.org.2011-03:announce-20201117s-13082</id>
+    <content type="html">&lt;p&gt;For the December Houston.pm meeting, George S. Baugh presents &lt;em&gt;tCMS : yet another CMS written in Perl&lt;/em&gt;.
+
+The meeting begins on December 10 at 6pm on Zoom.
+See &lt;a href="http://houston.pm.org/announce_meeting.html"&gt;here&lt;/a&gt; for meeting details.
+&lt;/p&gt;
+
+&lt;p&gt;George S. Baugh (TEODESIAN on CPAN) explores a CMS he wrote in Perl.
+Specifically, &lt;q&gt;Why I did it and what I learned?&lt;/q&gt;&lt;/p&gt;
+</content>
+    <updated>2020-11-17T22:33:04Z</updated>
+    <published>2020-11-17T22:33:04Z</published>
+    <category term="technical meeting"/>
+    <category term="remote meeting"/>
+  </entry>
   <entry>
     <title type="html">Notes for 'Process Management Modules in Perl' posted.</title>
     <id>tag:houston.pm.org,2011-03:presentation:2011</id>

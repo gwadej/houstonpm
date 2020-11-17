@@ -1,17 +1,10 @@
 [
    {
-      "abstract" : "<p>Brett Estrade covers some process management modules in Perl,\nincluding MCE and Parallel::ForkManager::Segmented.</p>\n",
-      "date" : "20201112",
-      "location" : "Zoom",
-      "presenter" : "Brett Estrade",
-      "title" : "Process Management Modules in Perl"
-   },
-   {
-      "abstract" : null,
+      "abstract" : "<p>George S. Baugh (TEODESIAN on CPAN) explores a CMS he wrote in Perl.\nSpecifically, <q>Why I did it and what I learned?</q></p>\n",
       "date" : "20201210",
       "location" : "Hostgator",
-      "presenter" : null,
-      "title" : null
+      "presenter" : "George S. Baugh",
+      "title" : "tCMS : yet another CMS written in Perl"
    },
    {
       "abstract" : null,
@@ -24,6 +17,13 @@
       "abstract" : null,
       "date" : "20210211",
       "location" : "Hostgator",
+      "presenter" : null,
+      "title" : null
+   },
+   {
+      "abstract" : null,
+      "date" : "20210311",
+      "location" : "cPanel",
       "presenter" : null,
       "title" : null
    }
