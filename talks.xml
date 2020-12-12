@@ -2235,9 +2235,9 @@ He&apos;ll cover the process, the script, and some DNS configuration.</abstract>
   <talk num="2012">
     <date>December 2020</date>
     <topic href="/talks/2020talks/2012Talk/index.html">
-      <title>tCMS : yet another CMS written in Perl</title>
+      <title>tCMS: yet another CMS written in Perl</title>
       <presenter>George S. Baugh</presenter>
-      <abstract>George Baugh gave an overview of his &lt;abbr title=&quot;Content Management System&quot;&gt;CMS&lt;/abbr&gt;
+      <abstract>George Baugh gave an overview of his <abbr title="Content Management System">CMS</abbr>
 written in Perl. He explains why he re-invented this particular wheel,
 and what he has learned in the process.</abstract>
     </topic>
