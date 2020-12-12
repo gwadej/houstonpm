@@ -4,12 +4,28 @@
   <title type="html">Houston.pm: What's New</title>
   <link href="http://houston.pm.org/"/>
   <link href="http://houston.pm.org/atom.xml" rel="self"/>
-  <updated>2020-11-17T22:33:04Z</updated>
+  <updated>2020-12-12T04:05:57Z</updated>
   <author>
     <name>G. Wade Johnson</name>
   </author>
   <category term="news"/>
   <generator uri="https://metacpan.org/pod/XML::Atom::SimpleFeed" version="0.902">XML::Atom::SimpleFeed</generator>
+  <entry>
+    <title type="html">Notes for 'tCMS : yet another CMS written in Perl' posted.</title>
+    <id>tag:houston.pm.org,2011-03:presentation:2012</id>
+    <content type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">
+        <p>George Baugh gave an overview of his <abbr title="Content Management System">CMS</abbr>
+written in Perl. He explains why he re-invented this particular wheel,
+and what he has learned in the process.</p>
+      </div>
+    </content>
+    <updated>2020-12-12T04:05:57Z</updated>
+    <published>2020-12-12T04:05:57Z</published>
+    <link href="http://houston.pm.org/talks/2020talks/2012Talk/index.html"/>
+    <category term="presentation"/>
+    <category term="technical meeting"/>
+  </entry>
   <entry>
     <title>tCMS : yet another CMS written in Perl</title>
     <id>tag:houston.pm.org.2011-03:announce-20201117s-13082</id>
@@ -293,20 +309,6 @@ attempting to cover the whole subject of unit testing, there should be something
     <updated>2020-10-24T07:39:21Z</updated>
     <published>2020-10-24T07:39:21Z</published>
     <link href="http://houston.pm.org/talks/2019talks/1906Talk/index.html"/>
-    <category term="presentation"/>
-    <category term="technical meeting"/>
-  </entry>
-  <entry>
-    <title type="html">Notes for 'Getting Started With OpenShift - Using Containers for SysOps and Engineering' posted.</title>
-    <id>tag:houston.pm.org,2011-03:presentation:1905</id>
-    <content type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml">
-        <p>Robert Stone will do a demo of OpenShift, showing some of the high points of functionality.</p>
-      </div>
-    </content>
-    <updated>2020-10-24T07:00:05Z</updated>
-    <published>2020-10-24T07:00:05Z</published>
-    <link href="http://houston.pm.org/talks/2019talks/1905Talk/index.html"/>
     <category term="presentation"/>
     <category term="technical meeting"/>
   </entry>

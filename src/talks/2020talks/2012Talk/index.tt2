@@ -1,0 +1,60 @@
+[% WRAPPER writeup_wrap.tt2
+    title='Summary of December 2020 Presentation'
+    year=2020
+%]
+      <h1>[% "tCMS : yet another CMS written in Perl" | html %]</h1>
+<p>George Baugh started with his history on the web and with how he started blogging.
+He covered the journey from raw HTML, through PHP, to an earlier version of his
+<abbr title="Content Management System">CMS</abbr>.</p>
+
+<p>The theme that caused him to expand his original idea was <em>disintermediation from
+aggregators</em>. Most people (and businesses) producing content on-line do it
+through services provided by others: aggregators. As long as your content is part of
+someone else's service, you are not really in control.</p>
+
+<p>George wanted to explore what it would take to do all of the social media
+things for himself. Another question was how to use this to make money on your own.</p>
+
+<p>Any new system must be able to handle, at a minimum:</p>
+
+<ul>
+    <li>Blogging</li>
+    <li>Media sharing (like YouTube)</li>
+    <li>Micro-blogging or messaging (like Twitter)</li>
+    <li>Presentations</li>
+    <li>Engagement with users</li>
+    <li>and more</li>
+</ul>
+
+<p>Much of George's design was based on a minimal approach to test ideas.
+He looked for ways to get the most benefit with the least work, both up
+front and from any users of the system. A side effect of this was to avoid
+large, complicated frameworks that give lots of flexibility, but would require
+a lot of configuration and a long learning curve.</p>
+
+<p>He has accomplished much of the design directly in PSGI, with a lightweight
+routing definition. The current design relies strongly on flat-files for
+storage of posts and other content. An SQLite table handles indexing of tags
+but not the organization of the actual content.</p>
+
+<p>He spent time walking through the code and showing how parts worked. He also
+discussed where he planned to go from here, including incorporating some
+tooling written by others in the places where it would help without increasing
+the complexity and performance.</p>
+
+<p>Many people have built their own <abbr title="Content Management System">CMS</abbr>s,
+but George noted that none of those provided all of the pieces of a content
+management strategy. He is planning to make tCMS fill that void. He would
+also like to add easy patterns for monetization directly into the system,
+such as:</p>
+
+<ul>
+    <li>Mailing list signups</li>
+    <li>Private posting</li>
+    <li>etc.</li>
+</ul>
+
+<p>You can learn more about this project at his <a href="https://troglodyne.net/" target="_blank" rel="noopener">site</a>
+or the repository for <a href="https://github.com/Troglodyne-Internet-Widgets/tCMS" target="_blank" rel="noopener">tCMS</a>.</p>
+      <p>We had 8 people attending the remote meeting on Zoom this month.</p>
+[% END -%]
