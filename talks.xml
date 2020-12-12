@@ -2226,8 +2226,8 @@ He&apos;ll cover the process, the script, and some DNS configuration.</abstract>
     <topic href="/talks/2020talks/2011Talk/index.html">
       <title>Process Management Modules in Perl</title>
       <presenter>Brett Estrade</presenter>
-      <abstract>Brett covers some process management in Perl, including &lt;code&gt;MCE&lt;/code&gt; and
-&lt;code&gt;Parallel::ForkManager::Segmented&lt;/code&gt;.</abstract>
+      <abstract>Brett covers some process management in Perl, including <code>MCE</code> and
+<code>Parallel::ForkManager::Segmented</code>.</abstract>
     </topic>
     <attendees>12</attendees>
     <sponsor>Zoom</sponsor>
