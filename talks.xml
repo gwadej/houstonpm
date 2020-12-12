@@ -2200,7 +2200,7 @@ a point to disconnect from some legacy behavior.</abstract>
       <title>2001: How our Grandfathers wrote OO Perl</title>
       <presenter>Brett Estrade</presenter>
       <abstract>Brett Estrade will tour the book <cite>Object Oriented Perl: A Comprehensive Guide to Concepts and Programming Techniques</cite>
-by Damien Conway. The book shows the old approach to <abbr title="Object Orientation">OO</abbr> in Perl.</abstract>
+by Damien Conway. The book shows the original approach to <abbr title="Object Orientation">OO</abbr> in Perl.</abstract>
     </topic>
     <attendees>13</attendees>
     <sponsor>Zoom</sponsor>
