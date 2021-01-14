@@ -1,6 +1,10 @@
 # Source for Houston.pm website
 
-This project is the source for the http://houston.pm.org/ website.
+**UPDATE**: As of the middle of December 2020, the houston.pm.org website is no
+longer built from this code.
+
+Up through that date, this project was the source for the
+http://houston.pm.org/ website.
 
 It consists of the presentations done by various people over the years and
 the templates and code needed to create the site around those presentations.
